@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using ModFinder.Mods;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
 
-namespace ModFinder
+namespace ModFinder.Util
 {
   public class ModVersionConverter : JsonConverter<ModVersion>
   {
@@ -18,10 +18,11 @@ namespace ModFinder
       writer.WriteValue(value.ToString());
     }
   }
+
   /// <summary>
   /// IO utilities for the app
   /// </summary>
-  public static class ModFinderIO
+  public static class IOTool
   {
     private static ModVersionConverter modVersionConverter = new();
     private static JsonSerializer Json
@@ -98,5 +99,4 @@ namespace ModFinder
       return writer.ToString();
     }
   }
-
 }

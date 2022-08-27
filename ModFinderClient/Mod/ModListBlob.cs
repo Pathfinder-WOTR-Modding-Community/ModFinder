@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using ModFinder.UI;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace ModFinder.Infrastructure
+namespace ModFinder.Mods
 {
   public class ModListBlob
   {
     [JsonProperty] public List<ModDetailsInternal> m_AllMods;
   }
-
 }

@@ -1,8 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
 
-namespace ModFinder
+namespace ModFinder.Mods
 {
   public struct ModVersion : IComparable<ModVersion>, IEquatable<ModVersion>
   {

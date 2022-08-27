@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using ModFinder.Util;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 
-namespace ModFinder.Infrastructure
+namespace ModFinder.Mods
 {
   public class SettingsData
   {
@@ -34,13 +35,13 @@ namespace ModFinder.Infrastructure
 
     private void Save()
     {
-      ModFinderIO.Write(OwlcatSettings, SettingsPath);
+      IOTool.Write(OwlcatSettings, SettingsPath);
     }
 
     private static SettingsData Load()
     {
       if (File.Exists(SettingsPath))
-        return ModFinderIO.Read<SettingsData>(SettingsPath);
+        return IOTool.Read<SettingsData>(SettingsPath);
       else
         return new();
     }

@@ -1,8 +1,8 @@
-﻿using ModFinder.Infrastructure;
+﻿using ModFinder.Mods;
 using System;
 using System.Collections.Generic;
 
-namespace ModFinder
+namespace ModFinder.UI
 {
   /// <summary>
   /// This is the "static" state of a mod

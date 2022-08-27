@@ -1,12 +1,11 @@
 ﻿using Microsoft.VisualBasic.FileIO;
+using ModFinder.UI;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ModFinder.Infrastructure
+namespace ModFinder.Mods
 {
   public class ModCache
   {
@@ -18,11 +17,12 @@ namespace ModFinder.Infrastructure
     }
     public ModCache(DirectoryInfo folder, string ModIdentifier)
     {
-      this.CachedModDir = folder;
+      CachedModDir = folder;
       this.ModIdentifier = ModIdentifier;
     }
   }
-  public static class ModCaching
+
+  public static class Caching
   {
     public static void RestoreMod(ModDetails details)
     {
@@ -45,7 +45,7 @@ namespace ModFinder.Infrastructure
       var result = new List<ModCache>();
       foreach (var cachefolder in new DirectoryInfo(Path.Combine(Main.AppFolder, "CachedMods")).EnumerateDirectories())
       {
-        string modid = "";
+        var modid = "";
         foreach (var subfile in cachefolder.EnumerateFiles())
         {
           if (subfile.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase))

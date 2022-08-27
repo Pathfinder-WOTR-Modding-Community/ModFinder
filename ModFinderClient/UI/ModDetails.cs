@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using ModFinder.Mods;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text.RegularExpressions;
-using ModFinder.Infrastructure;
 
-namespace ModFinder
+namespace ModFinder.UI
 {
-
   /// <summary>
   /// This is current active state of a mod
   /// </summary>
@@ -22,9 +21,8 @@ namespace ModFinder
       Details = details;
     }
 
-
     public bool CanUninstall => State == ModState.Installed;
-    public bool CanInstall => State == ModState.NotInstalled || (State == ModState.Installed && Details.Latest > InstalledVersion);
+    public bool CanInstall => State == ModState.NotInstalled || State == ModState.Installed && Details.Latest > InstalledVersion;
     public string InstallButtonText
     {
       get

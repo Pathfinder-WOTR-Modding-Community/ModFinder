@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using ModFinder.Mods;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace ModFinder
+namespace ModFinder.UI
 {
   public class ModDatabase : INotifyPropertyChanged
   {

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace ModFinder
+namespace ModFinder.UI
 {
   class ChangelogRenderer
   {
@@ -39,7 +39,7 @@ namespace ModFinder
           }
           else
           {
-            bool bold = false;
+            var bold = false;
             if (trimmed.Length > 4 && trimmed.StartsWith("**") && trimmed.EndsWith("**"))
             {
               trimmed = trimmed.Slice(2, trimmed.Length - 4);
@@ -58,7 +58,6 @@ namespace ModFinder
 
         doc.Blocks.Add(section);
       }
-
     }
   }
 }

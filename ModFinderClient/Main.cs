@@ -1,16 +1,18 @@
-﻿using System;
+﻿using ModFinder.Mods;
+using ModFinder.Util;
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace ModFinder.Infrastructure
+namespace ModFinder
 {
   public static class Main
   {
     /// <summary>
     /// Modfinder settings
     /// </summary>
-    public static AppSettingsData Settings => m_Settings ??= AppSettingsData.Load();
-    private static AppSettingsData m_Settings;
+    public static Settings Settings => m_Settings ??= Settings.Load();
+    private static Settings m_Settings;
 
     /// <summary>
     /// Owlcat mods, use to toggle enabled status
@@ -24,18 +26,20 @@ namespace ModFinder.Infrastructure
     {
       get
       {
-        var root = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Modfinder");
-        if (!Directory.Exists(root))
-          _ = Directory.CreateDirectory(root);
-        return root;
+        if (!Directory.Exists(_appFolder))
+        {
+          _ = Directory.CreateDirectory(_appFolder);
+        }
+        return _appFolder;
       }
     }
+    private static readonly string _appFolder =
+      Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Modfinder");
 
     /// <summary>
     /// Get full path to a file inside the modfinder cache folder
     /// </summary>
     /// <param name="file">file to get path to</param>
-    /// <returns></returns>
     public static string CachePath(string file)
     {
       var cacheFolder = AppPath("Cache");
@@ -53,7 +57,6 @@ namespace ModFinder.Infrastructure
     /// Get path to file in modfinder app folder
     /// </summary>
     /// <param name="file">file to get path to</param>
-    /// <returns></returns>
     public static string AppPath(string file) => Path.Combine(AppFolder, file);
 
     /// <summary>

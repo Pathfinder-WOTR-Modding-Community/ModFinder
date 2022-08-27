@@ -1,27 +1,23 @@
-﻿using System.Diagnostics;
-using System.IO;
+﻿using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using ModFinder.Infrastructure;
 using System;
-using System.Text;
 using System.Windows.Documents;
-using System.Windows.Media;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Net;
+using ModFinder.Util;
+using ModFinder.Mods;
+using ModFinder.UI;
 
 namespace ModFinder
 {
 
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+  /// <summary>
+  /// Interaction logic for MainWindow.xaml
+  /// </summary>
+  public partial class MainWindow : Window
     {
         private readonly ModDatabase modListData = ModDatabase.Instance;
 
@@ -33,7 +29,7 @@ namespace ModFinder
             showInstalledToggle.Click += ShowInstalledToggle_Click;
 
 #if DEBUG
-            var manifest = ModFinderIO.Read<ModListBlob>(Environment.GetEnvironmentVariable("MODFINDER_LOCAL_MANIFEST"));
+            var manifest = IOTool.Read<ModListBlob>(Environment.GetEnvironmentVariable("MODFINDER_LOCAL_MANIFEST"));
 #else
             using var client = new System.Net.WebClient();
             var rawstring = client.DownloadString("https://raw.githubusercontent.com/BarleyFlour/ModFinder_WOTR/master/ManifestUpdater/Resources/master_manifest.json");

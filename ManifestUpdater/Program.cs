@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
-using ModFinder;
-using ModFinder.Infrastructure;
 using Octokit;
 using System.Collections.Generic;
 using System.Linq;
 using NexusModsNET;
 using ManifestUpdater.Properties;
-using System.IO;
+using ModFinder.Mods;
+using ModFinder.Util;
+using ModFinder.UI;
 
 var github = new GitHubClient(new ProductHeaderValue("ModFinder"));
 var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
@@ -18,7 +18,7 @@ var nexus = NexusModsClient.Create(Environment.GetEnvironmentVariable("NEXUS_API
 
 var contents = Resources.internal_manifest;
 
-var details = ModFinderIO.FromString<ModListBlob>(Resources.internal_manifest);
+var details = IOTool.FromString<ModListBlob>(Resources.internal_manifest);
 var tasks = new List<Task<ModDetailsInternal>>();
 
 foreach (var mod in details.m_AllMods)
@@ -95,7 +95,7 @@ var targetUser = "BarleyFlour";
 var targetRepo = "Modfinder";
 var targetFile = "ManifestUpdater/Resources/master_manifest.json";
 
-var serializedDeets = ModFinderIO.Write(details);
+var serializedDeets = IOTool.Write(details);
 var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser, targetRepo, targetFile, "master");
 var updateFile = new UpdateFileRequest("Update the mod manifest (bot)", serializedDeets, currentFile[0].Sha, "master", true);
 var newblob = new NewBlob();

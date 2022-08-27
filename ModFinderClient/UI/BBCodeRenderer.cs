@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace ModFinder
+namespace ModFinder.UI
 {
   class BBCodeRenderer
   {
@@ -49,7 +49,7 @@ namespace ModFinder
       Stack<BlockCollection> elems = new();
       elems.Push(doc.Blocks);
 
-      int i = 0;
+      var i = 0;
       while (i < raw.Length)
       {
         if (raw[i] == '\n')
@@ -60,7 +60,7 @@ namespace ModFinder
         else if (raw[i] == '[')
         {
           tagBuilder.Clear();
-          int mod = 1;
+          var mod = 1;
           i++;
           if (i == raw.Length) break;
           if (raw[i] == '/')
@@ -95,7 +95,7 @@ namespace ModFinder
 
             if (mod == 1)
             {
-              int size = 16 + 2 * int.Parse(sizePattern.Match(tag).Groups[1].Value);
+              var size = 16 + 2 * int.Parse(sizePattern.Match(tag).Groups[1].Value);
               state.size.Push(size);
             }
             else
@@ -147,14 +147,14 @@ namespace ModFinder
         }
         else if (raw[i] == '&')
         {
-          int maybeEnd = raw.IndexOf(';', i);
+          var maybeEnd = raw.IndexOf(';', i);
           if (maybeEnd == -1)
           {
             stripped.Append(raw[i++]);
             continue;
           }
 
-          int len = maybeEnd - i + 1;
+          var len = maybeEnd - i + 1;
 
           var span = raw.AsSpan(i, len);
 
@@ -199,7 +199,7 @@ namespace ModFinder
 
         run.FontSize = state.size.Peek();
 
-        string fontFamily = state.font.Peek();
+        var fontFamily = state.font.Peek();
         if (fontFamily != null)
         {
           run.FontFamily = new FontFamily(fontFamily);

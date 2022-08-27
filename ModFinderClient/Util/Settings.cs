@@ -1,17 +1,17 @@
-﻿namespace ModFinder.Infrastructure
+﻿namespace ModFinder.Util
 {
-  public class AppSettingsData
+  public class Settings
   {
     public string AutoWrathPath { get; set; }
     public string WrathPath { get; set; }
 
-    private static AppSettingsData _Instance;
-    public static AppSettingsData Load()
+    private static Settings _Instance;
+    public static Settings Load()
     {
       if (_Instance == null)
       {
         if (Main.TryReadFile("Settings.json", out var settingsRaw))
-          _Instance = ModFinderIO.FromString<AppSettingsData>(settingsRaw);
+          _Instance = IOTool.FromString<Settings>(settingsRaw);
         else
           _Instance = new();
       }
@@ -23,7 +23,7 @@
     {
       Main.Safe(() =>
       {
-        ModFinderIO.Write(this, Main.AppPath("Settings.json"));
+        IOTool.Write(this, Main.AppPath("Settings.json"));
       });
     }
   }

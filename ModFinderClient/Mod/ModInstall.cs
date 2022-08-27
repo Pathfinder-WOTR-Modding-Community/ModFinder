@@ -2,19 +2,20 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
-using System.Net;
 using System.Diagnostics;
 using System.IO.Compression;
+using ModFinder.Util;
+using ModFinder.UI;
 
-namespace ModFinder.Infrastructure
+namespace ModFinder.Mods
 {
   public class ModInstall
   {
     public static async Task<InstallResult> InstallMod(ModDetails toInstall)
     {
-      if (ModCaching.CachedMods.Any(a => a.ModIdentifier == toInstall.Identifier))
+      if (Caching.CachedMods.Any(a => a.ModIdentifier == toInstall.Identifier))
       {
-        ModCaching.RestoreMod(toInstall);
+        Caching.RestoreMod(toInstall);
       }
       if (toInstall.Source == ModSource.Nexus)
       {
@@ -57,7 +58,7 @@ namespace ModFinder.Infrastructure
       {
         destination = Path.Combine(Main.WrathPath.FullName, "Mods");
 
-        var info = ModFinderIO.Read<UMMModInfo>(asUmm.Open());
+        var info = IOTool.Read<UMMModInfo>(asUmm.Open());
 
         newMod.ModId = new()
         {
@@ -78,7 +79,7 @@ namespace ModFinder.Infrastructure
       {
         destination = Path.Combine(Main.WrathDataDir, "Modifications");
 
-        var info = ModFinderIO.Read<OwlcatModInfo>(asOwl.Open());
+        var info = IOTool.Read<OwlcatModInfo>(asOwl.Open());
 
         newMod.ModId = new()
         {
@@ -133,7 +134,7 @@ namespace ModFinder.Infrastructure
           var infoFile = maybe.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
           if (infoFile != null)
           {
-            var info = ModFinderIO.Read<UMMModInfo>(infoFile.FullName);
+            var info = IOTool.Read<UMMModInfo>(infoFile.FullName);
 
             ModId id = new(info.Id, ModType.UMM);
 
@@ -164,7 +165,7 @@ namespace ModFinder.Infrastructure
           var infoFile = maybe.GetFiles().FirstOrDefault(f => f.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
           if (infoFile != null)
           {
-            var info = ModFinderIO.Read<OwlcatModInfo>(infoFile.FullName);
+            var info = IOTool.Read<OwlcatModInfo>(infoFile.FullName);
 
             ModId id = new(info.UniqueName, ModType.Owlcat);
 

@@ -1,12 +1,13 @@
-﻿namespace ModFinder.Infrastructure
+﻿namespace ModFinder.Mods
 {
-  //Mod type, determined by Manifest type, or lack of Manifset
+  // Mod type, determined by Manifest type, or lack of Manifset
   public enum ModType
   {
     Owlcat = 0,
     UMM = 1,
     Other = 2
   }
+
   public enum ModSource
   {
     GitHub = 0,
@@ -14,6 +15,14 @@
     Other = 2,
     ModDB = 3
   }
+
+  public enum ModState
+  {
+    NotInstalled,
+    Installed,
+    Installing,
+  }
+
   public class UMMModInfo
   {
     public string Id { get; set; }
