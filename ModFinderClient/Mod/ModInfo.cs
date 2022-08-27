@@ -1,28 +1,8 @@
-﻿namespace ModFinder.Mods
+﻿namespace ModFinder.Mod
 {
-  // Mod type, determined by Manifest type, or lack of Manifset
-  public enum ModType
-  {
-    Owlcat = 0,
-    UMM = 1,
-    Other = 2
-  }
-
-  public enum ModSource
-  {
-    GitHub = 0,
-    Nexus = 1,
-    Other = 2,
-    ModDB = 3
-  }
-
-  public enum ModState
-  {
-    NotInstalled,
-    Installed,
-    Installing,
-  }
-
+  /// <summary>
+  /// A copy of the JSON structure used for UMM mod manifests, i.e. <c>Info.json</c>
+  /// </summary>
   public class UMMModInfo
   {
     public string Id { get; set; }
@@ -33,6 +13,9 @@
     public string HomePage { get; set; }
   }
 
+  /// <summary>
+  /// A copy of the JSON structure used for Owlcat's mod manifest, i.e. <c>OwlcatModificationManifest.json</c>
+  /// </summary>
   public class OwlcatModInfo
   {
     public string UniqueName { get; set; }

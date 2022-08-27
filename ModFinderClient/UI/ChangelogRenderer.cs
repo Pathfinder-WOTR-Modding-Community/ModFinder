@@ -7,13 +7,13 @@ namespace ModFinder.UI
 {
   class ChangelogRenderer
   {
-    public static void Render(FlowDocument doc, ModDetails mod)
+    public static void Render(FlowDocument doc, ModViewModel mod)
     {
       foreach (var entry in mod.Changelog.Reverse())
       {
         var section = new Section();
 
-        if (entry.version >= mod.InstalledVersion)
+        if (entry.version >= mod.Version)
           section.Foreground = Brushes.Black;
         else
           section.Foreground = Brushes.DimGray;

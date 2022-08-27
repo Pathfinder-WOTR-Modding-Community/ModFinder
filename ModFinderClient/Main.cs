@@ -1,4 +1,4 @@
-﻿using ModFinder.Mods;
+﻿using ModFinder.Mod;
 using ModFinder.Util;
 using System;
 using System.IO;

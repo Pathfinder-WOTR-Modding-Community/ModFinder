@@ -8,8 +8,8 @@ using System.Windows.Input;
 using System;
 using System.Windows.Documents;
 using ModFinder.Util;
-using ModFinder.Mods;
 using ModFinder.UI;
+using ModFinder.Mod;
 
 namespace ModFinder
 {
@@ -45,7 +45,7 @@ namespace ModFinder
             foreach (var mod in manifest.AvailableMods)
                 modListData.Add(new(mod));
 
-            ModInstall.ParseInstalledMods();
+            ModInstaller.ParseInstalledMods();
 
 
             // Do magic window dragging regardless where they click
@@ -118,9 +118,9 @@ namespace ModFinder
         private void ProcessIntallResult(InstallResult result)
         {
             if (result.Complete)
-                result.Mod.State = ModState.Installed;
+                result.Mod.InstallState = ModDetails.Installed;
             else if (result.Mod != null)
-                result.Mod.State = ModState.NotInstalled;
+                result.Mod.InstallState = ModDetails.NotInstalled;
 
             if (result.Error != null)
             {
@@ -133,17 +133,17 @@ namespace ModFinder
             var files = (string[])e.Data.GetData(DataFormats.FileDrop);
             foreach (var f in files)
             {
-                var result = await ModInstall.InstallFromZip(f);
+                var result = await ModInstaller.InstallFromZip(f);
                 ProcessIntallResult(result);
             }
         }
 
         private async void InstallOrUpdateMod(object sender, RoutedEventArgs e)
         {
-            var toInstall = (sender as Button).Tag as ModDetails;
-            toInstall.State = ModState.Installing;
+            var toInstall = (sender as Button).Tag as ModViewModel;
+            toInstall.InstallState = ModDetails.Installing;
 
-            var result = await ModInstall.InstallMod(toInstall);
+            var result = await ModInstaller.InstallMod(toInstall);
             ProcessIntallResult(result);
 
         }
@@ -165,22 +165,22 @@ namespace ModFinder
 
         private void LookButton_Click(object sender, RoutedEventArgs e)
         {
-            ModInstall.ParseInstalledMods();
+            ModInstaller.ParseInstalledMods();
         }
 
         private void ShowModDescription(object sender, RoutedEventArgs e)
         {
-            var mod = (sender as MenuItem).DataContext as ModDetails;
+            var mod = (sender as MenuItem).DataContext as ModViewModel;
             ShowPopup(mod, "description");
         }
 
         private void ShowModChangelog(object sender, RoutedEventArgs e)
         {
-            var mod = (sender as MenuItem).DataContext as ModDetails;
+            var mod = (sender as MenuItem).DataContext as ModViewModel;
             ShowPopup(mod, "changelog");
         }
 
-        private void ShowPopup(ModDetails mod, string contentType)
+        private void ShowPopup(ModViewModel mod, string contentType)
         {
             var proxy = new DescriptionProxy(mod, contentType);
             DescriptionPopup.DataContext = proxy;
@@ -192,16 +192,16 @@ namespace ModFinder
 
     public class DescriptionProxy
     {
-        private readonly ModDetails Mod;
+        private readonly ModViewModel Mod;
         private readonly string DescriptionType;
 
-        public DescriptionProxy(ModDetails mod, string descriptionType)
+        public DescriptionProxy(ModViewModel mod, string descriptionType)
         {
             Mod = mod;
             DescriptionType = descriptionType;
         }
 
-        public string Name => Mod.Name + "   (" + Mod.InstalledVersion.ToString() + ")";
+        public string Name => Mod.Name + "   (" + Mod.Version.ToString() + ")";
         internal FlowDocument Render()
         {
             var doc = new FlowDocument();

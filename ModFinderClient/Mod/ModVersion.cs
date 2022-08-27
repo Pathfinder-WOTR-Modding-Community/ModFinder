@@ -1,8 +1,16 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace ModFinder.Mods
+namespace ModFinder.Mod
 {
+  /// <summary>
+  /// Represents a mod version.
+  /// </summary>
+  /// 
+  /// <remarks>
+  /// Format is <c>A.B.Cd</c> where <c>A, B, and C</c> are integers representing the Major, Minor, and Patch versions.
+  /// <c>d</c> is a single character used to further indicate a patch version.
+  /// </remarks>
   public struct ModVersion : IComparable<ModVersion>, IEquatable<ModVersion>
   {
     public int Major, Minor, Patch;

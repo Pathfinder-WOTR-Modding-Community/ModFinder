@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 
-namespace ModFinder.Mods
+namespace ModFinder.Mod
 {
   public class SettingsData
   {

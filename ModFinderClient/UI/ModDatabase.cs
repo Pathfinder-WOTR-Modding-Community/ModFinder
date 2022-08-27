@@ -1,4 +1,4 @@
-﻿using ModFinder.Mods;
+﻿using ModFinder.Mod;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -7,15 +7,15 @@ namespace ModFinder.UI
 {
   public class ModDatabase : INotifyPropertyChanged
   {
-    private readonly ObservableCollection<ModDetails> All = new();
-    private readonly ObservableCollection<ModDetails> Installed = new();
-    private readonly Dictionary<ModId, ModDetails> Mods = new();
+    private readonly ObservableCollection<ModViewModel> All = new();
+    private readonly ObservableCollection<ModViewModel> Installed = new();
+    private readonly Dictionary<ModId, ModViewModel> Mods = new();
     private bool _ShowInstalled;
     public event PropertyChangedEventHandler PropertyChanged;
 
     public string HeaderNameText => ShowInstalled ? "Update" : "Install";
 
-    public ObservableCollection<ModDetails> Items => ShowInstalled ? Installed : All;
+    public ObservableCollection<ModViewModel> Items => ShowInstalled ? Installed : All;
 
     public bool ShowInstalled
     {
@@ -34,9 +34,9 @@ namespace ModFinder.UI
     private static ModDatabase _Instance;
     public static ModDatabase Instance => _Instance ??= new();
 
-    public IEnumerable<ModDetails> AllMods => All;
+    public IEnumerable<ModViewModel> AllMods => All;
 
-    public void Add(ModDetails mod)
+    public void Add(ModViewModel mod)
     {
       All.Add(mod);
       Mods[mod.ModId] = mod;
@@ -49,14 +49,14 @@ namespace ModFinder.UI
       };
     }
 
-    private void UpdateInstallState(ModDetails mod)
+    private void UpdateInstallState(ModViewModel mod)
     {
-      if (mod.State == ModState.NotInstalled)
+      if (mod.InstallState == ModDetails.NotInstalled)
         _ = Installed.Remove(mod);
-      else if (mod.State == ModState.Installed && !Installed.Contains(mod))
+      else if (mod.InstallState == ModDetails.Installed && !Installed.Contains(mod))
         Installed.Add(mod);
     }
 
-    internal bool TryGet(ModId id, out ModDetails mod) => Mods.TryGetValue(id, out mod);
+    internal bool TryGet(ModId id, out ModViewModel mod) => Mods.TryGetValue(id, out mod);
   }
 }

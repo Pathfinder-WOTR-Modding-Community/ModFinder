@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
@@ -6,16 +7,27 @@ using System.Diagnostics;
 using System.IO.Compression;
 using ModFinder.Util;
 using ModFinder.UI;
+using System.Windows.Media;
 
-namespace ModFinder.Mods
+namespace ModFinder.Mod
 {
-  public class ModInstall
+  public static class ModInstaller
   {
-    public static async Task<InstallResult> InstallMod(ModDetails toInstall)
+    private static readonly string UMMInstallPath = Path.Combine(Main.WrathPath.FullName, "Mods");
+
+    public static async Task<InstallResult> Install(ModId id, ModVersion requestedVersion)
     {
-      if (Caching.CachedMods.Any(a => a.ModIdentifier == toInstall.Identifier))
+      if (id.Type != ModType.UMM)
       {
-        Caching.RestoreMod(toInstall);
+        throw new NotSupportedException($"Currently {id.Type} mods are not supported.");
+      }
+
+      if (ModCache.TryGet(id, requestedVersion, out var cachePath))
+      {
+        FileSystem.CopyDirectory(cachePath, Path.Combine(UMMInstallPath, Path.GetDirectoryName(cachePath)));
+        Directory.Delete(cachePath, true);
+        CachedMods.Remove(versionedId);
+        return new(InstallState.Installed);
       }
       if (toInstall.Source == ModSource.Nexus)
       {
@@ -31,7 +43,7 @@ namespace ModFinder.Mods
       return new("Unknown mod source");
     }
 
-    internal static async Task<InstallResult> InstallFromRemoteZip(ModDetails mod)
+    internal static async Task<InstallResult> InstallFromRemoteZip(ModViewModel mod)
     {
       var name = mod.UniqueId + "_" + mod.Latest + ".zip"; //what about non-zip?
       var file = Main.CachePath(name);
@@ -52,7 +64,7 @@ namespace ModFinder.Mods
 
       string destination = null;
 
-      ModDetailsInternal newMod = new();
+      ModDetails newMod = new();
 
       if (asUmm != null)
       {
@@ -62,8 +74,8 @@ namespace ModFinder.Mods
 
         newMod.ModId = new()
         {
-          Identifier = info.Id,
-          ModType = ModType.UMM,
+          Id = info.Id,
+          Type = ModType.UMM,
         };
 
         newMod.Latest = ModVersion.Parse(info.Version);
@@ -83,8 +95,8 @@ namespace ModFinder.Mods
 
         newMod.ModId = new()
         {
-          Identifier = info.UniqueName,
-          ModType = ModType.Owlcat,
+          Id = info.UniqueName,
+          Type = ModType.Owlcat,
         };
 
         newMod.Latest = ModVersion.Parse(info.Version);
@@ -107,11 +119,11 @@ namespace ModFinder.Mods
         ModDatabase.Instance.Add(mod);
       }
 
-      mod.InstalledVersion = newMod.Latest;
+      mod.Version = newMod.Latest;
 
       await Task.Run(() => zip.ExtractToDirectory(destination, true));
 
-      if (mod.ModId.ModType == ModType.Owlcat)
+      if (mod.ModId.Type == ModType.Owlcat)
         Main.OwlcatMods.Add(mod.Identifier);
 
       return new(mod, true);
@@ -121,8 +133,8 @@ namespace ModFinder.Mods
     {
       foreach (var mod in ModDatabase.Instance.AllMods)
       {
-        if (mod.State == ModState.Installed)
-          mod.State = ModState.NotInstalled;
+        if (mod.InstallState == ModDetails.Installed)
+          mod.InstallState = ModDetails.NotInstalled;
       }
 
       var wrath = Main.WrathPath;
@@ -140,7 +152,7 @@ namespace ModFinder.Mods
 
             if (!ModDatabase.Instance.TryGet(id, out var mod))
             {
-              ModDetailsInternal details = new();
+              ModDetails details = new();
               details.ModId = id;
               details.Name = info.DisplayName;
               details.Latest = ModVersion.Parse(info.Version);
@@ -152,8 +164,8 @@ namespace ModFinder.Mods
               ModDatabase.Instance.Add(mod);
             }
 
-            mod.State = ModState.Installed;
-            mod.InstalledVersion = ModVersion.Parse(info.Version);
+            mod.InstallState = ModDetails.Installed;
+            mod.Version = ModVersion.Parse(info.Version);
           }
         }
       }
@@ -171,7 +183,7 @@ namespace ModFinder.Mods
 
             if (!ModDatabase.Instance.TryGet(id, out var mod))
             {
-              ModDetailsInternal details = new();
+              ModDetails details = new();
               details.ModId = id;
               details.Name = info.DisplayName;
               details.Latest = ModVersion.Parse(info.Version);
@@ -183,26 +195,27 @@ namespace ModFinder.Mods
               ModDatabase.Instance.Add(mod);
             }
 
-            mod.State = ModState.Installed;
-            mod.InstalledVersion = ModVersion.Parse(info.Version);
+            mod.InstallState = ModDetails.Installed;
+            mod.Version = ModVersion.Parse(info.Version);
           }
         }
       }
     }
   }
 
-
   public class InstallResult
   {
-    public ModDetails Mod;
-    public bool Complete = true;
-    public string Error;
+    public readonly InstallState State;
+    public readonly string Error;
 
-    public InstallResult(ModDetails mod, bool complete) { Mod = mod; Complete = complete; }
+    public InstallResult(InstallState state)
+    {
+      State = state;
+    }
 
     public InstallResult(string error)
     {
-      Complete = false;
+      State = InstallState.None;
       Error = error;
     }
   }

@@ -5,9 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using NexusModsNET;
 using ManifestUpdater.Properties;
-using ModFinder.Mods;
+using ModFinder.Mod;
 using ModFinder.Util;
-using ModFinder.UI;
 
 var github = new GitHubClient(new ProductHeaderValue("ModFinder"));
 var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
@@ -19,13 +18,12 @@ var nexus = NexusModsClient.Create(Environment.GetEnvironmentVariable("NEXUS_API
 var contents = Resources.internal_manifest;
 
 var details = IOTool.FromString<MasterManifest>(Resources.internal_manifest);
-var tasks = new List<Task<ModDetailsInternal>>();
+var tasks = new List<Task<ModDetails>>();
 
 foreach (var mod in details.AvailableMods)
 {
   tasks.Add(Task.Run(async () =>
   {
-
     if (mod.Source == ModSource.GitHub)
     {
       var repo = await github.Repository.Get(mod.GithubOwner, mod.GithubRepo);
@@ -38,14 +36,14 @@ foreach (var mod in details.AvailableMods)
       mod.Changelog = new();
       foreach (var release in allReleases)
       {
-        var version = ModVersion.Parse(release.TagName);
+        var version = ModFinder.Mod.ModVersion.Parse(release.TagName);
         mod.Changelog.Add((version, release.Body.Replace("\r\n", "\n")));
       }
       mod.Changelog.Sort((a, b) => a.version.CompareTo(b.version));
 
       mod.DownloadLink = todownload.BrowserDownloadUrl;
       mod.Description = repo.Description;
-      mod.Latest = ModVersion.Parse(latestRelease.TagName); //This is not true???
+      mod.Latest = ModFinder.Mod.ModVersion.Parse(latestRelease.TagName); //This is not true???
       return mod;
     }
     else if (mod.Source == ModSource.Nexus)
@@ -62,7 +60,7 @@ foreach (var mod in details.AvailableMods)
         mod.Changelog = new();
         foreach (var entry in changelog)
         {
-          var version = ModVersion.Parse(entry.Key);
+          var version = ModFinder.Mod.ModVersion.Parse(entry.Key);
           mod.Changelog.Add((version, string.Join("\n", entry.Value)));
         }
 
@@ -70,7 +68,7 @@ foreach (var mod in details.AvailableMods)
       }
 
       mod.Description = nexusmod.Description;
-      mod.Latest = ModVersion.Parse(nexusmod.Version); //This is not true???
+      mod.Latest = ModFinder.Mod.ModVersion.Parse(nexusmod.Version); //This is not true???
       mod.DownloadLink = @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + mod.NexusModID + @"?tab=files&file_id=" + release.FileId;
 
       return mod;
@@ -86,7 +84,7 @@ foreach (var mod in tasks.Select(t => t.Result).Where(r => r != null))
 {
   Console.WriteLine();
   Log(mod.Name);
-  LogObj("  UniqueId: ", $"{mod.ModId.Identifier}_{mod.ModId.ModType}");
+  LogObj("  UniqueId: ", $"{mod.ModId.Id}_{mod.ModId.Type}");
   LogObj("  Download: ", mod.DownloadLink);
   LogObj("  Latest: ", mod.Latest);
 }
