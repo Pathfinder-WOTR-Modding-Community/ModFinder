@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.FileIO;
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
@@ -7,43 +6,37 @@ using System.Diagnostics;
 using System.IO.Compression;
 using ModFinder.Util;
 using ModFinder.UI;
-using System.Windows.Media;
 
 namespace ModFinder.Mod
 {
+  /// <summary>
+  /// Manages mod installation.
+  /// </summary>
   public static class ModInstaller
   {
-    private static readonly string UMMInstallPath = Path.Combine(Main.WrathPath.FullName, "Mods");
+    public static readonly string UMMInstallPath = Path.Combine(Main.WrathPath.FullName, "Mods");
 
-    public static async Task<InstallResult> Install(ModId id, ModVersion requestedVersion)
+    public static async Task<InstallResult> Install(ModManifest manifest, ModVersion requestedVersion)
     {
-      if (id.Type != ModType.UMM)
+      if (manifest.Id.Type != ModType.UMM)
       {
-        throw new NotSupportedException($"Currently {id.Type} mods are not supported.");
+        throw new NotSupportedException($"Currently {manifest.Id.Type} mods are not supported.");
       }
 
-      if (ModCache.TryGet(id, requestedVersion, out var cachePath))
+      if (ModCache.TryRestoreMod(manifest.Id, requestedVersion))
       {
-        FileSystem.CopyDirectory(cachePath, Path.Combine(UMMInstallPath, Path.GetDirectoryName(cachePath)));
-        Directory.Delete(cachePath, true);
-        CachedMods.Remove(versionedId);
         return new(InstallState.Installed);
       }
-      if (toInstall.Source == ModSource.Nexus)
-      {
-        Process.Start("explorer", '"' + toInstall.DownloadLink + '"').Dispose();
-        return new(toInstall, false);
-      }
 
-      if (toInstall.Source == ModSource.GitHub)
+      if (manifest.Source.GitHub is not null)
       {
-        return await InstallFromRemoteZip(toInstall);
+        return await InstallFromRemoteZip(manifest);
       }
 
       return new("Unknown mod source");
     }
 
-    internal static async Task<InstallResult> InstallFromRemoteZip(ModViewModel mod)
+    private static async Task<InstallResult> InstallFromRemoteZip(ModManifest manifest)
     {
       var name = mod.UniqueId + "_" + mod.Latest + ".zip"; //what about non-zip?
       var file = Main.CachePath(name);

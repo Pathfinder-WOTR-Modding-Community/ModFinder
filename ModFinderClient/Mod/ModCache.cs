@@ -47,6 +47,11 @@ namespace ModFinder.Mod
     /// <returns>True if the mod was restored, false otherwise</returns>
     public static bool TryRestoreMod(ModId id, ModVersion version)
     {
+      if (id.Type != ModType.UMM)
+      {
+        throw new NotSupportedException($"Currently {id.Type} mods are not supported.");
+      }
+
       var versionedId = new VersionedModId(id, version);
       if (!CachedMods.ContainsKey(versionedId))
       {
@@ -54,11 +59,6 @@ namespace ModFinder.Mod
       }
 
       var cachePath = CachedMods[versionedId];
-      if (id.Type != ModType.UMM)
-      {
-        throw new NotSupportedException($"Currently {id.Type} mods are not supported.");
-      }
-
       FileSystem.CopyDirectory(cachePath, Path.Combine(ModInstaller.UMMInstallPath, Path.GetDirectoryName(cachePath)));
       Directory.Delete(cachePath, true);
       CachedMods.Remove(versionedId);
