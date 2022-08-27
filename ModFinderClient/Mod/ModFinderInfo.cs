@@ -50,7 +50,7 @@ namespace ModFinder.Mod
     public string Url { get; }
 
     /// <summary>
-    /// Description of the changes in this release.
+    /// Description of the changes in this release. Supports BBCode.
     /// </summary>
     [JsonProperty]
     public string Changelog { get; }
