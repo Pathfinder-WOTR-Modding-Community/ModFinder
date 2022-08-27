@@ -8,7 +8,6 @@ namespace ModFinder.UI
 {
   class ChangelogRenderer
   {
-    // No support for changelogs yet.
     public static void Render(FlowDocument doc, ModViewModel mod)
     {
       RenderSection(doc, mod.ModFinderInfo.LatestVersion, mod.InstalledVersion);
