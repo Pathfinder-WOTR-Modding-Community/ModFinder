@@ -20,7 +20,7 @@ namespace ModFinder.Mod
     {
       if (manifest.Id.Type != ModType.UMM)
       {
-        throw new NotSupportedException($"Currently {manifest.Id.Type} mods are not supported.");
+        return new($"Currently {manifest.Id.Type} mods are not supported.");
       }
 
       if (ModCache.TryRestoreMod(manifest.Id, requestedVersion))
