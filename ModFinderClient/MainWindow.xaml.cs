@@ -29,7 +29,7 @@ namespace ModFinder
             showInstalledToggle.Click += ShowInstalledToggle_Click;
 
 #if DEBUG
-            var manifest = IOTool.Read<ModListBlob>(Environment.GetEnvironmentVariable("MODFINDER_LOCAL_MANIFEST"));
+            var manifest = IOTool.Read<MasterManifest>(Environment.GetEnvironmentVariable("MODFINDER_LOCAL_MANIFEST"));
 #else
             using var client = new System.Net.WebClient();
             var rawstring = client.DownloadString("https://raw.githubusercontent.com/BarleyFlour/ModFinder_WOTR/master/ManifestUpdater/Resources/master_manifest.json");
@@ -42,7 +42,7 @@ namespace ModFinder
                     installedMods.SelectedItem = null;
             };
 
-            foreach (var mod in manifest.m_AllMods)
+            foreach (var mod in manifest.AvailableMods)
                 modListData.Add(new(mod));
 
             ModInstall.ParseInstalledMods();
