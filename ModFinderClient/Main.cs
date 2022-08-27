@@ -44,7 +44,7 @@ namespace ModFinder
     {
       var cacheFolder = AppPath("Cache");
       var path = Path.Combine(cacheFolder, file);
-      Safe(() =>
+      IOTool.Safe(() =>
       {
         if (!Directory.Exists(cacheFolder))
           _ = Directory.CreateDirectory(cacheFolder);
@@ -133,26 +133,5 @@ namespace ModFinder
     }
 
     private static DirectoryInfo _WrathPath;
-
-    private static readonly object SafeLock = new();
-
-    /// <summary>
-    /// Seralize p on all other Safe work, use for deleting and creating files in sensitive places
-    /// </summary>
-    /// <param name="p">action to safely execute</param>
-    internal static void Safe(Action p)
-    {
-      try
-      {
-        lock (SafeLock)
-        {
-          p();
-        }
-      }
-      catch (Exception)
-      {
-        throw;
-      }
-    }
   }
 }

@@ -98,5 +98,26 @@ namespace ModFinder.Util
       Json.Serialize(writer, obj);
       return writer.ToString();
     }
+
+
+    private static readonly object SafeLock = new();
+    /// <summary>
+    /// Seralize p on all other Safe work, use for deleting and creating files in sensitive places
+    /// </summary>
+    /// <param name="p">action to safely execute</param>
+    internal static void Safe(Action p)
+    {
+      try
+      {
+        lock (SafeLock)
+        {
+          p();
+        }
+      }
+      catch (Exception)
+      {
+        throw;
+      }
+    }
   }
 }

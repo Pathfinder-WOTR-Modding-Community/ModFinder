@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ModFinder" xmlns:local1="clr-namespace:ModFinder.UI" d:DataContext="{d:DesignInstance Type=local:ModDetails}"
+        xmlns:local="clr-namespace:ModFinder.UI" d:DataContext="{d:DesignInstance Type=local:ModDetails}"
         mc:Ignorable="d"
         Title="MainWindow" Height="694" Width="1208"
         AllowsTransparency="True" 
@@ -415,7 +415,7 @@
                 </DataGrid>
             </DockPanel>
         </DockPanel>
-        <local1:NonTopPopup
+        <local:NonTopPopup
             x:Name="DescriptionPopup"
             MinWidth="900" MinHeight="600" MaxWidth="900" MaxHeight="600"
             PlacementTarget="{Binding ElementName=root}" Placement="Center"
@@ -483,6 +483,6 @@
                     </DockPanel>
                 </DockPanel>
             </DockPanel>
-        </local1:NonTopPopup>
+        </local:NonTopPopup>
     </DockPanel>
 </Window>

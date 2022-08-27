@@ -21,7 +21,7 @@
 
     public void Save()
     {
-      Main.Safe(() =>
+      IOTool.Safe(() =>
       {
         IOTool.Write(this, Main.AppPath("Settings.json"));
       });
