@@ -2,11 +2,9 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
-using System.Diagnostics;
 using System.IO.Compression;
 using ModFinder.Util;
 using ModFinder.UI;
-using System.Net;
 using System.Net.Http;
 
 namespace ModFinder.Mod
@@ -18,33 +16,29 @@ namespace ModFinder.Mod
   {
     public static readonly string UMMInstallPath = Path.Combine(Main.WrathPath.FullName, "Mods");
 
-    /// <param name="requestedVersion">
-    /// Only used when restoring from the cache to prevent re-installing an old version. Installing remotely will only
-    /// get the latest release.
-    /// </param>
-    public static async Task<InstallResult> Install(ModManifest manifest, ModVersion requestedVersion)
+    public static async Task<InstallResult> Install(ModViewModel viewModel)
     {
-      if (manifest.Id.Type != ModType.UMM)
+      if (viewModel.ModId.Type != ModType.UMM)
       {
-        return new($"Currently {manifest.Id.Type} mods are not supported.");
+        return new($"Currently {viewModel.ModId.Type} mods are not supported.");
       }
 
-      if (ModCache.TryRestoreMod(manifest.Id, requestedVersion))
+      if (ModCache.TryRestoreMod(viewModel.ModId))
       {
         return new(InstallState.Installed);
       }
 
-      if (manifest.Source.GitHub is not null)
+      if (viewModel.Source.GitHub is not null)
       {
-        return await InstallFromRemoteZip(manifest);
+        return await InstallFromRemoteZip(viewModel);
       }
 
       return new("Unknown mod source");
     }
 
-    private static async Task<InstallResult> InstallFromRemoteZip(ModManifest manifest)
+    private static async Task<InstallResult> InstallFromRemoteZip(ModViewModel viewModel)
     {
-      var repoUri = new Uri(manifest.Source.GitHub.RepoUrl);
+      var repoUri = new Uri(viewModel.Source.GitHub.RepoUrl);
       var releasesUri = new Uri(repoUri, "releases/latest");
 
       // First get the download link
@@ -56,7 +50,7 @@ namespace ModFinder.Mod
       return await InstallFromZip(null, null);// file, mod.ModId);
     }
 
-    public static async Task<InstallResult> InstallFromZip(string path, ModManifest manifest)
+    public static async Task<InstallResult> InstallFromZip(string path, ModViewModel viewModel = null)
     {
       using var zip = ZipFile.OpenRead(path);
       var manifestEntry =
@@ -68,9 +62,9 @@ namespace ModFinder.Mod
       }
 
       var info = IOTool.Read<UMMModInfo>(manifestEntry.Open());
-      if (manifest.Id.Id != info.Id)
+      if (viewModel is not null && viewModel.ModId.Id != info.Id)
       {
-        return new($"ModId mismatch. Downloaded {manifest.Id.Id} but expected {info.Id}");
+        return new($"ModId mismatch. Found {viewModel.ModId.Id} but expected {info.Id}");
       }
 
       var destination = UMMInstallPath;
@@ -80,15 +74,17 @@ namespace ModFinder.Mod
         destination = Path.Combine(destination, info.Id);
       }
 
+      await Task.Run(() => zip.ExtractToDirectory(destination, true));
+
+      var manifest = viewModel?.Manifest ?? ModManifest.FromLocalMod(info);
       ModDetails mod = new(manifest);
-      if (!ModDatabase.Instance.TryGet(mod.Manifest.Id, out var viewModel))
+      if (!ModDatabase.Instance.TryGet(mod.Manifest.Id, out viewModel))
       {
         viewModel = new(mod);
         ModDatabase.Instance.Add(viewModel);
       }
       viewModel.Version = ModVersion.Parse(info.Version);
-
-      await Task.Run(() => zip.ExtractToDirectory(destination, true));
+      viewModel.InstallState = InstallState.Installed;
       return new(InstallState.Installed);
     }
 

@@ -1,7 +1,5 @@
 ﻿using ModFinder.Mod;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ModFinder.UI
@@ -21,6 +19,11 @@ namespace ModFinder.UI
       Details = details;
     }
 
+    public ModViewModel(ModManifest manifest)
+    {
+      Details = new(manifest);
+    }
+
     public bool IsInstalled => Details.InstallState == InstallState.Installed;
     public bool CanInstall => Details.InstallState != InstallState.Installing;
     public string InstallButtonText
@@ -35,6 +38,8 @@ namespace ModFinder.UI
           return "Install";
       }
     }
+
+    public ModManifest Manifest => Details.Manifest;
 
     public ModVersion Version
     {

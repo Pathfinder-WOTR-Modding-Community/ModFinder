@@ -1,18 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using ModFinder.Mod;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.IO;
 
 namespace ModFinder.Util
 {
-    public class ModVersionConverter : JsonConverter<Mods.ModVersion>
+    public class ModVersionConverter : JsonConverter<ModVersion>
   {
-    public override Mods.ModVersion ReadJson(JsonReader reader, Type objectType, Mods.ModVersion existingValue, bool hasExistingValue, JsonSerializer serializer)
+    public override ModVersion ReadJson(JsonReader reader, Type objectType, ModVersion existingValue, bool hasExistingValue, JsonSerializer serializer)
     {
-      return Mods.ModVersion.Parse(reader.Value as string);
+      return ModVersion.Parse(reader.Value as string);
     }
 
-    public override void WriteJson(JsonWriter writer, Mods.ModVersion value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, ModVersion value, JsonSerializer serializer)
     {
       writer.WriteValue(value.ToString());
     }

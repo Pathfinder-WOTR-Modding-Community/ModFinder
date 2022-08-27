@@ -4,7 +4,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace ModFinder.Mod
 {
@@ -16,7 +15,7 @@ namespace ModFinder.Mod
     /// <summary>
     /// Directories containing cached mods, indexed by ModId.
     /// </summary>
-    private static Dictionary<VersionedModId, string> CachedMods
+    private static Dictionary<ModId, string> CachedMods
     {
       get
       {
@@ -24,11 +23,11 @@ namespace ModFinder.Mod
         return _cachedMods;
       }
     }
-    private static Dictionary<VersionedModId, string> _cachedMods;
+    private static Dictionary<ModId, string> _cachedMods;
 
-    private static Dictionary<VersionedModId, string> LoadManifest()
+    private static Dictionary<ModId, string> LoadManifest()
     {
-      var cachedMods = new Dictionary<VersionedModId, string>();
+      var cachedMods = new Dictionary<ModId, string>();
       if (File.Exists(ManifestFile))
       {
         var manifest = JsonConvert.DeserializeObject<CacheManifest>(File.ReadAllText(ManifestFile));
@@ -45,23 +44,22 @@ namespace ModFinder.Mod
     /// Attempts to restore a mod from the local cache.
     /// </summary>
     /// <returns>True if the mod was restored, false otherwise</returns>
-    public static bool TryRestoreMod(ModId id, ModVersion version)
+    public static bool TryRestoreMod(ModId id)
     {
       if (id.Type != ModType.UMM)
       {
         throw new NotSupportedException($"Currently {id.Type} mods are not supported.");
       }
 
-      var versionedId = new VersionedModId(id, version);
-      if (!CachedMods.ContainsKey(versionedId))
+      if (!CachedMods.ContainsKey(id))
       {
         return false;
       }
 
-      var cachePath = CachedMods[versionedId];
+      var cachePath = CachedMods[id];
       FileSystem.CopyDirectory(cachePath, Path.Combine(ModInstaller.UMMInstallPath, Path.GetDirectoryName(cachePath)));
       Directory.Delete(cachePath, true);
-      CachedMods.Remove(versionedId);
+      CachedMods.Remove(id);
       return true;
     }
 
@@ -96,53 +94,15 @@ namespace ModFinder.Mod
     private class CachedMod
     {
       [JsonProperty]
-      public VersionedModId Id { get; }
+      public ModId Id { get; }
 
       [JsonProperty]
       public string Dir { get; }
 
-      public CachedMod(ModId id, ModVersion version, string dir)
-      {
-        Id = new(id, version);
-        Dir = dir;
-      }
-    }
-
-    /// <summary>
-    /// Combines Version & ID for ease of fetching mods from the cache.
-    /// </summary>
-    private class VersionedModId
-    {
-      [JsonProperty]
-      public ModId Id { get; }
-
-      [JsonProperty]
-      public ModVersion Version { get; }
-
-      public VersionedModId(ModId id, ModVersion version)
+      public CachedMod(ModId id, string dir)
       {
         Id = id;
-        Version = version;
-      }
-
-      public override bool Equals(object obj)
-      {
-        return obj is VersionedModId other && Id.Equals(other.Id) && Version.Equals(other.Version);
-      }
-
-      public override int GetHashCode()
-      {
-        return HashCode.Combine(Id, Version);
-      }
-
-      public static bool operator ==(VersionedModId left, VersionedModId right)
-      {
-        return left.Equals(right);
-      }
-
-      public static bool operator !=(VersionedModId left, VersionedModId right)
-      {
-        return !left.Equals(right);
+        Dir = dir;
       }
     }
   }

@@ -51,9 +51,9 @@ namespace ModFinder.UI
 
     private void UpdateInstallState(ModViewModel mod)
     {
-      if (mod.InstallState == ModDetails.NotInstalled)
+      if (mod.InstallState == InstallState.None)
         _ = Installed.Remove(mod);
-      else if (mod.InstallState == ModDetails.InstalledVersion && !Installed.Contains(mod))
+      else if (mod.InstallState == InstallState.Installed && !Installed.Contains(mod))
         Installed.Add(mod);
     }
 
