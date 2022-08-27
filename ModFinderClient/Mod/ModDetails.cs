@@ -11,6 +11,8 @@ namespace ModFinder.Mod
 
     public ModVersion InstalledVersion { get; set; }
 
+    public ModVersion LatestVersion { get; set; }
+
     public InstallState InstallState { get; set; }
 
     public ModDetails(ModManifest manifest)

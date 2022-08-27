@@ -34,16 +34,16 @@ namespace ModFinder.Mod
     public ModSource Source { get; }
 
     [JsonConstructor]
-    private ModManifest() { }
-
-    private ModManifest(string name, string author, ModId id, ModSource source)
+    private ModManifest(string name, string author, string description, ModId id, ModSource source)
     {
       Name = name;
       Author = author;
-      Description = "";
+      Description = description;
       Id = id;
       Source = source;
     }
+
+    private ModManifest(string name, string author, ModId id, ModSource source) : this(name, author, "", id, source) { }
 
     public static ModManifest FromLocalMod(UMMModInfo info)
     {
@@ -60,6 +60,12 @@ namespace ModFinder.Mod
   {
     [JsonProperty]
     public GitHubInfo GitHub { get; }
+
+    [JsonConstructor]
+    public ModSource(GitHubInfo gitHub = null)
+    {
+      GitHub = gitHub;
+    }
   }
 
   /// <summary>
@@ -68,16 +74,16 @@ namespace ModFinder.Mod
   public class GitHubInfo
   {
     /// <summary>
-    /// URL to the GitHub repo hosting the mod.
+    /// URL hosting the json file mapping versions to download links. Syntax defined using <see cref="VersionsFile"/>.
     /// </summary>
     [JsonProperty]
-    public string RepoUrl { get; }
+    public string VersionsFileUrl { get; }
 
-    /// <summary>
-    /// Prefix of the release zip, e.g. "MyMod-1.0.0.zip" should use "MyMod". Used to find the latest release.
-    /// </summary>
-    [JsonProperty]
-    public string ZipPrefix { get; }
+    [JsonConstructor]
+    private GitHubInfo(string versionsFileUrl)
+    {
+      VersionsFileUrl = versionsFileUrl;
+    }
   }
 
   /// <summary>
@@ -113,6 +119,7 @@ namespace ModFinder.Mod
     [JsonProperty]
     public ModType Type { get; }
 
+    [JsonConstructor]
     public ModId(string id, ModType type)
     {
       Id = id;

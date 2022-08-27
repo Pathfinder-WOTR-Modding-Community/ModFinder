@@ -63,6 +63,7 @@ namespace ModFinder.Util
       using var jsonReader = new JsonTextReader(reader);
       return Json.Deserialize<T>(jsonReader);
     }
+
     /// <summary>
     /// Parse a stream as json
     /// </summary>

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Windows.Documents;
-using System.Windows.Media;
+﻿using System.Windows.Documents;
 
 namespace ModFinder.UI
 {

@@ -7,14 +7,13 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System;
 using System.Windows.Documents;
-using ModFinder.Util;
 using ModFinder.UI;
 using ModFinder.Mod;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace ModFinder
 {
-
   /// <summary>
   /// Interaction logic for MainWindow.xaml
   /// </summary>
@@ -31,10 +30,10 @@ namespace ModFinder
 
       MasterManifest manifest;
 #if DEBUG
-      using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("test_mods.json"))
+      using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_mods.json"))
       {
         using var reader = new StreamReader(stream);
-        manifest = IOTool.Read<MasterManifest>(reader.ReadToEnd());
+        manifest = JsonConvert.DeserializeObject<MasterManifest>(reader.ReadToEnd());
       }
 #else
       using var client = new System.Net.WebClient();
@@ -52,6 +51,7 @@ namespace ModFinder
         modListData.Add(new(mod));
 
       ModInstaller.CheckInstalledMods();
+      ModInstaller.CheckForUpdates();
 
       // Do magic window dragging regardless where they click
       MouseDown += (sender, e) =>
@@ -164,6 +164,7 @@ namespace ModFinder
     private void LookButton_Click(object sender, RoutedEventArgs e)
     {
       ModInstaller.CheckInstalledMods();
+      ModInstaller.CheckForUpdates();
     }
 
     private void ShowModDescription(object sender, RoutedEventArgs e)
@@ -199,7 +200,7 @@ namespace ModFinder
       DescriptionType = descriptionType;
     }
 
-    public string Name => Mod.Name + "   (" + Mod.Version.ToString() + ")";
+    public string Name => Mod.Name + "   (" + Mod.InstalledVersion.ToString() + ")";
     internal FlowDocument Render()
     {
       var doc = new FlowDocument();

@@ -5,7 +5,8 @@ using System.IO;
 using System.IO.Compression;
 using ModFinder.Util;
 using ModFinder.UI;
-using System.Net.Http;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace ModFinder.Mod
 {
@@ -38,16 +39,11 @@ namespace ModFinder.Mod
 
     private static async Task<InstallResult> InstallFromRemoteZip(ModViewModel viewModel)
     {
-      var repoUri = new Uri(viewModel.Source.GitHub.RepoUrl);
-      var releasesUri = new Uri(repoUri, "releases/latest");
+      WebClient web = new();
+      var file = Path.GetTempFileName();
+      await web.DownloadFileTaskAsync(viewModel.LatestVersion.DownloadUrl, file);
 
-      // First get the download link
-      var client = new HttpClient();
-      var releases = client.PostAsync(releasesUri, content: null);
-      //WebClient web = new();
-      //  await web.DownloadFileTaskAsync(mod.DownloadLink, file);
-
-      return await InstallFromZip(null, null);// file, mod.ModId);
+      return await InstallFromZip(file, viewModel);
     }
 
     public static async Task<InstallResult> InstallFromZip(string path, ModViewModel viewModel = null)
@@ -83,7 +79,7 @@ namespace ModFinder.Mod
         viewModel = new(mod);
         ModDatabase.Instance.Add(viewModel);
       }
-      viewModel.Version = ModVersion.Parse(info.Version);
+      viewModel.InstalledVersion = ModVersion.Parse(info.Version);
       viewModel.InstallState = InstallState.Installed;
       return new(InstallState.Installed);
     }
@@ -110,8 +106,22 @@ namespace ModFinder.Mod
             }
 
             mod.InstallState = InstallState.Installed;
-            mod.Version = ModVersion.Parse(info.Version);
+            mod.InstalledVersion = ModVersion.Parse(info.Version);
           }
+        }
+      }
+    }
+
+    public static void CheckForUpdates()
+    {
+      foreach (var mod in ModDatabase.Instance.AllMods)
+      {
+        var versionsFileUrl = mod.Manifest?.Source?.GitHub?.VersionsFileUrl;
+        if (!string.IsNullOrEmpty(versionsFileUrl))
+        {
+          using var client = new WebClient();
+          var versions = JsonConvert.DeserializeObject<VersionsFile>(client.DownloadString(versionsFileUrl));
+          mod.LatestVersion = ModVersion.FromFile(versions.LatestVersion);
         }
       }
     }

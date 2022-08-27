@@ -25,30 +25,45 @@ namespace ModFinder.UI
     }
 
     public bool IsInstalled => Details.InstallState == InstallState.Installed;
-    public bool CanInstall => Details.InstallState != InstallState.Installing;
+    public bool CanInstall => !IsInstalled || LatestVersion > InstalledVersion;
     public string InstallButtonText
     {
       get
       {
-        if (IsInstalled)
-          return Version.ToString();
-        else if (Details.InstallState == InstallState.Installing)
+        if (Details.InstallState == InstallState.Installing)
           return "Installing...";
-        else
+        else if (!IsInstalled)
           return "Install";
+        else if (LatestVersion == default(ModVersion))
+          return "Unavailable";
+        else if (LatestVersion > InstalledVersion)
+          return "Update";
+        else
+          return "Up to date";
       }
     }
 
     public ModManifest Manifest => Details.Manifest;
 
-    public ModVersion Version
+    public ModVersion LatestVersion
+    {
+      get => Details.LatestVersion;
+      set
+      {
+        if (Details.LatestVersion == value) return;
+        Details.LatestVersion = value;
+        Changed(nameof(LatestVersion), nameof(CanInstall), nameof(InstallButtonText));
+      }
+    }
+
+    public ModVersion InstalledVersion
     {
       get => Details.InstalledVersion;
       set
       {
         if (Details.InstalledVersion == value) return;
         Details.InstalledVersion = value;
-        Changed(nameof(Version), nameof(CanInstall), nameof(InstallButtonText));
+        Changed(nameof(InstalledVersion), nameof(CanInstall), nameof(InstallButtonText));
       }
     }
 
@@ -80,5 +95,15 @@ namespace ModFinder.UI
     public string UniqueId => Identifier + "_" + ModType.ToString();
 
     public ModSource Source => Details.Manifest.Source;
+    public string SourceString => GetSourceString();
+
+    private string GetSourceString()
+    {
+      if (Source.GitHub is not null)
+      {
+        return "GitHub";
+      }
+      return "Local";
+    }
   }
 }
