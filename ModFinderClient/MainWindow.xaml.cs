@@ -11,6 +11,7 @@ using ModFinder.UI;
 using ModFinder.Mod;
 using System.Reflection;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace ModFinder
 {
@@ -36,9 +37,9 @@ namespace ModFinder
         manifest = JsonConvert.DeserializeObject<MasterManifest>(reader.ReadToEnd());
       }
 #else
-      using var client = new System.Net.WebClient();
-      var rawstring = client.DownloadString("https://raw.githubusercontent.com/BarleyFlour/ModFinder_WOTR/master/ManifestUpdater/Resources/master_manifest.json");
-      var manifest = ModFinderIO.FromString<ModListBlob>(rawstring);
+      using var client = new WebClient();
+      var rawstring = client.DownloadString("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/mods.json");
+      manifest = JsonConvert.DeserializeObject<MasterManifest>(rawstring);
 #endif
 
       installedMods.SelectedCellsChanged += (sender, e) =>
@@ -77,7 +78,6 @@ namespace ModFinder
       dropTarget.Drop += DropTarget_Drop;
       dropTarget.DragOver += DropTarget_DragOver;
     }
-
 
     public static bool CheckIsMod(string path)
     {
