@@ -45,7 +45,7 @@ namespace ModFinder
             foreach (var mod in manifest.AvailableMods)
                 modListData.Add(new(mod));
 
-            ModInstaller.ParseInstalledMods();
+            ModInstaller.CheckInstalledMods();
 
 
             // Do magic window dragging regardless where they click
@@ -165,7 +165,7 @@ namespace ModFinder
 
         private void LookButton_Click(object sender, RoutedEventArgs e)
         {
-            ModInstaller.ParseInstalledMods();
+            ModInstaller.CheckInstalledMods();
         }
 
         private void ShowModDescription(object sender, RoutedEventArgs e)

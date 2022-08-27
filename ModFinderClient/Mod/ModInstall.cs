@@ -92,73 +92,28 @@ namespace ModFinder.Mod
       return new(InstallState.Installed);
     }
 
-    public static void ParseInstalledMods()
+    public static void CheckInstalledMods()
     {
-      foreach (var mod in ModDatabase.Instance.AllMods)
-      {
-        if (mod.InstallState == ModDetails.InstalledVersion)
-          mod.InstallState = ModDetails.NotInstalled;
-      }
-
-      var wrath = Main.WrathPath;
-      var modDir = wrath.GetDirectories("Mods");
+      var modDir = Main.WrathPath.GetDirectories("Mods");
       if (modDir.Length > 0)
       {
-        foreach (var maybe in modDir[0].GetDirectories())
+        foreach (var modFiles in modDir[0].GetDirectories())
         {
-          var infoFile = maybe.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
+          var infoFile =
+            modFiles.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
           if (infoFile != null)
           {
             var info = IOTool.Read<UMMModInfo>(infoFile.FullName);
 
-            ModId id = new(info.Id, ModType.UMM);
-
-            if (!ModDatabase.Instance.TryGet(id, out var mod))
+            var manifest = ModManifest.FromLocalMod(info);
+            if (!ModDatabase.Instance.TryGet(manifest.Id, out var mod))
             {
-              ModDetails details = new();
-              details.ModId = id;
-              details.Name = info.DisplayName;
-              details.Latest = ModVersion.Parse(info.Version);
-              details.Source = ModSource.Other;
-              details.Author = info.Author;
-              details.Description = "";
-
+              ModDetails details = new(manifest);
               mod = new(details);
               ModDatabase.Instance.Add(mod);
             }
 
-            mod.InstallState = ModDetails.InstalledVersion;
-            mod.Version = ModVersion.Parse(info.Version);
-          }
-        }
-      }
-      var OwlcatModDir = new DirectoryInfo(Main.WrathDataDir).GetDirectories("Modifications");
-      if (OwlcatModDir.Length > 0)
-      {
-        foreach (var maybe in OwlcatModDir[0].GetDirectories())
-        {
-          var infoFile = maybe.GetFiles().FirstOrDefault(f => f.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
-          if (infoFile != null)
-          {
-            var info = IOTool.Read<OwlcatModInfo>(infoFile.FullName);
-
-            ModId id = new(info.UniqueName, ModType.Owlcat);
-
-            if (!ModDatabase.Instance.TryGet(id, out var mod))
-            {
-              ModDetails details = new();
-              details.ModId = id;
-              details.Name = info.DisplayName;
-              details.Latest = ModVersion.Parse(info.Version);
-              details.Source = ModSource.Other;
-              details.Author = info.Author;
-              details.Description = "";
-
-              mod = new(details);
-              ModDatabase.Instance.Add(mod);
-            }
-
-            mod.InstallState = ModDetails.InstalledVersion;
+            mod.InstallState = InstallState.Installed;
             mod.Version = ModVersion.Parse(info.Version);
           }
         }

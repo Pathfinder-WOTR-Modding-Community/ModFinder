@@ -32,6 +32,23 @@ namespace ModFinder.Mod
 
     [JsonProperty]
     public ModSource Source { get; }
+
+    [JsonConstructor]
+    private ModManifest() { }
+
+    private ModManifest(string name, string author, ModId id, ModSource source)
+    {
+      Name = name;
+      Author = author;
+      Description = "";
+      Id = id;
+      Source = source;
+    }
+
+    public static ModManifest FromLocalMod(UMMModInfo info)
+    {
+      return new(info.DisplayName, info.Author, new(info.Id, ModType.UMM), new());
+    }
   }
 
   /// <summary>
