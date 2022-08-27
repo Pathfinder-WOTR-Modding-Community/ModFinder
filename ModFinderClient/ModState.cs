@@ -1,9 +1,9 @@
 ﻿namespace ModFinder
 {
-    public enum ModState
-    {
-        NotInstalled,
-        Installed,
-        Installing,
-    }
+  public enum ModState
+  {
+    NotInstalled,
+    Installed,
+    Installing,
+  }
 }
