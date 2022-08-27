@@ -1,9 +1,11 @@
 ﻿using Microsoft.VisualBasic.FileIO;
 using ModFinder.UI;
+using ModFinder.Util;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ModFinder.Mod
 {
@@ -35,11 +37,15 @@ namespace ModFinder.Mod
 
       if (File.Exists(ManifestFile))
       {
-        var manifest = JsonConvert.DeserializeObject<CacheManifest>(File.ReadAllText(ManifestFile));
-        foreach (var mod in manifest.Mods)
-        {
-          cachedMods.Add(mod.Id, mod.Dir);
-        }
+        IOTool.Safe(
+          () =>
+          {
+            var manifest = JsonConvert.DeserializeObject<CacheManifest>(File.ReadAllText(ManifestFile));
+            foreach (var mod in manifest.Mods)
+            {
+              cachedMods.Add(mod.Id, mod.Dir);
+            }
+          });
       }
 
       return cachedMods;
@@ -65,6 +71,7 @@ namespace ModFinder.Mod
       FileSystem.CopyDirectory(cachePath, Path.Combine(ModInstaller.UMMInstallPath, Path.GetDirectoryName(cachePath)));
       Directory.Delete(cachePath, true);
       CachedMods.Remove(id);
+      UpdateManifest();
       return true;
     }
 
@@ -75,22 +82,36 @@ namespace ModFinder.Mod
     /// <param name="ModFolder">"Folder to be removed (Folder that contains your info.json, assemblies, etc...)"</param>
     public static void UninstallAndCache(ModViewModel mod, DirectoryInfo ModFolder)
     {
-      //if (mod.ModType == ModType.Owlcat)
-      //{
-      //  Main.OwlcatMods.Remove(mod.Identifier);
-      //}
-      //if (!Directory.Exists(Path.Combine(Main.AppFolder, ModFolder.Name)))
-      //{
-      //  FileSystem.CopyDirectory(ModFolder.FullName, Path.Combine(Main.AppFolder, "CachedMods", ModFolder.Name));
-      //  Directory.Delete(ModFolder.FullName, true);
-      //  CachedMods.Add(new ModCache(new DirectoryInfo(Path.Combine(Main.AppFolder, "CachedMods", ModFolder.Name)), mod.Identifier));
-      //}
+      if (mod.ModType != ModType.UMM)
+      {
+        throw new InvalidOperationException($"{mod.ModType} is not supported");
+      }
+      if (!Directory.Exists(Path.Combine(Main.AppFolder, ModFolder.Name)))
+      {
+        var cachePath = Path.Combine(CacheDir, ModFolder.Name);
+        FileSystem.CopyDirectory(ModFolder.FullName, cachePath);
+        Directory.Delete(ModFolder.FullName, true);
+        CachedMods.Add(mod.ModId, cachePath);
+        IOTool.Safe(UpdateManifest);
+      }
+    }
+
+    private static void UpdateManifest()
+    {
+      var manifest = new CacheManifest(CachedMods.Select(entry => new CachedMod(entry.Key, entry.Value)).ToList());
+      File.WriteAllText(ManifestFile, JsonConvert.SerializeObject(manifest));
     }
 
     private class CacheManifest
     {
       [JsonProperty]
       public readonly List<CachedMod> Mods;
+
+      [JsonConstructor]
+      public CacheManifest(List<CachedMod> mods)
+      {
+        Mods = mods;
+      }
     }
 
     /// <summary>
