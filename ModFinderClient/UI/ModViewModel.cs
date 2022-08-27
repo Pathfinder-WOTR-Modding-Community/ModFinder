@@ -67,6 +67,17 @@ namespace ModFinder.UI
       }
     }
 
+    private ModFinderInfo _modFinderInfo;
+    public ModFinderInfo ModFinderInfo
+    {
+      get => _modFinderInfo;
+      set
+      {
+        _modFinderInfo = value;
+        LatestVersion = ModVersion.FromInfo(_modFinderInfo.LatestVersion);
+      }
+    }
+
     public InstallState InstallState
     {
       get => Details.InstallState;

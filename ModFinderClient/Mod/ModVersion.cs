@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Text.RegularExpressions;
 
 namespace ModFinder.Mod
@@ -64,7 +62,7 @@ namespace ModFinder.Mod
       return version;
     }
 
-    public static ModVersion FromFile(VersionLink version)
+    public static ModVersion FromInfo(VersionRelease version)
     {
       var modVersion = Parse(version.Version);
       modVersion.DownloadUrl = version.Url;
@@ -126,53 +124,6 @@ namespace ModFinder.Mod
     public static bool operator !=(ModVersion left, ModVersion right)
     {
       return !(left == right);
-    }
-  }
-
-  /// <summary>
-  /// Use this schema for a JSON file in your mod repo to indicate where to download the latest version.
-  /// </summary>
-  public class VersionsFile
-  {
-    [JsonProperty]
-    public VersionLink LatestVersion;
-
-    /// <summary>
-    /// Note: currently not used but might be important if rollback functionality is added later.
-    /// </summary>
-    [JsonProperty]
-    public List<VersionLink> OldVersions;
-
-    [JsonConstructor]
-    private VersionsFile(VersionLink latestVersion, List<VersionLink> oldVersions)
-    {
-      LatestVersion = latestVersion;
-      OldVersions = oldVersions;
-    }
-  }
-
-  /// <summary>
-  /// Maps a version to a download link.
-  /// </summary>
-  public class VersionLink
-  {
-    /// <summary>
-    /// String representation of your <see cref="ModVersion"/>.
-    /// </summary>
-    [JsonProperty]
-    public string Version { get; }
-
-    /// <summary>
-    /// Download url for this version.
-    /// </summary>
-    [JsonProperty]
-    public string Url { get; }
-
-    [JsonConstructor]
-    private VersionLink(string version, string url)
-    {
-      Version = version;
-      Url = url;
     }
   }
 }

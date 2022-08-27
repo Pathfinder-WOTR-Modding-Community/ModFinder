@@ -10,7 +10,7 @@
       },
       "Source": {
         "GitHub": {
-          "VersionsFileUrl": "https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/main/BaseModVersions.json"
+          "ModFinderInfoUrl": "https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/main/BaseModVersions.json"
         }
       }
     }

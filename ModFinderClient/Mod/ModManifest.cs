@@ -74,15 +74,15 @@ namespace ModFinder.Mod
   public class GitHubInfo
   {
     /// <summary>
-    /// URL hosting the json file mapping versions to download links. Syntax defined using <see cref="VersionsFile"/>.
+    /// URL hosting details about the mod in a JSON file with syntax using <see cref="ModFinderInfo"/>.
     /// </summary>
     [JsonProperty]
-    public string VersionsFileUrl { get; }
+    public string ModFinderInfoUrl { get; }
 
     [JsonConstructor]
-    private GitHubInfo(string versionsFileUrl)
+    private GitHubInfo(string modFinderInfoUrl)
     {
-      VersionsFileUrl = versionsFileUrl;
+      ModFinderInfoUrl = modFinderInfoUrl;
     }
   }
 

@@ -116,12 +116,11 @@ namespace ModFinder.Mod
     {
       foreach (var mod in ModDatabase.Instance.AllMods)
       {
-        var versionsFileUrl = mod.Manifest?.Source?.GitHub?.VersionsFileUrl;
-        if (!string.IsNullOrEmpty(versionsFileUrl))
+        var modFinderInfoUrl = mod.Source?.GitHub?.ModFinderInfoUrl;
+        if (!string.IsNullOrEmpty(modFinderInfoUrl))
         {
           using var client = new WebClient();
-          var versions = JsonConvert.DeserializeObject<VersionsFile>(client.DownloadString(versionsFileUrl));
-          mod.LatestVersion = ModVersion.FromFile(versions.LatestVersion);
+          mod.ModFinderInfo = JsonConvert.DeserializeObject<ModFinderInfo>(client.DownloadString(modFinderInfoUrl));
         }
       }
     }
