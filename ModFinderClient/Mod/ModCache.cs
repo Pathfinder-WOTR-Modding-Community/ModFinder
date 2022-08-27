@@ -28,6 +28,11 @@ namespace ModFinder.Mod
     private static Dictionary<ModId, string> LoadManifest()
     {
       var cachedMods = new Dictionary<ModId, string>();
+      if (!Directory.Exists(CacheDir))
+      {
+        _ = Directory.CreateDirectory(CacheDir);
+      }
+
       if (File.Exists(ManifestFile))
       {
         var manifest = JsonConvert.DeserializeObject<CacheManifest>(File.ReadAllText(ManifestFile));

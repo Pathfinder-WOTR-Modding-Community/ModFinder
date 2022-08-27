@@ -37,23 +37,6 @@ namespace ModFinder
       Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Modfinder");
 
     /// <summary>
-    /// Get full path to a file inside the modfinder cache folder
-    /// </summary>
-    /// <param name="file">file to get path to</param>
-    public static string CachePath(string file)
-    {
-      var cacheFolder = AppPath("Cache");
-      var path = Path.Combine(cacheFolder, file);
-      IOTool.Safe(() =>
-      {
-        if (!Directory.Exists(cacheFolder))
-          _ = Directory.CreateDirectory(cacheFolder);
-      });
-
-      return path;
-    }
-
-    /// <summary>
     /// Get path to file in modfinder app folder
     /// </summary>
     /// <param name="file">file to get path to</param>
