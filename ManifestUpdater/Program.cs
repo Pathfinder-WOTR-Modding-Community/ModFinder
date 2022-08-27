@@ -18,10 +18,10 @@ var nexus = NexusModsClient.Create(Environment.GetEnvironmentVariable("NEXUS_API
 
 var contents = Resources.internal_manifest;
 
-var details = IOTool.FromString<ModListBlob>(Resources.internal_manifest);
+var details = IOTool.FromString<MasterManifest>(Resources.internal_manifest);
 var tasks = new List<Task<ModDetailsInternal>>();
 
-foreach (var mod in details.m_AllMods)
+foreach (var mod in details.AvailableMods)
 {
   tasks.Add(Task.Run(async () =>
   {
