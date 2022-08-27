@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="background.png" />
     <None Remove="icons\drop-bg.png" />
+    <None Remove="test_mods.json" />
     <None Remove="UI_Button_Click.png" />
     <None Remove="UI_Button_Default.png" />
     <None Remove="UI_Button_Disable.png" />
@@ -44,6 +45,10 @@
     <None Remove="UI_ScrollVertical_Handl_Default.png" />
     <None Remove="UI_ScrollVertical_Handl_Hover.png" />
     <None Remove="UI_Toggler_BG.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="test_mods.json" />
   </ItemGroup>
 
   <ItemGroup>

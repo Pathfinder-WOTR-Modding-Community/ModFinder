@@ -6,7 +6,7 @@ using System.IO;
 
 namespace ModFinder.Util
 {
-    public class ModVersionConverter : JsonConverter<ModVersion>
+  public class ModVersionConverter : JsonConverter<ModVersion>
   {
     public override ModVersion ReadJson(JsonReader reader, Type objectType, ModVersion existingValue, bool hasExistingValue, JsonSerializer serializer)
     {

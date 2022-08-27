@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using ModFinder.Util;
 using ModFinder.UI;
 using ModFinder.Mod;
+using System.Reflection;
 
 namespace ModFinder
 {
@@ -28,12 +29,17 @@ namespace ModFinder
       showInstalledToggle.DataContext = modListData;
       showInstalledToggle.Click += ShowInstalledToggle_Click;
 
+      MasterManifest manifest;
 #if DEBUG
-      var manifest = IOTool.Read<MasterManifest>(Environment.GetEnvironmentVariable("MODFINDER_LOCAL_MANIFEST"));
+      using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("test_mods.json"))
+      {
+        using var reader = new StreamReader(stream);
+        manifest = IOTool.Read<MasterManifest>(reader.ReadToEnd());
+      }
 #else
-            using var client = new System.Net.WebClient();
-            var rawstring = client.DownloadString("https://raw.githubusercontent.com/BarleyFlour/ModFinder_WOTR/master/ManifestUpdater/Resources/master_manifest.json");
-            var manifest = ModFinderIO.FromString<ModListBlob>(rawstring);
+      using var client = new System.Net.WebClient();
+      var rawstring = client.DownloadString("https://raw.githubusercontent.com/BarleyFlour/ModFinder_WOTR/master/ManifestUpdater/Resources/master_manifest.json");
+      var manifest = ModFinderIO.FromString<ModListBlob>(rawstring);
 #endif
 
       installedMods.SelectedCellsChanged += (sender, e) =>
