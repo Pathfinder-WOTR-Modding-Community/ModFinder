@@ -8,17 +8,16 @@ namespace ModFinder.Mod
   /// </summary>
   public class ModDetails
   {
-    public ModManifest Manifest { get; set; }
+    public ModManifest Manifest { get; }
 
-    public ModVersion Latest { get; set; }
-
-    public List<ChangelogEntry> Changelog { get; set; }
-
-    public string DownloadLink { get; set; }
-
-    public ModVersion Current { get; set; }
+    public ModVersion InstalledVersion { get; set; }
 
     public InstallState InstallState { get; set; }
+
+    public ModDetails(ModManifest manifest)
+    {
+      Manifest = manifest;
+    }
   }
 
   public enum InstallState

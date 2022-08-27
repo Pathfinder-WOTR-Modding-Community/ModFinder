@@ -51,16 +51,16 @@ namespace ModFinder.Mod
   public class GitHubInfo
   {
     /// <summary>
-    /// Account name or organization name hosting the mod.
+    /// URL to the GitHub repo hosting the mod.
     /// </summary>
     [JsonProperty]
-    public string Owner { get; }
+    public string RepoUrl { get; }
 
     /// <summary>
-    /// Name of the mod repo.
+    /// Prefix of the release zip, e.g. "MyMod-1.0.0.zip" should use "MyMod". Used to find the latest release.
     /// </summary>
     [JsonProperty]
-    public string Repo { get; }
+    public string ZipPrefix { get; }
   }
 
   /// <summary>

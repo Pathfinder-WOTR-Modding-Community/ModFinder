@@ -22,30 +22,27 @@ namespace ModFinder.UI
     }
 
     public bool IsInstalled => Details.InstallState == InstallState.Installed;
-    public bool CanInstall =>
-      Details.InstallState == InstallState.None
-        || (Details.InstallState == InstallState.Installed && Details.Latest > Version);
-
+    public bool CanInstall => Details.InstallState != InstallState.Installing;
     public string InstallButtonText
     {
       get
       {
-        if (CanInstall)
-          return Details.Latest.ToString();
+        if (IsInstalled)
+          return Version.ToString();
         else if (Details.InstallState == InstallState.Installing)
-          return "installing...";
+          return "Installing...";
         else
-          return "up to date";
+          return "Install";
       }
     }
 
     public ModVersion Version
     {
-      get => Details.Current;
+      get => Details.InstalledVersion;
       set
       {
-        if (Details.Current == value) return;
-        Details.Current = value;
+        if (Details.InstalledVersion == value) return;
+        Details.InstalledVersion = value;
         Changed(nameof(Version), nameof(CanInstall), nameof(InstallButtonText));
       }
     }
@@ -78,9 +75,5 @@ namespace ModFinder.UI
     public string UniqueId => Identifier + "_" + ModType.ToString();
 
     public ModSource Source => Details.Manifest.Source;
-
-    public ModVersion Latest => Details.Latest;
-    public string DownloadLink => Details.DownloadLink;
-    public IEnumerable<ChangelogEntry> Changelog => Details.Changelog ?? Enumerable.Empty<ChangelogEntry>();
   }
 }

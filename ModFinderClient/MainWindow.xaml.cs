@@ -118,7 +118,7 @@ namespace ModFinder
         private void ProcessIntallResult(InstallResult result)
         {
             if (result.Complete)
-                result.Mod.InstallState = ModDetails.Installed;
+                result.Mod.InstallState = ModDetails.InstalledVersion;
             else if (result.Mod != null)
                 result.Mod.InstallState = ModDetails.NotInstalled;
 

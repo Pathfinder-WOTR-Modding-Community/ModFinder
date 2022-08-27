@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.IO.Compression;
 using ModFinder.Util;
 using ModFinder.UI;
+using System.Net;
+using System.Net.Http;
 
 namespace ModFinder.Mod
 {
@@ -16,6 +18,10 @@ namespace ModFinder.Mod
   {
     public static readonly string UMMInstallPath = Path.Combine(Main.WrathPath.FullName, "Mods");
 
+    /// <param name="requestedVersion">
+    /// Only used when restoring from the cache to prevent re-installing an old version. Installing remotely will only
+    /// get the latest release.
+    /// </param>
     public static async Task<InstallResult> Install(ModManifest manifest, ModVersion requestedVersion)
     {
       if (manifest.Id.Type != ModType.UMM)
@@ -38,95 +44,59 @@ namespace ModFinder.Mod
 
     private static async Task<InstallResult> InstallFromRemoteZip(ModManifest manifest)
     {
-      var name = mod.UniqueId + "_" + mod.Latest + ".zip"; //what about non-zip?
-      var file = Main.CachePath(name);
-      if (!File.Exists(file))
-      {
-        System.Net.WebClient web = new();
-        await web.DownloadFileTaskAsync(mod.DownloadLink, file);
-      }
+      var repoUri = new Uri(manifest.Source.GitHub.RepoUrl);
+      var releasesUri = new Uri(repoUri, "releases/latest");
 
-      return await InstallFromZip(file, mod.ModId);
+      // First get the download link
+      var client = new HttpClient();
+      var releases = client.PostAsync(releasesUri, content: null);
+      //WebClient web = new();
+      //  await web.DownloadFileTaskAsync(mod.DownloadLink, file);
+
+      return await InstallFromZip(null, null);// file, mod.ModId);
     }
 
-    public static async Task<InstallResult> InstallFromZip(string path, ModId? current = null)
+    public static async Task<InstallResult> InstallFromZip(string path, ModManifest manifest)
     {
       using var zip = ZipFile.OpenRead(path);
-      var asUmm = zip.Entries.FirstOrDefault(e => e.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
-      var asOwl = zip.Entries.FirstOrDefault(e => e.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
+      var manifestEntry =
+        zip.Entries.FirstOrDefault(e => e.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
 
-      string destination = null;
-
-      ModDetails newMod = new();
-
-      if (asUmm != null)
+      if (manifestEntry is null)
       {
-        destination = Path.Combine(Main.WrathPath.FullName, "Mods");
-
-        var info = IOTool.Read<UMMModInfo>(asUmm.Open());
-
-        newMod.ModId = new()
-        {
-          Id = info.Id,
-          Type = ModType.UMM,
-        };
-
-        newMod.Latest = ModVersion.Parse(info.Version);
-        newMod.Author = info.Author;
-        newMod.Source = ModSource.Other;
-        newMod.Name = info.DisplayName;
-
-        //Some mods are naughty and don't have a folder inside the zip
-        if (asUmm.FullName == asUmm.Name)
-          destination = Path.Combine(destination, info.Id);
-      }
-      else if (asOwl != null)
-      {
-        destination = Path.Combine(Main.WrathDataDir, "Modifications");
-
-        var info = IOTool.Read<OwlcatModInfo>(asOwl.Open());
-
-        newMod.ModId = new()
-        {
-          Id = info.UniqueName,
-          Type = ModType.Owlcat,
-        };
-
-        newMod.Latest = ModVersion.Parse(info.Version);
-        newMod.Author = info.Author;
-        newMod.Source = ModSource.Other;
-        newMod.Name = info.DisplayName;
-        newMod.Description = info.Description;
-
+        return new("Unable to find manifest.");
       }
 
-      if (current != null && current != newMod.ModId)
+      var info = IOTool.Read<UMMModInfo>(manifestEntry.Open());
+      if (manifest.Id.Id != info.Id)
       {
-        return new("Id in mod.zip does not match id in mod manifest");
+        return new($"ModId mismatch. Downloaded {manifest.Id.Id} but expected {info.Id}");
       }
 
-
-      if (!ModDatabase.Instance.TryGet(newMod.ModId, out var mod))
+      var destination = UMMInstallPath;
+      if (manifestEntry.FullName == manifestEntry.Name)
       {
-        mod = new(newMod);
-        ModDatabase.Instance.Add(mod);
+        // Handle mods without a folder in the zip
+        destination = Path.Combine(destination, info.Id);
       }
 
-      mod.Version = newMod.Latest;
+      ModDetails mod = new(manifest);
+      if (!ModDatabase.Instance.TryGet(mod.Manifest.Id, out var viewModel))
+      {
+        viewModel = new(mod);
+        ModDatabase.Instance.Add(viewModel);
+      }
+      viewModel.Version = ModVersion.Parse(info.Version);
 
       await Task.Run(() => zip.ExtractToDirectory(destination, true));
-
-      if (mod.ModId.Type == ModType.Owlcat)
-        Main.OwlcatMods.Add(mod.Identifier);
-
-      return new(mod, true);
+      return new(InstallState.Installed);
     }
 
     public static void ParseInstalledMods()
     {
       foreach (var mod in ModDatabase.Instance.AllMods)
       {
-        if (mod.InstallState == ModDetails.Installed)
+        if (mod.InstallState == ModDetails.InstalledVersion)
           mod.InstallState = ModDetails.NotInstalled;
       }
 
@@ -157,7 +127,7 @@ namespace ModFinder.Mod
               ModDatabase.Instance.Add(mod);
             }
 
-            mod.InstallState = ModDetails.Installed;
+            mod.InstallState = ModDetails.InstalledVersion;
             mod.Version = ModVersion.Parse(info.Version);
           }
         }
@@ -188,7 +158,7 @@ namespace ModFinder.Mod
               ModDatabase.Instance.Add(mod);
             }
 
-            mod.InstallState = ModDetails.Installed;
+            mod.InstallState = ModDetails.InstalledVersion;
             mod.Version = ModVersion.Parse(info.Version);
           }
         }

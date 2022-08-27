@@ -72,16 +72,16 @@ namespace ModFinder.Mod
     /// <param name="ModFolder">"Folder to be removed (Folder that contains your info.json, assemblies, etc...)"</param>
     public static void UninstallAndCache(ModViewModel mod, DirectoryInfo ModFolder)
     {
-      if (mod.ModType == ModType.Owlcat)
-      {
-        Main.OwlcatMods.Remove(mod.Identifier);
-      }
-      if (!Directory.Exists(Path.Combine(Main.AppFolder, ModFolder.Name)))
-      {
-        FileSystem.CopyDirectory(ModFolder.FullName, Path.Combine(Main.AppFolder, "CachedMods", ModFolder.Name));
-        Directory.Delete(ModFolder.FullName, true);
-        CachedMods.Add(new ModCache(new DirectoryInfo(Path.Combine(Main.AppFolder, "CachedMods", ModFolder.Name)), mod.Identifier));
-      }
+      //if (mod.ModType == ModType.Owlcat)
+      //{
+      //  Main.OwlcatMods.Remove(mod.Identifier);
+      //}
+      //if (!Directory.Exists(Path.Combine(Main.AppFolder, ModFolder.Name)))
+      //{
+      //  FileSystem.CopyDirectory(ModFolder.FullName, Path.Combine(Main.AppFolder, "CachedMods", ModFolder.Name));
+      //  Directory.Delete(ModFolder.FullName, true);
+      //  CachedMods.Add(new ModCache(new DirectoryInfo(Path.Combine(Main.AppFolder, "CachedMods", ModFolder.Name)), mod.Identifier));
+      //}
     }
 
     private class CacheManifest

@@ -53,7 +53,7 @@ namespace ModFinder.UI
     {
       if (mod.InstallState == ModDetails.NotInstalled)
         _ = Installed.Remove(mod);
-      else if (mod.InstallState == ModDetails.Installed && !Installed.Contains(mod))
+      else if (mod.InstallState == ModDetails.InstalledVersion && !Installed.Contains(mod))
         Installed.Add(mod);
     }
 
