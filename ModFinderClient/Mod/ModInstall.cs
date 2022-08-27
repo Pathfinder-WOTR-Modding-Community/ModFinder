@@ -7,6 +7,7 @@ using ModFinder.Util;
 using ModFinder.UI;
 using System.Net;
 using Newtonsoft.Json;
+using System.Net.Cache;
 
 namespace ModFinder.Mod
 {
@@ -86,13 +87,25 @@ namespace ModFinder.Mod
 
     public static void CheckInstalledMods()
     {
+      IOTool.Safe(() => CheckInstalledModsInternal());
+    }
+
+    private static void CheckInstalledModsInternal()
+    {
+      foreach (var mod in ModDatabase.Instance.AllMods)
+      {
+        // Reset install state to make sure we capture any that were, for example, uninstalled but not updated.
+        mod.InstallState = InstallState.None;
+        mod.InstalledVersion = default;
+      }
+
       var modDir = Main.WrathPath.GetDirectories("Mods");
       if (modDir.Length > 0)
       {
-        foreach (var modFiles in modDir[0].GetDirectories())
+        foreach (var dir in modDir[0].GetDirectories())
         {
           var infoFile =
-            modFiles.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
+            dir.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
           if (infoFile != null)
           {
             var info = IOTool.Read<UMMModInfo>(infoFile.FullName);
@@ -105,6 +118,7 @@ namespace ModFinder.Mod
               ModDatabase.Instance.Add(mod);
             }
 
+            mod.ModDir = dir;
             mod.InstallState = InstallState.Installed;
             mod.InstalledVersion = ModVersion.Parse(info.Version);
           }

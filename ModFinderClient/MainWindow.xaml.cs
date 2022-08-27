@@ -84,7 +84,7 @@ namespace ModFinder
       if (!File.Exists(path))
         return false;
 
-      if (System.IO.Path.GetExtension(path) != ".zip")
+      if (Path.GetExtension(path) != ".zip")
         return false;
 
       //BARLEY CODE HERE
@@ -124,7 +124,13 @@ namespace ModFinder
     {
       if (result.Error != null)
       {
-        _ = MessageBox.Show(this, "Could not install mod: " + result.Error, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        _ = MessageBox.Show(
+          this, "Could not install mod: " + result.Error, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+      }
+      else
+      {
+
+        ModInstaller.CheckInstalledMods();
       }
     }
 
@@ -186,6 +192,13 @@ namespace ModFinder
       var contents = DescriptionPopup.FindName("Contents") as FlowDocumentScrollViewer;
       contents.Document = proxy.Render();
       DescriptionPopup.IsOpen = true;
+    }
+
+    private void UninstallMod(object sender, RoutedEventArgs e)
+    {
+      var mod = (sender as MenuItem).DataContext as ModViewModel;
+      ModCache.UninstallAndCache(mod);
+      mod.MarkUninstalled();
     }
   }
 

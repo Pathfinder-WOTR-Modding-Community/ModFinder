@@ -1,5 +1,6 @@
 ﻿using ModFinder.Mod;
 using System.ComponentModel;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace ModFinder.UI
@@ -25,6 +26,7 @@ namespace ModFinder.UI
     }
 
     public bool IsInstalled => Details.InstallState == InstallState.Installed;
+    public bool CanUninstall => IsInstalled;
     public bool CanInstall => !IsInstalled || LatestVersion > InstalledVersion;
     public string InstallButtonText
     {
@@ -44,6 +46,13 @@ namespace ModFinder.UI
     }
 
     public ModManifest Manifest => Details.Manifest;
+    public DirectoryInfo ModDir;
+
+    public void MarkUninstalled()
+    {
+      InstalledVersion = default;
+      InstallState = InstallState.None;
+    }
 
     public ModVersion LatestVersion
     {

@@ -43,7 +43,10 @@ namespace ModFinder.Mod
             var manifest = JsonConvert.DeserializeObject<CacheManifest>(File.ReadAllText(ManifestFile));
             foreach (var mod in manifest.Mods)
             {
-              cachedMods.Add(mod.Id, mod.Dir);
+              if (Directory.Exists(mod.Dir))
+              {
+                cachedMods.Add(mod.Id, mod.Dir);
+              }
             }
           });
       }
@@ -54,7 +57,7 @@ namespace ModFinder.Mod
     /// <summary>
     /// Attempts to restore a mod from the local cache.
     /// </summary>
-    /// <returns>True if the mod was restored, false otherwise</returns>
+    /// <returns>Install dir if installation succeeded, an empty string otherwise</returns>
     public static bool TryRestoreMod(ModId id)
     {
       if (id.Type != ModType.UMM)
@@ -68,29 +71,26 @@ namespace ModFinder.Mod
       }
 
       var cachePath = CachedMods[id];
-      FileSystem.CopyDirectory(cachePath, Path.Combine(ModInstaller.UMMInstallPath, Path.GetDirectoryName(cachePath)));
+      var installPath = Path.Combine(ModInstaller.UMMInstallPath, new DirectoryInfo(cachePath).Name);
+      FileSystem.CopyDirectory(cachePath, installPath);
       Directory.Delete(cachePath, true);
       CachedMods.Remove(id);
       UpdateManifest();
       return true;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="mod"> "ModDetails of the mod to be Cached/Uninstalled" </param>
-    /// <param name="ModFolder">"Folder to be removed (Folder that contains your info.json, assemblies, etc...)"</param>
-    public static void UninstallAndCache(ModViewModel mod, DirectoryInfo ModFolder)
+    public static void UninstallAndCache(ModViewModel mod)
     {
       if (mod.ModType != ModType.UMM)
       {
         throw new InvalidOperationException($"{mod.ModType} is not supported");
       }
-      if (!Directory.Exists(Path.Combine(Main.AppFolder, ModFolder.Name)))
+
+      var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);
+      if (!Directory.Exists(cachePath))
       {
-        var cachePath = Path.Combine(CacheDir, ModFolder.Name);
-        FileSystem.CopyDirectory(ModFolder.FullName, cachePath);
-        Directory.Delete(ModFolder.FullName, true);
+        FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);
+        Directory.Delete(mod.ModDir.FullName, true);
         CachedMods.Add(mod.ModId, cachePath);
         IOTool.Safe(UpdateManifest);
       }

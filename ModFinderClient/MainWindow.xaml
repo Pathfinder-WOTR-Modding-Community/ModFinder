@@ -399,7 +399,7 @@
                                                 <ContextMenu Style="{StaticResource OwlContextMenu}">
                                                     <MenuItem Header="Show description" Click="ShowModDescription"></MenuItem>
                                                     <MenuItem Header="Show changelog" Click="ShowModChangelog"></MenuItem>
-                                                    <MenuItem Header="Uninstall" IsEnabled="{Binding CanUninstall}"></MenuItem>
+                                                    <MenuItem Header="Uninstall" IsEnabled="{Binding CanUninstall}" Click="UninstallMod"></MenuItem>
                                                 </ContextMenu>
                                             </Button.ContextMenu>
                                         </Button>
