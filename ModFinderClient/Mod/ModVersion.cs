@@ -62,7 +62,7 @@ namespace ModFinder.Mod
       return version;
     }
 
-    public static ModVersion FromInfo(VersionRelease version)
+    public static ModVersion FromRelease(Release version)
     {
       var modVersion = Parse(version.Version);
       modVersion.DownloadUrl = version.Url;

@@ -26,14 +26,14 @@ namespace ModFinder.UI
       }
     }
 
-    private static void RenderSection(FlowDocument doc, VersionRelease version, ModVersion installedVersion)
+    private static void RenderSection(FlowDocument doc, Release version, ModVersion installedVersion)
     {
       if (string.IsNullOrEmpty(version.Changelog))
         return;
 
       var section = new Section();
 
-      var modVersion = ModVersion.FromInfo(version);
+      var modVersion = ModVersion.FromRelease(version);
       if (modVersion >= installedVersion)
         section.Foreground = Brushes.Black;
       else

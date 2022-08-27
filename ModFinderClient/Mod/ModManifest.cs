@@ -10,7 +10,13 @@ namespace ModFinder.Mod
   public class MasterManifest
   {
     [JsonProperty]
-    public List<ModManifest> AvailableMods;
+    public List<string> ModManifestUrls;
+
+    [JsonConstructor]
+    private MasterManifest(List<string> modManifestUrls)
+    {
+      ModManifestUrls = modManifestUrls;
+    }
   }
 
   /// <summary>
@@ -18,71 +24,169 @@ namespace ModFinder.Mod
   /// </summary>
   public class ModManifest
   {
+    /// <summary>
+    /// Required. Display name in ModFinder.
+    /// </summary>
     [JsonProperty]
     public string Name { get; }
 
+    /// <summary>
+    /// Required. Mod author displayed in ModFinder.
+    /// </summary>
     [JsonProperty]
     public string Author { get; }
 
-    [JsonProperty]
-    public string Description { get; }
-
+    /// <summary>
+    /// Required. Unique identifier for your mod.
+    /// </summary>
     [JsonProperty]
     public ModId Id { get; }
 
+    /// <summary>
+    /// Required. Indicates which service hosts your mod. Needed to handle download / install behavior.
+    /// </summary>
     [JsonProperty]
-    public ModSource Source { get; }
+    public HostService Service { get; }
+
+    /// <summary>
+    /// Required. Details regarding your mod versions and how to download it.
+    /// </summary>
+    [JsonProperty]
+    public VersionInfo Version { get; }
+
+    /// <summary>
+    /// Description displayed when users requests more info on your mod. Supports BBCode.
+    /// </summary>
+    [JsonProperty]
+    public string Description { get; }
+
+    /// <summary>
+    /// Link to the home page of your mod.
+    /// </summary>
+    [JsonProperty]
+    public HomePage Homepage { get; }
 
     [JsonConstructor]
-    private ModManifest(string name, string author, string description, ModId id, ModSource source)
+    public ModManifest(
+      string name,
+      string author,
+      ModId id,
+      HostService hostService,
+      VersionInfo versionInfo,
+      string description = default,
+      HomePage homepage = default)
     {
       Name = name;
       Author = author;
-      Description = description;
       Id = id;
-      Source = source;
+      Service = hostService;
+      Version = versionInfo;
+      Description = description;
+      Homepage = homepage;
     }
 
-    private ModManifest(string name, string author, ModId id, ModSource source) : this(name, author, "", id, source) { }
-
-    public static ModManifest FromLocalMod(UMMModInfo info)
+    public static ModManifest LocalUMM(UMMModInfo info)
     {
-      return new(info.DisplayName, info.Author, new(info.Id, ModType.UMM), new());
+      return new(info.DisplayName, info.Author, new(info.Id, ModType.UMM), HostService.Other, default);
     }
   }
 
   /// <summary>
-  /// Details about where the mod is hosted.
+  /// Indicates which 
   /// </summary>
-  /// 
-  /// <remarks>This should be kept a union.</remarks>
-  public class ModSource
-  {
-    [JsonProperty]
-    public GitHubInfo GitHub { get; }
-
-    [JsonConstructor]
-    public ModSource(GitHubInfo gitHub = null)
-    {
-      GitHub = gitHub;
-    }
-  }
-
-  /// <summary>
-  /// Details about a mod hosted on GitHub.
-  /// </summary>
-  public class GitHubInfo
+  public enum HostService
   {
     /// <summary>
-    /// URL hosting details about the mod in a JSON file with syntax using <see cref="ModFinderInfo"/>.
+    /// GitHub supports directly downloading as long as you specify the *.zip url in LatestVersion.
+    /// </summary>
+    GitHub,
+    Nexus,
+    Other,
+  }
+
+  /// <summary>
+  /// Wrapper to display a link to your mod's home page.
+  /// </summary>
+  public struct HomePage
+  {
+    [JsonProperty]
+    public string Url { get; }
+
+    /// <summary>
+    /// Optional text to display like a hyperlink
     /// </summary>
     [JsonProperty]
-    public string ModFinderInfoUrl { get; }
+    public string LinkText { get; }
 
     [JsonConstructor]
-    private GitHubInfo(string modFinderInfoUrl)
+    public HomePage(string url, string linkText = "")
     {
-      ModFinderInfoUrl = modFinderInfoUrl;
+      Url = url;
+      LinkText = linkText;
+    }
+  }
+
+  /// <summary>
+  /// Contains details about your mod's versions.
+  /// </summary>
+  public struct VersionInfo
+  {
+    /// <summary>
+    /// Required. Data needed to link to or fetch the latest version of your mod.
+    /// </summary>
+    [JsonProperty]
+    public Release LatestVersion { get; }
+
+    /// <summary>
+    /// Optional list of old release versions for generating a changelog.
+    /// </summary>
+    [JsonProperty]
+    public List<Release> OldVersions { get; }
+
+    /// <summary>
+    /// Set to true if you list your old versions in order of newest to oldest so the changelog renders correctly.
+    /// </summary>
+    [JsonProperty]
+    public bool ReverseVersionOrder { get; }
+
+    [JsonConstructor]
+    public VersionInfo(Release latestVersion, List<Release> oldVersions, bool reverseVersionOrder)
+    {
+      LatestVersion = latestVersion;
+      OldVersions = oldVersions;
+      ReverseVersionOrder = reverseVersionOrder;
+    }
+  }
+
+  /// <summary>
+  /// Details about a release of your mod.
+  /// </summary>
+  public class Release
+  {
+    /// <summary>
+    /// Required. String representation of your <see cref="ModVersion"/>.
+    /// </summary>
+    [JsonProperty]
+    public string Version { get; }
+
+    /// <summary>
+    /// Required. Download url for this version.
+    /// </summary>
+    [JsonProperty]
+    public string Url { get; }
+
+    /// <summary>
+    /// Description of the changes in this release. Supports BBCode.
+    /// </summary>
+    [JsonProperty]
+    public string Changelog { get; }
+
+    [JsonConstructor]
+    public Release(string version, string url, string changelog)
+    {
+      Version = version;
+      Url = url;
+      Changelog = changelog;
     }
   }
 
@@ -103,7 +207,7 @@ namespace ModFinder.Mod
   public class ModId
   {
     /// <summary>
-    /// The unique ID of the mod.
+    /// Required. The unique ID of the mod.
     /// </summary>
     /// 
     /// <remarks>
@@ -114,7 +218,7 @@ namespace ModFinder.Mod
     public string Id { get; }
 
     /// <summary>
-    /// The type of mod, currently either UMM or Owlcat
+    /// Required. The type of mod, currently either UMM or Owlcat
     /// </summary>
     [JsonProperty]
     public ModType Type { get; }
