@@ -5,19 +5,20 @@ namespace ModFinder.Mod
   /// <summary>
   /// Current state of the mod.
   /// </summary>
-  public class ModDetails
+  public class ModStatus
   {
-    public ModManifest Manifest { get; }
+    public ModVersion Version { get; set; }
 
-    public ModVersion InstalledVersion { get; set; }
+    public InstallState State { get; set; }
 
-    public ModVersion LatestVersion { get; set; }
-
-    public InstallState InstallState { get; set; }
-
-    public ModDetails(ModManifest manifest)
+    public bool Installed()
     {
-      Manifest = manifest;
+      return State == InstallState.Installed;
+    }
+
+    public bool IsVersionBehind(ModVersion latest)
+    {
+      return latest > Version;
     }
   }
 

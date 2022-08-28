@@ -10,13 +10,14 @@ namespace ModFinder.UI
   {
     public static void Render(FlowDocument doc, ModViewModel mod)
     {
-      RenderSection(doc, mod.ModFinderInfo.LatestVersion, mod.InstalledVersion);
+      var versionInfo = mod.Manifest.Version;
+      RenderSection(doc, versionInfo.Latest, mod.InstalledVersion);
 
-      if (mod.ModFinderInfo.OldVersions is null)
+      if (versionInfo.OldVersions is null)
         return;
 
-      var oldVersions = mod.ModFinderInfo.OldVersions;
-      if (mod.ModFinderInfo.ReverseVersionOrder)
+      var oldVersions = versionInfo.OldVersions;
+      if (versionInfo.ReverseVersionOrder)
       {
         oldVersions.Reverse();
       }
@@ -39,7 +40,7 @@ namespace ModFinder.UI
       else
         section.Foreground = Brushes.DimGray;
 
-      var heading = new Bold(new Run(version.Version));
+      var heading = new Bold(new Run(version.VersionString));
       heading.FontSize += 12;
       section.Blocks.Add(new Paragraph(heading));
 

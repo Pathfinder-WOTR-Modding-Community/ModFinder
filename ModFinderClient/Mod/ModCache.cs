@@ -71,7 +71,7 @@ namespace ModFinder.Mod
       }
 
       var cachePath = CachedMods[id];
-      var installPath = Path.Combine(ModInstaller.UMMInstallPath, new DirectoryInfo(cachePath).Name);
+      var installPath = Path.Combine(Main.UMMInstallPath, new DirectoryInfo(cachePath).Name);
       FileSystem.CopyDirectory(cachePath, installPath);
       Directory.Delete(cachePath, true);
       CachedMods.Remove(id);
@@ -81,9 +81,9 @@ namespace ModFinder.Mod
 
     public static void UninstallAndCache(ModViewModel mod)
     {
-      if (mod.ModType != ModType.UMM)
+      if (mod.Type != ModType.UMM)
       {
-        throw new InvalidOperationException($"{mod.ModType} is not supported");
+        throw new InvalidOperationException($"{mod.Type} is not supported");
       }
 
       var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);

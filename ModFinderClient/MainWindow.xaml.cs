@@ -12,6 +12,7 @@ using ModFinder.Mod;
 using System.Reflection;
 using Newtonsoft.Json;
 using System.Net;
+using ModFinder.Util;
 
 namespace ModFinder
 {
@@ -20,26 +21,26 @@ namespace ModFinder
   /// </summary>
   public partial class MainWindow : Window
   {
-    private readonly ModDatabase modListData = ModDatabase.Instance;
+    private static readonly ModDatabase ModDB = ModDatabase.Instance;
+    private static MasterManifest Manifest;
 
     public MainWindow()
     {
       InitializeComponent();
-      installedMods.DataContext = modListData;
-      showInstalledToggle.DataContext = modListData;
+      installedMods.DataContext = ModDB;
+      showInstalledToggle.DataContext = ModDB;
       showInstalledToggle.Click += ShowInstalledToggle_Click;
 
-      MasterManifest manifest;
 #if DEBUG
-      using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_mods.json"))
+      using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_manifest.json"))
       {
         using var reader = new StreamReader(stream);
-        manifest = JsonConvert.DeserializeObject<MasterManifest>(reader.ReadToEnd());
+        Manifest = JsonConvert.DeserializeObject<MasterManifest>(reader.ReadToEnd());
       }
 #else
       using var client = new WebClient();
-      var rawstring = client.DownloadString("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/mods.json");
-      manifest = JsonConvert.DeserializeObject<MasterManifest>(rawstring);
+      var rawstring = client.DownloadString("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/manifest.json");
+      Manifest = JsonConvert.DeserializeObject<MasterManifest>(rawstring);
 #endif
 
       installedMods.SelectedCellsChanged += (sender, e) =>
@@ -48,11 +49,8 @@ namespace ModFinder
           installedMods.SelectedItem = null;
       };
 
-      foreach (var mod in manifest.AvailableMods)
-        modListData.Add(new(mod));
-
-      ModInstaller.CheckInstalledMods();
-      ModInstaller.CheckForUpdates();
+      RefreshManifest();
+      RefreshInstalledMods();
 
       // Do magic window dragging regardless where they click
       MouseDown += (sender, e) =>
@@ -77,6 +75,64 @@ namespace ModFinder
       // Drag drop nonsense
       dropTarget.Drop += DropTarget_Drop;
       dropTarget.DragOver += DropTarget_DragOver;
+    }
+
+    public static void RefreshManifest()
+    {
+      foreach (var url in Manifest.ModManifestUrls)
+      {
+        using var client = new WebClient();
+        var rawstring = client.DownloadString(url);
+        var manifest = JsonConvert.DeserializeObject<ModManifest>(rawstring);
+        if (ModDB.TryGet(manifest.Id, out var viewModel))
+        {
+          viewModel.Refresh(manifest);
+        }
+        else
+        {
+          ModDB.Add(new(manifest));
+        }
+      }
+    }
+
+    public static void RefreshInstalledMods()
+    {
+      IOTool.Safe(() => CheckInstalledModsInternal());
+    }
+
+    private static void CheckInstalledModsInternal()
+    {
+      foreach (var mod in ModDatabase.Instance.AllMods)
+      {
+        // Reset install state to make sure we capture any that were, for example, uninstalled but not updated.
+        mod.InstallState = InstallState.None;
+        mod.InstalledVersion = default;
+      }
+
+      var modDir = Main.WrathPath.GetDirectories("Mods");
+      if (modDir.Length > 0)
+      {
+        foreach (var dir in modDir[0].GetDirectories())
+        {
+          var infoFile =
+            dir.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
+          if (infoFile != null)
+          {
+            var info = IOTool.Read<UMMModInfo>(infoFile.FullName);
+
+            var manifest = ModManifest.ForLocal(info);
+            if (!ModDatabase.Instance.TryGet(manifest.Id, out var mod))
+            {
+              mod = new(manifest);
+              ModDatabase.Instance.Add(mod);
+            }
+
+            mod.ModDir = dir;
+            mod.InstallState = InstallState.Installed;
+            mod.InstalledVersion = ModVersion.Parse(info.Version);
+          }
+        }
+      }
     }
 
     public static bool CheckIsMod(string path)
@@ -129,8 +185,7 @@ namespace ModFinder
       }
       else
       {
-
-        ModInstaller.CheckInstalledMods();
+        RefreshInstalledMods();
       }
     }
 
@@ -156,7 +211,7 @@ namespace ModFinder
     private void ShowInstalledToggle_Click(object sender, RoutedEventArgs e)
     {
       var togglebutton = sender as ToggleButton;
-      modListData.ShowInstalled = togglebutton.IsChecked ?? false;
+      ModDB.ShowInstalled = togglebutton.IsChecked ?? false;
     }
 
     private void MoreOptions_Click(object sender, RoutedEventArgs e)
@@ -169,8 +224,8 @@ namespace ModFinder
 
     private void LookButton_Click(object sender, RoutedEventArgs e)
     {
-      ModInstaller.CheckInstalledMods();
-      ModInstaller.CheckForUpdates();
+      RefreshManifest();
+      RefreshInstalledMods();
     }
 
     private void ShowModDescription(object sender, RoutedEventArgs e)
@@ -198,7 +253,7 @@ namespace ModFinder
     {
       var mod = (sender as MenuItem).DataContext as ModViewModel;
       ModCache.UninstallAndCache(mod);
-      mod.MarkUninstalled();
+      mod.OnUninstalled();
     }
   }
 

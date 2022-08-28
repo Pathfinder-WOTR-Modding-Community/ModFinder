@@ -379,9 +379,9 @@
                     <DataGrid.CanUserResizeRows>False</DataGrid.CanUserResizeRows>
                     <DataGrid.Background>Transparent</DataGrid.Background>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name, Mode=OneWay}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Author" Width="*" Binding="{Binding Author, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTextColumn Header="Installed" Width="120" Binding="{Binding InstalledVersion, Mode=OneWay}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Name" Width="300" Binding="{Binding Name, Mode=OneWay}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Author" Width="220" Binding="{Binding Author, Mode=OneWay}"></DataGridTextColumn>
+            <DataGridTextColumn Header="Status" Width="*" Binding="{Binding Status, Mode=OneWay}"></DataGridTextColumn>
             <DataGridTextColumn Header="From" Width="120" Binding="{Binding SourceString, Mode=OneWay}"></DataGridTextColumn>
                         <DataGridTemplateColumn Width="140">
                             <DataGridTemplateColumn.CellTemplate>

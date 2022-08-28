@@ -115,6 +115,8 @@ namespace ModFinder
       }
     }
 
+    public static readonly string UMMInstallPath = Path.Combine(WrathPath.FullName, "Mods");
+
     private static DirectoryInfo _WrathPath;
   }
 }

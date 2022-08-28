@@ -9,6 +9,10 @@ namespace ModFinder.Mod
   /// </summary>
   public class MasterManifest
   {
+    /// <summary>
+    /// List of URLs linking to a mod's <see cref="ModManifest"/> JSON file. Should be directly accessible from this
+    /// URL, e.g. the raw link for a JSON file hosted on GitHub.
+    /// </summary>
     [JsonProperty]
     public List<string> ModManifestUrls;
 
@@ -72,7 +76,7 @@ namespace ModFinder.Mod
       string author,
       ModId id,
       HostService hostService,
-      VersionInfo versionInfo,
+      VersionInfo version,
       string description = default,
       HomePage homepage = default)
     {
@@ -80,12 +84,12 @@ namespace ModFinder.Mod
       Author = author;
       Id = id;
       Service = hostService;
-      Version = versionInfo;
+      Version = version;
       Description = description;
       Homepage = homepage;
     }
 
-    public static ModManifest LocalUMM(UMMModInfo info)
+    public static ModManifest ForLocal(UMMModInfo info)
     {
       return new(info.DisplayName, info.Author, new(info.Id, ModType.UMM), HostService.Other, default);
     }
@@ -135,7 +139,7 @@ namespace ModFinder.Mod
     /// Required. Data needed to link to or fetch the latest version of your mod.
     /// </summary>
     [JsonProperty]
-    public Release LatestVersion { get; }
+    public Release Latest { get; }
 
     /// <summary>
     /// Optional list of old release versions for generating a changelog.
@@ -150,9 +154,9 @@ namespace ModFinder.Mod
     public bool ReverseVersionOrder { get; }
 
     [JsonConstructor]
-    public VersionInfo(Release latestVersion, List<Release> oldVersions, bool reverseVersionOrder)
+    public VersionInfo(Release latest, List<Release> oldVersions, bool reverseVersionOrder)
     {
-      LatestVersion = latestVersion;
+      Latest = latest;
       OldVersions = oldVersions;
       ReverseVersionOrder = reverseVersionOrder;
     }
@@ -167,7 +171,7 @@ namespace ModFinder.Mod
     /// Required. String representation of your <see cref="ModVersion"/>.
     /// </summary>
     [JsonProperty]
-    public string Version { get; }
+    public string VersionString { get; }
 
     /// <summary>
     /// Required. Download url for this version.
@@ -182,9 +186,9 @@ namespace ModFinder.Mod
     public string Changelog { get; }
 
     [JsonConstructor]
-    public Release(string version, string url, string changelog)
+    public Release(string versionString, string url, string changelog)
     {
-      Version = version;
+      VersionString = versionString;
       Url = url;
       Changelog = changelog;
     }
