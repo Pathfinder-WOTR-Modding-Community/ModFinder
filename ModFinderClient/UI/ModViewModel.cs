@@ -1,7 +1,9 @@
 ﻿using ModFinder.Mod;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace ModFinder.UI
 {
@@ -16,6 +18,7 @@ namespace ModFinder.UI
 
     public ModManifest Manifest;
     public Release Latest => Manifest.Version.Latest;
+    public string HomepageUrl => Manifest.HomepageUrl;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -40,6 +43,7 @@ namespace ModFinder.UI
 
     public string Service => GetSourceText();
     public bool IsInstalled => Status.Installed();
+    public bool CanInstallOrDownload => CanInstall || CanDownload;
     public bool CanInstall =>
       Manifest.Service.IsGitHub()
       && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
@@ -49,6 +53,9 @@ namespace ModFinder.UI
       Manifest.Service.IsNexus()
       && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
       && !string.IsNullOrEmpty(Latest.Url);
+
+    public Visibility UninstallVisibility => GetUninstallVisibility();
+    public Visibility HomepageVisibility => GetHomepageVisibility();
 
     public string StatusText => GetStatusText();
     public string ButtonText => GetButtonText();
@@ -64,7 +71,7 @@ namespace ModFinder.UI
         if (_modDir is not null && _modDir.FullName == value.FullName)
           return;
         _modDir = value;
-        Changed(nameof(CanUninstall));
+        Changed(nameof(CanUninstall), nameof(UninstallVisibility));
       }
     }
 
@@ -142,9 +149,28 @@ namespace ModFinder.UI
       return "Up to date";
     }
 
+    private Visibility GetHomepageVisibility()
+    {
+      if (!string.IsNullOrEmpty(HomepageUrl))
+        return Visibility.Visible;
+      return Visibility.Collapsed;
+    }
+
+    private Visibility GetUninstallVisibility()
+    {
+      if (CanUninstall)
+        return Visibility.Visible;
+      return Visibility.Collapsed;
+    }
+
     private void NotifyAll()
     {
-      Changed(nameof(Name), nameof(Author), nameof(Description), nameof(Service));
+      Changed(
+        nameof(Name),
+        nameof(Author),
+        nameof(Description),
+        nameof(Service),
+        nameof(HomepageVisibility));
       NotifyStatus();
     }
 

@@ -4,6 +4,7 @@ using ModFinder.Util;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -279,6 +280,17 @@ namespace ModFinder
       var mod = (sender as MenuItem).DataContext as ModViewModel;
       ModCache.UninstallAndCache(mod);
       mod.OnUninstalled();
+    }
+
+    private void OpenHomepage(object sender, RoutedEventArgs e)
+    {
+      var mod = (sender as MenuItem).DataContext as ModViewModel;
+      Process.Start(
+        new ProcessStartInfo
+        {
+          FileName = mod.HomepageUrl,
+          UseShellExecute = true
+        });
     }
   }
 

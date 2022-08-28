@@ -392,14 +392,15 @@
                       <ColumnDefinition Width="30"></ColumnDefinition>
                       <ColumnDefinition Width="8"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button  Style="{StaticResource OwlButton}"  Height="30" IsEnabled="{Binding CanInstall}" Content="{Binding ButtonText}" Click="InstallOrUpdateMod" Tag="{Binding}">
+                    <Button  Style="{StaticResource OwlButton}"  Height="30" IsEnabled="{Binding CanInstallOrDownload}" Content="{Binding ButtonText}" Click="InstallOrUpdateMod" Tag="{Binding}">
                     </Button>
                     <Button Grid.Column="1" x:Name="MoreOptions" Style="{StaticResource OwlButton}"  Height="30"  Content="..." Tag="{Binding}" Click="MoreOptions_Click">
                       <Button.ContextMenu>
                         <ContextMenu Style="{StaticResource OwlContextMenu}">
                           <MenuItem Header="Show description" Click="ShowModDescription"></MenuItem>
                           <MenuItem Header="Show changelog" Click="ShowModChangelog"></MenuItem>
-                          <MenuItem Header="Uninstall" IsEnabled="{Binding CanUninstall}" Click="UninstallMod"></MenuItem>
+                          <MenuItem Header="Uninstall" Visibility="{Binding UninstallVisibility}" Click="UninstallMod"></MenuItem>
+                          <MenuItem Header="Open homepage" Visibility="{Binding HomepageVisibility}" Click="OpenHomepage"></MenuItem>
                         </ContextMenu>
                       </Button.ContextMenu>
                     </Button>
