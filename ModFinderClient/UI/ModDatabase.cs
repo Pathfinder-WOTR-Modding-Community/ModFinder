@@ -38,6 +38,7 @@ namespace ModFinder.UI
       set
       {
         _ShowInstalled = value;
+        UpdateFilter();
         PropertyChanged?.Invoke(this, new(nameof(ShowInstalled)));
         PropertyChanged?.Invoke(this, new(nameof(HeaderNameText)));
         PropertyChanged?.Invoke(this, new(nameof(Items)));
