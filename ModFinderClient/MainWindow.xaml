@@ -272,7 +272,7 @@
               <ColumnDefinition.Width>*</ColumnDefinition.Width>
             </ColumnDefinition>
             <ColumnDefinition>
-              <ColumnDefinition.Width>150</ColumnDefinition.Width>
+              <ColumnDefinition.Width>250</ColumnDefinition.Width>
             </ColumnDefinition>
             <ColumnDefinition>
               <ColumnDefinition.Width>230</ColumnDefinition.Width>
@@ -291,14 +291,10 @@
           <TextBlock x:Name="Header" FontSize="30" FontFamily="Constantia" FontWeight="Bold" Foreground="DarkSlateGray" Padding="0,0,0,10" Grid.Column="0">
                         Modfinder: Wrath of the Righteous
           </TextBlock>
-          <ComboBox Grid.Column="1" x:Name="Tags" Height="34" IsEditable="True" IsTextSearchEnabled="True" StaysOpenOnEdit="True" Width="150" TextBoxBase.TextChanged="Tags_TextChanged">
-            <ComboBox.ItemTemplate>
-              <DataTemplate>
-                <CheckBox Name="Tag" Width="150" Checked="Tag_Checked" Unchecked="Tag_Unchecked" Content="{Binding Tag}" IsChecked="{Binding Checked}">
-                </CheckBox>
-              </DataTemplate>
-            </ComboBox.ItemTemplate>
-          </ComboBox>
+          <TextBox
+            Grid.Column="1" x:Name="Filter" Height="34" Width="250" FontFamily="Constantia" VerticalContentAlignment="Center"
+            Background="Transparent" BorderThickness="3" TextBoxBase.TextChanged="Filter_TextChanged">
+          </TextBox>
           <ToggleButton d:DataContext="{d:DesignInstance Type=local:ModDatabase}" x:Name="showInstalledToggle" Grid.Column="2" Width="230" IsChecked="{Binding ShowInstalled}">
             <ToggleButton.Template>
               <ControlTemplate TargetType="ToggleButton">

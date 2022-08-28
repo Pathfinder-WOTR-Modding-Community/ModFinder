@@ -100,6 +100,16 @@ namespace ModFinder.UI
       }
     }
 
+    public bool MatchesAuthor(string author)
+    {
+      return Author is not null && Author.Contains(author, System.StringComparison.CurrentCultureIgnoreCase);
+    }
+
+    public bool MatchesName(string name)
+    {
+      return Name is not null && Name.Contains(name, System.StringComparison.CurrentCultureIgnoreCase);
+    }
+
     public bool HasTag(Tag tag)
     {
       return Manifest.Tags.Contains(tag);

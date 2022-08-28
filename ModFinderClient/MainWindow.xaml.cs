@@ -26,8 +26,6 @@ namespace ModFinder
     private static readonly ModDatabase ModDB = ModDatabase.Instance;
     private static MasterManifest Manifest;
 
-    private static readonly List<FilterTag> AllFilters = new();
-
     public MainWindow()
     {
       InitializeComponent();
@@ -52,10 +50,6 @@ namespace ModFinder
         if (e.AddedCells.Count > 0)
           installedMods.SelectedItem = null;
       };
-
-      foreach (var tag in Enum.GetValues<Tag>())
-        AllFilters.Add(new(tag));
-      Tags.ItemsSource = AllFilters;
 
       RefreshAllManifests();
       RefreshInstalledMods();
@@ -233,11 +227,25 @@ namespace ModFinder
 
     private async void InstallOrUpdateMod(object sender, RoutedEventArgs e)
     {
-      var toInstall = (sender as Button).Tag as ModViewModel;
-      toInstall.InstallState = InstallState.Installing;
-
-      var result = await ModInstaller.Install(toInstall);
-      ProcessIntallResult(result);
+      var mod = (sender as Button).Tag as ModViewModel;
+      if (mod.CanInstall)
+      {
+        var result = await ModInstaller.Install(mod);
+        ProcessIntallResult(result);
+      }
+      else if (mod.CanDownload)
+      {
+        OpenUrl(mod.Latest.Url);
+      }
+      else
+      {
+        _ = MessageBox.Show(
+          this,
+          "Could not install mod: not available for install or download",
+          "Error",
+          MessageBoxButton.OK,
+          MessageBoxImage.Error);
+      }
     }
 
     private void ShowInstalledToggle_Click(object sender, RoutedEventArgs e)
@@ -288,32 +296,25 @@ namespace ModFinder
       mod.OnUninstalled();
     }
 
+    private void Filter_TextChanged(object sender, TextChangedEventArgs e)
+    {
+      ModDB.ApplyFilter((sender as TextBox).Text);
+    }
+
     private void OpenHomepage(object sender, RoutedEventArgs e)
     {
       var mod = (sender as MenuItem).DataContext as ModViewModel;
+      OpenUrl(mod.HomepageUrl);
+    }
+
+    private void OpenUrl(string url)
+    {
       Process.Start(
         new ProcessStartInfo
         {
-          FileName = mod.HomepageUrl,
+          FileName = url,
           UseShellExecute = true
         });
-    }
-
-    private void Tag_Checked(object sender, RoutedEventArgs e)
-    {
-      var filter = (sender as CheckBox).DataContext as FilterTag;
-      ModDB.AddFilter(filter.Tag);
-    }
-
-    private void Tag_Unchecked(object sender, RoutedEventArgs e)
-    {
-      var filter = (sender as CheckBox).DataContext as FilterTag;
-      ModDB.RemoveFilter(filter.Tag);
-    }
-
-    private void Tags_TextChanged(object sender, TextChangedEventArgs e)
-    {
-      Tags.ItemsSource = AllFilters.Where(filter => filter.Tag.ToString().Contains(Tags.Text.Trim()));
     }
 
     public class DescriptionProxy
@@ -353,17 +354,6 @@ namespace ModFinder
         }
 
         return doc;
-      }
-    }
-
-    public class FilterTag
-    {
-      public Tag Tag { get; }
-      public bool Checked { get; set; }
-
-      public FilterTag(Tag tag)
-      {
-        Tag = tag;
       }
     }
   }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Text;
 
 namespace ModFinder.UI
 {
@@ -21,7 +22,7 @@ namespace ModFinder.UI
     {
       get
       {
-        if (Filters.Any())
+        if (Filters.Active)
           return Filtered;
         if (ShowInstalled)
           return Installed;
@@ -29,7 +30,7 @@ namespace ModFinder.UI
       }
     }
 
-    private readonly HashSet<Tag> Filters = new();
+    private readonly FilterModel Filters = new();
 
     public bool ShowInstalled
     {
@@ -50,16 +51,10 @@ namespace ModFinder.UI
 
     public IEnumerable<ModViewModel> AllMods => All;
 
-    public void AddFilter(Tag tag)
+    public void ApplyFilter(string filter)
     {
-      Filters.Add(tag);
-      UpdateFilter();
-    }
-
-    public void RemoveFilter(Tag tag)
-    {
-      Filters.Remove(tag);
-      UpdateFilter();
+      if (Filters.UpdateFilter(filter))
+        UpdateFilter();
     }
 
     public void Add(ModViewModel mod)
@@ -78,19 +73,14 @@ namespace ModFinder.UI
     private void UpdateFilter()
     {
       Filtered.Clear();
-      if (Filters.Any())
+      if (Filters.Active)
       {
-        Filtered.Clear();
         var source = ShowInstalled ? Installed : All;
         foreach (var viewModel in source)
         {
-          foreach (var tag in Filters)
+          if (Filters.Matches(viewModel))
           {
-            if (viewModel.HasTag(tag))
-            {
-              Filtered.Add(viewModel);
-              break; // As long as any tag matches include it, so just exit the inner loop
-            }
+            Filtered.Add(viewModel);
           }
         }
       }
