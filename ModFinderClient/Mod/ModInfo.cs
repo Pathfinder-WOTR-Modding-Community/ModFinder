@@ -1,4 +1,6 @@
-﻿namespace ModFinder.Mod
+﻿using System.Collections.Generic;
+
+namespace ModFinder.Mod
 {
   /// <summary>
   /// A copy of the JSON structure used for UMM mod manifests, i.e. <c>Info.json</c>
@@ -11,6 +13,8 @@
     public string Author { get; set; }
     public string DisplayName { get; set; }
     public string HomePage { get; set; }
+
+    public List<string> Requirements { get; set; }
   }
 
   /// <summary>

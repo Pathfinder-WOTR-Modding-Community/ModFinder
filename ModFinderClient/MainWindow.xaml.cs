@@ -131,6 +131,7 @@ namespace ModFinder
         mod.InstalledVersion = default;
       }
 
+      var installedMods = new Dictionary<ModId, ModVersion>();
       var modDir = Main.WrathPath.GetDirectories("Mods");
       if (modDir.Length > 0)
       {
@@ -152,8 +153,17 @@ namespace ModFinder
             mod.ModDir = dir;
             mod.InstallState = InstallState.Installed;
             mod.InstalledVersion = ModVersion.Parse(info.Version);
+
+            mod.SetRequirements(info.Requirements);
+            installedMods.Add(mod.ModId, mod.InstalledVersion);
           }
         }
+      }
+
+      // Update dependency state
+      foreach (var mod in ModDatabase.Instance.AllMods)
+      {
+        mod.CheckRequirements(installedMods);
       }
     }
 
@@ -225,9 +235,14 @@ namespace ModFinder
       }
     }
 
-    private async void InstallOrUpdateMod(object sender, RoutedEventArgs e)
+    private void InstallOrUpdateMod(object sender, RoutedEventArgs e)
     {
       var mod = (sender as Button).Tag as ModViewModel;
+      InstallOrUpdateMod(mod);
+    }
+
+    private async void InstallOrUpdateMod(ModViewModel mod)
+    {
       if (mod.CanInstall)
       {
         var result = await ModInstaller.Install(mod);
@@ -239,12 +254,20 @@ namespace ModFinder
       }
       else
       {
-        _ = MessageBox.Show(
-          this,
-          "Could not install mod: not available for install or download",
-          "Error",
-          MessageBoxButton.OK,
-          MessageBoxImage.Error);
+        var nextMod = mod.GetNextAvailableRequirement();
+        if (nextMod is not null)
+        {
+          InstallOrUpdateMod(nextMod);
+        }
+        else
+        {
+          _ = MessageBox.Show(
+            this,
+            "Could not install mod: not available for install or download",
+            "Error",
+            MessageBoxButton.OK,
+            MessageBoxImage.Error);
+        }
       }
     }
 

@@ -71,6 +71,13 @@ namespace ModFinder.UI
       };
     }
 
+    public ModViewModel GetModViewModel(ModId id)
+    {
+      if (Mods.ContainsKey(id))
+        return Mods[id];
+      return null;
+    }
+
     private void UpdateFilter()
     {
       Filtered.Clear();

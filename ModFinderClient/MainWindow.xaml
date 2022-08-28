@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModFinder.UI" d:DataContext="{d:DesignInstance Type=local:ModViewModel}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="694" Width="1208"
+        Title="MainWindow" Height="700" Width="1300"
         AllowsTransparency="True" 
         WindowStyle="None"
         Background="Transparent" 
@@ -272,10 +272,10 @@
               <ColumnDefinition.Width>*</ColumnDefinition.Width>
             </ColumnDefinition>
             <ColumnDefinition>
-              <ColumnDefinition.Width>250</ColumnDefinition.Width>
+              <ColumnDefinition.Width>300</ColumnDefinition.Width>
             </ColumnDefinition>
             <ColumnDefinition>
-              <ColumnDefinition.Width>230</ColumnDefinition.Width>
+              <ColumnDefinition.Width>240</ColumnDefinition.Width>
             </ColumnDefinition>
             <ColumnDefinition>
               <ColumnDefinition.Width>40</ColumnDefinition.Width>
@@ -385,20 +385,20 @@
           <DataGrid.CanUserResizeRows>False</DataGrid.CanUserResizeRows>
           <DataGrid.Background>Transparent</DataGrid.Background>
           <DataGrid.Columns>
-            <DataGridTextColumn Header="Name" Width="300" Binding="{Binding Name, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTextColumn Header="Author" Width="220" Binding="{Binding Author, Mode=OneWay}"></DataGridTextColumn>
+            <DataGridTextColumn Header="Name" Width="280" Binding="{Binding Name, Mode=OneWay}"></DataGridTextColumn>
+            <DataGridTextColumn Header="Author" Width="200" Binding="{Binding Author, Mode=OneWay}"></DataGridTextColumn>
             <DataGridTextColumn Header="Status" Width="*" Binding="{Binding StatusText, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTextColumn Header="From" Width="120" Binding="{Binding Service, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTemplateColumn Width="140">
+            <DataGridTextColumn Header="From" Width="80" Binding="{Binding Service, Mode=OneWay}"></DataGridTextColumn>
+            <DataGridTemplateColumn Width="220">
               <DataGridTemplateColumn.CellTemplate>
                 <DataTemplate>
                   <Grid>
                     <Grid.ColumnDefinitions>
-                      <ColumnDefinition Width="100"></ColumnDefinition>
+                      <ColumnDefinition Width="180"></ColumnDefinition>
                       <ColumnDefinition Width="30"></ColumnDefinition>
                       <ColumnDefinition Width="8"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button  Style="{StaticResource OwlButton}"  Height="30" IsEnabled="{Binding CanInstallOrDownload}" Content="{Binding ButtonText}" Click="InstallOrUpdateMod" Tag="{Binding}">
+                    <Button  Style="{StaticResource OwlButton}" Height="30" IsEnabled="{Binding CanInstallOrDownload}" Content="{Binding ButtonText}" Click="InstallOrUpdateMod" Tag="{Binding}">
                     </Button>
                     <Button Grid.Column="1" x:Name="MoreOptions" Style="{StaticResource OwlButton}"  Height="30"  Content="..." Tag="{Binding}" Click="MoreOptions_Click">
                       <Button.ContextMenu>
