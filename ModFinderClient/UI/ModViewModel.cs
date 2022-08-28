@@ -65,7 +65,7 @@ namespace ModFinder.UI
 
     /** End Properties referenced by views requiring notification. */
 
-    private readonly List<ModId> MissingRequirements = new();
+    private readonly List<(ModId id, ModVersion version)> MissingRequirements = new();
 
     private DirectoryInfo _modDir;
     public DirectoryInfo ModDir
@@ -120,12 +120,15 @@ namespace ModFinder.UI
       {
         ModVersion requiredVersion = default;
         var idStr = id;
-        var separatorIndex = id.IndexOf('-');
+        var separatorIndex = id.LastIndexOf('-');
         if (separatorIndex > 0)
         {
           // There's a version requirement
           requiredVersion = ModVersion.Parse(id[separatorIndex..]);
-          idStr = id[..separatorIndex];
+
+          // The mod ID might have a '-' :( *cough*TTT*cough*
+          if (requiredVersion != default)
+            idStr = id[..separatorIndex];
         }
 
         RequiredMods.Add((new(idStr, ModType.UMM), requiredVersion));
@@ -145,11 +148,11 @@ namespace ModFinder.UI
           if (installedMods.TryGetValue(id, out var installedVersion))
           {
             if (installedVersion < version)
-              MissingRequirements.Add(id);
+              MissingRequirements.Add((id, version));
           }
           else
           {
-            MissingRequirements.Add(id);
+            MissingRequirements.Add((id, version));
           }
         }
       }
@@ -178,6 +181,20 @@ namespace ModFinder.UI
       InstallState = InstallState.None;
     }
 
+    public ModViewModel GetNextAvailableRequirement()
+    {
+      foreach (var (id, _) in MissingRequirements)
+      {
+        var nextMod = ModDatabase.Instance.GetModViewModel(id);
+        if (nextMod is not null)
+        {
+          if (nextMod.CanInstall || nextMod.CanDownload)
+            return nextMod;
+        }
+      }
+      return null;
+    }
+
     private string GetStatusText()
     {
       if (InstallState == InstallState.Installing)
@@ -195,10 +212,10 @@ namespace ModFinder.UI
         return $"Update available from {InstalledVersion} to {Latest}";
       }
 
-      if (RequiredMods.Any())
+      if (MissingRequirements.Any())
       {
         var sb = new StringBuilder();
-        foreach (var (id, version) in RequiredMods)
+        foreach (var (id, version) in MissingRequirements)
         {
           if (version == default)
             sb.Append($"{id.Id}, ");
@@ -243,20 +260,6 @@ namespace ModFinder.UI
       if (Latest.Version == default)
         return "Unavailable";
       return "Up to date";
-    }
-
-    public ModViewModel GetNextAvailableRequirement()
-    {
-      foreach (var id in MissingRequirements)
-      {
-        var nextMod = ModDatabase.Instance.GetModViewModel(id);
-        if (nextMod is not null)
-        {
-          if (nextMod.CanInstall || nextMod.CanDownload)
-            return nextMod;
-        }
-      }
-      return null;
     }
 
     private Visibility GetHomepageVisibility()
