@@ -89,8 +89,8 @@ foreach (var mod in tasks.Select(t => t.Result).Where(r => r != null))
     LogObj("  Latest: ", mod.Latest);
 }
 
-var targetUser = "BarleyFlour";
-var targetRepo = "Modfinder_WOTR";
+var targetUser = "Pathfinder-WOTR-Modding-Community";
+var targetRepo = "ModFinder";
 var targetFile = "ManifestUpdater/Resources/master_manifest.json";
 
 var serializedDeets = ModFinderIO.Write(details);
@@ -98,7 +98,7 @@ var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser
 var updateFile = new UpdateFileRequest("Update the mod manifest (bot)", serializedDeets, currentFile[0].Sha, "master", true);
 var newblob = new NewBlob();
 newblob.Content = serializedDeets;
-var blob = await github.Git.Blob.Create("BarleyFlour", "ModFinder_WOTR",newblob);
+var blob = await github.Git.Blob.Create("Pathfinder-WOTR-Modding-Community", "ModFinder",newblob);
 if(blob.Sha != updateFile.Sha)
 {
     var result = await github.Repository.Content.UpdateFile(targetUser, targetRepo, targetFile, updateFile);
