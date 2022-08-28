@@ -1,0 +1,29 @@
+{
+  "Name": "Mewsifer Console Menu",
+  "Author": "WittleWolfie",
+  "Id": {
+    "Id": "MewsiferConsole.Menu",
+    "Type": "UMM"
+  },
+  "Service": {
+    "GitHub": {
+      "Owner": "Pathfinder-WOTR-Modding-Community",
+      "RepoName": "MewsiferConsole",
+      "ReleaseFilter": "MewsiferConsole\\.Menu"
+    }
+  },
+  "Version": {
+    "Latest": {
+      "Version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+      },
+      "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.1/MewsiferConsole.Menu.1.0.0.zip",
+      "Changelog": "Initial release."
+    }
+  },
+  "Description": "Adds a menu to MewsiferConsole.Mod",
+  "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
+  "Tags": [ "UserInterface", "Utilities" ]
+}

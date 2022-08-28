@@ -1,0 +1,7 @@
+{
+  "GeneratedManifestUrl": "https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/generated_manifest.json",
+  "ExternalManifestUrls": [
+    // MewsiferConsole.Menu
+    "https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/main/MenuManifest.json"
+  ]
+}
