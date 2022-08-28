@@ -1,0 +1,1508 @@
+{
+  "m_AllMods": [
+    {
+      "Author": "Barley",
+      "Description": "A respec mod for Pathfinder: Wrath of the Righteous",
+      "DownloadLink": "https://github.com/BarleyFlour/RespecMod/releases/download/v1.09.3/RespecWrath.zip",
+      "GithubOwner": "BarleyFlour",
+      "GithubRepo": "RespecMod",
+      "ModId": {
+        "Identifier": "RespecWrath",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "1.0.0",
+          "contents": "Fixed for Beta 3\nNew Versioning"
+        },
+        {
+          "version": "1.1.0",
+          "contents": "Fixed a plethora of bugs including but not limited to:\nGetting a background selection when not doing full respec,\nGetting Deity choice when not doing full respec,\nPotentially stacking BaB when respeccing (not sure on this one since its hard for me to recreate)"
+        },
+        {
+          "version": "1.1.1",
+          "contents": "Fixed an issue with stacking BAB. (for real this time, i hope)"
+        },
+        {
+          "version": "1.1.2",
+          "contents": "Fixed an issue with not being able to pick background/deity on character creation.\nMade it so that things like \"Original stats\" and \"Full Story Companion Respec\" don't show when the MC/Mercenary is selected."
+        },
+        {
+          "version": "1.1.3",
+          "contents": "Fixed an issue that caused a whole lotta stuff to break."
+        },
+        {
+          "version": "1.2.0",
+          "contents": "Updated for 1.00.0"
+        },
+        {
+          "version": "1.2.1",
+          "contents": "Fixed an issue where it would not let you progress past the ability score phase.\n"
+        },
+        {
+          "version": "1.2.2",
+          "contents": "Somewhat fixed an issue where you would receive excessive amounts of equipment after respec (you now only get 1 set)\nFixed an issue where the Ability Score slider would affect Character Creation\n"
+        },
+        {
+          "version": "1.2.3",
+          "contents": "Fixed an issue where certain class features of story companions wouldnt be cleared properly (e.x Ember's Blackened)\nFixed an issue where Full Story Companion Respec wouldnt allow you to choose Deity/Background\nAdded persistent settings( i.e you dont have to set your setting every time you start the game)"
+        },
+        {
+          "version": "1.2.4",
+          "contents": "Fixed an issue where animal companions wouldn't be removed properly.\nFixed an issue where Nenio's Kitsune heritage wouldn't be cleared out properly.\nPotentially fixed an issue with phantom levels."
+        },
+        {
+          "version": "1.4.0",
+          "contents": "Added a feature to respec only your mythic levels."
+        },
+        {
+          "version": "1.5.0",
+          "contents": "Reworked how story companions first class is handled (no more bugs regarding recruitment and phantom levels, in theory atleast)"
+        },
+        {
+          "version": "1.5.1",
+          "contents": "Fixed Level 0 companions again (hopefully properly this time)"
+        },
+        {
+          "version": "1.5.2",
+          "contents": "Fixed an issue where atheist companions couldnt be respeced\nFixed an issue where you could not pick deity for atheist companions with Choose Background/Deity"
+        },
+        {
+          "version": "1.5.3",
+          "contents": "Fixed further issues related to companions & Aivu starting with 0 levels."
+        },
+        {
+          "version": "1.5.4",
+          "contents": "Fixed an issue where respec would break if you tried to respec at lvl1"
+        },
+        {
+          "version": "1.6.0",
+          "contents": "Added the ability to Preserve Voice/Alignment/Birthday/Name/Portrait (Thanks pheonix99)\nfixed for 1.0.3c"
+        },
+        {
+          "version": "1.6.1",
+          "contents": "Fixed an issue where leveling wouldnt \"stick\"\nFixed an issue where you couldnt tick \"Preserve Voice\" or \"Preserve Portrait\"\nFixed an issue where the game would freeze after respeccing (i think)"
+        },
+        {
+          "version": "1.6.2",
+          "contents": "Fixed for patch 1.0.5\nFixed some issues where some companions would retain things from their original classes.\n"
+        },
+        {
+          "version": "1.6.3",
+          "contents": "Fixed Deity/Background Selection."
+        },
+        {
+          "version": "1.6.4",
+          "contents": "Renamed \"Full Story Companion Respec\" to \"Respec as Merc\" to clarify functionality (that being choosing race/portrait/voice etc...)\nFixed an issue where when using Full Story Companion Respec companions would retain features from their original race.\n"
+        },
+        {
+          "version": "1.6.5",
+          "contents": "Improved Loading times to be near instant.\nFixed an issue where the game would freeze after respeccing.\nFixed an issue where some skill-points assigned during respec would disappear."
+        },
+        {
+          "version": "1.6.6",
+          "contents": "Added automatic scroll refunding (i.e You get scrolls that the character copied into their spellbooks back on respec)\nFixed an issue where the Light of the Angel ability would be removed on respec.\nFixed an issue where Feats gained from books would be removed on respec."
+        },
+        {
+          "version": "1.6.7",
+          "contents": "Fixed an issue where MC would wrongly retain certain class features."
+        },
+        {
+          "version": "1.6.8",
+          "contents": ">Should now retain Swarm Size for Swarm That Walks\n>Now gives you back your Stat Books (Tomes of x +2, Manual of x +2, etc...)\n>Should Now Preserve EE Picker and FX Picker settings from Visual Adjustments\n"
+        },
+        {
+          "version": "1.7.0",
+          "contents": ">Added the ability to level down instead of doing a full respec (Both Mythic and normal class levels) (might also be buggy)\n>Fixed Hilor respec being affected\n>Added an option to respec companion from their base level (i.e hilor respec+)\n>Fixed the MC retaining the boosts from Tomes/Manuals"
+        },
+        {
+          "version": "1.7.1",
+          "contents": ">Added the ability to keep your current skillpoint distribution when leveling down\n>Animal Companions now level down properly\n>General improvements to level-down functionality (may still have issues or bugs, any reports would be appreciated)\n"
+        },
+        {
+          "version": "1.8.0",
+          "contents": ">Will now \"Remember\" your skill-point and attribute choices, however it cannot do this retroactively so it will only record level-ups after the installation of the mod. (Thanks to Bubbles this doesn't cause a save dependency)"
+        },
+        {
+          "version": "1.9.0",
+          "contents": ">Will now show attribute point selections on the class sheet, it can only do this if it has the level-up data though (see 1.08.0) (thanks to bubbles)"
+        },
+        {
+          "version": "1.9.1",
+          "contents": ">Will now not affect Hilor Respec (for realsies this time)\n>Improved background retention logic.\n>Respec from recruit level now works\n"
+        },
+        {
+          "version": "1.9.2",
+          "contents": ">Fixed Mythic Deleveling not working."
+        },
+        {
+          "version": "1.9.3",
+          "contents": ">Fixed for game version 1.1.6"
+        }
+      ],
+      "Latest": "1.9.3",
+      "Name": "Respec Mod",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Barley/Spacehamster",
+      "Description": "Modify backpacks, helmets, hats and class outfits",
+      "DownloadLink": "https://github.com/BarleyFlour/WrathVisualAdjustmentsMod/releases/download/v1.13.6/VisualAdjustments.zip",
+      "GithubOwner": "BarleyFlour",
+      "GithubRepo": "WrathVisualAdjustmentsMod",
+      "ModId": {
+        "Identifier": "VisualAdjustments",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "1.0.0",
+          "contents": "Equivalent to nexus build 1.1.3.\nFixed enchantment levels being removed when hiding weapon enchantment effects."
+        },
+        {
+          "version": "1.1.0",
+          "contents": "Added more equipment to the overrides function as well as making the view override show the name of the doll you're overriding.\nFixed a bug where using the Respec Mod would cause character's outfits to disappear.\nAdded the ability to change the visuals of characters not currently in your party."
+        },
+        {
+          "version": "1.1.1",
+          "contents": "fixed a bug where upon entering an area adjustments would not be correctly applied."
+        },
+        {
+          "version": "1.2.0",
+          "contents": "Updated for beta 3"
+        },
+        {
+          "version": "1.2.1",
+          "contents": "Fixed a bug where when changing the race of your doll and using equipment override certain pieces of equipment would clip into your model.\nFixed a bug with companions and them not working properly with visual adjusments.\nAdded masks to the \"Helmet\" category"
+        },
+        {
+          "version": "1.2.2",
+          "contents": "Fixed \"Create Doll\" & \"Destroy Doll\", however you have to reload/enter/exit area for destroy doll to work."
+        },
+        {
+          "version": "1.3.0",
+          "contents": "Fixed for 0.8.1 \nimprovements to the UI \nfixed removing cloaks for certain classes (Ranger, Inquisitor, Rogue) \nfixed having to reload save when destroying doll\nfixed issues regarding certain companions and creating dolls\nfixed an issue with resetting dolls."
+        },
+        {
+          "version": "1.4.0",
+          "contents": "Added an option to unlock hair styles (Like Hair Unlocker for Kingmaker). Thanks to SpaceHamster for letting me use his code for that.\nAdded color pickers (HSV, HTML, RGB) for Primary & Secondary Outfit colors aswell as for Hair & Skin colors.\nFixed Sheaths hovering aside their weapon\nAdded a feature to hide sheaths (Mostly)"
+        },
+        {
+          "version": "1.5.0",
+          "contents": "Fixed for full release"
+        },
+        {
+          "version": "1.6.0",
+          "contents": "Fixed an issue with weapons floating on hands and not being removed when unequipped.\nAdded the ability to change Scars/Warpaint/Warpaint Color/Horn Color\nRemoved Hide All (was being quite weird and buggy) (this fixes equipped items not showing up among with some other things)\nSidenote: the grey character thing can be fixed by equipping/unequipping something, changing a visual option or rebuilding character in the info tab"
+        },
+        {
+          "version": "1.7.0",
+          "contents": "Added procedural color for Horns & Warpaint\nAdded a Fix Grey Characters button (rebuilds entire party) as the grey characters seem to be a basegame bug, as i can reliably recreate it w/o mods."
+        },
+        {
+          "version": "1.7.1",
+          "contents": "Fixed Override Equipment for companions."
+        },
+        {
+          "version": "1.8.0",
+          "contents": "Revamped the UI (Thanks Narria/Cabarius!)\nFixed an issue where the \"Alchemist\" class outfit wouldnt appear.\nFixed an issue where quivers would float.\nFixed Override weapons\nRemoved Inter-save settings, now based on current doll state (basically visual settings dont travel back in time).\n"
+        },
+        {
+          "version": "1.9.0",
+          "contents": "Added the ability to override: Wings (FX and EE based), Horns (for all races, keep in mind ones with _F or _M are gender specific and will be distorted on the opposite gender) & Tails\nAdded an option to hide mythic path visuals (currently non-functional in the inventory screen)\nFixed an issue where Mongrel and other special race companions would bug out if you tried to create a doll for them."
+        },
+        {
+          "version": "1.9.1",
+          "contents": "fixed for 1.0.3c"
+        },
+        {
+          "version": "1.10.0",
+          "contents": "Added the \"EE Picker\" lets you add/remove any visual entity for your character, as well as coloring specific equipment pieces (keep in mind this means that saves made with Visual Adjustments cannot be loaded without it).\nProblems with Bald dolls and settings not sticking should be fixed.\nTheoretically decreased the rate at which Greyskinitis occurs.\n\n"
+        },
+        {
+          "version": "1.10.1",
+          "contents": "Fixed Outfit color for MC/Merc's\nFixed an issue where EE Picker's UI would collapse.\nFixed settings not sticking, again.\nImproved Stability.\n"
+        },
+        {
+          "version": "1.10.2",
+          "contents": "Added a Hotkey for Rebuilding all characters (Alt + X).\nfixed appearance options of dolls not persisting. (For real this time, i swear)\n\n"
+        },
+        {
+          "version": "1.10.3",
+          "contents": "Fixed an issue where characters wouldnt reload\nfixed an issue where Warpaint & Scars wouldnt persist.\nFixed secondary colors from the EE picker not persisting."
+        },
+        {
+          "version": "1.10.4",
+          "contents": "Fixed dolls going bald.\nFixed a typo in EE Picker"
+        },
+        {
+          "version": "1.10.5",
+          "contents": "Fixed Outfit Selection & Override Selection not working."
+        },
+        {
+          "version": "1.11.0d",
+          "contents": ">Early Version of New Unity UI (Inventory bottom left for toggle)\n>Custom colour picker for EE Picker (Only in Unity UI)\n>Per Slot Weapon & Enchantment Override (e.g. different dagger w/ different enchantment in each hand)\n>Fixed view override not applying Immediately\n>Improved load times (Theoretically)\n>Updated for game version 1.1.0 (wont work with older versions)\nFor users of previous preview versions\n>Fixed an issue where you could not reset view override inside of Unity UI"
+        },
+        {
+          "version": "1.11.0e",
+          "contents": ">Fixed an issue where after a reload you could not properly set Equipment Hide Settings in UGUI."
+        },
+        {
+          "version": "1.12.0",
+          "contents": "v1.12.0\n\nAttention: Causes save dependency.\n> Fixed an issue where Hide Mythic/Mythic Override wouldn't work in the Inventory\n> Fixed an issue with wing override were old wings would not be hidden\n> Added an FX Browser\n  > has Override and Black/Whitelist functions\n  > configurable per character\n> Improved the Performance of the UGUI (this includes a slightly different font)"
+        },
+        {
+          "version": "1.12.1",
+          "contents": "v1.12.1\n\nAttention: Causes save dependency.\n\n>Fixed an issue with the EE Picker search not working in UGUI\n>Slightly improved search logic\n>Fixed weapon overrides in UGUI"
+        },
+        {
+          "version": "1.12.2",
+          "contents": "v1.12.2\n\nAttention: Causes save dependency.\n\n>Fixed FX Black/Whitelist not deserializing properly (Note this will reset your Black/Whitelist settings).\n>Should now properly display updates in UMM."
+        },
+        {
+          "version": "1.12.3",
+          "contents": "Attention: Causes a save dependency\n\n>Fixed an issue where the game would hang when talking to a vendor\n>Fixed an issue where rebuilding would cause some exceptions\n>Theoretically improved performance due to clearing loaded cache.\n"
+        },
+        {
+          "version": "1.12.4",
+          "contents": "Attention: Causes a save dependency\n\n>Fixed an issue where all DLC would be disabled when the mod was enabled.\n"
+        },
+        {
+          "version": "1.13.0",
+          "contents": ">Will no longer cause a save dependency (Thanks Bubbles)\n>Note: old saves w/ VA will still have the save dependency but if you load them with the new version it will remove the save dependency."
+        },
+        {
+          "version": "1.13.1",
+          "contents": "Note: Will no longer cause a save dependency (Thanks Bubbles)\n>New options to Hide/Override barding in UMM & Unity UI\n>Fixed an issue where buttons in the current EE list would not be removed when clicking \"remove\""
+        },
+        {
+          "version": "1.13.2",
+          "contents": "Note: Will no longer cause a save dependency (Thanks Bubbles)\n>Updated for Game Version 1.1.3"
+        },
+        {
+          "version": "1.13.3",
+          "contents": "Note: Will no longer cause a save dependency (Thanks Bubbles)\n>Added EE's from the new patch to the EE Picker.\n>Ghoul and Drow EE's will now be properly displayed as such"
+        },
+        {
+          "version": "1.13.4",
+          "contents": ">Fixed (i think) an issue where rarely the game would not start with visual adjustments installed. (Any tips on how to reproduce it would be appreciated)\n>Fixed an issue where FX Viewer would stop working after a loading screen."
+        },
+        {
+          "version": "1.13.5",
+          "contents": ">Hide Mythic now properly works in the inventory menu.\n>your character will now properly refresh in the inventory UI."
+        },
+        {
+          "version": "1.13.6",
+          "contents": ">Removed custom warpaint colors (Owlcat refactored Warpaint code, can still use EE picker though)\n"
+        }
+      ],
+      "Latest": "1.13.6",
+      "Name": "Visual Adjustments",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Bubbles",
+      "Description": "Non-gameplay tweaks for Pathfinder - Wrath of the Righteous",
+      "DownloadLink": "https://github.com/factubsio/BubbleTweaks/releases/download/REL_0_9_4/BubbleTweaks-0.9.4.zip",
+      "GithubOwner": "factubsio",
+      "GithubRepo": "BubbleTweaks",
+      "ModId": {
+        "Identifier": "BubbleTweaks",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "0.1.1",
+          "contents": "Adds fast travel + speed slider for tactical battles (homm-minigame) \nSettings integrated into main game"
+        },
+        {
+          "version": "0.2.0a",
+          "contents": "\n* Added \"disband army\" button\n* Fixed a bug where the global map speed would not change until the map was loaded/unloaded.\n"
+        },
+        {
+          "version": "0.3.0a",
+          "contents": " * Added a \"jump to siege\" button"
+        },
+        {
+          "version": "0.4.0",
+          "contents": "Adds loot-colouring:\n  Corpse-loot: red\n  Not-coprse-loot: green"
+        },
+        {
+          "version": "0.5.0",
+          "contents": " * Village List\n   * In GlobalMap mode, adds an expandable menu on the right hand side (under the mini-map)\n   * Shows all your villages with the current building state (built + building, free-slots)\n   * Clicking on a village name will pan the camera to that village"
+        },
+        {
+          "version": "0.5.1",
+          "contents": "Stop showing settlement stats in village screen, maybe fixes gray building bug."
+        },
+        {
+          "version": "0.6.0",
+          "contents": "\n* Update to Game Version 1.1 (beta), won't work on old version.\n* Added invading armies and quest locations to the map sidebar."
+        },
+        {
+          "version": "0.6.1",
+          "contents": " * Minor fix to disable speed tweaks during TBM combat"
+        },
+        {
+          "version": "0.7.0",
+          "contents": "\n* Customisable cursor scale for combat/non-combat cursors\n* Customisable(ish) color for attack count text (white is sometimes real hard to see)\n"
+        },
+        {
+          "version": "0.8.0",
+          "contents": "\n\tCharacter Statistics (beta)\n\t\tEach character will have a new tab 'statistics' in their character sheet\n\t\tIt can only track stats while it's installed so sadly it won't retroactively find them"
+        },
+        {
+          "version": "0.8.1",
+          "contents": " * Fixed bug when going back to a save with no stats data (current stats data wasn't cleared)\n * Fixed favourite spell/weapon not tracking correctly\n * Added healing done stats"
+        },
+        {
+          "version": "0.8.2",
+          "contents": " * Add hit% and miss%"
+        },
+        {
+          "version": "0.8.3",
+          "contents": " * Fix skill checks"
+        },
+        {
+          "version": "0.8.4",
+          "contents": " * Fix CRITICAL bug where the load routine would keep a handle to the save, so subsequents saves to the same file would fail with \"Saving is Impossible\", sorry.\n * Add 'all saves'\n * Add save pass% and fail%\n"
+        },
+        {
+          "version": "0.9.1",
+          "contents": "\n## Version 0.9.1\nStatistics view works on global map\nENHANCED PARTY VIEW:\n\tEnable in settings, requires a game restart when you change\n\tView eight characters at once\n\tRejigged buff view\n\n\n## Version 0.9.0\nStarted LuckMeted (not enabled yet)\nVarious tweaks (handwave)\n\n"
+        },
+        {
+          "version": "0.9.3",
+          "contents": "Fixes buff overflow in enhanced party view\nDon't count skill checks on the global map for statistics\n"
+        },
+        {
+          "version": "0.9.4",
+          "contents": "Settings should be less shy"
+        }
+      ],
+      "Latest": "0.9.4",
+      "Name": "Bubble Tweaks",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Bubbles",
+      "Description": "[b]Imagine if setting up an auto buffing mod was easy enough you don't need a PhD, and integrated enough you don't need to open a UMM gui to configure it?\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />WANT TO LAUGH AT CODE?????\n<br />\n<br />[url=https://github.com/factubsio/BubbleBuffs]factubsio/BubbleBuffs: Bubbles Ultimate Buff Bot Lite Extra Simple (BUBBLES) (github.com)[/url][/b]\n<br />\n<br />\n<br />\n<br />\n<br />Items/Consumables are [b]not[/b] implemented yet.\n<br />\n<br />\n<br />\n<br />[center][size=6][b][font=Comic Sans MS]GAME VERSION 1.1.0j =&gt; MOD VERSION 2.0.0+\n<br />\n<br />BETA IS OLD. DO NOT USE BETA. GO BACK TO MAIN.\n<br />\n<br />[/font][/b][/size]I am not currently supporting older game versions, go look through the archived files and see if any work but don't file bugs against them.[/center]\n<br />[size=5]HOW TO USE:\n<br />[/size]\n<br />(also see the images for help)\n<br />\n<br />While [b]not[/b] on the global map and [b]not[/b] in Drezen/camp, or anywhere where you have your full party:\n<br />\n<br />Go to the Spellbook tab.\n<br />Click \"Buff Setup\" at the lower right\n<br />Select spells or abilities (Items and Consumables are [b]not[/b] implemented yet).\n<br />Select the spell/ability you want to cast\n<br />Click on each party member at the bottom to toggle casting on them:\n<br />  * gray: do not cast\n<br />  * green: cast (available casters)\n<br />  * yellow: cast (no available casters)\n<br />  * red: invalid target (e.g. personal spells, or animal-growth on a human, etc).\n<br />You can customise caster behaviour with the little \"up\" arrow above the caster's portrait (not the target portrait).\n<br />\n<br />Close the spellbook\n<br />Click the \"buff\" button on the lower left of the screen.\n<br />\n<br />optional: Check the results in the combat log\n<br />\n<br />[size=5]Files:\n<br />[/size]\n<br />[size=2]Settings are stored in the UserSettings folder under the mod, in a file called bubblebuff-GAME_ID.json where GAME_ID is the guid of your playthrough. Feel free to look through and edit it but expect things to crash if you do wonky stuff like to turn on Powerful Change on for a druid, or try to get someone to cast a spell they don't have.\n<br />[/size]\n<br />[size=5]For Skidmarcanists:[/size]\n<br />\n<br />If you are an arcanist and casting an appropriate spell you can toggle \"Allow Share Transmutation\" and \"Use Powerful Change\". The mod [b]will[/b] spend the points from your arcane resevoir but does not (currently) predict them like it does spell slots.\n<br />\n<br />If you are using Share Transmutation and there are no points, the spell will be skipped.\n<br />If you are using Powerful Change and there are no points, the spell will be cast without it.\n<br />\n<br />[b]NOTE: The combat log will say these casts are successful, it is a known thing and will get fixed eventually.[/b]\n<br />\n<br />Thanks to DeadMor0z for the contributions!\n<br />\n<br />\n<br />如何使用：在任何能完整操控整个小队的地方，点开法术书右下角进入设置面板，先选择法术，然后在中间选择施法者，中间的右边选择这个施法所在的施法序列，最后在最下方选择施法目标。\n<br />设置好后，在游戏中任何时候点击左下角的三个按钮即可瞬间释放相应序列中所有设置好的法术。\n<br />此mod由1onepower翻译，你可以在 [url=https://space.bilibili.com/383719917?spm_id_from=333.1007.0.0]B站[/url] 关注我,并且欢迎加入最大的中文CRPG社区之一：[url=https://tieba.baidu.com/f?kw=%E6%8B%A5%E7%8E%8B%E8%80%85&amp;fr=index]拥王者吧[/url]",
+      "DownloadLink": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1208",
+      "GithubOwner": "factubsio",
+      "GithubRepo": "BubbleBuffs",
+      "ModId": {
+        "Identifier": "BubbleBuffs",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "0.3.0",
+          "contents": "Initial public release"
+        },
+        {
+          "version": "0.3.1",
+          "contents": "Fixed bug where certain spells (like acid maw) were not considered buffs and were never shown\nFixed bug where some spontaneous casters were selfish and would not add their highest level spells to the buff pool"
+        },
+        {
+          "version": "0.4.0",
+          "contents": "Updated for 1.1\nAdded per-spell per-caster controls - you can ban casters or limit the number of times they are allowed to cast the spell\nShow spellbook under caster (was confusing when you had same caster with multiple spellbooks)\nFound even more spells (still some missing, please report these!)"
+        },
+        {
+          "version": "0.4.2",
+          "contents": "Interop fix for Enhanced Inventory (some of the filter checkboxes were shy and hiding)"
+        },
+        {
+          "version": "0.5.0",
+          "contents": "Buffs can be put into one of 3 groups, there are three separate buttons to cast the buffs in these groups (long, important, short)"
+        },
+        {
+          "version": "0.5.1",
+          "contents": "TBM performance fix"
+        },
+        {
+          "version": "0.5.2",
+          "contents": "UI should not disappear after combat anymore."
+        },
+        {
+          "version": "0.6.0",
+          "contents": "Buttons should hide/show more reliably\nPerf improvements - buffing is spread over multiple frames and the casting fx are toned down."
+        },
+        {
+          "version": "0.7.0",
+          "contents": "Skidmarcanists in shambles - adds powerful change and share transmutation, might even work?"
+        },
+        {
+          "version": "0.7.1",
+          "contents": "AoE buffs should indicate the splashiness (there's no logic, it just assumes if a spell has aoe it will affect the entire party, I'm sure there are bugs/exceptions)\nat-will abilities should now be more willing to will"
+        },
+        {
+          "version": "0.7.2",
+          "contents": "Fix for multiple characters in the party having the same name (laggy yellow portraits when trying to set buffs up)"
+        },
+        {
+          "version": "0.7.3",
+          "contents": "Fixed confusing zip name\nHUD buttons should properly respect when they should be seen and not heard, but more importantly not seen"
+        },
+        {
+          "version": "0.7.4",
+          "contents": "Metamagic should be less wonky (variant spells might still need some love)"
+        },
+        {
+          "version": "0.8.0",
+          "contents": "Switched to new buff-rejection-engine, as always if buffs are missing please let me know, these are a priority\nChanged \"only requested\" to be \"show requested (default:true)\" and added \"show NOT requested (default:true)\" so you can get better control over which spells to view\nadded initial cantrip support, it appears to work but not tested completely normal"
+        },
+        {
+          "version": "0.9.0",
+          "contents": "Update to mainline1.1 (welcome back gog-ers)\nAdded logic to handle weapon buffs (Bless Weapon) and area buffs (Guarded Hearth)"
+        },
+        {
+          "version": "0.9.1",
+          "contents": "Fix for bug when importing old bubblebuff data after you had lost a party member (or changed their name)"
+        },
+        {
+          "version": "2.0.0",
+          "contents": "bumped version number so maybe people won't be as confused?\nfound more buffs e.g. ode to mysterious magic\nfixed a bug where there is a null m_Buff in a ContextActionApplyBuff which is terrifying"
+        },
+        {
+          "version": "2.1.0",
+          "contents": "Added Archmage Armor as a separate spell that is forced to self-cast\nRejiggled the UI to remove some jaggedy lines\nGeneral minor UI Tweaks (moved add/remove to be per-spell)\nRe-enabled spell hiding (use \"Show hidden\" to see anything you hid)\nAdded a summary view at the top to show how many requests/fulfils you have per-group\nBrownFur stuff shouldn't be selectable for non-brownfurs (it wouldn't cheat, it just wouldn't cast/have powerful change applied)\nAdded some interop with Enhanced Inventory to make the buttons not overlap"
+        },
+        {
+          "version": "2.2.0",
+          "contents": "bit of eye candy, please give feedback on if you prefer old style or new, I might add a toggle or summat"
+        },
+        {
+          "version": "2.2.1",
+          "contents": "Redid some of the ui to work when used with bubbletweaks (custom party view)\nTweaked the bling, please let me know if it's now too much\nShould work better with Enhanced Inventory installed"
+        },
+        {
+          "version": "2.2.2",
+          "contents": "Completely Normal Cantrips should behave more normally"
+        },
+        {
+          "version": "2.2.3",
+          "contents": "More cantrip fixing, many thanks to DeadMor0z\nMinor graphical annoyances fixed"
+        },
+        {
+          "version": "2.3.0",
+          "contents": "First attempt at localisation (chinese + english), many thanks to 1onepower - if you find any weird strings please let me know\nBanned in combat buffing"
+        },
+        {
+          "version": "2.3.1",
+          "contents": "Fix for non-english, non-CN languages, sorry!"
+        },
+        {
+          "version": "2.3.2",
+          "contents": "Added German and Russian localisation (thanks to DeadMor0z, Zhaoyi, and Icepick).\nHomepage should go to the right place now.\nI haven't forgotten about adding a setting for stuff..."
+        },
+        {
+          "version": "2.4.0",
+          "contents": "More translations (PLEASE file bugs about missing words etc etc, I rely on you peeps to help with it)\nAdded settings - access from the buff setup window.\n\"Allow in combat\" setting added\nSelf-cast only casters will be prioritised in a tie, might change this to make them always?\nReordering the party will no longer cause weird breakage\nTOOLTIPS on spells and stuff"
+        },
+        {
+          "version": "2.4.1",
+          "contents": "Fix to actually allow casting in combat."
+        }
+      ],
+      "Latest": "2.4.1",
+      "Name": "Bubble Buffs",
+      "NexusModID": 195,
+      "Source": "Nexus"
+    },
+    {
+      "Author": "Narria",
+      "Description": "[b]Now with 400+ Cheats, Tweaks and Quality of Life Improvements including ability for any gender to romance any love interest\n<br />\n<br />[/b][list]\n<br />[*]Bag of Tricks: 113 (or 144 depending on how you count)\n<br />[*]Level Up &amp; Multiclass: 57\n<br />[*]Party Editor: 67\n<br />[*]Loot Coloring &amp; Checklist: 4\n<br />[*]Enchantment: 20 ways to view add, remove enchantments from your favorite items\n<br />[*]Search 'n Pick: 75 ways to view, add, remove blueprints plus a fun global teleportation feature\n<br />[*]Crusade: 36\n<br />[*]Armies: 4\n<br />[*]Etudes: 6225 x 3 (start, unstart, complete)\n<br />[*]Quest Resolution: 1\n<br />[/list]\n<br />\n<br />[b]Please backup early and backup often.[/b]\n<br />\n<br />[b]Important: Make sure you are on the latest version of the game 1.09c or 1.1.0[/b]\n<br />\n<br />[b]Install &amp; Setup[/b]\n<br />[list=1]\n<br />[*]Install the [url=https://www.nexusmods.com/site/mods/21/?tab=files]Unity Mod Manager﻿[/url]﻿.\n<br />[*]Install the mod using the Unity Mod Manager﻿ or extract the archive to your game's mod folder (e.g. '&#92;Steam&#92;steamapps&#92;common&#92;Pathfinder Second Adventure&#92;Mods').\n<br />[*]Start the game and load a save or start a new save (the mod's functions can't accessed from the main menu).\n<br />[*]Open the Unity Mod Manager﻿ by pressing CTRL + F10.\n<br />[*]Adjust the settings in the mod's menu\n<br />[*][b]Important[/b] this mod is designed to be run at 1920x1080 or higher.\n<br />[*]Please set your resolution to at least 1920x1080\n<br />[*]Go to Settings tab on Unity Mod Manager to set your screen width to at least 1920 wide\n<br />[/list]\n<br />[b]Usage\n<br />\n<br />[/b]The mod provides the following tabs and here is a brief description of each of them:\n<br />\n<br />[list]\n<br />[*][b]Bag of Tricks[/b]: this is a collection of quality of life, quick cheats, settings, multipliers, etc from the awesome Kingmaker mod of the same name plus a bag or two of new tricks ^_^\n<br />[*][b]Level Up &amp; Multiclass[/b]: a variety of character creation, level up, unlock mythic paths plus support for multiple classes per level up and gestalt gameplay\n<br />[*][b]Party Editor[/b]: lets you edit almost any aspect of your character. Make sure you explore all the different disclosure toggles.  You can edit classes, stats, facts (feats and more), buffs, abilities, spells and spellbooks as well as the composition of your party\n<br />[*][b]Loot Coloring &amp; Checklist[/b]: this lets you enable a loot grading and coloring system similar to Borderlands or Diablo.  It also gives you a screen where view all the items in an area that you have not looted yet.\n<br />[*][b]Enchantment[/b]: allows you to add or remove enchantments from the items in your inventory\n<br />[*][b]Search 'n Pick[/b]: this lets you search through all the available resources (items, feats, abilities, spells and many more) and manipulate your game state in an almost limitless set of ways.  You can add/remove items, feats, abilities, etc.  You can spawn any unit. You can start/unstart/complete etudes, quests, etc.  You can teleport to any area in the game.  It is almost unimaginable how much you can do in here so keep digging!\n<br />[*][b]Crusade[/b]: this allows you to edit various aspects of your crusade state.\n<br />[*][b]Armies[/b]: this allows you to edit the composition and stats of your armies\n<br />[*][b]Etudes[/b]: this is a new and exciting feature that allows you to see for the first time the structure and some basic relationships of [b][i]Etudes [/i][/b]and other [b][i]Elements[/i][/b] that control the progression of your game story. [b]Etudes [/b]are hierarchical in structure and additionally contain a set of [b]Elements [/b]that can both conditions to check and actions to execute when the etude is started. As you browe you will notice there is a disclosure triangle next to the name which will show the children of the Etude.  Etudes that have [b]Elements[/b] will offer a second disclosure triangle next to the status that will show them to you.\n<br />[b]WARNING[/b]: this tool can both miraculously fix your broken progression or it can break it even further. Save and back up your save before using. Remember that[i] \"with great power comes great responsibility\"[/i][*][b]Quest Resolution[/b]: this allows you to view your active quests and advance them as needed to work around bugs or skip quests you don't want to do.  Be warned this may break your game progression if used carelessly.\n<br />[/list]\n<br />[b]Guide to building a second class (and beyond) equal to your current and then multiclassing\n<br />[/b]Let's say your char is level 6 cleric and you want to make them also level 6 fighter.[list=1]\n<br />1 - turn off all multiclass selections2 - give yourself 1 levelup\n<br />3 - choose fighter and gain just that 1 level\n<br />4 - Party Editor &gt; Char &gt; Classes\n<br />5 - check gestalt on the cleric class (original class)\n<br />6 - you will automatically get a new level up marker\n<br />7 - level up Fighter until you can't anymore (second class)\n<br />8 - Now you have a 6 Cleric/6 fighter\n<br />9 - Choose which you want to be your main class\n<br />10 - mark the other one as gestalt in party editor\n<br />11 - on the multiclass config screen check that class as your multiclass option\n<br />12 - repeat this for as many extra classes as you want (until you lag the game)\n<br />13 - when done adjust your stats as desired to fit your playstyle in Party &gt; Char &gt; Stats (edited)\n<br />[/list][b]To gestalt Mythics[/b]. (Best time is right before you pick your path in Drezen\n<br />[list=1]\n<br />1 - Give yourself a mythic level in Toybox (To 3)\n<br />2 -Take one of the mythic paths you want to gestalt\n<br />3 - Go into the Toybox party tab, and set the path as Gestalt\n<br />4 - Repeat steps 2 &amp; 3 for all but the last Mythic path you want (So if you want to be 2 paths, i.e. Angel/Azata, Lich/Demon, etc, skip this step)\n<br />5 - Lower your mythic level to 2 and then press the Set button on the mythic experience (Should set your Mythic Experience to 2)\n<br />6 - Pick your path like normal during the Drezen siege at the flag\n<br />7 - Only after completely every other step, go to the multiclass config, and set the multiclass config flags for the paths you set the Gestalt flags on in step 3\n<br />8 -  (optional) In Toybox's party tab, under your characters spell tab, use the Merge button on the mythic spells books\n<br />[/list]Please feel free to make other enhancement requests [url=https://github.com/cabarius/ToyBox/issues]here[/url]﻿. \n<br />Please tap new issue and mark it as an `enhancement`.\n<br />Please also file any bugs you find [url=https://github.com/cabarius/ToyBox/issues]here[/url]﻿. \n<br />\n<br />[b]Recent Release Notes[/b]\n<br />[b]Ver 1.4.13[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Quality of Life[/b][list]\n<br />[*][b]Game Over -[/b] Added toggle to block Game Over when certain companions die in combat, so if [i]Leerooooy (Greybor) Jenkins[/i] runs in and your leader runs in to save him and dies the game does not end unless the whole party wipes[b].[/b]\n<br />[/list]\n<br />[*][b]Dialog[/b][list]\n<br />[*]Toy to make previously chosen dialog answers show up in smaller dimmer text\n<br />[*][b]Expand Answers For Conditional Responses[/b][list]\n<br />[*]Dialog dependent on previous dialog checks now works correctly with the feature enabled\n<br />[*]Fixed issue that generated bogus extra answers for non conditional response by ensuring that the feature only gets activated by a set of continuation cues that all have conditions\n<br />[/list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*][b]([/b][i]Ronin[/i][b]) [/b]Convinced Daeran to stop repeating himself in the Grey Garrison\n<br />[/list]\n<br />[/list]\n<br />[*][b]Camera[/b][list]\n<br />[*]Mouse3 Camera + forward/back keys now lets you fly freely when pitch is enabled\n<br />[*]Additional setting for completely free camera\n<br />[*]Added Toy to let you adjust camera height with Ctrl+Mouse3 Camera Drag ([b][i]very experimental[/i][/b])\n<br />[*]Added Toy to let you adjust the clip plane with Alt+MouseWheel\n<br />[/list]\n<br />[*]Preview Relic Info ([i]thanks to rathtr[/i])\n<br />[/list]\n<br />[*][b]Level Up &amp; Multiclass[/b][list]\n<br />[*][b]ToyBox now supports multiple archetypes when you select a new class following tabletop rules[/b][list]\n<br />[*]Thank you [b]Vek [/b]for making this and sharing it with ToyBox users [b](please check out the excellent Table Top Tweaks mod as well. [/b][url=https://github.com/Vek17/WrathMods-TabletopTweaks]https://github.com/Vek17/WrathMods-TabletopTweaks[/url][b])[/b]\n<br />[/list]\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]Option to show display name (localized name) for things that have it\n<br />[*]Search now looks at both display name (localized name) and internal name. Previously it only looked at internal name\n<br />[/list]\n<br />[*][b]Quest Editor[/b][list]\n<br />[*]Added descriptions and improved UI in quest editor\n<br />[*]Quest steps now number properly\n<br />[*]Steps with missing titles show blueprint name\n<br />[*]quest steps are now colored based on whether completed, current or not seen yet.\n<br />[*]Failure steps are colored red \n<br />[/list]\n<br />\n<br />[/list][list]\n<br />[*][b]Loot[/b][list]\n<br />[*]([i]Hambeard[/i])[b] [/b]Added hotkey bindable button to allow for area exit loot window to be opened mid dungeon.\n<br />[*]([i]Hambeard[/i][b]) [/b]Added button to show all ground loot on the map.\n<br />[*]([i]Hambeard[/i]) Added perception dc's to loot check list to indicate chest is hidden\n<br />[*]([i]Hambeard[/i]) Added trickery dc's to loot check list to indicate chest is locked\n<br />[*]([i]Hambeard[/i]) Added button to include hidden chest when revealing them to the map\n<br />[/list]\n<br />[/list]\n<br />[b]Ver 1.4.12[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]Cheat to let you enable Unlimited Stacking of Modifiers (Stat/AC/Hit/Damage/Etc)\n<br />[*]Fixed backwards default X rotation when camera mods are enabled\n<br />[*]Options to Invert Mouse X and Y Axis in camera settings\n<br />[*]Moved dialog options into their own section in Bag of Tricks\n<br />[*]Mythic Dialog Restrictions are beginning to apply to crusade events.\n<br />[*][b]Expand Answers For Conditional Responses[/b] - Some responses such as comments about your mythic powers will always choose the first one by default. This will show a copy of the answer and the condition for each possible response that an NPC might make to you based on.[list]\n<br />[*]Option to see unavailable answers so you can see the conditions you are not meeting\n<br />[/list]\n<br />[*][b]Friendship is Magic[/b][list]\n<br />[*]([i]Ronin[/i]) Now for goodie-two-shoes as well!\n<br />[*]([i]Ronin[/i]) Added support for Ciar and the Hand\n<br />[/list]\n<br />[*][b]Alignment Unrestrcted[/b][list]\n<br />[*]([i]Ronin[/i]) Included support for dialogs from NPC, not just dialog from the MC\n<br />[*]([i]Ronin[/i]) Fixes for Lann/Wendu's questline\n<br />[/list]\n<br />[/list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*]([i]Ronin[/i]) Fixed errors with Wendu and Lann not properly counting as \"former\" companions\n<br />[*]([i]Ronin[/i]) Fixed errors with Nenio's final quest\n<br />[/list]\n<br />[*][b]Loot[/b][list]\n<br />[*]Added a friendly unit filter toggle to the loot checklist\n<br />[/list]\n<br />[*][b]Crusade Editor[/b][list]\n<br />[*]Now shows conditions and preview for crusade event solutions\n<br />[*]Option to ignore crusade event solution restrictions\n<br />[*]Cleaned up UI layout and description coloring to match the rest of the mod\n<br />[*]([i]KnightOfSeiros[/i]) Toggle to choose no decree costs\n<br />[*]([i]KnightOfSeiros[/i]) Now shows preview for decree and event results\n<br />[/list]\n<br />[*][b]Army Editor[/b][list]\n<br />[*]Moved army cheats to armies editor\n<br />[/list]\n<br />[/list][b]Ver 1.4.11[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Friendship is Magic[/b][list]\n<br />[*][b]([/b][i]Ronin[/i][b]) [/b]Allow friendships to survive after commiting the most vile actions\n<br />[/list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*][b]([/b][i]Ronin[/i][b]) [/b]Companions no longer mute during Act 5 companion quests, Bad Blood, or Underground Army\n<br />[/list]\n<br />[*]Toggle to let a rider mount pets without size restriction\n<br />[*]Toggle to let a rider mount anything (experimental)\n<br />[*]Tweak to clear the action bar of the selected char\n<br />[*][b]Camera[/b][list]\n<br />[*]Fixed bug where FOV multilier stopped working when using enhanced camera settings\n<br />[*]Made camera zoom smoother on the mouse wheel, especially at higher FOV settings\n<br />[/list]\n<br />[/list]\n<br />[*][b]Level Up[/b][list]\n<br />[*]Toggle to let pets take mythic classes\n<br />[*]Fixed mythic level up to show the correct mythic level on the top left of the level up screen. Note: the progression UI still puts stuff in the wrong place but at least the calculations should be better\n<br />[*]Toggle for ignoring racial feature prerequisites works once again\n<br />[/list]\n<br />[*][b]Party Editor[/b][list]\n<br />[*]Improved UI for mythic spellbook merging. You can also merge more than one mythic spellbook into the same normal spellbook. Note: only the first merge increasess the mythic level (caster level) of the spellbook but you do get the extra spells.\n<br />[*]Added Mythic display of Mythic Experience and a button to set mythic experience so you can delevel your mythic level like you can for normal character level\n<br />[*]You can no longer select all mythic classes as gestalt\n<br />[*]Feature Tree view now shows levels for features acquired during level up\n<br />[/list]\n<br />[*][b]Crusade Editor[/b][list]\n<br />[*]Added Settlement Editor\n<br />[*]([i]KnightOfSeiros[/i]) Added immediately build buildings\n<br />[*]([i]KnightOfSeiros[/i]) Toggle to ignore all building restrictions\n<br />[*]([i]KnightOfSeiros[/i]) Added immediately finish decrees\n<br />[*][b]([/b][i]KnightOfSeiros[/i][b]) [/b]Toggle to ignore start decree restrictions\n<br />[/list]\n<br />[/list][b]Ver 1.4.10[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*]added infrastructure for handling situations with ex companions where an Etude may expect them to not be on the team. We have resolved the cases in [i]A Strike from the Sky[/i]. Please report other situations where you see odd behavior and we will resolve it ASAP.\n<br />[*]([i]Ronin[/i]) Secret companions no longer appear early to spoil the surprise\n<br />[*]([i]Ronin + Narria[/i]) Companions no longer mute during [i]A Strike From The Sky[/i]\n<br />[/list]\n<br />[*]Improved camera zoom behavior when camera tilt/zoom all scenes is active\n<br />[*]Fixed some crashers in dialog preview and control summons\n<br />[*]([i]Flat[/i]) Add Rest Selected Unit\n<br />[*]([i]Flat[/i]) Add toggle to disable Attack of Opportunities\n<br />[*]([i]DeadMoroz[/i]) Fixed crasher that led to broken character switch when Loot Coloring is enabled and magical item was rewarded after tactical battle\n<br />[*]([i]DeadMoroz[/i]) Enable action bar for controllable summons. Prefill action bar with spell abilities and charge.\n<br />[*]([i]Pheonix99[/i]) Added Headers to Add Enchant search table, clairified Search Limit\n<br />[/list]\n<br />[/list][b]Ver 1.4.9.1[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*]Fixed issue with Ex Companion dialog that would break some scenes involving Lann and Wenduag like at the end of the Prologue Labyrinth\n<br />[*]Cleaned up layout of checkboxes for remote dialog\n<br />[/list]\n<br />[*][b]Love is Free[/b][list]\n<br />[*]([i]Ronin[/i]) Vellexia romance opened to all paths\n<br />[/list]\n<br />[/list]\n<br />[/list][b]Ver 1.4.9[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Quality of Life[/b][list]\n<br />[*]Remote Companion Dialog - Allow remote companions (even former party members) to make comments on dialog you are having[list]\n<br />[*]Include Former Companions - Let's you also listen to remarks from your former companions.\n<br />[/list]\n<br />[*]This is experimental so it may break dialogs. If you find an issue please come find me (Narria) on the WoTR discord[b] ([/b][url=https://discord.gg/CRsCZNw8Rf]https://discord.gg/CRsCZNw8Rf[/url][b]) [/b]and give me a copy of the save.\n<br />[/list]\n<br />[*][b]Camera[/b][list]\n<br />[*]Massive improvements\n<br />[*]Camera settings moved to new section\n<br />[*]Toggles to allow zooming and rotation on any map or cutscene (May need to use Mouse3 Drag to rotate in some situations)\n<br />[*]Toggle to allow changing the camera tilt to get an almost 3rd person view. (experimental preview)\n<br />[/list]\n<br />[*][b]Love is Free[/b][list]\n<br />[*]([i]Ronin[/i])Lich path no longer blocks romance\n<br />[/list]\n<br />[/list]\n<br />[*][b]Level Up[/b][list]\n<br />[*]([i]Truinto[/i]) Unlock Party Level Cap (continuous or exponential)\n<br />[/list]\n<br />[*][b]Enchantment[/b][list]\n<br />[*]Added collation for enchament types\n<br />[*]Show enchament rating\n<br />[*]Improved sorting of enchaments\n<br />[*]Show character name equiping an item if is equiped\n<br />[*]Fixed crash on null comment/prefix/suffix in BlueprintItemEnchantment (pheonix99)\n<br />[/list]\n<br />[*][b]Loot[/b][list]\n<br />[*]Item rarity takes into account enchantment rarity\n<br />[/list]\n<br />[*][b]Armies Editor[/b][list]\n<br />[*]Added the ability to spawn an army as either friendly or hostile.\n<br />[*]Add buttons for destroying an army and for restoring movement points\n<br />[/list]\n<br />[*][b]Misc[/b][list]\n<br />[*]Fixed crasher that led to interference with World Crawl and possibly other mods\n<br />[*]Fixed a crasher that impacted some text fields\n<br />[*]Reworked code around scroll coloring to improve stability\n<br />[/list]\n<br />[/list]﻿[b]Ver 1.4.8.1 [/b]\n<br />[list]\n<br />[*]Fixed some edge cases for Jealousy Begone!\n<br />[/list][b]Ver 1.4.8[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Love is Free[/b][list]\n<br />[*]Mythic path no longer blocks romance with the queen\n<br />[/list]\n<br />[*][b]Toggle to allow spells/abilities/items toolbar pop-ups grow wider[/b]\n<br />[*][b]Group Picker[/b][list]\n<br />[*]Changing party in a map does not break characters anymore\n<br />[*]No longer brings up the mod when activating it via hot key\n<br />[*]Now works on the global map too\n<br />[/list]\n<br />[/list]\n<br />[*][b]Enchantment[/b][list]\n<br />[*][b]([/b][i]Pheonix99[/i][b]) [/b]Fix for stack merging eating enchants - EX: If you add mighty fists to an amulet of natural armor, then stick it in inventory where you have another natural armor amulet of the same type, they're merged into a stack and the mighty fists enchant vanishes\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]Fixed issue where if you select items and then weapons that the subcategories would not appear\n<br />[*]Fixed some misc crashes caused by bad blueprints\n<br />[/list]\n<br />[*][b]Crusade Editor[/b][list]\n<br />[*]Fixed issue where Build Time slider wouldn't slide\n<br />[/list]\n<br />[*][b]Misc[/b][list]\n<br />[*]Fixed some crashers in inventory UI\n<br />[/list]\n<br />[/list][b]Ver 1.4.7[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]♥♥ Love is Free ♥♥ - Allow any gender for any romance\n<br />[*][b]Jelousy Begone! - [/b]Allow multiple romances at the same time[list]\n<br />[*]Big thanks to [b][i]Paladingineer[/i] [/b]and [b][i]Ronin[/i] [/b]for their contributions to making this possible\n<br />[/list]\n<br />[/list]\n<br />[*][b]Party Editor[/b][list]\n<br />[*]([i]Truinto[/i]) added clear buttons for opposition schools\n<br />[*]([i]Truinto[/i]) allow CompletelyNormal Metamagic to work while using free metamagic cheat\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]([i]BarleyFlour[/i]) Added the ability to spawn an army as either friendly or hostile\n<br />[/list]\n<br />[*][b]Armies Editor[/b][list]\n<br />[*]can edit leader stats\n<br />[*]can edit leader skills\n<br />[/list]\n<br />[*][b]Etude Editor[/b][list]\n<br />[*]Ability to show GUID and comments\n<br />[/list]\n<br />[/list][b]Ver 1.4.6 (mainline 1.1.0i)[/b][list]\n<br />[*][b]Updated to work with WoTR 1.1.0i[/b]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]UI improvements for use and transfer\n<br />[*][i](Flat)[/i] click modifiers for use and transfer are now configurable\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]Improved Performance of parameterized feature and feature selection filters\n<br />[/list]\n<br />[*][b]Etude Editor[/b]\n<br />[list]\n<br />[*]Expanding children of etudes inside elements now works\n<br />[*]Now shows conflicting Etudes for AnotherEtudeOfGroupIsPlaying\n<br />[*]Fixed nasty crash when you opened elements on some of Camellia's romance items like the one with the necklace\n<br />[*]Made things even wider so stuff formats well\n<br />[*][i](Flat)[/i] Editor will not crash if localization files are not found\n<br />[/list][/list][list]\n<br />[*][b]Settings[/b][list]\n<br />[*][i](Flat)[/i] Fixed a typo for developer console\n<br />[/list]\n<br />[*][b]Post-Build[/b] (Developer QoL)[list]\n<br />[*][i](Flat)[/i] Post-Build script now copies over all packaged files to WrathPath\n<br />[/list]\n<br />[/list][b]Ver 1.4.5 (Universal - works on both main and beta versions)[/b][list]\n<br />[*][b]General[/b][list]\n<br />[*]1.4.5 is now cross compatible between beta and mainline\n<br />[/list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]Teleport keys now work on the local map\n<br />[/list]\n<br />[*][b]Level Up &amp; Multiclass[/b][list]\n<br />[*]If multiclass or ignore class and feat restrictions is set you can see a full range of class choices for pets[list]\n<br />[*][b][i]Warning [/i][/b][i]this is experimental so save early and often[/i]\n<br />[/list]\n<br />[*][i](Aephiex)[/i] Added new toggle 'Ignore Required Class Levels'\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]You can now add feature selections such as Deity.[list]\n<br />[*][b][i]Warning [/i][/b][i]this is experimental so save early and often[/i]\n<br />[/list]\n<br />[/list]\n<br />[*][b]Etude Editor[/b][list]\n<br />[*]You now have actions inside the Etude Elements which may be useful for quite a few things\n<br />[*]Shows the state of conditional elements\n<br />[/list]\n<br />[*][b]Quest Editor[/b][list]\n<br />[*]you can now teleport to stages of quest progression when available\n<br />[/list]\n<br />[*][b]Teleportation[/b][list]\n<br />[*]Teleporting to global map points now work across the global map and kenabres map\n<br />[/list]\n<br />[/list][b]Ver 1.4.4 (for beta 1.1)[/b][list]\n<br />[*]Ported to Beta (Game Version 1.1.0d)\n<br />[*][b]Bag of Tricks [/b]made spell acronyms default to off as intended (sorry about that)\n<br />[/list][b]Ver 1.4.3.1 (use this for current non beta until 1.1.x releases)[/b][list]\n<br />[*]Autoload of saves on launch can be disabled by holding down shift\n<br />[/list][b]Ver 1.4.3[/b][list]\n<br />[*][b]Level Up &amp; Multiclass[/b][list]\n<br />[*][i]Fixed Major Bugs in Multiclass[/i]\n<br />[*]Fixed bug where class powers, curses, etc were not being applied in some cases\n<br />[*]Fixed bugs where multiclass classes were being applied more than once on companions\n<br />[*]In Game Multiclass UI[list]\n<br />[*]Now works during character creation\n<br />[*]Various stability improvements\n<br />[/list]\n<br />[*]You can now unlock Lich Mythic path (was accidently removed)\n<br />[/list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]Spell/Ability Pickers option to show acronyms in the spell slots in order to be able to identify and choose them faster\n<br />[*]([i]Aephiex[/i]) Added new Quality of Life toggle 'Respec Refund Scrolls'\n<br />[/list]\n<br />[*]Party Editor Fixed bug where Recruitment was not using the new code path\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]Items now display flavor text if it is available and it can be searched whenever you search descriptions\n<br />[*]Fixed crasher when viewing Unlockable Flags\n<br />[/list]\n<br />[*][b]Etude Editor[/b][list]\n<br />[*]Etude Elements are now more obvious that you can explore them\n<br />[*]The editor can now expand width as wide as needed which should improve layout. This means you will need to use the horizontal scroll bars for deep exploration\n<br />[/list]\n<br />[/list][b]Ver 1.4.2.2[/b][list]\n<br />[*][b]Level Up &amp; Multiclass [/b]fixed crasher in save due to interaction with in game level up UI\n<br />[/list][b]Ver 1.4.2.1[/b][list]\n<br />[*][b]Level Up &amp; Multiclass[/b] fixed crasher in the main menu when viewing level up options\n<br />[/list][b]Ver 1.4.2[/b][list]\n<br />[*][b]Level Up &amp; Multiclass[/b][list]\n<br />[*]You can now [b]configure multiclass[/b] options directly in the [b]level up screen![/b]\n<br />[*]You are now prevented from making choices that break level up like selecting all of your existing classes as multiclass. Instead choose your desired new class as a multiclass and level up one of your existing\n<br />[*]Fixed issue where char gen class choices would get applied to companions during some level ups. Please give feedback if you see issues respecing your companions\n<br />[*]removed unimplemented flags in the multi-class config to avoid confusion. Please file feature requests if there are any that you really wanted.\n<br />[/list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]moved teleport keys to go with teleport party to me and gave it its own section with explainer text\n<br />[*]Added common cheat to reset interaction point skill checks in an area\n<br />[*]([i]Aephiex[/i]) Renamed 'Disable Arcane Spell Failure' into 'Disable Armor &amp; Shield Arcane Spell Failure' to make it more clear\n<br />[*]([i]Aephiex[/i]) Fixed issue where 'Disable Armor Max Dexterity' permanently changes armor max dexterity into 99 even after disabling this option\n<br />[*]([i]Aephiex[/i]) Added new option 'Disable Armor Speed Reduction' which disables the -10 speed while wearing medium and heavy armor\n<br />[*]([i]Aephiex[/i]) Added new option 'Disable Armor &amp; Shield Checks Penalty' which disables the checks penalty applied while wearing armor and holding shield\n<br />[*]([i]Aephiex[/i]) Added new multiplier slider 'Increase Carry Capacity (Party Only)' which multiplies party carry capacity without changing the carry capacity of individual characters; the original multiplier still affects both\n<br />[/list]\n<br />[*]Party Editor renamed 'Facts' to the more correct name 'Features'\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]made categories for 'Features' much more useful. Choose Search 'n Pick &gt; Features and see all the interesting categories to explore ^_^\n<br />[*]you can now hover over the type field for a blueprint to get a button that lets you show other items in the same category\n<br />[/list]\n<br />[*][b]Enchantment[/b]\n<br />[list]\n<br />[*][b]Sandal[/b] has discovered the mythic path of [b]Trickster [/b]and can reveal hidden secrets in your items. Look for some fun new buttons at the bottom of the target info on the enchantment tab.\n<br />[/list][*][b]Quest Editor[/b] shows some area and location info in anticipating of adding teleport to quest locations soon\n<br />[/list][b]Ver 1.4.1[/b][list]\n<br />[*][b]Important[/b][list]\n<br />[*]This release changes where settings for [i]gestalt, multiclass, allow level past 20[/i] state is saved from ToyBox settings to your game save. This will RESET all these settings to their DEFAULT state. We provide a way to migrate your settings from legacy ToyBox settings to your current save file. Look for it under Level Up in the multiclass config area. Note you will need to do this the first time you load any save that you wish to continue using these features.\n<br />[/list]\n<br />[*][b]Multiclasss &amp; Gestalt[/b][list]\n<br />[*]Moved save state from settings into Owlcats save file extensions for save files so now your gestalt state will live in your save and never get out of sync due to toybox settings changes\n<br />[*]Added migration buttons if ToyBox detects that you have old save state in your settings and nothing in the current save. Please use these with care.[list]\n<br />[*]You also have the option to remove the migration data\n<br />[/list]\n<br />[*]Added descriptive string for gestalt flag in Level Up and Party Editor\n<br />[*]Improved new multiclass selection UI to allow you to select other archetypes for a class that you have an existing archetype. This will only apply during respect.[list]\n<br />[*]Added orange warning message to inform user of this behavior\n<br />[/list]\n<br />[*][i]Note[/i] this should make ToyBox Multiclass and Gestalt play better with respecing\n<br />[/list]\n<br />[/list][b]Ver 1.4.0 [/b]\n<br />[list]\n<br />[*]Massive new update including a new Etude Editor.  Please check [url=https://github.com/cabarius/ToyBox/blob/master/ToyBox/ReadMe.md]here[/url]﻿﻿ for to see full release notes and a preview of the next release..\n<br />[/list][list]\n<br />[*]New Etude Editor is a powerful way to view and edit Etude progression[list]\n<br />[*]Tree view[list]\n<br />[*]etudes and their childern\n<br />[*]can expand immediate children or go all the way down\n<br />[*]can reveal the various conditions involved with the etude which is very powerful for understanding their mechanics. This will be improved to let you manipulate the conditions as much as spossible\n<br />[/list]\n<br />[*]Actions to start, unstart and complete etudes are available\n<br />[*]Much more coming which I will talk about soon\n<br />[/list]\n<br />[*]Bag of tricks[list]\n<br />[*]([i]ShadowRanger[/i]) Added a fix that should resolve the zoomed out camera bug if you had both ToyBox and Free Camera installed. You may need to reset Toybox's fovMultiplier to 1 for it to take effect.\n<br />[*]([i]ShadowRanger[/i]) Added a new sub-menu for all 'begone' versions called [i]Icky Stuff Begone!!![/i] and added green explainer text\n<br />[*]([i]ShadowRanger[/i]) Added retrievers begone\n<br />[*]([i]Mafemergency[/i]) Tweak to reset interaction skill checks\n<br />[/list]\n<br />[*]Multiclass &amp; Gestalt[list]\n<br />[*]Multiclass config list marks the classes you have in orange and shows the state of the gestalt flag\n<br />[*]Note these remain separate for now but I hope showing them in a unified UI will make this more clear\n<br />[/list]\n<br />[*]Party Editor[list]\n<br />[*]fixed crasher when you lowered caster level multiple times\n<br />[*][i]Add All[/i] spells no longer adds extra copies of spells you already learned\n<br />[*]Fixed layout issue that would push [i]Add All[/i] to the right side of the screen\n<br />[*][i]Select From All Spellbooks[/i] now shows the spells from all spellbooks\n<br />[/list]\n<br />[*]Loot Checklist[list]\n<br />[*]Checklist is now searchable\n<br />[*]now shows the private name of the area you are in so you can find it in Search 'n Pick\n<br />[*]Items within a container or unit sort by rarity\n<br />[/list]\n<br />[*]Search 'n Pick cleaned up some layout behavior that would make the character picker get wider than necessary\n<br />[*]Kingdom Editor now has a bunch of new adjustments including:[list]\n<br />[*]Current Day\n<br />[*]Current Turn\n<br />[*]Claim Cost Modifier\n<br />[*]Claim Time Modifier\n<br />[*]Rankup Time Modifer\n<br />[*]Build Time Modifier\n<br />[*]Random Encounter Chance Modifier (Unclaimed, Claimed, Upgraded)\n<br />[*]Confidence (Royal Court)\n<br />[*]Confidence (Nobles)\n<br />[*]Victories This Week\n<br />[*]Unrest\n<br />[*]Kingdom Alignment\n<br />[/list]\n<br />[*]Misc[list]\n<br />[*]Fixed crasher when editing slider values via keyboard\n<br />[/list]\n<br />[/list][b]\n<br />Older Versions[/b]\n<br />[list]\n<br />[*]Please check [url=https://github.com/cabarius/ToyBox/blob/master/ToyBox/ReadMe.md]here[/url]﻿﻿ for latest release notes \n<br />[/list]\n<br />[b]Acknowledgments[/b]:  [list]\n<br />[*][b]ArcaneTrixter[/b] for many awesome improvements and bug fixes\n<br />[*][b]fire[/b] &amp; [b]m0nster[/b] for lots of awesome code from bag of tricks\n<br />[*][b][url=https://github.com/cabarius/ToyBox/issues?q=is%3Apr+author%3ATruinto]Truinto[/url], Delth, Aphelion, fire [/b]for great contributions to the ToyBox project\n<br />[/list]   [b]Owlcat Games[/b] - for making fun and amazing games   [b]Paizo[/b] - for carrying the D20 3.5 torch   Pathfinder Wrath of The Righteous Discord channel members[b]\n<br />[/b][list][*][b]@Spacehamster[/b] - awesome tutorials and taking time to teach me modding WoTR, and letting me port stuff from Kingdom Resolution Mod\n<br />[*][b]@m0nster[/b] - for giving me permission to port stuff from Back of Tricks\n<br />[*][b]@Vek17, @Bubbles, @Balkoth, @swizzlewizzle[/b] and the rest of our great Discord modding community - help, moral support and just general awesomeness\n<br />[*][b]@m0nster, @Hsinyu, @fireundubh[/b] for Bag of Tricks which inspired me to get into modding WoTR because I missed this mod so much\n<br />[*]PS: Learn to mod Kingmaker Games here: [url=https://github.com/TylerGoeringer/OwlcatModdingWiki/wiki]OwlcatModdingWiki[/url]﻿\n<br />[*]Come visit the authors Narria et al on the [url=https://discord.gg/wotr]WoTR Discord[/url]﻿\n<br />[/list]\n<br />[b]Source Code[/b]: [url=https://github.com/cabarius/ToyBox]https://github.com/cabarius/ToyBox[/url]\n<br />[b]License[/b]: MIT",
+      "DownloadLink": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/8?tab=files&file_id=1236",
+      "GithubOwner": "cabarius",
+      "GithubRepo": "ToyBox",
+      "ModId": {
+        "Identifier": "ToyBox",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "1.0.0",
+          "contents": "Initial release"
+        },
+        {
+          "version": "1.0.1",
+          "contents": "Speed up search and cleaned up UI"
+        },
+        {
+          "version": "1.0.3",
+          "contents": "- party picker now lets you browse Party, Party &amp; Pets, All Characters, Active Companions. Remote Companions, Mercs, Pets - Add/Remove party members - Teleport Party To You - Run Perception Check - ToggleTabHighlightsMode"
+        },
+        {
+          "version": "1.0.4",
+          "contents": "- Search Character Picker - Can now add features to a sepecificly chosen party member - Quest Resolution - browse and modify progress in your quests (great for dealing with bugged quests) - Improved layout at lower resolutions (not perfect yet)"
+        },
+        {
+          "version": "1.0.5",
+          "contents": "Ported Dialog Preview from Kingdom Resolution Mod. Now you can get a preview of results from Dialog, Alignment Restricted Dialog, Events and Random Encounters"
+        },
+        {
+          "version": "1.0.6",
+          "contents": "Added experimental Respec Feature - fixed bug where the arrows were backwards in add/remove rank and also made sure it couldn't take you below 1 - various stability improvements"
+        },
+        {
+          "version": "1.1.0",
+          "contents": "Massive Update - see main mod page or readme"
+        },
+        {
+          "version": "1.1.1",
+          "contents": "Ver 1.1.1 Fixed Party Editor bug where it would get out of sync with the party, especially when loading other saves ﻿Added Nearby Units and show distance to other units"
+        },
+        {
+          "version": "1.1.2",
+          "contents": "Fixed bug that broke abilities and cooldowns during combat\nAdded bonus feature 'Unlimited Actions During Turn' for Turn Based Combat\nTweaks to party editor UI and labels\nFixed bug where you could only toggle to show stats/facts/abilities/etc for main character even though you selected a toggle on another"
+        },
+        {
+          "version": "1.1.3",
+          "contents": "Party Editor &gt; Classes - Can now adjust character level, mythic level, and indivual class level without triggering level up\nParty Editor &gt; Classes - Reset character level to current xp\nParty Editor &gt; Classes - Text Field added to stat editor\nCheap Tricks &gt; Gold and party exprience increase\nCheap Tricks &gt;  Added Cheap Trick for Unlocking All Mythic Paths\nSearch 'n Pick &gt; Added a fun teleport feature to blueprint browser (Entr Points)\nSearch 'n Pick &gt; More filter categories\nIncreased max feat multiplier to 10\nFixed issue where movement speed multiplier was not being applied correctly\nFixed bug that was preventing bard/azata build from spending resource points\nFixed issue that prevented adding 9th level spells"
+        },
+        {
+          "version": "1.1.4",
+          "contents": "Accidently uploaded ver 1.1.3 as 1.1.4 so just bumping the version in the docs.  Next will be"
+        },
+        {
+          "version": "1.1.5",
+          "contents": "Ver 1.1.5     Fixed bug with meta magic where if Free Meta Magic is on it doubles the metamagic and if off it hides it     (I fixed this before but it was lost somewhere along the way)"
+        },
+        {
+          "version": "1.1.6",
+          "contents": "Ignore Class And Feat Restrictions now allows you to choose any mythic class each time you level up starting from level 1"
+        },
+        {
+          "version": "1.1.7",
+          "contents": "Added Attack of Opportunity Disable to Cheap Tricks\nCan now choose Alignment in Party Editor &gt; Stats\nCan now choose Size in Party Editor &gt; Stats\nAdded Item and Ingrediant as options in Search 'n Pick\nIn search and pick some actions (add/remove item and spawn) now support a parameter do it up to 100 times\nImproved legibility of colors\nFixed bug with movement speed multiplier where it made the main character go slow with moveAsOne off"
+        },
+        {
+          "version": "1.1.8",
+          "contents": "Added Dice Roll Tweaks to Cheap Tricks\nAdded friendly (Non Hostile) as a category to which you can apply tweaks\nFixed bug where mercenaries where getting main character build points instead of mercenary"
+        },
+        {
+          "version": "1.1.9",
+          "contents": "Kingdom Resource Editing (Finances, Materials, Divine Favors)\nSelector to allow you to move through other units during combat (real-time and turn based)\nInfinite Abilities and Spell Casts\nDisable Fog of War\nWhen you enable 'Show GUIDs' in Search 'n Pick they can now be copied to the clipboard\nMultiplier Sliders now give you a text field to edit the value\nMultiplier Sliders should work better for adjusting for small and big values\nFixed bug with item sell price multiplier where it was selling for too much when multiplier is 1\nMouse Wheel scrolling should work reliably now"
+        },
+        {
+          "version": "1.1.10",
+          "contents": "Tweak for autoloading last save on app launch\nImproved layout for mod window sizes &lt; 2000 and &lt; 1600\nReverted mouse wheel patch that broke horizontal scrolling"
+        },
+        {
+          "version": "1.1.11",
+          "contents": "Moved Level Up related tweaks to a new tab called 'Level Up'\nPick &amp; Search UI has been revamped\nCategories are now in a column on the left\nMost categories have a subtype filter\nAreas can now be teleported directly.\nAdded some useful filters for Areas too\nToggles for showing components and elements\nYou can now add BlueprintActivatableAbility\nAdded category for browsing Wrath's in memory cache\nSignificant Improvements to scrolling speed and other aspects of performance in Search 'n Pick and Party Editor"
+        },
+        {
+          "version": "1.2.0",
+          "contents": "Ported to Beta 2\nUI - more beautiful check-boxes and disclosure controls\nUI - much better support for mid and lower resolution screens\nTweaks - Armies also are affected by Travel Speed Multiplier\nLevel Up - Ignore Attribute and Skill Caps\nLevel Up - Ignore Remaining Attribute and Skill Points\nSearch 'n Pick - Instant travel to global or city map (Seach 'n Pick &gt; Global Map)\nSearch 'n Pick - Teleport to points on global map (Search 'n Pick &gt; Map Points)\nSearch 'n Pick - More categories have sub categories\nSearch 'n Pick - Improved layout of results\nSearch 'n Pick - Start and complete Etudes (Experimental)\nSearch 'n Pick - Start and complete quests, quest objectives (Experimental)"
+        },
+        {
+          "version": "1.2.1",
+          "contents": "Fixed disappearing doll in inventory screen and map refresh bugs due to NoFogOfWar flag"
+        },
+        {
+          "version": "1.2.2",
+          "contents": "Ported to Beta 3"
+        },
+        {
+          "version": "1.2.3",
+          "contents": "Ver 1.2.3 Recompiled for game release\nAdded tweak to allow achievements for modded games"
+        },
+        {
+          "version": "1.2.4",
+          "contents": "Added Field of View Multiplier to increase zoom range or even flip it (try a FoV Multiplier of 0.4)\nFixed bug in buff duration multiplier"
+        },
+        {
+          "version": "1.2.5",
+          "contents": "Added tweak to highlight scrolls that can be copied into your spell book (or recipes)\nImproved stability of fov (zoom multiplier) when you disable and renable the mod multiple times\nAdded experimental slider to increase max FoV multiplier.  This can cause perf issues in some maps\nFixed out of range bug in dialog preview\nReleased experimental version of 1.2.5 with multiple classes per level turned on (please download the experimental file to try this out and file bugs here: https://github.com/cabarius/ToyBox/issues)"
+        },
+        {
+          "version": "1.2.6",
+          "contents": "Added ability to see and set your experience to match your current character level\nAdded support for Roll 20s out of combat\nMade scribable scrolls show up in containers or corpses in addition to inventory and vendors\nGot rid of html tags from descriptions"
+        },
+        {
+          "version": "1.2.7",
+          "contents": "Fixed a bug that broke feat selection on level up\nFixed bugs with multiclassing and feat selection (experimental version)"
+        },
+        {
+          "version": "1.2.8",
+          "contents": "Fixed bug that would spawn enemies more powerful than they should\nTweak to allow you to control summons,\nAdjust summon duration and modify level for 2 different unit factions such as your party and enemies\nAdded ability to view (not modify yet) Archetypes and Paramterized Features to Search 'n Pick\nAdded party stats and encounterCR (when in a fight) to party editor"
+        },
+        {
+          "version": "1.2.9",
+          "contents": "Fixed bug affecting turn based commands like Studied Target or Gather Power\nRenamed 'Cheap Tricks' Tab to 'Bag of Tricks' in honor of m0nster and the great mod that helped make ToyBox what it is today"
+        },
+        {
+          "version": "1.2.10",
+          "contents": "Added feature to exclude classes in character level calculation, which helps gestalt class tinkering\nSearch 'n Pick - Update match count when you change collation category\nFixed Performance issue caused by showing combat challenge rating in party editor so removed it for now\nRaised max caster level to 20 for spellbook calculations (thanks Delth)\nMade buff length multiplyer not apply to harmoful buffs (thanks Delth)"
+        },
+        {
+          "version": "1.2.11",
+          "contents": "Unified gestalt flag in party editor with gestalt config so if you level up with a chosen set of multiclasses it will mark them as gestalt.  If you mark a class as gestalt it will get added to the multiclass set.\nCompanions can now multiclass\nFixed calculation error in multiclass skill points - note if you choose a gestalt class to level up as primary then it treats it as if you did not gain a character level\nYour dear pets can once again get more feats with feat selection multiplier\nFixed gestalt level up rules for hp/bab/saves/skills and crasher affecting respec mods\nAdded a URL describing gestalt classes in Level Up &amp; Multiclass section\nMulticlass skill point calculation no longer gets used when multiclass is disabled\n(Delth) Fixed roll1/roll20 on initative to actually set result of the roll, not whole iniative result\n(Delth) \"All hits critical\" was in fact \"All attacks hit and are critical\" - split into two separate options"
+        },
+        {
+          "version": "1.2.12",
+          "contents": "Increased max buff duration multiplier to 999 to match original Bag of Tricks\nQuest editor now sorts completed quests below active\nPets can now multiclass if you turn on ignore class and feat restrictions so make that bully thug or barbarian wardog\n(Fire) Tweak to block tutorials if you have them turned off in settings\n(Delth) Added flag to possibly enable multiple romances (experimental and untested, volunteers welcome)\n(Delth) Spiders Begone ported from Bag of Tricks! Spider looks changed to wolves, spider swarm looks to rat swarms."
+        },
+        {
+          "version": "1.2.13",
+          "contents": "Added sliders for Crusade Morale, Max Morale and Min Morale (more improvements to crusade are on their way)\nTweak to refill belt consumables from your inventory\nReduced log spam which can fill up Player.log which can grow huge so you may want to quit and delete the file from time to time.  It lives in $User&#92;AppData&#92;LocalLow&#92;Owlcat Games&#92;Pathfinder Wrath of the Righteous&#92;"
+        },
+        {
+          "version": "1.2.13",
+          "contents": "Toggle in Search 'n Pick to let you search descriptions"
+        },
+        {
+          "version": "1.3.0",
+          "contents": "Multiple Classes On Level Up (Gestalting) is live.         This is a complex new feature so it is still marked experimental         Note that configuration such as which classes you will multiclass on level up has been reset.          Any past results of multiclassing will remain intact however.     Cleaned up Multiclass UI for release\nCleaned up Multiclass UI for release\nArchetypes now work in char gen and fixed other bugs with multiclass\nNew tweak in Level up to let you hit next on any feature selector that runs out of feats.          This is activated automatically if feat selection multiplier is greater than 1\nAdditional tweak to let you skip any feat selection you wish\nImproved run speed multiplier to work when moving and now when looting chests\nFixed 'Whole Team Moves At Same Speed' to only happen when it is ticked.\nMoved 'Whole Team Moves At Same Speed' tick box to be next to the run speed multiplier slider\nAdded Time Scale Multiplier which affects the whole game\nCharacters you add to the party via party editor now are fully controllable and viewable (can't add non companions permanently to party yet but working on it)\nMade adding characters to party cease to be fighting and aggressive\nBlueprints now load on the mac so you can now fully use the mod"
+        },
+        {
+          "version": "1.3.1",
+          "contents": "Fixed slow movement speed when movement modifiers are off or when move as one is turned on with no change to speed multiplier"
+        },
+        {
+          "version": "1.3.1",
+          "contents": "Fixed crash on loading into a game that can sometimes happen due to multiclass config being set to a party member higher than the number"
+        },
+        {
+          "version": "1.3.1",
+          "contents": "You can now view, lock, unlock, increment and decrement UnlockableFlags in Search 'n Pick - be careful as there are 1400+ of these and we don't know what most of them do.\n(ArcaneTrixter) Added sliders for increased recruitment amounts and modifiable recruitment costs\n(ArcaneTrixter) Added max dex and arcane spell failure toggles requested in issue #106\n(ArcaneTrixter) Added a multiplier ('After Army Battle Raise Multiplier') for the number of units raised by Lich's Necromancy and similar effects. This code only gets triggered when players win, so shouldn't have any additional side effects.\n(ArcaneTrixter) This increases the speed at which generals level up and the amount of units spawned by features like Necromancy after battles. I pegged it to the existing experience multiplier to be consistent, but it could be its own multiplier if others prefer."
+        },
+        {
+          "version": "1.3.2",
+          "contents": "Enemy armies no longer speed up with movement speed multiplier. Only your armies become speedsters ^_^\nInitial teleport to cursor for party and main character support.  Use comma ',' to teleport the party and '.' to teleport the main char\nMove party together is now disabled for turn based combat (it broke it before)\n(ArcaneTrixter) Moved Crusade stuff to a new Crusade tab (more like army editing coming soon)"
+        },
+        {
+          "version": "1.3.3",
+          "contents": "Added separate zoom multiplier for cut scenes\nIncreased MaxFov to 5\nToggle to not charge campaign time when changing characters\n(ArcaneTrixter &amp; Narria) Added button to show the group editor anywhere\n(ArcaneTrixter) Added an experimental \"Large Player Armies\" toggle to the Crusade tab, which will enable players to have up to 14 units in their army. This might have unintended side effects if reloading a game with large armies without this setting enabled.\n(ArcaneTrixter) Added Kineticist class cheats to gather power with hands full and to allow additional burn reduction.\n(ArcaneTrixter) Enabled initial parameterized feat support.\n(ArcaneTrixter) Added a toggle for teleport keys being active in the Tweaks section of Bag of Tricks.\n(Truinto) Witch/Shaman: Cackling/Shanting Extends Hexes By 10 min (out of combat)\n(Truinto) Allow Simultaneous Activatable Abilities  (like judgements)"
+        },
+        {
+          "version": "1.3.4",
+          "contents": "Teleport Keys are now rebindable and shouldn't interfere with other windows that you might type in\nCleaned up the UI for parameterized feats. Values now are sorted and the layout is improved\nGot rid of Max FoV and increased standard max to 5\n(ArcaneTrixter) Added multipliers for Army Leader Power. Remember that power is squared for most abilities!\n(ArcaneTrixter) Fixed enemy HP multiplier slider\n(SonicZentropy) Added ability to spawn new Crusade armies from Search n Pick and squad editor in Crusade tab"
+        },
+        {
+          "version": "1.3.5",
+          "contents": "Toggling search descriptions now updates search results\nNo friendly fire toggle should work better with pets\n(ArcaneTrixter, Narria) Allies should no longer get piles of (sometimes contradictory) starting feats when initially recruited (Looking at you, Nenio!).\n(ArcaneTrixter, Narria) Party and pets should once again be affected by feat multiplier in town.\n(ArcaneTrixter) Added requested flag to allow Magus Spell Combat even in situations where their hands are full."
+        },
+        {
+          "version": "1.3.6",
+          "contents": "Fixed party speed multipliers to work with latest update of the game\n(ArcaneTrixter) Added requested multiplier for Arcanist spell slots."
+        },
+        {
+          "version": "1.3.7",
+          "contents": "You can now add key binds to cheat buttons like \"Rest All\", \"Full Bufs\", \"Reroll Perception\", etc\nHotKeys now recognize shift, alt, ctrl, alt and command key combos\nTeleport Party Key now works on Global or City Map\nSearch 'n Pick - You can now Unstart Etudes which can help fix broken progression\nAdded search 'n pick categories for Dialog, Cues and Answers\nMovement speed multiplier now affects when you interact with a map object or npc\n(ArcaneTrixter) Added option to use legendary hero leveling as non-legends.\n(ArcaneTrixter) Added a number of things around caster levels and spellbooks, including a +1/-1 caster level for any spellbook - Experimental"
+        },
+        {
+          "version": "1.3.8",
+          "contents": "Loot Colors and Filters         ToyBox gives WoTR a Diablo 2/Borderlands style loot rarity and coloring system including\nCheckbox to have the game color your loot according to rarity in inventory, containers, etc.\n\"Identify All\" added to Bag of Tricks &gt; Common\nAdded quality of life tweak to let you shift click to use items in your inventory\nSplit Tweaks into Quality of Life and Cheats to make it less huge\nNew categories for collating items by rarity, cost, enchant value\nSearch 'n Pick now defaults to searching descriptions. Untick the checkbox to disable this\nRenamed the tweak 'Enable multiple romance (experimental)' to 'Disable Romance IsLocked Flag (experimental)' which is more accurate because we don't know what this does but it doesn't unlock multiple romances. That is under investigation.\n(ArcaneTrixter) Added support for Legendary Heroes throughout Toybox, made fake legendary flag per character.\n(ArcaneTrixter) Added toggles for immunity to negative levels and ability drain.\n(ArcaneTrixter) Revised + added functionality to spellbook tab in party editor. Can now add/remove from specific spellbooks, and can select spells from any spellbook based on toggle.\n(Delth) Explicitly removed certain negative buffs (Prone, Fatigued) that the game does not mark as harmful from buff duration multiplier     (Truinto) Added tweak: Auto Start Rage When Entering Combat     (Truinto) Added tweak: Mass Loot Shows Everything When Leaving Map     (Truinto) Added tweak: Equipment No Weight     (Truinto) Added tweak: Allow Item Use From Inventory During Combat\n(Truinto) Added tweak: Disallow Companions Leaving Party\n(Vikash) Fixed Respec Code, Can now Respec companions even if they are not in party."
+        },
+        {
+          "version": "1.3.9",
+          "contents": "Made Alignment section in Bag of Tricks\nFixing alignment shifts for neutral good and similar alignments\nToggle allowing you to Prevent alignment shifts\nAdded per character alignment locking in Party Editor &gt; Char &gt; Stats\nBooks and other items that have info triggers are flagged as notable and show a circle around it\nChanged coloring for notable items to be a distinct lime green\n(ArcaneTrixter) Added mythic spellbooks to the new spellbook management section of Party Editor.\n(ArcaneTrixter) Added 'Ignore Alignment Requirement for Abilities' to Cheats menu for those struggling paladins and others.\nNote:  Freemantr80  mentioned in the nexus forums - Regarding romance, I've played twice now with 3 romances to the end. All you need to do is change the FLAG romance count value to 1 before coming back from abyss, and you won't get harassed by your lovers over having multiple partners.)  We are planning on better romance support including proper polyamory and same sex but are working on some needed infrastructure improvements to provide this and more"
+        },
+        {
+          "version": "1.3.10",
+          "contents": "Added new top level tab: \"Loot\"\nMoved Loot Coloring Settings to Loot Tab\nWith the kind permission and help from the legend himself, @Hambeard, ToyBox now supports a new version of TheLootCheckList\nLoot color tweaks: notable is now yellow and trash is now an appropriate sh_t brown color\nHot Key Binding control now scales properly to Unity Mod Manager UI scale setting.\n(ArcaneTrixter) Added 'Ignore Prerequisite Features (like Race) when choosing Class' to levelup.\n(ArcaneTrixter) Bumped max burn for kineticist burn cheat to 30 so you never have to be burned again.\n(ArcaneTrixter) Reorganized stat section of party editor to not just be the random enum order.\n(ArcaneTrixter) Allowed multiple judgements to be active at once.\n(ArcaneTrixter) Added toggle to remove Level 20 Caster Level cap.\n(ArcaneTrixter) Added ability to merge standalone mythics into any spellbook. Spell slots and spells per day are still based on the original type, e.g. Magus gets 6th level spells and below.\n(ArcaneTrixter) Added Add All button to spellbooks when browsing new spells. It works with Search All Spellbooks and respects current search results.\n(Delth) hopefully fixed gestalt skillpoint calculations"
+        },
+        {
+          "version": "1.3.11",
+          "contents": "Found a grey that works for trash loot. The previous brown still looked too much like a meaningful loot color\n(ArcaneTrixter) Added a 'Brutal Unfair Difficulty' to Quality of Life. Toggle on if you miss the previous challenge of Unfair or if you thought it too easy there's a slider now.\n(ArcaneTrixter) Modified 'Disable Arcane Spell Failure' to set spell failure to 0 so you can Blink freely.\n(ArcaneTrixter) No longer squaring the multiplier from 'Spells Per Day' when applying to spellbooks.\n(Vek17) Fixed issues around the Feat Multiplier including         - All story companions feats/backgrounds/etc. most notably a certain wizard who unlearns how to cast spells if your multiplier is at least 8. Also this is retroactive if you ever level up in the future with the multiplier on.         - Messed up All mythic 'fake' companions like Skeleton Minion for lich or Azata summon.         - Caused certain gestalt combinations to give sudden ridiculous level-ups of companions or sneak attack or kinetic blast."
+        },
+        {
+          "version": "1.3.12",
+          "contents": "Fixed issue where feat multiplier stopped working for certain cases such as mythic selections Renamed Feat Multiplier to Feature Selection Multiplier and added green explainer text to make it clear what this does\n(Truinto) Added Disable Dialog Restrictions (Mythic Path)"
+        },
+        {
+          "version": "1.3.13",
+          "contents": "Powerful yet easy to use enchantment editor available in a new top level tab called 'Enchantment'\nUpdated item rarity to account for added enchantments either by Sandal or other sources\nYou can now rename character, pets and others under your control\nUnits you add to your party don't run away when you leave the area\nAdded pagination to Search 'n Pick so now you can go page by page or slide through more than 1000 search results\nAdded experimental Show Tree in Party Editor &gt; Char &gt; Facts"
+        },
+        {
+          "version": "1.3.13",
+          "contents": "Fixed Crash in Echantments when you have no inventory in a new game\nEnchantments - show descriptions of existing enchantments of the selected weapon\nIdentify All now identifies items that are equiped. Useful if you recruit an NPC to your party because you see cool stuff on them in Loot Checklist"
+        },
+        {
+          "version": "1.3.14",
+          "contents": "Party Editor &gt; Adding characters to the party\n- Last change to add npcs to party broke when adding characters you have already recruited.\n- You can now recruit NPCs that are not in your wider group\n- Restored the previous Add functionality to add characters that you have aleady recruited\n- Any char in your party with either have Add or Recruit but not both\n- Colored both Recruit and Respec to cyan and made the warnings\nAdded some more extensive debug logging for feature selection multiplier.  (working on a proper fix)\n(ArcaneTrixter) Fixed Legend exp on level.\n(Delth) Added ability to add/remove skills from generals (works on currently selected army) - new selection type in Search'n'Pick"
+        },
+        {
+          "version": "1.3.15",
+          "contents": "Allow Shift Click To Transfer Entire Stack - Holding down shift lets you transfer whole stacks of items to the vendor and other similar things\nMoved Game Time Scale Slider into Quality of Life\nFixed an issue with \"Refill consumables in belt slots\" that would cause items to disappear from inventory if you shifted an item and then immediately triggered a battle through dialog\nFixed issue that caused notable items to no longer show their special highlight"
+        },
+        {
+          "version": "1.3.16",
+          "contents": "Critical - Fixed crasher triggered on rest and other situations when you use belt auto refill\nMade separate search field for Enchantment editor so it no longer uses the search from Search 'n Pick\nMore color tweaks to common and trash\n(ArcaneTrixter) Added Crusade Stats editor"
+        },
+        {
+          "version": "1.3.17",
+          "contents": "Brutal Unfair Difficulty &amp; Brutal Level Slider\nImproved explainer text for Brutal Unfair Difficulty to describe how Unfair was applying Unfair Modifiers twice and that Owlcat fixed the bug to only apply them once.\nChanged slider values as follows 1 - Unfair (Current Game) 2 - Brutal (As released with double Unfair bug) 3+ - Applies the Unfair modifiers 3 or more times\nProvide a clear title for the Brutality Levels (Unfair, Brutal, Uncommon, Rare, Epic, etc_\nLoot Coloring -  Made sure non magic items had rarity capped at Common\nLoot Coloring - Titles and loot coloring should match now This means rarity for weapons and armor now show up correctly in Enchantment. Sandal apologizes for misrepresenting your items..\nCleaned up UI around spellbook Edit toggle Improved the look and layout of all Sliders Enchantment Editor\nSearch now updates as you type\nAdded Search Button and Match Count Made search text persistent in settings\nEnchantment - Misc UI cleanup\n(Truinto) Added support for enchanting shields (\nTruinto) Added support for enchanting double ended weapons\n(ArcaneTrixter) Handled additional edge cases around factions for Crusade Power Multiplier; should properly make anything that isn't explicitly player faction get enemy multiplier."
+        },
+        {
+          "version": "1.3.18",
+          "contents": "Key Bindings - now shows conflicting keyBinds\nEquipment No Weight tweek is back. It was stolen by quasits who work for the merchant guild...\nAdded a Buff Like A Godess which makes you practically invulnerable\nRenamed Full Buffs Please to Common Buffs because it gives you Bless/Haste/Displacement/Heroism\n(ShadowRanger) Added in two ways of taking 10 out of combat. Always - rolls a 10 everytime. Minimum - rolls at least a 10 everytime.\n(Mafemergency) Added an action to lobotomize enemies bindable key that will render them unable to move or attack in combat. This is useful for when you need punching bags that don't fight back\n(Mafemergency) Fixed perception check rerolling\n(Mafemergency &amp; Narria) Added a alternate game timescale multiplier option and bindable key to toggle between them. Useful for when you want to fast forward through things\n(ArcaneTrixter) Fix various issues with learning spells related to merging spellbooks and gestalt spellcasters. On leveling up, you should be prompted to pick spells as a caster of the appropriate caster level.\n(ArcaneTrixter) Fixed small bug related to paladin/ranger caster level. Feel free to use the caster level cheats if you wish to continue playing with that!\nLoot - Made scribable scrolls show up as uncommon\nEnchantment - Sandal knows you like to hoard loot so he will help you find items with a handy new Search field in the inventory column\nEnchantment - Added very basic export and inport commands that allows you to save and add a list of items to a file based on the type (e.g. Weapon.json). These files live in a new ToyBox folder that in the same folder that contains your saved games\nEnchantment - Added dividers in the target item box\nSearch 'n Pick *Improved scrolling performance after searching for Paramterized Feats"
+        },
+        {
+          "version": "1.3.19",
+          "contents": "* **Bag of Tricks**    * You can now enable Developer Mode which enables the developer console which you can access by hitting tilde `\n* (***ShadowRanger***) Bugfix for taking 10 out of combat: corrected missing IsInCombat flag\n* (***ShadowRanger***) Added a vescavors-begone option, similar to spiders-begone, to replace all vescavor models\n* (***Mafemergency***)* Tweak to highlight hidden interactable objects"
+        },
+        {
+          "version": "1.4.0",
+          "contents": "* **New Etude Editor** is a powerful way to view and edit Etude progression\n* Tree view\n* etudes and their children\n* can expand immediate children or go all the way down"
+        },
+        {
+          "version": "1.4.1",
+          "contents": "* **Important** This release changes where settings for ***gestalt, multiclass, allow level past 20*** state is saved from ToyBox settings to your game save. This will **RESET all these settings** to their **DEFAULT** state. We provide a way to migrate your settings from legacy ToyBox settings to your current save file. Look for it under **Level Up** in the multiclass config area.  **Note** you will need to do this the first time you load any save that you wish to continue using these features and make sure you remember to save after migration.\n* **Multiclasss &amp; Gestalt**    * Moved save state from settings into Owlcats save file extensions for save files so now your gestalt state will live in your save and never get out of sync due to toybox settings changes\n* Added migration buttons if ToyBox detects that you have old save state in your settings and nothing in the current save. Please use these with care.\n* You also have the option to remove the migration data\n* Added descriptive string for gestalt flag in Level Up and Party Editor\n* Improved new multiclass selection UI to allow you to select other archetypes for a class that you have an existing archetype. This will only apply during respect.\n* Added orange warning message to inform user of this behavior\n* Now shows overall character level and level of each class or archetype that you have\n* Fixed bug where we were not syncing gestalt state at some key times like after loading and during migration\n* ***Note*** this should make ToyBox Multiclass and Gestalt play better with respecing\n* **Search 'n Pick** made collation keys searchable\n* **Army Editor** now show leader info and lets you view their skills (editing is coming in 1.4.2)\n* **Etude Editor**   * Show translated comments (not 100% but much better than nothing)"
+        },
+        {
+          "version": "1.4.1",
+          "contents": "* **Etude Editor** fixed crasher"
+        },
+        {
+          "version": "1.4.2",
+          "contents": "* **Level Up &amp; Multiclass**    * You can now configure multiclass options directly in the level up screen!\n* You are now prevented from making choices that break level up like selecting all of your existing classes as multiclass. Instead choose your desired new class as a multiclass and level up one of your existing\n* Fixed issue where char gen class choices would get applied to companions during some level ups. Please give feedback if you see issues respecing your companions\n* removed unimplemented flags in the multi-class config to avoid confusion. Please file feature requests if there are any that you really wanted.\n* **Bag of Tricks**    * moved teleport keys to go with teleport party to me and gave it its own section with explainer text\n* Added common cheat to reset interaction point skill checks in an area\n* (***Aephiex***) Renamed 'Disable Arcane Spell Failure' into 'Disable Armor &amp; Shield Arcane Spell Failure' to make it more clear\n* (***Aephiex***) Fixed issue where 'Disable Armor Max Dexterity' permanently changes armor max dexterity into 99 even after disabling this option\n* (***Aephiex***) Added new option 'Disable Armor Speed Reduction' which disables the -10 speed while wearing medium and heavy armor\n* (***Aephiex***) Added new option 'Disable Armor &amp; Shield Checks Penalty' which disables the checks penalty applied while wearing armor and holding shield\n* (***Aephiex***) Added new multiplier slider 'Increase Carry Capacity (Party Only)' which multiplies party carry capacity without changing the carry capacity of individual characters; the original multiplier still affects both\n* **Party Editor** renamed 'Facts' to the more correct name 'Features\n' * **Search 'n Pick**   *  made categories for 'Features' much more useful. Choose Search 'n Pick &gt; Features and see all the interesting categories to explore ^_^   *  you can now hover over the type field for a blueprint to get a button that lets you show other items in the same category\n* **Enchantment**   * Sandal has discovered the mythic path of Trickster and can reveal hidden secrets in your items. Look for some fun new buttons at the bottom of the target info on the enchantment tab.\n* **Quest Editor** * shows some area and location info in anticipating of adding teleport to quest locations soon"
+        },
+        {
+          "version": "1.4.2",
+          "contents": "* **Level Up &amp; Multiclass** fixed crasher in the main menu when viewing level up options"
+        },
+        {
+          "version": "1.4.2",
+          "contents": "Ver 1.4.2.2 Level Up &amp; Multiclass fixed crasher in save due to interaction with in game level up UI"
+        },
+        {
+          "version": "1.4.3",
+          "contents": "* **Bag of Tricks**    * Autoload of saves on launch can be disabled by holding down shift"
+        },
+        {
+          "version": "1.4.3",
+          "contents": "* **Level Up &amp; Multiclass**   * ***Fixed Major Bugs in Multiclass***\n* Fixed bug where class powers, curses, etc were not being applied in some cases\n* Fixed bugs where multiclass classes were being applied more than once on companions\n* In Game Multiclass UI     * Now works during character creation     * Various stability improvements\n* You can now unlock Lich Mythic path (was accidently removed)\n* **Spell/Ability Pickers** option to show acronyms in the spell slots in order to be able to identify and choose them faster\n* (***Aephiex***) Added new Quality of Life toggle 'Respec Refund Scrolls'\n* **Party Editor** Fixed bug where Recruitment was not using the new code path\n* **Search 'n Pick**   * Items now display flavor text if it is available and it can be searched whenever you search descriptions\n* Fixed crasher when viewing Unlockable Flags\n* **Etude Editor**    * Etude Elements are now more obvious that you can explore them\n* The editor can now expand width as wide as needed which should improve layout. This means you will need to use the horizontal scroll bars for deep exploration"
+        },
+        {
+          "version": "1.4.4",
+          "contents": "Ver 1.4.4 (for beta 1.1) Ported to Beta (Game Version 1.1.0d)\nBag of Tricks made spell acronyms default to off as intended (sorry about that)\nFor main line use Ver 1.4.3.1 until 1.1.x releases."
+        },
+        {
+          "version": "1.4.5",
+          "contents": "Ver 1.4.5 (Universal - works on both main and beta versions)\nBag of Tricks Teleport keys now work on the local map Level Up &amp; Multiclass\nIf multiclass or ignore class and feat restrictions is set you can see a full range of class choices for pets Warning this is experimental so save early and often\n* (Aephiex) Added new toggle 'Ignore Required Class Levels'\nSearch 'n Pick You can now add feature selections such as Deity. Warning this is experimental so save early and often\n* Etude Editor You now have actions inside the Etude Elements which may be useful for quite a few things\nShows the state of conditional elements\nQuest Editor you can now teleport to stages of quest progression when available\nTeleportation Teleporting to global map points now work across the global map and kenabres map"
+        },
+        {
+          "version": "1.4.6",
+          "contents": "* **Updated to WoTR 1.1.0.i (beta is done and released)\n* **Bag of Tricks**   * UI improvements for use and transfer\n* ***(Flat)*** click modifiers for use and transfer are now configurable\n* **Search 'n Pick**   * Improved Performance of parameterized feature and feature selection filters\n*  **Etude Editor**    * Expanding children of etudes inside elements now works\n* Now shows conflicting Etudes for AnotherEtudeOfGroupIsPlaying\n* Fixed nasty crash when you opened elements on some of Camellia's romance items like the one with the necklace\n* Made things even wider so stuff formats well\n* ***(Flat)*** Editor will not crash if localization files are not found\n* **Settings**   * ***(Flat)*** Fixed a typo for developer console"
+        },
+        {
+          "version": "1.4.7",
+          "contents": "* **Bag of Tricks**   * ♥♥ Love is Free ♥♥ - Allow any gender for any romance\n* Jelousy Begone! - Allow multiple romances at the same time\n* Big thanks to ***Paladingineer*** and ***Ronin*** for their contributions to making this possible\n* **Party Editor**   * (***Truinto***) added clear buttons for opposition schools\n* (***Truinto***) allow CompletelyNormal Metamagic to work while using free metamagic chea\nt * **Search 'n Pick**   * (***BarleyFlour***) Added the ability to spawn an army as either friendly or hostile\n* **Armies Editor**   * can edit leader stats   * can edit leader skill\ns * **Etude Editor**    * Ability to show GUID and comments"
+        },
+        {
+          "version": "1.4.8",
+          "contents": "* **Bag of Tricks**   * Love is Free     * Mythic path no longer blocks romance with the queen\n* Toggle to allow spells/abilities/items toolbar pop-ups grow wider\n* Group Picker      * Changing party in a map does not break characters anymore\n* No longer brings up the mod when activating it via hot key\n* Now works on the global map too\n* **Enchantment**   * (***Pheonix99***) Fix for stack merging eating enchants -  EX: If you add mighty fists to an amulet of natural armor, then stick it in inventory where you have another natural armor amulet of the same type, they're merged into a stack and the mighty fists enchant vanishes\n* **Search 'n Pick**   * Fixed issue where if you select items and then weapons that the subcategories would not appear\n* Fixed some misc crashes caused by bad blueprints\n* **Crusade Editor**   * Fixed issue where Build Time slider wouldn't slide\n* **Misc**   * Fixed some crashers in inventory UI"
+        },
+        {
+          "version": "1.4.9",
+          "contents": "* **Bag of Tricks**   * **Remote Companion Dialog**     * Fixed issue with Ex Companion dialog that would break some scenes involving Lann and Wenduag like at the end of the Prologue Labyrinth\n* Cleaned up layout of checkboxes for remote dialog\n* **Love is Free**    \t* (***Ronin***) Vellexia romance opened to all paths"
+        },
+        {
+          "version": "1.4.10",
+          "contents": "* **Bag of Tricks**   * **Remote Companion Dialog**     * added infrastructure for handling situations with ex companions where an Etude may expect them to not be on the team.  We have resolved the cases in *A Strike from the Sky*.  Please report other situations where you see odd behavior and we will resolve it ASAP.\n* (***Ronin***) Secret companions no longer appear early to spoil the surprise\n* (***Ronin + Narria***) Companions no longer mute during *A Strike From The Sky*\n* Improved camera zoom behavior when camera tilt/zoom all scenes is active\n* Fixed some crashers in dialog preview and control summons\n* (***Flat***) Add Rest Selected Unit\n* (***Flat***) Add toggle to disable Attack of Opportunities\n* (***DeadMoroz***) Fixed crasher that led to broken character switch when Loot Coloring is enabled and magical item was rewarded after tactical battle\n* (***DeadMoroz***) Enable action bar for controllable summons. Prefill action bar with spell abilities and charge.\n* (***Pheonix99***) Added Headers to Add Enchant search table, clairified Search Limit"
+        },
+        {
+          "version": "1.4.11",
+          "contents": "* **Bag of Tricks**   * **Friendship is Magic**      * (***Ronin***) Allow friendships to survive after commiting the most vile actions\n* **Remote Companion Dialog**    \t* (***Ronin***) Companions no longer mute during Act 5 companion quests, Bad Blood, or Underground Army\n* Toggle to let a rider mount pets without size restriction\n* Toggle to let a rider mount anything (experimental)\n* **Bag of Tricks**   * **Friendship is Magic**      * (***Ronin***) Allow friendships to survive after commiting the most vile actions\n* **Remote Companion Dialog**    \t* (***Ronin***) Companions no longer mute during Act 5 companion quests, Bad Blood, or Underground Army\n* Toggle to let a rider mount pets without size restriction\n* Toggle to let a rider mount anything (experimental)\n* Tweak to clear the action bar of the selected char\n* **Camera**     * Fixed bug where FOV multilier stopped working when using enhanced camera settings\n* Made camera zoom smoother on the mouse wheel, especially at higher FOV settings\n* **Level Up**   * Toggle to let pets take mythic classes   * Fixed mythic level up to show the correct mythic level on the top left of the level up screen.  **Note**: the progression UI still puts stuff in the wrong place but at least the calculations should be better\n* Toggle for ignoring racial feature prerequisites works once again\n* **Party Editor**   * Improved UI for mythic spellbook merging. You can also merge more than one mythic spellbook into the same normal spellbook. **Note**: only the first merge increasess the mythic level (caster level) of the spellbook but you do get the extra spells.\n* Added Mythic display of Mythic Experience and a button to set mythic experience so you can delevel your mythic level like you can for normal character level\n* You can no longer select all mythic classes as gestalt\n* Feature Tree view now shows levels for features acquired during level up\n* **Crusade Editor**   * Added Settlement Editor\n* (***KnightOfSeiros***) Added immediately build buildings\n* (***KnightOfSeiros***) Toggle to ignore all building restrictions\n* (***KnightOfSeiros***) Added immediately finish decrees\n* (***KnightOfSeiros***) Toggle to ignore start decree restrictions"
+        },
+        {
+          "version": "1.4.12",
+          "contents": "* ** Bag of Tricks***  * Cheat to let you enable Unlimited Stacking of Modifiers (Stat/AC/Hit/Damage/Etc)\n* Fixed backwards default X rotation when camera mods are enabled\n* Options to Invert Mouse X and Y Axis in camera settings\n* Moved dialog options into their own section in Bag of Tricks\n* Mythic Dialog Restrictions are beginning to apply to crusade events.\n* **Expand Answers For Conditional Responses** - Some responses such as comments about your mythic powers will always choose the first one by default. This will show a copy of the answer and the condition for each possible response that an NPC might make to you based on.\n* Option to see unavailable answers so you can see the conditions you are not meeting\n* **Friendship is Magic**      * (***Ronin***) Now for goodie-two-shoes as well!\n* (***Ronin***) Added support for Ciar and the Hand\n* **Alignment Unrestrcted**      * (***Ronin***) Included support for dialogs from NPC, not just dialog from the MC\n* (***Ronin***) Fixes for Lann/Wendu's questline\n* **Remote Companion Dialog**    \t* (***Ronin***) Fixed errors with Wendu and Lann not properly counting as \"former\" companions\n* (***Ronin***) Fixed errors with Nenio's final quest\n* **Loot**   * Added a friendly unit filter toggle to the loot checklist\n* **Crusade Editor**   * Now shows conditions and preview for crusade event solutions\n* Option to ignore crusade event solution restrictions\n* Cleaned up UI layout and description coloring to match the rest of the mod\n* (***KnightOfSeiros***) Toggle to choose no decree costs\n* (***KnightOfSeiros***) Now shows preview for decree and event results\n* **Army Editor**   * Moved army cheats to armies editor"
+        },
+        {
+          "version": "1.4.13",
+          "contents": "Bag of Tricks Quality of Life Game Over - Added toggle to block Game Over when certain companions die in combat, so if Leerooooy (Greybor) Jenkins runs in and your leader runs in to save him and dies the game does not end unless the whole party wipes.\nDialog Toy to make previously chosen dialog answers show up in smaller dimmer text\nExpand Answers For Conditional Responses Dialog dependent on previous dialog checks now works correctly with the feature enabled\nFixed issue that generated bogus extra answers for non conditional response by ensuring that the feature only gets activated by a set of continuation cues that all have conditions\nRemote Companion Dialog (Ronin) Convinced Daeran to stop repeating himself in the Grey Garrison\nCamera Mouse3 Camera + forward/back keys now lets you fly freely when pitch is enabled\nAdditional setting for completely free camera\nAdded Toy to let you adjust camera height with Ctrl+Mouse3 Camera Drag (very experimental)\nAdded Toy to let you adjust the clip plane with Alt+MouseWheel\nPreview Relic Info (thanks to rathtr)\nLevel Up &amp; Multiclass ToyBox now supports multiple archetypes when you select a new class following tabletop rules Thank you Vek for making this and sharing it with ToyBox users (please check out the excellent Table Top Tweaks mod as well. https://github.com/Vek17/WrathMods-TabletopTweaks)\nSearch 'n Pick Option to show display name (localized name) for things that have it\nSearch now looks at both display name (localized name) and internal name. Previously it only looked at internal name\nQuest Editor Added descriptions and improved UI in quest editor\nQuest steps now number properly\nSteps with missing titles show blueprint name quest steps are now colored based on whether completed, current or not seen yet.\nFailure steps are colored red\nLoot (Hambeard) Added hotkey bindable button to allow for area exit loot window to be opened mid dungeon.\n(Hambeard) Added button to show all ground loot on the map.\n(Hambeard) Added perception dc's to loot check list to indicate chest is hidden\n(Hambeard) Added trickery dc's to loot check list to indicate chest is locked\n(Hambeard) Added button to include hidden chest when revealing them to the map"
+        }
+      ],
+      "Latest": "1.4.13",
+      "Name": "ToyBox (a bag of tricks)",
+      "NexusModID": 8,
+      "Source": "Nexus"
+    },
+    {
+      "Author": "Vek17",
+      "Description": "Tabletop Tweaks is a mod that seeks to adjust the cRPG rules to more closely follow the tabletop ruleset. Additionally it adds content missing from the base game. ",
+      "DownloadLink": "https://github.com/Vek17/WrathMods-TabletopTweaks/releases/download/v1.10.4/TabletopTweaks.zip",
+      "GithubOwner": "Vek17",
+      "GithubRepo": "WrathMods-TabletopTweaks",
+      "ModId": {
+        "Identifier": "TabletopTweaks",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "0.2.0",
+          "contents": "**Target Version: 0.6.0**\n\n* added one handed weapon toggle\n* fixed slashing grace\n* fixed fencing grace\n* two handed fighter can now take advanced weapon training feats\n* two handed fighter training now properly works with fighter training effects\n* fighter advanced weapon training now properly respect prerequisites\n* added trained grace advanced weapon training\n* added trained throw advanced weapon training\n* fixed issue with buffs that could sometimes break lighting\n\n"
+        },
+        {
+          "version": "0.3.0",
+          "contents": "**Target Version: 0.6.0**\n\n* fixed mounted combat\n* fixed indomitable mount\n* fixed spirited charge\n* fixed cavalier supreme charge \n* fixed cavalier transfixing charge \n* added cavalier mobility\n* longspears are now treated as lances for the purposes of mounted bonus damage"
+        },
+        {
+          "version": "0.4.0",
+          "contents": "**Target Version: 0.6.0**\n\n* fixed vital strike crits\n* fixed bug where charge bonus damage could sometimes apply too often\n* added magical aptitude feat\n* added scholar feat\n* added self-sufficent feat\n* added shingle runner feat\n* added street smarts feat\n* fixed bloodrager caster level\n* added metamagic rager"
+        },
+        {
+          "version": "0.4.1",
+          "contents": "**Target Version: 0.6.0**\n\n* Fixed bug where auto metamagic was not always applying"
+        },
+        {
+          "version": "0.5.0",
+          "contents": "Target Version: 0.8.0\n\n    Updated for Beta3\n\n"
+        },
+        {
+          "version": "1.0.0",
+          "contents": "## Version 1.0.0\n* updated for release\n* skill points now properly increase with permant bonuses\n* improved Description tagging\n* improved quick study UI\n* fixed grenadier archetype features\n* fixed overtip UI rolls\n* fixed maxinimiz/empower stacking rules\n* fixed slippry mind not updating properly\n* fixed magicians ring DC bonus\n* fixed some damage stacking rules to reduce multiple damage procs\n* fixed pentamic faith prerequisities\n* reworked alternate features to allow multiple selections\n* added dervish dance feat\n* added graceful athlete feat/rogue talent\n* added dwarf stoutheart trait\n* added dwarf stoic negotiator trait\n* added elf arcane focus trait\n* added elf long limbed trait\n* added elf moon kissed trait\n* added elf vigilance trait\n* added gnome keen trait\n* added gnome fell magic trait\n* added gnome utilitarian magic trait\n* added gnome inquisitive trait\n* added gnome nosophobia trait\n* added halfling blessed trait\n* added halfling secretive survivor trait\n* added halfling underfoot trait\n"
+        },
+        {
+          "version": "1.0.1",
+          "contents": "* fixed arcane reservoir sometimes removing too many points on rest\n* fixed second breath"
+        },
+        {
+          "version": "1.0.2",
+          "contents": "* updated arcane reservoir fix to be self healing\n* fixed issue where new Arcanist exploits were not available to exploiter wizard"
+        },
+        {
+          "version": "1.0.3",
+          "contents": "* enabled persistent metamagic on spells"
+        },
+        {
+          "version": "1.0.4",
+          "contents": "* azata songs can now be activated outside of combat\n* fixed feats config not presisting on mod load\n* fixed dragon kind 1 and 2 not working"
+        },
+        {
+          "version": "1.0.5",
+          "contents": "## Version 1.0.5\n* fixed race config not presisting on mod load"
+        },
+        {
+          "version": "1.0.6",
+          "contents": "## Version 1.0.6\n* metamagic rods no longer are on by default\n* greater magic weapon no longer applies a stacking bonus\n* fixed a bug where favorable magic would sometimes not deal 75% damage instead of 50%\n* removed arcanist fix\n* training grounds no longer sets your crusade units damage to 10% instead of 110%"
+        },
+        {
+          "version": "1.0.7",
+          "contents": "* added config options for crusade fixes\n* added defensive weapon training\n* fixed lich spellbook merging with exploiter wizard and nature mage\n* fixed mod not loading due to vital strike changes"
+        },
+        {
+          "version": "1.0.8",
+          "contents": "* added zen archer perfect strike upgrade (in honor of the vital strike changes)"
+        },
+        {
+          "version": "1.0.9",
+          "contents": "* added focused weapon advanced weapon training\n* eldritch scion can now properly take a second bloodline\n* fixed broken fighter weapon training from 1.0.3 (result of multiple fighter group support)"
+        },
+        {
+          "version": "1.1.0",
+          "contents": "* added extra reservoir\n* added extra ki\n* added extra hex\n* added extra arcanist exploit\n* added extra arcana\n* added extra rogue talent\n* added extra slayer talent\n* added extra revelation\n* added extra discovery\n* added extra mercy"
+        },
+        {
+          "version": "1.1.1",
+          "contents": "* added spell blending (magus arcana)"
+        },
+        {
+          "version": "1.1.2",
+          "contents": "* dragon disciple can now progress with:\n    * stigmitized Witch\n    * sage sorcerer\n    * empyreal sorcerer\n    * unlettered arcanist\n    * nature mage"
+        },
+        {
+          "version": "1.2.0",
+          "contents": "For 1.0.4d\n\n* loremaster spell secrets now work\n* loremaster prerequisites have been updated\n* loremaster no longer allows you to take trickster feats\n* loremaster no longer causes you to lose a caster level\n* fixed bug where trained throw was not granting damage"
+        },
+        {
+          "version": "1.2.1",
+          "contents": "* disabled selective metamagic on non instantaneous effects\n* added broad study magus arcana\n* eldritch scion can now take bloodline ascendancy "
+        },
+        {
+          "version": "1.2.2",
+          "contents": "Hotfix for incorrect broad study settings preventing it from working correctly."
+        },
+        {
+          "version": "1.2.3",
+          "contents": "* spell combat now works with spells that have variants"
+        },
+        {
+          "version": "1.2.4",
+          "contents": "* fixed issue with broken cantrips with spell combat\n* added mythic spell combat"
+        },
+        {
+          "version": "1.3.0",
+          "contents": "* mythic spell combat now works with UMD3s spellbook\n* fixed feat selections missing relevant feats\n* fix coup de grace DC scaling (HUGE thanks to @Perunq)\n* additional spell selections from feats now happen before normal spell selections"
+        },
+        {
+          "version": "1.3.1",
+          "contents": "* fixed an edge case with spell blending preventing multiple spells from being taken in the same level\n* divine caster classes should now work as expected with the loremaster class\n    * this is NOT retroactive\n* the following classes can now progress their spellbook with loremaster\n    * Hunter\n    * Warpriest\n    * Crossblooded Sorcerer\n    * Espionage Expert\n    * Nature Mage"
+        },
+        {
+          "version": "1.3.2",
+          "contents": "* extra slayer talents should now allow all slayers\n* coup de grace is now working again (opps)\n* The holy symbol of Iomedae no longer turns itself off"
+        },
+        {
+          "version": "1.3.3",
+          "contents": "* fixed mounted maniac not triggering\n* fixed coup de grace not causing sneak attack damage\n* trickster UMD2 now allows you to ignore equipment restrictions as the description states\n* bolster should now be allowed on sticky touch spells like shocking grasp\n* empower should now be allowed on sticky touch spells like shocking grasp\n* maximize should now be allowed on sticky touch spells like shocking grasp\n* bolster splash damage should not longer hit you (unless you targeted a friendly)"
+        },
+        {
+          "version": "1.3.4a",
+          "contents": "v1.3.4\n* added precision critical mythic ability\n* rowdy's vital force now correctly deals precision damage\n* profane ascension now works correctly for dexterity and strength based characters\n* sword saint's perfect critical now correctly costs 2 points of pool instead of 1\n\nv1.3.4a\n* fixed issue where weapon materials didn't apply correctly\n* fixed issues where activiatable abilities with resources spent incorrecty\n* fixed issue where vital force was not properly applied to melee attacks"
+        },
+        {
+          "version": "1.3.5",
+          "contents": "* shatter defenses now works like in tabletop\n* extra feat mythic feat can now only be taken once\n* extra mythic ability mythic feat can now only be taken once\n* improvements to natual armor stacking rules\n* added mythic shatter defenses\n* added nature soul @Aegonek \n* added animal ally @Aegonek "
+        },
+        {
+          "version": "1.3.6",
+          "contents": "1.0.7 support\n* animal ally should now always progress correctly\n* fixed for 1.0.7"
+        },
+        {
+          "version": "1.3.7",
+          "contents": "* fixed issue where settings were not always properly preserved in version updates\n* shatter defenses should now work correctly for anything with an attack rolls instead of just weapon attacks\n* added greater spell specialization\n"
+        },
+        {
+          "version": "1.4.0",
+          "contents": "* weapon training no longer stacks with itself incorrectly\n* greater spell specialization now works more correctly with variant spells\n* Damage Reduction (HUGE Thanks to @bguns):\n    * Overview: This provides a comprehensive rework of the damage reduction / resistance mechanics in the game. This rework allows for (more) correct stacking of DR, and fixes issues with the interaction between Protection From Energy, energy resistance, and the Abjuration school's Elemental Absorption class feature.\n    * Fixed: DR X/- now increases and stacks as per the tabletop rules\n        * Changed: Mangling Frenzy item extra rage DR allowed to stack with barbarian(-like) damage reduction\n        * Changed: Lich's Indestructible Bones mythic ability allowed to stack with all other sources of DR/-\n        * Changed: Azata's The Bound of Possibility item now grants stacking DR/Lawful to match Aivu\n        * Changed: Armored Juggernaut (added by TTT) only stacks with adamantine armors, and is increased by Armor Mastery\n    * Fixed: interaction between protection from energy, energy resistance, and the abjuration school's energy absorption feature\n    * Fixed: Clustered Shots was able to (in theory) overcome force resistance\n    * Fixed: Abilities that reduced DR (such as Aeon's Enforcing Gaze with the DR option) also reduced energy resistance(s)\n    * Fixed: Skald Damage Reduction was not increased by the Increased Damage Reduction rage power\n    * Fixed: Mad Dog's pet's DR did not increase if the Mad Dog took the Increased Damage Reduction rage power\n    * Fixed: Bloodrager (Primalist) DR was not increased by the Increased Damage Reduction rage power\n    * Fixed: Winter Oracle Ice Armor revelation gave DR 5/- instead of DR 5/piercing\n    * Fixed: Bruiser's Chainshirt gave DR 3/- instead of DR 3/piercing\n    * Fixed: Warden of Darkness (Tower Shield) gave DR 5/- instead of DR 5/good\n    * Fixed: Aivu was gaining DR/- instead of DR/Lawful\n    * Fixed: The rage buff from the Mangling Frenzy belt did not apply to Bloodrager's rage"
+        },
+        {
+          "version": "1.4.1",
+          "contents": "* favorite metamagic bolstered is now pickable\n* fixed cases where it was sometimes impossible to complete levelup due to the DR rework"
+        },
+        {
+          "version": "1.5.0b",
+          "contents": "* added new archetypes (big thanks to @factubsio for their work on these)\n    * nature fang\n        * A druid/slayer hybrid archetype who trades wild shape for studied target and slayer talents\n    * divine commander\n        * A warpriest/cavalier hybrid archetype who trades blessings and some bonus feats for a divine mount and the tactician ability\n* added erastil's blessing feat (Thanks @factubsio)\n* added stalwart and improved stalwart feats (Thanks @bguns)\n* fixed issues with ContextRankConfigs giving incorrect progressions in some cases. Unsure of the scope of the bug but things should work more correctly now.\n\n**v1.5.0a**\n*  fixed issue where ContextRankConfigs would sometimes calculate incorrectly if only one archetype was setup\n\n**v1.5.0b**\n* fixed issue where ContextRankConfigs would sometimes calculate incorrectly for classes without an archetype"
+        },
+        {
+          "version": "1.5.1",
+          "contents": "* fixed issue with uncanny dodge prerequisites\n* fixed utilitarian magic tooltip\n* primailist rage powers should all work now with bloodrage (Thanks to @bguns)\n* oracle curses should now work correctly (Thanks to @pheonix99)\n* nature oracle and scaled fist AC bonus no longer stack"
+        },
+        {
+          "version": "1.5.2",
+          "contents": "* preapplied buffs will now be added at the correct CL, this will result in many buffs being easier to dispell\n* tagged more buffs applied by spells as being applied by spells, this means they will now be correctly dispellable\n* added celestial servant feat"
+        },
+        {
+          "version": "1.6.0a",
+          "contents": "* dispel magic greater now correctly has a cap on how many buffs it can remove (1/4 CL)\n* added new cleric archetype\n    * a fallen cleric archetype that has a unique domain selection, can convert all spells into domain spells, and gets a unique form of channeling that damages ALL things\n* added improved channel feat\n* added quick channel feat"
+        },
+        {
+          "version": "1.6.1",
+          "contents": "* fixed some buffs being dispellable that should not have been\n* fixed paladin divine mount template\n* fixed rare serailization bug that could prevent saves from loading"
+        },
+        {
+          "version": "1.7.0",
+          "contents": "* arcane bloodrage rework (Thanks to @bguns)\n* added lecturer backgorund"
+        },
+        {
+          "version": "1.8.0",
+          "contents": "* Aeon Mythic Rework\n    * Aeon Bane is now a free action to activate instead of a swift\n    * Aeon Bane usages now scale at 2x Mythic level + Character level\n    * Aeon Greater Bane damage is now rolled into the main weapon attack instead of a separate instance\n    * Aeon Greater Bane now allows you to cast swift action spells as a move action\n    * Aeon Gaze selection is no longer limited on the first selection and all selections are available\n    * Aeon Gaze now functions like Inquisitor Judgments where multiple can be activated for the same swift action and resouce usage\n    * Aeon Gaze DC has been adjusted from 15 + 2x Mythic Level to 10 + 1/2 Character Level + 2x Mythic level\n        * This takes the DC range from DC 21-35 to DC 21-40 (+2 vs Chaotic)\n* fixed armor specilization cap being lower than it should have been\n* made nature oracle AC conversion more consistant\n* advanced armor training should now increase heavy armor movement speed again"
+        },
+        {
+          "version": "1.8.1",
+          "contents": "* Aeon Bane no longer grants disadvantage on spell resistance and instead correctly adds mythic rank to spell resistance checks\n* Aeon Improved Bane now uses greater dispel magic rules to remove 1/4 CL buffs where CL is defined as Character Level + Mythic Rank instead of ALL buffs\n* Aeon Greater Bane now has the guaranteed auto dispel on first hit\n* Break Enchantment no longer removes friendly buffs\n* Cleaned up fighter armor training speed increase to work more correctly with archetypes"
+        },
+        {
+          "version": "1.8.2a",
+          "contents": " ## Version 1.8.2\n* Cleaned up icon rendering\n* Added Warrior Spirit advanced weapon training with the following options:\n    * Anarchic\n    * Axiomatic\n    * Holy\n    * Unholy\n    * Corrosive\n    * Corrosive Burst\n    * Flaming\n    * Flaming Burst\n    * Frost\n    * Icy Burst\n    * Shock\n    * Shocking Burst\n    * Thundering\n    * Thundering Burst\n    * Cruel\n    * Keen\n    * Bane\n    * Ghost Touch\n    * Brilliant Energy\n    * Speed\n    \n## Version 1.8.2a\n* Fixed broken quick study tooltips\n* Nature's Whispers MAY work correctly this time\n* Warrior Spirit should now correctly remember which buff you have selected"
+        },
+        {
+          "version": "1.9.0",
+          "contents": "**TARGET GAME VERSION:** 1.0.9\n* Energy Resistance should now show up when inspecting units\n* Settings should no longer break when some other mods are present\n* Loremaster should now work properly with spontaneous casters in all cases\n* Major update to settings, this is unfortunatly a breaking change\n* Settings now have a UMM UI"
+        },
+        {
+          "version": "1.9.1b",
+          "contents": "**THIS IS FOR BETA 1.1.0 ONLY**\n## Version 1.9.1\n* Updated for 1.1.0\n\n## Version 1.9.1a\n* Settings UI fixes\n\n## Version 1.9.1b\n* Fixed issue with Aeon Limitless gaze crashing\n* Fixed issue mythic rework setting missing the correct interface"
+        },
+        {
+          "version": "1.9.2",
+          "contents": "THIS IS FOR BETA 1.1.0 ONLY\n\n## Version 1.9.2\n* Removed the movement impairing descriptor from staggered\n* Fixed issue with DR config not working correctly\n* Fixed issue where loremaster wouldn't always give you spell from the correct list\n* Inherent stat bonuses (like those from stat tomes) now count for feat prerequisites"
+        },
+        {
+          "version": "1.9.3a",
+          "contents": "**For Beta 1.1.0**\n\n## Version 1.9.3\n* Added new modified version of Armor Master as a homebrew option\n* Updated icon for Aeon Bane\n* Minor fixes to nested activatable abilities\n* Aberrant bloodline should now work correctly with Mixed Blood Bloodrager\n* Destined bloodline should now work correctly with Mixed Blood Bloodrager\n\n## Version 1.9.3a\n* Fixed issue with Oracle curse progression moving at the wrong rate\n* Fixed issue with alternate racial features breaking with Destinaty Beyond Birth\n* Fixed CL scaling on Burning Magic Revelation"
+        },
+        {
+          "version": "1.9.4",
+          "contents": "## Version 1.9.4\n* Updated handling of nested activatable abilities\n* Fixed issue where additional spell selections from spell blending/loremaster were not actually applying\n* Fixed unarmed strikes not being valid for weapon training\n* Close to the Abyss now correctly deals 1.5 strength damage instead of 0.5\n* Steel Headbutt should now more correctly use armor enchantment values\n* Aeon Bane is now a swift action instead of a free\n* Aeon Gaze is now a free action instead of a swift\n* Updated Deity favored weapon mechanics to fix proficiency not being granted properly in some cases"
+        },
+        {
+          "version": "1.9.5",
+          "contents": "## Version 1.9.5\n* Loremaster now supports Hunter, Skald, and Warpriest\n* Terrifying Tremble's on kill effect now works"
+        },
+        {
+          "version": "1.9.6b",
+          "contents": "## Version 1.9.6\n* Rebuilt Metamagic rager to be less janky\n* Fixed Arcane Bloodrager polymorph effects breaking turn based mode\n\n## Version 1.9.6a\n* Fixed Arcane Bloodrager spell effects CL for mixed blood bloodrager\n\n## Version 1.9.6b\n* Aspect of Omox DR now stacks globaly\n* TabletopTweaks should now work again on non English languages"
+        },
+        {
+          "version": "1.10.0",
+          "contents": "## Version 1.10.0\n* Added homebrew flags in the settings\n* Fixed minor issues with AddFacts\n* Added Quick Draw\n* Celestial Bloodline now works correctly with Metamagic Rager\n* Adjusted Magical Tail Feats @Balkoth-dev\n* Kitsune polymorph is now correctly considered a polymorph @Balkoth-dev\n* Updated string handling to support general localization (will need help from speakers to do actual localization work)\n* Shadow Enchantment should now work correctly\n* Added support for dynamic item naming"
+        },
+        {
+          "version": "1.10.1",
+          "contents": "## Version 1.10.1\n* Fixes to Warrior Spirit save loading issues\n* Halfing alternate racial trait blessed now removes the correct trait\n* Added Blade Bound Magus archetype\n    * A Magus archetype which sacrifices some of thier arcane pool for a unique weapon that scales along side them\n* **Chinese localization from @1onepower**\n\nHUGE Thanks to @1onepower for the help with localization, could not have gotten this done alone."
+        },
+        {
+          "version": "1.10.2",
+          "contents": "## Version 1.10.2\n* Fixed some incorrect ability types for Black Blade\n* Added Undersized Mount\n* Added Trick Riding\n* Cleanups for dynamic item naming\n* Magus now gets its missing \"Burst\" enchantments\n* Activatabilies should now correctly turn off when they run out of charges\n* Half of the Pair should now more accurately update with range changes\n* Phantasmal Mage metamagic should now work correctly with shadow spells\n* Minor fixes to Zippy magic tweaks\n* Crossblooded sorcerer now takes the missing -2 will save penalty from tabletop"
+        },
+        {
+          "version": "1.10.3a",
+          "contents": "## Version 1.10.3\n* Haramaki now counts as light armor for effects that depend on it (can still be equipped without proficiency)\n* Selective metamagic now requires 10 ranks of knowledge arcana\n* Spells that are not valid for selective metamagic can no longer be made selective\n* You can no longer full attack after moving while mounted\n* Lunge is now selectable as a feat\n    * You can increase the reach of your melee attacks by 5 feet until the end of your turn by taking a –2 penalty to your AC until your next turn. You must decide to use this ability before any attacks are made.\n* Added Lunging Spell Touch Feat\n    * You can increase the reach of your spells’ melee touch attacks by 5 feet until the end of your turn by taking a –2 penalty to your AC until your next turn. You must decide to use this ability before you attempt any attacks on your turn.\n* Added Mounted Skirmisher Feat\n    * If your mount moves its speed or less, you can still take a full-attack action.\n* Added Horse Master Feat\n    * Use your character level to determine your effective druid level for determining the powers and abilities of your mount.\n    \n## Version 1.10.3a\n* Chinese localization updated by @1onepower"
+        },
+        {
+          "version": "1.10.4",
+          "contents": "## Version 1.10.4\n* Now works with 1.1.6e\n* Fix for trick riding not working properly in all cases\n* Allied Spellcaster no longer applies globally\n* Fixed Aeon Greater Bane applying twice\n* Removed unneeded Second Breath patch"
+        }
+      ],
+      "Latest": "1.10.4",
+      "Name": "Tabletop Tweaks",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Barley",
+      "Description": null,
+      "DownloadLink": "https://github.com/BarleyFlour/FinneanTweaks/releases/download/1.0.0/FinneanTweaks.zip",
+      "GithubOwner": "BarleyFlour",
+      "GithubRepo": "FinneanTweaks",
+      "ModId": {
+        "Identifier": "FinneanTweaks",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "1.0.0",
+          "contents": "Initial Release"
+        }
+      ],
+      "Latest": "1.0.0",
+      "Name": "Finnean Tweaks",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Vek17",
+      "Description": null,
+      "DownloadLink": "https://github.com/Vek17/WrathMods-MultipleArchetypes/releases/download/v1.0.0/MultipleArchetypes.zip",
+      "GithubOwner": "Vek17",
+      "GithubRepo": "WrathMods-MultipleArchetypes",
+      "ModId": {
+        "Identifier": "MultipleArchetypes",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "1.0.0",
+          "contents": "Allows multiple compatable archetypes to be selected on a single class.\nThere is a minor UI bug during char gen with race restricted classes, this is being worked on but has no game play impact and can easily be bypassed."
+        }
+      ],
+      "Latest": "1.0.0",
+      "Name": "Multiple Archetypes",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "vikigenius",
+      "Description": "SpellbookMerge is a mod for Pathfinder Wrath of the righteous that allows additional spellbook merging options",
+      "DownloadLink": "https://github.com/vikigenius/SpellbookMerge/releases/download/v1.4.0/SpellbookMerge.zip",
+      "GithubOwner": "vikigenius",
+      "GithubRepo": "SpellbookMerge",
+      "ModId": {
+        "Identifier": "SpellbookMerge",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "1.0.0",
+          "contents": "* Allows Aeon to merge with Inquisitor, Warpriest\n* Allows Azata to merge with Magus, Bard, Skald"
+        },
+        {
+          "version": "1.0.1",
+          "contents": "* Hotfix for Azata spellbook merging issue #1 \n"
+        },
+        {
+          "version": "1.1.0",
+          "contents": "* Added spellbook merge options for Demon (Bloodrager)\n* Added spellbook merge options for Trickster (Magus, Sword Saint)\n* Allow merging of Azata with Sword Saint"
+        },
+        {
+          "version": "1.1.1",
+          "contents": "* More Trickster merge options (Alchemist, Eldritch Scoundrel)\n* Fixed minor typos"
+        },
+        {
+          "version": "1.2.0",
+          "contents": "* Rebalanced spell slots progression to allow merging hybrid caster mythics with full casters.\n* Allow Aeon to merge with Druid\n* Allow Azata to merge with Sorcerer\n* Allow Demon to merge with Skald and Hunter"
+        },
+        {
+          "version": "1.3.0",
+          "contents": "* Implemented Angel/Paladin merge (experimental)\n* Patched Paladin spell progression to enable reaching lvl 10 spells (experimental)\n* Added options for Aeon (Magus, Sword Saint, Hunter)\n* Added options for Azata (Druid, Hunter)\n* Added options for Trickster (Bard, Skald)\n* Added options for Demon (Magus, Sword Saint)"
+        },
+        {
+          "version": "1.3.1",
+          "contents": "* Trickster can now merge with Witch\n* Azata can now merge with Wizard and BloodRager"
+        },
+        {
+          "version": "1.3.2",
+          "contents": "* Fixed bug not accounting for Eldritch Scion having separate spellbook from Magus"
+        },
+        {
+          "version": "1.3.3",
+          "contents": "* Allow Azata to merge with Arcanist"
+        },
+        {
+          "version": "1.3.4",
+          "contents": "* Demon can now merge with Sorcerer\n* Fixed bug not accounting for Sage Sorcerer having separate spellbook"
+        },
+        {
+          "version": "1.3.5",
+          "contents": "* Fix for Crossblooded sorcerer having a separate spellbook. Thanks to @viengua "
+        },
+        {
+          "version": "1.4.0",
+          "contents": "* Added configuration option to disable patches to spellbook progressions."
+        }
+      ],
+      "Latest": "1.4.0",
+      "Name": "Spellbook Merge",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Kreaddy",
+      "Description": "Mod for Pathfinder: Wrath of the Righteous focused on adding mechanical content, mostly for spellcasting characters.",
+      "DownloadLink": "https://github.com/Stari0n/MagicTime/releases/download/v1.3.3/magic-time-v1.3.3.zip",
+      "GithubOwner": "Stari0n",
+      "GithubRepo": "MagicTime",
+      "ModId": {
+        "Identifier": "Magictime",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "-",
+          "contents": ""
+        },
+        {
+          "version": "1.3.2",
+          "contents": "- Warsighted Oracle archetype.\n- Acadamae Graduate feat.\n- Metamagic Insight homebrew arcane discovery\n- Lots of code refactoring."
+        },
+        {
+          "version": "1.3.3",
+          "contents": "- Fixed crash occuring when Worldcrawl is loaded before.\n- Fixed Warsighted being considered homebrew."
+        }
+      ],
+      "Latest": "1.3.3",
+      "Name": "Magic Time!",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Balkoth",
+      "Description": "A mod of Owlcat's Pathfinder: Wrath of the Righteous",
+      "DownloadLink": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE/releases/download/1.0.1/WOTR_PATH_OF_RAGE.zip",
+      "GithubOwner": "Balkoth-dev",
+      "GithubRepo": "WOTR_PATH_OF_RAGE",
+      "ModId": {
+        "Identifier": "WOTR_PATH_OF_RAGE",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "1.0.0",
+          "contents": "How to Install\n1. Download and install Unity Mod Manager, make sure it is at least version 0.23.0\n2. Run Unity Mod Manger and set it up to find Wrath of the Righteous\n3. Download the WOTR_PATH_OF_RAGE mod\n4. Install the mod by dragging the zip file from step 3 into the Unity Mod Manager window under the Mods tab"
+        },
+        {
+          "version": "1.0.1",
+          "contents": "How to Install\n\nDownload and install Unity Mod Manager, make sure it is at least version 0.23.0\nRun Unity Mod Manger and set it up to find Wrath of the Righteous\nDownload the WOTR_PATH_OF_RAGE mod\nInstall the mod by dragging the zip file from step 3 into the Unity Mod Manager window under the Mods tab\n\nChanges in this version:\n* Fixed Demon Rage so that it no longer stays if triggered in a cutscene\n* Updated Unleashed Demon so that you may polymorph into a Sin Guzzler at Rank 9 at will for 24 hours.\nKNOWN ISSUE: Sin Guzzler seems to be showing up regardless of your demonology selected at mythic rank 9. This will be fixed in a subsequent patch. For now it will simply not let you use the ability unless you selected Unleashed Demon.\n"
+        }
+      ],
+      "Latest": "1.0.1",
+      "Name": "PATH OF RAGE",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Kadyn",
+      "Description": "Seeking to expand and add to content in Pathfinder: Wrath of the Righteous",
+      "DownloadLink": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.2.7/ExpandedContent.zip",
+      "GithubOwner": "ka-dyn",
+      "GithubRepo": "ExpandedContent",
+      "ModId": {
+        "Identifier": "ExpandedContent",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "0.0.1",
+          "contents": "Hello! This is my first time ever releasing a mod! Huge thanks to everyone in the modding discord\n\nDeities:\n-Allows worship of the Green Faith.\n-Allows worship of Areshkagal.\n-Allows worship of Baphomet.\n-Allows worship of Kabriri.\n-Allows worship of Deskari.\n-Allows worship of Pulura.\n-Allows worship of the player (Lich Deity with Deathly Divinity attached.)\n\nRacial Archetypes:\n-Allows the Stonelord archetype.\n-Allows the Phantasmal Mage archetype.\n-Allows the Reformed Fiend archetype.\n-Allows the Cavalier of the Paw archetype.\n-Allows the Spell Dancer archetype.\n-Allows the Student of Stone archetype.\n-Allows the Purifier archetype.\n-Allows the Master of All archetype.\n-Allows the Wildland Shaman archetype.\n-Allows the Imitator archetype.\n-Allows the Nine-Tailed Heir archetype.\n-Allows the Cruoromancer archetype.\n"
+        },
+        {
+          "version": "0.0.1a",
+          "contents": "*Updated to add compatibility for TableTop Tweaks\n\nHello! This is my first time ever releasing a mod! Huge thanks to everyone in the modding discord\n\nDeities:\n-Allows worship of the Green Faith.\n-Allows worship of Areshkagal.\n-Allows worship of Baphomet.\n-Allows worship of Kabriri.\n-Allows worship of Deskari.\n-Allows worship of Pulura.\n-Allows worship of the player (Lich Deity with Deathly Divinity attached.)\n\nRacial Archetypes:\n-Allows the Stonelord archetype.\n-Allows the Phantasmal Mage archetype.\n-Allows the Reformed Fiend archetype.\n-Allows the Cavalier of the Paw archetype.\n-Allows the Spell Dancer archetype.\n-Allows the Student of Stone archetype.\n-Allows the Purifier archetype.\n-Allows the Master of All archetype.\n-Allows the Wildland Shaman archetype.\n-Allows the Imitator archetype.\n-Allows the Nine-Tailed Heir archetype.\n-Allows the Cruoromancer archetype.\n\n"
+        },
+        {
+          "version": "0.1.0",
+          "contents": "*Version 0.1.0 -\n-Added a lore-friendly icon for all forbidden religions.\n-The Green Faith now has a description that includes its domains/favoured weapons!\n-Pulura now allows the proper alignments, and grants the good domain\n-Fixed restrictions on archetypes/classes taking certain religions(Lich,Pulura)"
+        },
+        {
+          "version": "0.1.0a",
+          "contents": "*Version 0.1.0a -\n-Added a lore-friendly icon for all forbidden religions.\n-The Green Faith now has a description that includes its domains/favoured weapons!\n-Pulura now allows the proper alignments, and grants the good domain\n-Fixed restrictions on archetypes/classes taking certain religions(Lich,Pulura)\n-Fixed issue with UMM"
+        },
+        {
+          "version": "0.2.0",
+          "contents": "v0.2.0\n**ALL FEATURES NOW TOGGLEABLE IN UMM SETTINGS**\n-Fixed Deskari not showing up in deity selection,\n-Added the minor deity Milani\n-Added the minor deity Ragathiel\n-Added User settings toggleable through the UMM UI"
+        },
+        {
+          "version": "0.2.1",
+          "contents": "*v0.2.1:\n-Added the minor deity Arshea"
+        },
+        {
+          "version": "0.2.2",
+          "contents": "v0.2.2\n-Added many lore-friendly descriptors to added deities\n-Added the Archdevils Dispater and Mephistopheles\n-Added Apsu"
+        },
+        {
+          "version": "0.2.2a",
+          "contents": "-Updated Green Faith and Puluras descriptions\n-Added deities descriptions now have better information priority"
+        },
+        {
+          "version": "0.2.3",
+          "contents": "v0.2.3\n-Added Zura, the Vampire Queen\n-Fixed issue with Phantasmal Mage\n-Fixed information display\n\n"
+        },
+        {
+          "version": "0.2.3a",
+          "contents": "v0.2.3a\n-Added Zura, the Vampire Queen\n-Fixed issue with Phantasmal Mage\n-Fixed information display\n-Fixed Paladins not being able to level up"
+        },
+        {
+          "version": "0.2.3b",
+          "contents": "v0.2.3b\n-Added Zura, the Vampire Queen\n-Fixed issue with Phantasmal Mage\n-Fixed information display\n-Fixed Paladins of new deities not being able to level up"
+        },
+        {
+          "version": "0.2.4a",
+          "contents": "v0.2.4a\n-Fixed issue where Warpriest/Inquisitor could not select blessings/domains\nv0.2.4\n-Huge update to UI - shoutout to bubbles for the assistance\n-Deity selection now categorized and nested, allowing for much easier browsing\n-Fixed paladins of new deities not being able to level up"
+        },
+        {
+          "version": "0.2.5a",
+          "contents": "v0.2.5a\n-fixed issue with OBdirection ability\n-**Added the Oathbreaker Class, a Fallen Paladin based on the Vindictive Bastard class from the PnP**\n-All additions toggleable in the UMM settings"
+        },
+        {
+          "version": "0.2.5b",
+          "contents": "v0.2.5b\n-**Added the playable Oathbreaker Class, a fallen paladin based on the PnP vindictive bastard**\n-**Fixed Oathbreaker mechanics and made it more appealing as a selection**\n-**Fixed Oathbreaker UI; shoutout to bubbles as always!**\n-**kadynsWOTRMods renamed to Expanded Content to align more with my goals**\n"
+        },
+        {
+          "version": "0.2.6",
+          "contents": "-**Added Dread Knight (Antipaladin)** - beta, archetypes will be added\n-**Added Oathbreaker (Vindictive Bastard)**\n-Fixed issue with Seelah being unable to level up if better backgrounds was installed\n-Fixed issue with Abadar not displaying in deity selection\n"
+        },
+        {
+          "version": "0.2.7",
+          "contents": "**Expanded Content** V0.2.7:\n- New **Inquisitor Archetype, Living Scripture**: The living scripture literally wields the sacred word of his deity, memorizing scripture to smite the foes of his god with divine might. Unlike most inquisitors, a living scripture focuses on careful study of divine scripture, valuing knowledge over intuition.\n\n- (@𝓗𝓲-𝓜𝓸𝓬𝓴 (Great Weapons)#9700) - 4 new **deities** to choose from:\n- **Wukong**: Sun Wukong, the Monkey King, is the Tian Xia god of trickery, nature, and drunkenness.\n- **Fumeiyoshi**: Fumeiyoshi is considered the patron of undead and of the oni and both frequently worship him; he is also often worshipped by former paladins or samurai who have fallen from grace or been somehow dishonoured.\n- **Daikitsu**: Known as the Lady of Foxes, Daikitsu usually appears as beautiful kitsune woman with snow-white fur and nine tails. She is also the patron of kitsune, who venerate her as the mother of their race.\n- **Dahak**: Dragons believe Dahak was one of the original gods created by Apsu and Tiamat at the beginning of creation. While the other deities began to create, Dahak chose to destroy. He is credited with transforming Hell into a place of agony and flame. He is also believed to be the creator of the metallic dragons, which he formed solely to hunt as sport.\n"
+        },
+        {
+          "version": "0.2.65",
+          "contents": "**Large amount of fixes to Anti-Paladin:**\n-All cruelties now function as they should and no longer apply two saving throws.\n-Cruelties now toggleable for easier visibility.\n-Mythic ability to increase the number of toggleable cruelties at once added\n-Aura of Absolution now works as intended\n-Channel negative energy now scales correctly\n-Enemies are now affected by all penalties to saving throws from antipaladin auras\n-Channel Profane Corruption's tooltip now better describes what it does\n-Touch of Profane Corruption now looks more evil\n-Updated Plague Bringer Description\n-Profane Weapon Bond now works as intended through all levels\n\n**Oathbreaker Updates/New Archetype - Castigator:**\n-Added a new **Archetype** focused on retribution to Oathbreaker, proposed by Badger\n-Changed the visuals for Oathbreaker's Bane"
+        },
+        {
+          "version": "0.2.67",
+          "contents": "V0.2.67b\n**Large amount of fixes to Anti-Paladin**\n**New Dread Knight Archetype - Conqueror: \"The Conqueror is bent on earthly conquest. They care nothing for the intricacies of divine spellcasting , but malevolent energy still surrounds them. Whether alone or at the head of a marauding host, these cruel warriors bring suffering and death.\"\n- Added a level one visual effect for all dread knights that better represents their aura.\n- fixed oathbreaker defensive power prereq level\n**Oathbreaker Updates/New Archetype - Castigator:**\n-Added a new **Archetype** focused on retribution to Oathbreaker\n\n**Added Havoc Dragon as a selectable animal companion/mount**"
+        },
+        {
+          "version": "0.2.67b",
+          "contents": "V0.2.67b\nLarge amount of fixes to Anti-Paladin\n**New Dread Knight Archetype - Conqueror: \"The Conqueror is bent on earthly conquest. They care nothing for the intricacies of divine spellcasting , but malevolent energy still surrounds them. Whether alone or at the head of a marauding host, these cruel warriors bring suffering and death.\"\n-Aura of evil has an icon now\n-Havoc dragon companion is now actually large/medium\n-Profane weapon bond now gives an animated sword as a companion in addition to normal bonuses\n\nAdded a level one visual effect for all dread knights that better represents their aura.\nfixed oathbreaker defensive power prereq level\nOathbreaker Updates/New Archetype - Castigator:\n-Added a new Archetype focused on retribution to Oathbreaker\nAdded Havoc Dragon as a selectable animal companion/mount"
+        },
+        {
+          "version": "0.2.67c",
+          "contents": "Expanded Content v0.2.67c Hotfix - \n-** (bje259)**Fixed the progression of Sinful Absolution (AntiPaladin) and Bane (Oathbreaker). They now receive the proper amounts of uses of theses abilities.\n"
+        }
+      ],
+      "Latest": "0.2.7",
+      "Name": "Expanded Content",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Fumihiko",
+      "Description": "Mod for Pathfinder: Wrath of the Righteous",
+      "DownloadLink": "https://github.com/Truinto/DarkCodex/releases/download/v1.1.2-dev/DarkCodex.zip",
+      "GithubOwner": "Truinto",
+      "GithubRepo": "DarkCodex",
+      "ModId": {
+        "Identifier": "DarkCodex",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "1.0.2",
+          "contents": "first release; largely untested"
+        },
+        {
+          "version": "1.0.3",
+          "contents": "fixed and new features"
+        },
+        {
+          "version": "1.0.4",
+          "contents": "new features"
+        },
+        {
+          "version": "1.0.5",
+          "contents": ""
+        },
+        {
+          "version": "1.0.6",
+          "contents": ""
+        },
+        {
+          "version": "1.0.7",
+          "contents": ""
+        },
+        {
+          "version": "1.0.8",
+          "contents": ""
+        },
+        {
+          "version": "1.0.9",
+          "contents": ""
+        },
+        {
+          "version": "1.1.0",
+          "contents": "NOTE: If your save does not load, open the settings and try with Debug2 flag enabled. This will delete traps when you load your save. Make a new save afterwards and disable the flag again!\n\n## [1.1.0]\n- fix for missing area effects\n- added Kineticist.createHurricaneQueen\n- added Mythic.patchBoundlessHealing: Boundless Healing also grants healing spells to spellbooks\n- added Mythic.patchVarious: allow quicken metamagic on demon teleport spell\n- added Patch_AlwaysAChance: feat 'Always A Chance' will critical succeed on a natural 1 and apply to more checks (saving throws, skill checks)\n- added Mythic.patchRangingShots: doesn't get weaker when hitting\n- added Mythic.patchWanderingHex: can swap hex at will, instead of once per day (which wasn't in the description anyway)\n- updated for game version 1.1.0i\n- added debugflag 2 that removes trap data from save games (without this my save wouldn't load)"
+        },
+        {
+          "version": "1.1.1",
+          "contents": "fixed a crash"
+        },
+        {
+          "version": "1.1.2",
+          "contents": ""
+        }
+      ],
+      "Latest": "1.1.2",
+      "Name": "DarkCodex",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Hambeard",
+      "Description": null,
+      "DownloadLink": "https://github.com/thehambeard/NoFilmGrainWrath/releases/download/v1.0/NoFilmGrainWrath.zip",
+      "GithubOwner": "thehambeard",
+      "GithubRepo": "NoFilmGrainWrath",
+      "ModId": {
+        "Identifier": "NoFilmGrainWrath",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "1.0.0",
+          "contents": "Initial Release."
+        }
+      ],
+      "Latest": "1.0.0",
+      "Name": "No Film Grain",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Hambeard",
+      "Description": "Pathfinder: WotR Inventory Tweak",
+      "DownloadLink": "https://github.com/thehambeard/WIT/releases/download/0.1.7beta/QuickCast.zip",
+      "GithubOwner": "thehambeard",
+      "GithubRepo": "WIT",
+      "ModId": {
+        "Identifier": "QuickCast",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "0.0.1",
+          "contents": "Initial alpha version"
+        },
+        {
+          "version": "0.0.2",
+          "contents": "Minor Update"
+        },
+        {
+          "version": "0.0.3",
+          "contents": "Fixed bug that would desync the mouse from a movable window."
+        },
+        {
+          "version": "0.0.4",
+          "contents": "Fix performance iss\n"
+        },
+        {
+          "version": "0.0.5",
+          "contents": "Fixed Arcanist Spells\nIncreased performance marginally\nAdd bombs to the potion list"
+        },
+        {
+          "version": "0.0.6",
+          "contents": "Fixes cantrips not casting."
+        },
+        {
+          "version": "0.0.7",
+          "contents": "Fixes party not being updated at capital."
+        },
+        {
+          "version": "0.1.0",
+          "contents": "QuickCast"
+        },
+        {
+          "version": "0.1.1",
+          "contents": "Version 0.1.1\n* Redid the conversion/additional UI as spells like Shades takes up too much screen\n* Add support for metamagic\n* Bound min/max to ctrl-z\n* Sorted Conversion spells by name"
+        },
+        {
+          "version": "0.1.2",
+          "contents": "* Added additional window will pop up on the left side of the window when main window is on right side of screen."
+        },
+        {
+          "version": "0.1.3",
+          "contents": "* Fixed bug where wrong spell casting from additional menu"
+        },
+        {
+          "version": "0.1.4",
+          "contents": "Fixed issue with pick up an item type for the first time displaying as if you do not have any of those items."
+        },
+        {
+          "version": "0.1.5",
+          "contents": "* Adds tool tips\n* Fixes Toybox color conflict"
+        },
+        {
+          "version": "0.1.6",
+          "contents": "* Fixed Meta-magic bug"
+        },
+        {
+          "version": "0.1.7",
+          "contents": "Fixed Meta-magic not showing spells properly"
+        }
+      ],
+      "Latest": "0.1.7",
+      "Name": "Quick Cast",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    },
+    {
+      "Author": "Arkive",
+      "Description": "Mod for Pathfinder: Wrath of the Righteous. Allows skipping puzzles.",
+      "DownloadLink": "https://github.com/ArkiveDev/PuzzleSkip/releases/download/v1.2.0/PuzzleSkip.zip",
+      "GithubOwner": "ArkiveDev",
+      "GithubRepo": "PuzzleSkip",
+      "ModId": {
+        "Identifier": "PuzzleSkip",
+        "ModType": "UMM"
+      },
+      "Changelog": [
+        {
+          "version": "0.0.1",
+          "contents": "Early test-release. Contains skips for the first 5 slab puzzles. Just bring the slabs to the correct puzzle map."
+        },
+        {
+          "version": "1.0.0",
+          "contents": "Includes skips all the slab puzzles (Secrets of Creation quest)"
+        },
+        {
+          "version": "1.2.0",
+          "contents": "Adds skip for Mask puzzle in Nameless Ruins.\nAdds skips for arrow and floor symbol puzzles in The Enigma. (No skip for final circular puzzle yet.)"
+        }
+      ],
+      "Latest": "1.2.0",
+      "Name": "Puzzle Skip",
+      "NexusModID": 0,
+      "Source": "GitHub"
+    }
+  ]
+}
