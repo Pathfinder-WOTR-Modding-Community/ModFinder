@@ -39,6 +39,7 @@ namespace ModFinder.UI
     public string Author => Manifest.Author;
     public string Description => Manifest.Description ?? "-";
 
+    public HostService Service => Manifest.Service;
     public bool IsInstalled => Status.Installed();
     public bool CanInstall =>
       (!IsInstalled || Status.IsVersionBehind(Latest))
@@ -70,7 +71,6 @@ namespace ModFinder.UI
 
     public ModId ModId => Manifest.Id;
     public ModType Type => ModId.Type;
-    public HostService Service => Manifest.Service;
     public string DescriptionAsText => stripHtml.Replace(Description, "");
 
     public ModVersion InstalledVersion
@@ -136,7 +136,7 @@ namespace ModFinder.UI
 
     private void NotifyAll()
     {
-      Changed(nameof(Name), nameof(Author), nameof(Description));
+      Changed(nameof(Name), nameof(Author), nameof(Description), nameof(Service));
       NotifyStatus();
     }
 
