@@ -9,7 +9,7 @@ using ManifestUpdater.Properties;
 using ModFinder.Mod;
 using ProductHeaderValue = Octokit.ProductHeaderValue;
 
-var github = new GitHubClient(new ProductHeaderValue("ModFinder_WOTR"));
+var github = new GitHubClient(new ProductHeaderValue("ModFinder"));
 var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
 github.Credentials = new Credentials(token);
@@ -94,8 +94,8 @@ var targetRepo = "ModFinder";
 var targetFile = "ManifestUpdater/Resources/master_manifest.json";
 
 var serializedDeets = ModFinderIO.Write(details);
-var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser, targetRepo, targetFile, "master");
-var updateFile = new UpdateFileRequest("Update the mod manifest (bot)", serializedDeets, currentFile[0].Sha, "master", true);
+var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser, targetRepo, targetFile, "main");
+var updateFile = new UpdateFileRequest("Update the mod manifest (bot)", serializedDeets, currentFile[0].Sha, "main", true);
 var newblob = new NewBlob();
 newblob.Content = serializedDeets;
 var blob = await github.Git.Blob.Create("Pathfinder-WOTR-Modding-Community", "ModFinder",newblob);
