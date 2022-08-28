@@ -119,7 +119,7 @@ namespace ModFinder.Mod
       Version = version;
       Description = description;
       HomepageUrl = homepageUrl;
-      Tags = tags;
+      Tags = tags ?? new();
     }
 
     public ModManifest(ModManifest manifest, VersionInfo version, string description)

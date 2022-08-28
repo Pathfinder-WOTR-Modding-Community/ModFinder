@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 
 namespace ModFinder.UI
 {
@@ -9,13 +10,26 @@ namespace ModFinder.UI
   {
     private readonly ObservableCollection<ModViewModel> All = new();
     private readonly ObservableCollection<ModViewModel> Installed = new();
+    private readonly ObservableCollection<ModViewModel> Filtered = new();
     private readonly Dictionary<ModId, ModViewModel> Mods = new();
     private bool _ShowInstalled;
     public event PropertyChangedEventHandler PropertyChanged;
 
     public string HeaderNameText => ShowInstalled ? "Update" : "Install";
 
-    public ObservableCollection<ModViewModel> Items => ShowInstalled ? Installed : All;
+    public ObservableCollection<ModViewModel> Items
+    {
+      get
+      {
+        if (Filters.Any())
+          return Filtered;
+        if (ShowInstalled)
+          return Installed;
+        return All;
+      }
+    }
+
+    private readonly HashSet<Tag> Filters = new();
 
     public bool ShowInstalled
     {
@@ -36,6 +50,18 @@ namespace ModFinder.UI
 
     public IEnumerable<ModViewModel> AllMods => All;
 
+    public void AddFilter(Tag tag)
+    {
+      Filters.Add(tag);
+      UpdateFilter();
+    }
+
+    public void RemoveFilter(Tag tag)
+    {
+      Filters.Remove(tag);
+      UpdateFilter();
+    }
+
     public void Add(ModViewModel mod)
     {
       All.Add(mod);
@@ -47,6 +73,28 @@ namespace ModFinder.UI
         if (e.PropertyName == "IsInstalled")
           UpdateInstallState(mod);
       };
+    }
+
+    private void UpdateFilter()
+    {
+      Filtered.Clear();
+      if (Filters.Any())
+      {
+        Filtered.Clear();
+        var source = ShowInstalled ? Installed : All;
+        foreach (var viewModel in source)
+        {
+          foreach (var tag in Filters)
+          {
+            if (viewModel.HasTag(tag))
+            {
+              Filtered.Add(viewModel);
+              break; // As long as any tag matches include it, so just exit the inner loop
+            }
+          }
+        }
+      }
+      PropertyChanged?.Invoke(this, new(nameof(Items)));
     }
 
     private void UpdateInstallState(ModViewModel mod)

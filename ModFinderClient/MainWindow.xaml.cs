@@ -26,6 +26,8 @@ namespace ModFinder
     private static readonly ModDatabase ModDB = ModDatabase.Instance;
     private static MasterManifest Manifest;
 
+    private static readonly List<FilterTag> AllFilters = new();
+
     public MainWindow()
     {
       InitializeComponent();
@@ -50,6 +52,10 @@ namespace ModFinder
         if (e.AddedCells.Count > 0)
           installedMods.SelectedItem = null;
       };
+
+      foreach (var tag in Enum.GetValues<Tag>())
+        AllFilters.Add(new(tag));
+      Tags.ItemsSource = AllFilters;
 
       RefreshAllManifests();
       RefreshInstalledMods();
@@ -292,46 +298,73 @@ namespace ModFinder
           UseShellExecute = true
         });
     }
-  }
 
-  public class DescriptionProxy
-  {
-    private readonly ModViewModel Mod;
-    private readonly string DescriptionType;
-
-    public DescriptionProxy(ModViewModel mod, string descriptionType)
+    private void Tag_Checked(object sender, RoutedEventArgs e)
     {
-      Mod = mod;
-      DescriptionType = descriptionType;
+      var filter = (sender as CheckBox).DataContext as FilterTag;
+      ModDB.AddFilter(filter.Tag);
     }
 
-    public string Name => Mod.Name + "   (" + Mod.InstalledVersion.ToString() + ")";
-    internal FlowDocument Render()
+    private void Tag_Unchecked(object sender, RoutedEventArgs e)
     {
-      var doc = new FlowDocument();
+      var filter = (sender as CheckBox).DataContext as FilterTag;
+      ModDB.RemoveFilter(filter.Tag);
+    }
 
-      if (DescriptionType == "description")
+    private void Tags_TextChanged(object sender, TextChangedEventArgs e)
+    {
+      Tags.ItemsSource = AllFilters.Where(filter => filter.Tag.ToString().Contains(Tags.Text.Trim()));
+    }
+
+    public class DescriptionProxy
+    {
+      private readonly ModViewModel Mod;
+      private readonly string DescriptionType;
+
+      public DescriptionProxy(ModViewModel mod, string descriptionType)
       {
-        try
-        {
-          BBCodeRenderer.Render(doc, Mod.DescriptionAsText);
-        }
-        catch (Exception)
-        {
-          doc.Blocks.Add(new Paragraph(new Run(Mod.DescriptionAsText)));
-        }
-      }
-      else if (DescriptionType == "changelog")
-      {
-        ChangelogRenderer.Render(doc, Mod);
-      }
-      else
-      {
-        doc.Blocks.Add(new Paragraph(new Run("<<<ERROR>>>")));
+        Mod = mod;
+        DescriptionType = descriptionType;
       }
 
-      return doc;
+      public string Name => Mod.Name + "   (" + Mod.InstalledVersion.ToString() + ")";
+      internal FlowDocument Render()
+      {
+        var doc = new FlowDocument();
+
+        if (DescriptionType == "description")
+        {
+          try
+          {
+            BBCodeRenderer.Render(doc, Mod.DescriptionAsText);
+          }
+          catch (Exception)
+          {
+            doc.Blocks.Add(new Paragraph(new Run(Mod.DescriptionAsText)));
+          }
+        }
+        else if (DescriptionType == "changelog")
+        {
+          ChangelogRenderer.Render(doc, Mod);
+        }
+        else
+        {
+          doc.Blocks.Add(new Paragraph(new Run("<<<ERROR>>>")));
+        }
+
+        return doc;
+      }
+    }
+
+    public class FilterTag
+    {
+      public Tag Tag { get; }
+      public bool Checked { get; set; }
+
+      public FilterTag(Tag tag)
+      {
+        Tag = tag;
+      }
     }
   }
-
 }

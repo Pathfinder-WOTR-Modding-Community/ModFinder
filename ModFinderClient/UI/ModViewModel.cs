@@ -100,6 +100,11 @@ namespace ModFinder.UI
       }
     }
 
+    public bool HasTag(Tag tag)
+    {
+      return Manifest.Tags.Contains(tag);
+    }
+
     public void OnUninstalled()
     {
       InstalledVersion = default;
