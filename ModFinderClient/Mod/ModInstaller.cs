@@ -6,8 +6,6 @@ using System.IO.Compression;
 using ModFinder.Util;
 using ModFinder.UI;
 using System.Net;
-using Newtonsoft.Json;
-using System.Net.Cache;
 
 namespace ModFinder.Mod
 {
