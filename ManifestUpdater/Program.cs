@@ -16,10 +16,10 @@ github.Credentials = new Credentials(token);
 
 var nexus = NexusModsClient.Create(Environment.GetEnvironmentVariable("NEXUS_APITOKEN"), "Modfinder_WOTR", "0");
 
-var details = ModFinderIO.FromString<ModListBlob>(Resources.internal_manifest);
+var internalManifest = ModFinderIO.FromString<ModListBlob>(Resources.internal_manifest);
 var tasks = new List<Task<ModDetailsInternal>>();
 
-foreach (var mod in details.m_AllMods)
+foreach (var mod in internalManifest.m_AllMods)
 {
     tasks.Add(Task.Run(async () =>
     {
@@ -93,7 +93,7 @@ var targetUser = "Pathfinder-WOTR-Modding-Community";
 var targetRepo = "ModFinder";
 var targetFile = "ManifestUpdater/Resources/master_manifest.json";
 
-var serializedDeets = ModFinderIO.Write(details);
+var serializedDeets = ModFinderIO.Write(internalManifest);
 var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser, targetRepo, targetFile, "main");
 var updateFile = new UpdateFileRequest("Update the mod manifest (bot)", serializedDeets, currentFile[0].Sha, "main", true);
 var newblob = new NewBlob();
