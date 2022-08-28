@@ -1,14 +1,16 @@
 ﻿using ManifestUpdater;
-using System;
-using System.Threading.Tasks;
-using Octokit;
-using System.Collections.Generic;
-using System.Linq;
-using NexusModsNET;
 using ManifestUpdater.Properties;
 using ModFinder.Mod;
-using ProductHeaderValue = Octokit.ProductHeaderValue;
 using Newtonsoft.Json;
+using NexusModsNET;
+using Octokit;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using ProductHeaderValue = Octokit.ProductHeaderValue;
+using Release = ModFinder.Mod.Release;
 
 var github = new GitHubClient(new ProductHeaderValue("ModFinder"));
 var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
@@ -20,85 +22,101 @@ var nexus = NexusModsClient.Create(Environment.GetEnvironmentVariable("NEXUS_API
 var internalManifest = JsonConvert.DeserializeObject<List<ModManifest>>(Resources.internal_manifest);
 var tasks = new List<Task<ModManifest>>();
 
-foreach (var mod in internalManifest.m_AllMods)
+var updatedManifest = new List<ModManifest>();
+foreach (var manifest in internalManifest)
 {
   tasks.Add(Task.Run(async () =>
   {
-
-    if (mod.Source == HostService.GitHub)
+    if (manifest.Service.IsGitHub())
     {
-      var repo = await github.Repository.Get(mod.GithubOwner, mod.GithubRepo);
-      var allReleases = await github.Repository.Release.GetAll(mod.GithubOwner, mod.GithubRepo);
-      var latestRelease = await github.Repository.Release.GetLatest(mod.GithubOwner, mod.GithubRepo);
-      if (latestRelease.Assets.Count == 0)
+      var repoInfo = manifest.Service.GitHub;
+      var repo = await github.Repository.Get(repoInfo.Owner, repoInfo.RepoName);
+      var releases = await github.Repository.Release.GetAll(repoInfo.Owner, repoInfo.RepoName);
+      var latest = await github.Repository.Release.GetLatest(repoInfo.Owner, repoInfo.RepoName);
+      if (latest.Assets.Count == 0)
         return null;
-      var todownload = latestRelease.Assets[0];
 
-      mod.Changelog = new();
-      foreach (var release in allReleases)
+      var releaseAsset = latest.Assets[0];
+      if (!string.IsNullOrEmpty(repoInfo.ReleaseFilter))
       {
-        var version = ModVersion.Parse(release.TagName);
-        mod.Changelog.Add((version, release.Body.Replace("\r\n", "\n")));
+        Regex filter = new Regex(repoInfo.ReleaseFilter, RegexOptions.Compiled);
+        foreach (var asset in latest.Assets)
+        {
+          if (filter.IsMatch(asset.Name))
+          {
+            releaseAsset = asset;
+            break;
+          }
+        }
       }
-      mod.Changelog.Sort((a, b) => a.version.CompareTo(b.version));
 
-      mod.DownloadLink = todownload.BrowserDownloadUrl;
-      mod.Description = repo.Description;
-      mod.Latest = ModVersion.Parse(latestRelease.TagName); //This is not true???
-      return mod;
+      var latestRelease =
+        new Release(
+          ModVersion.Parse(latest.TagName), releaseAsset.BrowserDownloadUrl, latest.Body.Replace("\r\n", "\n"));
+      var oldReleases = new List<Release>();
+      foreach (var release in releases)
+      {
+        oldReleases.Add(new Release(ModVersion.Parse(release.TagName), url: null, release.Body.Replace("\r\n", "\n")));
+      }
+      oldReleases.Sort((a, b) => a.Version.CompareTo(b.Version));
+
+      var newManifest = new ModManifest(manifest, new VersionInfo(latestRelease, oldReleases), repo.Description);
+      updatedManifest.Add(newManifest);
+      return newManifest;
     }
-    else if (mod.Source == HostService.Nexus)
+    else if (manifest.Service.IsNexus())
     {
+      var modID = manifest.Service.Nexus.ModID;
       var nexusFactory = NexusModsFactory.New(nexus);
-      var nexusMod = await nexusFactory.CreateModsInquirer().GetMod("pathfinderwrathoftherighteous", mod.NexusModID);
-      var changelog = await nexusFactory.CreateModsInquirer().GetModChangelogs("pathfinderwrathoftherighteous", mod.NexusModID);
-      var modde = await nexusFactory.CreateModFilesInquirer().GetModFilesAsync("pathfinderwrathoftherighteous", mod.NexusModID);
+      var nexusMod = await nexusFactory.CreateModsInquirer().GetMod("pathfinderwrathoftherighteous", modID);
+      var changelog = await nexusFactory.CreateModsInquirer().GetModChangelogs("pathfinderwrathoftherighteous", modID);
+      var mod = await nexusFactory.CreateModFilesInquirer().GetModFilesAsync("pathfinderwrathoftherighteous", modID);
 
-      var release = modde.ModFiles.Last();
-
+      var latestVersion = ModVersion.Parse(nexusMod.Version);
+      var downloadUrl =
+        @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" + mod.ModFiles.Last().FileId;
+  
+      var oldReleases = new List<Release>();
       if (changelog != null)
       {
-        mod.Changelog = new();
         foreach (var entry in changelog)
         {
-          var version = ModVersion.Parse(entry.Key);
-          mod.Changelog.Add((version, string.Join("\n", entry.Value)));
+          oldReleases.Add(new Release(ModVersion.Parse(entry.Key), url: null, string.Join("\n", entry.Value)));
         }
-
-        mod.Changelog.Sort((a, b) => a.version.CompareTo(b.version));
+        oldReleases.Sort((a, b) => a.Version.CompareTo(b.Version));
       }
+      var latestRelease = new Release(latestVersion, downloadUrl, changelog: null);
 
-      mod.Description = nexusMod.Description;
-      mod.Latest = ModVersion.Parse(nexusMod.Version); //This is not true???
-      mod.DownloadLink = @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + mod.NexusModID + @"?tab=files&file_id=" + release.FileId;
-
-      return mod;
+      var newManifest = new ModManifest(manifest, new VersionInfo(latestRelease, oldReleases), nexusMod.Description);
+      updatedManifest.Add(newManifest);
+      return newManifest;
     }
+    updatedManifest.Add(manifest);
     return null;
   }));
 }
 
-//We don't want to do console printing from inside the async tasks as they will interleave the output and it is confusing
-//So collect the results here and print them out
-//This will also wait for all tasks to complete
-foreach (var mod in tasks.Select(t => t.Result).Where(r => r != null))
+// We don't want to do console printing from inside the async tasks as they will interleave the output and it is
+// confusing. Collect the results here and print them out. This will also wait for all tasks to complete.
+foreach (var manifest in tasks.Select(t => t.Result).Where(r => r != null))
 {
   Console.WriteLine();
-  Log(mod.Name);
-  LogObj("  UniqueId: ", $"{mod.ModId.Identifier}_{mod.ModId.ModType}");
-  LogObj("  Download: ", mod.DownloadLink);
-  LogObj("  Latest: ", mod.Latest);
+  Log(manifest.Name);
+  LogObj("  UniqueId: ", $"{manifest.Id}");
+  LogObj("  Download: ", manifest.Version.Latest.Url);
+  LogObj("  Latest: ", manifest.Version.Latest.Version);
 }
 
 var targetUser = "Pathfinder-WOTR-Modding-Community";
 var targetRepo = "ModFinder";
-var targetFile = "ManifestUpdater/Resources/master_manifest.json";
+var targetFile = "ManifestUpdater/Resources/generated_manifest.json";
 
-var serializedDeets = ModFinderIO.Write(internalManifest);
+var serializedManifest = ModFinderIO.Write(updatedManifest);
 var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser, targetRepo, targetFile, "main");
-var updateFile = new UpdateFileRequest("Update the mod manifest (bot)", serializedDeets, currentFile[0].Sha, "main", true);
+var updateFile =
+  new UpdateFileRequest("Update the mod manifest (bot)", serializedManifest, currentFile[0].Sha, "main", true);
 var newblob = new NewBlob();
-newblob.Content = serializedDeets;
+newblob.Content = serializedManifest;
 var blob = await github.Git.Blob.Create("Pathfinder-WOTR-Modding-Community", "ModFinder", newblob);
 if (blob.Sha != updateFile.Sha)
 {
@@ -109,7 +127,6 @@ else
 {
   LogObj("No Update: ", "Matching SHA's");
 }
-
 
 void Log(string str)
 {

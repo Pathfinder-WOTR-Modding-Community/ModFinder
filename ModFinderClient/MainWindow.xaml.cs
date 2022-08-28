@@ -1,18 +1,19 @@
-﻿using System.IO;
+﻿using ModFinder.Mod;
+using ModFinder.UI;
+using ModFinder.Util;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Input;
-using System;
 using System.Windows.Documents;
-using ModFinder.UI;
-using ModFinder.Mod;
-using System.Reflection;
-using Newtonsoft.Json;
-using System.Net;
-using ModFinder.Util;
+using System.Windows.Input;
 
 namespace ModFinder
 {
@@ -39,7 +40,7 @@ namespace ModFinder
       }
 #else
       using var client = new WebClient();
-      var rawstring = client.DownloadString("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/manifest.json");
+      var rawstring = client.DownloadString("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/master_manifest.json");
       Manifest = JsonConvert.DeserializeObject<MasterManifest>(rawstring);
 #endif
 
@@ -49,7 +50,7 @@ namespace ModFinder
           installedMods.SelectedItem = null;
       };
 
-      RefreshManifest();
+      RefreshAllManifests();
       RefreshInstalledMods();
 
       // Do magic window dragging regardless where they click
@@ -77,22 +78,33 @@ namespace ModFinder
       dropTarget.DragOver += DropTarget_DragOver;
     }
 
-    public static void RefreshManifest()
+    public static void RefreshAllManifests()
     {
-      foreach (var url in Manifest.ModManifestUrls)
+      RefreshGeneratedManifest();
+      foreach (var url in Manifest.ExternalManifestUrls)
       {
         using var client = new WebClient();
         var rawstring = client.DownloadString(url);
-        var manifest = JsonConvert.DeserializeObject<ModManifest>(rawstring);
-        if (ModDB.TryGet(manifest.Id, out var viewModel))
-        {
-          viewModel.Refresh(manifest);
-        }
-        else
-        {
-          ModDB.Add(new(manifest));
-        }
+        RefreshManifest(JsonConvert.DeserializeObject<ModManifest>(rawstring));
       }
+    }
+
+    private static void RefreshGeneratedManifest()
+    {
+      using var client = new WebClient();
+      var rawstring = client.DownloadString(Manifest.GeneratedManifestUrl);
+      foreach (var manifest in JsonConvert.DeserializeObject<List<ModManifest>>(rawstring))
+      {
+        RefreshManifest(manifest);
+      }
+    }
+
+    private static void RefreshManifest(ModManifest manifest)
+    {
+      if (ModDB.TryGet(manifest.Id, out var viewModel))
+        viewModel.Refresh(manifest);
+      else
+        ModDB.Add(new(manifest));
     }
 
     public static void RefreshInstalledMods()
@@ -143,10 +155,14 @@ namespace ModFinder
       if (Path.GetExtension(path) != ".zip")
         return false;
 
-      //BARLEY CODE HERE
       using var opened = ZipFile.OpenRead(path);
-      return opened.Entries.Any(a => a.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase) || a.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
+      return
+        opened.Entries.Any(
+          a =>
+            a.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase)
+            || a.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
     }
+
     private void ClosePopup_Click(object sender, RoutedEventArgs e)
     {
       DescriptionPopup.IsOpen = false;
@@ -224,7 +240,7 @@ namespace ModFinder
 
     private void LookButton_Click(object sender, RoutedEventArgs e)
     {
-      RefreshManifest();
+      RefreshAllManifests();
       RefreshInstalledMods();
     }
 
@@ -273,18 +289,15 @@ namespace ModFinder
     {
       var doc = new FlowDocument();
 
-
       if (DescriptionType == "description")
       {
         try
         {
-
           BBCodeRenderer.Render(doc, Mod.DescriptionAsText);
         }
         catch (Exception)
         {
           doc.Blocks.Add(new Paragraph(new Run(Mod.DescriptionAsText)));
-
         }
       }
       else if (DescriptionType == "changelog")

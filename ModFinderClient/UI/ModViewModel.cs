@@ -15,7 +15,7 @@ namespace ModFinder.UI
     private readonly ModStatus Status = new();
 
     public ModManifest Manifest;
-    public ModVersion Latest;
+    public ModVersion Latest => Manifest.Version.Latest.Version;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -27,7 +27,6 @@ namespace ModFinder.UI
     public void Refresh(ModManifest manifest, bool refreshUI = true)
     {
       Manifest = manifest;
-      Latest = ModVersion.FromRelease(Manifest.Version.Latest);
 
       if (refreshUI)
         NotifyAll();
@@ -43,12 +42,12 @@ namespace ModFinder.UI
     public bool IsInstalled => Status.Installed();
     public bool CanInstall =>
       (!IsInstalled || Status.IsVersionBehind(Latest))
-      && Service == HostService.GitHub
+      && Service.IsGitHub()
       && !string.IsNullOrEmpty(Latest.DownloadUrl);
     public bool CanUninstall => IsInstalled && ModDir != null;
     public bool CanDownload =>
       (!IsInstalled || Status.IsVersionBehind(Latest))
-      && Service != HostService.GitHub
+      && !Service.IsGitHub()
       && !string.IsNullOrEmpty(Latest.DownloadUrl);
 
     public string StatusText => GetStatusText();

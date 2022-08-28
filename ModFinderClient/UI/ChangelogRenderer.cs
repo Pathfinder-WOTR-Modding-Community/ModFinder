@@ -15,12 +15,7 @@ namespace ModFinder.UI
       if (versionInfo.OldVersions is null)
         return;
 
-      var oldVersions = versionInfo.OldVersions;
-      if (versionInfo.ReverseVersionOrder)
-      {
-        oldVersions.Reverse();
-      }
-      foreach (var release in oldVersions)
+      foreach (var release in versionInfo.OldVersions)
       {
         RenderSection(doc, release, mod.InstalledVersion);
       }
@@ -33,13 +28,12 @@ namespace ModFinder.UI
 
       var section = new Section();
 
-      var modVersion = ModVersion.FromRelease(version);
-      if (modVersion >= installedVersion)
+      if (version.Version >= installedVersion)
         section.Foreground = Brushes.Black;
       else
         section.Foreground = Brushes.DimGray;
 
-      var heading = new Bold(new Run(version.VersionString));
+      var heading = new Bold(new Run(version.Version.ToString()));
       heading.FontSize += 12;
       section.Blocks.Add(new Paragraph(heading));
 

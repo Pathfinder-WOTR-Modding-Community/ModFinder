@@ -62,16 +62,6 @@ namespace ModFinder.Mod
       return version;
     }
 
-    public static ModVersion FromRelease(Release version)
-    {
-      if (string.IsNullOrEmpty(version?.VersionString))
-        return default;
-
-      var modVersion = Parse(version.VersionString);
-      modVersion.DownloadUrl = version.Url;
-      return modVersion;
-    }
-
     public int CompareTo(ModVersion other)
     {
       int c;

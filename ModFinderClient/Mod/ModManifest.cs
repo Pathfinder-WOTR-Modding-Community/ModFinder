@@ -88,7 +88,7 @@ namespace ModFinder.Mod
     /// Link to the home page of your mod.
     /// </summary>
     [JsonProperty]
-    public HomePage Homepage { get; }
+    public string HomepageUrl { get; }
 
     /// <summary>
     /// Tags describing your mod used for filtering.
@@ -104,7 +104,7 @@ namespace ModFinder.Mod
       HostService service,
       VersionInfo version,
       string description = default,
-      HomePage homepage = default,
+      string homepageUrl = default,
       List<Tag> tags = default)
     {
       Name = name;
@@ -113,8 +113,22 @@ namespace ModFinder.Mod
       Service = service;
       Version = version;
       Description = description;
-      Homepage = homepage;
+      HomepageUrl = homepageUrl;
       Tags = tags;
+    }
+
+    public ModManifest(ModManifest manifest, VersionInfo version, string description)
+    {
+      Name = manifest.Name;
+      Author = manifest.Author;
+      Id = manifest.Id;
+      Service = manifest.Service;
+      HomepageUrl = manifest.HomepageUrl;
+      Tags = manifest.Tags;
+
+      // Updated automatically
+      Version = version;
+      Description = description;
     }
 
     public static ModManifest ForLocal(UMMModInfo info)
@@ -149,17 +163,6 @@ namespace ModFinder.Mod
   public struct HostService
   {
     /// <summary>
-    /// Required. URL used to download the mod. 
-    /// </summary>
-    /// 
-    /// <remarks>
-    /// <para>Automatic: <c>GitHub</c> and <c>Nexus</c> mods.</para>
-    /// <para>Not populated for mods discovered locally.</para>
-    /// </remarks>
-    [JsonProperty]
-    public string DownloadUrl { get; }
-
-    /// <summary>
     /// Details for mods hosted on GitHub.
     /// </summary>
     [JsonProperty]
@@ -172,18 +175,32 @@ namespace ModFinder.Mod
     public Nexus Nexus { get; }
 
     [JsonConstructor]
-    public HostService(string downloadUrl, GitHub gitHub, Nexus nexus)
+    public HostService(GitHub gitHub, Nexus nexus)
     {
-      DownloadUrl = downloadUrl;
       GitHub = gitHub;
       Nexus = nexus;
+    }
+
+    public bool IsGitHub()
+    {
+      return GitHub is not null;
+    }
+
+    public bool IsNexus()
+    {
+      return Nexus is not null;
     }
   }
 
   /// <summary>
   /// Details for mods hosted on GitHub. Supports automatic version updates, download, and install.
   /// </summary>
-  public struct GitHub
+  /// 
+  /// <remarks>
+  /// Your release tags should be in the format <c>1.2.3e</c> in order to parse the version properly. Non-digit
+  /// prefixes are ignored, e.g. <c>v1.2.1f</c> parses as <c>1.2.1f</c>.
+  /// </remarks>
+  public class GitHub
   {
     /// <summary>
     /// Required. Name of the GitHub account or organization hosting the mod repo.
@@ -222,7 +239,7 @@ namespace ModFinder.Mod
   /// <summary>
   /// Details for mods hosted on Nexus. Supports automatic version updates.
   /// </summary>
-  public struct Nexus
+  public class Nexus
   {
     /// <summary>
     /// Required. The ID for the mod as displayed in the URL on nexus mods.
@@ -233,40 +250,22 @@ namespace ModFinder.Mod
     /// hosted under <c>pathfinderwrathoftherighteous</c> work.
     /// </remarks>
     [JsonProperty]
-    public string ModID { get; }
+    public long ModID { get; }
 
     [JsonConstructor]
-    public Nexus(string modID)
+    public Nexus(long modID)
     {
       ModID = modID;
     }
   }
 
   /// <summary>
-  /// Wrapper to display a link to your mod's home page.
-  /// </summary>
-  public struct HomePage
-  {
-    [JsonProperty]
-    public string Url { get; }
-
-    /// <summary>
-    /// Optional text to display like a hyperlink
-    /// </summary>
-    [JsonProperty]
-    public string LinkText { get; }
-
-    [JsonConstructor]
-    public HomePage(string url, string linkText = "")
-    {
-      Url = url;
-      LinkText = linkText;
-    }
-  }
-
-  /// <summary>
   /// Contains details about your mod's versions.
   /// </summary>
+  ///
+  /// <remarks>
+  /// Automatic: <c>GitHub</c>, <c>Nexus</c>
+  /// </remarks>
   public struct VersionInfo
   {
     /// <summary>
@@ -276,23 +275,16 @@ namespace ModFinder.Mod
     public Release Latest { get; }
 
     /// <summary>
-    /// Optional list of old release versions for generating a changelog.
+    /// Optional list of old release versions for generating a changelog, sorted from newest to oldest.
     /// </summary>
     [JsonProperty]
     public List<Release> OldVersions { get; }
 
-    /// <summary>
-    /// Set to true if you list your old versions in order of newest to oldest so the changelog renders correctly.
-    /// </summary>
-    [JsonProperty]
-    public bool ReverseVersionOrder { get; }
-
     [JsonConstructor]
-    public VersionInfo(Release latest, List<Release> oldVersions, bool reverseVersionOrder)
+    public VersionInfo(Release latest, List<Release> oldVersions)
     {
       Latest = latest;
       OldVersions = oldVersions;
-      ReverseVersionOrder = reverseVersionOrder;
     }
   }
 
@@ -305,7 +297,7 @@ namespace ModFinder.Mod
     /// Required. String representation of your <see cref="ModVersion"/>.
     /// </summary>
     [JsonProperty]
-    public string VersionString { get; }
+    public ModVersion Version { get; }
 
     /// <summary>
     /// Required. Download url for this version.
@@ -320,9 +312,9 @@ namespace ModFinder.Mod
     public string Changelog { get; }
 
     [JsonConstructor]
-    public Release(string versionString, string url, string changelog)
+    public Release(ModVersion version, string url, string changelog)
     {
-      VersionString = versionString;
+      Version = version;
       Url = url;
       Changelog = changelog;
     }
