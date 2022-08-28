@@ -21,8 +21,14 @@ namespace ModFinder.Mod
     /// </summary>
     /// 
     /// <remarks>
+    /// <para>
     /// Use this if you want to host your own manifest file. Otherwise just populate <c>internal_manifest.json</c> and
     /// the appropriate manifest is generated automatically.
+    /// </para>
+    /// 
+    /// <para>
+    /// The URL needs to be directly accessible to download, e.g. use raw links for files on GitHub.
+    /// </para>
     /// </remarks>
     [JsonProperty]
     public List<string> ExternalManifestUrls;
