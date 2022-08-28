@@ -343,8 +343,7 @@
             </ToggleButton.Template>
           </ToggleButton>
           <Button x:Name="closeButton" VerticalAlignment="Top" Grid.Column="4" Style="{StaticResource CloseButtonSquare}" Width="32" Height="32" />
-          <Button x:Name="settingsButton" VerticalAlignment="Top" Grid.Column="3" Style="{StaticResource SettingsButtonSquare}" Width="32" Height="32" ToolTip="Show settings"/>
-          <Button x:Name="lookButton" VerticalAlignment="Top" Grid.Column="2" Style="{StaticResource LookButtonSquare}" Width="32" Height="32" ToolTip="Re-scan installed mods" Click="LookButton_Click"/>
+          <Button x:Name="lookButton" VerticalAlignment="Top" Grid.Column="3" Style="{StaticResource LookButtonSquare}" Width="32" Height="32" ToolTip="Re-scan installed mods" Click="LookButton_Click"/>
         </Grid>
         <DockPanel DockPanel.Dock="Bottom">
           <Grid x:Name="dropTarget" Height="100" AllowDrop="True" Margin="0,10,0,0">
