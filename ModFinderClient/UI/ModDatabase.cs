@@ -44,16 +44,16 @@ namespace ModFinder.UI
 
       mod.PropertyChanged += (sender, e) =>
       {
-        if (e.PropertyName == "State")
+        if (e.PropertyName == "IsInstalled")
           UpdateInstallState(mod);
       };
     }
 
     private void UpdateInstallState(ModViewModel mod)
     {
-      if (mod.InstallState == InstallState.None)
+      if (!mod.IsInstalled)
         _ = Installed.Remove(mod);
-      else if (mod.InstallState == InstallState.Installed && !Installed.Contains(mod))
+      else if (mod.IsInstalled && !Installed.Contains(mod))
         Installed.Add(mod);
     }
 
