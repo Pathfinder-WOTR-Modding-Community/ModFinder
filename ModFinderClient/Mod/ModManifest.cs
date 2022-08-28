@@ -226,9 +226,19 @@ namespace ModFinder.Mod
     /// </summary>
     /// 
     /// <remarks>
+    /// <para>
     /// For example, MewsiferConsole hosts both <c>MewsiferConsole.1.1.1.zip</c> and
     /// <c>MewsiferConsole.Menu.1.0.0.zip</c>. Setting <c>MewsiferConsole\.[\d+]</c> would select the former while
     /// <c>MewsiferConsole\.Menu</c> would select the latter.
+    /// </para>
+    /// 
+    /// <para>
+    /// The version is specified using the tag so in this example both would be interpreted as the same version. For
+    /// that reason you either need to share versionining with all mods in a repo or you need to define your
+    /// <see cref="ModManifest"/> file in your own repo, add it to <see cref="MasterManifest.ExternalManifestUrls"/> in
+    /// <c>master_manifest.json</c>, and remove it from <c>internal_manifest.json</c>. This gives you complete control
+    /// over the versionining but you lose automatic versionining, description, and changelog generation.
+    /// </para>
     /// </remarks>
     [JsonProperty]
     public string ReleaseFilter { get; }
