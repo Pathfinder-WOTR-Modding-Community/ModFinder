@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Windows.Markup;
 
 namespace ModFinder.Mod
 {
@@ -10,16 +11,27 @@ namespace ModFinder.Mod
   public class MasterManifest
   {
     /// <summary>
-    /// List of URLs linking to a mod's <see cref="ModManifest"/> JSON file. Should be directly accessible from this
-    /// URL, e.g. the raw link for a JSON file hosted on GitHub.
+    /// URL to the automatically generated manifest containing an array of <see cref="ModManifest"/>
     /// </summary>
     [JsonProperty]
-    public List<string> ModManifestUrls;
+    public string GeneratedManifestUrl;
+
+    /// <summary>
+    /// List of URLs to externally hosted <see cref="ModManifest"/> JSON files.
+    /// </summary>
+    /// 
+    /// <remarks>
+    /// Use this if you want to host your own manifest file. Otherwise just populate <c>internal_manifest.json</c> and
+    /// the appropriate manifest is generated automatically.
+    /// </remarks>
+    [JsonProperty]
+    public List<string> ExternalManifestUrls;
 
     [JsonConstructor]
-    private MasterManifest(List<string> modManifestUrls)
+    private MasterManifest(string generatedManifestUrl, List<string> externalManifestUrls)
     {
-      ModManifestUrls = modManifestUrls;
+      GeneratedManifestUrl = generatedManifestUrl;
+      ExternalManifestUrls = externalManifestUrls;
     }
   }
 
@@ -55,12 +67,20 @@ namespace ModFinder.Mod
     /// <summary>
     /// Required. Details regarding your mod versions and how to download it.
     /// </summary>
+    /// 
+    /// <remarks>
+    /// Automatic: <c>GitHub</c>, <c>Nexus</c>
+    /// </remarks>
     [JsonProperty]
     public VersionInfo Version { get; }
 
     /// <summary>
     /// Description displayed when users requests more info on your mod. Supports BBCode.
     /// </summary>
+    ///
+    /// <remarks>
+    /// Automatic: <c>GitHub</c>, <c>Nexus</c>
+    /// </remarks>
     [JsonProperty]
     public string Description { get; }
 
@@ -70,42 +90,156 @@ namespace ModFinder.Mod
     [JsonProperty]
     public HomePage Homepage { get; }
 
+    /// <summary>
+    /// Tags describing your mod used for filtering.
+    /// </summary>
+    [JsonProperty]
+    public List<Tag> Tags { get; }
+
     [JsonConstructor]
     public ModManifest(
       string name,
       string author,
       ModId id,
-      HostService hostService,
+      HostService service,
       VersionInfo version,
       string description = default,
-      HomePage homepage = default)
+      HomePage homepage = default,
+      List<Tag> tags = default)
     {
       Name = name;
       Author = author;
       Id = id;
-      Service = hostService;
+      Service = service;
       Version = version;
       Description = description;
       Homepage = homepage;
+      Tags = tags;
     }
 
     public static ModManifest ForLocal(UMMModInfo info)
     {
-      return new(info.DisplayName, info.Author, new(info.Id, ModType.UMM), HostService.Other, default);
+      return new(info.DisplayName, info.Author, new(info.Id, ModType.UMM), service: default,  version: default);
     }
   }
 
   /// <summary>
-  /// Indicates which 
+  /// Tags used to filter mods when browsing.
   /// </summary>
-  public enum HostService
+  public enum Tag
+  {
+    Audio,
+    Bugfix,
+    Content,
+    Gameplay,
+    Homebrew,
+    Miscellaneous,
+    Portraits,
+    Romance,
+    Story,
+    UserInterface,
+    Utilities,
+    Visuals,
+  }
+
+  /// <summary>
+  /// Details about the hosting. <c>DownloadUrl</c> is universal but the per-service details should be a union, i.e.
+  /// only a single one should be populated.
+  /// </summary>
+  public struct HostService
   {
     /// <summary>
-    /// GitHub supports directly downloading as long as you specify the *.zip url in LatestVersion.
+    /// Required. URL used to download the mod. 
     /// </summary>
-    GitHub,
-    Nexus,
-    Other,
+    /// 
+    /// <remarks>
+    /// <para>Automatic: <c>GitHub</c> and <c>Nexus</c> mods.</para>
+    /// <para>Not populated for mods discovered locally.</para>
+    /// </remarks>
+    [JsonProperty]
+    public string DownloadUrl { get; }
+
+    /// <summary>
+    /// Details for mods hosted on GitHub.
+    /// </summary>
+    [JsonProperty]
+    public GitHub GitHub { get; }
+
+    /// <summary>
+    /// Details for mods hosted on Nexus.
+    /// </summary>
+    [JsonProperty]
+    public Nexus Nexus { get; }
+
+    [JsonConstructor]
+    public HostService(string downloadUrl, GitHub gitHub, Nexus nexus)
+    {
+      DownloadUrl = downloadUrl;
+      GitHub = gitHub;
+      Nexus = nexus;
+    }
+  }
+
+  /// <summary>
+  /// Details for mods hosted on GitHub. Supports automatic version updates, download, and install.
+  /// </summary>
+  public struct GitHub
+  {
+    /// <summary>
+    /// Required. Name of the GitHub account or organization hosting the mod repo.
+    /// </summary>
+    [JsonProperty]
+    public string Owner { get; }
+
+    /// <summary>
+    /// Required. Name of the GitHub repo hosting the mod.
+    /// </summary>
+    [JsonProperty]
+    public string RepoName { get; }
+
+    /// <summary>
+    /// Setting this will filter the release assets for the one matching the specified regex string. Useful if you have
+    /// multiple releases / mods in the same repo.
+    /// </summary>
+    /// 
+    /// <remarks>
+    /// For example, MewsiferConsole hosts both <c>MewsiferConsole.1.1.1.zip</c> and
+    /// <c>MewsiferConsole.Menu.1.0.0.zip</c>. Setting <c>MewsiferConsole\.[\d+]</c> would select the former while
+    /// <c>MewsiferConsole\.Menu</c> would select the latter.
+    /// </remarks>
+    [JsonProperty]
+    public string ReleaseFilter { get; }
+
+    [JsonConstructor]
+    public GitHub(string owner, string repoName, string releaseFilter)
+    {
+      Owner = owner;
+      RepoName = repoName;
+      ReleaseFilter = releaseFilter;
+    }
+  }
+
+  /// <summary>
+  /// Details for mods hosted on Nexus. Supports automatic version updates.
+  /// </summary>
+  public struct Nexus
+  {
+    /// <summary>
+    /// Required. The ID for the mod as displayed in the URL on nexus mods.
+    /// </summary>
+    /// 
+    /// <remarks>
+    /// E.g. https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/360 has a ModID of 360. Note that only mods
+    /// hosted under <c>pathfinderwrathoftherighteous</c> work.
+    /// </remarks>
+    [JsonProperty]
+    public string ModID { get; }
+
+    [JsonConstructor]
+    public Nexus(string modID)
+    {
+      ModID = modID;
+    }
   }
 
   /// <summary>
