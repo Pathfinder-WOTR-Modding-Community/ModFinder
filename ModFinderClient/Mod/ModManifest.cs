@@ -364,7 +364,7 @@ namespace ModFinder.Mod
     public string Id { get; }
 
     /// <summary>
-    /// Required. The type of mod, currently either UMM or Owlcat
+    /// Required. The type of mod. Currently either UMM or Owlcat though only UMM is supported.
     /// </summary>
     [JsonProperty]
     public ModType Type { get; }
