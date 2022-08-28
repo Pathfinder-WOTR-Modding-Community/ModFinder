@@ -1,5 +1,4 @@
 ﻿using ModFinder.Mod;
-using System;
 using System.ComponentModel;
 using System.IO;
 using System.Text.RegularExpressions;

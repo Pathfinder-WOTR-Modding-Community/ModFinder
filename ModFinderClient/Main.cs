@@ -73,7 +73,6 @@ namespace ModFinder
     /// </summary>
     public static string WrathDataDir => Path.Combine(AppDataRoot, "LocalLow", "Owlcat Games", "Pathfinder Wrath Of The Righteous");
 
-    //Maybe change this to read registry and look for path?
     /// <summary>
     /// Path to the installed wrath folder
     /// </summary>
