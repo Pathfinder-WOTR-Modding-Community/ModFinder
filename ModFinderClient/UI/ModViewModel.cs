@@ -46,7 +46,7 @@ namespace ModFinder.UI
 
     public string Service => GetSourceText();
     public bool IsInstalled => Status.Installed();
-    public bool CanInstallOrDownload => CanInstall || CanDownload;
+    public bool CanInstallOrDownload => InstallOrDownloadAvailable();
     public bool CanInstall =>
       Manifest.Service.IsGitHub()
       && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
@@ -195,6 +195,15 @@ namespace ModFinder.UI
       return null;
     }
 
+    private bool InstallOrDownloadAvailable()
+    {
+      var installAvailable = CanInstall || CanDownload;
+      var nextMod = GetNextAvailableRequirement();
+      if (nextMod is null)
+        return installAvailable;
+      return installAvailable || nextMod.CanInstall || nextMod.CanDownload;
+    }
+
     private string GetStatusText()
     {
       if (InstallState == InstallState.Installing)
@@ -295,7 +304,8 @@ namespace ModFinder.UI
         nameof(IsInstalled),
         nameof(CanInstall),
         nameof(CanUninstall),
-        nameof(CanDownload));
+        nameof(CanDownload),
+        nameof(CanInstallOrDownload));
     }
 
     private void Changed(params string[] props)
