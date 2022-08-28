@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		manifest.json = manifest.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManifestUpdater", "..\ModFinder_\ManifestUpdater\ManifestUpdater.csproj", "{EC260101-6AC3-4BE3-A9FC-9D9DD96D89C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{39D97F16-BDF9-4055-AD33-D2B1CA790F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39D97F16-BDF9-4055-AD33-D2B1CA790F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39D97F16-BDF9-4055-AD33-D2B1CA790F71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC260101-6AC3-4BE3-A9FC-9D9DD96D89C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC260101-6AC3-4BE3-A9FC-9D9DD96D89C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC260101-6AC3-4BE3-A9FC-9D9DD96D89C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC260101-6AC3-4BE3-A9FC-9D9DD96D89C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
