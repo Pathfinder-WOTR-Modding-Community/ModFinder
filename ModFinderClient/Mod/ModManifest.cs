@@ -196,6 +196,11 @@ namespace ModFinder.Mod
     {
       return Nexus is not null;
     }
+
+    public bool IsLocal()
+    {
+      return !IsGitHub() && !IsNexus();
+    }
   }
 
   /// <summary>
@@ -307,10 +312,10 @@ namespace ModFinder.Mod
   /// <summary>
   /// Details about a release of your mod.
   /// </summary>
-  public class Release
+  public struct Release
   {
     /// <summary>
-    /// Required. String representation of your <see cref="ModVersion"/>.
+    /// Required.
     /// </summary>
     [JsonProperty]
     public ModVersion Version { get; }

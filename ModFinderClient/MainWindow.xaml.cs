@@ -33,7 +33,7 @@ namespace ModFinder
       showInstalledToggle.Click += ShowInstalledToggle_Click;
 
 #if DEBUG
-      using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_manifest.json"))
+      using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_master.json"))
       {
         using var reader = new StreamReader(stream);
         Manifest = JsonConvert.DeserializeObject<MasterManifest>(reader.ReadToEnd());
@@ -91,8 +91,17 @@ namespace ModFinder
 
     private static void RefreshGeneratedManifest()
     {
+      string rawstring;
+#if DEBUG
+      using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_generated.json"))
+      {
+        using var reader = new StreamReader(stream);
+        rawstring = reader.ReadToEnd();
+      }
+#else
       using var client = new WebClient();
       var rawstring = client.DownloadString(Manifest.GeneratedManifestUrl);
+#endif
       foreach (var manifest in JsonConvert.DeserializeObject<List<ModManifest>>(rawstring))
       {
         RefreshManifest(manifest);

@@ -15,7 +15,7 @@ namespace ModFinder.UI
     private readonly ModStatus Status = new();
 
     public ModManifest Manifest;
-    public ModVersion Latest => Manifest.Version.Latest.Version;
+    public Release Latest => Manifest.Version.Latest;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -38,17 +38,17 @@ namespace ModFinder.UI
     public string Author => Manifest.Author;
     public string Description => Manifest.Description ?? "-";
 
-    public HostService Service => Manifest.Service;
+    public string Service => GetSourceText();
     public bool IsInstalled => Status.Installed();
     public bool CanInstall =>
-      (!IsInstalled || Status.IsVersionBehind(Latest))
-      && Service.IsGitHub()
-      && !string.IsNullOrEmpty(Latest.DownloadUrl);
+      Manifest.Service.IsGitHub()
+      && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
+      && !string.IsNullOrEmpty(Latest.Url);
     public bool CanUninstall => IsInstalled && ModDir != null;
     public bool CanDownload =>
-      (!IsInstalled || Status.IsVersionBehind(Latest))
-      && !Service.IsGitHub()
-      && !string.IsNullOrEmpty(Latest.DownloadUrl);
+      Manifest.Service.IsNexus()
+      && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
+      && !string.IsNullOrEmpty(Latest.Url);
 
     public string StatusText => GetStatusText();
     public string ButtonText => GetButtonText();
@@ -112,12 +112,21 @@ namespace ModFinder.UI
         return "Not installed";
       }
 
-      if (InstalledVersion < Latest)
+      if (InstalledVersion < Latest.Version)
       {
         return $"Update available from {InstalledVersion} to {Latest}";
       }
 
       return $"Latest version installed: {InstalledVersion}";
+    }
+
+    private string GetSourceText()
+    {
+      if (Manifest.Service.IsGitHub())
+        return "GitHub";
+      if (Manifest.Service.IsNexus())
+        return "Nexus";
+      return "Local";
     }
 
     private string GetButtonText()
@@ -128,7 +137,7 @@ namespace ModFinder.UI
         return "Install";
       if (CanDownload)
         return "Download";
-      if (Latest == default(ModVersion))
+      if (Latest.Version == default(ModVersion))
         return "Unavailable";
       return "Up to date";
     }

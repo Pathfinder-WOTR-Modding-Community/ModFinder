@@ -11,7 +11,8 @@
   <ItemGroup>
     <None Remove="background.png" />
     <None Remove="icons\drop-bg.png" />
-    <None Remove="test_manifest.json" />
+    <None Remove="test_generated.json" />
+    <None Remove="test_master.json" />
     <None Remove="UI_Button_Click.png" />
     <None Remove="UI_Button_Default.png" />
     <None Remove="UI_Button_Disable.png" />
@@ -48,7 +49,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="test_manifest.json" />
+    <EmbeddedResource Include="test_generated.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="test_master.json" />
   </ItemGroup>
 
   <ItemGroup>

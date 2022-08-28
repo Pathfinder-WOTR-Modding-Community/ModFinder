@@ -38,7 +38,7 @@ namespace ModFinder.Mod
     {
       WebClient web = new();
       var file = Path.GetTempFileName();
-      await web.DownloadFileTaskAsync(viewModel.Latest.DownloadUrl, file);
+      await web.DownloadFileTaskAsync(viewModel.Latest.Url, file);
 
       return await InstallFromZip(file, viewModel);
     }

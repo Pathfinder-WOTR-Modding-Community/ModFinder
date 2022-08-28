@@ -16,8 +16,6 @@ namespace ModFinder.Mod
     public int Major, Minor, Patch;
     public char Suffix;
 
-    public string DownloadUrl;
-
     public bool Valid => !(Major == 0 && Minor == 0 && Patch == 0);
 
     public static bool operator <(ModVersion left, ModVersion right)
