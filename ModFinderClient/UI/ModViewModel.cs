@@ -218,7 +218,7 @@ namespace ModFinder.UI
 
       if (InstalledVersion < Latest.Version)
       {
-        return $"Update available from {InstalledVersion} to {Latest}";
+        return $"Update available from {InstalledVersion} to {Latest.Version}";
       }
 
       if (MissingRequirements.Any())
