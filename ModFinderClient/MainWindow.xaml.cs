@@ -8,6 +8,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
