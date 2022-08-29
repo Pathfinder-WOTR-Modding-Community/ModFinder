@@ -5,7 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Wrath-1.ico</ApplicationIcon>
-  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>
@@ -50,9 +50,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="test_generated.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="test_master.json" />
   </ItemGroup>
 
