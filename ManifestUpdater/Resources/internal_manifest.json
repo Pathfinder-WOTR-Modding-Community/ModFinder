@@ -1,194 +1,497 @@
-{
-    "m_AllMods": [
-    {
-      "Author": "Barley",
-      "GithubOwner": "BarleyFlour",
-      "GithubRepo": "RespecMod",
-      "ModId": {
-        "Identifier": "RespecWrath",
-        "ModType": "UMM"
-      },
-      "Name": "Respec Mod",
-      "NexusModID": 0,
-      "Source": "GitHub"
+[
+  // Please keep sorted by Name.
+  {
+    "Name": "Bubble Buffs",
+    "Author": "Bubbles",
+    "Id": {
+      "Id": "BubbleBuffs",
+      "Type": "UMM"
     },
-    {
-      "Author": "Barley/Spacehamster",
-      "GithubOwner": "BarleyFlour",
-      "GithubRepo": "WrathVisualAdjustmentsMod",
-      "ModId": {
-        "Identifier": "VisualAdjustments",
-        "ModType": "UMM"
-      },
-      "Name": "Visual Adjustments",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "Service": {
+      "Nexus": {
+        "ModID": "195"
+      }
     },
-    {
-      "Author": "Bubbles",
-      "GithubOwner": "factubsio",
-      "GithubRepo": "BubbleTweaks",
-      "ModId": {
-        "Identifier": "BubbleTweaks",
-        "ModType": "UMM"
-      },
-      "Name": "Bubble Tweaks",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",
+    "Tags": [ "Gameplay", "UserInterface" ]
+  },
+
+  {
+    "Name": "Bubble Tweaks",
+    "Author": "Bubbles",
+    "Id": {
+      "Id": "BubbleTweaks",
+      "Type": "UMM"
     },
-    {
-      "Author": "Bubbles",
-      "GithubOwner": "factubsio",
-      "GithubRepo": "BubbleBuffs",
-      "ModId": {
-        "Identifier": "BubbleBuffs",
-        "ModType": "UMM"
-      },
-      "Name": "Bubble Buffs",
-      "NexusModID": 195,
-      "Source": "Nexus"
+    "Service": {
+      "GitHub": {
+        "Owner": "factubsio",
+        "RepoName": "BubbleTweaks"
+      }
     },
-    {
-      "Author": "Narria",
-      "GithubOwner": "cabarius",
-      "GithubRepo": "ToyBox",
-      "ModId": {
-        "Identifier": "ToyBox",
-        "ModType": "UMM"
-      },
-      "Name": "ToyBox (a bag of tricks)",
-      "NexusModID": 8,
-      "Source": "Nexus"
+    "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
+    "Tags": [ "Gameplay", "UserInterface" ]
+  },
+
+  {
+    "Name": "BugFixes",
+    "Author": "Bobster1246",
+    "Id": {
+      "Id": "BugFixes",
+      "Type": "UMM"
     },
-    {
-      "Author": "Vek17",
-      "GithubOwner": "Vek17",
-      "GithubRepo": "WrathMods-TabletopTweaks",
-      "ModId": {
-        "Identifier": "TabletopTweaks",
-        "ModType": "UMM"
-      },
-      "Name": "Tabletop Tweaks",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "Service": {
+      "GitHub": {
+        "Owner": "Bobster1246",
+        "RepoName": "BugFixes"
+      }
     },
-    {
-      "Author": "Barley",
-      "GithubOwner": "BarleyFlour",
-      "GithubRepo": "FinneanTweaks",
-      "ModId": {
-        "Identifier": "FinneanTweaks",
-        "ModType": "UMM"
-      },
-      "Name": "Finnean Tweaks",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "HomepageUrl": "https://github.com/Bobster1246/BugFixes",
+    "Tags": [ "Gameplay", "Miscellaneous" ]
+  },
+
+  {
+    "Name": "DarkCodex",
+    "Author": "Fumihiko",
+    "GithubOwner": "Truinto",
+    "GithubRepo": "DarkCodex",
+    "Id": {
+      "Id": "DarkCodex",
+      "Type": "UMM"
     },
-    {
-      "Author": "Vek17",
-      "GithubOwner": "Vek17",
-      "GithubRepo": "WrathMods-MultipleArchetypes",
-      "ModId": {
-        "Identifier": "MultipleArchetypes",
-        "ModType": "UMM"
-      },
-      "Name": "Multiple Archetypes",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "Service": {
+      "GitHub": {
+        "Owner": "Truinto",
+        "RepoName": "DarkCodex"
+      }
     },
-    {
-      "Author": "vikigenius",
-      "GithubOwner": "vikigenius",
-      "GithubRepo": "SpellbookMerge",
-      "ModId": {
-        "Identifier": "SpellbookMerge",
-        "ModType": "UMM"
-      },
-      "Name": "Spellbook Merge",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "HomepageUrl": "https://github.com/Truinto/DarkCodex",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Expanded Content",
+    "Author": "Kadyn",
+    "Id": {
+      "Id": "ExpandedContent",
+      "Type": "UMM"
     },
-    {
-      "Author": "Kreaddy",
-      "GithubOwner": "Stari0n",
-      "GithubRepo": "MagicTime",
-      "ModId": {
-        "Identifier": "Magictime",
-        "ModType": "UMM"
-      },
-      "Name": "Magic Time!",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "Service": {
+      "GitHub": {
+        "Owner": "ka-dyn",
+        "RepoName": "ExpandedContent"
+      }
     },
-    {
-      "Author": "Balkoth",
-      "GithubOwner": "Balkoth-dev",
-      "GithubRepo": "WOTR_PATH_OF_RAGE",
-      "ModId": {
-        "Identifier": "WOTR_PATH_OF_RAGE",
-        "ModType": "UMM"
-      },
-      "Name": "PATH OF RAGE",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "HomepageUrl": "https://github.com/ka-dyn/ExpandedContent",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Finnean Tweaks",
+    "Author": "Barley",
+    "Id": {
+      "Id": "FinneanTweaks",
+      "Type": "UMM"
     },
-    {
-      "Author": "Kadyn",
-      "GithubOwner": "ka-dyn",
-      "GithubRepo": "ExpandedContent",
-      "ModId": {
-        "Identifier": "ExpandedContent",
-        "ModType": "UMM"
-      },
-      "Name": "Expanded Content",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "Service": {
+      "GitHub": {
+        "Owner": "BarleyFlour",
+        "RepoName": "FinneanTweaks"
+      }
     },
-    {
-      "Author": "Fumihiko",
-      "GithubOwner": "Truinto",
-      "GithubRepo": "DarkCodex",
-      "ModId": {
-        "Identifier": "DarkCodex",
-        "ModType": "UMM"
-      },
-      "Name": "DarkCodex",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "HomepageUrl": "https://github.com/BarleyFlour/FinneanTweaks",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
+    "Name": "Kineticist Elements Expanded",
+    "Author": "SpenceZilla",
+    "Id": {
+      "Id": "BugFixes",
+      "Type": "UMM"
     },
-    {
-      "Author": "Hambeard",
-      "GithubOwner": "thehambeard",
-      "GithubRepo": "NoFilmGrainWrath",
-      "ModId": {
-        "Identifier": "NoFilmGrainWrath",
-        "ModType": "UMM"
-      },
-      "Name": "No Film Grain",
-      "NexusModID": 0,
-      "Source": "GitHub"
+    "Service": {
+      "GitHub": {
+        "Owner": "SpencerMycek",
+        "RepoName": "KineticistExpandedElements"
+      }
     },
-    {
-      "Author": "Hambeard",
-      "GithubOwner": "thehambeard",
-      "GithubRepo": "WIT",
-      "ModId": {
-        "Identifier": "QuickCast",
-        "ModType": "UMM"
-      },
-      "Name": "Quick Cast",
-      "Source": "GitHub"
+    "HomepageUrl": "https://github.com/SpencerMycek/KineticistExpandedElements",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Levelable Aivu",
+    "Author": "pheonix99",
+    "Id": {
+      "Id": "LevelableAivu",
+      "Type": "UMM"
     },
-    {
-      "Author": "Arkive",
-      "GithubOwner": "ArkiveDev",
-      "GithubRepo": "PuzzleSkip",
-      "ModId": {
-        "Identifier": "PuzzleSkip",
-        "ModType": "UMM"
-      },
-      "Name": "Puzzle Skip",
-      "Source": "GitHub"
-    }
-  ]
-}
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "LevelableAivu"
+      }
+    },
+    "HomepageUrl": "https://github.com/pheonix99/LevelableAivu",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Magic Time!",
+    "Author": "Kreaddy",
+    "Id": {
+      "Id": "Magictime",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Stari0n",
+        "RepoName": "MagicTime"
+      }
+    },
+    "HomepageUrl": "https://github.com/Stari0n/MagicTime",
+    "Tags": [ "UserInterface", "Visuals" ]
+  },
+
+  {
+    "Name": "Mewsifer Console",
+    "Author": "WittleWolfie & Bubbles",
+    "Id": {
+      "Id": "MewsiferConsole.Mod",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Pathfinder-WOTR-Modding-Community",
+        "RepoName": "MewsiferConsole",
+        "ReleaseFilter": "MewsiferConsole\\.[\\d+]"
+      }
+    },
+    "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
+    "Tags": [ "Utilities" ]
+  },
+
+  {
+    "Name": "Mewsifer Console Menu",
+    "Author": "WittleWolfie",
+    "Id": {
+      "Id": "MewsiferConsole.Menu",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Pathfinder-WOTR-Modding-Community",
+        "RepoName": "MewsiferConsole",
+        "ReleaseFilter": "MewsiferConsole\\.Menu"
+      }
+    },
+    "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
+    "Tags": [ "Utilities" ]
+  },
+
+  {
+    "Name": "Mod Menu",
+    "Author": "WittleWolfie",
+    "Id": {
+      "Id": "ModMenu",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "WittleWolfie",
+        "RepoName": "ModMenu"
+      }
+    },
+    "HomepageUrl": "https://github.com/WittleWolfie/ModMenu",
+    "Tags": [ "UserInterface", "Utilities" ]
+  },
+
+  {
+    "Name": "Multiple Archetypes",
+    "Author": "Vek17",
+    "Id": {
+      "Id": "MultipleArchetypes",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Vek17",
+        "RepoName": "WrathMods-MultipleArchetypes"
+      }
+    },
+    "HomepageUrl": "https://github.com/Vek17/WrathMods-MultipleArchetypes",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
+    "Name": "Mythic Arcanist",
+    "Author": "Llisandur",
+    "Id": {
+      "Id": "MythicArcanist",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Llisandur",
+        "RepoName": "MythicArcanist"
+      }
+    },
+    "HomepageUrl": "https://github.com/Llisandur/MythicArcanist",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Mythic Spellbook Tweaks",
+    "Author": "Vek17",
+    "Id": {
+      "Id": "MythicSpellbookTweaks",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Vek17",
+        "RepoName": "WrathMods-MythicSpellbookTweaks"
+      }
+    },
+    "HomepageUrl": "https://github.com/Vek17/WrathMods-MythicSpellbookTweaks",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
+    "Name": "No Film Grain",
+    "Author": "Hambeard",
+    "Id": {
+      "Id": "NoFilmGrainWrath",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "thehambeard",
+        "RepoName": "NoFilmGrainWrath"
+      }
+    },
+    "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
+    "Tags": [ "Visuals" ]
+  },
+
+  {
+    "Name": "PATH OF BLING",
+    "Author": "Balkoth",
+    "Id": {
+      "Id": "WOTR_PATH_OF_BLING",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Balkoth-dev",
+        "RepoName": "WOTR_PATH_OF_BLING"
+      }
+    },
+    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_BLING",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "PATH OF RAGE",
+    "Author": "Balkoth",
+    "Id": {
+      "Id": "WOTR_PATH_OF_RAGE",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Balkoth-dev",
+        "RepoName": "WOTR_PATH_OF_RAGE"
+      }
+    },
+    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Puzzle Skip",
+    "Author": "Arkive",
+    "Id": {
+      "Id": "PuzzleSkip",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "ArkiveDev",
+        "RepoName": "PuzzleSkip"
+      }
+    },
+    "HomepageUrl": "https://github.com/ArkiveDev/PuzzleSkip",
+    "Tags": [ "UserInterface", "Visuals" ]
+  },
+
+  {
+    "Name": "Quick Cast",
+    "Author": "Hambeard",
+    "Id": {
+      "Id": "QuickCast",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "thehambeard",
+        "RepoName": "WIT"
+      }
+    },
+    "HomepageUrl": "https://github.com/thehambeard/WIT",
+    "Tags": [ "UserInterface" ]
+  },
+
+  {
+    "Name": "RandomEnemies",
+    "Author": "Snarkki",
+    "Id": {
+      "Id": "RandomEnemies",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Snarkki",
+        "RepoName": "RandomEnemies"
+      }
+    },
+    "HomepageUrl": "https://github.com/Snarkki/RandomEnemies",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
+    "Name": "Respec Mod",
+    "Author": "Barley",
+    "Id": {
+      "Id": "RespecWrath",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "BarleyFlour",
+        "RepoName": "RespecMod"
+      }
+    },
+    "HomepageUrl": "https://github.com/BarleyFlour/RespecMod",
+    "Tags": [ "Utilities" ]
+  },
+
+  {
+    "Name": "Spellbook Merge",
+    "Author": "vikigenius",
+    "Id": {
+      "Id": "SpellbookMerge",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "vikigenius",
+        "RepoName": "SpellbookMerge"
+      }
+    },
+    "HomepageUrl": "https://github.com/vikigenius/SpellbookMerge",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
+    "Name": "Tabletop Tweaks Base",
+    "Author": "Vek17",
+    "Id": {
+      "Id": "TabletopTweaks-Base",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Vek17",
+        "RepoName": "TabletopTweaks-Base"
+      }
+    },
+    "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Base",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Tabletop Tweaks Core",
+    "Author": "Vek17",
+    "Id": {
+      "Id": "TabletopTweaks-Core",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Vek17",
+        "RepoName": "TabletopTweaks-Core"
+      }
+    },
+    "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Core",
+    "Tags": [ "Gameplay", "Utilities" ]
+  },
+
+  {
+    "Name": "Tabletop Tweaks Mythic Rework",
+    "Author": "Vek17",
+    "Id": {
+      "Id": "TabletopTweaks-Reworks",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Vek17",
+        "RepoName": "TabletopTweaks-Reworks"
+      }
+    },
+    "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Reworks",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "ToyBox (a bag of tricks)",
+    "Author": "Narria",
+    "Id": {
+      "Id": "ToyBox",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "8"
+      }
+    },
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/8",
+    "Tags": [ "Gameplay", "Utilities" ]
+  },
+
+  {
+    "Name": "Turnbased Combat Delay",
+    "Author": "Vek17",
+    "Id": {
+      "Id": "TurnbasedCombatDelay",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Vek17",
+        "RepoName": "WrathMods-TurnbasedCombatDelay"
+      }
+    },
+    "HomepageUrl": "https://github.com/Vek17/WrathMods-TurnbasedCombatDelay",
+    "Tags": [ "Gameplay", "Miscellaneous" ]
+  },
+
+  {
+    "Name": "Visual Adjustments 2",
+    "Author": "Barley/Spacehamster",
+    "Id": {
+      "Id": "VisualAdjustments2",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "BarleyFlour",
+        "RepoName": "VisualAdjustments2"
+      }
+    },
+    "HomepageUrl": "https://github.com/BarleyFlour/VisualAdjustments2",
+    "Tags": [ "UserInterface", "Visuals" ]
+  }
+]
