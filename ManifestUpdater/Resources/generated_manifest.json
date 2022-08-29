@@ -233,11 +233,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.65",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.65/ExpandedContent.zip",
+        "Version": "0.3.66",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.66/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.66",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.66\n\n-Added Draconic Shaman Archetype for Shaman\n-Improved Oathbreakers Direction stability.\n\nThanks to @LilBitRetro for helping me test.\n"
+        },
         {
           "Version": "0.3.65",
           "Url": null,
@@ -257,11 +262,6 @@
           "Version": "0.3.62",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.62\n\n-Added Dragon Mystery and Vampirism Curse to the Oracle class\n-Made most features togglable in the UMM menu\n-Bunch of tiny fixes"
-        },
-        {
-          "Version": "0.3.61",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.61\n\nFixed all reported bugs with Oathbreaker and Dreadknight!!\n\nAdded Gold Drake type\n\nNew Archetypes\n- Clutch Thief, Homebrew rogue archetype with a young drake companion\n- Claw of the False Wyrm, Evil Silver Champion variant using Dreadknight instead of Paladin and worshiping Dahak\n\n  "
         }
       ]
     },
