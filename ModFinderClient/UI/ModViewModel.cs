@@ -261,9 +261,19 @@ namespace ModFinder.UI
         if (nextMod is not null)
         {
           if (nextMod.CanInstall)
-            return $"Install {nextMod.Name}";
+          {
+            var text = $"Install {nextMod.Name}";
+            if (text.Length > 20)
+              text = $"{text[..20]}...";
+            return text;
+          }
           if (nextMod.CanDownload)
-            return $"Download {nextMod.Name}";
+          {
+            var text = $"Download {nextMod.Name}";
+            if (text.Length > 20)
+              text = $"{text[..20]}...";
+            return text;
+          }
         }
       }
       if (Latest.Version == default)

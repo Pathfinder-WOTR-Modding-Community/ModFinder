@@ -389,12 +389,12 @@
             <DataGridTextColumn Header="Author" Width="200" Binding="{Binding Author, Mode=OneWay}"></DataGridTextColumn>
             <DataGridTextColumn Header="Status" Width="*" Binding="{Binding StatusText, Mode=OneWay}"></DataGridTextColumn>
             <DataGridTextColumn Header="From" Width="80" Binding="{Binding Service, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTemplateColumn Width="220">
+            <DataGridTemplateColumn Width="230">
               <DataGridTemplateColumn.CellTemplate>
                 <DataTemplate>
                   <Grid>
                     <Grid.ColumnDefinitions>
-                      <ColumnDefinition Width="180"></ColumnDefinition>
+                      <ColumnDefinition Width="190"></ColumnDefinition>
                       <ColumnDefinition Width="30"></ColumnDefinition>
                       <ColumnDefinition Width="8"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
