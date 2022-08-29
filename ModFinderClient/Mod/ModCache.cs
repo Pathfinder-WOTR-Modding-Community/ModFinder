@@ -40,7 +40,7 @@ namespace ModFinder.Mod
         IOTool.Safe(
           () =>
           {
-            var manifest = JsonConvert.DeserializeObject<CacheManifest>(File.ReadAllText(ManifestFile));
+            var manifest = IOTool.Read<CacheManifest>(ManifestFile);
             foreach (var mod in manifest.Mods)
             {
               if (Directory.Exists(mod.Dir))
@@ -99,7 +99,7 @@ namespace ModFinder.Mod
     private static void UpdateManifest()
     {
       var manifest = new CacheManifest(CachedMods.Select(entry => new CachedMod(entry.Key, entry.Value)).ToList());
-      File.WriteAllText(ManifestFile, JsonConvert.SerializeObject(manifest));
+      IOTool.Write(manifest, ManifestFile);
     }
 
     private class CacheManifest

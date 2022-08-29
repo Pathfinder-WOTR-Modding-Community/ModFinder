@@ -24,7 +24,7 @@ namespace ModFinder.Util
   /// </summary>
   public static class IOTool
   {
-    private static ModVersionConverter modVersionConverter = new();
+    private static readonly ModVersionConverter modVersionConverter = new();
     private static JsonSerializer Json
     {
       get

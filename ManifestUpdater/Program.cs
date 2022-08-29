@@ -1,6 +1,7 @@
 ﻿using ManifestUpdater;
 using ManifestUpdater.Properties;
 using ModFinder.Mod;
+using ModFinder.Util;
 using Newtonsoft.Json;
 using NexusModsNET;
 using Octokit;
@@ -19,7 +20,7 @@ github.Credentials = new Credentials(token);
 
 var nexus = NexusModsClient.Create(Environment.GetEnvironmentVariable("NEXUS_APITOKEN"), "Modfinder_WOTR", "0");
 
-var internalManifest = JsonConvert.DeserializeObject<List<ModManifest>>(Resources.internal_manifest);
+var internalManifest = IOTool.FromString<List<ModManifest>>(Resources.internal_manifest);
 var tasks = new List<Task<ModManifest>>();
 
 var updatedManifest = new List<ModManifest>();
@@ -113,7 +114,7 @@ var targetRepo = "ModFinder";
 var targetFile = "ManifestUpdater/Resources/generated_manifest.json";
 
 updatedManifest.Sort((a, b) => a.Name.CompareTo(b.Name));
-var serializedManifest = ModFinderIO.Write(updatedManifest);
+var serializedManifest = IOTool.Write(updatedManifest);
 var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser, targetRepo, targetFile, "main");
 var updateFile =
   new UpdateFileRequest("Update the mod manifest (bot)", serializedManifest, currentFile[0].Sha, "main", true);

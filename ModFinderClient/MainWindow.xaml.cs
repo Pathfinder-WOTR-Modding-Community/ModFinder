@@ -37,12 +37,12 @@ namespace ModFinder
       using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_master.json"))
       {
         using var reader = new StreamReader(stream);
-        Manifest = JsonConvert.DeserializeObject<MasterManifest>(reader.ReadToEnd());
+        Manifest = IOTool.Read<MasterManifest>(reader.ReadToEnd());
       }
 #else
       using var client = new WebClient();
       var rawstring = client.DownloadString("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/master_manifest.json");
-      Manifest = JsonConvert.DeserializeObject<MasterManifest>(rawstring);
+      Manifest = IOTool.FromString<MasterManifest>(rawstring);
 #endif
 
       installedMods.SelectedCellsChanged += (sender, e) =>
@@ -86,7 +86,7 @@ namespace ModFinder
       {
         using var client = new WebClient();
         var rawstring = client.DownloadString(url);
-        RefreshManifest(JsonConvert.DeserializeObject<ModManifest>(rawstring));
+        RefreshManifest(IOTool.FromString<ModManifest>(rawstring));
       }
     }
 
@@ -103,7 +103,7 @@ namespace ModFinder
       using var client = new WebClient();
       rawstring = client.DownloadString(Manifest.GeneratedManifestUrl);
 #endif
-      foreach (var manifest in JsonConvert.DeserializeObject<List<ModManifest>>(rawstring))
+      foreach (var manifest in IOTool.FromString<List<ModManifest>>(rawstring))
       {
         RefreshManifest(manifest);
       }
