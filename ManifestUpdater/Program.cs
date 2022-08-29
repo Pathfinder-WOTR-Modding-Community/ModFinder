@@ -112,6 +112,7 @@ var targetUser = "Pathfinder-WOTR-Modding-Community";
 var targetRepo = "ModFinder";
 var targetFile = "ManifestUpdater/Resources/generated_manifest.json";
 
+updatedManifest.Sort((a, b) => a.Name.CompareTo(b.Name));
 var serializedManifest = ModFinderIO.Write(updatedManifest);
 var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser, targetRepo, targetFile, "main");
 var updateFile =
