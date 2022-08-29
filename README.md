@@ -26,6 +26,18 @@ Tips:
     * `a:bub` to include authors with "bub" in their name, or `-n:bub` to exclude them
     * `n:super` to include mods with "super" in the name, or `-n:super` to exclude them
     * `t:game` to include tags with "game" in their name, or `-n:game` to exclude them
+    
+### Missing a mod?
+
+Ask the mod developer to add it or file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new).
+
+### Problems with a mod?
+
+If there's an issue installing, downloading, displaying information about, or anything else regarding a specific mod file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new). That includes mods that no longer work and are abandoned.
+
+### Other issues?
+
+You guessed it: file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new).
 
 ## For Mod Devs
 
@@ -49,6 +61,10 @@ Assumptions for GitHub:
     * If there's a mismatch between your GitHub tag version and `Info.json` version it will think the mod is always out of date
 
 If necessary you can host your own `ModManifest` JSON file by adding a direct download link to `ExternalManifestUrls` in [master_manifest.json](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ManifestUpdater/Resources/master_manifest.json). Keep in mind, this will not be automatically updated so it is up to you to populate description and version info.
+
+### Want your mod removed from the list?
+
+File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new) or submit a PR.
 
 ## Acknowledgements
 
