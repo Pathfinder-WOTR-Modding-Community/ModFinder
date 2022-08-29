@@ -17,7 +17,7 @@ A tool for browsing and managing Pathfinder: Wrath of the Righteous mods and the
 
 ## For Users
 
-Download the [latest release](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip) and run it!
+Download the [latest release](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip), extract the folder, and run `ModFinder.exe`!
 
 Tips:
 
