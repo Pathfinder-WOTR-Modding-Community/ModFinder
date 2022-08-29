@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{579AAFDB-0B5D-44FF-8489-1A6116876445}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManifestUpdater", "ManifestUpdater\ManifestUpdater.csproj", "{1CEDE87C-94BC-4F4E-8191-AACC2AAEA288}"
