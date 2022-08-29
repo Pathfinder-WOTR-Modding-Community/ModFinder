@@ -143,25 +143,6 @@ namespace ModFinder.Mod
   }
 
   /// <summary>
-  /// Tags used to filter mods when browsing.
-  /// </summary>
-  public enum Tag
-  {
-    Audio,
-    Bugfix,
-    Content,
-    Gameplay,
-    Homebrew,
-    Miscellaneous,
-    Portraits,
-    Romance,
-    Story,
-    UserInterface,
-    Utilities,
-    Visuals,
-  }
-
-  /// <summary>
   /// Details about the hosting. <c>DownloadUrl</c> is universal but the per-service details should be a union, i.e.
   /// only a single one should be populated.
   /// </summary>

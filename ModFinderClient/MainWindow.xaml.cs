@@ -1,7 +1,6 @@
 ﻿using ModFinder.Mod;
 using ModFinder.UI;
 using ModFinder.Util;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +8,6 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;

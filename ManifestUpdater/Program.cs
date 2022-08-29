@@ -1,8 +1,6 @@
-﻿using ManifestUpdater;
-using ManifestUpdater.Properties;
+﻿using ManifestUpdater.Properties;
 using ModFinder.Mod;
 using ModFinder.Util;
-using Newtonsoft.Json;
 using NexusModsNET;
 using Octokit;
 using System;
