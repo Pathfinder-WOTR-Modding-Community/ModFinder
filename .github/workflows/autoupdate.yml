@@ -5,7 +5,7 @@ on:
       - 'ManifestUpdater/Resources/internal_manifest.json'
   #every 2 hours, 37 minutes past due to congestion and stuff
   schedule:
-  - cron: "37 */2 * * *"
+  - cron: "0/15 * * * *"
       
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
