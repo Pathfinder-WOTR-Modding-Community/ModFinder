@@ -37,7 +37,7 @@ namespace ModFinder
       using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_master.json"))
       {
         using var reader = new StreamReader(stream);
-        Manifest = IOTool.Read<MasterManifest>(reader.ReadToEnd());
+        Manifest = IOTool.FromString<MasterManifest>(reader.ReadToEnd());
       }
 #else
       using var client = new WebClient();
@@ -317,6 +317,7 @@ namespace ModFinder
       var mod = (sender as MenuItem).DataContext as ModViewModel;
       ModCache.UninstallAndCache(mod);
       mod.OnUninstalled();
+      RefreshInstalledMods();
     }
 
     private void Filter_TextChanged(object sender, TextChangedEventArgs e)
