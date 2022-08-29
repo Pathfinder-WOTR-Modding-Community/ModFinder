@@ -26,18 +26,14 @@ Tips:
     * `a:bub` to include authors with "bub" in their name, or `-n:bub` to exclude them
     * `n:super` to include mods with "super" in the name, or `-n:super` to exclude them
     * `t:game` to include tags with "game" in their name, or `-n:game` to exclude them
+* Version updates are checked every 30 minutes, but you need to restart the app to get the latest version data
+    * If the latest version is for a more recent game version (e.g beta) it will install it even if it doesn't work with your local version
+
+See [Troubleshooting](#troubleshooting).
     
 ### Missing a mod?
 
 Ask the mod developer to add it or file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new).
-
-### Problems with a mod?
-
-If there's an issue installing, downloading, displaying information about, or anything else regarding a specific mod file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new). That includes mods that no longer work and are abandoned.
-
-### Other issues?
-
-You guessed it: file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new).
 
 ## For Mod Devs
 
@@ -65,6 +61,20 @@ If necessary you can host your own `ModManifest` JSON file by adding a direct do
 ### Want your mod removed from the list?
 
 File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new) or submit a PR.
+
+## Troubleshooting
+
+* Make sure you have [.NET Runtime 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) installed
+    * In the future it will likely migrate to .NET Runtime 6.0 since 5.0 is EOL
+* If you have a non-standard installation directory it may fail to find your Wrath installation. Currently there is no fix, expect improvements in the future (it's pretty effective at finding it right now, but some cases do fail).
+
+### Problems with a mod?
+
+If there's an issue installing, downloading, displaying information about, or anything else regarding a specific mod file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new). That includes mods that no longer work and are abandoned.
+
+### Other issues?
+
+You guessed it: file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new).
 
 ## Acknowledgements
 
