@@ -101,7 +101,7 @@ namespace ModFinder
       }
 #else
       using var client = new WebClient();
-      var rawstring = client.DownloadString(Manifest.GeneratedManifestUrl);
+      rawstring = client.DownloadString(Manifest.GeneratedManifestUrl);
 #endif
       foreach (var manifest in JsonConvert.DeserializeObject<List<ModManifest>>(rawstring))
       {
@@ -330,7 +330,7 @@ namespace ModFinder
       OpenUrl(mod.HomepageUrl);
     }
 
-    private void OpenUrl(string url)
+    private static void OpenUrl(string url)
     {
       Process.Start(
         new ProcessStartInfo
