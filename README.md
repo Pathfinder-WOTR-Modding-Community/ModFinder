@@ -1,6 +1,8 @@
 # ModFinder
 
-A tool for installing Pathfinder: Wrath of the Righteous mods and their dependencies.
+A tool for browsing and managing Pathfinder: Wrath of the Righteous mods and their dependencies.
+
+![Screenshot](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/screenshots/main.png)
 
 ### [![Download zip](https://custom-icon-badges.herokuapp.com/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white "Download zip")](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip) Latest Release
 
@@ -15,9 +17,19 @@ A tool for installing Pathfinder: Wrath of the Righteous mods and their dependen
 
 ## For Users
 
+Download the [latest release](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip) and run it!
+
+Tips:
+
+* Searching checks mod name and author by default
+* You can search specifically name, author, or [tag](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ModFinderClient/Mod/Tag.cs):
+    * `a:bub` to include authors with "bub" in their name, or `-n:bub` to exclude them
+    * `n:super` to include mods with "super" in the name, or `-n:super` to exclude them
+    * `t:game` to include tags with "game" in their name, or `-n:game` to exclude them
+
 ## For Mod Devs
 
-Currently ModFinder only supports mods hosted on Nexus or GitHub.
+Currently ModFinder only supports UMM mods hosted on Nexus or GitHub.
 
 To add (or change details about) your mod:
 
@@ -26,6 +38,8 @@ To add (or change details about) your mod:
     * You can submit a PR or file an issue
     
 That's it! The manifest format is documented [in the code](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ModFinderClient/Mod/ModManifest.cs).
+
+Make sure to apply the appropriate [tags](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ModFinderClient/Mod/Tag.cs) so users can find your mod.
  
 Assumptions for GitHub:
 
