@@ -1,5 +1,6 @@
 name: .NET Core
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'ManifestUpdater/Resources/internal_manifest.json'
