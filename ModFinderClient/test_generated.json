@@ -48,8 +48,19 @@
           "Patch": 3
         },
         "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1534",
-        "Changelog": "FOR GAME VERSION 1.3 ONLY"
-      }
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": {
+            "Major": 3,
+            "Minor": 9,
+            "Patch": 3
+          },
+          "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1534",
+          "Changelog": "FOR GAME VERSION 1.3 ONLY"
+        }
+      ]
     },
     "Description": "Like auto/buff/bot but simpler and easier to use.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",

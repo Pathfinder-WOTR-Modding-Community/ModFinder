@@ -50,17 +50,16 @@ foreach (var manifest in internalManifest)
         }
       }
 
-      var latestRelease =
-        new Release(
-          ModVersion.Parse(latest.TagName), releaseAsset.BrowserDownloadUrl, latest.Body.Replace("\r\n", "\n"));
-      var oldReleases = new List<Release>();
+      var latestRelease = new Release(ModVersion.Parse(latest.TagName), releaseAsset.BrowserDownloadUrl);
+      var releaseHistory = new List<Release>();
       foreach (var release in releases)
       {
-        oldReleases.Add(new Release(ModVersion.Parse(release.TagName), url: null, release.Body.Replace("\r\n", "\n")));
+        releaseHistory.Add(new Release(ModVersion.Parse(release.TagName), url: null, release.Body.Replace("\r\n", "\n")));
       }
-      oldReleases.Sort((a, b) => a.Version.CompareTo(b.Version));
+      releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
 
-      var newManifest = new ModManifest(manifest, new VersionInfo(latestRelease, oldReleases), repo.Description);
+      var newManifest =
+        new ModManifest(manifest, new VersionInfo(latestRelease, releaseHistory.Take(5).ToList()), repo.Description);
       updatedManifest.Add(newManifest);
       return newManifest;
     }
@@ -76,18 +75,20 @@ foreach (var manifest in internalManifest)
       var downloadUrl =
         @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" + mod.ModFiles.Last().FileId;
   
-      var oldReleases = new List<Release>();
+      var releaseHistory = new List<Release>();
       if (changelog != null)
       {
         foreach (var entry in changelog)
         {
-          oldReleases.Add(new Release(ModVersion.Parse(entry.Key), url: null, string.Join("\n", entry.Value)));
+          releaseHistory.Add(new Release(ModVersion.Parse(entry.Key), url: null, string.Join("\n", entry.Value)));
         }
-        oldReleases.Sort((a, b) => a.Version.CompareTo(b.Version));
+        releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
       }
-      var latestRelease = new Release(latestVersion, downloadUrl, changelog: null);
+      var latestRelease = new Release(latestVersion, downloadUrl);
 
-      var newManifest = new ModManifest(manifest, new VersionInfo(latestRelease, oldReleases), nexusMod.Description);
+      var newManifest =
+        new ModManifest(
+          manifest, new VersionInfo(latestRelease, releaseHistory.Take(5).ToList()), nexusMod.Description);
       updatedManifest.Add(newManifest);
       return newManifest;
     }

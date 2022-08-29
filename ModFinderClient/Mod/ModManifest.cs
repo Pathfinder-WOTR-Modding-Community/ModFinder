@@ -295,16 +295,16 @@ namespace ModFinder.Mod
     public Release Latest { get; }
 
     /// <summary>
-    /// Optional list of old release versions for generating a changelog, sorted from newest to oldest.
+    /// Version history used to generate changelog.
     /// </summary>
     [JsonProperty]
-    public List<Release> OldVersions { get; }
+    public List<Release> VersionHistory { get; }
 
     [JsonConstructor]
-    public VersionInfo(Release latest, List<Release> oldVersions)
+    public VersionInfo(Release latest, List<Release> versionHistory)
     {
       Latest = latest;
-      OldVersions = oldVersions;
+      VersionHistory = versionHistory ?? new();
     }
   }
 
@@ -332,7 +332,7 @@ namespace ModFinder.Mod
     public string Changelog { get; }
 
     [JsonConstructor]
-    public Release(ModVersion version, string url, string changelog)
+    public Release(ModVersion version, string url, string changelog = "")
     {
       Version = version;
       Url = url;
