@@ -67,6 +67,9 @@ File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/i
 * Make sure you have [.NET Runtime 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) installed
     * In the future it will likely migrate to .NET Runtime 6.0 since 5.0 is EOL
 * If you have a non-standard installation directory it may fail to find your Wrath installation. Currently there is no fix, expect improvements in the future (it's pretty effective at finding it right now, but some cases do fail).
+* Try [running it as an Administrator](https://www.itechtics.com/run-programs-administrator/)
+* Make sure your anti-virus is not blocking it
+    * We is very sus
 
 ### Problems with a mod?
 
