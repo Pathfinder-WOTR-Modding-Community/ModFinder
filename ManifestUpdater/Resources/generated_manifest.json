@@ -946,61 +946,6 @@
     ]
   },
   {
-    "Name": "RandomEnemies",
-    "Author": "Snarkki",
-    "Id": {
-      "Id": "RandomEnemies",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Snarkki",
-        "RepoName": "RandomEnemies",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.0.1",
-        "Url": "https://github.com/Snarkki/RandomEnemies/releases/download/V1.0.1/RandomEnemies.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.0.1",
-          "Url": null,
-          "Changelog": "New Loot Lists"
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "Save game issues fixed by using loot handling by Hambeards Random Equipment."
-        },
-        {
-          "Version": "0.0.5",
-          "Url": null,
-          "Changelog": "Hopefully fixed all the issues with saves corrupting. Loot logic changed, took performance hit but no idea how to implement it on load area without issues with saves."
-        },
-        {
-          "Version": "0.0.4",
-          "Url": null,
-          "Changelog": "Changed inventory handling, now doesnt copy inventory but adds guaranteed loot on harder enemies."
-        },
-        {
-          "Version": "0.0.3",
-          "Url": null,
-          "Changelog": "Reworked the logic because of some save game issue raising at act2... "
-        }
-      ]
-    },
-    "Description": "PF: WOTR - Randomize enemies and loot",
-    "HomepageUrl": "https://github.com/Snarkki/RandomEnemies",
-    "Tags": [
-      "Gameplay"
-    ]
-  },
-  {
     "Name": "Respec Mod",
     "Author": "Barley",
     "Id": {
@@ -1127,11 +1072,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "2.3.0",
-        "Url": "https://github.com/Vek17/TabletopTweaks-Base/releases/download/v2.3.0/TabletopTweaks-Base.zip",
+        "Version": "2.3.1",
+        "Url": "https://github.com/Vek17/TabletopTweaks-Base/releases/download/v2.3.1/TabletopTweaks-Base.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "2.3.1",
+          "Url": null,
+          "Changelog": "## Version 2.3.1\n* Release for 1.4.0"
+        },
         {
           "Version": "2.3.0",
           "Url": null,
@@ -1151,11 +1101,6 @@
           "Version": "2.2.1",
           "Url": null,
           "Changelog": "## Version 2.2.1\n* Fixes\n    * Fixed issue where vivisectionist was unselectable with alternate capstones enabled."
-        },
-        {
-          "Version": "2.2.0",
-          "Url": null,
-          "Changelog": "## Version 2.2.0\n* Fixes\n    * Systems\n        * Progressions no longer display features you will not get.\n        * Scoll UMD DCs are now calculated correctly at 20 + Scroll CL instead of 20 + Scroll spell level.\n    * Features\n        * Mongrol's Blessing\n            * Now properly applies negative levels.\n        * Incorporeal Charm\n            * Now properly updates when charisma changes.\n    * Spells\n        * Absolute Order\n            * Now has missing compulsion descriptor.\n        * Command\n            * Now has missing compulsion descriptor.\n        * Greater Command\n            * Now has missing compulsion descriptor.\n        * Legendary Proportions\n            * Now only increases size by one step instead of two.\n        * Power From Death\n            * Now correctly lasts rounds per level instead of minutes per level.\n    * Feats\n        * Outflank\n            * Outflank should no longer triggers on missed attacks.\n        * Seize the Moment\n            * Seize the moment should no longer trigger on missed attacks.\n        * Cleaving Finish\n            * Cleave fixes now includes a working cleaving finish that will not randomly stop after three targets.\n    * Alchemist\n        * Fixed Thick Fog being an illusion based concealment instead of fog based.\n        * Fixed issue where Abundant Incense was not selectable if you had expanded range incense.\n    * Monk\n        * Scaled Fist\n            * Draconic Fury now uses the correct unchained version of the progression instead of the chained.\n            * Fixes stunning fist to use the same version as other monks for compatibility.\n    * Weapons\n        * Sound of Void\n            * Now correctly removes spell resistance when hitting a flat footed target.\n        * Music of Death\n            * Now correctly deals bonus damage when hitting a flat footed target.\n* Added Content\n    * Skald\n        * Spell Kenning has been implemented.\n    * Monk\n        * Stunning Fist: Stagger\n            * This ability works as Stunning Fist, but it makes the target staggered for 1d6 + 1 rounds on a failed save instead of stunning for 1 round.\n        * Stunning Fist: Blind\n            * This ability works as Stunning Fist, but it permanently blinds the target on a failed save instead of stunning for 1 round.\n        * Stunning Fist: Paralyze\n            * This ability works as Stunning Fist, but it paralyzes the target for 1d6 + 1 rounds on a failed save instead of stunning for 1 round.\n    * Alternate Capstones\n        * Generic Capstones\n            * Perfect Body, Flawless Mind\n                * The character increases her ability scores by a collective total of 8.\n            * Great Beast\n                * The animal companion’s Strength, Dexterity, Constitution, and Wisdom scores each increase by 4. This capstone is available to any class with an animal companion.\n            * Old Dog, New Tricks\n                * The character gains four combat feats. This capstone is available to characters of any class that gains at least four bonus combat feats.\n        * Alchemist\n            * Vast Explosions\n                * The alchemist’s bomb damage increases by 3d6.\n        * Arcanist\n            * Deep Reservoir\n                * Her arcane reservoir increases by 10.\n        * Barbarian\n            * Unstoppable\n                * The barbarian gains DR 3/— or increases the value of any existing damage reduction by 3. In addition, she gains 20 energy resistance to acid, cold, electricity, and fire.\n        * Cleric\n            * Proxy\n                * She can select an additional domain from the list offered by her deity.\n        * Fighter\n            * Veteran of Endless War\n                * The bonuses granted by his armor training and weapon training increase by 2 each.\n        * Inquisitor\n            * Team Leader\n                * As a standard action the inquisitor can spend a standard action granting characters up to three of the inquisitor’s teamwork feats (the inquisitor’s choice) as bonus feats for the next 24 hours.\n        * Kineticist\n            * Unbridled Power\n                * Her damage with her blasts increases by 2d6+2 (for physical blasts) or by 2d6 (for energy blasts).\n        * Monk\n            * Old Master\n                * The monk gains one additional attack at his highest base attack bonus when using flurry of blows, and he gains a dodge bonus to AC of 2.\n        * Oracle\n            * Diverse Mysteries\n                * The oracle can select two revelations from another mystery. She must meet the prerequisites for these revelations.\n        * Ranger\n            * Seen It Before\n                * The ranger adds his favored enemy bonus as an insight bonus on saves against spells and abilities used by his favored enemies.\n        * Rogue\n            * Masterful Talent\n                * The rogue gains a +4 bonus on all of her skills.\n        * Skald\n            * Great Kenning\n                * The skald can use spell kenning three additional times per day and can select one additional spell list from which he can cast spells with spell kenning.\n        * Slayer\n            * Against the Odds\n                * When the slayer uses studied target, he can study up to two additional foes within 30 feet in the same action.\n        * Warpriest\n            * Hammer of God\n                * The warpriest gains two additional blessings from the list offered by his deity. He can also call upon his blessings two more times each day.\n        * Wizard\n            * Well-Prepared\n                * The wizard gains six additional 1st- and 2nd-level spell slots, four additional 3rd- and 4th-level spell slots, two additional 5th-level spell slots, and one additional 6th-level spell slot.\n    * Feats\n        * Ability Focus - Stunning Fist\n            * Add +2 to the DC for all saving throws against your stunning fist.\n        * Expanded Spell Kenning\n            * When you use your spell kenning class feature, you can select a spell from either the druid or the witch spell list.\n        * Mantis Style\n            * You gain one additional Stunning Fist attempt per day. While using this style, you gain a +2 bonus to the DC of effects you deliver with your Stunning Fist.\n        * Mantis Wisdom\n            * Treat half your levels in classes other than monk as monk levels for determining effects you can apply to a target of your Stunning Fist per the Stunning Fist monk class feature. While using Mantis Style, you gain a +2 bonus on unarmed attack rolls with which you are using Stunning Fist attempts.\n        * Mantis Torment\n            * While using Mantis Style, you make an unarmed attack that expends two daily attempts of your Stunning Fist. If you hit, your opponent must succeed at a saving throw against your Stunning Fist or become dazzled and staggered with crippling pain until the start of your next turn, and at that point the opponent becomes fatigued.\n    * Mythic Abilities\n        * Abundant Spell Kenning.\n            * You can use Spell Kenning a number of additional times per day equal to one third your mythic rank."
         }
       ]
     },
@@ -1183,11 +1128,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.4.3",
-        "Url": "https://github.com/Vek17/TabletopTweaks-Core/releases/download/0.4.3/TabletopTweaks-Core.zip",
+        "Version": "0.4.5",
+        "Url": "https://github.com/Vek17/TabletopTweaks-Core/releases/download/v0.4.5/TabletopTweaks-Core.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.4.5",
+          "Url": null,
+          "Changelog": "## Version 0.4.5\n* Release for 1.4.0\n* IInitiatorDemoralizeHandler added."
+        },
         {
           "Version": "0.4.3",
           "Url": null,
@@ -1207,11 +1157,6 @@
           "Version": "0.3.0",
           "Url": null,
           "Changelog": "## Verson 0.3.0\n* New Components\n\t* SavingThrowBonusAgainstFavoredEnemy\n\t\t* Adds a saving throw bonus to all saves based on owners favored enemy rank.\n* Deprecated Methods\n\t* Helpers.CreateBuff has been deprecated. Use Helpers.CreateBlueprint<BlueprintBuff>"
-        },
-        {
-          "Version": "0.2.1",
-          "Url": null,
-          "Changelog": "## Versions 0.2.1\n* New Prerequisites\n\t* PrerequisiteInPlayerParty\n\t\t* Checks if unit is the player or a companion."
         }
       ]
     },
@@ -1239,11 +1184,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.1.1",
-        "Url": "https://github.com/Vek17/TabletopTweaks-Reworks/releases/download/v1.1.1_beta/TabletopTweaks-Reworks.zip",
+        "Version": "1.1.2",
+        "Url": "https://github.com/Vek17/TabletopTweaks-Reworks/releases/download/v1.1.2/TabletopTweaks-Reworks.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.1.2",
+          "Url": null,
+          "Changelog": "## Version 1.1.2\n* Release for 1.4.0\n* Trickster Persuasion DCs adjusted"
+        },
         {
           "Version": "1.1.1",
           "Url": null,
