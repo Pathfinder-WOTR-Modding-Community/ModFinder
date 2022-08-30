@@ -51,6 +51,23 @@
   },
 
   {
+    "Name": "Combat Relief (Updated)",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "AlterAsc.CombatRelief",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "CombatRelief"
+      }
+    },
+    "HomepageUrl": "https://github.com/alterasc/CombatRelief",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
     "Name": "Damage Breakdown",
     "Author": "abias1122",
     "Id": {
