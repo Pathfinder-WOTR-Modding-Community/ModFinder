@@ -946,6 +946,61 @@
     ]
   },
   {
+    "Name": "RandomEnemies",
+    "Author": "Snarkki",
+    "Id": {
+      "Id": "RandomEnemies",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Snarkki",
+        "RepoName": "RandomEnemies",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.0.1",
+        "Url": "https://github.com/Snarkki/RandomEnemies/releases/download/V1.0.1/RandomEnemies.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.0.1",
+          "Url": null,
+          "Changelog": "New Loot Lists"
+        },
+        {
+          "Version": "1.0.0",
+          "Url": null,
+          "Changelog": "Save game issues fixed by using loot handling by Hambeards Random Equipment."
+        },
+        {
+          "Version": "0.0.5",
+          "Url": null,
+          "Changelog": "Hopefully fixed all the issues with saves corrupting. Loot logic changed, took performance hit but no idea how to implement it on load area without issues with saves."
+        },
+        {
+          "Version": "0.0.4",
+          "Url": null,
+          "Changelog": "Changed inventory handling, now doesnt copy inventory but adds guaranteed loot on harder enemies."
+        },
+        {
+          "Version": "0.0.3",
+          "Url": null,
+          "Changelog": "Reworked the logic because of some save game issue raising at act2... "
+        }
+      ]
+    },
+    "Description": "PF: WOTR - Randomize enemies and loot",
+    "HomepageUrl": "https://github.com/Snarkki/RandomEnemies",
+    "Tags": [
+      "Gameplay"
+    ]
+  },
+  {
     "Name": "Respec Mod",
     "Author": "Barley",
     "Id": {
