@@ -177,15 +177,20 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.3.0",
-        "Url": "https://github.com/alterasc/CombatRelief/releases/download/1.3.0/CombatRelief-1.3.0.zip",
+        "Version": "1.3.1",
+        "Url": "https://github.com/alterasc/CombatRelief/releases/download/1.3.1/CombatRelief-1.3.1.zip",
         "Changelog": ""
       },
       "VersionHistory": [
         {
+          "Version": "1.3.1",
+          "Url": null,
+          "Changelog": "Makes mod settings save/load properly.\n\nApologies for rushed 1.3.0 release."
+        },
+        {
           "Version": "1.3.0",
           "Url": null,
-          "Changelog": "Fork of [Combat Relief](https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/40) updated to work on 1.4.0\n\n**UNINSTALL EXISTING 1.2.1 VERSION BEFORE INSTALLING THIS ONE**"
+          "Changelog": "Fork of [Combat Relief](https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/40) updated to work on 1.4.0\n\n**UNINSTALL EXISTING 1.2.1 VERSION BEFORE INSTALLING THIS ONE**\n\nEdit: replaced with version 1.3.1 where I fixed the saving/loading of mod settings (that I introduced)"
         }
       ]
     },
