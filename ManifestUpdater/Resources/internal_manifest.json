@@ -51,10 +51,25 @@
   },
 
   {
+    "Name": "Damage Breakdown",
+    "Author": "abias1122",
+    "Id": {
+      "Id": "DamageBreakdown",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "abias1122",
+        "RepoName": "WOTRDamageBreakdown"
+      }
+    },
+    "HomepageUrl": "https://github.com/abias1122/WOTRDamageBreakdown",
+    "Tags": [ "UserInterface" ]
+  },
+
+  {
     "Name": "DarkCodex",
     "Author": "Fumihiko",
-    "GithubOwner": "Truinto",
-    "GithubRepo": "DarkCodex",
     "Id": {
       "Id": "DarkCodex",
       "Type": "UMM"
@@ -67,6 +82,23 @@
     },
     "HomepageUrl": "https://github.com/Truinto/DarkCodex",
     "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Enhanced Inventory",
+    "Author": "Xenofell",
+    "Id": {
+      "Id": "EnhancedInventory",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "cstamford",
+        "RepoName": "WOTR_EnhancedInventory"
+      }
+    },
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/137",
+    "Tags": [ "UserInterface" ]
   },
 
   {
@@ -205,6 +237,38 @@
     },
     "HomepageUrl": "https://github.com/WittleWolfie/ModMenu",
     "Tags": [ "UserInterface", "Utilities" ]
+  },
+
+  {
+    "Name": "More Bulk Sell",
+    "Author": "zesen",
+    "Id": {
+      "Id": "MoreBulkSell",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": 163
+      }
+    },
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/163",
+    "Tags": [ "UserInterface" ]
+  },
+
+  {
+    "Name": "More Relic Info",
+    "Author": "zesen",
+    "Id": {
+      "Id": "More Relic Info",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": 200
+      }
+    },
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/200",
+    "Tags": [ "UserInterface" ]
   },
 
   {
@@ -495,4 +559,20 @@
     "Tags": [ "UserInterface", "Visuals" ]
   }
 
+  {
+    "Name": "Weapon Focus Plus",
+    "Author": "Vek17 & xoff",
+    "Id": {
+      "Id": "WeaponFocusPlus",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Vek17",
+        "RepoName": "WrathMods-WeaponFocusPlus"
+      }
+    },
+    "HomepageUrl": "https://github.com/Vek17/WrathMods-WeaponFocusPlus",
+    "Tags": [ "Gameplay" ]
+  }
 ]
