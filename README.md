@@ -70,6 +70,7 @@ File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/i
 * Try [running it as an Administrator](https://www.itechtics.com/run-programs-administrator/)
 * Make sure your anti-virus is not blocking it
     * We is very sus
+* Some users have reported that uninstalling .NET Runtime 6.0 fixed it
 
 ### Problems with a mod?
 
