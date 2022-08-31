@@ -1444,62 +1444,6 @@
     ]
   },
   {
-    "Name": "Tabletop Tweaks Mythic Rework",
-    "Author": "Vek17",
-    "Id": {
-      "Id": "TabletopTweaks-Reworks",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Vek17",
-        "RepoName": "TabletopTweaks-Reworks",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.1.2",
-        "Url": "https://github.com/Vek17/TabletopTweaks-Reworks/releases/download/v1.1.2/TabletopTweaks-Reworks.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.1.2",
-          "Url": null,
-          "Changelog": "## Version 1.1.2\n* Release for 1.4.0\n* Trickster Persuasion DCs adjusted"
-        },
-        {
-          "Version": "1.1.1",
-          "Url": null,
-          "Changelog": "**THIS IS THE FOR 1.4.0 BETA ONLY**\n\nThis is only an update to work with beta 1.4.0, no new features"
-        },
-        {
-          "Version": "1.1.1",
-          "Url": null,
-          "Changelog": "## Version 1.1.1\n* Bugfixes\n\t* Fixed issue with some trickster domain powers granting bonuses of the wrong type.\n* Lich\n\t* Fixed Fear Control to use new owlcat DC logic.\n* Aeon\n\t* Gazes now use new owlcat DC logic."
-        },
-        {
-          "Version": "1.1.0",
-          "Url": null,
-          "Changelog": "## Version 1.1.0\n* Mythic Abilities\n\t* Abundant Casting\n\t\t* Now grants two bonus casts instead of 4.\n\t* Greater Enduring Spells\n\t\t* Now extends spells that last 10+ minutes instead of 5+ minutes.\n* Trickster Rework\n\t* Trickster Progression\n\t\t* An improved trick is now learned at mythic rank 5.\n\t\t* The mythic rank 9 improved trick and the mythic rank 10 greater trick have been swapped.\n\t* Knowledge Arcana Tricks\n\t\t* Arcana 2\n\t\t\t* Enchantment list updated. This should be a buff.\n\t\t* Arcana 3\n\t\t\t* Enchantment list updated. This should be a buff.\n\t* Lore Nature Tricks\n\t\t* Upadted loot table. This should be a buff.\n\t* Lore Religion Tricks\n\t\t* Now work with domain zealot and qualifies for domain zealot.\n\t\t* Effective Cleric level is equal to character level and effective wisdom is  equal to mythic rank for the purposes of these domains and powers.\n\t\t* Now grants a domain spellbook with 1 slot per level for domain spells instead of spell like abilities. These now interact in all ways like spells.\n\t* Mobility Tricks\n\t\t* Mobility 3\n\t\t\t* Now works on all types of attacks including spell attacks.\n\t* Perception Tricks\n\t\t* Perception 1\n\t\t\t* You are under a constant effect of the see invisibility spell, auto detect stealthing creatures, and reroll all concealment rolls.\n\t\t* Perception 2\n\t\t\t* You ignore critical and sneak attack immunity, reroll all fortification checks and your critical hit range is increased by 2 with all weapons.\n\t\t* Perception 3\n\t\t\t* All allies within 60 feet of you gain the benefits of your perception tricks.\n\t* Persuasion Tricks\n\t\t* Persuasion 2\n\t\t\t* Enemies affected by your demoralize ability must succeed at a Will saving throw with a DC of 15 + your ranks in Persuasion, or become staggered for one round. Additionally, when you successfully demoralize an enemy they take an additional penalty to their attack and damage rolls equal to 1 + half your mythic rank.\n\t\t* Persuasion 3\n\t\t\t* Enemies affected by your demoralize have a 50% chance to attack the nearest target instead of acting normally. Additionally, when you successfully demoralize an enemy they take an additional penalty to their AC and saving equal to 1 + half your mythic rank.\n\t* Stealth Tricks\n\t\t* Stealth 1\n\t\t\t* This \"invisibility\" cannot be seen through by divination magic such as true seeing, see invisibility, or thoughtsense.\n\t\t* Stealth 2\n\t\t\t* This \"invisibility\" cannot be seen through by divination magic such as true seeing, see invisibility, or thoughtsense.\n\t* Trickery Tricks\n\t\t* Trickery 3\n\t\t\t* Your previous Trickery abilities can now be used as a swift action and at close range instead of touch range. This is in addition to gaining the save or die.\n\t* Use Magic Device Tricks\n\t\t* Use Magic Device 2\n\t\t\t* Now grants completely normal magic in addition to endless wands.\n\t* Bound of Possibility\n\t\t* This cloak allows Trickster to roll any skill check twice and take the best result."
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "## Version 1.0.0a\nFixed issue with settings not saving\n\n## Version 1.0.0\nThis has been split and now depends on [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core/releases).\n\n* Initial Release of the module"
-        }
-      ]
-    },
-    "Description": "This module provides non tabletop based tweaks to Owlcat's original mythic content including changes to some mythic classes and some mythic abilities.",
-    "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Reworks",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
-  },
-  {
     "Name": "ToyBox (a bag of tricks)",
     "Author": "Narria",
     "Id": {
