@@ -363,11 +363,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.66",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.66/ExpandedContent.zip",
+        "Version": "0.3.70",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.70/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.70",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.70\n\n-Enabled Groetus\n\nAdded Spells\n-Scourge of the Horsemen\n-Rigor Mortis"
+        },
         {
           "Version": "0.3.66",
           "Url": null,
@@ -387,11 +392,6 @@
           "Version": "0.3.63",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.63\n\n- Added Ocean's Echo, Oracle archetype with limited bardic abilities.\n- Added the rest of the Monitor deities.\n- Changed the type of stat bonuses drakes get on size increase to improve feat options."
-        },
-        {
-          "Version": "0.3.62",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.62\n\n-Added Dragon Mystery and Vampirism Curse to the Oracle class\n-Made most features togglable in the UMM menu\n-Bunch of tiny fixes"
         }
       ]
     },
