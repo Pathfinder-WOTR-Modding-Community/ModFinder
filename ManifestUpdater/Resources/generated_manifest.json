@@ -363,11 +363,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.70",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.70/ExpandedContent.zip",
+        "Version": "0.3.71",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.71/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.71",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.71\n\nJust some fixes, no new content."
+        },
         {
           "Version": "0.3.70",
           "Url": null,
@@ -387,11 +392,6 @@
           "Version": "0.3.64",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.64\n\n-Added Elder Mythos and Orc deities\n-Added Ferocity Subdomain"
-        },
-        {
-          "Version": "0.3.63",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.63\n\n- Added Ocean's Echo, Oracle archetype with limited bardic abilities.\n- Added the rest of the Monitor deities.\n- Changed the type of stat bonuses drakes get on size increase to improve feat options."
         }
       ]
     },
@@ -697,6 +697,42 @@
     "Description": "An improved remote console for reading logs in Pathfinder: Wrath of the Righteous. ",
     "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
     "Tags": [
+      "Utilities"
+    ]
+  },
+  {
+    "Name": "Mod Menu",
+    "Author": "WittleWolfie",
+    "Id": {
+      "Id": "ModMenu",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "WittleWolfie",
+        "RepoName": "ModMenu",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.0.0",
+        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.0.0/ModMenu.1.0.0.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.0.0",
+          "Url": null,
+          "Changelog": "Initial release"
+        }
+      ]
+    },
+    "Description": null,
+    "HomepageUrl": "https://github.com/WittleWolfie/ModMenu",
+    "Tags": [
+      "UserInterface",
       "Utilities"
     ]
   },
