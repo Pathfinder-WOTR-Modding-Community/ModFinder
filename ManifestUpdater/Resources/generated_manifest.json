@@ -701,42 +701,6 @@
     ]
   },
   {
-    "Name": "Mod Menu",
-    "Author": "WittleWolfie",
-    "Id": {
-      "Id": "ModMenu",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "WittleWolfie",
-        "RepoName": "ModMenu",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.0.0",
-        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.0.0/ModMenu.1.0.0.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "Initial release"
-        }
-      ]
-    },
-    "Description": null,
-    "HomepageUrl": "https://github.com/WittleWolfie/ModMenu",
-    "Tags": [
-      "UserInterface",
-      "Utilities"
-    ]
-  },
-  {
     "Name": "More Bulk Sell",
     "Author": "zesen",
     "Id": {
