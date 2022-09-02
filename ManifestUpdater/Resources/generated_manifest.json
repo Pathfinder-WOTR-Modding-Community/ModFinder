@@ -1611,11 +1611,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.6",
-        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.6/VisualAdjustments2.zip",
+        "Version": "1.0.7",
+        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.7/VisualAdjustments2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.0.7",
+          "Url": null,
+          "Changelog": ">Fixed for game version 1.4.0y"
+        },
         {
           "Version": "1.0.6",
           "Url": null,
@@ -1635,11 +1640,6 @@
           "Version": "1.0.3",
           "Url": null,
           "Changelog": ">Fixed an issue where the portrait picker would fail to function in certain circumstances."
-        },
-        {
-          "Version": "1.0.2",
-          "Url": null,
-          "Changelog": ">Fixed an issue where part of the doll UI would be superimposed over the rest of the UI under certain circumstances"
         }
       ]
     },
