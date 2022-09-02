@@ -1,5 +1,23 @@
 [
   // Please keep sorted by Name.
+
+  {
+    "Name": "Auto Mount",
+    "Author": "zepheon",
+    "Id": {
+      "Id": "AutoMount",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "zephe0n",
+        "RepoName": "AutoMount"
+      }
+    },
+    "HomepageUrl": "https://github.com/zephe0n/AutoMount",
+    "Tags": [ "UserInterface" ]
+  },
+  
   {
     "Name": "Bubble Buffs",
     "Author": "Bubbles",
