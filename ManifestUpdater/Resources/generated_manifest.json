@@ -1,5 +1,40 @@
 [
   {
+    "Name": "Auto Mount",
+    "Author": "zepheon",
+    "Id": {
+      "Id": "AutoMount",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "zephe0n",
+        "RepoName": "AutoMount",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "0.0.1",
+        "Url": "https://github.com/zephe0n/AutoMount/releases/download/v0.0.1/AutoMount-v0-0-1.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "0.0.1",
+          "Url": null,
+          "Changelog": "Initial release"
+        }
+      ]
+    },
+    "Description": "Pathfinder: WOTR -  Auto Mount mod",
+    "HomepageUrl": "https://github.com/zephe0n/AutoMount",
+    "Tags": [
+      "UserInterface"
+    ]
+  },
+  {
     "Name": "Bubble Buffs",
     "Author": "Bubbles",
     "Id": {
