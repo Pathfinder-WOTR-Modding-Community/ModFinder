@@ -403,11 +403,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.71",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.71/ExpandedContent.zip",
+        "Version": "0.3.72",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.72/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.72",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.72\n\nAdded spells\n-Reviving Finale\n-Deadly Finale\n\nSeveral bug fixes"
+        },
         {
           "Version": "0.3.71",
           "Url": null,
@@ -427,11 +432,6 @@
           "Version": "0.3.65",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.65\n\nAdded Subdomains\n-Psychopomp\n-Rivers\n-Rage\n\nAdded Spells\n-Hydraulic push\n-Slipstream"
-        },
-        {
-          "Version": "0.3.64",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.64\n\n-Added Elder Mythos and Orc deities\n-Added Ferocity Subdomain"
         }
       ]
     },
