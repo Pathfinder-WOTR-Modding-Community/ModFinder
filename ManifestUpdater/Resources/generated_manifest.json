@@ -534,62 +534,6 @@
     ]
   },
   {
-    "Name": "Levelable Aivu",
-    "Author": "pheonix99",
-    "Id": {
-      "Id": "LevelableAivu",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "pheonix99",
-        "RepoName": "LevelableAivu",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.2.3",
-        "Url": "https://github.com/pheonix99/LevelableAivu/releases/download/1.2.3/LevelableAivu.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.2.3",
-          "Url": null,
-          "Changelog": "Fixed for levelups past 20 being broken.\nFix for inability to wear animal companion gloves."
-        },
-        {
-          "Version": "1.2.2",
-          "Url": null,
-          "Changelog": "Makes Havoc Dragon / Mythic Havoc Dragon levelling work normally with DarkCodex's animal companion uncapper installed by just blocking additional levels of the level 1-20 class.\n\nThis time it works."
-        },
-        {
-          "Version": "1.2.1",
-          "Url": null,
-          "Changelog": "Makes Havoc Dragon / Mythic Havoc Dragon levelling work normally with DarkCodex's animal companion uncapper installed by just blocking additional levels of the level 1-20 class."
-        },
-        {
-          "Version": "1.2.0",
-          "Url": null,
-          "Changelog": "* Aivu can use barding again.\n* Heroism aura sfx spam removed\n* Destructive dispel should now work."
-        },
-        {
-          "Version": "1.1.0",
-          "Url": null,
-          "Changelog": "Bringing Levelable Aivu to 1.2.\n\nNo changes, just compatability.\n\nIgnore the spell level progression in the UI being weird. Spell gain is correct, that's just display jank.\n\nFixed missing localization file"
-        }
-      ]
-    },
-    "Description": null,
-    "HomepageUrl": "https://github.com/pheonix99/LevelableAivu",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
-  },
-  {
     "Name": "Magic Time!",
     "Author": "Kreaddy",
     "Id": {
