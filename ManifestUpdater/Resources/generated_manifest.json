@@ -49,11 +49,21 @@
     },
     "Version": {
       "Latest": {
-        "Version": "3.8.1",
-        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1671",
+        "Version": "4.0.2",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1684",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "4.0.2",
+          "Url": null,
+          "Changelog": "Move DLC3 icons around to not overlap the buff buttons"
+        },
+        {
+          "Version": "4.0.1",
+          "Url": null,
+          "Changelog": "Update for 1.4"
+        },
         {
           "Version": "3.8.1",
           "Url": null,
@@ -68,16 +78,6 @@
           "Version": "3.7.0",
           "Url": null,
           "Changelog": "Hopefully fix enduring and other weirdness with touch-spells\nAdd a \"sort by name\" option"
-        },
-        {
-          "Version": "3.5.0",
-          "Url": null,
-          "Changelog": "1.2 support\nAcid maw\nsome contributions for setting overwrite behaviour (thank you to contributors!)"
-        },
-        {
-          "Version": "2.4.1",
-          "Url": null,
-          "Changelog": "Fix to actually allow casting in combat."
         }
       ]
     },
