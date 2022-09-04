@@ -290,6 +290,7 @@ namespace ModFinder
       {
         if (mod.CanInstall)
         {
+          mod.InstallState = InstallState.Installing;
           var result = await ModInstaller.Install(mod);
           ProcessIntallResult(result);
         }
@@ -302,6 +303,7 @@ namespace ModFinder
           var nextMod = mod.GetNextAvailableRequirement();
           if (nextMod is not null)
           {
+            mod.InstallState = InstallState.Installing;
             InstallOrUpdateMod(nextMod);
           }
           else

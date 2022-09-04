@@ -260,7 +260,7 @@ namespace ModFinder.UI
       if (Status.State == InstallState.Installing)
         return "Installing...";
       if (IsInstalled && InstalledVersion < Latest.Version)
-          return "Update";
+        return "Update";
       if (CanInstall)
         return "Install";
       if (CanDownload)
