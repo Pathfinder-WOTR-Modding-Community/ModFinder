@@ -1,4 +1,5 @@
 ﻿using ModFinder.Mod;
+using ModFinder.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,7 @@ namespace ModFinder.UI
           if (currentFilter.Add(filterStr))
             ProcessFilterString(filterStr);
         });
+      Logger.Log.Verbose($"Filter updated: {textFilter}");
       return true;
     }
 
