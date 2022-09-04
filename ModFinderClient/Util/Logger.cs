@@ -29,26 +29,26 @@ namespace ModFinder.Util
 
     public void Info(string log)
     {
-      LogQueue.Add($"[---Info]{log}");
+      LogQueue.Add($"[I] {log}");
     }
 
     public void Warning(string log)
     {
-      LogQueue.Add($"[Warning]{log}");
+      LogQueue.Add($"[W] {log}");
     }
 
     public void Error(string log, Exception e = null)
     {
-      LogQueue.Add($"[--Error]{log}");
+      LogQueue.Add($"[E] {log}");
       if (e is not null)
       {
-        LogQueue.Add($"[--Error]{e}");
+        LogQueue.Add($"[E] {e}");
       }
     }
 
     public void Verbose(string log)
     {
-      LogQueue.Add($"[Verbose]{log}");
+      LogQueue.Add($"[V] {log}");
     }
 
     public void Dispose()
@@ -75,7 +75,7 @@ namespace ModFinder.Util
           while (!cancellationToken.IsCancellationRequested)
           {
             if (LogQueue.TryTake(out string log, 5 * 1000, cancellationToken))
-              writer.WriteLine(log);
+              writer.WriteLine($"[{DateTime.Now.ToString("M/d hh:mm:ss")}]{log}");
             else
               writer.Flush();
           }
