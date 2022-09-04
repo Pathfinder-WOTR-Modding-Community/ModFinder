@@ -1121,52 +1121,6 @@
     ]
   },
   {
-    "Name": "Puzzle Skip",
-    "Author": "Arkive",
-    "Id": {
-      "Id": "PuzzleSkip",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "ArkiveDev",
-        "RepoName": "PuzzleSkip",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.2.0",
-        "Url": "https://github.com/ArkiveDev/PuzzleSkip/releases/download/v1.2.0/PuzzleSkip.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.2.0",
-          "Url": null,
-          "Changelog": "Adds skip for Mask puzzle in Nameless Ruins.\nAdds skips for arrow and floor symbol puzzles in The Enigma. (No skip for final circular puzzle yet.)"
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "Includes skips all the slab puzzles (Secrets of Creation quest)"
-        },
-        {
-          "Version": "0.0.1",
-          "Url": null,
-          "Changelog": "Early test-release. Contains skips for the first 5 slab puzzles. Just bring the slabs to the correct puzzle map."
-        }
-      ]
-    },
-    "Description": "Mod for Pathfinder: Wrath of the Righteous. Allows skipping puzzles.",
-    "HomepageUrl": "https://github.com/ArkiveDev/PuzzleSkip",
-    "Tags": [
-      "UserInterface",
-      "Visuals"
-    ]
-  },
-  {
     "Name": "Quick Cast",
     "Author": "Hambeard",
     "Id": {
