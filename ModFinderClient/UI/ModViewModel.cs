@@ -240,6 +240,9 @@ namespace ModFinder.UI
         return $"Missing pre-reqs: {sb}";
       }
 
+      if (!Manifest.Service.IsGitHub() && !Manifest.Service.IsNexus())
+        return $"Installed: {InstalledVersion}. Updates not available.";
+
       return $"Latest version installed: {InstalledVersion}";
     }
 
@@ -256,6 +259,8 @@ namespace ModFinder.UI
     {
       if (Status.State == InstallState.Installing)
         return "Installing...";
+      if (IsInstalled && InstalledVersion < Latest.Version)
+          return "Update";
       if (CanInstall)
         return "Install";
       if (CanDownload)
@@ -282,7 +287,7 @@ namespace ModFinder.UI
         }
       }
       if (Latest.Version == default)
-        return "Unavailable";
+        return "-";
       return "Up to date";
     }
 
