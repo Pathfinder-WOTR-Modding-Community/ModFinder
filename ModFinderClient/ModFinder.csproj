@@ -9,6 +9,8 @@
     <RollForward>Major</RollForward>
     
     <Version>1.0.0</Version>
+    
+    <Configurations>Debug;Release;DebugTest</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
