@@ -1,4 +1,6 @@
 ﻿using ModFinder.Mod;
+using ModFinder.Util;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -52,8 +54,15 @@ namespace ModFinder.UI
 
     public void ApplyFilter(string filter)
     {
-      if (Filters.UpdateFilter(filter))
-        UpdateFilter();
+      try
+      {
+        if (Filters.UpdateFilter(filter))
+          UpdateFilter();
+      }
+      catch (Exception e)
+      {
+        Logger.Log.Error("Failed to apply filter.", e);
+      }
     }
 
     public void Add(ModViewModel mod)

@@ -12,6 +12,7 @@ using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Diagnostics;
 using System.Windows.Documents;
 using System.Windows.Input;
 
@@ -24,68 +25,91 @@ namespace ModFinder
   {
     private static readonly ModDatabase ModDB = ModDatabase.Instance;
     private static MasterManifest Manifest;
+    private static MainWindow Window;
 
     public MainWindow()
     {
-      InitializeComponent();
-      installedMods.DataContext = ModDB;
-      showInstalledToggle.DataContext = ModDB;
-      showInstalledToggle.Click += ShowInstalledToggle_Click;
+      try
+      {
+        Logger.Log.Info("Loading main window.");
+        Window = this;
+        InitializeComponent();
+        installedMods.DataContext = ModDB;
+        showInstalledToggle.DataContext = ModDB;
+        showInstalledToggle.Click += ShowInstalledToggle_Click;
 
 #if DEBUG
-      using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_master.json"))
-      {
-        using var reader = new StreamReader(stream);
-        Manifest = IOTool.FromString<MasterManifest>(reader.ReadToEnd());
-      }
+        Logger.Log.Verbose("Reading test manifest.");
+        using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_master.json"))
+        {
+          using var reader = new StreamReader(stream);
+          Manifest = IOTool.FromString<MasterManifest>(reader.ReadToEnd());
+        }
 #else
-      using var client = new WebClient();
-      var rawstring = client.DownloadString("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/master_manifest.json");
-      Manifest = IOTool.FromString<MasterManifest>(rawstring);
+        Logger.Log.Verbose("Fetching remote manifest.");
+        using var client = new WebClient();
+        var rawstring = client.DownloadString("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/master_manifest.json");
+        Manifest = IOTool.FromString<MasterManifest>(rawstring);
 #endif
 
-      installedMods.SelectedCellsChanged += (sender, e) =>
-      {
-        if (e.AddedCells.Count > 0)
-          installedMods.SelectedItem = null;
-      };
+        installedMods.SelectedCellsChanged += (sender, e) =>
+        {
+          if (e.AddedCells.Count > 0)
+            installedMods.SelectedItem = null;
+        };
 
-      RefreshAllManifests();
-      RefreshInstalledMods();
+        RefreshAllManifests();
+        RefreshInstalledMods();
 
-      // Do magic window dragging regardless where they click
-      MouseDown += (sender, e) =>
-      {
-        if (e.ChangedButton == MouseButton.Left)
-          DragMove();
-      };
+        // Do magic window dragging regardless where they click
+        MouseDown += (sender, e) =>
+        {
+          if (e.ChangedButton == MouseButton.Left)
+            DragMove();
+        };
 
-      LocationChanged += (sender, e) =>
-      {
-        double offset = DescriptionPopup.HorizontalOffset;
-        DescriptionPopup.HorizontalOffset = offset + 1;
-        DescriptionPopup.HorizontalOffset = offset;
-      };
+        LocationChanged += (sender, e) =>
+        {
+          double offset = DescriptionPopup.HorizontalOffset;
+          DescriptionPopup.HorizontalOffset = offset + 1;
+          DescriptionPopup.HorizontalOffset = offset;
+        };
 
-      // Close button
-      closeButton.Click += (sender, e) =>
+        // Close button
+        closeButton.Click += (sender, e) =>
+        {
+          Logger.Log.Dispose();
+          Close();
+        };
+
+        // Drag drop nonsense
+        dropTarget.Drop += DropTarget_Drop;
+        dropTarget.DragOver += DropTarget_DragOver;
+      }
+      catch (Exception e)
       {
+        ShowError("Failed to start.");
+        Logger.Log.Error($"Failed to initialize main window.", e);
         Close();
-      };
-
-      // Drag drop nonsense
-      dropTarget.Drop += DropTarget_Drop;
-      dropTarget.DragOver += DropTarget_DragOver;
+      }
     }
 
     public static void RefreshAllManifests()
     {
-      RefreshGeneratedManifest();
-      foreach (var url in Manifest.ExternalManifestUrls)
+      try
       {
-        using var client = new WebClient();
-        var rawstring = client.DownloadString(url);
-        RefreshManifest(IOTool.FromString<ModManifest>(rawstring));
+        RefreshGeneratedManifest();
+        foreach (var url in Manifest.ExternalManifestUrls)
+        {
+          Logger.Log.Verbose($"Loading manifest from external URL: {url}");
+          using var client = new WebClient();
+          var rawstring = client.DownloadString(url);
+          RefreshManifest(IOTool.FromString<ModManifest>(rawstring));
+        }
+      }
+      catch (Exception e)
+      {
+        Logger.Log.Error($"Failed to refresh manifests.", e);
       }
     }
 
@@ -104,6 +128,7 @@ namespace ModFinder
 #endif
       foreach (var manifest in IOTool.FromString<List<ModManifest>>(rawstring))
       {
+        Logger.Log.Verbose($"Loading manifest for {manifest.Name}");
         RefreshManifest(manifest);
       }
     }
@@ -123,46 +148,54 @@ namespace ModFinder
 
     private static void CheckInstalledModsInternal()
     {
-      foreach (var mod in ModDatabase.Instance.AllMods)
+      try
       {
-        // Reset install state to make sure we capture any that were, for example, uninstalled but not updated.
-        mod.InstallState = InstallState.None;
-        mod.InstalledVersion = default;
-      }
-
-      var installedMods = new Dictionary<ModId, ModVersion>();
-      var modDir = Main.WrathPath.GetDirectories("Mods");
-      if (modDir.Length > 0)
-      {
-        foreach (var dir in modDir[0].GetDirectories())
+        foreach (var mod in ModDatabase.Instance.AllMods)
         {
-          var infoFile =
-            dir.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
-          if (infoFile != null)
+          // Reset install state to make sure we capture any that were, for example, uninstalled but not updated.
+          mod.InstallState = InstallState.None;
+          mod.InstalledVersion = default;
+        }
+
+        var installedMods = new Dictionary<ModId, ModVersion>();
+        var modDir = Main.WrathPath.GetDirectories("Mods");
+        if (modDir.Length > 0)
+        {
+          foreach (var dir in modDir[0].GetDirectories())
           {
-            var info = IOTool.Read<UMMModInfo>(infoFile.FullName);
-
-            var manifest = ModManifest.ForLocal(info);
-            if (!ModDatabase.Instance.TryGet(manifest.Id, out var mod))
+            Logger.Log.Info($"Found installed mod: {dir.Name}");
+            var infoFile =
+              dir.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
+            if (infoFile != null)
             {
-              mod = new(manifest);
-              ModDatabase.Instance.Add(mod);
+              var info = IOTool.Read<UMMModInfo>(infoFile.FullName);
+
+              var manifest = ModManifest.ForLocal(info);
+              if (!ModDatabase.Instance.TryGet(manifest.Id, out var mod))
+              {
+                mod = new(manifest);
+                ModDatabase.Instance.Add(mod);
+              }
+
+              mod.ModDir = dir;
+              mod.InstallState = InstallState.Installed;
+              mod.InstalledVersion = ModVersion.Parse(info.Version);
+
+              mod.SetRequirements(info.Requirements);
+              installedMods.Add(mod.ModId, mod.InstalledVersion);
             }
-
-            mod.ModDir = dir;
-            mod.InstallState = InstallState.Installed;
-            mod.InstalledVersion = ModVersion.Parse(info.Version);
-
-            mod.SetRequirements(info.Requirements);
-            installedMods.Add(mod.ModId, mod.InstalledVersion);
           }
         }
-      }
 
-      // Update dependency state
-      foreach (var mod in ModDatabase.Instance.AllMods)
+        // Update dependency state
+        foreach (var mod in ModDatabase.Instance.AllMods)
+        {
+          mod.CheckRequirements(installedMods);
+        }
+      }
+      catch (Exception e)
       {
-        mod.CheckRequirements(installedMods);
+        Logger.Log.Error($"Failed to check installed mods.", e);
       }
     }
 
@@ -180,6 +213,16 @@ namespace ModFinder
           a =>
             a.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase)
             || a.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
+    }
+
+    public static void ShowError(string message)
+    {
+      _ = MessageBox.Show(
+        Window,
+        $"{message} Check the log at {Logger.LogFile} for more details.",
+        "Error",
+        MessageBoxButton.OK,
+        MessageBoxImage.Error);
     }
 
     private void ClosePopup_Click(object sender, RoutedEventArgs e)
@@ -215,6 +258,7 @@ namespace ModFinder
     {
       if (result.Error != null)
       {
+        Logger.Log.Error($"Failed to install: {result.Error}");
         _ = MessageBox.Show(
           this, "Could not install mod: " + result.Error, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
       }
@@ -242,31 +286,39 @@ namespace ModFinder
 
     private async void InstallOrUpdateMod(ModViewModel mod)
     {
-      if (mod.CanInstall)
+      try
       {
-        var result = await ModInstaller.Install(mod);
-        ProcessIntallResult(result);
-      }
-      else if (mod.CanDownload)
-      {
-        OpenUrl(mod.Latest.Url);
-      }
-      else
-      {
-        var nextMod = mod.GetNextAvailableRequirement();
-        if (nextMod is not null)
+        if (mod.CanInstall)
         {
-          InstallOrUpdateMod(nextMod);
+          var result = await ModInstaller.Install(mod);
+          ProcessIntallResult(result);
+        }
+        else if (mod.CanDownload)
+        {
+          OpenUrl(mod.Latest.Url);
         }
         else
         {
-          _ = MessageBox.Show(
-            this,
-            "Could not install mod: not available for install or download",
-            "Error",
-            MessageBoxButton.OK,
-            MessageBoxImage.Error);
+          var nextMod = mod.GetNextAvailableRequirement();
+          if (nextMod is not null)
+          {
+            InstallOrUpdateMod(nextMod);
+          }
+          else
+          {
+            _ = MessageBox.Show(
+              this,
+              "Could not install mod: not available for install or download",
+              "Error",
+              MessageBoxButton.OK,
+              MessageBoxImage.Error);
+          }
         }
+      }
+      catch (Exception e)
+      {
+        ShowError("Installation failed.");
+        Logger.Log.Error("Install/update failed.", e);
       }
     }
 
@@ -313,10 +365,18 @@ namespace ModFinder
 
     private void UninstallMod(object sender, RoutedEventArgs e)
     {
-      var mod = (sender as MenuItem).DataContext as ModViewModel;
-      ModCache.UninstallAndCache(mod);
-      mod.OnUninstalled();
-      RefreshInstalledMods();
+      try
+      {
+        var mod = (sender as MenuItem).DataContext as ModViewModel;
+        ModCache.UninstallAndCache(mod);
+        mod.OnUninstalled();
+        RefreshInstalledMods();
+      }
+      catch (Exception ex)
+      {
+        ShowError("Uninstall failed.");
+        Logger.Log.Error("Uninstall failed.", ex);
+      }
     }
 
     private void Filter_TextChanged(object sender, TextChangedEventArgs e)
@@ -369,7 +429,15 @@ namespace ModFinder
         }
         else if (DescriptionType == "changelog")
         {
-          ChangelogRenderer.Render(doc, Mod);
+          try
+          {
+            ChangelogRenderer.Render(doc, Mod);
+          }
+          catch (Exception e)
+          {
+            ShowError("Changelog rendering failed.");
+            Logger.Log.Error("Changelog rendering failed.", e);
+          }
         }
         else
         {

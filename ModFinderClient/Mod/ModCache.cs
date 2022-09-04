@@ -70,6 +70,7 @@ namespace ModFinder.Mod
         return false;
       }
 
+      Logger.Log.Info($"Restoring {id.Id} from local cache.");
       var cachePath = CachedMods[id];
       var installPath = Path.Combine(Main.UMMInstallPath, new DirectoryInfo(cachePath).Name);
       FileSystem.CopyDirectory(cachePath, installPath);
@@ -87,6 +88,7 @@ namespace ModFinder.Mod
       }
 
       var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);
+      Logger.Log.Info($"Uninstalling {mod.Name} and caching at {cachePath}.");
       if (!Directory.Exists(cachePath))
       {
         FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);

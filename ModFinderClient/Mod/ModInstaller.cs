@@ -36,6 +36,7 @@ namespace ModFinder.Mod
 
     private static async Task<InstallResult> InstallFromRemoteZip(ModViewModel viewModel)
     {
+      Logger.Log.Info($"Fetching zip from {viewModel.Latest.Url}");
       WebClient web = new();
       var file = Path.GetTempFileName();
       await web.DownloadFileTaskAsync(viewModel.Latest.Url, file);
@@ -63,6 +64,7 @@ namespace ModFinder.Mod
       var destination = Main.UMMInstallPath;
       if (manifestEntry.FullName == manifestEntry.Name)
       {
+        Logger.Log.Verbose($"Creating mod directory.");
         // Handle mods without a folder in the zip
         destination = Path.Combine(destination, info.Id);
       }
@@ -77,6 +79,8 @@ namespace ModFinder.Mod
       }
       viewModel.InstalledVersion = ModVersion.Parse(info.Version);
       viewModel.InstallState = InstallState.Installed;
+
+      Logger.Log.Info($"{viewModel.Name} successfully installed with version {viewModel.InstalledVersion}.");
       return new(InstallState.Installed);
     }
   }

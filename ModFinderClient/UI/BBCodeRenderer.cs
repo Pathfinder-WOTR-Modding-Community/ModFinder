@@ -26,8 +26,8 @@ namespace ModFinder.UI
       public Stack<List> lists = new();
     }
 
-    private static Regex sizePattern = new(@"size=(\d+)");
-    private static Regex fontPattern = new(@"font=(.*)");
+    private static readonly Regex sizePattern = new(@"size=(\d+)");
+    private static readonly Regex fontPattern = new(@"font=(.*)");
 
     public static void Render(FlowDocument doc, string raw)
     {

@@ -1,4 +1,5 @@
 ﻿using ModFinder.Mod;
+using ModFinder.Util;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -114,7 +115,10 @@ namespace ModFinder.UI
       RequiredMods.Clear();
 
       if (requirements is null)
+      {
+        Logger.Log.Info($"{Name} has no required modes.");
         return;
+      }
 
       foreach (var id in requirements)
       {
@@ -131,6 +135,7 @@ namespace ModFinder.UI
             idStr = id[..separatorIndex];
         }
 
+        Logger.Log.Info($"{Name} requires {idStr} at version {requiredVersion}");
         RequiredMods.Add((new(idStr, ModType.UMM), requiredVersion));
       }
     }

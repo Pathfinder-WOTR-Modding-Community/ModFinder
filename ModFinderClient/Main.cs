@@ -1,8 +1,10 @@
-﻿using ModFinder.Mod;
+﻿using Microsoft.Win32;
+using ModFinder.Mod;
 using ModFinder.Util;
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace ModFinder
 {
@@ -84,30 +86,53 @@ namespace ModFinder
 
         if (Directory.Exists(Settings.WrathPath) && File.Exists(Path.Combine(Settings.WrathPath, "Wrath.exe")))
         {
+          Logger.Log.Info($"Using WrathPath from settings: {Settings.WrathPath}");
           _WrathPath = new(Settings.WrathPath);
         }
         else if (Directory.Exists(Settings.AutoWrathPath) && File.Exists(Path.Combine(Settings.AutoWrathPath, "Wrath.exe")))
         {
+          Logger.Log.Info($"Using auto WrathPath from settings: {Settings.AutoWrathPath}");
           _WrathPath = new(Settings.AutoWrathPath);
         }
         else
         {
           var log = Path.Combine(WrathDataDir, "Player.log");
           if (!File.Exists(log))
-            throw new Exception("Unable to find Wrath Installation path, please launch the game once before starting the mod manager.");
+          {
+            Logger.Log.Info($"WrathPath not found, prompting user.");
+            var dialog = new OpenFileDialog
+            {
+              FileName = "Wrath",
+              DefaultExt = ".exe",
+              Filter = "Executable (.exe)|*.exe",
+              Title = "Select Wrath.exe (in the installation directory)"
+            };
 
-          var temp = Path.Combine(Path.GetTempPath(), "modfinder_log_" + Path.GetRandomFileName());
-          File.Copy(log, temp, true);
-          using var sr = new StreamReader(File.OpenRead(log));
+            var result = dialog.ShowDialog();
+            if (result is not null && result.Value)
+            {
+              _WrathPath = new(Path.GetDirectoryName(dialog.FileName));
+            }
+            else
+            {
+              MainWindow.ShowError("Unable to find Wrath installation path.");
+              Logger.Log.Error("Unable to find Wrath installation path.");
+            }
+          }
+          else
+          {
+            Logger.Log.Info($"Getting WrathPath from UMM log.");
 
-          var firstline = sr.ReadLine();
-          var extractPath = new Regex(".*?'(.*)'");
-          _WrathPath = new(extractPath.Match(firstline).Groups[1].Value);
-          _WrathPath = _WrathPath.Parent.Parent;
+            using var sr = new StreamReader(File.OpenRead(log));
+            var firstline = sr.ReadLine();
+
+            var extractPath = new Regex(".*?'(.*)'");
+            _WrathPath = new(extractPath.Match(firstline).Groups[1].Value);
+            _WrathPath = _WrathPath.Parent.Parent;
+          }
+
           Settings.AutoWrathPath = WrathPath.FullName;
           Settings.Save();
-
-          File.Delete(temp);
         }
 
         return _WrathPath;
