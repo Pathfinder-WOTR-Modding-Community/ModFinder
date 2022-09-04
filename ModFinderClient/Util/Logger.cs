@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 
@@ -57,14 +58,14 @@ namespace ModFinder.Util
 
     private void ProcessLogs(CancellationToken cancellationToken)
     {
-      Console.WriteLine($"Logging to {LogFile}.");
+      Trace.WriteLine($"Logging to {LogFile}.");
 
       try
       {
         if (File.Exists(LogFile))
         {
           var oldLogFile = Path.Combine(Main.AppFolder, "Log_old.txt");
-          Console.WriteLine($"Moving old log to {oldLogFile}");
+          Trace.WriteLine($"Moving old log to {oldLogFile}");
           File.Copy(LogFile, oldLogFile, overwrite: true);
         }
 
@@ -82,10 +83,10 @@ namespace ModFinder.Util
       }
       catch (Exception e)
       {
-        Console.WriteLine($"Logging was interrupted: {e}");
+        Trace.WriteLine($"Logging was interrupted: {e}");
       }
 
-      Console.WriteLine("Logging has stopped.");
+      Trace.WriteLine("Logging has stopped.");
     }
   }
 }
