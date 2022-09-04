@@ -667,11 +667,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.1.1",
-        "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.1/MewsiferConsole.1.1.1.zip",
+        "Version": "1.1.2",
+        "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.2/MewsiferConsole.1.1.2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.1.2",
+          "Url": null,
+          "Changelog": "- Added an illustration banner to MewsiferConsole.Menu, courtesy of Cyrix"
+        },
         {
           "Version": "1.1.1",
           "Url": null,
@@ -712,11 +717,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.1.1",
-        "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.1/MewsiferConsole.Menu.1.1.1.zip",
+        "Version": "1.1.2",
+        "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.2/MewsiferConsole.Menu.1.1.2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.1.2",
+          "Url": null,
+          "Changelog": "- Added an illustration banner to MewsiferConsole.Menu, courtesy of Cyrix"
+        },
         {
           "Version": "1.1.1",
           "Url": null,
