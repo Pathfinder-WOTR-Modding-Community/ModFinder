@@ -44,7 +44,7 @@ namespace ModFinder.Mod
             foreach (var mod in manifest.Mods)
             {
               var createTime = new DateTime(mod.CreateTime);
-              if (DateTime.Now.Subtract(createTime) > TimeSpan.FromDays(90))
+              if (DateTime.Now.Subtract(createTime).Days > 90)
               {
                 Evict(mod.Id, cacheDir: mod.Dir);
               }
