@@ -164,26 +164,19 @@ namespace ModFinder
           foreach (var dir in modDir[0].GetDirectories())
           {
             Logger.Log.Info($"Found installed mod: {dir.Name}");
-            var infoFile =
-              dir.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
-            if (infoFile != null)
-            {
-              var info = IOTool.Read<UMMModInfo>(infoFile.FullName);
-
-              var manifest = ModManifest.ForLocal(info);
-              if (!ModDatabase.Instance.TryGet(manifest.Id, out var mod))
-              {
-                mod = new(manifest);
-                ModDatabase.Instance.Add(mod);
-              }
-
-              mod.ModDir = dir;
-              mod.InstallState = InstallState.Installed;
-              mod.InstalledVersion = ModVersion.Parse(info.Version);
-
-              mod.SetRequirements(info.Requirements);
+            var mod = ProcessModDirectory(dir);
+            if (mod is not null)
               installedMods.Add(mod.ModId, mod.InstalledVersion);
-            }
+          }
+        }
+
+        // Update DB to allow installing cached local mods and support rollback
+        if (Directory.Exists(ModCache.CacheDir))
+        {
+          foreach (var dir in Directory.GetDirectories(ModCache.CacheDir))
+          {
+            Logger.Log.Info($"Found cached mod: {dir}");
+            ProcessModDirectory(new(dir));
           }
         }
 
@@ -197,6 +190,31 @@ namespace ModFinder
       {
         Logger.Log.Error($"Failed to check installed mods.", e);
       }
+    }
+
+    private static ModViewModel ProcessModDirectory(DirectoryInfo modDir)
+    {
+      var infoFile =
+        modDir.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
+      if (infoFile != null)
+      {
+        var info = IOTool.Read<UMMModInfo>(infoFile.FullName);
+
+        var manifest = ModManifest.ForLocal(info);
+        if (!ModDatabase.Instance.TryGet(manifest.Id, out var mod))
+        {
+          mod = new(manifest);
+          ModDatabase.Instance.Add(mod);
+        }
+
+        mod.ModDir = modDir;
+        mod.InstallState = InstallState.Installed;
+        mod.InstalledVersion = ModVersion.Parse(info.Version);
+
+        mod.SetRequirements(info.Requirements);
+        return mod;
+      }
+      return null;
     }
 
     public static bool CheckIsMod(string path)
@@ -370,7 +388,7 @@ namespace ModFinder
       try
       {
         var mod = (sender as MenuItem).DataContext as ModViewModel;
-        ModCache.UninstallAndCache(mod);
+        ModCache.Uninstall(mod);
         mod.OnUninstalled();
         RefreshInstalledMods();
       }

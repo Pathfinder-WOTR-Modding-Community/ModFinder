@@ -49,9 +49,10 @@ namespace ModFinder.UI
     public bool IsInstalled => Status.Installed();
     public bool CanInstallOrDownload => InstallOrDownloadAvailable();
     public bool CanInstall =>
-      Manifest.Service.IsGitHub()
-      && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
-      && !string.IsNullOrEmpty(Latest.Url);
+      ModCache.IsCached(ModId)
+        || (Manifest.Service.IsGitHub()
+          && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
+          && !string.IsNullOrEmpty(Latest.Url));
     public bool CanUninstall => IsInstalled && ModDir != null;
     public bool CanDownload =>
       Manifest.Service.IsNexus()

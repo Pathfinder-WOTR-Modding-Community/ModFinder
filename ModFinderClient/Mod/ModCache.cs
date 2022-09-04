@@ -11,13 +11,13 @@ namespace ModFinder.Mod
 {
   public static class ModCache
   {
-    private static readonly string CacheDir = Path.Combine(Main.AppFolder, "CachedMods");
+    internal static readonly string CacheDir = Path.Combine(Main.AppFolder, "CachedMods");
     private static readonly string ManifestFile = Path.Combine(CacheDir, "Manifest.json");
 
     /// <summary>
     /// Directories containing cached mods, indexed by ModId.
     /// </summary>
-    private static Dictionary<ModId, string> CachedMods
+    private static Dictionary<ModId, CachedMod> CachedMods
     {
       get
       {
@@ -25,11 +25,11 @@ namespace ModFinder.Mod
         return _cachedMods;
       }
     }
-    private static Dictionary<ModId, string> _cachedMods;
+    private static Dictionary<ModId, CachedMod> _cachedMods;
 
-    private static Dictionary<ModId, string> LoadManifest()
+    private static Dictionary<ModId, CachedMod> LoadManifest()
     {
-      var cachedMods = new Dictionary<ModId, string>();
+      var cachedMods = new Dictionary<ModId, CachedMod>();
       if (!Directory.Exists(CacheDir))
       {
         _ = Directory.CreateDirectory(CacheDir);
@@ -43,9 +43,14 @@ namespace ModFinder.Mod
             var manifest = IOTool.Read<CacheManifest>(ManifestFile);
             foreach (var mod in manifest.Mods)
             {
-              if (Directory.Exists(mod.Dir))
+              var createTime = new DateTime(mod.CreateTime);
+              if (DateTime.Now.Subtract(createTime) > TimeSpan.FromDays(90))
               {
-                cachedMods.Add(mod.Id, mod.Dir);
+                Evict(mod.Id, cacheDir: mod.Dir);
+              }
+              else if (Directory.Exists(mod.Dir))
+              {
+                cachedMods.Add(mod.Id, mod);
               }
             }
           });
@@ -71,36 +76,76 @@ namespace ModFinder.Mod
       }
 
       Logger.Log.Info($"Restoring {id.Id} from local cache.");
-      var cachePath = CachedMods[id];
+      var cachePath = CachedMods[id].Dir;
       var installPath = Path.Combine(Main.UMMInstallPath, new DirectoryInfo(cachePath).Name);
+
+      if (Directory.Exists(installPath))
+      {
+        Logger.Log.Info($"Deleting existing installation at {installPath}");
+        Directory.Delete(installPath, true);
+      }
+
       FileSystem.CopyDirectory(cachePath, installPath);
-      Directory.Delete(cachePath, true);
-      CachedMods.Remove(id);
-      UpdateManifest();
+      Evict(id);
       return true;
     }
 
-    public static void UninstallAndCache(ModViewModel mod)
+    /// <returns>True if a version of the mod is cached locally, false otherwise</returns>
+    public static bool IsCached(ModId id)
+    {
+      return CachedMods.ContainsKey(id);
+    }
+
+    public static void Uninstall(ModViewModel mod, bool cache = true)
     {
       if (mod.Type != ModType.UMM)
       {
         throw new InvalidOperationException($"{mod.Type} is not supported");
       }
 
-      var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);
-      Logger.Log.Info($"Uninstalling {mod.Name} and caching at {cachePath}.");
-      if (!Directory.Exists(cachePath))
+      if (cache)
       {
-        FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);
-        Directory.Delete(mod.ModDir.FullName, true);
-        CachedMods.Add(mod.ModId, cachePath);
-        IOTool.Safe(UpdateManifest);
+        var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);
+        if (Directory.Exists(cachePath))
+        {
+          Logger.Log.Warning($"Cache already exists for {mod.Name} at {cachePath}");
+        }
+        else
+        {
+          Logger.Log.Info($"Caching {mod.Name} at {cachePath} before uninstall");
+          FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);
+
+          var cachedMod = new CachedMod(mod.ModId, cachePath, DateTime.Now.Ticks);
+          CachedMods.Add(mod.ModId, cachedMod);
+          IOTool.Safe(UpdateManifest);
+        }
+      }
+
+      Logger.Log.Info($"Uninstalling {mod.Name}");
+      Directory.Delete(mod.ModDir.FullName, true);
+    }
+
+    private static void Evict(ModId id, string cacheDir = null)
+    {
+      if (cacheDir is null && !CachedMods.ContainsKey(id))
+      {
+        Logger.Log.Error($"Cache evict requsted for {id}, but no cache was found");
+        return;
+      }
+
+      cacheDir ??= CachedMods[id].Dir;
+      if (Directory.Exists(cacheDir))
+      {
+        Logger.Log.Info($"Removing {id} from cache");
+        Directory.Delete(cacheDir, true);
+        CachedMods.Remove(id);
+        UpdateManifest();
       }
     }
 
     private static void UpdateManifest()
     {
-      var manifest = new CacheManifest(CachedMods.Select(entry => new CachedMod(entry.Key, entry.Value)).ToList());
+      var manifest = new CacheManifest(CachedMods.Values.ToList());
       IOTool.Write(manifest, ManifestFile);
     }
 
@@ -127,10 +172,14 @@ namespace ModFinder.Mod
       [JsonProperty]
       public string Dir { get; }
 
-      public CachedMod(ModId id, string dir)
+      [JsonProperty]
+      public long CreateTime { get; }
+
+      public CachedMod(ModId id, string dir, long createTime)
       {
         Id = id;
         Dir = dir;
+        CreateTime = createTime;
       }
     }
   }
