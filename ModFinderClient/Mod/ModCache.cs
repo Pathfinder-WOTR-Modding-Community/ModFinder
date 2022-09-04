@@ -108,17 +108,16 @@ namespace ModFinder.Mod
         var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);
         if (Directory.Exists(cachePath))
         {
-          Logger.Log.Warning($"Cache already exists for {mod.Name} at {cachePath}");
+          Logger.Log.Warning($"Cache already exists for {mod.Name} at {cachePath}, deleting it");
+          Directory.Delete(cachePath, true);
         }
-        else
-        {
-          Logger.Log.Info($"Caching {mod.Name} at {cachePath} before uninstall");
-          FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);
 
-          var cachedMod = new CachedMod(mod.ModId, cachePath, DateTime.Now.Ticks);
-          CachedMods.Add(mod.ModId, cachedMod);
-          IOTool.Safe(UpdateManifest);
-        }
+        Logger.Log.Info($"Caching {mod.Name} at {cachePath} before uninstall");
+        FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);
+
+        var cachedMod = new CachedMod(mod.ModId, cachePath, DateTime.Now.Ticks);
+        CachedMods.Add(mod.ModId, cachedMod);
+        IOTool.Safe(UpdateManifest);
       }
 
       Logger.Log.Info($"Uninstalling {mod.Name}");

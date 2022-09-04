@@ -61,6 +61,12 @@ namespace ModFinder.Mod
         return new($"ModId mismatch. Found {viewModel.ModId.Id} but expected {info.Id}");
       }
 
+      // Remove and cache the current version
+      if (viewModel is not null && viewModel.IsInstalled)
+      {
+        ModCache.Uninstall(viewModel);
+      }
+
       var destination = Main.UMMInstallPath;
       if (manifestEntry.FullName == manifestEntry.Name)
       {
