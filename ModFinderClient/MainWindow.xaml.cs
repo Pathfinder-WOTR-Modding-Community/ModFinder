@@ -38,7 +38,7 @@ namespace ModFinder
         showInstalledToggle.DataContext = ModDB;
         showInstalledToggle.Click += ShowInstalledToggle_Click;
 
-#if DEBUG
+#if TESTDEBUG
         Logger.Log.Verbose("Reading test manifest.");
         using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_master.json"))
         {
@@ -116,7 +116,7 @@ namespace ModFinder
     private static void RefreshGeneratedManifest()
     {
       string rawstring;
-#if DEBUG
+#if TESTDEBUG
       using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_generated.json"))
       {
         using var reader = new StreamReader(stream);
@@ -176,7 +176,7 @@ namespace ModFinder
           foreach (var dir in Directory.GetDirectories(ModCache.CacheDir))
           {
             Logger.Log.Info($"Found cached mod: {dir}");
-            ProcessModDirectory(new(dir));
+            ProcessModDirectory(new(dir), updateStatus: false);
           }
         }
 
@@ -192,7 +192,7 @@ namespace ModFinder
       }
     }
 
-    private static ModViewModel ProcessModDirectory(DirectoryInfo modDir)
+    private static ModViewModel ProcessModDirectory(DirectoryInfo modDir, bool updateStatus = true)
     {
       var infoFile =
         modDir.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
@@ -207,11 +207,14 @@ namespace ModFinder
           ModDatabase.Instance.Add(mod);
         }
 
-        mod.ModDir = modDir;
-        mod.InstallState = InstallState.Installed;
-        mod.InstalledVersion = ModVersion.Parse(info.Version);
+        if (updateStatus)
+        {
+          mod.ModDir = modDir;
+          mod.InstallState = InstallState.Installed;
+          mod.InstalledVersion = ModVersion.Parse(info.Version);
 
-        mod.SetRequirements(info.Requirements);
+          mod.SetRequirements(info.Requirements);
+        }
         return mod;
       }
       return null;
@@ -308,8 +311,9 @@ namespace ModFinder
       {
         if (mod.CanInstall)
         {
+          var isUpdate = mod.IsInstalled;
           mod.InstallState = InstallState.Installing;
-          var result = await ModInstaller.Install(mod);
+          var result = await ModInstaller.Install(mod, isUpdate);
           ProcessIntallResult(result);
         }
         else if (mod.CanDownload)
@@ -465,6 +469,26 @@ namespace ModFinder
         }
 
         return doc;
+      }
+    }
+
+    private void Rollback(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        var mod = (sender as MenuItem).DataContext as ModViewModel;
+
+        if (!ModCache.IsCached(mod.ModId))
+          throw new InvalidOperationException("Cannot rollback mod without a cached copy");
+
+        ModCache.Uninstall(mod, cache: false); // Don't cache, just delete it!
+        ModCache.TryRestoreMod(mod.ModId);
+        RefreshInstalledMods();
+      }
+      catch (Exception ex)
+      {
+        ShowError("Rollback failed.");
+        Logger.Log.Error("Rollback failed.", ex);
       }
     }
   }

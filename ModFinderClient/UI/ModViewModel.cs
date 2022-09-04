@@ -49,7 +49,7 @@ namespace ModFinder.UI
     public bool IsInstalled => Status.Installed();
     public bool CanInstallOrDownload => InstallOrDownloadAvailable();
     public bool CanInstall =>
-      ModCache.IsCached(ModId)
+      (IsCached && !IsInstalled)
         || (Manifest.Service.IsGitHub()
           && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
           && !string.IsNullOrEmpty(Latest.Url));
@@ -58,9 +58,11 @@ namespace ModFinder.UI
       Manifest.Service.IsNexus()
       && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
       && !string.IsNullOrEmpty(Latest.Url);
+    public bool IsCached => ModCache.IsCached(ModId);
 
     public Visibility UninstallVisibility => GetUninstallVisibility();
     public Visibility HomepageVisibility => GetHomepageVisibility();
+    public Visibility RollbackVisibility => GetRollbackVisibility();
 
     public string StatusText => GetStatusText();
     public string ButtonText => GetButtonText();
@@ -306,6 +308,13 @@ namespace ModFinder.UI
       return Visibility.Collapsed;
     }
 
+    private Visibility GetRollbackVisibility()
+    {
+      if (IsCached && IsInstalled)
+        return Visibility.Visible;
+      return Visibility.Collapsed;
+    }
+
     private void NotifyAll()
     {
       Changed(
@@ -326,7 +335,9 @@ namespace ModFinder.UI
         nameof(CanInstall),
         nameof(CanUninstall),
         nameof(CanDownload),
-        nameof(CanInstallOrDownload));
+        nameof(CanInstallOrDownload),
+        nameof(UninstallVisibility),
+        nameof(RollbackVisibility));
     }
 
     private void Changed(params string[] props)

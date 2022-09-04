@@ -405,8 +405,9 @@
                         <ContextMenu Style="{StaticResource OwlContextMenu}">
                           <MenuItem Header="Show description" Click="ShowModDescription"></MenuItem>
                           <MenuItem Header="Show changelog" Click="ShowModChangelog"></MenuItem>
-                          <MenuItem Header="Uninstall" Visibility="{Binding UninstallVisibility}" Click="UninstallMod"></MenuItem>
                           <MenuItem Header="Open homepage" Visibility="{Binding HomepageVisibility}" Click="OpenHomepage"></MenuItem>
+                          <MenuItem Header="Uninstall" Visibility="{Binding UninstallVisibility}" Click="UninstallMod"></MenuItem>
+                          <MenuItem Header="Rollback" Visibility="{Binding RollbackVisibility}" Click="Rollback"></MenuItem>
                         </ContextMenu>
                       </Button.ContextMenu>
                     </Button>

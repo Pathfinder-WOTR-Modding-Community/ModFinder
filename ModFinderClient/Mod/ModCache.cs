@@ -111,6 +111,8 @@ namespace ModFinder.Mod
           Logger.Log.Warning($"Cache already exists for {mod.Name} at {cachePath}, deleting it");
           Directory.Delete(cachePath, true);
         }
+        if (CachedMods.ContainsKey(mod.ModId))
+          CachedMods.Remove(mod.ModId);
 
         Logger.Log.Info($"Caching {mod.Name} at {cachePath} before uninstall");
         FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);

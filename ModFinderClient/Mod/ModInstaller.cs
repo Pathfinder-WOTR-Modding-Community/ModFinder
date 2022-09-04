@@ -14,37 +14,38 @@ namespace ModFinder.Mod
   /// </summary>
   public static class ModInstaller
   {
-    public static async Task<InstallResult> Install(ModViewModel viewModel)
+    public static async Task<InstallResult> Install(ModViewModel viewModel, bool isUpdate)
     {
       if (viewModel.ModId.Type != ModType.UMM)
       {
         return new($"Currently {viewModel.ModId.Type} mods are not supported.");
       }
 
-      if (ModCache.TryRestoreMod(viewModel.ModId))
+      if (!isUpdate && ModCache.TryRestoreMod(viewModel.ModId))
       {
         return new(InstallState.Installed);
       }
 
       if (viewModel.CanInstall)
       {
-        return await InstallFromRemoteZip(viewModel);
+        return await InstallFromRemoteZip(viewModel, isUpdate);
       }
 
       return new("Unknown mod source");
     }
 
-    private static async Task<InstallResult> InstallFromRemoteZip(ModViewModel viewModel)
+    private static async Task<InstallResult> InstallFromRemoteZip(ModViewModel viewModel, bool isUpdate)
     {
       Logger.Log.Info($"Fetching zip from {viewModel.Latest.Url}");
       WebClient web = new();
       var file = Path.GetTempFileName();
       await web.DownloadFileTaskAsync(viewModel.Latest.Url, file);
 
-      return await InstallFromZip(file, viewModel);
+      return await InstallFromZip(file, viewModel, isUpdate);
     }
 
-    public static async Task<InstallResult> InstallFromZip(string path, ModViewModel viewModel = null)
+    public static async Task<InstallResult> InstallFromZip(
+      string path, ModViewModel viewModel = null, bool isUpdate = false)
     {
       using var zip = ZipFile.OpenRead(path);
       var manifestEntry =
@@ -62,7 +63,7 @@ namespace ModFinder.Mod
       }
 
       // Remove and cache the current version
-      if (viewModel is not null && viewModel.IsInstalled)
+      if (isUpdate)
       {
         ModCache.Uninstall(viewModel);
       }
