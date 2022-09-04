@@ -138,7 +138,13 @@ namespace ModFinder.Mod
 
     public static ModManifest ForLocal(UMMModInfo info)
     {
-      return new(info.DisplayName, info.Author, new(info.Id, ModType.UMM), service: default,  version: default);
+      return new(
+        info.DisplayName,
+        info.Author,
+        new(info.Id, ModType.UMM),
+        service: default, 
+        version: default,
+        homepageUrl: string.IsNullOrEmpty(info.HomePage) ? default : info.HomePage);
     }
   }
 
