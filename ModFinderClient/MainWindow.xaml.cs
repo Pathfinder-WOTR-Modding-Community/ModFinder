@@ -28,10 +28,6 @@ namespace ModFinder
     private static MasterManifest Manifest;
     private static MainWindow Window;
 
-    internal static Image Okay;
-    internal static Image Warning;
-    internal static Image Error;
-
     public MainWindow()
     {
       try
@@ -41,9 +37,6 @@ namespace ModFinder
         InitializeComponent();
 
         Window = this;
-        Okay = (Image)FindResource("okay-icon");
-        Warning = (Image)FindResource("warning-icon");
-        Error = (Image)FindResource("error-icon");
 
         installedMods.DataContext = ModDB;
         showInstalledToggle.DataContext = ModDB;
