@@ -74,7 +74,10 @@ File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/i
     * .NET 6.0 and soon .NET 7.0 should work as well, but if not try the link above
 * Try [running it as an Administrator](https://www.itechtics.com/run-programs-administrator/)
 * Make sure your anti-virus is not blocking it
-    * We is very sus
+    * Some anti-virus flags it as a trojan
+        * ModFinder sends requests to GitHub to download mod metadata and mods themselves
+        * ModFinder also writes files (logs) and deletes, moves, and unzips files related to mods you have installed
+    * Update changelog includes a sha1 hash you can use to verify your download
 * File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new) or reach out on Discord
     * Share your log file: `%UserProfile%\AppData\Local\Modfinder\Log.txt`
 
