@@ -68,7 +68,8 @@ namespace ModFinder.UI
 
     public string StatusText => GetStatusText();
     public string ButtonText => GetButtonText();
-    public ImageBrush StatusIcon => GetStatusIcon();
+
+    public StatusIcon StatusIcon => GetStatusIcon();
 
     /** End Properties referenced by views requiring notification. */
 
@@ -252,17 +253,17 @@ namespace ModFinder.UI
       return $"Latest version installed: {InstalledVersion}";
     }
 
-    private ImageBrush GetStatusIcon()
+    private StatusIcon GetStatusIcon()
     {
       if (IsInstalled)
       {
         if (MissingRequirements.Any())
-          return MainWindow.Error;
+          return StatusIcon.Error;
         if (InstalledVersion < Latest.Version)
-          return MainWindow.Warning;
-        return MainWindow.Okay;
+          return StatusIcon.Warning;
+        return StatusIcon.Okay;
       }
-      return null;
+      return StatusIcon.None;
     }
 
     private string GetSourceText()
@@ -362,5 +363,13 @@ namespace ModFinder.UI
       foreach (var prop in props)
         PropertyChanged?.Invoke(this, new(prop));
     }
+  }
+
+  public enum StatusIcon
+  {
+    None,
+    Okay,
+    Warning,
+    Error
   }
 }

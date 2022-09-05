@@ -28,9 +28,9 @@ namespace ModFinder
     private static MasterManifest Manifest;
     private static MainWindow Window;
 
-    internal static ImageBrush Okay;
-    internal static ImageBrush Warning;
-    internal static ImageBrush Error;
+    internal static Image Okay;
+    internal static Image Warning;
+    internal static Image Error;
 
     public MainWindow()
     {
@@ -41,9 +41,9 @@ namespace ModFinder
         InitializeComponent();
 
         Window = this;
-        Okay = (ImageBrush)FindResource("okay-icon");
-        Warning = (ImageBrush)FindResource("warning-icon");
-        Error = (ImageBrush)FindResource("error-icon");
+        Okay = (Image)FindResource("okay-icon");
+        Warning = (Image)FindResource("warning-icon");
+        Error = (Image)FindResource("error-icon");
 
         installedMods.DataContext = ModDB;
         showInstalledToggle.DataContext = ModDB;

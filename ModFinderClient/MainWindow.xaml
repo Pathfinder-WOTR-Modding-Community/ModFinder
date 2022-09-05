@@ -21,9 +21,9 @@
     <ImageBrush x:Key="button-bg-click" ImageSource="pack://application:,,,/icons/UI_Button_Click.png" Stretch="Fill"></ImageBrush>
     <ImageBrush x:Key="button-bg-disable" ImageSource="pack://application:,,,/icons/UI_Button_Disable.png" Stretch="Fill"></ImageBrush>
     <ImageBrush x:Key="bg-paper-generic" ImageSource="pack://application:,,,/icons/background.png" Stretch="Fill"></ImageBrush>
-    <ImageBrush x:Key="okay-icon" ImageSource="pack://application:,,,/icons/okay.png" Stretch="Fill"></ImageBrush>
-    <ImageBrush x:Key="warning-icon" ImageSource="pack://application:,,,/icons/warning.png" Stretch="Fill"></ImageBrush>
-    <ImageBrush x:Key="error-icon" ImageSource="pack://application:,,,/icons/error.png" Stretch="Fill"></ImageBrush>
+    <Image x:Key="okay-icon" Source="pack://application:,,,/icons/okay.png" Stretch="Fill"></Image>
+    <Image x:Key="warning-icon" Source="pack://application:,,,/icons/warning.png" Stretch="Fill"></Image>
+    <Image x:Key="error-icon" Source="pack://application:,,,/icons/error.png" Stretch="Fill"></Image>
     <SolidColorBrush x:Key="HighlightRow" Color="Orange"></SolidColorBrush>
     <Style x:Key="OwlContextMenu" TargetType="ContextMenu">
       <Setter Property="Background" Value="{StaticResource bg-paper-generic}"></Setter>
@@ -392,14 +392,27 @@
             <DataGridTextColumn Header="Author" Width="200" Binding="{Binding Author, Mode=OneWay}"></DataGridTextColumn>
             <DataGridTextColumn Header="Status" Width="*" Binding="{Binding StatusText, Mode=OneWay}"></DataGridTextColumn>
             <DataGridTextColumn Header="From" Width="80" Binding="{Binding Service, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTemplateColumn Width="30" CanUserResize="False">
+            <DataGridTemplateColumn Width="25" CanUserResize="False">
               <DataGridTemplateColumn.CellTemplate>
                 <DataTemplate>
-                  <Rectangle>
-                    <Rectangle.Fill>
-                      <ImageBrush ImageSource="{Binding StatusIcon}" />
-                    </Rectangle.Fill>
-                  </Rectangle>
+                  <Image HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image.Style>
+                      <Style TargetType="Image">
+                        <Setter Property="Source" Value="pack://application:,,,/icons/okay.png" />
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding StatusIcon}" Value="None">
+                            <Setter Property="Visibility" Value="Hidden" />
+                          </DataTrigger>
+                          <DataTrigger Binding="{Binding StatusIcon}" Value="Error">
+                            <Setter Property="Source" Value="pack://application:,,,/icons/error.png" />
+                          </DataTrigger>
+                          <DataTrigger Binding="{Binding StatusIcon}" Value="Warning">
+                            <Setter Property="Source" Value="pack://application:,,,/icons/warning.png" />
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </Image.Style>
+                  </Image>
                 </DataTemplate>
               </DataGridTemplateColumn.CellTemplate>
             </DataGridTemplateColumn>
