@@ -792,6 +792,62 @@
     ]
   },
   {
+    "Name": "Microscopic Content Expansion",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "MicroscopicContentExpansion",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "MicroscopicContentExpansion",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.4.6",
+        "Url": "https://github.com/alterasc/MicroscopicContentExpansion/releases/download/1.4.6/MicroscopicContentExpansion-1.4.6.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.4.6",
+          "Url": null,
+          "Changelog": "- fix Antipaladin Iron Tyrant armor bond ability not stacking with existing armor enhancement bonus"
+        },
+        {
+          "Version": "1.4.5",
+          "Url": null,
+          "Changelog": "fix Startoss Style having impossible requirements. \n\nRequires any weapon focus (but style itself still checks for weapon being from thrown group)."
+        },
+        {
+          "Version": "1.4.4",
+          "Url": null,
+          "Changelog": "Bugfix release:\n- fixes a bug which caused Snake Fang to cause AoO from everyone when attacker missed, not only from target with snake fang"
+        },
+        {
+          "Version": "1.4.3",
+          "Url": null,
+          "Changelog": "fix startoss style not working with slings"
+        },
+        {
+          "Version": "1.4.2",
+          "Url": null,
+          "Changelog": "Sets monk alternate capstone default to turned off, as TTT-Base now has it.  \nThis affects only new installs. If you had MCE before and updated TTT, disable my capstone in settings yourself."
+        }
+      ]
+    },
+    "Description": "Microscopic Content Expansion mod for PF:WotR",
+    "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
+    "Tags": [
+      "Content",
+      "Gameplay"
+    ]
+  },
+  {
     "Name": "Mod Menu",
     "Author": "WittleWolfie",
     "Id": {
