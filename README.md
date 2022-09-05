@@ -78,6 +78,7 @@ File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/i
         * ModFinder sends requests to GitHub to download mod metadata and mods themselves
         * ModFinder also writes files (logs) and deletes, moves, and unzips files related to mods you have installed
     * Update changelog includes a sha1 hash you can use to verify your download
+    * Here are the scan results for v1.1 on [VirusTotal](https://www.virustotal.com/gui/file/882b5b1e5eb0dc2d51413a663d116b89856ab3f35681505e7d5286f1ecd0aee6/detection)
 * File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new) or reach out on Discord
     * Share your log file: `%UserProfile%\AppData\Local\Modfinder\Log.txt`
 
