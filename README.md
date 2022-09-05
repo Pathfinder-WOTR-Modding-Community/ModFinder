@@ -19,6 +19,8 @@ A tool for browsing and managing Pathfinder: Wrath of the Righteous mods and the
 
 Download the [latest release](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest/download/ModFinder.zip), extract the folder, and run `ModFinder.exe`!
 
+### **You must have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed.**
+
 Tips:
 
 * Searching checks mod name and author by default
@@ -29,7 +31,7 @@ Tips:
 * Version updates are checked every 30 minutes, but you need to restart the app to get the latest version data
     * If the latest version is for a more recent game version (e.g beta) it will install it even if it doesn't work with your local version
 
-See [Troubleshooting](#troubleshooting).
+### See [Troubleshooting](#troubleshooting).
     
 ### Missing a mod?
 
