@@ -25,17 +25,9 @@ namespace ModFinder.Util
 
     public static string GetResponseContent(string url)
     {
-      using (var client = new HttpClient())
-      {
-        using (HttpResponseMessage response = client.GetAsync(url).Result)
-        {
-          using (HttpContent content = response.Content)
-          {
-            return content.ReadAsStringAsync().Result;
-          }
-        }
-      }
+      using HttpResponseMessage response = _httpClient.GetAsync(url).Result;
+      using HttpContent content = response.Content;
+      return content.ReadAsStringAsync().Result;
     }
-
   }
 }
