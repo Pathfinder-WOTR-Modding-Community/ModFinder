@@ -64,13 +64,13 @@ File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/i
 
 ## Troubleshooting
 
-* Make sure you have [.NET Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) installed
-    * In the future it will likely migrate to .NET Runtime 6.0 since 5.0 is EOL
-* If you have a non-standard installation directory it may fail to find your Wrath installation. Currently there is no fix, expect improvements in the future (it's pretty effective at finding it right now, but some cases do fail).
+* Make sure you have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed
+    * .NET 6.0 and soon .NET 7.0 should work as well, but if not try the link above
 * Try [running it as an Administrator](https://www.itechtics.com/run-programs-administrator/)
 * Make sure your anti-virus is not blocking it
     * We is very sus
-* Some users have reported that uninstalling .NET Runtime 6.0 fixed it
+* File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new) or reach out on Discord
+    * Share your log file: `%UserProfile%\AppData\Local\Modfinder\Log.txt`
 
 ### Problems with a mod?
 
@@ -78,7 +78,7 @@ If there's an issue installing, downloading, displaying information about, or an
 
 ### Other issues?
 
-You guessed it: file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new).
+You guessed it: file an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/issues/new). Include your log file: `%UserProfile%\AppData\Local\Modfinder\Log.txt`.
 
 ## Acknowledgements
 
