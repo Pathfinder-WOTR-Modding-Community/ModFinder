@@ -7,13 +7,13 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Net;
-using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
+using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
 
 namespace ModFinder
 {
@@ -31,7 +31,7 @@ namespace ModFinder
       try
       {
         Logger.Log.Info("Loading main window.");
-        
+
         InitializeComponent();
 
         Window = this;
@@ -49,9 +49,17 @@ namespace ModFinder
         }
 #else
         Logger.Log.Verbose("Fetching remote manifest.");
-        using var client = new WebClient();
-        var rawstring = client.DownloadString("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/master_manifest.json");
-        Manifest = IOTool.FromString<MasterManifest>(rawstring);
+        using (var client = new HttpClient())
+        {
+          using (HttpResponseMessage response = client.GetAsync("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/master_manifest.json").Result)
+          {
+            using (HttpContent content = response.Content)
+            {
+              var json = content.ReadAsStringAsync().Result;
+              Manifest = IOTool.FromString<MasterManifest>(json);
+            }
+          }
+        }
 #endif
 
         installedMods.SelectedCellsChanged += (sender, e) =>
@@ -106,9 +114,18 @@ namespace ModFinder
         foreach (var url in Manifest.ExternalManifestUrls)
         {
           Logger.Log.Verbose($"Loading manifest from external URL: {url}");
-          using var client = new WebClient();
-          var rawstring = client.DownloadString(url);
-          RefreshManifest(IOTool.FromString<ModManifest>(rawstring));
+
+          using (var client = new HttpClient())
+          {
+            using (HttpResponseMessage response = client.GetAsync(url).Result)
+            {
+              using (HttpContent content = response.Content)
+              {
+                var json = content.ReadAsStringAsync().Result;
+                RefreshManifest(IOTool.FromString<ModManifest>(json));
+              }
+            }
+          }
         }
       }
       catch (Exception e)
@@ -127,8 +144,17 @@ namespace ModFinder
         rawstring = reader.ReadToEnd();
       }
 #else
-      using var client = new WebClient();
-      rawstring = client.DownloadString(Manifest.GeneratedManifestUrl);
+      using (var client = new HttpClient())
+      {
+        using (HttpResponseMessage response = client.GetAsync(Manifest.GeneratedManifestUrl).Result)
+        {
+          using (HttpContent content = response.Content)
+          {
+            rawstring = content.ReadAsStringAsync().Result;
+          }
+        }
+      }
+
 #endif
       foreach (var manifest in IOTool.FromString<List<ModManifest>>(rawstring))
       {
@@ -440,36 +466,40 @@ namespace ModFinder
       }
 
       public string Name => Mod.Name + "   (" + Mod.InstalledVersion.ToString() + ")";
+
       internal FlowDocument Render()
       {
         var doc = new FlowDocument();
 
-        if (DescriptionType == "description")
+        switch (DescriptionType)
         {
-          try
-          {
-            BBCodeRenderer.Render(doc, Mod.DescriptionAsText);
-          }
-          catch (Exception)
-          {
-            doc.Blocks.Add(new Paragraph(new Run(Mod.DescriptionAsText)));
-          }
-        }
-        else if (DescriptionType == "changelog")
-        {
-          try
-          {
-            ChangelogRenderer.Render(doc, Mod);
-          }
-          catch (Exception e)
-          {
-            ShowError("Changelog rendering failed.");
-            Logger.Log.Error("Changelog rendering failed.", e);
-          }
-        }
-        else
-        {
-          doc.Blocks.Add(new Paragraph(new Run("<<<ERROR>>>")));
+          case "description":
+            try
+            {
+              BBCodeRenderer.Render(doc, Mod.DescriptionAsText);
+            }
+            catch (Exception)
+            {
+              doc.Blocks.Add(new Paragraph(new Run(Mod.DescriptionAsText)));
+            }
+            break;
+
+          case "changelog":
+            try
+            {
+              ChangelogRenderer.Render(doc, Mod);
+            }
+            catch (Exception e)
+            {
+              ShowError("Changelog rendering failed.");
+              Logger.Log.Error("Changelog rendering failed.", e);
+            }
+            break;
+
+          default:
+            doc.Blocks.Add(new Paragraph(new Run("<<<ERROR>>>")));
+
+            break;
         }
 
         return doc;
