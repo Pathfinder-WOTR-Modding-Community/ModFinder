@@ -76,9 +76,10 @@ namespace ModFinder.Util
           while (!cancellationToken.IsCancellationRequested)
           {
             if (LogQueue.TryTake(out string log, 5 * 1000, cancellationToken))
+            {
               writer.WriteLine($"[{DateTime.Now.ToString("M/d hh:mm:ss")}]{log}");
-            else
               writer.Flush();
+            }
           }
         }
       }
