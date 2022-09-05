@@ -217,11 +217,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.1.0",
-        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.1.0/CharacterOptionsPlus.0.1.0.zip",
+        "Version": "0.1.1",
+        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.1.1/CharacterOptionsPlus.0.1.1.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.1.1",
+          "Url": null,
+          "Changelog": "- Adds button to options to restore default settings"
+        },
         {
           "Version": "0.1.0",
           "Url": null,
