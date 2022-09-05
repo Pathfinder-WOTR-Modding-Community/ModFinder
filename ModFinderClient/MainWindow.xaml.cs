@@ -49,17 +49,8 @@ namespace ModFinder
         }
 #else
         Logger.Log.Verbose("Fetching remote manifest.");
-        using (var client = new HttpClient())
-        {
-          using (HttpResponseMessage response = client.GetAsync("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/master_manifest.json").Result)
-          {
-            using (HttpContent content = response.Content)
-            {
-              var json = content.ReadAsStringAsync().Result;
-              Manifest = IOTool.FromString<MasterManifest>(json);
-            }
-          }
-        }
+        var json = HttpHelper.GetResponseContent("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/master_manifest.json");
+        Manifest = IOTool.FromString<MasterManifest>(json);
 #endif
 
         installedMods.SelectedCellsChanged += (sender, e) =>
@@ -114,18 +105,8 @@ namespace ModFinder
         foreach (var url in Manifest.ExternalManifestUrls)
         {
           Logger.Log.Verbose($"Loading manifest from external URL: {url}");
-
-          using (var client = new HttpClient())
-          {
-            using (HttpResponseMessage response = client.GetAsync(url).Result)
-            {
-              using (HttpContent content = response.Content)
-              {
-                var json = content.ReadAsStringAsync().Result;
-                RefreshManifest(IOTool.FromString<ModManifest>(json));
-              }
-            }
-          }
+          var json = HttpHelper.GetResponseContent(url);
+          RefreshManifest(IOTool.FromString<ModManifest>(json));
         }
       }
       catch (Exception e)
@@ -144,17 +125,7 @@ namespace ModFinder
         rawstring = reader.ReadToEnd();
       }
 #else
-      using (var client = new HttpClient())
-      {
-        using (HttpResponseMessage response = client.GetAsync(Manifest.GeneratedManifestUrl).Result)
-        {
-          using (HttpContent content = response.Content)
-          {
-            rawstring = content.ReadAsStringAsync().Result;
-          }
-        }
-      }
-
+      rawstring = HttpHelper.GetResponseContent(Manifest.GeneratedManifestUrl);
 #endif
       foreach (var manifest in IOTool.FromString<List<ModManifest>>(rawstring))
       {

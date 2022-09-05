@@ -22,5 +22,20 @@ namespace ModFinder.Util
       byte[] fileBytes = await _httpClient.GetByteArrayAsync(uri);
       File.WriteAllBytes(outputPath, fileBytes);
     }
+
+    public static string GetResponseContent(string url)
+    {
+      using (var client = new HttpClient())
+      {
+        using (HttpResponseMessage response = client.GetAsync(url).Result)
+        {
+          using (HttpContent content = response.Content)
+          {
+            return content.ReadAsStringAsync().Result;
+          }
+        }
+      }
+    }
+
   }
 }
