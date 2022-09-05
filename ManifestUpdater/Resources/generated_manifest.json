@@ -792,6 +792,62 @@
     ]
   },
   {
+    "Name": "Microscopic Content Expansion",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "MicroscopicContentExpansion",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "MicroscopicContentExpansion",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.4.7",
+        "Url": "https://github.com/alterasc/MicroscopicContentExpansion/releases/download/1.4.7/MicroscopicContentExpansion-1.4.7.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.4.7",
+          "Url": null,
+          "Changelog": "- distribute Deadly Juggernaut to other spell lists (Cleric3, Inquisitor3, Paladin3)\n- remove Radiance Fix as it was fixed\n- remove capstone options"
+        },
+        {
+          "Version": "1.4.6",
+          "Url": null,
+          "Changelog": "- fix Antipaladin Iron Tyrant armor bond ability not stacking with existing armor enhancement bonus"
+        },
+        {
+          "Version": "1.4.5",
+          "Url": null,
+          "Changelog": "fix Startoss Style having impossible requirements. \n\nRequires any weapon focus (but style itself still checks for weapon being from thrown group)."
+        },
+        {
+          "Version": "1.4.4",
+          "Url": null,
+          "Changelog": "Bugfix release:\n- fixes a bug which caused Snake Fang to cause AoO from everyone when attacker missed, not only from target with snake fang"
+        },
+        {
+          "Version": "1.4.3",
+          "Url": null,
+          "Changelog": "fix startoss style not working with slings"
+        }
+      ]
+    },
+    "Description": "Microscopic Content Expansion mod for PF:WotR",
+    "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
+    "Tags": [
+      "Content",
+      "Gameplay"
+    ]
+  },
+  {
     "Name": "Mod Menu",
     "Author": "WittleWolfie",
     "Id": {

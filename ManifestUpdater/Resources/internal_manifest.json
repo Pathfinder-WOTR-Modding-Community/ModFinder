@@ -275,6 +275,23 @@
   },
 
   {
+    "Name": "Microscopic Content Expansion",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "MicroscopicContentExpansion",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "MicroscopicContentExpansion"
+      }
+    },
+    "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "Mod Menu",
     "Author": "WittleWolfie",
     "Id": {
