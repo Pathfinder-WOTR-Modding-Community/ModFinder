@@ -52,6 +52,21 @@ namespace ModFinder.UI
 
     public IEnumerable<ModViewModel> AllMods => All;
 
+    public void InitSort()
+    {
+      List<ModViewModel> allMods = new(All);
+      allMods.Sort((a, b) => (int)b.StatusIcon - (int)a.StatusIcon);
+      All.Clear();
+      allMods.ForEach(m => All.Add(m));
+
+      List<ModViewModel> installedMods = new(Installed);
+      installedMods.Sort((a, b) => (int)b.StatusIcon - (int)a.StatusIcon);
+      Installed.Clear();
+      installedMods.ForEach(m => Installed.Add(m));
+
+      PropertyChanged?.Invoke(this, new(nameof(Items)));
+    }
+
     public void ApplyFilter(string filter)
     {
       try

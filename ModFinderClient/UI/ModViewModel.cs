@@ -365,11 +365,12 @@ namespace ModFinder.UI
     }
   }
 
+  // StatusIcon value is used as priority for sorting
   public enum StatusIcon
   {
-    None,
-    Okay,
-    Warning,
-    Error
+    None = 0,
+    Okay = 1,
+    Warning = 2,
+    Error = 3
   }
 }

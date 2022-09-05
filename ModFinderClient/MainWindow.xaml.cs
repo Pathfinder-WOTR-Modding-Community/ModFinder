@@ -12,10 +12,8 @@ using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Diagnostics;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace ModFinder
 {
@@ -89,6 +87,8 @@ namespace ModFinder
         // Drag drop nonsense
         dropTarget.Drop += DropTarget_Drop;
         dropTarget.DragOver += DropTarget_DragOver;
+
+        ModDB.InitSort();
       }
       catch (Exception e)
       {
