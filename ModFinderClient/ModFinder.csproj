@@ -16,6 +16,9 @@
   <ItemGroup>
     <None Remove="background.png" />
     <None Remove="icons\drop-bg.png" />
+    <None Remove="icons\error.png" />
+    <None Remove="icons\okay.png" />
+    <None Remove="icons\warning.png" />
     <None Remove="test_generated.json" />
     <None Remove="test_master.json" />
     <None Remove="UI_Button_Click.png" />
@@ -89,6 +92,9 @@
     <Resource Include="icons\UI_Inventory_CloseButton_Click.png" />
     <Resource Include="icons\UI_Inventory_CloseButton_Default.png" />
     <Resource Include="icons\UI_Inventory_CloseButton_Hover.png" />
+    <Resource Include="icons\error.png" />
+    <Resource Include="icons\warning.png" />
+    <Resource Include="icons\okay.png" />
     <Resource Include="icons\UI_RoundButton_Click.png" />
     <Resource Include="icons\UI_RoundButton_Default.png" />
     <Resource Include="icons\UI_RoundButton_Hover.png" />

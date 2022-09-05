@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace ModFinder.UI
 {
@@ -66,6 +68,7 @@ namespace ModFinder.UI
 
     public string StatusText => GetStatusText();
     public string ButtonText => GetButtonText();
+    public ImageBrush StatusIcon => GetStatusIcon();
 
     /** End Properties referenced by views requiring notification. */
 
@@ -249,6 +252,19 @@ namespace ModFinder.UI
       return $"Latest version installed: {InstalledVersion}";
     }
 
+    private ImageBrush GetStatusIcon()
+    {
+      if (IsInstalled)
+      {
+        if (MissingRequirements.Any())
+          return MainWindow.Error;
+        if (InstalledVersion < Latest.Version)
+          return MainWindow.Warning;
+        return MainWindow.Okay;
+      }
+      return null;
+    }
+
     private string GetSourceText()
     {
       if (Manifest.Service.IsGitHub())
@@ -337,7 +353,8 @@ namespace ModFinder.UI
         nameof(CanDownload),
         nameof(CanInstallOrDownload),
         nameof(UninstallVisibility),
-        nameof(RollbackVisibility));
+        nameof(RollbackVisibility),
+        nameof(StatusIcon));
     }
 
     private void Changed(params string[] props)

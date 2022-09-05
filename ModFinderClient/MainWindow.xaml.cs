@@ -15,6 +15,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Diagnostics;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace ModFinder
 {
@@ -27,13 +28,23 @@ namespace ModFinder
     private static MasterManifest Manifest;
     private static MainWindow Window;
 
+    internal static ImageBrush Okay;
+    internal static ImageBrush Warning;
+    internal static ImageBrush Error;
+
     public MainWindow()
     {
       try
       {
         Logger.Log.Info("Loading main window.");
-        Window = this;
+        
         InitializeComponent();
+
+        Window = this;
+        Okay = (ImageBrush)FindResource("okay-icon");
+        Warning = (ImageBrush)FindResource("warning-icon");
+        Error = (ImageBrush)FindResource("error-icon");
+
         installedMods.DataContext = ModDB;
         showInstalledToggle.DataContext = ModDB;
         showInstalledToggle.Click += ShowInstalledToggle_Click;
