@@ -23,7 +23,7 @@ Tips:
 
 * Searching checks mod name and author by default
 * You can search specifically name, author, or [tag](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/blob/main/ModFinderClient/Mod/Tag.cs):
-    * `a:bub` to include authors with "bub" in their name, or `-n:bub` to exclude them
+    * `a:bub` to include authors with "bub" in their name, or `-a:bub` to exclude them
     * `n:super` to include mods with "super" in the name, or `-n:super` to exclude them
     * `t:game` to include tags with "game" in their name, or `-n:game` to exclude them
 * Version updates are checked every 30 minutes, but you need to restart the app to get the latest version data
