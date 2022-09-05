@@ -247,10 +247,7 @@ namespace ModFinder.UI
         return $"Missing pre-reqs: {sb}";
       }
 
-      if (!Manifest.Service.IsGitHub() && !Manifest.Service.IsNexus())
-        return $"Installed: {InstalledVersion}. Updates not available.";
-
-      return $"Latest version installed: {InstalledVersion}";
+      return $"Installed: {InstalledVersion}";
     }
 
     private StatusIcon GetStatusIcon()
