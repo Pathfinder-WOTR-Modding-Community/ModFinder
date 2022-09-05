@@ -808,11 +808,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.4.6",
-        "Url": "https://github.com/alterasc/MicroscopicContentExpansion/releases/download/1.4.6/MicroscopicContentExpansion-1.4.6.zip",
+        "Version": "1.4.7",
+        "Url": "https://github.com/alterasc/MicroscopicContentExpansion/releases/download/1.4.7/MicroscopicContentExpansion-1.4.7.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.4.7",
+          "Url": null,
+          "Changelog": "- distribute Deadly Juggernaut to other spell lists (Cleric3, Inquisitor3, Paladin3)\n- remove Radiance Fix as it was fixed\n- remove capstone options"
+        },
         {
           "Version": "1.4.6",
           "Url": null,
@@ -832,11 +837,6 @@
           "Version": "1.4.3",
           "Url": null,
           "Changelog": "fix startoss style not working with slings"
-        },
-        {
-          "Version": "1.4.2",
-          "Url": null,
-          "Changelog": "Sets monk alternate capstone default to turned off, as TTT-Base now has it.  \nThis affects only new installs. If you had MCE before and updated TTT, disable my capstone in settings yourself."
         }
       ]
     },
