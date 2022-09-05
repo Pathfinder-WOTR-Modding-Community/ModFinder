@@ -69,6 +69,23 @@
   },
 
   {
+    "Name": "Character Options+",
+    "Author": "WittleWolfie",
+    "Id": {
+      "Id": "CharacterOptionsPlus",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "WittleWolfie",
+        "RepoName": "CharacterOptionsPlus"
+      }
+    },
+    "HomepageUrl": "https://github.com/WittleWolfie/CharacterOptionsPlus",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "Combat Relief (Updated)",
     "Author": "AlterAsc",
     "Id": {
