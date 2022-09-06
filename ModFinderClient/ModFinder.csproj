@@ -8,7 +8,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RollForward>Major</RollForward>
     
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     
     <Configurations>Debug;Release;DebugTest</Configurations>
   </PropertyGroup>
