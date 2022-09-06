@@ -4,7 +4,6 @@ using ModFinder.Util;
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Windows;
 
 namespace ModFinder
 {
@@ -14,6 +13,7 @@ namespace ModFinder
     /// Modfinder settings
     /// </summary>
     public static Settings Settings => m_Settings ??= Settings.Load();
+
     private static Settings m_Settings;
 
     /// <summary>
@@ -35,6 +35,7 @@ namespace ModFinder
         return _appFolder;
       }
     }
+
     private static readonly string _appFolder =
       Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Modfinder");
 

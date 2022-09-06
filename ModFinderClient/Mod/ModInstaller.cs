@@ -1,11 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ModFinder.UI;
+using ModFinder.Util;
+using System;
 using System.IO;
 using System.IO.Compression;
-using ModFinder.Util;
-using ModFinder.UI;
-using System.Net;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ModFinder.Mod
 {
@@ -37,9 +36,9 @@ namespace ModFinder.Mod
     private static async Task<InstallResult> InstallFromRemoteZip(ModViewModel viewModel, bool isUpdate)
     {
       Logger.Log.Info($"Fetching zip from {viewModel.Latest.Url}");
-      WebClient web = new();
+
       var file = Path.GetTempFileName();
-      await web.DownloadFileTaskAsync(viewModel.Latest.Url, file);
+      await HttpHelper.DownloadFileAsync(viewModel.Latest.Url, file);
 
       return await InstallFromZip(file, viewModel, isUpdate);
     }
