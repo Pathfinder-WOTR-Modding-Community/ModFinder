@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -200,13 +201,33 @@ namespace ModFinder.Mod
       else
       {
         int i = 1;
-        foreach (var folder in Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir,"Portraits")))
+        var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits"));
+        foreach (var folder in enumeratedFolders)
         {
           i++;
         }
 
+        var PortraitFolder = Path.Combine(Main.WrathDataDir,"Portraits");
+        var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
+        zip.ExtractToDirectory(tmpFolder);
+        if (Directory.EnumerateDirectories(tmpFolder).Count() <= 1)
+        {
+          tmpFolder = Path.Combine(tmpFolder, "Portraits");
+        }
         //var folderToEnumerate = zip.Entries.Count > 1 ? zip.Entries : zip.Entries.FirstOrDefault(a => a.Name == "Portraits");
-        foreach(var potraitFolder in zip.Entries)
+        foreach (var portraitFolder in Directory.EnumerateDirectories(tmpFolder))
+        {
+          //var foldername = i.ToString();
+          var sb = new StringBuilder(i.ToString());
+          for (int y = sb.Length; sb.Length > 4; y++)
+          {
+            sb.Append('0');
+          }
+
+          Directory.Move(portraitFolder, Path.Combine(PortraitFolder, sb.ToString()));
+          i++;
+        }
+        Directory.Delete(tmpFolder);
       }
 
       if (viewModel != null)
