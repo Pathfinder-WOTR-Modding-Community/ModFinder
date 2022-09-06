@@ -5,6 +5,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ModFinder.Mod
 {
@@ -156,12 +157,13 @@ namespace ModFinder.Mod
               viewModel = new(manifest);
               ModDatabase.Instance.Add(viewModel);
             }
+            Main.OwlcatMods.Add(OwlcatManifest.UniqueName);
 
             break;
           }
         case ModType.Portrait:
           {
-            var name = viewModel.ModId.Id;
+            var name = Guid.NewGuid().ToString();
             info = new InstallModManifest(name, null);
             break;
           }
@@ -183,22 +185,24 @@ namespace ModFinder.Mod
         ModCache.Uninstall(viewModel);
       }
 
-      var destination = GetModpath(viewModel.ModId.Type);
+      var destination = GetModpath(modType);
       //Gotta check to make sure ...\Owlcat Games\Pathfinder Wrath Of The Righteous\Modifications exists
       //  if (manifestEntry.FullName == manifestEntry.Name) ZIP can have different name from mod ID
       {
         Logger.Log.Verbose($"Creating mod directory. \"{destination}\"");
         // Handle mods without a folder in the zipm
-        destination = Path.Combine(destination, info.ModId);
+        destination = modType == ModType.Portrait ? destination : Path.Combine(destination, info.ModId);
       }
-
+      
       await Task.Run(() => zip.ExtractToDirectory(destination, true));
 
+      if (viewModel != null)
+      {
+        viewModel.InstalledVersion = ModVersion.Parse(info.Version);
+        viewModel.InstallState = InstallState.Installed;
+      }
 
-      viewModel.InstalledVersion = ModVersion.Parse(info.Version);
-      viewModel.InstallState = InstallState.Installed;
-
-      Logger.Log.Info($"{viewModel.Name} successfully installed with version {viewModel.InstalledVersion}.");
+      Logger.Log.Info($"{viewModel?.Name} successfully installed with version {viewModel?.InstalledVersion}.");
       return new(InstallState.Installed);
     }
   }
