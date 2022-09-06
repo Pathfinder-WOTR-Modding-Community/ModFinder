@@ -185,16 +185,29 @@ namespace ModFinder.Mod
         ModCache.Uninstall(viewModel);
       }
 
+      
       var destination = GetModpath(modType);
-      //Gotta check to make sure ...\Owlcat Games\Pathfinder Wrath Of The Righteous\Modifications exists
       //  if (manifestEntry.FullName == manifestEntry.Name) ZIP can have different name from mod ID
       {
         Logger.Log.Verbose($"Creating mod directory. \"{destination}\"");
         // Handle mods without a folder in the zipm
         destination = modType == ModType.Portrait ? destination : Path.Combine(destination, info.ModId);
       }
-      
-      await Task.Run(() => zip.ExtractToDirectory(destination, true));
+      if (modType != ModType.Portrait)
+      {
+        await Task.Run(() => zip.ExtractToDirectory(destination, true));
+      }
+      else
+      {
+        int i = 1;
+        foreach (var folder in Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir,"Portraits")))
+        {
+          i++;
+        }
+
+        //var folderToEnumerate = zip.Entries.Count > 1 ? zip.Entries : zip.Entries.FirstOrDefault(a => a.Name == "Portraits");
+        foreach(var potraitFolder in zip.Entries)
+      }
 
       if (viewModel != null)
       {
