@@ -200,13 +200,9 @@ namespace ModFinder.Mod
       }
       else
       {
-        int i = 1;
+        
         var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits"));
-        foreach (var folder in enumeratedFolders)
-        {
-          i++;
-        }
-
+        int i = enumeratedFolders.Where(a => a.StartsWith("ModFinderPortrait_")).Count();
         var PortraitFolder = Path.Combine(Main.WrathDataDir,"Portraits");
         var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
         zip.ExtractToDirectory(tmpFolder);
@@ -218,12 +214,13 @@ namespace ModFinder.Mod
         foreach (var portraitFolder in Directory.EnumerateDirectories(tmpFolder))
         {
           //var foldername = i.ToString();
-          var sb = new StringBuilder(i.ToString());
-          for (int y = sb.Length; sb.Length > 4; y++)
+          var sb = new StringBuilder(i.ToString(),22);
+          for (int y = sb.Length; sb.Length < 4; y++)
           {
-            sb.Append('0');
+            sb.Insert(0,'0');
           }
 
+          sb.Insert(0, "ModFinderPortrait_");
           Directory.Move(portraitFolder, Path.Combine(PortraitFolder, sb.ToString()));
           i++;
         }
