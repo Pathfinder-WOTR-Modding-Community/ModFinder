@@ -41,6 +41,21 @@ namespace ModFinder.Mod
   }
 
   /// <summary>
+  ///
+  /// </summary>
+  public struct InstallModManifest
+  {
+    public string ModId;
+    public string Version;
+
+    public InstallModManifest(string modid, string version)
+    {
+      ModId = modid;
+      Version = version;
+    }
+
+  }
+  /// <summary>
   /// Manifest for an individual mod.
   /// </summary>
   public class ModManifest
@@ -142,6 +157,16 @@ namespace ModFinder.Mod
         info.DisplayName,
         info.Author,
         new(info.Id, ModType.UMM),
+        service: default, 
+        version: default,
+        homepageUrl: string.IsNullOrEmpty(info.HomePage) ? default : info.HomePage);
+    }
+    public static ModManifest ForLocal(OwlcatModInfo info)
+    {
+      return new(
+        info.DisplayName,
+        info.Author,
+        new(info.UniqueName, ModType.UMM),
         service: default, 
         version: default,
         homepageUrl: string.IsNullOrEmpty(info.HomePage) ? default : info.HomePage);
@@ -333,7 +358,8 @@ namespace ModFinder.Mod
   public enum ModType
   {
     UMM,
-    Owlcat
+    Owlcat,
+    Portrait
   }
 
   /// <summary>

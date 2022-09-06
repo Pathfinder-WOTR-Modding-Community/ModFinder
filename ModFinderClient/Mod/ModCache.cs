@@ -98,10 +98,10 @@ namespace ModFinder.Mod
 
     public static void Uninstall(ModViewModel mod, bool cache = true)
     {
-      if (mod.Type != ModType.UMM)
+      /*if (mod.Type != ModType.UMM)
       {
         throw new InvalidOperationException($"{mod.Type} is not supported");
-      }
+      }*/
 
       if (cache)
       {
