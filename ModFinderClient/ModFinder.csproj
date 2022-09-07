@@ -18,6 +18,9 @@
     <None Remove="icons\drop-bg.png" />
     <None Remove="icons\error.png" />
     <None Remove="icons\okay.png" />
+    <None Remove="icons\UI_GlobalMap_BackNameShield_Hover.png" />
+    <None Remove="icons\UI_Journal_BigMenu_Border.png" />
+    <None Remove="icons\UI_Journal_Line.png" />
     <None Remove="icons\warning.png" />
     <None Remove="test_generated.json" />
     <None Remove="test_master.json" />
@@ -74,6 +77,7 @@
     <Resource Include="icons\UI_Button_Default.png" />
     <Resource Include="icons\UI_Button_Disable.png" />
     <Resource Include="icons\UI_Button_Hover.png" />
+    <Resource Include="icons\UI_GlobalMap_BackNameShield_Hover.png" />
     <Resource Include="icons\UI_HudIcon_Cancel_Active.png" />
     <Resource Include="icons\UI_HudIcon_Cancel_ActiveHover.png" />
     <Resource Include="icons\UI_HudIcon_Cancel_Default.png" />
@@ -93,6 +97,8 @@
     <Resource Include="icons\UI_Inventory_CloseButton_Default.png" />
     <Resource Include="icons\UI_Inventory_CloseButton_Hover.png" />
     <Resource Include="icons\error.png" />
+    <Resource Include="icons\UI_Journal_BigMenu_Border.png" />
+    <Resource Include="icons\UI_Journal_Line.png" />
     <Resource Include="icons\warning.png" />
     <Resource Include="icons\okay.png" />
     <Resource Include="icons\UI_RoundButton_Click.png" />

@@ -14,6 +14,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
+using System.Windows.Media;
 
 namespace ModFinder
 {
@@ -53,11 +54,11 @@ namespace ModFinder
         Manifest = IOTool.FromString<MasterManifest>(json);
 #endif
 
-        installedMods.SelectedCellsChanged += (sender, e) =>
-        {
-          if (e.AddedCells.Count > 0)
-            installedMods.SelectedItem = null;
-        };
+        //installedMods.SelectedCellsChanged += (sender, e) =>
+        //{
+        //  if (e.AddedCells.Count > 0)
+        //    installedMods.SelectedItem = null;
+        //};
 
         RefreshAllManifests();
         RefreshInstalledMods();
@@ -87,6 +88,7 @@ namespace ModFinder
         dropTarget.Drop += DropTarget_Drop;
         dropTarget.DragOver += DropTarget_DragOver;
 
+
         ModDB.InitSort();
       }
       catch (Exception e)
@@ -95,6 +97,23 @@ namespace ModFinder
         Logger.Log.Error($"Failed to initialize main window.", e);
         Close();
       }
+
+
+      DetailsPanel.SizeChanged += DetailsPanel_SizeChanged;
+
+    }
+
+    private void DetailsPanel_SizeChanged(object sender, SizeChangedEventArgs e)
+    {
+      using var g = DetailsPanelBackground.Open();
+      var bg = Resources["details-bg-border"] as Image;
+      g.PushOpacity(0.8);
+      g.DrawImage(bg.Source, new(0, 0, e.NewSize.Width, bg.Source.Height));
+
+      g.PushTransform(new ScaleTransform(1, -1));
+      g.DrawImage(bg.Source, new(0, -e.NewSize.Height, e.NewSize.Width, bg.Source.Height));
+      g.Pop();
+
     }
 
     public static void RefreshAllManifests()
@@ -255,11 +274,23 @@ namespace ModFinder
     private void DataGridRow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
       DescriptionPopup.IsOpen = false;
+
+      if (sender is not DataGridRow row)
+      {
+        return;
+      }
+
+      installedMods.SelectedIndex = row.GetIndex();
     }
 
     private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
     {
       DescriptionPopup.IsOpen = false;
+    }
+    private void DataGridCell_Clicked(object sender, MouseButtonEventArgs e)
+    {
+      Debug.WriteLine("Hello");
+      //DescriptionPopup.IsOpen = false;
     }
 
     private void DropTarget_DragOver(object sender, DragEventArgs e)
@@ -495,6 +526,11 @@ namespace ModFinder
         ShowError("Rollback failed.");
         Logger.Log.Error("Rollback failed.", ex);
       }
+    }
+
+    private void installedMods_MouseDown(object sender, MouseButtonEventArgs e)
+    {
+
     }
   }
 }

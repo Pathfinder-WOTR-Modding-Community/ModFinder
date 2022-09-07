@@ -5,518 +5,547 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModFinder.UI" d:DataContext="{d:DesignInstance Type=local:ModViewModel}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1300"
+        Title="MainWindow" Height="900" Width="1300"
         AllowsTransparency="True" 
         WindowStyle="None"
         Background="Transparent" 
         >
-  <Window.Resources>
-    <!--
+    <Window.Resources>
+        <!--
                         -->
-    <ImageBrush x:Key="OwlThumbHover" ImageSource="pack://application:,,,/icons/UI_ScrollVertical_Handl_Hover.png" Stretch="Fill" ViewboxUnits="Absolute" Viewbox="0, 7, 23, 81"></ImageBrush>
-    <ImageBrush x:Key="OwlThumbDrag" ImageSource="pack://application:,,,/icons/UI_ScrollVertical_Handl_Click.png" Stretch="Fill" ViewboxUnits="Absolute" Viewbox="0, 7, 23, 81"></ImageBrush>
-    <ImageBrush x:Key="drop-bg" ImageSource="pack://application:,,,/icons/drop-bg.png" Stretch="Fill"></ImageBrush>
-    <ImageBrush x:Key="button-bg-default" ImageSource="pack://application:,,,/icons/UI_Button_Default.png" Stretch="Fill"></ImageBrush>
-    <ImageBrush x:Key="button-bg-hover" ImageSource="pack://application:,,,/icons/UI_Button_Hover.png" Stretch="Fill"></ImageBrush>
-    <ImageBrush x:Key="button-bg-click" ImageSource="pack://application:,,,/icons/UI_Button_Click.png" Stretch="Fill"></ImageBrush>
-    <ImageBrush x:Key="button-bg-disable" ImageSource="pack://application:,,,/icons/UI_Button_Disable.png" Stretch="Fill"></ImageBrush>
-    <ImageBrush x:Key="bg-paper-generic" ImageSource="pack://application:,,,/icons/background.png" Stretch="Fill"></ImageBrush>
-    <Image x:Key="okay-icon" Source="pack://application:,,,/icons/okay.png" Stretch="Fill"></Image>
-    <Image x:Key="warning-icon" Source="pack://application:,,,/icons/warning.png" Stretch="Fill"></Image>
-    <Image x:Key="error-icon" Source="pack://application:,,,/icons/error.png" Stretch="Fill"></Image>
-    <SolidColorBrush x:Key="HighlightRow" Color="Orange"></SolidColorBrush>
-    <Style x:Key="OwlContextMenu" TargetType="ContextMenu">
-      <Setter Property="Background" Value="{StaticResource bg-paper-generic}"></Setter>
-      <Setter Property="BorderThickness" Value="0"></Setter>
-      <Setter Property="HasDropShadow" Value="True"></Setter>
-      <Setter Property="FontFamily" Value="Constantia"></Setter>
-      <Setter Property="FontSize" Value="14"></Setter>
-      <Setter Property="Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="ContextMenu">
-            <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" Background="{StaticResource bg-paper-generic}"></StackPanel>
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style x:Key="OwlButton" TargetType="Button">
-      <Setter Property="Foreground" Value="LightGray"></Setter>
-      <Setter Property="Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="Button">
-            <Grid x:Name="main" Background="{StaticResource button-bg-default}">
-              <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+        <ImageBrush x:Key="OwlThumbHover" ImageSource="pack://application:,,,/icons/UI_ScrollVertical_Handl_Hover.png" Stretch="Fill" ViewboxUnits="Absolute" Viewbox="0, 7, 23, 81"></ImageBrush>
+        <ImageBrush x:Key="OwlThumbDrag" ImageSource="pack://application:,,,/icons/UI_ScrollVertical_Handl_Click.png" Stretch="Fill" ViewboxUnits="Absolute" Viewbox="0, 7, 23, 81"></ImageBrush>
+        <ImageBrush x:Key="drop-bg" ImageSource="pack://application:,,,/icons/drop-bg.png" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Key="button-bg-default" ImageSource="pack://application:,,,/icons/UI_Button_Default.png" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Key="button-bg-hover" ImageSource="pack://application:,,,/icons/UI_Button_Hover.png" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Key="button-bg-click" ImageSource="pack://application:,,,/icons/UI_Button_Click.png" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Key="button-bg-disable" ImageSource="pack://application:,,,/icons/UI_Button_Disable.png" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Key="bg-paper-generic" ImageSource="pack://application:,,,/icons/background.png" Stretch="Fill"></ImageBrush>
+        <ImageBrush x:Key="selected-row-bg" Opacity="0.3" ImageSource="pack://application:,,,/icons/UI_GlobalMap_BackNameShield_Hover.png" Stretch="Fill"></ImageBrush>
+        <Image x:Key="okay-icon" Source="pack://application:,,,/icons/okay.png" Stretch="Fill"></Image>
+        <Image x:Key="warning-icon" Source="pack://application:,,,/icons/warning.png" Stretch="Fill"></Image>
+        <Image x:Key="error-icon" Source="pack://application:,,,/icons/error.png" Stretch="Fill"></Image>
+        <Image x:Key="details-bg-border" Source="pack://application:,,,/icons/UI_Journal_BigMenu_Border.png" Stretch="Fill"></Image>
+        <SolidColorBrush x:Key="HighlightRow" Color="Orange"></SolidColorBrush>
+        <Style x:Key="OwlContextMenu" TargetType="ContextMenu">
+            <Setter Property="Background" Value="{StaticResource bg-paper-generic}"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="HasDropShadow" Value="True"></Setter>
+            <Setter Property="FontFamily" Value="Constantia"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContextMenu">
+                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" Background="{StaticResource bg-paper-generic}"></StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="OwlButton" TargetType="Button">
+            <Setter Property="Foreground" Value="LightGray"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="main" Background="{StaticResource button-bg-default}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="main" Property="Background" Value="{StaticResource button-bg-hover}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="main" Property="Background" Value="{StaticResource button-bg-click}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="main" Property="Background" Value="{StaticResource button-bg-disable}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="LookButtonSquare" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Inspect_Default.png"></Image>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Inspect_Hover.png"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Inspect_Active.png"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="SettingsButtonSquare" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Settings_Default.png"></Image>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Settings_Hover.png"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Settings_Active.png"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CloseButtonSquare" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Cancel_Default.png"></Image>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Cancel_Hover.png"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Cancel_Active.png"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CloseButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Image x:Name="bg" Source="pack://application:,,,/icons/UI_Inventory_CloseButton_Default.png"></Image>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_Inventory_CloseButton_Hover.png"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_Inventory_CloseButton_Click.png"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="OwlThumb" TargetType="Thumb">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Rectangle x:Name="img">
+                            <Rectangle.Fill>
+                                <ImageBrush x:Name="img2" ImageSource="pack://application:,,,/icons/UI_ScrollVertical_Handl_Default.png" Stretch="Fill" ViewboxUnits="Absolute" Viewbox="0, 7, 23, 81"></ImageBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="img" Property="Fill" Value="{StaticResource OwlThumbHover}"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsDragging" Value="True">
+                                <Setter TargetName="img" Property="Fill" Value="{StaticResource OwlThumbDrag}"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="UpButton" TargetType="RepeatButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RepeatButton">
+                        <Image x:Name="img" Source="pack://application:,,,/icons/UI_ScrollVertical_Arrow_Default.png" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="img" Property="Source" Value="pack://application:,,,/icons/UI_ScrollVertical_Arrow_Hover.png"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="img" Property="Source" Value="pack://application:,,,/icons/UI_ScrollVertical_Arrow_Click.png"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="VerticalScrollBar" TargetType="ScrollBar">
+            <Grid Margin="0, 0, 0, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="18" />
+                    <RowDefinition Height="0.00001*" />
+                    <RowDefinition MaxHeight="18" />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1" Source="pack://application:,,,/icons/UI_ScrollVertical_BackLine.png" Width="4" Stretch="Fill"/>
+                <RepeatButton Grid.Row="0" Command="ScrollBar.LineUpCommand" Height="18" BorderThickness="0" Style="{StaticResource UpButton}"></RepeatButton>
+                <RepeatButton Grid.Row="2" Command="ScrollBar.LineDownCommand" Height="18" Style="{StaticResource UpButton}">
+                    <RepeatButton.LayoutTransform>
+                        <RotateTransform Angle="180"></RotateTransform>
+                    </RepeatButton.LayoutTransform>
+                </RepeatButton>
+                <Track Grid.Row="1" x:Name="PART_Track" IsDirectionReversed="True">
+                    <Track.Thumb>
+                        <Thumb Style="{StaticResource OwlThumb}"></Thumb>
+                    </Track.Thumb>
+                </Track>
+
             </Grid>
-            <ControlTemplate.Triggers>
-              <Trigger Property="IsMouseOver" Value="True">
-                <Setter TargetName="main" Property="Background" Value="{StaticResource button-bg-hover}" />
-              </Trigger>
-              <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="main" Property="Background" Value="{StaticResource button-bg-click}" />
-              </Trigger>
-              <Trigger Property="IsEnabled" Value="False">
-                <Setter TargetName="main" Property="Background" Value="{StaticResource button-bg-disable}" />
-              </Trigger>
-            </ControlTemplate.Triggers>
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style x:Key="LookButtonSquare" TargetType="Button">
-      <Setter Property="Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="Button">
-            <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Inspect_Default.png"></Image>
-            <ControlTemplate.Triggers>
-              <Trigger Property="IsMouseOver" Value="True">
-                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Inspect_Hover.png"></Setter>
-              </Trigger>
-              <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Inspect_Active.png"></Setter>
-              </Trigger>
-            </ControlTemplate.Triggers>
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style x:Key="SettingsButtonSquare" TargetType="Button">
-      <Setter Property="Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="Button">
-            <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Settings_Default.png"></Image>
-            <ControlTemplate.Triggers>
-              <Trigger Property="IsMouseOver" Value="True">
-                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Settings_Hover.png"></Setter>
-              </Trigger>
-              <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Settings_Active.png"></Setter>
-              </Trigger>
-            </ControlTemplate.Triggers>
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style x:Key="CloseButtonSquare" TargetType="Button">
-      <Setter Property="Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="Button">
-            <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Cancel_Default.png"></Image>
-            <ControlTemplate.Triggers>
-              <Trigger Property="IsMouseOver" Value="True">
-                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Cancel_Hover.png"></Setter>
-              </Trigger>
-              <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Cancel_Active.png"></Setter>
-              </Trigger>
-            </ControlTemplate.Triggers>
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style x:Key="CloseButton" TargetType="Button">
-      <Setter Property="Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="Button">
-            <Image x:Name="bg" Source="pack://application:,,,/icons/UI_Inventory_CloseButton_Default.png"></Image>
-            <ControlTemplate.Triggers>
-              <Trigger Property="IsMouseOver" Value="True">
-                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_Inventory_CloseButton_Hover.png"></Setter>
-              </Trigger>
-              <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_Inventory_CloseButton_Click.png"></Setter>
-              </Trigger>
-            </ControlTemplate.Triggers>
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style x:Key="OwlThumb" TargetType="Thumb">
-      <Setter Property="Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="Thumb">
-            <Rectangle x:Name="img">
-              <Rectangle.Fill>
-                <ImageBrush x:Name="img2" ImageSource="pack://application:,,,/icons/UI_ScrollVertical_Handl_Default.png" Stretch="Fill" ViewboxUnits="Absolute" Viewbox="0, 7, 23, 81"></ImageBrush>
-              </Rectangle.Fill>
+        </ControlTemplate>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Constantia"></Setter>
+        </Style>
+        <Style TargetType="ScrollBar">
+            <Setter Property="Template" Value="{StaticResource VerticalScrollBar}"></Setter>
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontFamily" Value="Constantia"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel x:Name="root">
+        <DockPanel DockPanel.Dock="Top" Height="32">
+            <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32" Height="32">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0,0.05,0.05" />
+                </Rectangle.Fill>
             </Rectangle>
-            <ControlTemplate.Triggers>
-              <Trigger Property="IsMouseOver" Value="True">
-                <Setter TargetName="img" Property="Fill" Value="{StaticResource OwlThumbHover}"></Setter>
-              </Trigger>
-              <Trigger Property="IsDragging" Value="True">
-                <Setter TargetName="img" Property="Fill" Value="{StaticResource OwlThumbDrag}"></Setter>
-              </Trigger>
-            </ControlTemplate.Triggers>
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style x:Key="UpButton" TargetType="RepeatButton">
-      <Setter Property="Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="RepeatButton">
-            <Image x:Name="img" Source="pack://application:,,,/icons/UI_ScrollVertical_Arrow_Default.png" />
-            <ControlTemplate.Triggers>
-              <Trigger Property="IsMouseOver" Value="True">
-                <Setter TargetName="img" Property="Source" Value="pack://application:,,,/icons/UI_ScrollVertical_Arrow_Hover.png"></Setter>
-              </Trigger>
-              <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="img" Property="Source" Value="pack://application:,,,/icons/UI_ScrollVertical_Arrow_Click.png"></Setter>
-              </Trigger>
-            </ControlTemplate.Triggers>
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <ControlTemplate x:Key="VerticalScrollBar" TargetType="ScrollBar">
-      <Grid Margin="0, 0, 0, 0">
-        <Grid.RowDefinitions>
-          <RowDefinition MaxHeight="18" />
-          <RowDefinition Height="0.00001*" />
-          <RowDefinition MaxHeight="18" />
-        </Grid.RowDefinitions>
-        <Image Grid.Row="1" Source="pack://application:,,,/icons/UI_ScrollVertical_BackLine.png" Width="4" Stretch="Fill"/>
-        <RepeatButton Grid.Row="0" Command="ScrollBar.LineUpCommand" Height="18" BorderThickness="0" Style="{StaticResource UpButton}"></RepeatButton>
-        <RepeatButton Grid.Row="2" Command="ScrollBar.LineDownCommand" Height="18" Style="{StaticResource UpButton}">
-          <RepeatButton.LayoutTransform>
-            <RotateTransform Angle="180"></RotateTransform>
-          </RepeatButton.LayoutTransform>
-        </RepeatButton>
-        <Track Grid.Row="1" x:Name="PART_Track" IsDirectionReversed="True">
-          <Track.Thumb>
-            <Thumb Style="{StaticResource OwlThumb}"></Thumb>
-          </Track.Thumb>
-        </Track>
+            <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32" Height="32">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0,0.05,0.05" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle SnapsToDevicePixels="True" Height="32">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0,0.9,0.05" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Height="32">
+            <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32" Height="32">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0.95,0.05,0.05" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32" Height="32">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0.95,0.05,0.05" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle SnapsToDevicePixels="True" Height="32">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0.95,0.9,0.05" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </DockPanel>
+        <DockPanel>
+            <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0.05,0.05,0.9" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0.05,0.05,0.90" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <DockPanel>
+                <DockPanel.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0.05,0.9,0.9" />
+                </DockPanel.Background>
+                <Grid DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>*</ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>300</ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>240</ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>40</ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>40</ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>40</ColumnDefinition.Width>
+                        </ColumnDefinition>
 
-      </Grid>
-    </ControlTemplate>
-    <Style TargetType="TextBlock">
-      <Setter Property="FontFamily" Value="Constantia"></Setter>
-    </Style>
-    <Style TargetType="ScrollBar">
-      <Setter Property="Template" Value="{StaticResource VerticalScrollBar}"></Setter>
-    </Style>
-    <Style TargetType="DataGridCell">
-      <Setter Property="Background" Value="Transparent"></Setter>
-      <Setter Property="FontSize" Value="16"></Setter>
-      <Setter Property="FontFamily" Value="Constantia"></Setter>
-      <Setter Property="BorderThickness" Value="0"></Setter>
-      <Setter Property="VerticalAlignment" Value="Center"></Setter>
-      <Style.Triggers>
-        <Trigger Property="IsMouseOver" Value="True">
-          <Setter Property="Foreground" Value="DarkBlue"></Setter>
-        </Trigger>
-        <Trigger Property="IsSelected" Value="True">
-          <Setter Property="Foreground" Value="Black"></Setter>
-          <Setter Property="BorderThickness" Value="0"></Setter>
-        </Trigger>
-      </Style.Triggers>
-    </Style>
-    <Style TargetType="DataGridColumnHeader">
-      <Setter Property="Background" Value="Transparent"></Setter>
-      <Setter Property="FontSize" Value="20"></Setter>
-      <Setter Property="FontFamily" Value="Constantia"></Setter>
-      <Setter Property="FontWeight" Value="Bold"></Setter>
-    </Style>
-  </Window.Resources>
-  <DockPanel x:Name="root">
-    <DockPanel DockPanel.Dock="Top" Height="32">
-      <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32" Height="32">
-        <Rectangle.Fill>
-          <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0,0.05,0.05" />
-        </Rectangle.Fill>
-      </Rectangle>
-      <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32" Height="32">
-        <Rectangle.Fill>
-          <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0,0.05,0.05" />
-        </Rectangle.Fill>
-      </Rectangle>
-      <Rectangle SnapsToDevicePixels="True" Height="32">
-        <Rectangle.Fill>
-          <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0,0.9,0.05" />
-        </Rectangle.Fill>
-      </Rectangle>
-    </DockPanel>
-    <DockPanel DockPanel.Dock="Bottom" Height="32">
-      <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32" Height="32">
-        <Rectangle.Fill>
-          <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0.95,0.05,0.05" />
-        </Rectangle.Fill>
-      </Rectangle>
-      <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32" Height="32">
-        <Rectangle.Fill>
-          <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0.95,0.05,0.05" />
-        </Rectangle.Fill>
-      </Rectangle>
-      <Rectangle SnapsToDevicePixels="True" Height="32">
-        <Rectangle.Fill>
-          <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0.95,0.9,0.05" />
-        </Rectangle.Fill>
-      </Rectangle>
-    </DockPanel>
-    <DockPanel>
-      <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32">
-        <Rectangle.Fill>
-          <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0.05,0.05,0.9" />
-        </Rectangle.Fill>
-      </Rectangle>
-      <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32">
-        <Rectangle.Fill>
-          <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0.05,0.05,0.90" />
-        </Rectangle.Fill>
-      </Rectangle>
-      <DockPanel>
-        <DockPanel.Background>
-          <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0.05,0.9,0.9" />
-        </DockPanel.Background>
-        <Grid DockPanel.Dock="Top">
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition>
-              <ColumnDefinition.Width>*</ColumnDefinition.Width>
-            </ColumnDefinition>
-            <ColumnDefinition>
-              <ColumnDefinition.Width>300</ColumnDefinition.Width>
-            </ColumnDefinition>
-            <ColumnDefinition>
-              <ColumnDefinition.Width>240</ColumnDefinition.Width>
-            </ColumnDefinition>
-            <ColumnDefinition>
-              <ColumnDefinition.Width>40</ColumnDefinition.Width>
-            </ColumnDefinition>
-            <ColumnDefinition>
-              <ColumnDefinition.Width>40</ColumnDefinition.Width>
-            </ColumnDefinition>
-            <ColumnDefinition>
-              <ColumnDefinition.Width>40</ColumnDefinition.Width>
-            </ColumnDefinition>
-
-          </Grid.ColumnDefinitions>
-          <TextBlock x:Name="Header" FontSize="30" FontFamily="Constantia" FontWeight="Bold" Foreground="DarkSlateGray" Padding="0,0,0,10" Grid.Column="0">
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="Header" FontSize="30" FontFamily="Constantia" FontWeight="Bold" Foreground="DarkSlateGray" Padding="0,0,0,10" Grid.Column="0">
                         Modfinder: Wrath of the Righteous
-          </TextBlock>
-          <TextBox
+                    </TextBlock>
+                    <TextBox
             Grid.Column="1" x:Name="Filter" Height="34" Width="250" FontFamily="Constantia" VerticalContentAlignment="Center"
             Background="Transparent" BorderThickness="3" TextBoxBase.TextChanged="Filter_TextChanged">
-          </TextBox>
-          <ToggleButton d:DataContext="{d:DesignInstance Type=local:ModDatabase}" x:Name="showInstalledToggle" Grid.Column="2" Width="230" IsChecked="{Binding ShowInstalled}">
-            <ToggleButton.Template>
-              <ControlTemplate TargetType="ToggleButton">
-                <Grid Height="34">
-                  <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60"></ColumnDefinition>
-                    <ColumnDefinition Width="40"></ColumnDefinition>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                    <ColumnDefinition Width="80"></ColumnDefinition>
-                  </Grid.ColumnDefinitions>
-                  <TextBlock FontFamily="Constantia" FontWeight="Bold" Grid.Column="0" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0">Show:</TextBlock>
-                  <TextBlock FontFamily="Constantia" FontWeight="Bold" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0">All</TextBlock>
-                  <Image Source="pack://application:,,,/icons/UI_Toggler_BG.png" Grid.Column="2" HorizontalAlignment="Right"></Image>
-                  <Image x:Name="knob" Source="pack://application:,,,/icons/UI_RoundButton_Default.png" Grid.Column="2" Width="25" HorizontalAlignment="Left" Margin="3,0,3,0"></Image>
-                  <Rectangle x:Name="tint" Grid.Column="2" Opacity="0.2" Height="24" Visibility="Hidden">
-                    <Rectangle.Fill>
-                      <SolidColorBrush Color="MediumPurple"></SolidColorBrush>
-                    </Rectangle.Fill>
-                    <Rectangle.OpacityMask>
-                      <ImageBrush ImageSource="pack://application:,,,/icons/UI_Toggler_BG.png"></ImageBrush>
-                    </Rectangle.OpacityMask>
-                  </Rectangle>
-                  <TextBlock FontFamily="Constantia" FontWeight="Bold"  Grid.Column="3" VerticalAlignment="Center" Padding="8,0,0,0">Installed</TextBlock>
+                    </TextBox>
+                    <ToggleButton d:DataContext="{d:DesignInstance Type=local:ModDatabase}" x:Name="showInstalledToggle" Grid.Column="2" Width="230" IsChecked="{Binding ShowInstalled}">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Grid Height="34">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"></ColumnDefinition>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock FontFamily="Constantia" FontWeight="Bold" Grid.Column="0" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0">Show:</TextBlock>
+                                    <TextBlock FontFamily="Constantia" FontWeight="Bold" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0">All</TextBlock>
+                                    <Image Source="pack://application:,,,/icons/UI_Toggler_BG.png" Grid.Column="2" HorizontalAlignment="Right"></Image>
+                                    <Image x:Name="knob" Source="pack://application:,,,/icons/UI_RoundButton_Default.png" Grid.Column="2" Width="25" HorizontalAlignment="Left" Margin="3,0,3,0"></Image>
+                                    <Rectangle x:Name="tint" Grid.Column="2" Opacity="0.2" Height="24" Visibility="Hidden">
+                                        <Rectangle.Fill>
+                                            <SolidColorBrush Color="MediumPurple"></SolidColorBrush>
+                                        </Rectangle.Fill>
+                                        <Rectangle.OpacityMask>
+                                            <ImageBrush ImageSource="pack://application:,,,/icons/UI_Toggler_BG.png"></ImageBrush>
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                    <TextBlock FontFamily="Constantia" FontWeight="Bold"  Grid.Column="3" VerticalAlignment="Center" Padding="8,0,0,0">Installed</TextBlock>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Trigger.EnterActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
+                                                        <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="3,0,3,0"/>
+                                                        <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="22,0,3,0"/>
+                                                    </ThicknessAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </Trigger.EnterActions>
+                                        <Trigger.ExitActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
+                                                        <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="22,0,3,0"/>
+                                                        <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="3,0,3,0"/>
+                                                    </ThicknessAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </Trigger.ExitActions>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="tint" Property="Visibility" Value="Visible"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                    <Button x:Name="closeButton" Grid.Column="4" Style="{StaticResource CloseButtonSquare}" Width="32" Height="32" />
+                    <Button x:Name="lookButton" Grid.Column="3" Style="{StaticResource LookButtonSquare}" Width="32" Height="32" ToolTip="Re-scan installed mods" Click="LookButton_Click"/>
                 </Grid>
-                <ControlTemplate.Triggers>
-                  <Trigger Property="IsChecked" Value="True">
-                    <Trigger.EnterActions>
-                      <BeginStoryboard>
-                        <Storyboard>
-                          <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
-                            <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="3,0,3,0"/>
-                            <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="22,0,3,0"/>
-                          </ThicknessAnimationUsingKeyFrames>
-                        </Storyboard>
-                      </BeginStoryboard>
-                    </Trigger.EnterActions>
-                    <Trigger.ExitActions>
-                      <BeginStoryboard>
-                        <Storyboard>
-                          <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
-                            <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="22,0,3,0"/>
-                            <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="3,0,3,0"/>
-                          </ThicknessAnimationUsingKeyFrames>
-                        </Storyboard>
-                      </BeginStoryboard>
-                    </Trigger.ExitActions>
-                  </Trigger>
-                  <Trigger Property="IsMouseOver" Value="True">
-                    <Setter TargetName="tint" Property="Visibility" Value="Visible"></Setter>
-                  </Trigger>
-                </ControlTemplate.Triggers>
-              </ControlTemplate>
-            </ToggleButton.Template>
-          </ToggleButton>
-          <Button x:Name="closeButton" Grid.Column="4" Style="{StaticResource CloseButtonSquare}" Width="32" Height="32" />
-          <Button x:Name="lookButton" Grid.Column="3" Style="{StaticResource LookButtonSquare}" Width="32" Height="32" ToolTip="Re-scan installed mods" Click="LookButton_Click"/>
-        </Grid>
-        <DockPanel DockPanel.Dock="Bottom">
-          <Grid x:Name="dropTarget" Height="100" AllowDrop="True" Margin="0,10,0,0">
-            <Rectangle Fill="{StaticResource drop-bg}" Opacity="0.7" Stroke="{x:Null}" >
-            </Rectangle>
-            <TextBlock FontSize="42" FontStyle="Italic" FontFamily="Constantia" Foreground="DarkGray" Padding="0,0,0,10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <DockPanel DockPanel.Dock="Bottom">
+                    <Grid x:Name="dropTarget" Height="100" AllowDrop="True" Margin="0,10,0,0">
+                        <Rectangle Fill="{StaticResource drop-bg}" Opacity="0.7" Stroke="{x:Null}" >
+                        </Rectangle>
+                        <TextBlock FontSize="42" FontStyle="Italic" FontFamily="Constantia" Foreground="DarkGray" Padding="0,0,0,10" VerticalAlignment="Center" HorizontalAlignment="Center">
                             Drag zips here to install
-            </TextBlock>
-          </Grid>
+                        </TextBlock>
+                    </Grid>
+                </DockPanel>
+                <DockPanel>
+                    <DockPanel x:Name="DetailsPanel" DockPanel.Dock="Bottom" Height="250" DataContext="{Binding ElementName=installedMods, Path=SelectedItem}" d:DataContext="{d:DesignInstance Type=local:ModViewModel}">
+                        <Border BorderThickness="50">
+                            <StackPanel>
+                                <TextBlock FontSize="30" FontWeight="Bold" Text="{Binding Name, Mode=OneWay}"></TextBlock>
+                                <TextBlock FontSize="18" Text="{Binding Latest.Version, Mode=OneWay, StringFormat='Latest Version: {0}'}"></TextBlock>
+                                <TextBlock FontSize="18" Text="{Binding InstalledVersion, Mode=OneWay, StringFormat='Installed Version: {0}'}"></TextBlock>
+
+                            </StackPanel>
+                        </Border>
+                        <DockPanel.Background>
+                            <DrawingBrush Stretch="None" AlignmentX="Left" AlignmentY="Top">
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup x:Name="DetailsPanelBackground"></DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </DockPanel.Background>
+                    </DockPanel>
+                    <DataGrid AutoGenerateColumns="false" Name="installedMods" SelectionUnit="FullRow" ItemsSource="{Binding Items}" VerticalScrollBarVisibility="Visible" SelectionMode="Single" MouseDown="installedMods_MouseDown">
+                        <DataGrid.BorderBrush>
+                            <SolidColorBrush Opacity="0" Color="Black"></SolidColorBrush>
+                        </DataGrid.BorderBrush>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <EventSetter Event="MouseLeftButtonDown" Handler="DataGridCell_Clicked"></EventSetter>
+                                <Setter Property="Background" Value="Transparent"></Setter>
+                                <Setter Property="Foreground" Value="Black"></Setter>
+                                <Setter Property="FontSize" Value="16"></Setter>
+                                <Setter Property="FontFamily" Value="Constantia"></Setter>
+                                <Setter Property="BorderThickness" Value="0"></Setter>
+                                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}}" Value="True">
+                                        <Setter Property="Foreground" Value="DarkBlue"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Background" Value="Transparent"></Setter>
+                                <Setter Property="Height" Value="40"></Setter>
+                                <EventSetter Event="MouseRightButtonDown" Handler="DataGridRow_MouseRightButtonDown"></EventSetter>
+                                <EventSetter Event="MouseLeftButtonDown" Handler="DataGridRow_MouseLeftButtonDown"></EventSetter>
+                                <EventSetter Event="MouseLeftButtonUp" Handler="DataGridRow_MouseLeftButtonDown"></EventSetter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="{StaticResource selected-row-bg}"></Setter>
+                                        <Setter Property="Foreground" Value="Black"></Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Foreground" Value="DarkBlue"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+                        <DataGrid.RowHeaderWidth>0</DataGrid.RowHeaderWidth>
+                        <DataGrid.GridLinesVisibility>None</DataGrid.GridLinesVisibility>
+                        <DataGrid.IsReadOnly>False</DataGrid.IsReadOnly>
+                        <DataGrid.CanUserAddRows>False</DataGrid.CanUserAddRows>
+                        <DataGrid.CanUserDeleteRows>False</DataGrid.CanUserDeleteRows>
+                        <DataGrid.CanUserResizeRows>False</DataGrid.CanUserResizeRows>
+                        <DataGrid.Background>Transparent</DataGrid.Background>
+                        
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Width="280" Binding="{Binding Name, Mode=OneWay}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Author" Width="200" Binding="{Binding Author, Mode=OneWay}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Status" Width="*" Binding="{Binding StatusText, Mode=OneWay}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="From" Width="80" Binding="{Binding Service, Mode=OneWay}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Width="25" CanUserResize="False">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Image.Style>
+                                                <Style TargetType="Image">
+                                                    <Setter Property="Source" Value="pack://application:,,,/icons/okay.png" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding StatusIcon}" Value="None">
+                                                            <Setter Property="Visibility" Value="Hidden" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding StatusIcon}" Value="Error">
+                                                            <Setter Property="Source" Value="pack://application:,,,/icons/error.png" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding StatusIcon}" Value="Warning">
+                                                            <Setter Property="Source" Value="pack://application:,,,/icons/warning.png" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="230" CanUserResize="False">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="190"></ColumnDefinition>
+                                                <ColumnDefinition Width="30"></ColumnDefinition>
+                                                <ColumnDefinition Width="8"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Button  Style="{StaticResource OwlButton}" Height="30" IsEnabled="{Binding CanInstallOrDownload}" Content="{Binding ButtonText}" Click="InstallOrUpdateMod" Tag="{Binding}">
+                                            </Button>
+                                            <Button Grid.Column="1" x:Name="MoreOptions" Style="{StaticResource OwlButton}"  Height="30"  Content="..." Tag="{Binding}" Click="MoreOptions_Click">
+                                                <Button.ContextMenu>
+                                                    <ContextMenu Style="{StaticResource OwlContextMenu}">
+                                                        <MenuItem Header="Show description" Click="ShowModDescription"></MenuItem>
+                                                        <MenuItem Header="Show changelog" Click="ShowModChangelog"></MenuItem>
+                                                        <MenuItem Header="Open homepage" Visibility="{Binding HomepageVisibility}" Click="OpenHomepage"></MenuItem>
+                                                        <MenuItem Header="Uninstall" Visibility="{Binding UninstallVisibility}" Click="UninstallMod"></MenuItem>
+                                                        <MenuItem Header="Rollback" Visibility="{Binding RollbackVisibility}" Click="Rollback"></MenuItem>
+                                                    </ContextMenu>
+                                                </Button.ContextMenu>
+                                            </Button>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                                <DataGridTemplateColumn.Header>
+                                    <TextBlock Text="{Binding DataContext.HeaderNameText, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"></TextBlock>
+                                </DataGridTemplateColumn.Header>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </DockPanel>
+            </DockPanel>
         </DockPanel>
-        <DataGrid AutoGenerateColumns="false" Name="installedMods" RowBackground="Transparent" SelectionUnit="FullRow" ItemsSource="{Binding Items}" RowHeight="40" VerticalScrollBarVisibility="Visible" SelectionMode="Single">
-          <DataGrid.BorderBrush>
-            <SolidColorBrush Opacity="0" Color="Black"></SolidColorBrush>
-          </DataGrid.BorderBrush>
-          <DataGrid.RowStyle>
-            <Style TargetType="DataGridRow">
-              <EventSetter Event="MouseRightButtonDown" Handler="DataGridRow_MouseRightButtonDown"></EventSetter>
-              <EventSetter Event="MouseLeftButtonDown" Handler="DataGridRow_MouseLeftButtonDown"></EventSetter>
-              <EventSetter Event="MouseLeftButtonUp" Handler="DataGridRow_MouseLeftButtonDown"></EventSetter>
-              <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                  <Setter Property="Foreground" Value="DarkBlue"></Setter>
-                </Trigger>
-              </Style.Triggers>
-            </Style>
-          </DataGrid.RowStyle>
-          <DataGrid.RowHeaderWidth>0</DataGrid.RowHeaderWidth>
-          <DataGrid.GridLinesVisibility>None</DataGrid.GridLinesVisibility>
-          <DataGrid.IsReadOnly>False</DataGrid.IsReadOnly>
-          <DataGrid.CanUserAddRows>False</DataGrid.CanUserAddRows>
-          <DataGrid.CanUserDeleteRows>False</DataGrid.CanUserDeleteRows>
-          <DataGrid.CanUserResizeRows>False</DataGrid.CanUserResizeRows>
-          <DataGrid.Background>Transparent</DataGrid.Background>
-          <DataGrid.Columns>
-            <DataGridTextColumn Header="Name" Width="280" Binding="{Binding Name, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTextColumn Header="Author" Width="200" Binding="{Binding Author, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTextColumn Header="Status" Width="*" Binding="{Binding StatusText, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTextColumn Header="From" Width="80" Binding="{Binding Service, Mode=OneWay}"></DataGridTextColumn>
-            <DataGridTemplateColumn Width="25" CanUserResize="False">
-              <DataGridTemplateColumn.CellTemplate>
-                <DataTemplate>
-                  <Image HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image.Style>
-                      <Style TargetType="Image">
-                        <Setter Property="Source" Value="pack://application:,,,/icons/okay.png" />
-                        <Style.Triggers>
-                          <DataTrigger Binding="{Binding StatusIcon}" Value="None">
-                            <Setter Property="Visibility" Value="Hidden" />
-                          </DataTrigger>
-                          <DataTrigger Binding="{Binding StatusIcon}" Value="Error">
-                            <Setter Property="Source" Value="pack://application:,,,/icons/error.png" />
-                          </DataTrigger>
-                          <DataTrigger Binding="{Binding StatusIcon}" Value="Warning">
-                            <Setter Property="Source" Value="pack://application:,,,/icons/warning.png" />
-                          </DataTrigger>
-                        </Style.Triggers>
-                      </Style>
-                    </Image.Style>
-                  </Image>
-                </DataTemplate>
-              </DataGridTemplateColumn.CellTemplate>
-            </DataGridTemplateColumn>
-            <DataGridTemplateColumn Width="230" CanUserResize="False">
-              <DataGridTemplateColumn.CellTemplate>
-                <DataTemplate>
-                  <Grid>
-                    <Grid.ColumnDefinitions>
-                      <ColumnDefinition Width="190"></ColumnDefinition>
-                      <ColumnDefinition Width="30"></ColumnDefinition>
-                      <ColumnDefinition Width="8"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Button  Style="{StaticResource OwlButton}" Height="30" IsEnabled="{Binding CanInstallOrDownload}" Content="{Binding ButtonText}" Click="InstallOrUpdateMod" Tag="{Binding}">
-                    </Button>
-                    <Button Grid.Column="1" x:Name="MoreOptions" Style="{StaticResource OwlButton}"  Height="30"  Content="..." Tag="{Binding}" Click="MoreOptions_Click">
-                      <Button.ContextMenu>
-                        <ContextMenu Style="{StaticResource OwlContextMenu}">
-                          <MenuItem Header="Show description" Click="ShowModDescription"></MenuItem>
-                          <MenuItem Header="Show changelog" Click="ShowModChangelog"></MenuItem>
-                          <MenuItem Header="Open homepage" Visibility="{Binding HomepageVisibility}" Click="OpenHomepage"></MenuItem>
-                          <MenuItem Header="Uninstall" Visibility="{Binding UninstallVisibility}" Click="UninstallMod"></MenuItem>
-                          <MenuItem Header="Rollback" Visibility="{Binding RollbackVisibility}" Click="Rollback"></MenuItem>
-                        </ContextMenu>
-                      </Button.ContextMenu>
-                    </Button>
-                  </Grid>
-                </DataTemplate>
-              </DataGridTemplateColumn.CellTemplate>
-              <DataGridTemplateColumn.Header>
-                <TextBlock Text="{Binding DataContext.HeaderNameText, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"></TextBlock>
-              </DataGridTemplateColumn.Header>
-            </DataGridTemplateColumn>
-          </DataGrid.Columns>
-        </DataGrid>
-      </DockPanel>
-    </DockPanel>
-    <local:NonTopPopup
+        <local:NonTopPopup
             x:Name="DescriptionPopup"
             MinWidth="900" MinHeight="600" MaxWidth="900" MaxHeight="600"
             PlacementTarget="{Binding ElementName=root}" Placement="Center"
             AllowsTransparency="True" PopupAnimation="Fade">
-      <DockPanel>
-        <DockPanel DockPanel.Dock="Top" Height="32">
-          <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32" Height="32">
-            <Rectangle.Fill>
-              <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0,0.05,0.05" />
-            </Rectangle.Fill>
-          </Rectangle>
-          <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32" Height="32">
-            <Rectangle.Fill>
-              <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0,0.05,0.05" />
-            </Rectangle.Fill>
-          </Rectangle>
-          <Rectangle SnapsToDevicePixels="True" Height="32">
-            <Rectangle.Fill>
-              <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0,0.9,0.05" />
-            </Rectangle.Fill>
-          </Rectangle>
-        </DockPanel>
-        <DockPanel DockPanel.Dock="Bottom" Height="32">
-          <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32" Height="32">
-            <Rectangle.Fill>
-              <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0.95,0.05,0.05" />
-            </Rectangle.Fill>
-          </Rectangle>
-          <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32" Height="32">
-            <Rectangle.Fill>
-              <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0.95,0.05,0.05" />
-            </Rectangle.Fill>
-          </Rectangle>
-          <Rectangle SnapsToDevicePixels="True" Height="32">
-            <Rectangle.Fill>
-              <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0.95,0.9,0.05" />
-            </Rectangle.Fill>
-          </Rectangle>
-        </DockPanel>
-        <DockPanel>
-          <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32">
-            <Rectangle.Fill>
-              <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0.05,0.05,0.9" />
-            </Rectangle.Fill>
-          </Rectangle>
-          <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32">
-            <Rectangle.Fill>
-              <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0.05,0.05,0.90" />
-            </Rectangle.Fill>
-          </Rectangle>
-          <DockPanel>
-            <DockPanel.Background>
-              <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0.05,0.9,0.9" />
-            </DockPanel.Background>
             <DockPanel>
-              <DockPanel DockPanel.Dock="Top">
-                <Button x:Name="closePopup" DockPanel.Dock="Right" Width="24" Height="24" Style="{StaticResource CloseButton}" Click="ClosePopup_Click"></Button>
-                <TextBlock Text="{Binding Name}" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" Margin="10"></TextBlock>
-              </DockPanel>
-              <!--<ScrollViewer>-->
-              <!--<TextBox IsReadOnly="True" Text="{Binding DescriptionAsText, Mode=OneWay}" FontSize="16" TextWrapping="WrapWithOverflow" Background="Transparent" BorderThickness="0"></TextBox>-->
-              <FlowDocumentScrollViewer x:Name="Contents" FontSize="16" Background="Transparent" BorderThickness="0"></FlowDocumentScrollViewer>
-              <!--</ScrollViewer>-->
+                <DockPanel DockPanel.Dock="Top" Height="32">
+                    <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32" Height="32">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0,0.05,0.05" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32" Height="32">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0,0.05,0.05" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle SnapsToDevicePixels="True" Height="32">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0,0.9,0.05" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Bottom" Height="32">
+                    <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32" Height="32">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0.95,0.05,0.05" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32" Height="32">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0.95,0.05,0.05" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle SnapsToDevicePixels="True" Height="32">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0.95,0.9,0.05" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </DockPanel>
+                <DockPanel>
+                    <Rectangle DockPanel.Dock="Left" SnapsToDevicePixels="True" Width="32">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0,0.05,0.05,0.9" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle DockPanel.Dock="Right" SnapsToDevicePixels="True" Width="32">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.95,0.05,0.05,0.90" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <DockPanel>
+                        <DockPanel.Background>
+                            <ImageBrush ImageSource="pack://application:,,,/icons/background.png" Viewbox="0.05,0.05,0.9,0.9" />
+                        </DockPanel.Background>
+                        <DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <Button x:Name="closePopup" DockPanel.Dock="Right" Width="24" Height="24" Style="{StaticResource CloseButton}" Click="ClosePopup_Click"></Button>
+                                <TextBlock Text="{Binding Name}" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" Margin="10"></TextBlock>
+                            </DockPanel>
+                            <!--<ScrollViewer>-->
+                            <!--<TextBox IsReadOnly="True" Text="{Binding DescriptionAsText, Mode=OneWay}" FontSize="16" TextWrapping="WrapWithOverflow" Background="Transparent" BorderThickness="0"></TextBox>-->
+                            <FlowDocumentScrollViewer x:Name="Contents" FontSize="16" Background="Transparent" BorderThickness="0"></FlowDocumentScrollViewer>
+                            <!--</ScrollViewer>-->
+                        </DockPanel>
+                    </DockPanel>
+                </DockPanel>
             </DockPanel>
-          </DockPanel>
-        </DockPanel>
-      </DockPanel>
-    </local:NonTopPopup>
-  </DockPanel>
+        </local:NonTopPopup>
+    </DockPanel>
 </Window>
