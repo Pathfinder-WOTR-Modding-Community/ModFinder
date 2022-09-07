@@ -1020,47 +1020,6 @@
     ]
   },
   {
-    "Name": "Mythic Arcanist",
-    "Author": "Llisandur",
-    "Id": {
-      "Id": "MythicArcanist",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Llisandur",
-        "RepoName": "MythicArcanist",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.3.0",
-        "Url": "https://github.com/Llisandur/MythicArcanist/releases/download/1.3.0/MythicArcanist.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.3.0",
-          "Url": null,
-          "Changelog": "Added two-weapon warrior fighter archetype.\nAdded martial training and greater martial training arcanist exploits.\nAdded greater magic missile and mastered magic missile spells.\nAdded paladin spell selection to loremaster secret."
-        },
-        {
-          "Version": "1.2.0",
-          "Url": null,
-          "Changelog": "[1.2.0]\nInitial release version.\n\n- Adds Abundant Preparation/Improved/Greater\n- Adds Force Armor\n- Adds Mage Armor II/III/IV\n- Adds Shield II\n- Adds scrolls for each spell and adds them to scroll scribing and presumably appropriate vendors."
-        }
-      ]
-    },
-    "Description": null,
-    "HomepageUrl": "https://github.com/Llisandur/MythicArcanist",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
-  },
-  {
     "Name": "Mythic Spellbook Tweaks",
     "Author": "Vek17",
     "Id": {
