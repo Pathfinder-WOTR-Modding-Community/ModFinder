@@ -202,7 +202,7 @@ namespace ModFinder.Mod
       {
         
         var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits"));
-        int i = enumeratedFolders.Where(a => a.StartsWith("ModFinderPortrait_")).Count();
+        int i = enumeratedFolders.Where(a => a.Contains("ModFinderPortrait_")).Count();
         var PortraitFolder = Path.Combine(Main.WrathDataDir,"Portraits");
         var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
         zip.ExtractToDirectory(tmpFolder);
@@ -221,7 +221,11 @@ namespace ModFinder.Mod
           }
 
           sb.Insert(0, "ModFinderPortrait_");
-          Directory.Move(portraitFolder, Path.Combine(PortraitFolder, sb.ToString()));
+          var earMark = new PortraitEarmark(path.Split('\\').Last());
+          
+          var newPortraitFolderPath = Path.Combine(PortraitFolder, sb.ToString());
+          Directory.Move(portraitFolder, newPortraitFolderPath);
+          ModFinder.Util.IOTool.Write(earMark,Path.Combine(newPortraitFolderPath,"Earmark.json"));
           i++;
         }
         Directory.Delete(tmpFolder);
