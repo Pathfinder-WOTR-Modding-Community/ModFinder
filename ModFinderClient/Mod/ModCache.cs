@@ -103,7 +103,7 @@ namespace ModFinder.Mod
         throw new InvalidOperationException($"{mod.Type} is not supported");
       }*/
 
-      if (cache)
+      if (cache) //dont know how to do caching for the portraits, mby wolfie or bubbles can do?
       {
         var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);
         if (Directory.Exists(cachePath))
@@ -123,7 +123,26 @@ namespace ModFinder.Mod
       }
 
       Logger.Log.Info($"Uninstalling {mod.Name}");
-      Directory.Delete(mod.ModDir.FullName, true);
+      if (mod.ModId.Type == ModType.Portrait)
+      {
+        foreach (var folder in Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits")))
+        {
+          var earmarkPath = Path.Combine(folder, "Earmark.json");
+          if (File.Exists(earmarkPath))
+          {
+            var earmark = IOTool.Read<PortraitEarmark>(earmarkPath);
+            if (earmark.ModID == mod.ModId.Id)
+            {
+              Directory.Delete(folder,true);
+            }
+          }
+        }
+      }
+      else
+      {
+        Directory.Delete(mod.ModDir.FullName, true); 
+      }
+      
     }
 
     private static void Evict(ModId id, string cacheDir = null)
