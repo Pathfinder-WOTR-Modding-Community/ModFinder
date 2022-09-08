@@ -1,6 +1,22 @@
 [
   // Please keep sorted by Name.
-
+  
+  {
+    "Name": "Allow Modded Achievements",
+    "Author": "Xenofell",
+    "Id": {
+      "Id": "AllowModdedAchievements",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "119"
+      }
+    },
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119",
+    "Tags": [ "Miscellaneous", "Utilities" ]
+  },
+  
   {
     "Name": "Auto Mount",
     "Author": "zepheon",
