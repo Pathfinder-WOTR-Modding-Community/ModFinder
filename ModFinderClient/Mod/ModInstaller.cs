@@ -109,6 +109,8 @@ namespace ModFinder.Mod
       else return ModType.Portrait;
     }
 
+    public const string modFinderPrefix = "ModFinderPortrait_";
+
     public static async Task<InstallResult> InstallFromZip(
       string path, ModViewModel viewModel = null, bool isUpdate = false)
     {
@@ -142,7 +144,8 @@ namespace ModFinder.Mod
         case ModType.Owlcat:
           {
             var manifestEntry =
-              zip.Entries.FirstOrDefault(e => e.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
+              zip.Entries.FirstOrDefault(e =>
+                e.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
 
             if (manifestEntry is null)
             {
@@ -158,6 +161,7 @@ namespace ModFinder.Mod
               viewModel = new(manifest);
               ModDatabase.Instance.Add(viewModel);
             }
+
             Main.OwlcatMods.Add(OwlcatManifest.UniqueName);
 
             break;
@@ -186,7 +190,7 @@ namespace ModFinder.Mod
         ModCache.Uninstall(viewModel);
       }
 
-      
+
       var destination = GetModpath(modType);
       //  if (manifestEntry.FullName == manifestEntry.Name) ZIP can have different name from mod ID
       {
@@ -200,32 +204,28 @@ namespace ModFinder.Mod
       }
       else
       {
-        
         var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits"));
         int i = enumeratedFolders.Where(a => a.Contains("ModFinderPortrait_")).Count();
-        var PortraitFolder = Path.Combine(Main.WrathDataDir,"Portraits");
+        var PortraitFolder = Path.Combine(Main.WrathDataDir, "Portraits");
         var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
         zip.ExtractToDirectory(tmpFolder);
         if (Directory.EnumerateDirectories(tmpFolder).Count() <= 1)
         {
           tmpFolder = Path.Combine(tmpFolder, "Portraits");
         }
+
         //var folderToEnumerate = zip.Entries.Count > 1 ? zip.Entries : zip.Entries.FirstOrDefault(a => a.Name == "Portraits");
         foreach (var portraitFolder in Directory.EnumerateDirectories(tmpFolder))
         {
-          //var foldername = i.ToString();
-          var sb = new StringBuilder(i.ToString(),22);
-          for (int y = sb.Length; sb.Length < 4; y++)
+          var builtString = modFinderPrefix+Guid.NewGuid();
+          var earMark = new PortraitEarmark(path.Split('\\').Last()); //Put modid here
+          while (Directory.Exists(builtString))
           {
-            sb.Insert(0,'0');
+            builtString = modFinderPrefix + Guid.NewGuid();
           }
-
-          sb.Insert(0, "ModFinderPortrait_");
-          var earMark = new PortraitEarmark(path.Split('\\').Last());
-          
-          var newPortraitFolderPath = Path.Combine(PortraitFolder, sb.ToString());
+          var newPortraitFolderPath = Path.Combine(PortraitFolder, builtString);
           Directory.Move(portraitFolder, newPortraitFolderPath);
-          ModFinder.Util.IOTool.Write(earMark,Path.Combine(newPortraitFolderPath,"Earmark.json"));
+          ModFinder.Util.IOTool.Write(earMark, Path.Combine(newPortraitFolderPath, "Earmark.json"));
           i++;
         }
         Directory.Delete(tmpFolder);
