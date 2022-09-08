@@ -54,11 +54,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "4.0.2",
-        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1684",
+        "Version": "4.0.4",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1696",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "4.0.4",
+          "Url": null,
+          "Changelog": "Fixed caster detail popup thingie"
+        },
         {
           "Version": "4.0.2",
           "Url": null,
@@ -78,11 +83,6 @@
           "Version": "3.8.0",
           "Url": null,
           "Changelog": "Update to 1.3"
-        },
-        {
-          "Version": "3.7.0",
-          "Url": null,
-          "Changelog": "Hopefully fix enduring and other weirdness with touch-spells\nAdd a \"sort by name\" option"
         }
       ]
     },
