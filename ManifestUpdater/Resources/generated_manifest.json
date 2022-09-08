@@ -242,46 +242,6 @@
     ]
   },
   {
-    "Name": "Combat Relief (Updated)",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "AlterAsc.CombatRelief",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "CombatRelief",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.3.1",
-        "Url": "https://github.com/alterasc/CombatRelief/releases/download/1.3.1/CombatRelief-1.3.1.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.3.1",
-          "Url": null,
-          "Changelog": "Makes mod settings save/load properly.\n\nApologies for rushed 1.3.0 release."
-        },
-        {
-          "Version": "1.3.0",
-          "Url": null,
-          "Changelog": "Fork of [Combat Relief](https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/40) updated to work on 1.4.0\n\n**UNINSTALL EXISTING 1.2.1 VERSION BEFORE INSTALLING THIS ONE**\n\nEdit: replaced with version 1.3.1 where I fixed the saving/loading of mod settings (that I introduced)"
-        }
-      ]
-    },
-    "Description": "Fork of popular Combat Relief mod, updated to work with 1.4.0",
-    "HomepageUrl": "https://github.com/alterasc/CombatRelief",
-    "Tags": [
-      "Gameplay"
-    ]
-  },
-  {
     "Name": "Damage Breakdown",
     "Author": "abias1122",
     "Id": {
@@ -708,11 +668,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.1.2",
-        "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.2/MewsiferConsole.1.1.2.zip",
+        "Version": "1.1.3",
+        "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.3/MewsiferConsole.1.1.3.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.1.3",
+          "Url": null,
+          "Changelog": "- Restored the mysterious, missing EXE"
+        },
         {
           "Version": "1.1.2",
           "Url": null,
@@ -758,11 +723,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.1.2",
-        "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.2/MewsiferConsole.Menu.1.1.2.zip",
+        "Version": "1.1.3",
+        "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.3/MewsiferConsole.Menu.1.1.3.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.1.3",
+          "Url": null,
+          "Changelog": "- Restored the mysterious, missing EXE"
+        },
         {
           "Version": "1.1.2",
           "Url": null,
