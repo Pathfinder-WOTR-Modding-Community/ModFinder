@@ -952,6 +952,44 @@
     ]
   },
   {
+    "Name": "More Relic Info",
+    "Author": "zesen",
+    "Id": {
+      "Id": "More Relic Info",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": null,
+      "Nexus": {
+        "ModID": 200
+      }
+    },
+    "Version": {
+      "Latest": {
+        "Version": "0.2.2",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/200?tab=files&file_id=1488",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "0.2.2",
+          "Url": null,
+          "Changelog": "Patch compatibility with 1.3.0k."
+        },
+        {
+          "Version": "0.1.0",
+          "Url": null,
+          "Changelog": "Initial version."
+        }
+      ]
+    },
+    "Description": "[b]Summary[/b]\n<br />\n<br />A simple mod to show possible items from the very first relic project card. No more wasting time on relic projects hoping you will get some useful item in the end, now you can see all options from the very beginning! \n<br />\n<br />Also has an option to disable automatic pop-ups of completed projects in kingdom management (disabled by default, can be enabled from the UMM mod menu,  default ctrl+F10). This was added to address a bug in 1.1 beta, which prevented the game from progressing.\n<br />\n<br />[b]Important notice: [/b]This mod sometimes disables relic card texts after a game patch, and it needs to be built against the new binaries each time. If you already have the Toy Box mod, this mod was integrated into it some time ago, and that mod is probably getting more regular updates than I can provide; so I recommend enabling relic information from there if you are already using it. Still, I will try to post updates to this mod when I can.\n<br />\n<br />[b]Updates[/b]\n<br />[b]0.2.2[/b]\n<br />- Patch compatibility with 1.3.0k.\n<br />[b] 0.2.1[/b]\n<br />- Patch compatibility with 1.1.0k - relic cards were missing their text when opened.\n<br />\n<br />[b]Installation[/b]\n<br />\n<br />[list=1]\n<br />[*]Install the latest version of [url=https://www.nexusmods.com/site/mods/21/]Unity Mod Manager[/url] (UMM), and set it up for Pathfinder: WotR[b].[/b]\n<br />[*]Manually download the mod archive (.zip), and install it through UMM. You can simply drag &amp; drop the archive to the box in UMM.\n<br />[/list]\n<br />You are set! The game should show the installed mods at the main menu.\n<br />\n<br />Note that using mods disables Steam achievements. You can re-enable them with [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119]this mod[/url]﻿ (at least at the time of writing this).\n<br />\n<br />[b]\n<br />Other Information[/b]\n<br />\n<br />The mod does not change any files, so it should be compatible with most other mods and should not mess with your save games. That being said, use it at your own risk.\n<br />\n<br />Although I try my best to avoid bugs, and the changes are quite simple, they might still exist... All bug reports and constructive feedback are welcome!\n<br />\n<br />Source files are in the files section.\n<br />\n<br />[b]Kudos[/b]\n<br />- [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/users/943197]TheLich[/url] for providing an updated version of the mod while I was away.\n<br />- [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/users/37868990]SirMadjesty[/url] for checking compatibility with one of the patches.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/200",
+    "Tags": [
+      "UserInterface"
+    ]
+  },
+  {
     "Name": "Multiple Archetypes",
     "Author": "Vek17",
     "Id": {
