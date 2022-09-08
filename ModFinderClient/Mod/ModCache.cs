@@ -98,29 +98,9 @@ namespace ModFinder.Mod
 
     public static void Uninstall(ModViewModel mod, bool cache = true)
     {
-      /*if (mod.Type != ModType.UMM)
-      {
-        throw new InvalidOperationException($"{mod.Type} is not supported");
-      }*/
 
-      if (cache) //dont know how to do caching for the portraits, mby wolfie or bubbles can do?
-      {
-        var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);
-        if (Directory.Exists(cachePath))
-        {
-          Logger.Log.Warning($"Cache already exists for {mod.Name} at {cachePath}, deleting it");
-          Directory.Delete(cachePath, true);
-        }
-        if (CachedMods.ContainsKey(mod.ModId))
-          CachedMods.Remove(mod.ModId);
-
-        Logger.Log.Info($"Caching {mod.Name} at {cachePath} before uninstall");
-        FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);
-
-        var cachedMod = new CachedMod(mod.ModId, cachePath, DateTime.Now.Ticks);
-        CachedMods.Add(mod.ModId, cachedMod);
-        IOTool.Safe(UpdateManifest);
-      }
+      if (cache)
+        Cache(mod);
 
       Logger.Log.Info($"Uninstalling {mod.Name}");
       if (mod.ModId.Type == ModType.Portrait)
@@ -143,6 +123,25 @@ namespace ModFinder.Mod
         Directory.Delete(mod.ModDir.FullName, true); 
       }
       
+    }
+
+    public static void Cache(ModViewModel mod)
+    {
+      var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);
+      if (Directory.Exists(cachePath))
+      {
+        Logger.Log.Warning($"Cache already exists for {mod.Name} at {cachePath}, deleting it");
+        Directory.Delete(cachePath, true);
+      }
+      if (CachedMods.ContainsKey(mod.ModId))
+        CachedMods.Remove(mod.ModId);
+
+      Logger.Log.Info($"Caching {mod.Name} at {cachePath}");
+      FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);
+
+      var cachedMod = new CachedMod(mod.ModId, cachePath, DateTime.Now.Ticks);
+      CachedMods.Add(mod.ModId, cachedMod);
+      IOTool.Safe(UpdateManifest);
     }
 
     private static void Evict(ModId id, string cacheDir = null)
