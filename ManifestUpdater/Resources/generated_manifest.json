@@ -1,5 +1,39 @@
 [
   {
+    "Name": "Allow Modded Achievements",
+    "Author": "Xenofell",
+    "Id": {
+      "Id": "AllowModdedAchievements",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": null,
+      "Nexus": {
+        "ModID": 119
+      }
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.0.1",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119?tab=files&file_id=478",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.0.1",
+          "Url": null,
+          "Changelog": "Fixed crash when loading a save that has already been flagged as modded."
+        }
+      ]
+    },
+    "Description": "[b]Allow Modded Achievements[/b]\n<br />\n<br />By default, modded games may not get achievements and their saved games are flagged as being modded. This mod disables the mod tracking functionality so you can gain achievements again.\n<br />\n<br />There are many quality of life mods that do not impact balance which should not block achievements. Please do not use this mod to cheat.\n<br />\n<br />[b]How to install[/b]\n<br />\n<br />0. Download the latest published zip file.\n<br />1. Install[url=https://www.nexusmods.com/site/mods/21] UnityModManager[/url]\n<br />2. Install the zip with UnityModManager.\n<br />\n<br />[b]Links[/b]\n<br />\n<br />Source code: [url=https://github.com/cstamford/WOTR_AllowModdedAchievements]https://github.com/cstamford/WOTR_AllowModdedAchievements[/url]",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119",
+    "Tags": [
+      "Miscellaneous",
+      "Utilities"
+    ]
+  },
+  {
     "Name": "Auto Mount",
     "Author": "zepheon",
     "Id": {
