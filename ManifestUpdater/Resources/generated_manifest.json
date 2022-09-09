@@ -1345,14 +1345,14 @@
           "Changelog": "* Adds tool tips\n* Fixes Toybox color conflict"
         },
         {
-          "Version": "0.1.4",
-          "Url": null,
-          "Changelog": "Fixed issue with pick up an item type for the first time displaying as if you do not have any of those items."
-        },
-        {
           "Version": "0.1.3",
           "Url": null,
           "Changelog": "* Fixed bug where wrong spell casting from additional menu"
+        },
+        {
+          "Version": "0.1.2",
+          "Url": null,
+          "Changelog": "* Added additional window will pop up on the left side of the window when main window is on right side of screen."
         }
       ]
     },
@@ -1775,11 +1775,6 @@
           "Version": "1.0.1",
           "Url": null,
           "Changelog": "Support for update 1.3.0"
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": ""
         }
       ]
     },
@@ -1818,11 +1813,6 @@
           "Changelog": ">Fixed for game version 1.4.0y"
         },
         {
-          "Version": "1.0.6",
-          "Url": null,
-          "Changelog": "Fixed it not working on the overworld map and when the doll UI would get stuck on the screen sometimes."
-        },
-        {
           "Version": "1.0.5",
           "Url": null,
           "Changelog": ">Added an option to hide Mythic Visuals\n>Fixed a bug where Per-Character Buff profiles wouldnt save."
@@ -1836,6 +1826,11 @@
           "Version": "1.0.3",
           "Url": null,
           "Changelog": ">Fixed an issue where the portrait picker would fail to function in certain circumstances."
+        },
+        {
+          "Version": "1.0.2",
+          "Url": null,
+          "Changelog": ">Fixed an issue where part of the doll UI would be superimposed over the rest of the UI under certain circumstances"
         }
       ]
     },
