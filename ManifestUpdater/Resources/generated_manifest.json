@@ -251,11 +251,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.1.1",
-        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.1.1/CharacterOptionsPlus.0.1.1.zip",
+        "Version": "0.1.2",
+        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.1.2/CharacterOptionsPlus.0.1.2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.1.2",
+          "Url": null,
+          "Changelog": "- Fix a bug causing Furious Focus bonus to show but not apply"
+        },
         {
           "Version": "0.1.1",
           "Url": null,
