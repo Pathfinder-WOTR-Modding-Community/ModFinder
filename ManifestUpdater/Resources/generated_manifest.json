@@ -1807,11 +1807,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.7",
-        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.7/VisualAdjustments2.zip",
+        "Version": "1.0.8",
+        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.8/VisualAdjustments2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.0.8",
+          "Url": null,
+          "Changelog": "Fixed the \"Fix Scale\" & the \"Global buff profile\" buttons."
+        },
         {
           "Version": "1.0.7",
           "Url": null,
@@ -1831,11 +1836,6 @@
           "Version": "1.0.4",
           "Url": null,
           "Changelog": ">Fixed an issue where the \"Fix Scale\" button had inverted function (this also caused an issue where Drake companions from Expanded Content would be huge)"
-        },
-        {
-          "Version": "1.0.3",
-          "Url": null,
-          "Changelog": ">Fixed an issue where the portrait picker would fail to function in certain circumstances."
         }
       ]
     },
