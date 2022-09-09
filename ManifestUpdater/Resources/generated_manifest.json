@@ -1226,42 +1226,6 @@
     ]
   },
   {
-    "Name": "PATH OF RAGE",
-    "Author": "Balkoth",
-    "Id": {
-      "Id": "WOTR_PATH_OF_RAGE",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Balkoth-dev",
-        "RepoName": "WOTR_PATH_OF_RAGE",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.0.7",
-        "Url": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE/releases/download/1.0.7/WOTR_PATH_OF_RAGE.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.0.7",
-          "Url": null,
-          "Changelog": "How to Install\n\nDownload and install Unity Mod Manager, make sure it is at least version 0.23.0\nRun Unity Mod Manger and set it up to find Wrath of the Righteous\nDownload the WOTR_PATH_OF_RAGE mod\nInstall the mod by dragging the zip file from step 3 into the Unity Mod Manager window under the Mods tab\n\nChanges in this version:\n* Carnage Incarnate's vulnerability removed\n* Carnage Incarnate's debuff will now deal 1d6 damage whenever attacked with a weapon.\n* Carnage Incarnate's explosion radius increased from 5 feet to 10 feet.\n* DEMONIC SMASH's radius increased from 5 feet to 10 feet."
-        }
-      ]
-    },
-    "Description": "A mod of Owlcat's Pathfinder: Wrath of the Righteous",
-    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
-  },
-  {
     "Name": "Puzzle Skip",
     "Author": "Arkive",
     "Id": {
