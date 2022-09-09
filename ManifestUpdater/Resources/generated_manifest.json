@@ -235,6 +235,47 @@
     ]
   },
   {
+    "Name": "Character Options+",
+    "Author": "WittleWolfie",
+    "Id": {
+      "Id": "CharacterOptionsPlus",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "WittleWolfie",
+        "RepoName": "CharacterOptionsPlus",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "0.1.1",
+        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.1.1/CharacterOptionsPlus.0.1.1.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "0.1.1",
+          "Url": null,
+          "Changelog": "- Adds button to options to restore default settings"
+        },
+        {
+          "Version": "0.1.0",
+          "Url": null,
+          "Changelog": "Initial release:\n\n- Hurtful\n- Furious Focus\n- Skald's Vigor"
+        }
+      ]
+    },
+    "Description": "Expanded character options for Pathfinder: Wrath of the Righteous",
+    "HomepageUrl": "https://github.com/WittleWolfie/CharacterOptionsPlus",
+    "Tags": [
+      "Content",
+      "Gameplay"
+    ]
+  },
+  {
     "Name": "Combat Relief (Updated)",
     "Author": "AlterAsc",
     "Id": {
