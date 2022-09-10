@@ -124,11 +124,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "4.1.3",
-        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1701",
+        "Version": "4.1.4",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1703",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "4.1.4",
+          "Url": null,
+          "Changelog": "Don't show dlc3 button when not in a dlc3 campaign"
+        },
         {
           "Version": "4.1.3",
           "Url": null,
@@ -148,11 +153,6 @@
           "Version": "4.0.2",
           "Url": null,
           "Changelog": "Move DLC3 icons around to not overlap the buff buttons"
-        },
-        {
-          "Version": "4.0.1",
-          "Url": null,
-          "Changelog": "Update for 1.4"
         }
       ]
     },
