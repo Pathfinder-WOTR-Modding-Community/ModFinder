@@ -35,6 +35,23 @@
   },
   
   {
+    "Name": "BOAT BOAT BOAT",
+    "Author": "Balkoth",
+    "Id": {
+      "Id": "WOTR_BOAT_BOAT_BOAT",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Balkoth-dev",
+        "RepoName": "WOTR_BOAT_BOAT_BOAT"
+      }
+    },
+    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+  
+  {
     "Name": "Bubble Buffs",
     "Author": "Bubbles",
     "Id": {
