@@ -88,11 +88,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "4.1.2",
-        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1700",
+        "Version": "4.1.3",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1701",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "4.1.3",
+          "Url": null,
+          "Changelog": "Fixes skidmark nonsense with instantaneous casting\nFixes variant casting for fully animated"
+        },
         {
           "Version": "4.1.2",
           "Url": null,
@@ -112,11 +117,6 @@
           "Version": "4.0.1",
           "Url": null,
           "Changelog": "Update for 1.4"
-        },
-        {
-          "Version": "3.8.1",
-          "Url": null,
-          "Changelog": "Fix for Brown Fur nonsense, many thanks to: https://github.com/data-abort"
         }
       ]
     },
