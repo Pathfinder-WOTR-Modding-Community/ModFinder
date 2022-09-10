@@ -406,11 +406,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.3.24",
-        "Url": "https://github.com/Truinto/DarkCodex/releases/download/v1.3.24/DarkCodex.zip",
+        "Version": "1.4.1",
+        "Url": "https://github.com/Truinto/DarkCodex/releases/download/v1.4.1/DarkCodex.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.4.1",
+          "Url": null,
+          "Changelog": "[1.4.1]\n- fixed serialization issue\n- fixed auto metakinesis applying maximized before level 9\n- added Prodigious Two-Weapon Fighting feat\n- fixed selective metakinesis not applying to some area blasts and applying to single target blasts\n- fixed missing talents and mastery when picking the same kineticist element focus multiple times"
+        },
         {
           "Version": "1.4.0",
           "Url": null,
@@ -430,11 +435,6 @@
           "Version": "1.3.22",
           "Url": null,
           "Changelog": "[1.3.22]\n- added infusion Kinetic Fist\n- added infusion Energize Weapon\n- fixed Spell Perfection not working with Spell Specialization and some interactions with TableTopTweaks\n- fixed Metamagic Master &co not working with Bladed Dash\n- added Hexcrafter to Cursing Gaze"
-        },
-        {
-          "Version": "1.3.21",
-          "Url": null,
-          "Changelog": "[1.3.21]\n- changed bonus Ability Range to a 3% bonus per level, reducing overall bonus range (before +5 ft per two levels)\n- fixed expanded element with 3rd party elements"
         }
       ]
     },
