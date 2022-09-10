@@ -58,9 +58,8 @@
       "Type": "UMM"
     },
     "Service": {
-      "GitHub": {
-        "Owner": "factubsio",
-        "RepoName": "BubbleTweaks"
+      "Nexus": {
+        "ModID": "177",
       }
     },
     "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
