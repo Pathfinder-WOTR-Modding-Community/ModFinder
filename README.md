@@ -104,4 +104,4 @@ You guessed it: file an [issue](https://github.com/Pathfinder-WOTR-Modding-Commu
 ## Interested in modding?
 
 * Check out the [OwlcatModdingWiki](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki).
-* Join us on [Discord](https://discord.com/invite/wotr).
+* Join us on [Discord](https://discord.com/invite/owlcat).
