@@ -88,11 +88,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "4.0.4",
-        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1696",
+        "Version": "4.1.2",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1700",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "4.1.2",
+          "Url": null,
+          "Changelog": "Arcane pool is tracked better now, thank you very much to Bobster1246\nFull animation option\nPrepared variants should be fixed now"
+        },
         {
           "Version": "4.0.4",
           "Url": null,
@@ -112,11 +117,6 @@
           "Version": "3.8.1",
           "Url": null,
           "Changelog": "Fix for Brown Fur nonsense, many thanks to: https://github.com/data-abort"
-        },
-        {
-          "Version": "3.8.0",
-          "Url": null,
-          "Changelog": "Update to 1.3"
         }
       ]
     },
@@ -135,48 +135,46 @@
       "Type": "UMM"
     },
     "Service": {
-      "GitHub": {
-        "Owner": "factubsio",
-        "RepoName": "BubbleTweaks",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
+      "GitHub": null,
+      "Nexus": {
+        "ModID": 177
+      }
     },
     "Version": {
       "Latest": {
-        "Version": "1.15.0",
-        "Url": "https://github.com/factubsio/BubbleTweaks/releases/download/REL_1_15_0/BubbleTweaks-1.15.0.zip",
+        "Version": "1.16.0",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/177?tab=files&file_id=1672",
         "Changelog": ""
       },
       "VersionHistory": [
         {
           "Version": "1.15.0",
           "Url": null,
-          "Changelog": "For Wrath version 1.3"
+          "Changelog": "Update to 1.3"
         },
         {
           "Version": "1.14.3",
           "Url": null,
-          "Changelog": "fix army disband (and army info)"
-        },
-        {
-          "Version": "1.14.2",
-          "Url": null,
-          "Changelog": "fix json error"
-        },
-        {
-          "Version": "1.14.1",
-          "Url": null,
-          "Changelog": "hide unknown circles"
+          "Changelog": "fix army disband (and army info icon)"
         },
         {
           "Version": "1.14.0",
           "Url": null,
-          "Changelog": "**FOR RELEASE 1.2 ONLY**\n\n"
+          "Changelog": "Update to release 1.2"
+        },
+        {
+          "Version": "1.13.0",
+          "Url": null,
+          "Changelog": "Add circles"
+        },
+        {
+          "Version": "1.12.0",
+          "Url": null,
+          "Changelog": "Adds a \"Pause Fade Strength\" slider to the options menu - adjusts how strong the background fade effect is while paused."
         }
       ]
     },
-    "Description": "Non-gameplay tweaks for Pathfinder - Wrath of the Righteous",
+    "Description": "This mod does not aim to introduce any changes to the game balance or mecahnics.\n<br />It is purely quality of life features.\n<br />The mod should aim to fit into the base game without looking like a mod.\n<br />\n<br />[center][font=Comic Sans MS][size=6]ALL SETTINGS ARE IN THE OWLCAT SETTINGS WINDOW, [b]NOT [/b]UMM\n<br />[b]\n<br />[/b][/size][/font][b][font=Comic Sans MS][size=6]game version 1.2+ (release branch) =&gt; use mod version 1.14+[/size]\n<br />\n<br />[size=4]Dig through old versions if you are on an older game version[/size][/font][/b][/center]\n<br />The settings for this mod are under the Game tab in the normal owlcat settings window, not in unity mod manager. \n<br />\n<br />[b][size=4]FEATURES:\n<br />[/size][/b]\n<br />[list]\n<br />[*]Separate speed controls (NOT CHEATING) for:﻿   ﻿﻿\n<br />[list]\n<br />[*]Global map\n<br />[*]Combat\n<br />[*]Out of combat\n<br />[*]Tactical Combat (homm-minigame)\n<br />[/list][*]Army Disband button\n<br />[*]Jump to Siege button\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Adjustable \"fade\" strength for pause screen\n<br />[*]Marks area effects with a more visible circle and will indicate (in TBM) if a character will path over each area or not.\n<br />[/list][list]\n<br />[*]Map Info Panel - In GlobalMap mode, adds an expandable menu on the right hand side (under the mini-map), click on an entry to pan the map there:\n<br />[list]\n<br />[*]Shows all your villages\n<br />[*]Shows all invading armies\n<br />[*]Shows all locations with quests\n<br />[/list][*]Cursor Enhancements\n<br />[list]\n<br />[*]Customisable cursor scale for combat/non-combat cursors\n<br />[*]Customisable(ish) color for attack count text (white is sometimes real hard to see)\n<br />[/list][*]Character Statistics\n<br />[list]\n<br />[*]Each character will have a new tab 'statistics' in their character sheet\n<br />[*]It can only track stats while it's installed so sadly it won't retroactively find them\n<br />[/list][*]Enhanced Party View (Eight Characters)\n<br />[list]\n<br />[*]Enable in the Game Settings window (right at the bottom of the list)\n<br />[*]Restart the game (the application, not your save) after changing the setting for it to take effect\n<br />[*]You can't reorder pets by (owlcat's) design - it's possible to enable this but I need to confirm nothing else will break\n<br /> [/list][/list]\n<br />[b]Uninstall FastTravel before using this.[/b]\n<br />[list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list]",
     "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
     "Tags": [
       "Gameplay",
