@@ -22,6 +22,8 @@ A tool for browsing and managing Pathfinder: Wrath of the Righteous mods and the
 
 ### **You must have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed.**
 
+### You must have installed [UnityModManager](https://www.nexusmods.com/site/mods/21?tab=files&file_id=1639).
+
 ### If it doesn't work, see [Troubleshooting](#troubleshooting).
 
 Tips:
