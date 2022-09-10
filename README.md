@@ -22,7 +22,7 @@ A tool for browsing and managing Pathfinder: Wrath of the Righteous mods and the
 
 ### **You must have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed.**
 
-### You must have installed [UnityModManager](https://www.nexusmods.com/site/mods/21?tab=files&file_id=1639).
+### You must have installed [UnityModManager](https://www.nexusmods.com/site/mods/21).
 
 ### If it doesn't work, see [Troubleshooting](#troubleshooting).
 
@@ -72,6 +72,8 @@ File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/i
 
 ## Troubleshooting
 
+* Make sure you have [UnityModManager](https://www.nexusmods.com/site/mods/21) installed
+    * Run it and set it up for use with Wrath
 * Make sure you have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed
     * .NET 6.0 and soon .NET 7.0 should work as well, but if not try the link above
 * Try [running it as an Administrator](https://www.itechtics.com/run-programs-administrator/)
