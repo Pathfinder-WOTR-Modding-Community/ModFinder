@@ -218,57 +218,6 @@
     ]
   },
   {
-    "Name": "BugFixes",
-    "Author": "Bobster1246",
-    "Id": {
-      "Id": "BugFixes",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Bobster1246",
-        "RepoName": "BugFixes",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.0.4",
-        "Url": "https://github.com/Bobster1246/BugFixes/releases/download/1.0.4/BugFixes.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.0.4",
-          "Url": null,
-          "Changelog": "Fix for another body bug."
-        },
-        {
-          "Version": "1.0.3",
-          "Url": null,
-          "Changelog": "Lots of new fixes!\n\nFixes the radiance weapon, body buffs, and enduring spells for item enchantments."
-        },
-        {
-          "Version": "1.0.1",
-          "Url": null,
-          "Changelog": "Fix True Seeing and invisibility"
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "- Fixes the Brownfur Transmuter capstone"
-        }
-      ]
-    },
-    "Description": "A small mod for fixing bugs in WOTR",
-    "HomepageUrl": "https://github.com/Bobster1246/BugFixes",
-    "Tags": [
-      "Gameplay",
-      "Miscellaneous"
-    ]
-  },
-  {
     "Name": "Character Options+",
     "Author": "WittleWolfie",
     "Id": {
