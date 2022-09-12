@@ -315,46 +315,6 @@
     ]
   },
   {
-    "Name": "Combat Relief (Updated)",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "AlterAsc.CombatRelief",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "CombatRelief",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.3.1",
-        "Url": "https://github.com/alterasc/CombatRelief/releases/download/1.3.1/CombatRelief-1.3.1.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.3.1",
-          "Url": null,
-          "Changelog": "Makes mod settings save/load properly.\n\nApologies for rushed 1.3.0 release."
-        },
-        {
-          "Version": "1.3.0",
-          "Url": null,
-          "Changelog": "Fork of [Combat Relief](https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/40) updated to work on 1.4.0\n\n**UNINSTALL EXISTING 1.2.1 VERSION BEFORE INSTALLING THIS ONE**\n\nEdit: replaced with version 1.3.1 where I fixed the saving/loading of mod settings (that I introduced)"
-        }
-      ]
-    },
-    "Description": "Fork of popular Combat Relief mod, updated to work with 1.4.0",
-    "HomepageUrl": "https://github.com/alterasc/CombatRelief",
-    "Tags": [
-      "Gameplay"
-    ]
-  },
-  {
     "Name": "Damage Breakdown",
     "Author": "abias1122",
     "Id": {
@@ -1226,6 +1186,42 @@
     "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
     "Tags": [
       "Visuals"
+    ]
+  },
+  {
+    "Name": "PATH OF BLING",
+    "Author": "Balkoth",
+    "Id": {
+      "Id": "WOTR_PATH_OF_BLING",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Balkoth-dev",
+        "RepoName": "WOTR_PATH_OF_BLING",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.0.0",
+        "Url": "https://github.com/Balkoth-dev/WOTR_PATH_OF_BLING/releases/download/1.0.0/WOTR_PATH_OF_BLING.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.0.0",
+          "Url": null,
+          "Changelog": "How to Install\n\nDownload and install Unity Mod Manager, make sure it is at least version 0.23.0\nRun Unity Mod Manger and set it up to find Wrath of the Righteous\nDownload the WOTR_PATH_OF_RAGE mod\nInstall the mod by dragging the zip file from step 3 into the Unity Mod Manager window under the Mods tab\n\nChanges in this version:\n* Spell Damage Dice Progression is changed to work as written. In addition, if an enemy has any energy vulnerability they'll be vulnerable to the attack at mythic rank 10.\n* The golden dragon breath is now a move action instead of a standard and will scale damage off of your full mythic rank. Cooldown is negated when transformed into your gold dragon form.\n* The golden dragon breath's debuff will now stack.\n* Gives a unique icon to the Gold Dragon Form.\n* Gives the Gold Dragon Form a mythic bonus of plus two to all mental stats.\n* Gives a Gold Dragon a divine spontaneous spellbook."
+        }
+      ]
+    },
+    "Description": null,
+    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_BLING",
+    "Tags": [
+      "Content",
+      "Gameplay"
     ]
   },
   {
