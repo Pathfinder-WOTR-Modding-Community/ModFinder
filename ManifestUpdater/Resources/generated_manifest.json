@@ -931,47 +931,6 @@
     ]
   },
   {
-    "Name": "Mod Menu",
-    "Author": "WittleWolfie",
-    "Id": {
-      "Id": "ModMenu",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "WittleWolfie",
-        "RepoName": "ModMenu",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.1.0",
-        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.1.0/ModMenu.1.1.0.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.1.0",
-          "Url": null,
-          "Changelog": "- Settings groups are now collapsible\n    - By default group are collapsed\n- Added support for subheaders, creating smaller collapsible groups within a single group\n- Added support for a \"default\" button which restore all settings in a single group to their default value\n- Added support for specifying the height of an image"
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "Initial release"
-        }
-      ]
-    },
-    "Description": null,
-    "HomepageUrl": "https://github.com/WittleWolfie/ModMenu",
-    "Tags": [
-      "UserInterface",
-      "Utilities"
-    ]
-  },
-  {
     "Name": "More Bulk Sell",
     "Author": "zesen",
     "Id": {
