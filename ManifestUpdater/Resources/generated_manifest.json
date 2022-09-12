@@ -1194,6 +1194,41 @@
     ]
   },
   {
+    "Name": "No Film Grain",
+    "Author": "Hambeard",
+    "Id": {
+      "Id": "NoFilmGrainWrath",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "thehambeard",
+        "RepoName": "NoFilmGrainWrath",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.0.0",
+        "Url": "https://github.com/thehambeard/NoFilmGrainWrath/releases/download/v1.0/NoFilmGrainWrath.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.0.0",
+          "Url": null,
+          "Changelog": "Initial Release."
+        }
+      ]
+    },
+    "Description": null,
+    "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
+    "Tags": [
+      "Visuals"
+    ]
+  },
+  {
     "Name": "PATH OF BLING",
     "Author": "Balkoth",
     "Id": {
