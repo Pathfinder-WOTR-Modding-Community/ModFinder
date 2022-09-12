@@ -97,9 +97,9 @@ namespace ModFinder.Mod
           return Path.Combine(Main.WrathDataDir, "Modifications");
         case ModType.Portrait:
           return Path.Combine(Main.WrathDataDir, "Portraits");
+        default:
+          throw new Exception("Unrecognized Mod Type");
       }
-
-      throw new Exception("Unrecognized Mod Type");
     }
 
     private static ModType GetModTypeFromZIP(ZipArchive zip)
@@ -195,9 +195,12 @@ namespace ModFinder.Mod
       //  if (manifestEntry.FullName == manifestEntry.Name) ZIP can have different name from mod ID
       {
         Logger.Log.Verbose($"Creating mod directory. \"{destination}\"");
-        // Handle mods without a folder in the zipm
+        // Handle mods without a folder in the zip
         destination = modType == ModType.Portrait ? destination : Path.Combine(destination, info.ModId);
       }
+
+
+      //Non-portrait mods just extract to the destination directory
       if (modType != ModType.Portrait)
       {
         await Task.Run(() => zip.ExtractToDirectory(destination, true));
@@ -205,7 +208,6 @@ namespace ModFinder.Mod
       else
       {
         var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits"));
-        int i = enumeratedFolders.Where(a => a.Contains("ModFinderPortrait_")).Count();
         var PortraitFolder = Path.Combine(Main.WrathDataDir, "Portraits");
         var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
         zip.ExtractToDirectory(tmpFolder);
@@ -217,7 +219,7 @@ namespace ModFinder.Mod
         //var folderToEnumerate = zip.Entries.Count > 1 ? zip.Entries : zip.Entries.FirstOrDefault(a => a.Name == "Portraits");
         foreach (var portraitFolder in Directory.EnumerateDirectories(tmpFolder))
         {
-          var builtString = modFinderPrefix+Guid.NewGuid();
+          var builtString = modFinderPrefix + Guid.NewGuid();
           var earMark = new PortraitEarmark(path.Split('\\').Last()); //Put modid here
           while (Directory.Exists(builtString))
           {
@@ -226,7 +228,6 @@ namespace ModFinder.Mod
           var newPortraitFolderPath = Path.Combine(PortraitFolder, builtString);
           Directory.Move(portraitFolder, newPortraitFolderPath);
           ModFinder.Util.IOTool.Write(earMark, Path.Combine(newPortraitFolderPath, "Earmark.json"));
-          i++;
         }
         Directory.Delete(tmpFolder);
       }
