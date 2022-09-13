@@ -517,11 +517,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.73",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.73/ExpandedContent.zip",
+        "Version": "0.3.74",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.74/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.74",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.74\n\nAdded Spells\n-Stunning Finale\n-Purging Finale\n\nAdded Drake Variants\n-Bronze\n-Copper\n\nAdded art to all drake variants"
+        },
         {
           "Version": "0.3.73",
           "Url": null,
@@ -541,11 +546,6 @@
           "Version": "0.3.70",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.70\n\n-Enabled Groetus\n\nAdded Spells\n-Scourge of the Horsemen\n-Rigor Mortis"
-        },
-        {
-          "Version": "0.3.66",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.66\n\n-Added Draconic Shaman Archetype for Shaman\n-Improved Oathbreakers Direction stability.\n\nThanks to @LilBitRetro for helping me test.\n"
         }
       ]
     },
