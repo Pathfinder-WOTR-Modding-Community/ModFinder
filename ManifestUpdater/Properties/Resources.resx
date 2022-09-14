@@ -124,4 +124,8 @@
   <data name="Master_Manifest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\master_manifest.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="Generated_Manifest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\generated_manifest.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  
 </root>
