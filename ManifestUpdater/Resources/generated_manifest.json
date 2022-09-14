@@ -557,46 +557,6 @@
     ]
   },
   {
-    "Name": "Finnean Tweaks",
-    "Author": "Barley",
-    "Id": {
-      "Id": "FinneanTweaks",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "BarleyFlour",
-        "RepoName": "FinneanTweaks",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.0.1",
-        "Url": "https://github.com/BarleyFlour/FinneanTweaks/releases/download/v1.0.1/DownloadThis.-FinneanTweaks.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.0.1",
-          "Url": null,
-          "Changelog": "For Game Version 1.2.0\n\n>Removed Lethal enchant from tier 1.\n>Added Agile, Cruel, Disruption & Keen to tier 1.\n>Added Furyborn and Deteriorative to tier 2.\n>Moved Heartseeker & Improved critical multiplier from tier 2 to tier 1.\n"
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "Initial Release"
-        }
-      ]
-    },
-    "Description": null,
-    "HomepageUrl": "https://github.com/BarleyFlour/FinneanTweaks",
-    "Tags": [
-      "Gameplay"
-    ]
-  },
-  {
     "Name": "Kineticist Elements Expanded",
     "Author": "SpenceZilla",
     "Id": {
