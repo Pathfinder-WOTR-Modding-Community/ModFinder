@@ -22,6 +22,8 @@ A tool for browsing and managing Pathfinder: Wrath of the Righteous mods and the
 
 ### **You must have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed.**
 
+### You must have installed [UnityModManager](https://www.nexusmods.com/site/mods/21).
+
 ### If it doesn't work, see [Troubleshooting](#troubleshooting).
 
 Tips:
@@ -70,6 +72,8 @@ File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/i
 
 ## Troubleshooting
 
+* Make sure you have [UnityModManager](https://www.nexusmods.com/site/mods/21) installed
+    * Run it and set it up for use with Wrath
 * Make sure you have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed
     * .NET 6.0 and soon .NET 7.0 should work as well, but if not try the link above
 * Try [running it as an Administrator](https://www.itechtics.com/run-programs-administrator/)
@@ -94,10 +98,10 @@ You guessed it: file an [issue](https://github.com/Pathfinder-WOTR-Modding-Commu
 
 * Barley for starting this project in the first place ([ModFinder_WOTR](https://github.com/BarleyFlour/ModFinder_WOTR)) and working with Bubbles to complete like 80% before I decided to finish it
 * Bubbles for his excellent work on the UI styling and Barley for handling the GitHub action setup
-* The modding community on [Discord](https://discord.com/invite/wotr), an invaluable and supportive resource for help modding.
+* The modding community on [Discord](https://discord.com/invite/owlcat), an invaluable and supportive resource for help modding.
 * All the Owlcat modders who came before me, wrote documents, and open sourced their code.
 
 ## Interested in modding?
 
 * Check out the [OwlcatModdingWiki](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki).
-* Join us on [Discord](https://discord.com/invite/wotr).
+* Join us on [Discord](https://discord.com/invite/owlcat).

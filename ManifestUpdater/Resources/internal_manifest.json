@@ -1,6 +1,22 @@
 [
   // Please keep sorted by Name.
-
+  
+  {
+    "Name": "Allow Modded Achievements",
+    "Author": "Xenofell",
+    "Id": {
+      "Id": "AllowModdedAchievements",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "119"
+      }
+    },
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119",
+    "Tags": [ "Miscellaneous", "Utilities" ]
+  },
+  
   {
     "Name": "Auto Mount",
     "Author": "zepheon",
@@ -16,6 +32,23 @@
     },
     "HomepageUrl": "https://github.com/zephe0n/AutoMount",
     "Tags": [ "UserInterface" ]
+  },
+  
+  {
+    "Name": "BOAT BOAT BOAT",
+    "Author": "Balkoth",
+    "Id": {
+      "Id": "WOTR_BOAT_BOAT_BOAT",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Balkoth-dev",
+        "RepoName": "WOTR_BOAT_BOAT_BOAT"
+      }
+    },
+    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT",
+    "Tags": [ "Content", "Gameplay" ]
   },
   
   {
@@ -42,9 +75,8 @@
       "Type": "UMM"
     },
     "Service": {
-      "GitHub": {
-        "Owner": "factubsio",
-        "RepoName": "BubbleTweaks"
+      "Nexus": {
+        "ModID": "177"
       }
     },
     "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
