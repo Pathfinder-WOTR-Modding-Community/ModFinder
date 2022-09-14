@@ -1846,11 +1846,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.8",
-        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.8/VisualAdjustments2.zip",
+        "Version": "1.0.9",
+        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.9/VisualAdjustments2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.0.9",
+          "Url": null,
+          "Changelog": ">Fixed the \"Hide\" option for Enchant Overrides\n>Fixed \"Hide Class Equipment\" option"
+        },
         {
           "Version": "1.0.8",
           "Url": null,
@@ -1870,11 +1875,6 @@
           "Version": "1.0.5",
           "Url": null,
           "Changelog": ">Added an option to hide Mythic Visuals\n>Fixed a bug where Per-Character Buff profiles wouldnt save."
-        },
-        {
-          "Version": "1.0.4",
-          "Url": null,
-          "Changelog": ">Fixed an issue where the \"Fix Scale\" button had inverted function (this also caused an issue where Drake companions from Expanded Content would be huge)"
         }
       ]
     },
