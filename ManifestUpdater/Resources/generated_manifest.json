@@ -1846,11 +1846,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.9",
-        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.9/VisualAdjustments2.zip",
+        "Version": "1.0.10",
+        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.10/VisualAdjustments2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.0.10",
+          "Url": null,
+          "Changelog": ">Fixed the \"Hide Belt Items\" Feature"
+        },
         {
           "Version": "1.0.9",
           "Url": null,
@@ -1870,11 +1875,6 @@
           "Version": "1.0.6",
           "Url": null,
           "Changelog": "Fixed it not working on the overworld map and when the doll UI would get stuck on the screen sometimes."
-        },
-        {
-          "Version": "1.0.5",
-          "Url": null,
-          "Changelog": ">Added an option to hide Mythic Visuals\n>Fixed a bug where Per-Character Buff profiles wouldnt save."
         }
       ]
     },
