@@ -1846,11 +1846,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.10",
-        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.10/VisualAdjustments2.zip",
+        "Version": "1.0.11",
+        "Url": "https://github.com/BarleyFlour/VisualAdjustments2/releases/download/v1.0.11/VisualAdjustments2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.0.11",
+          "Url": null,
+          "Changelog": ">Fixed hide enchants again"
+        },
         {
           "Version": "1.0.10",
           "Url": null,
@@ -1870,11 +1875,6 @@
           "Version": "1.0.7",
           "Url": null,
           "Changelog": ">Fixed for game version 1.4.0y"
-        },
-        {
-          "Version": "1.0.6",
-          "Url": null,
-          "Changelog": "Fixed it not working on the overworld map and when the doll UI would get stuck on the screen sometimes."
         }
       ]
     },
