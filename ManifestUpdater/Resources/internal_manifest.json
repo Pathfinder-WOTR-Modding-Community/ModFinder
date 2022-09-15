@@ -492,23 +492,6 @@
   },
 
   {
-    "Name": "WIT / Quick Cast",
-    "Author": "Hambeard",
-    "Id": {
-      "Id": "QuickCast",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "thehambeard",
-        "RepoName": "WIT"
-      }
-    },
-    "HomepageUrl": "https://github.com/thehambeard/WIT",
-    "Tags": [ "UserInterface" ]
-  },
-
-  {
     "Name": "RandomEnemies",
     "Author": "Snarkki",
     "Id": {
@@ -675,5 +658,22 @@
     },
     "HomepageUrl": "https://github.com/Vek17/WrathMods-WeaponFocusPlus",
     "Tags": [ "Gameplay" ]
+  },
+
+  {
+    "Name": "WotR Inventory Tweak (Quick Cast)",
+    "Author": "Hambeard",
+    "Id": {
+      "Id": "QuickCast",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "thehambeard",
+        "RepoName": "WIT"
+      }
+    },
+    "HomepageUrl": "https://github.com/thehambeard/WIT",
+    "Tags": [ "UserInterface" ]
   }
 ]
