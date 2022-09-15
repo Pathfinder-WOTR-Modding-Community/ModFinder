@@ -543,9 +543,9 @@
           "Changelog": "**Expanded Content** V0.3.71\n\nJust some fixes, no new content."
         },
         {
-          "Version": "0.3.70",
+          "Version": "0.3.65",
           "Url": null,
-          "Changelog": "**Expanded Content** V0.3.70\n\n-Enabled Groetus\n\nAdded Spells\n-Scourge of the Horsemen\n-Rigor Mortis"
+          "Changelog": "**Expanded Content** V0.3.65\n\nAdded Subdomains\n-Psychopomp\n-Rivers\n-Rage\n\nAdded Spells\n-Hydraulic push\n-Slipstream"
         }
       ]
     },
