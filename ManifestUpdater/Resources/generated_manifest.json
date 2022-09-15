@@ -1831,6 +1831,41 @@
     ]
   },
   {
+    "Name": "Weapon Focus Plus",
+    "Author": "Vek17 & xoff",
+    "Id": {
+      "Id": "WeaponFocusPlus",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Vek17",
+        "RepoName": "WrathMods-WeaponFocusPlus",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.2.1",
+        "Url": "https://github.com/Vek17/WrathMods-WeaponFocusPlus/releases/download/v1.2.1/WeaponFocusPlus.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.2.1",
+          "Url": null,
+          "Changelog": "Github release"
+        }
+      ]
+    },
+    "Description": "Allows you to use fighter weapon group based weapon focus instead of picking a single weapon.",
+    "HomepageUrl": "https://github.com/Vek17/WrathMods-WeaponFocusPlus",
+    "Tags": [
+      "Gameplay"
+    ]
+  },
+  {
     "Name": "WotR Inventory Tweak (Quick Cast)",
     "Author": "Hambeard",
     "Id": {
