@@ -517,11 +517,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.74",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.74/ExpandedContent.zip",
+        "Version": "0.3.75",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.75/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.75",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.75\n\nAdded Spell\n-Hollow Blades\n\nBunch of little bug fixes"
+        },
         {
           "Version": "0.3.74",
           "Url": null,
@@ -541,11 +546,6 @@
           "Version": "0.3.71",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.71\n\nJust some fixes, no new content."
-        },
-        {
-          "Version": "0.3.70",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.70\n\n-Enabled Groetus\n\nAdded Spells\n-Scourge of the Horsemen\n-Rigor Mortis"
         }
       ]
     },
