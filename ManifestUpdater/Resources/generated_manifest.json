@@ -1812,6 +1812,11 @@
           "Changelog": ">Fixed the \"Hide Belt Items\" Feature"
         },
         {
+          "Version": "1.0.9",
+          "Url": null,
+          "Changelog": ">Fixed the \"Hide\" option for Enchant Overrides\n>Fixed \"Hide Class Equipment\" option"
+        },
+        {
           "Version": "1.0.8",
           "Url": null,
           "Changelog": "Fixed the \"Fix Scale\" & the \"Global buff profile\" buttons."
@@ -1820,11 +1825,6 @@
           "Version": "1.0.7",
           "Url": null,
           "Changelog": ">Fixed for game version 1.4.0y"
-        },
-        {
-          "Version": "1.0.6",
-          "Url": null,
-          "Changelog": "Fixed it not working on the overworld map and when the doll UI would get stuck on the screen sometimes."
         }
       ]
     },
