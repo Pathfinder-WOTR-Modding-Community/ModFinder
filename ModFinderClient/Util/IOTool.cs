@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
 using System.IO;
+using System.IO.Compression;
 
 namespace ModFinder.Util
 {
@@ -63,7 +64,17 @@ namespace ModFinder.Util
       using var jsonReader = new JsonTextReader(reader);
       return Json.Deserialize<T>(jsonReader);
     }
-
+    /// <summary>
+    /// Exctract given ZIP to a temporary folder
+    /// </summary>
+    /// <param name="zip">the zip file (Usually a mod)</param>
+    /// <returns>The path to the temporary folder</returns>
+    public static string ExtractToTmpFolder(ZipArchive zip)
+    {
+      var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
+      zip.ExtractToDirectory(tmpFolder);
+      return tmpFolder;
+    }
     /// <summary>
     /// Parse a stream as json
     /// </summary>

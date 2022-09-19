@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -163,7 +164,6 @@ namespace ModFinder.Mod
             }
 
             Main.OwlcatMods.Add(OwlcatManifest.UniqueName);
-
             break;
           }
         case ModType.Portrait:
@@ -195,20 +195,74 @@ namespace ModFinder.Mod
       //  if (manifestEntry.FullName == manifestEntry.Name) ZIP can have different name from mod ID
       {
         Logger.Log.Verbose($"Creating mod directory. \"{destination}\"");
-        // Handle mods without a folder in the zipm
+        // Handle mods without a folder in the zip
         destination = modType == ModType.Portrait ? destination : Path.Combine(destination, info.ModId);
       }
       if (modType != ModType.Portrait)
       {
-        await Task.Run(() => zip.ExtractToDirectory(destination, true));
+        
+        var tempfolder = IOTool.ExtractToTmpFolder(zip);
+        var files = Directory.EnumerateDirectories(tempfolder).ToList();
+        var keyword = modType == ModType.UMM ? "Info.json" : "OwlcatModificationManifest.json";
+        if (!files.Any(a =>
+              a.Contains(keyword, StringComparison.InvariantCultureIgnoreCase)))
+        {
+          foreach (var directory in files)
+          {
+            if (Directory.Exists(directory))
+            {
+              foreach (var directory2 in Directory.EnumerateFileSystemEntries(directory))
+              {
+                {
+                  var fileDestination = Path.Combine(tempfolder, directory2.Split('\\').Last());
+                  if (fileDestination != directory2) Directory.Move(directory2, fileDestination);
+                }
+              }
+            }
+          }
+
+          if (!Directory.Exists(destination)) Directory.CreateDirectory(destination);
+          foreach (var thingie in new DirectoryInfo(tempfolder).GetFileSystemInfos("*",SearchOption.AllDirectories))
+          {
+            if (thingie.Extension is not null and not "")
+            {
+              var newFilepath = thingie.FullName.Replace(tempfolder, destination);
+              var fileFolder = newFilepath.Replace(thingie.Name,"");
+              if (!Directory.Exists(fileFolder)) Directory.CreateDirectory(fileFolder);
+              File.Copy(thingie.FullName,newFilepath,true);
+            }
+          }
+         /* if (!Directory.Exists(destination)) Directory.CreateDirectory(destination);
+          foreach (var filee in new DirectoryInfo(tempfolder).EnumerateFiles("*",SearchOption.AllDirectories))
+          {
+            if (Directory.Exists(filee.FullName))
+            {
+              //Directory.Move(filee.FullName,tempfolder);
+            }
+            else
+            {
+              var replaced = Path.Combine(filee.DirectoryName.Replace(tempfolder, ""), filee.Name);
+              var fileDestination = Path.Combine(destination,replaced);
+              if (!Directory.Exists(fileDestination) && Directory.Exists(filee.FullName)) Directory.CreateDirectory(fileDestination);
+              filee.MoveTo(fileDestination,true);
+            }
+          }
+          //new DirectoryInfo(tempfolder).MoveTo(destination);
+          //Directory.Move(tempfolder,destination);
+          Directory.Delete(tempfolder,true);*/
+        }
+        
+        else
+        {
+          await Task.Run(() => zip.ExtractToDirectory(destination, true));
+        }
       }
       else
       {
         var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits"));
         int i = enumeratedFolders.Where(a => a.Contains("ModFinderPortrait_")).Count();
         var PortraitFolder = Path.Combine(Main.WrathDataDir, "Portraits");
-        var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
-        zip.ExtractToDirectory(tmpFolder);
+        var tmpFolder = IOTool.ExtractToTmpFolder(zip);
         if (Directory.EnumerateDirectories(tmpFolder).Count() <= 1)
         {
           tmpFolder = Path.Combine(tmpFolder, "Portraits");
@@ -217,17 +271,19 @@ namespace ModFinder.Mod
         //var folderToEnumerate = zip.Entries.Count > 1 ? zip.Entries : zip.Entries.FirstOrDefault(a => a.Name == "Portraits");
         foreach (var portraitFolder in Directory.EnumerateDirectories(tmpFolder))
         {
-          var builtString = modFinderPrefix+Guid.NewGuid();
+          var builtString = modFinderPrefix + Guid.NewGuid();
           var earMark = new PortraitEarmark(path.Split('\\').Last()); //Put modid here
           while (Directory.Exists(builtString))
           {
             builtString = modFinderPrefix + Guid.NewGuid();
           }
+
           var newPortraitFolderPath = Path.Combine(PortraitFolder, builtString);
           Directory.Move(portraitFolder, newPortraitFolderPath);
           ModFinder.Util.IOTool.Write(earMark, Path.Combine(newPortraitFolderPath, "Earmark.json"));
           i++;
         }
+
         Directory.Delete(tmpFolder);
       }
 

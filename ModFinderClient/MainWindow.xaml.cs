@@ -166,7 +166,7 @@ namespace ModFinder
           {
             Logger.Log.Info($"Found installed mod: {dir.Name}");
             var mod = ProcessModDirectory(dir);
-            if (mod is not null)
+            if (mod is not null && !installedMods.Keys.Contains(mod.ModId))
               installedMods.Add(mod.ModId, mod.InstalledVersion);
           }
         }
