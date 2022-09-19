@@ -285,11 +285,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.2.0",
-        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.2.0/CharacterOptionsPlus.0.2.0.zip",
+        "Version": "0.3.0",
+        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.0/CharacterOptionsPlus.0.3.0.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.0",
+          "Url": null,
+          "Changelog": "- New Feats:\n    - Glorious Heat\n    - Paired Opportunists\n- Adds Hurricane Bow to Arrowsong Minstrel's bonus spell selection"
+        },
         {
           "Version": "0.2.0",
           "Url": null,
