@@ -527,11 +527,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.8",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.8/ExpandedContent.zip",
+        "Version": "0.3.81",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.81/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.81",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.81\n\nAdded deity\n-Naderi\n\nMade Drake power selection order easier to follow\nFixed version number problems, probably. "
+        },
         {
           "Version": "0.3.75",
           "Url": null,
@@ -551,11 +556,6 @@
           "Version": "0.3.72",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.72\n\nAdded spells\n-Reviving Finale\n-Deadly Finale\n\nSeveral bug fixes"
-        },
-        {
-          "Version": "0.3.71",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.71\n\nJust some fixes, no new content."
         }
       ]
     },
