@@ -1543,11 +1543,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "2.3.1",
-        "Url": "https://github.com/Vek17/TabletopTweaks-Base/releases/download/v2.3.1/TabletopTweaks-Base.zip",
+        "Version": "2.3.2",
+        "Url": "https://github.com/Vek17/TabletopTweaks-Base/releases/download/v2.3.2/TabletopTweaks-Base.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "2.3.2",
+          "Url": null,
+          "Changelog": "Fix for 1.4.4g"
+        },
         {
           "Version": "2.3.1",
           "Url": null,
@@ -1567,11 +1572,6 @@
           "Version": "2.2.2",
           "Url": null,
           "Changelog": "## Version 2.2.1\n* Fixes\n    * Fixed broken config options for some metamagic.\n    * Improved mod compatibility with metamagics.\n    * Fixed mod compatibility issue with world crawl."
-        },
-        {
-          "Version": "2.2.1",
-          "Url": null,
-          "Changelog": "## Version 2.2.1\n* Fixes\n    * Fixed issue where vivisectionist was unselectable with alternate capstones enabled."
         }
       ]
     },
