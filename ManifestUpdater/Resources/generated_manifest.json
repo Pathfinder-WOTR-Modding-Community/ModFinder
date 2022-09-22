@@ -957,11 +957,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.1.0",
-        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.1.0/ModMenu.1.1.0.zip",
+        "Version": "1.1.1",
+        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.1.1/ModMenu.1.1.1.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.1.1",
+          "Url": null,
+          "Changelog": "- Fix warnings when adding Image and SubHeaders\n- Added missing API docs"
+        },
         {
           "Version": "1.1.0",
           "Url": null,
