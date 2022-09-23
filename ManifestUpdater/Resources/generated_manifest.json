@@ -957,11 +957,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.1.1",
-        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.1.1/ModMenu.1.1.1.zip",
+        "Version": "1.2.0",
+        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.2.0/ModMenu.1.2.0.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.2.0",
+          "Url": null,
+          "Changelog": "- Fix remaining warnings for `ScriptableObject.CreateInstance()`\n- Fix issue preventing the default dialog from dismissing\n- Add support for dropdown list\n    - Accepts a list of LocalizedString values\n    - The \"value\" of the setting is the index of the entry in the list\n- Add support for key binding settings\n- Add support for dropdown buttons\n    - Setting has a dropdown list with a button to the left\n    - When the button is clicked, `OnClick(int)` is called, passing in the index of the currently selected entry in the list"
+        },
         {
           "Version": "1.1.1",
           "Url": null,
