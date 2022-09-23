@@ -957,11 +957,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.2.0",
-        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.2.0/ModMenu.1.2.0.zip",
+        "Version": "1.2.1",
+        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.2.1/ModMenu.1.2.1.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.2.1",
+          "Url": null,
+          "Changelog": "- Adds `scaleImage` parameter to images for more control"
+        },
         {
           "Version": "1.2.0",
           "Url": null,
