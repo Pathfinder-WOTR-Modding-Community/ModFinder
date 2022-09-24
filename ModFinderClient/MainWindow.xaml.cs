@@ -54,12 +54,6 @@ namespace ModFinder
         Manifest = IOTool.FromString<MasterManifest>(json);
 #endif
 
-        //installedMods.SelectedCellsChanged += (sender, e) =>
-        //{
-        //  if (e.AddedCells.Count > 0)
-        //    installedMods.SelectedItem = null;
-        //};
-
         RefreshAllManifests();
         RefreshInstalledMods();
 
@@ -88,7 +82,6 @@ namespace ModFinder
         dropTarget.Drop += DropTarget_Drop;
         dropTarget.DragOver += DropTarget_DragOver;
 
-
         ModDB.InitSort();
       }
       catch (Exception e)
@@ -98,24 +91,10 @@ namespace ModFinder
         Close();
       }
 
-
       DetailsPanel.SizeChanged += DetailsPanel_SizeChanged;
-
     }
 
-    private void DetailsPanel_SizeChanged(object sender, SizeChangedEventArgs e)
-    {
-      using var g = DetailsPanelBackground.Open();
-      var bg = Resources["details-bg-border"] as Image;
-      g.PushOpacity(0.8);
-      g.DrawImage(bg.Source, new(0, 0, e.NewSize.Width, bg.Source.Height));
-
-      g.PushTransform(new ScaleTransform(1, -1));
-      g.DrawImage(bg.Source, new(0, -e.NewSize.Height, e.NewSize.Width, bg.Source.Height));
-      g.Pop();
-
-    }
-
+    #region Manifest / Local Mod Scanning
     public static void RefreshAllManifests()
     {
       try
@@ -255,58 +234,9 @@ namespace ModFinder
             a.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase)
             || a.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
     }
+    #endregion
 
-    public static void ShowError(string message)
-    {
-      _ = MessageBox.Show(
-        Window,
-        $"{message} Check the log at {Logger.LogFile} for more details.",
-        "Error",
-        MessageBoxButton.OK,
-        MessageBoxImage.Error);
-    }
-
-    private void ClosePopup_Click(object sender, RoutedEventArgs e)
-    {
-      DescriptionPopup.IsOpen = false;
-    }
-
-    private void DataGridRow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-    {
-      DescriptionPopup.IsOpen = false;
-
-      if (sender is not DataGridRow row)
-      {
-        return;
-      }
-
-      installedMods.SelectedIndex = row.GetIndex();
-    }
-
-    private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-    {
-      DescriptionPopup.IsOpen = false;
-    }
-    private void DataGridCell_Clicked(object sender, MouseButtonEventArgs e)
-    {
-      Debug.WriteLine("Hello");
-      //DescriptionPopup.IsOpen = false;
-    }
-
-    private void DropTarget_DragOver(object sender, DragEventArgs e)
-    {
-      e.Effects = DragDropEffects.None;
-      if (e.Data.GetFormats().Any(f => f == DataFormats.FileDrop))
-      {
-        string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-        if (files.All(f => CheckIsMod(f)))
-        {
-          e.Effects = DragDropEffects.Copy;
-        }
-      }
-      e.Handled = true;
-    }
-
+    #region Install
     private void ProcessIntallResult(InstallResult result)
     {
       if (result.Error != null)
@@ -318,16 +248,6 @@ namespace ModFinder
       else
       {
         RefreshInstalledMods();
-      }
-    }
-
-    private async void DropTarget_Drop(object sender, DragEventArgs e)
-    {
-      var files = (string[])e.Data.GetData(DataFormats.FileDrop);
-      foreach (var f in files)
-      {
-        var result = await ModInstaller.InstallFromZip(f);
-        ProcessIntallResult(result);
       }
     }
 
@@ -378,24 +298,52 @@ namespace ModFinder
       }
     }
 
-    private void ShowInstalledToggle_Click(object sender, RoutedEventArgs e)
+    private void UninstallMod(object sender, RoutedEventArgs e)
     {
-      var togglebutton = sender as ToggleButton;
-      ModDB.ShowInstalled = togglebutton.IsChecked ?? false;
+      try
+      {
+        var mod = (sender as MenuItem).DataContext as ModViewModel;
+        ModCache.Uninstall(mod);
+        mod.OnUninstalled();
+        RefreshInstalledMods();
+      }
+      catch (Exception ex)
+      {
+        ShowError("Uninstall failed.");
+        Logger.Log.Error("Uninstall failed.", ex);
+      }
     }
 
-    private void MoreOptions_Click(object sender, RoutedEventArgs e)
+    private void Rollback(object sender, RoutedEventArgs e)
     {
-      var button = sender as Button;
-      button.ContextMenu.DataContext = button.Tag;
-      button.ContextMenu.StaysOpen = true;
-      button.ContextMenu.IsOpen = true;
-    }
+      try
+      {
+        var mod = (sender as MenuItem).DataContext as ModViewModel;
 
-    private void LookButton_Click(object sender, RoutedEventArgs e)
+        if (!ModCache.IsCached(mod.ModId))
+          throw new InvalidOperationException("Cannot rollback mod without a cached copy");
+
+        ModCache.Uninstall(mod, cache: false); // Don't cache, just delete it!
+        ModCache.TryRestoreMod(mod.ModId);
+        RefreshInstalledMods();
+      }
+      catch (Exception ex)
+      {
+        ShowError("Rollback failed.");
+        Logger.Log.Error("Rollback failed.", ex);
+      }
+    }
+    #endregion
+
+    #region Show Dialogs & Open Web Pages
+    public static void ShowError(string message)
     {
-      RefreshAllManifests();
-      RefreshInstalledMods();
+      _ = MessageBox.Show(
+        Window,
+        $"{message} Check the log at {Logger.LogFile} for more details.",
+        "Error",
+        MessageBoxButton.OK,
+        MessageBoxImage.Error);
     }
 
     private void ShowModDescription(object sender, RoutedEventArgs e)
@@ -419,27 +367,6 @@ namespace ModFinder
       DescriptionPopup.IsOpen = true;
     }
 
-    private void UninstallMod(object sender, RoutedEventArgs e)
-    {
-      try
-      {
-        var mod = (sender as MenuItem).DataContext as ModViewModel;
-        ModCache.Uninstall(mod);
-        mod.OnUninstalled();
-        RefreshInstalledMods();
-      }
-      catch (Exception ex)
-      {
-        ShowError("Uninstall failed.");
-        Logger.Log.Error("Uninstall failed.", ex);
-      }
-    }
-
-    private void Filter_TextChanged(object sender, TextChangedEventArgs e)
-    {
-      ModDB.ApplyFilter((sender as TextBox).Text);
-    }
-
     private void OpenHomepage(object sender, RoutedEventArgs e)
     {
       var mod = (sender as MenuItem).DataContext as ModViewModel;
@@ -455,6 +382,98 @@ namespace ModFinder
           UseShellExecute = true
         });
     }
+    #endregion
+
+    #region UI Event Handlers
+    private void DetailsPanel_SizeChanged(object sender, SizeChangedEventArgs e)
+    {
+      using var g = DetailsPanelBackground.Open();
+      var bg = Resources["details-bg-border"] as Image;
+      g.PushOpacity(0.8);
+      g.DrawImage(bg.Source, new(0, 0, e.NewSize.Width, bg.Source.Height));
+
+      g.PushTransform(new ScaleTransform(1, -1));
+      g.DrawImage(bg.Source, new(0, -e.NewSize.Height, e.NewSize.Width, bg.Source.Height));
+      g.Pop();
+    }
+
+    private void ClosePopup_Click(object sender, RoutedEventArgs e)
+    {
+      DescriptionPopup.IsOpen = false;
+    }
+
+    private void DataGridRow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+      DescriptionPopup.IsOpen = false;
+
+      if (sender is not DataGridRow row)
+      {
+        return;
+      }
+
+      installedMods.SelectedIndex = row.GetIndex();
+    }
+
+    private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+    {
+      DescriptionPopup.IsOpen = false;
+    }
+
+    private void DataGridCell_Clicked(object sender, MouseButtonEventArgs e)
+    {
+      Debug.WriteLine("Hello");
+      //DescriptionPopup.IsOpen = false;
+    }
+
+    private void DropTarget_DragOver(object sender, DragEventArgs e)
+    {
+      e.Effects = DragDropEffects.None;
+      if (e.Data.GetFormats().Any(f => f == DataFormats.FileDrop))
+      {
+        string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+        if (files.All(f => CheckIsMod(f)))
+        {
+          e.Effects = DragDropEffects.Copy;
+        }
+      }
+      e.Handled = true;
+    }
+
+    private async void DropTarget_Drop(object sender, DragEventArgs e)
+    {
+      var files = (string[])e.Data.GetData(DataFormats.FileDrop);
+      foreach (var f in files)
+      {
+        var result = await ModInstaller.InstallFromZip(f);
+        ProcessIntallResult(result);
+      }
+    }
+
+    private void ShowInstalledToggle_Click(object sender, RoutedEventArgs e)
+    {
+      var togglebutton = sender as ToggleButton;
+      ModDB.ShowInstalled = togglebutton.IsChecked ?? false;
+    }
+
+    private void MoreOptions_Click(object sender, RoutedEventArgs e)
+    {
+      var button = sender as Button;
+      button.ContextMenu.DataContext = button.Tag;
+      button.ContextMenu.StaysOpen = true;
+      button.ContextMenu.IsOpen = true;
+    }
+
+    private void LookButton_Click(object sender, RoutedEventArgs e)
+    {
+      RefreshAllManifests();
+      RefreshInstalledMods();
+    }
+
+    private void Filter_TextChanged(object sender, TextChangedEventArgs e)
+    {
+      ModDB.ApplyFilter((sender as TextBox).Text);
+    }
+    #endregion
 
     public class DescriptionProxy
     {
@@ -506,31 +525,6 @@ namespace ModFinder
 
         return doc;
       }
-    }
-
-    private void Rollback(object sender, RoutedEventArgs e)
-    {
-      try
-      {
-        var mod = (sender as MenuItem).DataContext as ModViewModel;
-
-        if (!ModCache.IsCached(mod.ModId))
-          throw new InvalidOperationException("Cannot rollback mod without a cached copy");
-
-        ModCache.Uninstall(mod, cache: false); // Don't cache, just delete it!
-        ModCache.TryRestoreMod(mod.ModId);
-        RefreshInstalledMods();
-      }
-      catch (Exception ex)
-      {
-        ShowError("Rollback failed.");
-        Logger.Log.Error("Rollback failed.", ex);
-      }
-    }
-
-    private void installedMods_MouseDown(object sender, MouseButtonEventArgs e)
-    {
-
     }
   }
 }
