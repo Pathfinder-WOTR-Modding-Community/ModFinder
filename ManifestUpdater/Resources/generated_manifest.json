@@ -1705,6 +1705,57 @@
     ]
   },
   {
+    "Name": "Toggleable Throwing Weapons",
+    "Author": "phoenix99",
+    "Id": {
+      "Id": "ToggleableThrowingWeapons",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "ToggleableThrowingWeapons",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.2.1",
+        "Url": "https://github.com/pheonix99/ToggleableThrowingWeapons/releases/download/1.2.1/ToggleableThrowingWeapons.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.2.1",
+          "Url": null,
+          "Changelog": "Compatibility with Way Of The Shooting Star from Morvarchs Playstyle Expansions"
+        },
+        {
+          "Version": "1.2.0",
+          "Url": null,
+          "Changelog": "Increased throwing range to 30 feet.\n\nPoint Blank Master now available."
+        },
+        {
+          "Version": "1.1.0",
+          "Url": null,
+          "Changelog": "GFX issues should be fixed.\n\nThe modified thrown strength enchantment should work right now - no more overriding Finesse Training and suchlike in melee."
+        },
+        {
+          "Version": "1.0.0",
+          "Url": null,
+          "Changelog": "Initial release: Can now toggle throwing mode on and off for daggers."
+        }
+      ]
+    },
+    "Description": null,
+    "HomepageUrl": "https://github.com/pheonix99/ToggleableThrowingWeapons",
+    "Tags": [
+      "Content",
+      "Gameplay"
+    ]
+  },
+  {
     "Name": "ToyBox (a bag of tricks)",
     "Author": "Narria",
     "Id": {
