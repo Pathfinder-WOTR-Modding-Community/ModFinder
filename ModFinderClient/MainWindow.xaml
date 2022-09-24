@@ -452,7 +452,7 @@
                   </Style>
                 </DataGridTextColumn.ElementStyle>
               </DataGridTextColumn>
-              <DataGridTextColumn Header="Author" Width="200" Binding="{Binding Author, Mode=OneWay}">
+              <DataGridTextColumn Header="Author" Width="230" Binding="{Binding Author, Mode=OneWay}">
                 <DataGridTextColumn.ElementStyle>
                   <Style TargetType="TextBlock">
                     <Setter Property="Margin" Value="0,0,15,0"/>
