@@ -594,6 +594,23 @@
   },
 
   {
+    "Name": "Toggleable Throwing Weapons",
+    "Author": "phoenix99",
+    "Id": {
+      "Id": "ToggleableThrowingWeapons",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "ToggleableThrowingWeapons"
+      }
+    },
+    "HomepageUrl": "https://github.com/pheonix99/ToggleableThrowingWeapons",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "ToyBox (a bag of tricks)",
     "Author": "Narria",
     "Id": {
