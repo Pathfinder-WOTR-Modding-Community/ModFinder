@@ -611,6 +611,23 @@
   },
 
   {
+    "Name": "Tome of the Firebird",
+    "Author": "phoenix99",
+    "Id": {
+      "Id": "TomeOfTheFirebird",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "TomeOfTheFirebird"
+      }
+    },
+    "HomepageUrl": "https://github.com/pheonix99/TomeOfTheFirebird",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "ToyBox (a bag of tricks)",
     "Author": "Narria",
     "Id": {
