@@ -445,9 +445,28 @@
             <DataGrid.Background>Transparent</DataGrid.Background>
 
             <DataGrid.Columns>
-              <DataGridTextColumn Header="Name" Width="280" Binding="{Binding Name, Mode=OneWay}"></DataGridTextColumn>
-              <DataGridTextColumn Header="Author" Width="200" Binding="{Binding Author, Mode=OneWay}"></DataGridTextColumn>
-              <DataGridTextColumn Header="Status" Width="*" Binding="{Binding StatusText, Mode=OneWay}"></DataGridTextColumn>
+              <DataGridTextColumn Header="Name" Width="280" Binding="{Binding Name, Mode=OneWay}">
+                <DataGridTextColumn.ElementStyle>
+                  <Style TargetType="TextBlock">
+                    <Setter Property="Padding" Value="0,0,15,0"/>
+                  </Style>
+                </DataGridTextColumn.ElementStyle>
+              </DataGridTextColumn>
+              <DataGridTextColumn Header="Author" Width="200" Binding="{Binding Author, Mode=OneWay}">
+                <DataGridTextColumn.ElementStyle>
+                  <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="0,0,15,0"/>
+                  </Style>
+                </DataGridTextColumn.ElementStyle>
+              </DataGridTextColumn>
+              <DataGridTextColumn Header="Status" Width="*" Binding="{Binding StatusText, Mode=OneWay}">
+
+                <DataGridTextColumn.ElementStyle>
+                  <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="0,0,15,0"/>
+                  </Style>
+                </DataGridTextColumn.ElementStyle>
+              </DataGridTextColumn>
               <DataGridTextColumn Header="From" Width="80" Binding="{Binding Service, Mode=OneWay}"></DataGridTextColumn>
               <DataGridTemplateColumn Width="25" CanUserResize="False">
                 <DataGridTemplateColumn.CellTemplate>
