@@ -1,5 +1,6 @@
 ﻿using ModFinder.Mod;
 using ModFinder.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -26,6 +27,9 @@ namespace ModFinder.UI
     public Release Latest => Manifest.Version.Latest;
     public string HomepageUrl => Manifest.HomepageUrl;
 
+    public string LastUpdated => GetLastUpdated();
+    public string LastChecked => GetLastChecked();
+
     public event PropertyChangedEventHandler PropertyChanged;
 
     public ModViewModel(ModManifest manifest)
@@ -45,22 +49,25 @@ namespace ModFinder.UI
 
     public string Name => Manifest.Name;
     public string Author => Manifest.Author;
+    public string About => Manifest.About;
     public string Description => Manifest.Description ?? "-";
 
     public string Service => GetSourceText();
+
     public bool IsInstalled => Status.Installed();
-    public bool CanInstallOrDownload => InstallOrDownloadAvailable();
+    public bool IsCached => ModCache.IsCached(ModId);
+
     public bool CanInstall =>
       (IsCached && !IsInstalled)
         || (Manifest.Service.IsGitHub()
           && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
           && !string.IsNullOrEmpty(Latest.Url));
-    public bool CanUninstall => IsInstalled && ModDir != null;
     public bool CanDownload =>
       Manifest.Service.IsNexus()
       && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
       && !string.IsNullOrEmpty(Latest.Url);
-    public bool IsCached => ModCache.IsCached(ModId);
+    public bool CanInstallOrDownload => InstallOrDownloadAvailable();
+    public bool CanUninstall => IsInstalled && ModDir != null;
 
     public Visibility UninstallVisibility => GetUninstallVisibility();
     public Visibility HomepageVisibility => GetHomepageVisibility();
@@ -216,6 +223,20 @@ namespace ModFinder.UI
       return installAvailable || nextMod.CanInstall || nextMod.CanDownload;
     }
 
+    public string GetLastChecked()
+    {
+      if (Manifest.LastChecked == default)
+        return "-";
+      return Manifest.LastChecked.ToString("MMM dd H:mm");
+    }
+
+    public string GetLastUpdated()
+    {
+      if (Manifest.Version.LastUpdated == default)
+        return "-";
+      return Manifest.Version.LastUpdated.ToString("MMM dd H:mm");
+    }
+
     private string GetStatusText()
     {
       if (InstallState == InstallState.Installing)
@@ -329,6 +350,7 @@ namespace ModFinder.UI
       return Visibility.Collapsed;
     }
 
+    #region Notify
     private void NotifyAll()
     {
       Changed(
@@ -360,6 +382,7 @@ namespace ModFinder.UI
       foreach (var prop in props)
         PropertyChanged?.Invoke(this, new(prop));
     }
+    #endregion
   }
 
   // StatusIcon value is used as priority for sorting

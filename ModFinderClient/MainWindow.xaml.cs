@@ -41,7 +41,7 @@ namespace ModFinder
         showInstalledToggle.DataContext = ModDB;
         showInstalledToggle.Click += ShowInstalledToggle_Click;
 
-#if TESTDEBUG
+#if DEBUGTEST
         Logger.Log.Verbose("Reading test manifest.");
         using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_master.json"))
         {
@@ -83,6 +83,9 @@ namespace ModFinder
         dropTarget.DragOver += DropTarget_DragOver;
 
         ModDB.InitSort();
+
+        if (installedMods.Items.Count > 0)
+          installedMods.SelectedIndex = 0;
       }
       catch (Exception e)
       {
@@ -116,7 +119,7 @@ namespace ModFinder
     private static void RefreshGeneratedManifest()
     {
       string rawstring;
-#if TESTDEBUG
+#if DEBUGTEST
       using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_generated.json"))
       {
         using var reader = new StreamReader(stream);
