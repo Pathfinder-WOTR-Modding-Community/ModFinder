@@ -234,11 +234,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.4",
-        "Url": "https://github.com/Bobster1246/BugFixes/releases/download/1.0.4/BugFixes.zip",
+        "Version": "1.1.0",
+        "Url": "https://github.com/Bobster1246/BugFixes/releases/download/1.1.0/BugFixes.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.1.0",
+          "Url": null,
+          "Changelog": "Updated for the latest patch + incorporates WittleWolfie's fix."
+        },
         {
           "Version": "1.0.4",
           "Url": null,
