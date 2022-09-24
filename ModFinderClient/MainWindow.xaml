@@ -81,6 +81,106 @@
         </Setter.Value>
       </Setter>
     </Style>
+    <Style x:Key="RollbackButtonSquare" TargetType="Button">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Time_Default.png"></Image>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Time_Hover.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Time_Active.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Time_Disable.png"></Setter>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="UninstallButtonSquare" TargetType="Button">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_EscAll_Default.png"></Image>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_EscAll_Hover.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_EscAll_Active.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_EscAll_Disable.png"></Setter>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="HomepageButtonSquare" TargetType="Button">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Inspect_Default.png"></Image>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Inspect_Hover.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Inspect_Active.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Inspect_Disable.png"></Setter>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="DescriptionButtonSquare" TargetType="Button">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Book_Default.png"></Image>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Book_Hover.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Book_Active.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Book_Disable.png"></Setter>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="ChangelogButtonSquare" TargetType="Button">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Image x:Name="bg" Source="pack://application:,,,/icons/UI_HudIcon_Story_Default.png"></Image>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Story_Hover.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Story_Active.png"></Setter>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="bg" Property="Source" Value="pack://application:,,,/icons/UI_HudIcon_Story_Disable.png"></Setter>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
     <Style x:Key="SettingsButtonSquare" TargetType="Button">
       <Setter Property="Template">
         <Setter.Value>
@@ -354,7 +454,14 @@
           <DockPanel x:Name="DetailsPanel" DockPanel.Dock="Bottom" Height="250" DataContext="{Binding ElementName=installedMods, Path=SelectedItem}" d:DataContext="{d:DesignInstance Type=local:ModViewModel}">
             <Border BorderThickness="50">
               <StackPanel>
-                <TextBlock FontSize="30" FontWeight="Bold" Text="{Binding Name, Mode=OneWay}"></TextBlock>
+                <DockPanel LastChildFill="False">
+                  <TextBlock Margin="0,0,15,0" FontSize="30" FontWeight="Bold" Text="{Binding Name, Mode=OneWay}"></TextBlock>
+                  <Button x:Name="uninstallButton" IsEnabled="{Binding CanUninstall}" DockPanel.Dock="Right" Style="{StaticResource UninstallButtonSquare}" Width="32" Height="32" ToolTip="Uninstall" Click="UninstallMod"/>
+                  <Button x:Name="rollbackButton" IsEnabled="{Binding CanRollback}" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource RollbackButtonSquare}" Width="32" Height="32" ToolTip="Revert to previous version" Click="Rollback"/>
+                  <Button x:Name="homepageButton" IsEnabled="{Binding HasHomepage}" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource HomepageButtonSquare}" Width="32" Height="32" ToolTip="Homepage" Click="OpenHomepage"/>
+                  <Button x:Name="descriptionButton" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource DescriptionButtonSquare}" Width="32" Height="32" ToolTip="Description" Click="ShowModDescription"/>
+                  <Button x:Name="changelogButton" Margin="0,0,5,0" DockPanel.Dock="Right" Style="{StaticResource ChangelogButtonSquare}" Width="32" Height="32" ToolTip="Changelog" Click="ShowModChangelog"/>
+                </DockPanel>
                 <TextBlock FontSize="18" Margin="0,-5,0,5" Text="{Binding Author, Mode=OneWay, StringFormat='by {0}'}"></TextBlock>
                 <Grid>
                   <Grid.ColumnDefinitions>

@@ -238,7 +238,7 @@ namespace ModFinder
     }
     #endregion
 
-    #region Install
+    #region Install / Rollback / Uninstall
     private void ProcessIntallResult(InstallResult result)
     {
       if (result.Error != null)
@@ -251,12 +251,6 @@ namespace ModFinder
       {
         RefreshInstalledMods();
       }
-    }
-
-    private void InstallOrUpdateMod(object sender, RoutedEventArgs e)
-    {
-      var mod = (sender as Button).Tag as ModViewModel;
-      InstallOrUpdateMod(mod);
     }
 
     private async void InstallOrUpdateMod(ModViewModel mod)
@@ -300,40 +294,21 @@ namespace ModFinder
       }
     }
 
-    private void UninstallMod(object sender, RoutedEventArgs e)
+    private static void Rollback(ModViewModel mod)
     {
-      try
-      {
-        var mod = (sender as MenuItem).DataContext as ModViewModel;
-        ModCache.Uninstall(mod);
-        mod.OnUninstalled();
-        RefreshInstalledMods();
-      }
-      catch (Exception ex)
-      {
-        ShowError("Uninstall failed.");
-        Logger.Log.Error("Uninstall failed.", ex);
-      }
+      if (!ModCache.IsCached(mod.ModId))
+        throw new InvalidOperationException("Cannot rollback mod without a cached copy");
+
+      ModCache.Uninstall(mod, cache: false); // Don't cache, just delete it!
+      ModCache.TryRestoreMod(mod.ModId);
+      RefreshInstalledMods();
     }
 
-    private void Rollback(object sender, RoutedEventArgs e)
+    private static void Uninstall(ModViewModel mod)
     {
-      try
-      {
-        var mod = (sender as MenuItem).DataContext as ModViewModel;
-
-        if (!ModCache.IsCached(mod.ModId))
-          throw new InvalidOperationException("Cannot rollback mod without a cached copy");
-
-        ModCache.Uninstall(mod, cache: false); // Don't cache, just delete it!
-        ModCache.TryRestoreMod(mod.ModId);
-        RefreshInstalledMods();
-      }
-      catch (Exception ex)
-      {
-        ShowError("Rollback failed.");
-        Logger.Log.Error("Rollback failed.", ex);
-      }
+      ModCache.Uninstall(mod);
+      mod.OnUninstalled();
+      RefreshInstalledMods();
     }
     #endregion
 
@@ -348,18 +323,6 @@ namespace ModFinder
         MessageBoxImage.Error);
     }
 
-    private void ShowModDescription(object sender, RoutedEventArgs e)
-    {
-      var mod = (sender as MenuItem).DataContext as ModViewModel;
-      ShowPopup(mod, "description");
-    }
-
-    private void ShowModChangelog(object sender, RoutedEventArgs e)
-    {
-      var mod = (sender as MenuItem).DataContext as ModViewModel;
-      ShowPopup(mod, "changelog");
-    }
-
     private void ShowPopup(ModViewModel mod, string contentType)
     {
       var proxy = new DescriptionProxy(mod, contentType);
@@ -367,12 +330,6 @@ namespace ModFinder
       var contents = DescriptionPopup.FindName("Contents") as FlowDocumentScrollViewer;
       contents.Document = proxy.Render();
       DescriptionPopup.IsOpen = true;
-    }
-
-    private void OpenHomepage(object sender, RoutedEventArgs e)
-    {
-      var mod = (sender as MenuItem).DataContext as ModViewModel;
-      OpenUrl(mod.HomepageUrl);
     }
 
     private static void OpenUrl(string url)
@@ -386,7 +343,112 @@ namespace ModFinder
     }
     #endregion
 
+    public class DescriptionProxy
+    {
+      private readonly ModViewModel Mod;
+      private readonly string DescriptionType;
+
+      public DescriptionProxy(ModViewModel mod, string descriptionType)
+      {
+        Mod = mod;
+        DescriptionType = descriptionType;
+      }
+
+      public string Name => Mod.Name + "   (" + Mod.InstalledVersion.ToString() + ")";
+
+      internal FlowDocument Render()
+      {
+        var doc = new FlowDocument();
+
+        switch (DescriptionType)
+        {
+          case "description":
+            try
+            {
+              BBCodeRenderer.Render(doc, Mod.DescriptionAsText);
+            }
+            catch (Exception)
+            {
+              doc.Blocks.Add(new Paragraph(new Run(Mod.DescriptionAsText)));
+            }
+            break;
+
+          case "changelog":
+            try
+            {
+              ChangelogRenderer.Render(doc, Mod);
+            }
+            catch (Exception e)
+            {
+              ShowError("Changelog rendering failed.");
+              Logger.Log.Error("Changelog rendering failed.", e);
+            }
+            break;
+
+          default:
+            doc.Blocks.Add(new Paragraph(new Run("<<<ERROR>>>")));
+
+            break;
+        }
+
+        return doc;
+      }
+    }
+
     #region UI Event Handlers
+
+    private void InstallOrUpdateMod(object sender, RoutedEventArgs e)
+    {
+      var mod = (sender as Button).Tag as ModViewModel;
+      InstallOrUpdateMod(mod);
+    }
+
+    private void UninstallMod(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+        Uninstall(mod);
+      }
+      catch (Exception ex)
+      {
+        ShowError("Uninstall failed.");
+        Logger.Log.Error("Uninstall failed.", ex);
+      }
+    }
+
+    private void Rollback(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+        Rollback(mod);
+      }
+      catch (Exception ex)
+      {
+        ShowError("Rollback failed.");
+        Logger.Log.Error("Rollback failed.", ex);
+      }
+    }
+
+    private void OpenHomepage(object sender, RoutedEventArgs e)
+    {
+      var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+      OpenUrl(mod.HomepageUrl);
+    }
+
+    private void ShowModDescription(object sender, RoutedEventArgs e)
+    {
+      var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+      ShowPopup(mod, "description");
+    }
+
+    private void ShowModChangelog(object sender, RoutedEventArgs e)
+    {
+      var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+      ShowPopup(mod, "changelog");
+    }
+
     private void DetailsPanel_SizeChanged(object sender, SizeChangedEventArgs e)
     {
       using var g = DetailsPanelBackground.Open();
@@ -475,58 +537,6 @@ namespace ModFinder
     {
       ModDB.ApplyFilter((sender as TextBox).Text);
     }
-    #endregion
-
-    public class DescriptionProxy
-    {
-      private readonly ModViewModel Mod;
-      private readonly string DescriptionType;
-
-      public DescriptionProxy(ModViewModel mod, string descriptionType)
-      {
-        Mod = mod;
-        DescriptionType = descriptionType;
-      }
-
-      public string Name => Mod.Name + "   (" + Mod.InstalledVersion.ToString() + ")";
-
-      internal FlowDocument Render()
-      {
-        var doc = new FlowDocument();
-
-        switch (DescriptionType)
-        {
-          case "description":
-            try
-            {
-              BBCodeRenderer.Render(doc, Mod.DescriptionAsText);
-            }
-            catch (Exception)
-            {
-              doc.Blocks.Add(new Paragraph(new Run(Mod.DescriptionAsText)));
-            }
-            break;
-
-          case "changelog":
-            try
-            {
-              ChangelogRenderer.Render(doc, Mod);
-            }
-            catch (Exception e)
-            {
-              ShowError("Changelog rendering failed.");
-              Logger.Log.Error("Changelog rendering failed.", e);
-            }
-            break;
-
-          default:
-            doc.Blocks.Add(new Paragraph(new Run("<<<ERROR>>>")));
-
-            break;
-        }
-
-        return doc;
-      }
-    }
   }
+  #endregion
 }

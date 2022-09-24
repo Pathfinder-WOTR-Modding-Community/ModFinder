@@ -19,6 +19,26 @@
     <None Remove="icons\error.png" />
     <None Remove="icons\okay.png" />
     <None Remove="icons\UI_GlobalMap_BackNameShield_Hover.png" />
+    <None Remove="icons\UI_HudIcon_Book_Active.png" />
+    <None Remove="icons\UI_HudIcon_Book_ActiveHover.png" />
+    <None Remove="icons\UI_HudIcon_Book_Default.png" />
+    <None Remove="icons\UI_HudIcon_Book_Disable.png" />
+    <None Remove="icons\UI_HudIcon_Book_Hover.png" />
+    <None Remove="icons\UI_HudIcon_EscAll_Active.png" />
+    <None Remove="icons\UI_HudIcon_EscAll_ActiveHover.png" />
+    <None Remove="icons\UI_HudIcon_EscAll_Default.png" />
+    <None Remove="icons\UI_HudIcon_EscAll_Disable.png" />
+    <None Remove="icons\UI_HudIcon_EscAll_Hover.png" />
+    <None Remove="icons\UI_HudIcon_Story_Active.png" />
+    <None Remove="icons\UI_HudIcon_Story_ActiveHover.png" />
+    <None Remove="icons\UI_HudIcon_Story_Default.png" />
+    <None Remove="icons\UI_HudIcon_Story_Disable.png" />
+    <None Remove="icons\UI_HudIcon_Story_Hover.png" />
+    <None Remove="icons\UI_HudIcon_Time_Active.png" />
+    <None Remove="icons\UI_HudIcon_Time_ActiveHover.png" />
+    <None Remove="icons\UI_HudIcon_Time_Default.png" />
+    <None Remove="icons\UI_HudIcon_Time_Disable.png" />
+    <None Remove="icons\UI_HudIcon_Time_Hover.png" />
     <None Remove="icons\UI_Journal_BigMenu_Border.png" />
     <None Remove="icons\UI_Journal_Line.png" />
     <None Remove="icons\warning.png" />
@@ -78,11 +98,21 @@
     <Resource Include="icons\UI_Button_Disable.png" />
     <Resource Include="icons\UI_Button_Hover.png" />
     <Resource Include="icons\UI_GlobalMap_BackNameShield_Hover.png" />
+    <Resource Include="icons\UI_HudIcon_Book_Active.png" />
+    <Resource Include="icons\UI_HudIcon_Book_ActiveHover.png" />
+    <Resource Include="icons\UI_HudIcon_Book_Default.png" />
+    <Resource Include="icons\UI_HudIcon_Book_Disable.png" />
+    <Resource Include="icons\UI_HudIcon_Book_Hover.png" />
     <Resource Include="icons\UI_HudIcon_Cancel_Active.png" />
     <Resource Include="icons\UI_HudIcon_Cancel_ActiveHover.png" />
     <Resource Include="icons\UI_HudIcon_Cancel_Default.png" />
     <Resource Include="icons\UI_HudIcon_Cancel_Disable.png" />
     <Resource Include="icons\UI_HudIcon_Cancel_Hover.png" />
+    <Resource Include="icons\UI_HudIcon_EscAll_Active.png" />
+    <Resource Include="icons\UI_HudIcon_EscAll_ActiveHover.png" />
+    <Resource Include="icons\UI_HudIcon_EscAll_Default.png" />
+    <Resource Include="icons\UI_HudIcon_EscAll_Disable.png" />
+    <Resource Include="icons\UI_HudIcon_EscAll_Hover.png" />
     <Resource Include="icons\UI_HudIcon_Inspect_Active.png" />
     <Resource Include="icons\UI_HudIcon_Inspect_ActiveHover.png" />
     <Resource Include="icons\UI_HudIcon_Inspect_Default.png" />
@@ -93,6 +123,11 @@
     <Resource Include="icons\UI_HudIcon_Settings_Default.png" />
     <Resource Include="icons\UI_HudIcon_Settings_Disable.png" />
     <Resource Include="icons\UI_HudIcon_Settings_Hover.png" />
+    <Resource Include="icons\UI_HudIcon_Story_Active.png" />
+    <Resource Include="icons\UI_HudIcon_Story_ActiveHover.png" />
+    <Resource Include="icons\UI_HudIcon_Story_Default.png" />
+    <Resource Include="icons\UI_HudIcon_Story_Disable.png" />
+    <Resource Include="icons\UI_HudIcon_Story_Hover.png" />
     <Resource Include="icons\UI_Inventory_CloseButton_Click.png" />
     <Resource Include="icons\UI_Inventory_CloseButton_Default.png" />
     <Resource Include="icons\UI_Inventory_CloseButton_Hover.png" />
@@ -112,6 +147,11 @@
     <Resource Include="icons\UI_ScrollVertical_Handl_Default.png" />
     <Resource Include="icons\UI_ScrollVertical_Handl_Hover.png" />
     <Resource Include="icons\UI_Toggler_BG.png" />
+    <Resource Include="icons\UI_HudIcon_Time_Active.png" />
+    <Resource Include="icons\UI_HudIcon_Time_ActiveHover.png" />
+    <Resource Include="icons\UI_HudIcon_Time_Default.png" />
+    <Resource Include="icons\UI_HudIcon_Time_Disable.png" />
+    <Resource Include="icons\UI_HudIcon_Time_Hover.png" />
   </ItemGroup>
 
   <ItemGroup>

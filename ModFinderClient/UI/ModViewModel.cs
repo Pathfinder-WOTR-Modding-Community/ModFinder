@@ -69,9 +69,13 @@ namespace ModFinder.UI
     public bool CanInstallOrDownload => InstallOrDownloadAvailable();
     public bool CanUninstall => IsInstalled && ModDir != null;
 
-    public Visibility UninstallVisibility => GetUninstallVisibility();
-    public Visibility HomepageVisibility => GetHomepageVisibility();
-    public Visibility RollbackVisibility => GetRollbackVisibility();
+    public Visibility UninstallVisibility => CanUninstall ? Visibility.Visible : Visibility.Collapsed;
+
+    public bool HasHomepage => !string.IsNullOrEmpty(HomepageUrl);
+    public Visibility HomepageVisibility => HasHomepage ? Visibility.Visible : Visibility.Collapsed;
+
+    public bool CanRollback => IsCached && IsInstalled;
+    public Visibility RollbackVisibility => CanRollback ? Visibility.Visible : Visibility.Collapsed;
 
     public string StatusText => GetStatusText();
     public string ButtonText => GetButtonText();
@@ -329,33 +333,13 @@ namespace ModFinder.UI
       return "Up to date";
     }
 
-    private Visibility GetHomepageVisibility()
-    {
-      if (!string.IsNullOrEmpty(HomepageUrl))
-        return Visibility.Visible;
-      return Visibility.Collapsed;
-    }
-
-    private Visibility GetUninstallVisibility()
-    {
-      if (CanUninstall)
-        return Visibility.Visible;
-      return Visibility.Collapsed;
-    }
-
-    private Visibility GetRollbackVisibility()
-    {
-      if (IsCached && IsInstalled)
-        return Visibility.Visible;
-      return Visibility.Collapsed;
-    }
-
     #region Notify
     private void NotifyAll()
     {
       Changed(
         nameof(Name),
         nameof(Author),
+        nameof(About),
         nameof(Description),
         nameof(Service),
         nameof(HomepageVisibility));
@@ -371,10 +355,16 @@ namespace ModFinder.UI
         nameof(CanInstall),
         nameof(CanUninstall),
         nameof(CanDownload),
+        nameof(CanRollback),
         nameof(CanInstallOrDownload),
+        nameof(HasHomepage),
         nameof(UninstallVisibility),
         nameof(RollbackVisibility),
-        nameof(StatusIcon));
+        nameof(StatusIcon),
+        nameof(Latest),
+        nameof(LastChecked),
+        nameof(LastUpdated),
+        nameof(InstalledVersion));
     }
 
     private void Changed(params string[] props)
