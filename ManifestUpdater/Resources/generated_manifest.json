@@ -1756,6 +1756,62 @@
     ]
   },
   {
+    "Name": "Tome of the Firebird",
+    "Author": "phoenix99",
+    "Id": {
+      "Id": "TomeOfTheFirebird",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "TomeOfTheFirebird",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.2.7",
+        "Url": "https://github.com/pheonix99/TomeOfTheFirebird/releases/download/1.2.7/TomeOfTheFirebird.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.2.7",
+          "Url": null,
+          "Changelog": "Added Death Patron.\n\nFixed issue with featurized version of vanilla perma holy aura from dawn of dragons not working."
+        },
+        {
+          "Version": "1.2.6",
+          "Url": null,
+          "Changelog": "Freezing sphere actually works now."
+        },
+        {
+          "Version": "1.2.5",
+          "Url": null,
+          "Changelog": "Quick fix for discordant song being borked in the level up UI"
+        },
+        {
+          "Version": "1.2.4",
+          "Url": null,
+          "Changelog": "Actually fixed the Prodigious TWF penalty-reduction.\nIn unlimited-use mode Dragon and Abyssal bloodlines claws stay on after rest."
+        },
+        {
+          "Version": "1.2.3",
+          "Url": null,
+          "Changelog": "Fixed Prodigious TWF applying to main-hand-only standard action attacks\n\nAngel Artifact Cloak actually works now"
+        }
+      ]
+    },
+    "Description": null,
+    "HomepageUrl": "https://github.com/pheonix99/TomeOfTheFirebird",
+    "Tags": [
+      "Content",
+      "Gameplay"
+    ]
+  },
+  {
     "Name": "ToyBox (a bag of tricks)",
     "Author": "Narria",
     "Id": {
