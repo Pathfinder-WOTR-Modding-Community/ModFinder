@@ -578,10 +578,10 @@
             <DataGrid.Background>Transparent</DataGrid.Background>
 
             <DataGrid.Columns>
-              <DataGridTemplateColumn Header=" Enabled" Width="100" CanUserResize="False">
+              <DataGridTemplateColumn Header="  Enabled" Width="105" CanUserResize="False">
                 <DataGridTemplateColumn.CellTemplate>
                   <DataTemplate>
-                    <ToggleButton x:Name="EnabledToggle" IsChecked="{Binding Enabled}">
+                    <ToggleButton x:Name="EnabledToggle" IsChecked="{Binding Enabled}" Click="EnabledToggle_Click">
                       <ToggleButton.Template>
                         <ControlTemplate TargetType="ToggleButton">
                           <Grid Height="34">

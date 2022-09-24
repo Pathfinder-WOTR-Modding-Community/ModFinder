@@ -15,6 +15,8 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
 using System.Windows.Media;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace ModFinder
 {
@@ -144,7 +146,8 @@ namespace ModFinder
 
     public static void RefreshInstalledMods()
     {
-      IOTool.Safe(() => CheckInstalledModsInternal());
+      IOTool.Safe(CheckInstalledModsInternal);
+      IOTool.Safe(CheckUMMState);
     }
 
     private static void CheckInstalledModsInternal()
@@ -193,6 +196,33 @@ namespace ModFinder
       }
     }
 
+    private static void CheckUMMState()
+    {
+      try
+      {
+        XElement ummParams = XElement.Load(Main.UMMParamsPath);
+        var mods =
+          ummParams.Descendants("Mod")
+            .Select(x => (x.Attribute("Id").Value, bool.Parse(x.Attribute("Enabled").Value)));
+
+        foreach (var (modId, enabled) in mods)
+        {
+          if (!ModDatabase.Instance.TryGet(new(modId, ModType.UMM), out var mod))
+          {
+            Logger.Log.Error($"Found mod in UMM config that is not recognized: {modId}");
+            continue;
+          }
+
+          mod.Enabled = enabled;
+        }
+      }
+      catch (Exception e)
+      {
+        ShowError("Failed to confirm UMM state. Make sure UMM is installed.");
+        Logger.Log.Error("Failed to check UMM state.", e);
+      }
+    }
+
     private static ModViewModel ProcessModDirectory(DirectoryInfo modDir, bool updateStatus = true)
     {
       var infoFile =
@@ -238,7 +268,23 @@ namespace ModFinder
     }
     #endregion
 
-    #region Install / Rollback / Uninstall
+    #region Install / Rollback / Uninstall / Enable / Disable
+    private static void SetModEnabled(ModId id, bool enabled)
+    {
+      try
+      {
+        XDocument ummParams = XDocument.Load(Main.UMMParamsPath);
+        var mod = ummParams.Descendants("Mod").Where(x => id.Id.Equals(x.Attribute("Id").Value)).First();
+        mod.SetAttributeValue("Enabled", enabled);
+        ummParams.Save(Main.UMMParamsPath);
+      }
+      catch (Exception e)
+      {
+        ShowError("Failed to confirm UMM state. Make sure UMM is installed.");
+        Logger.Log.Error("Failed to check UMM state.", e);
+      }
+    }
+
     private void ProcessIntallResult(InstallResult result)
     {
       if (result.Error != null)
@@ -557,9 +603,19 @@ namespace ModFinder
       }
     }
 
-    private void Enable_Click(object sender, RoutedEventArgs e)
+    private void EnabledToggle_Click(object sender, RoutedEventArgs e)
     {
-
+      try
+      {
+        var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+        mod.Enabled = !mod.Enabled;
+        SetModEnabled(mod.ModId, mod.Enabled);
+      }
+      catch (Exception ex)
+      {
+        ShowError("Failed to update enabled state in UMM.");
+        Logger.Log.Error("Failed to update enabled state in UMM.", ex);
+      }
     }
   }
   #endregion
