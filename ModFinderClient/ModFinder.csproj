@@ -15,9 +15,14 @@
 
   <ItemGroup>
     <None Remove="background.png" />
+    <None Remove="icons\checkmark.png" />
     <None Remove="icons\drop-bg.png" />
     <None Remove="icons\error.png" />
     <None Remove="icons\okay.png" />
+    <None Remove="icons\UI_BoxButton_Click.png" />
+    <None Remove="icons\UI_BoxButton_Default.png" />
+    <None Remove="icons\UI_BoxButton_Disable.png" />
+    <None Remove="icons\UI_BoxButton_Hover.png" />
     <None Remove="icons\UI_GlobalMap_BackNameShield_Hover.png" />
     <None Remove="icons\UI_HudIcon_Book_Active.png" />
     <None Remove="icons\UI_HudIcon_Book_ActiveHover.png" />
@@ -93,6 +98,10 @@
   <ItemGroup>
     <Resource Include="icons\background.png" />
     <Resource Include="icons\drop-bg.png" />
+    <Resource Include="icons\UI_BoxButton_Click.png" />
+    <Resource Include="icons\UI_BoxButton_Default.png" />
+    <Resource Include="icons\UI_BoxButton_Disable.png" />
+    <Resource Include="icons\UI_BoxButton_Hover.png" />
     <Resource Include="icons\UI_Button_Click.png" />
     <Resource Include="icons\UI_Button_Default.png" />
     <Resource Include="icons\UI_Button_Disable.png" />
@@ -133,6 +142,7 @@
     <Resource Include="icons\UI_Inventory_CloseButton_Hover.png" />
     <Resource Include="icons\error.png" />
     <Resource Include="icons\UI_Journal_BigMenu_Border.png" />
+    <Resource Include="icons\checkmark.png" />
     <Resource Include="icons\UI_Journal_Line.png" />
     <Resource Include="icons\warning.png" />
     <Resource Include="icons\okay.png" />

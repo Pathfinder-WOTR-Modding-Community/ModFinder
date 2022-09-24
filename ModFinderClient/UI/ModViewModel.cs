@@ -51,9 +51,17 @@ namespace ModFinder.UI
     public string Author => Manifest.Author;
     public string About => Manifest.About;
     public string Description => Manifest.Description ?? "-";
+    public string EnabledText => Enabled ? "On" : "Off";
 
-    public string Service => GetSourceText();
-
+    public bool Enabled
+    {
+      get => _enabled;
+      set
+      {
+        _enabled = value;
+        NotifyStatus();
+      }
+    }
     public bool IsInstalled => Status.Installed();
     public bool IsCached => ModCache.IsCached(ModId);
 
@@ -102,6 +110,8 @@ namespace ModFinder.UI
     public ModId ModId => Manifest.Id;
     public ModType Type => ModId.Type;
     public string DescriptionAsText => stripHtml.Replace(Description, "");
+
+    private bool _enabled = false;
 
     public ModVersion InstalledVersion
     {
@@ -288,15 +298,6 @@ namespace ModFinder.UI
       return StatusIcon.None;
     }
 
-    private string GetSourceText()
-    {
-      if (Manifest.Service.IsGitHub())
-        return "GitHub";
-      if (Manifest.Service.IsNexus())
-        return "Nexus";
-      return "Local";
-    }
-
     private string GetButtonText()
     {
       if (Status.State == InstallState.Installing)
@@ -341,7 +342,6 @@ namespace ModFinder.UI
         nameof(Author),
         nameof(About),
         nameof(Description),
-        nameof(Service),
         nameof(HomepageVisibility));
       NotifyStatus();
     }
@@ -351,6 +351,8 @@ namespace ModFinder.UI
       Changed(
         nameof(StatusText),
         nameof(ButtonText),
+        nameof(EnabledText),
+        nameof(Enabled),
         nameof(IsInstalled),
         nameof(CanInstall),
         nameof(CanUninstall),

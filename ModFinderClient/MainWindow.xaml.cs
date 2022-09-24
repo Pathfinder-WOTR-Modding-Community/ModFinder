@@ -556,6 +556,11 @@ namespace ModFinder
         Logger.Log.Error("Unable to open folder.", ex);
       }
     }
+
+    private void Enable_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
   }
   #endregion
 }

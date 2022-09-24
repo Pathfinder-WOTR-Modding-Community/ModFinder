@@ -20,6 +20,10 @@
     <ImageBrush x:Key="button-bg-hover" ImageSource="pack://application:,,,/icons/UI_Button_Hover.png" Stretch="Fill"></ImageBrush>
     <ImageBrush x:Key="button-bg-click" ImageSource="pack://application:,,,/icons/UI_Button_Click.png" Stretch="Fill"></ImageBrush>
     <ImageBrush x:Key="button-bg-disable" ImageSource="pack://application:,,,/icons/UI_Button_Disable.png" Stretch="Fill"></ImageBrush>
+    <ImageBrush x:Key="button-square-default" ImageSource="pack://application:,,,/icons/UI_BoxButton_Default.png" Stretch="Fill"></ImageBrush>
+    <ImageBrush x:Key="button-square-hover" ImageSource="pack://application:,,,/icons/UI_BoxButton_Hover.png" Stretch="Fill"></ImageBrush>
+    <ImageBrush x:Key="button-square-click" ImageSource="pack://application:,,,/icons/UI_BoxButton_Click.png" Stretch="Fill"></ImageBrush>
+    <ImageBrush x:Key="button-square-disable" ImageSource="pack://application:,,,/icons/UI_BoxButton_Disable.png" Stretch="Fill"></ImageBrush>
     <ImageBrush x:Key="bg-paper-generic" ImageSource="pack://application:,,,/icons/background.png" Stretch="Fill"></ImageBrush>
     <ImageBrush x:Key="selected-row-bg" Opacity="0.3" ImageSource="pack://application:,,,/icons/UI_GlobalMap_BackNameShield_Hover.png" Stretch="Fill"></ImageBrush>
     <Image x:Key="okay-icon" Source="pack://application:,,,/icons/okay.png" Stretch="Fill"></Image>
@@ -58,6 +62,29 @@
               </Trigger>
               <Trigger Property="IsEnabled" Value="False">
                 <Setter TargetName="main" Property="Background" Value="{StaticResource button-bg-disable}" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="SquareButton" TargetType="Button">
+      <Setter Property="Foreground" Value="LightGray"></Setter>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Grid x:Name="main" Background="{StaticResource button-square-default}">
+              <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+            </Grid>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="main" Property="Background" Value="{StaticResource button-square-hover}" />
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="main" Property="Background" Value="{StaticResource button-square-click}" />
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="main" Property="Background" Value="{StaticResource button-square-disable}" />
               </Trigger>
             </ControlTemplate.Triggers>
           </ControlTemplate>
@@ -551,6 +578,62 @@
             <DataGrid.Background>Transparent</DataGrid.Background>
 
             <DataGrid.Columns>
+              <DataGridTemplateColumn Header=" Enabled" Width="100" CanUserResize="False">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                    <ToggleButton x:Name="EnabledToggle" IsChecked="{Binding Enabled}">
+                      <ToggleButton.Template>
+                        <ControlTemplate TargetType="ToggleButton">
+                          <Grid Height="34">
+                            <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="40"></ColumnDefinition>
+                              <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="pack://application:,,,/icons/UI_Toggler_BG.png" Grid.Column="1"></Image>
+                            <Image x:Name="knob" Source="pack://application:,,,/icons/UI_RoundButton_Default.png" Grid.Column="1" Width="25" HorizontalAlignment="Left" Margin="3,0,3,0"></Image>
+                            <Rectangle x:Name="tint" Opacity="0.2" Height="24" Grid.Column="1" Visibility="Hidden">
+                              <Rectangle.Fill>
+                                <SolidColorBrush Color="MediumPurple"></SolidColorBrush>
+                              </Rectangle.Fill>
+                              <Rectangle.OpacityMask>
+                                <ImageBrush ImageSource="pack://application:,,,/icons/UI_Toggler_BG.png"></ImageBrush>
+                              </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <TextBlock FontFamily="Constantia" FontWeight="Bold" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0" Text="{Binding EnabledText}" />
+                          </Grid>
+                          <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                              <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                  <Storyboard>
+                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
+                                      <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="3,0,3,0"/>
+                                      <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="22,0,3,0"/>
+                                    </ThicknessAnimationUsingKeyFrames>
+                                  </Storyboard>
+                                </BeginStoryboard>
+                              </Trigger.EnterActions>
+                              <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                  <Storyboard>
+                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
+                                      <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="22,0,3,0"/>
+                                      <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="3,0,3,0"/>
+                                    </ThicknessAnimationUsingKeyFrames>
+                                  </Storyboard>
+                                </BeginStoryboard>
+                              </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                              <Setter TargetName="tint" Property="Visibility" Value="Visible"></Setter>
+                            </Trigger>
+                          </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                      </ToggleButton.Template>
+                    </ToggleButton>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
               <DataGridTextColumn Header="Name" Width="280" Binding="{Binding Name, Mode=OneWay}">
                 <DataGridTextColumn.ElementStyle>
                   <Style TargetType="TextBlock">
@@ -566,18 +649,16 @@
                 </DataGridTextColumn.ElementStyle>
               </DataGridTextColumn>
               <DataGridTextColumn Header="Status" Width="*" Binding="{Binding StatusText, Mode=OneWay}">
-
                 <DataGridTextColumn.ElementStyle>
                   <Style TargetType="TextBlock">
                     <Setter Property="Margin" Value="0,0,15,0"/>
                   </Style>
                 </DataGridTextColumn.ElementStyle>
               </DataGridTextColumn>
-              <DataGridTextColumn Header="From" Width="80" Binding="{Binding Service, Mode=OneWay}"></DataGridTextColumn>
-              <DataGridTemplateColumn Width="25" CanUserResize="False">
+              <DataGridTemplateColumn Width="35" CanUserResize="False">
                 <DataGridTemplateColumn.CellTemplate>
                   <DataTemplate>
-                    <Image HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,5,0">
                       <Image.Style>
                         <Style TargetType="Image">
                           <Setter Property="Source" Value="pack://application:,,,/icons/okay.png" />
@@ -604,12 +685,11 @@
                     <Grid>
                       <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="190"></ColumnDefinition>
-                        <ColumnDefinition Width="30"></ColumnDefinition>
-                        <ColumnDefinition Width="8"></ColumnDefinition>
+                        <ColumnDefinition Width="32"></ColumnDefinition>
                       </Grid.ColumnDefinitions>
                       <Button  Style="{StaticResource OwlButton}" Height="30" IsEnabled="{Binding CanInstallOrDownload}" Content="{Binding ButtonText}" Click="InstallOrUpdateMod" Tag="{Binding}">
                       </Button>
-                      <Button Grid.Column="1" x:Name="MoreOptions" Style="{StaticResource OwlButton}"  Height="30"  Content="..." Tag="{Binding}" Click="MoreOptions_Click">
+                      <Button Grid.Column="1" x:Name="MoreOptions" Style="{StaticResource SquareButton}" Height="30" Content="..." Tag="{Binding}" Click="MoreOptions_Click">
                         <Button.ContextMenu>
                           <ContextMenu Style="{StaticResource OwlContextMenu}">
                             <MenuItem Header="Show description" Click="ShowModDescription"></MenuItem>
