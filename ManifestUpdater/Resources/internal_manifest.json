@@ -254,23 +254,6 @@
   },
 
   {
-    "Name": "Magic Time!",
-    "Author": "Kreaddy",
-    "Id": {
-      "Id": "MagicTime",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Stari0n",
-        "RepoName": "MagicTime"
-      }
-    },
-    "HomepageUrl": "https://github.com/Stari0n/MagicTime",
-    "Tags": [ "UserInterface", "Visuals" ]
-  },
-
-  {
     "Name": "Mewsifer Console",
     "Author": "WittleWolfie & Bubbles",
     "Id": {
