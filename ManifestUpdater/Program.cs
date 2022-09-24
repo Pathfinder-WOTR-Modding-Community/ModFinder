@@ -24,6 +24,7 @@ var tasks = new List<Task<ModManifest>>();
 var updatedManifest = new List<ModManifest>();
 foreach (var manifest in internalManifest)
 {
+  var now = DateTime.Now;
   tasks.Add(Task.Run(async () =>
   {
     if (manifest.Service.IsGitHub())
@@ -53,12 +54,14 @@ foreach (var manifest in internalManifest)
       var releaseHistory = new List<Release>();
       foreach (var release in releases)
       {
-        releaseHistory.Add(new Release(ModVersion.Parse(release.TagName), url: null, release.Body.Replace("\r\n", "\n")));
+        releaseHistory.Add(
+          new Release(ModVersion.Parse(release.TagName), url: null, release.Body.Replace("\r\n", "\n")));
       }
       releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
 
       var newManifest =
-        new ModManifest(manifest, new VersionInfo(latestRelease, releaseHistory.Take(5).ToList()), repo.Description);
+        new ModManifest(
+          manifest, new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()), now, repo.Description);
       updatedManifest.Add(newManifest);
       return newManifest;
     }
@@ -87,7 +90,7 @@ foreach (var manifest in internalManifest)
 
       var newManifest =
         new ModManifest(
-          manifest, new VersionInfo(latestRelease, releaseHistory.Take(5).ToList()), nexusMod.Description);
+          manifest, new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()), now, nexusMod.Description);
       updatedManifest.Add(newManifest);
       return newManifest;
     }

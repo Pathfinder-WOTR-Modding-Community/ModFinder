@@ -142,10 +142,11 @@ namespace ModFinder.Mod
       Tags = tags ?? new();
     }
 
-    public ModManifest(ModManifest manifest, VersionInfo version, string description)
+    public ModManifest(ModManifest manifest, VersionInfo version, DateTime lastChecked, string description)
     {
       Name = manifest.Name;
       Author = manifest.Author;
+      About = manifest.About;
       Id = manifest.Id;
       Service = manifest.Service;
       HomepageUrl = manifest.HomepageUrl;
@@ -153,6 +154,7 @@ namespace ModFinder.Mod
 
       // Updated automatically
       Version = version;
+      LastChecked = lastChecked;
       Description = description;
     }
 
