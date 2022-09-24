@@ -368,7 +368,7 @@
                             </DrawingBrush>
                         </DockPanel.Background>
                     </DockPanel>
-                    <DataGrid AutoGenerateColumns="false" Name="installedMods" SelectionUnit="FullRow" ItemsSource="{Binding Items}" VerticalScrollBarVisibility="Visible" SelectionMode="Single" MouseDown="installedMods_MouseDown">
+                    <DataGrid AutoGenerateColumns="false" Name="installedMods" SelectionUnit="FullRow" ItemsSource="{Binding Items}" VerticalScrollBarVisibility="Visible" SelectionMode="Single">
                         <DataGrid.BorderBrush>
                             <SolidColorBrush Opacity="0" Color="Black"></SolidColorBrush>
                         </DataGrid.BorderBrush>
