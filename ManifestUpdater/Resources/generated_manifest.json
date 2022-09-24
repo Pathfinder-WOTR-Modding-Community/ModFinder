@@ -2051,5 +2051,55 @@
     "Tags": [
       "UserInterface"
     ]
+  },
+  {
+    "Name": "WotR Resource Unification",
+    "Author": "pheonix99",
+    "Id": {
+      "Id": "ResourceUnification",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "WotRResourceUnification",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.2.0",
+        "Url": "https://github.com/pheonix99/WotRResourceUnification/releases/download/v1.2.0/ResourceUnification.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.2.0",
+          "Url": null,
+          "Changelog": "Fix for issue causing all mod affected resources to stop working."
+        },
+        {
+          "Version": "1.1.1",
+          "Url": null,
+          "Changelog": "Properly handles invalid guid input."
+        },
+        {
+          "Version": "1.1.0",
+          "Url": null,
+          "Changelog": "Added Arcanist Arcane Reservoir and Alchemist Bombs to the preloaded config.\n\nImproved a lot of backend things.\n\nAdded reporting on what it's doing."
+        },
+        {
+          "Version": "1.0.0",
+          "Url": null,
+          "Changelog": "Tool to combine existing scaled-by-level resources across classes and use the best ability modifier where applicable.\n\nComes with config for Ki and Arcane pool."
+        }
+      ]
+    },
+    "Description": null,
+    "HomepageUrl": "https://github.com/pheonix99/WotRResourceUnification",
+    "Tags": [
+      "Gameplay"
+    ]
   }
 ]
