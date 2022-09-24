@@ -34,46 +34,6 @@
     ]
   },
   {
-    "Name": "Auto Mount",
-    "Author": "zepheon",
-    "Id": {
-      "Id": "AutoMount",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "zephe0n",
-        "RepoName": "AutoMount",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "0.1.0",
-        "Url": "https://github.com/zephe0n/AutoMount/releases/download/v0.1.0/AutoMount-v0.1.0.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "0.1.0",
-          "Url": null,
-          "Changelog": "## What's Changed\n* Different keybinds for mount/dismount.\n* Auto mount when entering area.\n* Console logs.\n* Don't upload owlcat's code. by @factubsio in https://github.com/zephe0n/AutoMount/pull/1\n\n## New Contributors\n* @factubsio made their first contribution in https://github.com/zephe0n/AutoMount/pull/1\n\n**Full Changelog**: https://github.com/zephe0n/AutoMount/compare/v0.0.1...v0.1.0"
-        },
-        {
-          "Version": "0.0.1",
-          "Url": null,
-          "Changelog": "Initial release"
-        }
-      ]
-    },
-    "Description": "Pathfinder: WOTR -  Auto Mount mod",
-    "HomepageUrl": "https://github.com/zephe0n/AutoMount",
-    "Tags": [
-      "UserInterface"
-    ]
-  },
-  {
     "Name": "BOAT BOAT BOAT",
     "Author": "Balkoth",
     "Id": {
