@@ -285,11 +285,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.1",
-        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.1/CharacterOptionsPlus.0.3.1.zip",
+        "Version": "0.3.2",
+        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.2/CharacterOptionsPlus.0.3.2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.2",
+          "Url": null,
+          "Changelog": "- Added an illustration to the settings, courtesy of Cyrix on Discord\n- Updated Paired Opportunists\n    - Available to select as Pack Rager bonus teamwork feat\n    - Shares properly with all teamwork feat sharing abilities\n    - UI will recommend it less frequently"
+        },
         {
           "Version": "0.3.1",
           "Url": null,
@@ -309,11 +314,6 @@
           "Version": "0.1.2",
           "Url": null,
           "Changelog": "- Fix a bug causing Furious Focus bonus to show but not apply"
-        },
-        {
-          "Version": "0.1.1",
-          "Url": null,
-          "Changelog": "- Adds button to options to restore default settings"
         }
       ]
     },
