@@ -709,5 +709,22 @@
     },
     "HomepageUrl": "https://github.com/thehambeard/WIT",
     "Tags": [ "UserInterface" ]
+  },
+
+  {
+    "Name": "WotR Resource Unification",
+    "Author": "pheonix99",
+    "Id": {
+      "Id": "ResourceUnification",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "WotRResourceUnification"
+      }
+    },
+    "HomepageUrl": "https://github.com/pheonix99/WotRResourceUnification",
+    "Tags": [ "Gameplay" ]
   }
 ]
