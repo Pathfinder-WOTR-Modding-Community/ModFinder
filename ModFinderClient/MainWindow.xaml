@@ -511,7 +511,6 @@
             </DataGrid.BorderBrush>
             <DataGrid.CellStyle>
               <Style TargetType="DataGridCell">
-                <EventSetter Event="MouseLeftButtonDown" Handler="DataGridCell_Clicked"></EventSetter>
                 <Setter Property="Background" Value="Transparent"></Setter>
                 <Setter Property="Foreground" Value="Black"></Setter>
                 <Setter Property="FontSize" Value="16"></Setter>
@@ -618,6 +617,7 @@
                             <MenuItem Header="Open homepage" Visibility="{Binding HomepageVisibility}" Click="OpenHomepage"></MenuItem>
                             <MenuItem Header="Uninstall" Visibility="{Binding UninstallVisibility}" Click="UninstallMod"></MenuItem>
                             <MenuItem Header="Rollback" Visibility="{Binding RollbackVisibility}" Click="Rollback"></MenuItem>
+                            <MenuItem Header="Open Folder" Visibility="{Binding UninstallVisibility}" Click="OpenFolder"></MenuItem>
                           </ContextMenu>
                         </Button.ContextMenu>
                       </Button>

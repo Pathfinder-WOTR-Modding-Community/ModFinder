@@ -483,12 +483,6 @@ namespace ModFinder
       DescriptionPopup.IsOpen = false;
     }
 
-    private void DataGridCell_Clicked(object sender, MouseButtonEventArgs e)
-    {
-      Debug.WriteLine("Hello");
-      //DescriptionPopup.IsOpen = false;
-    }
-
     private void DropTarget_DragOver(object sender, DragEventArgs e)
     {
       e.Effects = DragDropEffects.None;
@@ -529,13 +523,38 @@ namespace ModFinder
 
     private void LookButton_Click(object sender, RoutedEventArgs e)
     {
-      RefreshAllManifests();
-      RefreshInstalledMods();
+      try
+      {
+        RefreshAllManifests();
+        RefreshInstalledMods();
+      }
+      catch (Exception ex)
+      {
+        ShowError("Failed to scan local mods.");
+        Logger.Log.Error("Failed to scan local mods.", ex);
+      }
     }
 
     private void Filter_TextChanged(object sender, TextChangedEventArgs e)
     {
       ModDB.ApplyFilter((sender as TextBox).Text);
+    }
+
+    private void OpenFolder(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+        var folder = $"\"{Path.Combine(Main.UMMInstallPath, mod.ModDir.Name)}\\\"";
+        Logger.Log.Info($"Opening folder: {folder}");
+        // If you don't point to explorer process you get access denied error
+        Process.Start(Environment.GetEnvironmentVariable("WINDIR") + @"\explorer.exe", folder);
+      }
+      catch (Exception ex)
+      {
+        ShowError("Unable to open folder.");
+        Logger.Log.Error("Unable to open folder.", ex);
+      }
     }
   }
   #endregion
