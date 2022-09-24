@@ -83,9 +83,8 @@ namespace ModFinder
         dropTarget.DragOver += DropTarget_DragOver;
 
         ModDB.InitSort();
-
-        if (installedMods.Items.Count > 0)
-          installedMods.SelectedIndex = 0;
+        
+        installedMods.SelectedIndex = 0;
       }
       catch (Exception e)
       {
