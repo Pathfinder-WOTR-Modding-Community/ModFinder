@@ -13,6 +13,7 @@
   <Window.Resources>
     <!--
                         -->
+    <BooleanToVisibilityConverter x:Key="BoolVis" />
     <ImageBrush x:Key="OwlThumbHover" ImageSource="pack://application:,,,/icons/UI_ScrollVertical_Handl_Hover.png" Stretch="Fill" ViewboxUnits="Absolute" Viewbox="0, 7, 23, 81"></ImageBrush>
     <ImageBrush x:Key="OwlThumbDrag" ImageSource="pack://application:,,,/icons/UI_ScrollVertical_Handl_Click.png" Stretch="Fill" ViewboxUnits="Absolute" Viewbox="0, 7, 23, 81"></ImageBrush>
     <ImageBrush x:Key="drop-bg" ImageSource="pack://application:,,,/icons/drop-bg.png" Stretch="Fill"></ImageBrush>
@@ -581,7 +582,7 @@
               <DataGridTemplateColumn Header="  Enabled" Width="105" CanUserResize="False">
                 <DataGridTemplateColumn.CellTemplate>
                   <DataTemplate>
-                    <ToggleButton x:Name="EnabledToggle" IsChecked="{Binding Enabled}" Click="EnabledToggle_Click">
+                    <ToggleButton x:Name="EnabledToggle" Visibility="{Binding IsInstalled, Converter={StaticResource BoolVis}}" IsChecked="{Binding Enabled}" Click="EnabledToggle_Click">
                       <ToggleButton.Template>
                         <ControlTemplate TargetType="ToggleButton">
                           <Grid Height="34">
