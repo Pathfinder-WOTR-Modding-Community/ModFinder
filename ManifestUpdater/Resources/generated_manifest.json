@@ -628,11 +628,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "2.5.2",
-        "Url": "https://github.com/SpencerMycek/KineticistExpandedElements/releases/download/v2.5.2/KineticistElementsExpanded_2_5_2.zip",
+        "Version": "3.0.0",
+        "Url": "https://github.com/SpencerMycek/KineticistExpandedElements/releases/download/v3.0.0/KineticistElementsExpanded_3_0_0.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "3.0.0",
+          "Url": null,
+          "Changelog": "- Huge stability Update - I went over the codebase (10K+ lines) 3 times to align each element to work as similarly as possible\n- Fixes should be a lot easier in the future\n- Now using CodexLib (From DarkCodex) so everything should stay up-to-date and work great\n\n- Fix: Force Throw works again\n- Break: Many Throw does not work\n- Break: Void: Vampiric Infusion not working?\n- Break: Some infusions are just missing? (Greater Toxic/One of the Admixtures)\n\n\n- Now updated for the most recent game version (Thing should just work again<sup>tm</sup>)"
+        },
         {
           "Version": "2.5.2",
           "Url": null,
@@ -652,11 +657,6 @@
           "Version": "2.0.2",
           "Url": null,
           "Changelog": "More Icons!\n\nAlso reworked Many Throw to be more \"fireball-like\" because that's what the ability actually is"
-        },
-        {
-          "Version": "2.0.1",
-          "Url": null,
-          "Changelog": "Fixes to ability choices, descriptions etc\n\n- Added: New Icons for Void Abilities, see the README for credits\n- Added: Void Healer talent to replace Kinetic Healer for the Void Element"
         }
       ]
     },
