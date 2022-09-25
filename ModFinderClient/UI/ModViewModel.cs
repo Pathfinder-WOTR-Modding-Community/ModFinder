@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -16,7 +17,7 @@ namespace ModFinder.UI
   /// <summary>
   /// View model tracking the current mod state.
   /// </summary>
-  public class ModViewModel : INotifyPropertyChanged
+  public class ModViewModel : DependencyObject, INotifyPropertyChanged
   {
     private static readonly Regex stripHtml = new(@"<.*?>");
 
@@ -55,11 +56,11 @@ namespace ModFinder.UI
 
     public bool Enabled
     {
-      get => _enabled;
+      get => (bool)GetValue(EnabledProperty);
       set
       {
-        _enabled = value;
-        NotifyStatus();
+        if (Enabled == value) return;
+        SetValue(EnabledProperty, value);
       }
     }
     public bool IsInstalled => Status.Installed();
@@ -111,7 +112,23 @@ namespace ModFinder.UI
     public ModType Type => ModId.Type;
     public string DescriptionAsText => stripHtml.Replace(Description, "");
 
-    private bool _enabled = false;
+    private static DependencyProperty MakeProp<T>(string name, Action<ModViewModel, T> onChange)
+    {
+      return DependencyProperty.Register(name, typeof(T), typeof(ModViewModel),
+        new((sender, args) =>
+        {
+          if (sender is not ModViewModel self) return;
+          onChange(self, (T)args.NewValue);
+        })
+      );
+    }
+
+    public static readonly DependencyProperty EnabledProperty = MakeProp<bool>("Enabled", (self, enabled) =>
+    {
+      MainWindow.SetModEnabled(self.ModId, enabled);
+      self.Changed(nameof(EnabledText));
+    });
+
 
     public ModVersion InstalledVersion
     {

@@ -582,56 +582,7 @@
               <DataGridTemplateColumn Header="  Enabled" Width="105" CanUserResize="False">
                 <DataGridTemplateColumn.CellTemplate>
                   <DataTemplate>
-                    <ToggleButton x:Name="EnabledToggle" Visibility="{Binding IsInstalled, Converter={StaticResource BoolVis}}" IsChecked="{Binding Enabled}" Click="EnabledToggle_Click">
-                      <ToggleButton.Template>
-                        <ControlTemplate TargetType="ToggleButton">
-                          <Grid Height="34">
-                            <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="40"></ColumnDefinition>
-                              <ColumnDefinition Width="50"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Image Source="pack://application:,,,/icons/UI_Toggler_BG.png" Grid.Column="1"></Image>
-                            <Image x:Name="knob" Source="pack://application:,,,/icons/UI_RoundButton_Default.png" Grid.Column="1" Width="25" HorizontalAlignment="Left" Margin="3,0,3,0"></Image>
-                            <Rectangle x:Name="tint" Opacity="0.2" Height="24" Grid.Column="1" Visibility="Hidden">
-                              <Rectangle.Fill>
-                                <SolidColorBrush Color="MediumPurple"></SolidColorBrush>
-                              </Rectangle.Fill>
-                              <Rectangle.OpacityMask>
-                                <ImageBrush ImageSource="pack://application:,,,/icons/UI_Toggler_BG.png"></ImageBrush>
-                              </Rectangle.OpacityMask>
-                            </Rectangle>
-                            <TextBlock FontFamily="Constantia" FontWeight="Bold" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0" Text="{Binding EnabledText}" />
-                          </Grid>
-                          <ControlTemplate.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                              <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                  <Storyboard>
-                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
-                                      <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="3,0,3,0"/>
-                                      <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="22,0,3,0"/>
-                                    </ThicknessAnimationUsingKeyFrames>
-                                  </Storyboard>
-                                </BeginStoryboard>
-                              </Trigger.EnterActions>
-                              <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                  <Storyboard>
-                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
-                                      <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="22,0,3,0"/>
-                                      <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="3,0,3,0"/>
-                                    </ThicknessAnimationUsingKeyFrames>
-                                  </Storyboard>
-                                </BeginStoryboard>
-                              </Trigger.ExitActions>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                              <Setter TargetName="tint" Property="Visibility" Value="Visible"></Setter>
-                            </Trigger>
-                          </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                      </ToggleButton.Template>
-                    </ToggleButton>
+                        <local:SlideToggle LeftText="{Binding EnabledText}" IsEnabled="{Binding IsInstalled}" IsChecked="{Binding Enabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></local:SlideToggle>
                   </DataTemplate>
                 </DataGridTemplateColumn.CellTemplate>
               </DataGridTemplateColumn>

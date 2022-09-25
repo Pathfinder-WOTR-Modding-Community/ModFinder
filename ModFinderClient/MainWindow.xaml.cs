@@ -269,7 +269,7 @@ namespace ModFinder
     #endregion
 
     #region Install / Rollback / Uninstall / Enable / Disable
-    private static void SetModEnabled(ModId id, bool enabled)
+    public static void SetModEnabled(ModId id, bool enabled)
     {
       try
       {
@@ -607,9 +607,12 @@ namespace ModFinder
     {
       try
       {
-        var mod = (sender as FrameworkElement).DataContext as ModViewModel;
-        mod.Enabled = !mod.Enabled;
-        SetModEnabled(mod.ModId, mod.Enabled);
+        //if (sender is not SlideToggle button) return;
+        //if (!button.IsEnabled) return;
+
+        //if (button.DataContext is not ModViewModel mod) return;
+        //mod.Enabled = button?.IsChecked ?? false;
+        //SetModEnabled(mod.ModId, mod.Enabled);
       }
       catch (Exception ex)
       {
