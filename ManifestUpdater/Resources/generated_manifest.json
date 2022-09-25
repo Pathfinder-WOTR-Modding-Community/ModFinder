@@ -946,6 +946,59 @@
     ]
   },
   {
+    "Name": "More Bulk Sell",
+    "Author": "zesen",
+    "Id": {
+      "Id": "MoreBulkSell",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": null,
+      "Nexus": {
+        "ModID": 163
+      }
+    },
+    "Version": {
+      "Latest": {
+        "Version": "0.4.4",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/163?tab=files&file_id=1489",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "0.4.4",
+          "Url": null,
+          "Changelog": "Compatibility update for game version 1.3.0k."
+        },
+        {
+          "Version": "0.4.3",
+          "Url": null,
+          "Changelog": "Fixed logic of selling accessories like belts and necklaces.\nCan now sell bracers of lesser archery, amulets of agile and mighty fists."
+        },
+        {
+          "Version": "0.4.2",
+          "Url": null,
+          "Changelog": "Known issue: there is no way to prevent normal weapons (no enchantments, nothing) from being sold when using the mod. Work around: disable the mod if you need this functionality. You can prevent non-enchanted cold-iron weapons from being sold by disabling cold iron by clicking \"more options\" under the weapon mod menu (ctrl + F10).\nCold iron and masterwork weapons were not being sold (enchanted or not) - fixed.\nUnique item detection might have been previously localization dependent, making the mod not work for some languages when this option was not disabled, this should now be fixed.\nMasterwork weapons were being sold even when this option was not selected - fixed."
+        },
+        {
+          "Version": "0.4.1",
+          "Url": null,
+          "Changelog": "Improved item selection for everything except weapons, armors and shields. Will improve those further in a future patch.\nNow can bulk sell common bracers of armor.\nNew option to toggle selling of scrolls and potions.\nNew button to set enhancement bonus for all items. This might be useful when all your items are +2, and you can switch to selling +1 items with a single click.\nThe mod can now properly be enabled/disabled in the UMM menu."
+        },
+        {
+          "Version": "0.4.0",
+          "Url": null,
+          "Changelog": "Improved unique item selection.\nFixed bug in weapon/armor/shield enhancement levels.\nFixed bug where weapon physical material types were ignored (now you can exclude weapon material types such as adamantine).\nAdded options for more item types: belts, necklaces, head pieces, cloaks and rings."
+        }
+      ]
+    },
+    "Description": "[b]Summary[/b]\n<br />\n<br />You can now choose more items to be sold when you click the \"Bulk Sell\" button during a trade.\n<br />\n<br />The item choices are done through the mod options (default ctrl+F10, and click on the mod). The item choices are not shown in the regular bulk sell item selection menu (as I do not really know how to add the options there in a good way).\n<br />\n<br />Example: If you select \"+3\" for weapons, all [i][b]common[/b][/i] weapons with an enchantment level of +3 and lower will be moved to be sold. Items marked as \"notable\" are never moved. Items that have a unique name are also not moved, unless you pick the option in the mod menu. Even with this option, items marked \"notable\" by the game are never moved to be sold. You can also toggle enchantment types such as Shock, Cold Iron etc. for weapons, planning to add similar options to other items.\n<br />\n<br />[b]Important: [/b]Make sure to always double check the items that are about to be sold!\n<br />\n<br />[b]Full changelog[/b][b] can be found under the [/b][url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/163?tab=logs]logs[/url][b]﻿ tab.[/b]\n<br />\n<br />[b]Update 0.4.4: [/b]Compatibility update for game version 1.3.0k.\n<br />[b]Update 0.4.3:[/b] \n<br />[list]\n<br />[*]Fixed some unique accessories being moved for bulk selling.\n<br />[*]More accessories can now be sold: amulets of mighty fists, amulets of agile firsts, bracers of lesser archery. These all use the same enchantment level for their accessory type item (e.g., setting necklaces to +2 will sell both amulets of natural armor +2, and amulet of mighty fists +2). \n<br />[/list]\n<br />\n<br />Feedback and bug reports are welcome!\n<br />[b]\n<br />[/b]\n<br />\n<br />[b]Installation\n<br />\n<br />[/b][list=1]\n<br />[*]Install the latest version of [url=https://www.nexusmods.com/site/mods/21/]Unity Mod Manager[/url] (UMM), and set it up for Pathfinder: WotR[b].[/b]\n<br />[*]Manually download the mod archive (.zip), and install it through UMM. You can simply drag &amp; drop the archive to the box in UMM.\n<br />[/list]\n<br />You are set! The game should show the installed mods at the main menu.\n<br />\n<br />Note that using mods disables Steam achievements. You can re-enable them with [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119]this mod[/url]﻿ (at least at the time of writing this).\n<br />\n<br />[b]\n<br />Other Information[/b]\n<br />\n<br />The mod does not change any game files and does a very minor patch, so it should be compatible with almost any other mod. That being said, use it at your own risk.\n<br />\n<br />[b]\n<br />Known issues[/b]\n<br />\n<br />See bug reports for known issues and other known bugs. You are welcome to submit bug reports as well if it doesn't already exist!\n<br />\n<br />[b]\n<br />Credit\n<br />\n<br />[/b]Some of the mods and tools I use during development, and which I am thankful for:\n<br />[list]\n<br />[*][b][url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/9]﻿Data Viewer[/url]﻿﻿[/b] and [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/8]Toy Box [/url]﻿by [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/users/2570756]Cabarius[/url], which are immensely helpful in understanding the internals of items, blueprints and enchantments, as well as adding items for testing!\n<br />[*][url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/137]Enhanced Inventory[/url] by [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/users/114484113]Xenofell[/url]﻿, not only for its usefulness in game, but also some inspirations from its great source code for a new modder!\n<br />[/list]",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/163",
+    "Tags": [
+      "UserInterface"
+    ]
+  },
+  {
     "Name": "More Relic Info",
     "Author": "zesen",
     "Id": {
