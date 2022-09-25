@@ -76,6 +76,7 @@ File an [issue](https://github.com/Pathfinder-WOTR-Modding-Community/ModFinder/i
     * Run it and set it up for use with Wrath
 * Make sure you have [.NET Destkop Runtime 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.0-windows-x64-installer) or later installed
     * .NET 6.0 and soon .NET 7.0 should work as well, but if not try the link above
+    * .NET 5.0 is not the same thang as the .NET Runtime 5.0 which is not the same thing as the .NEt Desktop Runtime 5.0; if you think already have .NET 5.0 or 6.0 installed and it isn't working, try that specific link
 * Try [running it as an Administrator](https://www.itechtics.com/run-programs-administrator/)
 * Make sure your anti-virus is not blocking it
     * Some anti-virus flags it as a trojan
