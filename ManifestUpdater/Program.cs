@@ -53,33 +53,34 @@ foreach (var manifest in internalManifest)
           }
         }
 
-      var latestRelease = new Release(ModVersion.Parse(latest.TagName), releaseAsset.BrowserDownloadUrl);
-      var releaseHistory = new List<Release>();
-      foreach (var release in releases)
-      {
-        releaseHistory.Add(
-          new Release(ModVersion.Parse(release.TagName), url: null, release.Body.Replace("\r\n", "\n")));
-      }
-      releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
+        var latestRelease = new Release(ModVersion.Parse(latest.TagName), releaseAsset.BrowserDownloadUrl);
+        var releaseHistory = new List<Release>();
+        foreach (var release in releases)
+        {
+          releaseHistory.Add(
+            new Release(ModVersion.Parse(release.TagName), url: null, release.Body.Replace("\r\n", "\n")));
+        }
+        releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
 
-      var newManifest =
-        new ModManifest(
-          manifest, new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()), now, repo.Description);
-      updatedManifest.Add(newManifest);
-      return newManifest;
-    }
-    else if (manifest.Service.IsNexus())
-    {
-      var modID = manifest.Service.Nexus.ModID;
-      var nexusFactory = NexusModsFactory.New(nexus);
-      var nexusMod = await nexusFactory.CreateModsInquirer().GetMod("pathfinderwrathoftherighteous", modID);
-      var changelog = await nexusFactory.CreateModsInquirer().GetModChangelogs("pathfinderwrathoftherighteous", modID);
-      var mod = await nexusFactory.CreateModFilesInquirer().GetModFilesAsync("pathfinderwrathoftherighteous", modID);
+        var newManifest =
+          new ModManifest(
+            manifest, new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()), now, repo.Description);
+        updatedManifest.Add(newManifest);
+        return newManifest;
+      }
+      
+      if (manifest.Service.IsNexus())
+      {
+        var modID = manifest.Service.Nexus.ModID;
+        var nexusFactory = NexusModsFactory.New(nexus);
+        var nexusMod = await nexusFactory.CreateModsInquirer().GetMod("pathfinderwrathoftherighteous", modID);
+        var changelog =
+          await nexusFactory.CreateModsInquirer().GetModChangelogs("pathfinderwrathoftherighteous", modID);
+        var mod = await nexusFactory.CreateModFilesInquirer().GetModFilesAsync("pathfinderwrathoftherighteous", modID);
 
         var latestVersion = ModVersion.Parse(nexusMod.Version);
         var downloadUrl =
-          @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" +
-          mod.ModFiles.Last().FileId;
+          @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" + mod.ModFiles.Last().FileId;
 
         var releaseHistory = new List<Release>();
         if (changelog != null)
@@ -93,17 +94,12 @@ foreach (var manifest in internalManifest)
         }
 
         var latestRelease = new Release(latestVersion, downloadUrl);
-
-      var newManifest =
-        new ModManifest(
-          manifest, new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()), now, nexusMod.Description);
-      updatedManifest.Add(newManifest);
-      return newManifest;
-    }
-    updatedManifest.Add(manifest);
         var newManifest =
           new ModManifest(
-            manifest, new VersionInfo(latestRelease, releaseHistory.Take(5).ToList()), nexusMod.Description);
+            manifest,
+            new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()),
+            now,
+            nexusMod.Description);
         updatedManifest.Add(newManifest);
         return newManifest;
       }
@@ -111,7 +107,10 @@ foreach (var manifest in internalManifest)
     catch (Exception e)
     {
       Log($"Failed to update {manifest.Id}, Using old data.");
-      var oldManifest = generatedManifest.FirstOrDefault(a => String.Equals(a.Id.Id, manifest.Id.Id,StringComparison.InvariantCultureIgnoreCase));
+      Log(e.ToString());
+      var oldManifest =
+        generatedManifest.FirstOrDefault(
+          a => string.Equals(a.Id.Id, manifest.Id.Id, StringComparison.InvariantCultureIgnoreCase));
       if (oldManifest != null)
       {
         updatedManifest.Add(oldManifest);
