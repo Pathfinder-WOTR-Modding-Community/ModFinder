@@ -78,9 +78,8 @@
       "Type": "UMM"
     },
     "Service": {
-      "GitHub": {
-        "Owner": "factubsio",
-        "RepoName": "BubbleTweaks"
+      "Nexus": {
+        "ModID": "177"
       }
     },
     "About": "Non-gameplay tweaks and enhancements to improve quality of life features. Fits into the base game without looking like a mod.",

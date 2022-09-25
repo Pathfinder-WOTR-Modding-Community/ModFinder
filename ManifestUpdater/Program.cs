@@ -19,6 +19,7 @@ github.Credentials = new Credentials(token);
 var nexus = NexusModsClient.Create(Environment.GetEnvironmentVariable("NEXUS_APITOKEN"), "Modfinder_WOTR", "0");
 
 var internalManifest = IOTool.FromString<List<ModManifest>>(Resources.internal_manifest);
+var generatedManifest = IOTool.FromString<List<ModManifest>>(Resources.Generated_Manifest);
 var tasks = new List<Task<ModManifest>>();
 
 var updatedManifest = new List<ModManifest>();
@@ -27,28 +28,30 @@ foreach (var manifest in internalManifest)
   var now = DateTime.Now;
   tasks.Add(Task.Run(async () =>
   {
-    if (manifest.Service.IsGitHub())
+    try
     {
-      var repoInfo = manifest.Service.GitHub;
-      var repo = await github.Repository.Get(repoInfo.Owner, repoInfo.RepoName);
-      var releases = await github.Repository.Release.GetAll(repoInfo.Owner, repoInfo.RepoName);
-      var latest = await github.Repository.Release.GetLatest(repoInfo.Owner, repoInfo.RepoName);
-      if (latest.Assets.Count == 0)
-        return null;
-
-      var releaseAsset = latest.Assets[0];
-      if (!string.IsNullOrEmpty(repoInfo.ReleaseFilter))
+      if (manifest.Service.IsGitHub())
       {
-        Regex filter = new Regex(repoInfo.ReleaseFilter, RegexOptions.Compiled);
-        foreach (var asset in latest.Assets)
+        var repoInfo = manifest.Service.GitHub;
+        var repo = await github.Repository.Get(repoInfo.Owner, repoInfo.RepoName);
+        var releases = await github.Repository.Release.GetAll(repoInfo.Owner, repoInfo.RepoName);
+        var latest = await github.Repository.Release.GetLatest(repoInfo.Owner, repoInfo.RepoName);
+        if (latest.Assets.Count == 0)
+          return null;
+
+        var releaseAsset = latest.Assets[0];
+        if (!string.IsNullOrEmpty(repoInfo.ReleaseFilter))
         {
-          if (filter.IsMatch(asset.Name))
+          Regex filter = new Regex(repoInfo.ReleaseFilter, RegexOptions.Compiled);
+          foreach (var asset in latest.Assets)
           {
-            releaseAsset = asset;
-            break;
+            if (filter.IsMatch(asset.Name))
+            {
+              releaseAsset = asset;
+              break;
+            }
           }
         }
-      }
 
       var latestRelease = new Release(ModVersion.Parse(latest.TagName), releaseAsset.BrowserDownloadUrl);
       var releaseHistory = new List<Release>();
@@ -73,20 +76,23 @@ foreach (var manifest in internalManifest)
       var changelog = await nexusFactory.CreateModsInquirer().GetModChangelogs("pathfinderwrathoftherighteous", modID);
       var mod = await nexusFactory.CreateModFilesInquirer().GetModFilesAsync("pathfinderwrathoftherighteous", modID);
 
-      var latestVersion = ModVersion.Parse(nexusMod.Version);
-      var downloadUrl =
-        @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" + mod.ModFiles.Last().FileId;
-  
-      var releaseHistory = new List<Release>();
-      if (changelog != null)
-      {
-        foreach (var entry in changelog)
+        var latestVersion = ModVersion.Parse(nexusMod.Version);
+        var downloadUrl =
+          @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" +
+          mod.ModFiles.Last().FileId;
+
+        var releaseHistory = new List<Release>();
+        if (changelog != null)
         {
-          releaseHistory.Add(new Release(ModVersion.Parse(entry.Key), url: null, string.Join("\n", entry.Value)));
+          foreach (var entry in changelog)
+          {
+            releaseHistory.Add(new Release(ModVersion.Parse(entry.Key), url: null, string.Join("\n", entry.Value)));
+          }
+
+          releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
         }
-        releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
-      }
-      var latestRelease = new Release(latestVersion, downloadUrl);
+
+        var latestRelease = new Release(latestVersion, downloadUrl);
 
       var newManifest =
         new ModManifest(
@@ -95,6 +101,24 @@ foreach (var manifest in internalManifest)
       return newManifest;
     }
     updatedManifest.Add(manifest);
+        var newManifest =
+          new ModManifest(
+            manifest, new VersionInfo(latestRelease, releaseHistory.Take(5).ToList()), nexusMod.Description);
+        updatedManifest.Add(newManifest);
+        return newManifest;
+      }
+    }
+    catch (Exception e)
+    {
+      Log($"Failed to update {manifest.Id}, Using old data.");
+      var oldManifest = generatedManifest.FirstOrDefault(a => String.Equals(a.Id.Id, manifest.Id.Id,StringComparison.InvariantCultureIgnoreCase));
+      if (oldManifest != null)
+      {
+        updatedManifest.Add(oldManifest);
+        return oldManifest;
+      }
+    }
+
     return null;
   }));
 }
@@ -137,6 +161,7 @@ void Log(string str)
   Console.Write("[ModFinder]  ");
   Console.WriteLine(str);
 }
+
 void LogObj(string key, object value)
 {
   Console.Write("[ModFinder]  ");
