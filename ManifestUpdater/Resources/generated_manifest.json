@@ -532,11 +532,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.81",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.81/ExpandedContent.zip",
+        "Version": "0.3.82",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.82/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.82",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.82\n\nAdded Subdomain\n-Thievery\n\nAdded Spell\n-Steam Ray Fusillade\n\nAdded Deity\n-Pazuzu"
+        },
         {
           "Version": "0.3.81",
           "Url": null,
@@ -556,11 +561,6 @@
           "Version": "0.3.73",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.73\nBugfix for Oceans Echo Archetype"
-        },
-        {
-          "Version": "0.3.72",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.72\n\nAdded spells\n-Reviving Finale\n-Deadly Finale\n\nSeveral bug fixes"
         }
       ]
     },
