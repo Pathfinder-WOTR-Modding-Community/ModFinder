@@ -421,11 +421,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.4.1",
-        "Url": "https://github.com/Truinto/DarkCodex/releases/download/v1.4.1/DarkCodex.zip",
+        "Version": "1.4.2",
+        "Url": "https://github.com/Truinto/DarkCodex/releases/download/v1.4.2/DarkCodex.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.4.2",
+          "Url": null,
+          "Changelog": "[1.4.2]\n- added 'body forms become immune to horrid wilting' to General: Various Tweaks\n- added Bladed Brush: new combat feat #87\n- extended Mythic.PatchVarious with: allow Elemental Barrage on any damage trigger #136\n- included feats in gold dragon bonus feat\n- added Mythic Animal Companion, mythic feat: unlocks companion equipment slots #134\n- added Not A Chance: mythic ability: immunity to crits #133\n- fixed PatchAlwaysAChance not being called #137\n- added Split Hex"
+        },
         {
           "Version": "1.4.1",
           "Url": null,
@@ -445,11 +450,6 @@
           "Version": "1.3.23",
           "Url": null,
           "Changelog": "[1.3.23]\n- removed Kinetic Artifact \"Catalyst\", because it causes bugs I can't seem to fix\n- fixed kinetic fist and energize weapon dealing damage even if burn cannot be paid\n- fixed Blood Kineticist cached damage info\n- fixed Kinetic Whip with 3rd party elements\n- fixed Selective Metakinesis with 3rd party elements\n- added fix for Eldritch Archer Spellstrike"
-        },
-        {
-          "Version": "1.3.22",
-          "Url": null,
-          "Changelog": "[1.3.22]\n- added infusion Kinetic Fist\n- added infusion Energize Weapon\n- fixed Spell Perfection not working with Spell Specialization and some interactions with TableTopTweaks\n- fixed Metamagic Master &co not working with Bladed Dash\n- added Hexcrafter to Cursing Gaze"
         }
       ]
     },
