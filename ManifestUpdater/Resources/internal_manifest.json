@@ -254,23 +254,6 @@
   },
 
   {
-    "Name": "Magic Time!",
-    "Author": "Kreaddy",
-    "Id": {
-      "Id": "MagicTime",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Stari0n",
-        "RepoName": "MagicTime"
-      }
-    },
-    "HomepageUrl": "https://github.com/Stari0n/MagicTime",
-    "Tags": [ "UserInterface", "Visuals" ]
-  },
-
-  {
     "Name": "Mewsifer Console",
     "Author": "WittleWolfie & Bubbles",
     "Id": {
@@ -594,6 +577,40 @@
   },
 
   {
+    "Name": "Toggleable Throwing Weapons",
+    "Author": "phoenix99",
+    "Id": {
+      "Id": "ToggleableThrowingWeapons",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "ToggleableThrowingWeapons"
+      }
+    },
+    "HomepageUrl": "https://github.com/pheonix99/ToggleableThrowingWeapons",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Tome of the Firebird",
+    "Author": "phoenix99",
+    "Id": {
+      "Id": "TomeOfTheFirebird",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "TomeOfTheFirebird"
+      }
+    },
+    "HomepageUrl": "https://github.com/pheonix99/TomeOfTheFirebird",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "ToyBox (a bag of tricks)",
     "Author": "Narria",
     "Id": {
@@ -675,5 +692,22 @@
     },
     "HomepageUrl": "https://github.com/thehambeard/WIT",
     "Tags": [ "UserInterface" ]
+  },
+
+  {
+    "Name": "WotR Resource Unification",
+    "Author": "pheonix99",
+    "Id": {
+      "Id": "ResourceUnification",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "WotRResourceUnification"
+      }
+    },
+    "HomepageUrl": "https://github.com/pheonix99/WotRResourceUnification",
+    "Tags": [ "Gameplay" ]
   }
 ]

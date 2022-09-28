@@ -90,15 +90,15 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.5",
-        "Url": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT/releases/download/1.0.5/WOTR_BOAT_BOAT_BOAT.zip",
+        "Version": "1.0.7",
+        "Url": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT/releases/download/1.0.7/WOTR_BOAT_BOAT_BOAT.zip",
         "Changelog": ""
       },
       "VersionHistory": [
         {
-          "Version": "1.0.5",
+          "Version": "1.0.7",
           "Url": null,
-          "Changelog": "* Ctrl+S will cause the game to save and exit to the main menu.\n* Experimental: Cheat menu added to select your boon.\n* Impervious Tailwind - All rogues, rangers, alchemists with the vivisectionist archetype, magi with the armored battlemage archetype, and slayers with the arcane enforcer archetype gain DR N/- equal to their level in this class.\nIn addition, every time they are hit with an attack they heal equal to their level in this class.\n* Tailwind of the Hardy - All barbarians, bloodragers, skalds with the battle scion archetype, and druids with the elemental rampager archetype in your party gain an additional +5 hit points and Fast Healing 1 every time they gain a level in that class.\n* Tailwind of Ironclad Magic - Arcane spell failure chance for wearing armor is reduced by 20% for you and your party members. When a spell is cast it does bonus damage equal to 3% for each 1% of their arcane spell failure, before reductions, even if it's not an arcane spell. (Only the description is changed to match the actual effect of the ability)\n* Crashing Tailwind - All party members gain a +1 bonus for every 2 character levels (minimum +1) to damage rolls with bludgeoning weapons.\n* Tailwind of the Bearded - Each dwarf in your party gains a +1 bonus to Constitution ability score, including themselves. \nIn addition, whenever a dwarf hits with a Dwarven War Axe or Dwarven Urgrosh, they deal an additional 1d6 additional damage, this damage is multipled on a critical hit.\n* Caustic Tailwind - All acid damage dealt by your party members is increased by 25%. \nIn addition all party members gain the ability to throw Acid Bombs like an alchemist an unlimited amount of times.\n* Frigid Tailwind - All cold damage dealt by your party members is increased by 25%. \nIn addition all enemies within 10 feet of any party member are affected by difficult terrain and have a -1 to reflex saves, this penalty increases by 1 every 5 character levels.\n* Sparkling Tailwind - All electricity damage dealt by your party members is increased by 25%.\nIn addition you can cast Call Lighting as a swift action that scales with your character level.\n* Searing Tailwind - All fire damage dealt by your party members is increased by 25%. \nIn addition all party members gain the ability to cast Fire Bolt as if they had the Fire Domain an unlimited amount of times.\n* Howling Tailwind - All sonic damage dealt by your party members is increased by 50%.\n* Tailwind of Elven Nimbleness - All elves in your party gain a bonus on initiative rolls equal to their character level.\nIn addition, all Elven Curved Blades have their critical hit range increased by one.\n* Slashing Tailwind - All party members gain a +1 bonus for every 2 character levels (minimum +1) to damage rolls with slashing weapons.\n* Tailwind of Fists - Unarmed strikes made by your party members gain a +1 bonus on attack rolls and deal one additional die of the same type as the primary one (1d6 becomes 2d6, 2d6 becomes 3d6). \nIn addition all unarmed attacks deal damage using the damage die of the next highest category (For example d10 becomes a 2d8)."
+          "Changelog": "Requires ModMenu:\nhttps://github.com/WittleWolfie/ModMenu\n![alt text](https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT/blob/master/BoatBoatBoatMenu.png?raw=true)\n\n1.0.7\nAdded \"Dead Is Dead\" mod. Togglings this option will backup your save with a different change.\nDisabled Tailwind of the Hardy Changes to be reviewed at a later date.\nAdded ModMenu support.\nAdded new cheats such as teleporting you to the port, island, or boat; finishing the island you are on; showing the map anywhere you are; etc.\nNew hotkey support thanks to ModMenu.\nNew cheat to add a tailwind to your party."
         }
       ]
     },
@@ -234,11 +234,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.4",
-        "Url": "https://github.com/Bobster1246/BugFixes/releases/download/1.0.4/BugFixes.zip",
+        "Version": "1.1.0",
+        "Url": "https://github.com/Bobster1246/BugFixes/releases/download/1.1.0/BugFixes.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.1.0",
+          "Url": null,
+          "Changelog": "Updated for the latest patch + incorporates WittleWolfie's fix."
+        },
         {
           "Version": "1.0.4",
           "Url": null,
@@ -285,11 +290,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.1",
-        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.1/CharacterOptionsPlus.0.3.1.zip",
+        "Version": "0.3.2",
+        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.2/CharacterOptionsPlus.0.3.2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.2",
+          "Url": null,
+          "Changelog": "- Added an illustration to the settings, courtesy of Cyrix on Discord\n- Updated Paired Opportunists\n    - Available to select as Pack Rager bonus teamwork feat\n    - Shares properly with all teamwork feat sharing abilities\n    - UI will recommend it less frequently"
+        },
         {
           "Version": "0.3.1",
           "Url": null,
@@ -309,11 +319,6 @@
           "Version": "0.1.2",
           "Url": null,
           "Changelog": "- Fix a bug causing Furious Focus bonus to show but not apply"
-        },
-        {
-          "Version": "0.1.1",
-          "Url": null,
-          "Changelog": "- Adds button to options to restore default settings"
         }
       ]
     },
@@ -416,11 +421,21 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.4.1",
-        "Url": "https://github.com/Truinto/DarkCodex/releases/download/v1.4.1/DarkCodex.zip",
+        "Version": "1.4.3",
+        "Url": "https://github.com/Truinto/DarkCodex/releases/download/v1.4.3/DarkCodex.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.4.3",
+          "Url": null,
+          "Changelog": "[1.4.3]\n- extended Mythic.PatchVarious with: elemental rampage works with limitless rage #138\n- fixed issue with loading CodexLib\n- fixed life bubble is AOE again"
+        },
+        {
+          "Version": "1.4.2",
+          "Url": null,
+          "Changelog": "[1.4.2]\n- added 'body forms become immune to horrid wilting' to General: Various Tweaks\n- added Bladed Brush: new combat feat #87\n- extended Mythic.PatchVarious with: allow Elemental Barrage on any damage trigger #136\n- included feats in gold dragon bonus feat\n- added Mythic Animal Companion, mythic feat: unlocks companion equipment slots #134\n- added Not A Chance: mythic ability: immunity to crits #133\n- fixed PatchAlwaysAChance not being called #137\n- added Split Hex"
+        },
         {
           "Version": "1.4.1",
           "Url": null,
@@ -435,16 +450,6 @@
           "Version": "1.3.24",
           "Url": null,
           "Changelog": "[1.3.24]\n- fixed bug from spellstrike patch"
-        },
-        {
-          "Version": "1.3.23",
-          "Url": null,
-          "Changelog": "[1.3.23]\n- removed Kinetic Artifact \"Catalyst\", because it causes bugs I can't seem to fix\n- fixed kinetic fist and energize weapon dealing damage even if burn cannot be paid\n- fixed Blood Kineticist cached damage info\n- fixed Kinetic Whip with 3rd party elements\n- fixed Selective Metakinesis with 3rd party elements\n- added fix for Eldritch Archer Spellstrike"
-        },
-        {
-          "Version": "1.3.22",
-          "Url": null,
-          "Changelog": "[1.3.22]\n- added infusion Kinetic Fist\n- added infusion Energize Weapon\n- fixed Spell Perfection not working with Spell Specialization and some interactions with TableTopTweaks\n- fixed Metamagic Master &co not working with Bladed Dash\n- added Hexcrafter to Cursing Gaze"
         }
       ]
     },
@@ -527,11 +532,21 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.75",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.75/ExpandedContent.zip",
+        "Version": "0.3.82",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.82/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.82",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.82\n\nAdded Subdomain\n-Thievery\n\nAdded Spell\n-Steam Ray Fusillade\n\nAdded Deity\n-Pazuzu"
+        },
+        {
+          "Version": "0.3.81",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.3.81\n\nAdded deity\n-Naderi\n\nMade Drake power selection order easier to follow\nFixed version number problems, probably. "
+        },
         {
           "Version": "0.3.75",
           "Url": null,
@@ -546,16 +561,6 @@
           "Version": "0.3.73",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.73\nBugfix for Oceans Echo Archetype"
-        },
-        {
-          "Version": "0.3.72",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.72\n\nAdded spells\n-Reviving Finale\n-Deadly Finale\n\nSeveral bug fixes"
-        },
-        {
-          "Version": "0.3.71",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.71\n\nJust some fixes, no new content."
         }
       ]
     },
@@ -623,11 +628,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "2.5.2",
-        "Url": "https://github.com/SpencerMycek/KineticistExpandedElements/releases/download/v2.5.2/KineticistElementsExpanded_2_5_2.zip",
+        "Version": "3.0.0",
+        "Url": "https://github.com/SpencerMycek/KineticistExpandedElements/releases/download/v3.0.0/KineticistElementsExpanded_3_0_0.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "3.0.0",
+          "Url": null,
+          "Changelog": "- Huge stability Update - I went over the codebase (10K+ lines) 3 times to align each element to work as similarly as possible\n- Fixes should be a lot easier in the future\n- Now using CodexLib (From DarkCodex) so everything should stay up-to-date and work great\n\n- Fix: Force Throw works again\n- Break: Many Throw does not work\n- Break: Void: Vampiric Infusion not working?\n- Break: Some infusions are just missing? (Greater Toxic/One of the Admixtures)\n\n\n- Now updated for the most recent game version (Thing should just work again<sup>tm</sup>)"
+        },
         {
           "Version": "2.5.2",
           "Url": null,
@@ -647,11 +657,6 @@
           "Version": "2.0.2",
           "Url": null,
           "Changelog": "More Icons!\n\nAlso reworked Many Throw to be more \"fireball-like\" because that's what the ability actually is"
-        },
-        {
-          "Version": "2.0.1",
-          "Url": null,
-          "Changelog": "Fixes to ability choices, descriptions etc\n\n- Added: New Icons for Void Abilities, see the README for credits\n- Added: Void Healer talent to replace Kinetic Healer for the Void Element"
         }
       ]
     },
@@ -716,62 +721,6 @@
     "Tags": [
       "Content",
       "Gameplay"
-    ]
-  },
-  {
-    "Name": "Magic Time!",
-    "Author": "Kreaddy",
-    "Id": {
-      "Id": "MagicTime",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Stari0n",
-        "RepoName": "MagicTime",
-        "ReleaseFilter": null
-      },
-      "Nexus": null
-    },
-    "Version": {
-      "Latest": {
-        "Version": "1.4.0",
-        "Url": "https://github.com/Stari0n/MagicTime/releases/download/v1.4.0/magic_time_v1.4.0.zip",
-        "Changelog": ""
-      },
-      "VersionHistory": [
-        {
-          "Version": "1.4.0",
-          "Url": null,
-          "Changelog": "- 1.2 and DLC compatibility.\n- Fixed a few issues with the multiple archetypes mod."
-        },
-        {
-          "Version": "1.3.9",
-          "Url": null,
-          "Changelog": "Fixed Staff-Like Wand breaking spells cast from items by its mere existence."
-        },
-        {
-          "Version": "1.3.9",
-          "Url": null,
-          "Changelog": "- Fixed Blood Arcanist with the Arcane bloodline being stuck at level 8.\n- Added the Dazing Spell metamagic feat.\n- Added the Favorite Metamagic - Dazing mythic ability.\n- Added the Material Freedom mythic ability (allows you to ignore a specific material component in spells).\n- Updated Metamagic Insight to take dazing spells into consideration."
-        },
-        {
-          "Version": "1.3.7",
-          "Url": null,
-          "Changelog": "- Added the Blood Arcanist and Pact Wizard archetypes.\n- Added the Intensified Spell metamagic feat.\n- Added the Favorite Metamagic - Intensified mythic ability.\n- Updated Metamagic Insight to take intensified spells into consideration.\n- (arkive) Fixed repository."
-        },
-        {
-          "Version": "1.3.3",
-          "Url": null,
-          "Changelog": "- Fixed crash occuring when Worldcrawl is loaded before.\n- Fixed Warsighted being considered homebrew."
-        }
-      ]
-    },
-    "Description": "Mod for Pathfinder: Wrath of the Righteous focused on adding mechanical content, mostly for spellcasting characters.",
-    "HomepageUrl": "https://github.com/Stari0n/MagicTime",
-    "Tags": [
-      "UserInterface",
-      "Visuals"
     ]
   },
   {
@@ -957,20 +906,35 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.1.0",
-        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.1.0/ModMenu.1.1.0.zip",
+        "Version": "1.2.2",
+        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.2.2/ModMenu.1.2.2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
         {
+          "Version": "1.2.2",
+          "Url": null,
+          "Changelog": "- Fixes a bug which causes key bindings to stop working after returning to the main menu from in-game"
+        },
+        {
+          "Version": "1.2.1",
+          "Url": null,
+          "Changelog": "- Adds `scaleImage` parameter to images for more control"
+        },
+        {
+          "Version": "1.2.0",
+          "Url": null,
+          "Changelog": "- Fix remaining warnings for `ScriptableObject.CreateInstance()`\n- Fix issue preventing the default dialog from dismissing\n- Add support for dropdown list\n    - Accepts a list of LocalizedString values\n    - The \"value\" of the setting is the index of the entry in the list\n- Add support for key binding settings\n- Add support for dropdown buttons\n    - Setting has a dropdown list with a button to the left\n    - When the button is clicked, `OnClick(int)` is called, passing in the index of the currently selected entry in the list"
+        },
+        {
+          "Version": "1.1.1",
+          "Url": null,
+          "Changelog": "- Fix warnings when adding Image and SubHeaders\n- Added missing API docs"
+        },
+        {
           "Version": "1.1.0",
           "Url": null,
           "Changelog": "- Settings groups are now collapsible\n    - By default group are collapsed\n- Added support for subheaders, creating smaller collapsible groups within a single group\n- Added support for a \"default\" button which restore all settings in a single group to their default value\n- Added support for specifying the height of an image"
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "Initial release"
         }
       ]
     },
@@ -1538,11 +1502,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "2.3.1",
-        "Url": "https://github.com/Vek17/TabletopTweaks-Base/releases/download/v2.3.1/TabletopTweaks-Base.zip",
+        "Version": "2.3.2",
+        "Url": "https://github.com/Vek17/TabletopTweaks-Base/releases/download/v2.3.2/TabletopTweaks-Base.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "2.3.2",
+          "Url": null,
+          "Changelog": "Fix for 1.4.4g"
+        },
         {
           "Version": "2.3.1",
           "Url": null,
@@ -1562,11 +1531,6 @@
           "Version": "2.2.2",
           "Url": null,
           "Changelog": "## Version 2.2.1\n* Fixes\n    * Fixed broken config options for some metamagic.\n    * Improved mod compatibility with metamagics.\n    * Fixed mod compatibility issue with world crawl."
-        },
-        {
-          "Version": "2.2.1",
-          "Url": null,
-          "Changelog": "## Version 2.2.1\n* Fixes\n    * Fixed issue where vivisectionist was unselectable with alternate capstones enabled."
         }
       ]
     },
@@ -1684,6 +1648,113 @@
     },
     "Description": "This module provides non tabletop based tweaks to Owlcat's original mythic content including changes to some mythic classes and some mythic abilities.",
     "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Reworks",
+    "Tags": [
+      "Content",
+      "Gameplay"
+    ]
+  },
+  {
+    "Name": "Toggleable Throwing Weapons",
+    "Author": "phoenix99",
+    "Id": {
+      "Id": "ToggleableThrowingWeapons",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "ToggleableThrowingWeapons",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.2.1",
+        "Url": "https://github.com/pheonix99/ToggleableThrowingWeapons/releases/download/1.2.1/ToggleableThrowingWeapons.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.2.1",
+          "Url": null,
+          "Changelog": "Compatibility with Way Of The Shooting Star from Morvarchs Playstyle Expansions"
+        },
+        {
+          "Version": "1.2.0",
+          "Url": null,
+          "Changelog": "Increased throwing range to 30 feet.\n\nPoint Blank Master now available."
+        },
+        {
+          "Version": "1.1.0",
+          "Url": null,
+          "Changelog": "GFX issues should be fixed.\n\nThe modified thrown strength enchantment should work right now - no more overriding Finesse Training and suchlike in melee."
+        },
+        {
+          "Version": "1.0.0",
+          "Url": null,
+          "Changelog": "Initial release: Can now toggle throwing mode on and off for daggers."
+        }
+      ]
+    },
+    "Description": null,
+    "HomepageUrl": "https://github.com/pheonix99/ToggleableThrowingWeapons",
+    "Tags": [
+      "Content",
+      "Gameplay"
+    ]
+  },
+  {
+    "Name": "Tome of the Firebird",
+    "Author": "phoenix99",
+    "Id": {
+      "Id": "TomeOfTheFirebird",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "TomeOfTheFirebird",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.2.7",
+        "Url": "https://github.com/pheonix99/TomeOfTheFirebird/releases/download/1.2.7/TomeOfTheFirebird.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.2.7",
+          "Url": null,
+          "Changelog": "Added Death Patron.\n\nFixed issue with featurized version of vanilla perma holy aura from dawn of dragons not working."
+        },
+        {
+          "Version": "1.2.6",
+          "Url": null,
+          "Changelog": "Freezing sphere actually works now."
+        },
+        {
+          "Version": "1.2.5",
+          "Url": null,
+          "Changelog": "Quick fix for discordant song being borked in the level up UI"
+        },
+        {
+          "Version": "1.2.4",
+          "Url": null,
+          "Changelog": "Actually fixed the Prodigious TWF penalty-reduction.\nIn unlimited-use mode Dragon and Abyssal bloodlines claws stay on after rest."
+        },
+        {
+          "Version": "1.2.3",
+          "Url": null,
+          "Changelog": "Fixed Prodigious TWF applying to main-hand-only standard action attacks\n\nAngel Artifact Cloak actually works now"
+        }
+      ]
+    },
+    "Description": null,
+    "HomepageUrl": "https://github.com/pheonix99/TomeOfTheFirebird",
     "Tags": [
       "Content",
       "Gameplay"
@@ -1928,6 +1999,56 @@
     "HomepageUrl": "https://github.com/thehambeard/WIT",
     "Tags": [
       "UserInterface"
+    ]
+  },
+  {
+    "Name": "WotR Resource Unification",
+    "Author": "pheonix99",
+    "Id": {
+      "Id": "ResourceUnification",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "WotRResourceUnification",
+        "ReleaseFilter": null
+      },
+      "Nexus": null
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.2.0",
+        "Url": "https://github.com/pheonix99/WotRResourceUnification/releases/download/v1.2.0/ResourceUnification.zip",
+        "Changelog": ""
+      },
+      "VersionHistory": [
+        {
+          "Version": "1.2.0",
+          "Url": null,
+          "Changelog": "Fix for issue causing all mod affected resources to stop working."
+        },
+        {
+          "Version": "1.1.1",
+          "Url": null,
+          "Changelog": "Properly handles invalid guid input."
+        },
+        {
+          "Version": "1.1.0",
+          "Url": null,
+          "Changelog": "Added Arcanist Arcane Reservoir and Alchemist Bombs to the preloaded config.\n\nImproved a lot of backend things.\n\nAdded reporting on what it's doing."
+        },
+        {
+          "Version": "1.0.0",
+          "Url": null,
+          "Changelog": "Tool to combine existing scaled-by-level resources across classes and use the best ability modifier where applicable.\n\nComes with config for Ki and Arcane pool."
+        }
+      ]
+    },
+    "Description": null,
+    "HomepageUrl": "https://github.com/pheonix99/WotRResourceUnification",
+    "Tags": [
+      "Gameplay"
     ]
   }
 ]
