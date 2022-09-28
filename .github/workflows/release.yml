@@ -72,7 +72,7 @@ jobs:
           type: 'zip'
           filename: 'ModFinder.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
-          path: ModFinder/bin/Release
+          path: ModFinderClient/bin/Release/net5.0-windows
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
