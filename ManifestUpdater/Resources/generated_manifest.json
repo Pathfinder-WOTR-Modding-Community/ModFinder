@@ -421,11 +421,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.4.2",
-        "Url": "https://github.com/Truinto/DarkCodex/releases/download/v1.4.2/DarkCodex.zip",
+        "Version": "1.4.3",
+        "Url": "https://github.com/Truinto/DarkCodex/releases/download/v1.4.3/DarkCodex.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.4.3",
+          "Url": null,
+          "Changelog": "[1.4.3]\n- extended Mythic.PatchVarious with: elemental rampage works with limitless rage #138\n- fixed issue with loading CodexLib\n- fixed life bubble is AOE again"
+        },
         {
           "Version": "1.4.2",
           "Url": null,
@@ -445,11 +450,6 @@
           "Version": "1.3.24",
           "Url": null,
           "Changelog": "[1.3.24]\n- fixed bug from spellstrike patch"
-        },
-        {
-          "Version": "1.3.23",
-          "Url": null,
-          "Changelog": "[1.3.23]\n- removed Kinetic Artifact \"Catalyst\", because it causes bugs I can't seem to fix\n- fixed kinetic fist and energize weapon dealing damage even if burn cannot be paid\n- fixed Blood Kineticist cached damage info\n- fixed Kinetic Whip with 3rd party elements\n- fixed Selective Metakinesis with 3rd party elements\n- added fix for Eldritch Archer Spellstrike"
         }
       ]
     },
