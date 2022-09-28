@@ -40,8 +40,6 @@ name: Release
 
 on:
   workflow_dispatch:
-    tags:
-      - "v*"
   push:
     tags:
       - "v*"
