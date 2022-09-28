@@ -67,7 +67,7 @@ namespace ModFinder
     }
 
     /// <summary>
-    /// %AppData%/..
+    /// %AppData%/.. 
     /// </summary>
     public static string AppDataRoot => Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)).FullName;
 
