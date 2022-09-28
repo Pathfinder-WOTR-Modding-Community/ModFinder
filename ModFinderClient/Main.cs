@@ -77,6 +77,32 @@ namespace ModFinder
     public static string WrathDataDir => Path.Combine(AppDataRoot, "LocalLow", "Owlcat Games", "Pathfinder Wrath Of The Righteous");
 
     /// <summary>
+    /// Prompts user to manually input path to wrath
+    /// </summary>
+    public static void GetWrathPathManual()
+    {
+      Logger.Log.Info($"WrathPath not found, prompting user.");
+      var dialog = new OpenFileDialog
+      {
+        FileName = "Wrath",
+        DefaultExt = ".exe",
+        Filter = "Executable (.exe)|*.exe",
+        Title = "Select Wrath.exe (in the installation directory)"
+      };
+
+      var result = dialog.ShowDialog();
+      if (result is not null && result.Value)
+      {
+        _WrathPath = new(Path.GetDirectoryName(dialog.FileName));
+      }
+      else
+      {
+        MainWindow.ShowError("Unable to find Wrath installation path.");
+        Logger.Log.Error("Unable to find Wrath installation path.");
+      }
+    }
+
+    /// <summary>
     /// Path to the installed wrath folder
     /// </summary>
     public static DirectoryInfo WrathPath
@@ -100,36 +126,26 @@ namespace ModFinder
           var log = Path.Combine(WrathDataDir, "Player.log");
           if (!File.Exists(log))
           {
-            Logger.Log.Info($"WrathPath not found, prompting user.");
-            var dialog = new OpenFileDialog
-            {
-              FileName = "Wrath",
-              DefaultExt = ".exe",
-              Filter = "Executable (.exe)|*.exe",
-              Title = "Select Wrath.exe (in the installation directory)"
-            };
-
-            var result = dialog.ShowDialog();
-            if (result is not null && result.Value)
-            {
-              _WrathPath = new(Path.GetDirectoryName(dialog.FileName));
-            }
-            else
-            {
-              MainWindow.ShowError("Unable to find Wrath installation path.");
-              Logger.Log.Error("Unable to find Wrath installation path.");
-            }
+            GetWrathPathManual();
           }
           else
           {
-            Logger.Log.Info($"Getting WrathPath from UMM log.");
+            try
+            {
+              Logger.Log.Info($"Getting WrathPath from UMM log.");
 
-            using var sr = new StreamReader(File.OpenRead(log));
-            var firstline = sr.ReadLine();
+              using var sr = new StreamReader(File.OpenRead(log));
+              var firstline = sr.ReadLine();
 
-            var extractPath = new Regex(".*?'(.*)'");
-            _WrathPath = new(extractPath.Match(firstline).Groups[1].Value);
-            _WrathPath = _WrathPath.Parent.Parent;
+              var extractPath = new Regex(".*?'(.*)'");
+              _WrathPath = new(extractPath.Match(firstline).Groups[1].Value);
+              _WrathPath = _WrathPath.Parent.Parent;
+            }
+            catch (Exception e)
+            {
+              Logger.Log.Error("Unable to find Wrath installation path, Prompting manual input.");
+              GetWrathPathManual();
+            }
           }
 
           Settings.AutoWrathPath = WrathPath.FullName;
