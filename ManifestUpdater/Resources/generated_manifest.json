@@ -906,11 +906,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.2.1",
-        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.2.1/ModMenu.1.2.1.zip",
+        "Version": "1.2.2",
+        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.2.2/ModMenu.1.2.2.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.2.2",
+          "Url": null,
+          "Changelog": "- Fixes a bug which causes key bindings to stop working after returning to the main menu from in-game"
+        },
         {
           "Version": "1.2.1",
           "Url": null,
@@ -930,11 +935,6 @@
           "Version": "1.1.0",
           "Url": null,
           "Changelog": "- Settings groups are now collapsible\n    - By default group are collapsed\n- Added support for subheaders, creating smaller collapsible groups within a single group\n- Added support for a \"default\" button which restore all settings in a single group to their default value\n- Added support for specifying the height of an image"
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "Initial release"
         }
       ]
     },
