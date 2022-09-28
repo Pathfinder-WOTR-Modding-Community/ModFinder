@@ -634,6 +634,11 @@
       },
       "VersionHistory": [
         {
+          "Version": "3.0.0",
+          "Url": null,
+          "Changelog": "- Huge stability Update - I went over the codebase (10K+ lines) 3 times to align each element to work as similarly as possible\n- Fixes should be a lot easier in the future\n- Now using CodexLib (From DarkCodex) so everything should stay up-to-date and work great\n\n- Fix: Force Throw works again\n- Break: Many Throw does not work\n- Break: Void: Vampiric Infusion not working?\n- Break: Some infusions are just missing? (Greater Toxic/One of the Admixtures)\n\n\n- Now updated for the most recent game version (Thing should just work again<sup>tm</sup>)"
+        },
+        {
           "Version": "2.5.2",
           "Url": null,
           "Changelog": "- Fix Negative Energy Kinetic Blade Text\n- Fix Void Healer prereq for Vampiric Infusion\n- Change icon reference for Positive Admixture to an icon that actually exists\n- Fix Summer/Winter blades correctly targeting normal AC\n- Actually compiled in release mode this time!"
@@ -652,11 +657,6 @@
           "Version": "2.0.2",
           "Url": null,
           "Changelog": "More Icons!\n\nAlso reworked Many Throw to be more \"fireball-like\" because that's what the ability actually is"
-        },
-        {
-          "Version": "2.0.1",
-          "Url": null,
-          "Changelog": "Fixes to ability choices, descriptions etc\n\n- Added: New Icons for Void Abilities, see the README for credits\n- Added: Void Healer talent to replace Kinetic Healer for the Void Element"
         }
       ]
     },
@@ -1408,6 +1408,11 @@
           "Changelog": ">Fixed for 1.4.0y."
         },
         {
+          "Version": "1.10.6",
+          "Url": null,
+          "Changelog": ">Fixed for V1.4.0 beta"
+        },
+        {
           "Version": "1.10.5",
           "Url": null,
           "Changelog": "Fixed an issue when the game would freeze after a respec.\nAdded an option to remove the Attribute Selection Icons on the class page."
@@ -1416,11 +1421,6 @@
           "Version": "1.10.4",
           "Url": null,
           "Changelog": "Updated for 1.3.0 and fixed an issue where DLC2 companions wouldnt be detected as story companions and therefore not be able to be properly respecced."
-        },
-        {
-          "Version": "1.10.3",
-          "Url": null,
-          "Changelog": "Fixed for non-beta 1.2.0"
         }
       ]
     },
