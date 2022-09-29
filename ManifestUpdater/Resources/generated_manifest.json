@@ -290,11 +290,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.2",
-        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.2/CharacterOptionsPlus.0.3.2.zip",
+        "Version": "0.3.3",
+        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.3/CharacterOptionsPlus.0.3.3.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.3",
+          "Url": null,
+          "Changelog": "- Fixed compatibility w/ EE\n- Improved stability so one blueprint failing to configure should not impact the rest"
+        },
         {
           "Version": "0.3.2",
           "Url": null,
@@ -314,11 +319,6 @@
           "Version": "0.2.0",
           "Url": null,
           "Changelog": "**IMPORTANT:** Delete this file: `<WrathInstallDir>\\Mods\\CharacterOptionsPlus\\LocalizedStrings.json`\n\n- Added Arrowsong Minstrel\n    - Spell-strike implementation matches Eldritch Archer instead of directly implementing TT rules\n    - No I cannot make the bonus spell selection show the spell information"
-        },
-        {
-          "Version": "0.1.2",
-          "Url": null,
-          "Changelog": "- Fix a bug causing Furious Focus bonus to show but not apply"
         }
       ]
     },
