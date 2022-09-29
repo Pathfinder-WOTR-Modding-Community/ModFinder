@@ -532,11 +532,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.82",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.82/ExpandedContent.zip",
+        "Version": "0.4.0",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.4.0/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.4.0",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.4.0\n\nUpdated for EE update.\n\nFixed localization problems (thanks Wolfie)\n\nAdded Subdomain\n-Revolution\n"
+        },
         {
           "Version": "0.3.82",
           "Url": null,
@@ -556,11 +561,6 @@
           "Version": "0.3.74",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.74\n\nAdded Spells\n-Stunning Finale\n-Purging Finale\n\nAdded Drake Variants\n-Bronze\n-Copper\n\nAdded art to all drake variants"
-        },
-        {
-          "Version": "0.3.73",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.73\nBugfix for Oceans Echo Archetype"
         }
       ]
     },
