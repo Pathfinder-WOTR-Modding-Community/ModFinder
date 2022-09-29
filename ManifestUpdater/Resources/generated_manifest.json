@@ -906,11 +906,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.2.2",
-        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.2.2/ModMenu.1.2.2.zip",
+        "Version": "1.2.3",
+        "Url": "https://github.com/WittleWolfie/ModMenu/releases/download/v1.2.3/ModMenu.1.2.3.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.2.3",
+          "Url": null,
+          "Changelog": "- Now with less log spam!"
+        },
         {
           "Version": "1.2.2",
           "Url": null,
@@ -930,11 +935,6 @@
           "Version": "1.1.1",
           "Url": null,
           "Changelog": "- Fix warnings when adding Image and SubHeaders\n- Added missing API docs"
-        },
-        {
-          "Version": "1.1.0",
-          "Url": null,
-          "Changelog": "- Settings groups are now collapsible\n    - By default group are collapsed\n- Added support for subheaders, creating smaller collapsible groups within a single group\n- Added support for a \"default\" button which restore all settings in a single group to their default value\n- Added support for specifying the height of an image"
         }
       ]
     },
