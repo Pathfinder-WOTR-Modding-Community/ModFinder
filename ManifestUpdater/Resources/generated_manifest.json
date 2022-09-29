@@ -90,15 +90,15 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.7",
-        "Url": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT/releases/download/1.0.7/WOTR_BOAT_BOAT_BOAT.zip",
+        "Version": "1.0.8",
+        "Url": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT/releases/download/1.0.8/WOTR_BOAT_BOAT_BOAT.zip",
         "Changelog": ""
       },
       "VersionHistory": [
         {
-          "Version": "1.0.7",
+          "Version": "1.0.8",
           "Url": null,
-          "Changelog": "Requires ModMenu:\nhttps://github.com/WittleWolfie/ModMenu\n![alt text](https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT/blob/master/BoatBoatBoatMenu.png?raw=true)\n\n1.0.7\nAdded \"Dead Is Dead\" mod. Togglings this option will backup your save with a different change.\nDisabled Tailwind of the Hardy Changes to be reviewed at a later date.\nAdded ModMenu support.\nAdded new cheats such as teleporting you to the port, island, or boat; finishing the island you are on; showing the map anywhere you are; etc.\nNew hotkey support thanks to ModMenu.\nNew cheat to add a tailwind to your party."
+          "Changelog": "Requires ModMenu:\nhttps://github.com/WittleWolfie/ModMenu\n![alt text](https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT/blob/master/BoatBoatBoatMenu.png?raw=true)\n\n1.0.8\nRemoved Add Tailwind cheat to see if users that are experiencing crashes are having a problem with this cheat.\n1.0.7\nAdded \"Dead Is Dead\" mod. Togglings this option will backup your save with a different change.\nDisabled Tailwind of the Hardy Changes to be reviewed at a later date.\nAdded ModMenu support.\nAdded new cheats such as teleporting you to the port, island, or boat; finishing the island you are on; showing the map anywhere you are; etc.\nNew hotkey support thanks to ModMenu.\nNew cheat to add a tailwind to your party."
         }
       ]
     },
