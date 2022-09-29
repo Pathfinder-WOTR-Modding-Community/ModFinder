@@ -356,6 +356,23 @@
   },
 
   {
+    "Name": "Morvarch's Playstyle Expansions",
+    "Author": "Morvarch Princess",
+    "Id": {
+      "Id": "UnnamedWotrMod",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "MorvarchPrincess",
+        "RepoName": "MorvarchsPlaystyleExpansions"
+      }
+    },
+    "HomepageUrl": "https://github.com/MorvarchPrincess/MorvarchsPlaystyleExpansions",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "Multiple Archetypes",
     "Author": "Vek17",
     "Id": {
