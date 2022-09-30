@@ -19,7 +19,7 @@
         "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119?tab=files&file_id=478",
         "Changelog": ""
       },
-      "LastUpdated": "2022-09-30T18:48:40.4668622+00:00",
+      "LastUpdated": "2021-09-18T18:48:40.4668622+00:00",
       "VersionHistory": [
         {
           "Version": "1.0.1",
@@ -58,7 +58,7 @@
         "Url": "https://github.com/zephe0n/AutoMount/releases/download/v0.1.0/AutoMount-v0.1.0.zip",
         "Changelog": ""
       },
-      "LastUpdated": "2022-09-30T18:48:40.4709954+00:00",
+      "LastUpdated": "2022-09-03T18:48:40.4709954+00:00",
       "VersionHistory": [
         {
           "Version": "0.1.0",
@@ -101,7 +101,7 @@
         "Url": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT/releases/download/1.0.8/WOTR_BOAT_BOAT_BOAT.zip",
         "Changelog": ""
       },
-      "LastUpdated": "2022-09-30T18:48:40.4710207+00:00",
+      "LastUpdated": "2022-09-26T18:48:40.4710207+00:00",
       "VersionHistory": [
         {
           "Version": "1.0.8",
@@ -192,7 +192,7 @@
         }
       ]
     },
-    "LastChecked": "2022-09-30T19:44:51.9527384+00:00",
+    "LastChecked": "2022-09-10T19:44:51.9527384+00:00",
     "Description": "[b]Imagine if setting up an auto buffing mod was easy enough you don't need a PhD, and integrated enough you don't need to open a UMM gui to configure it?\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />WANT TO LAUGH AT CODE?????\n<br />\n<br />[url=https://github.com/factubsio/BubbleBuffs]factubsio/BubbleBuffs: Bubbles Ultimate Buff Bot Lite Extra Simple (BUBBLES) (github.com)[/url][/b]\n<br />\n<br />\n<br />\n<br />\n<br />Items/Consumables are [b]not[/b] implemented yet.\n<br />\n<br />\n<br />\n<br />[center][size=6][b][font=Comic Sans MS]GAME VERSION 1.1 =&gt; MOD VERSION 2.X.X\n<br />GAME VERSION 1.2 =&gt; MOD VERSION 3.X.X\n<br />\n<br />[/font][/b][/size]I am not currently supporting older game versions, go look through the archived files and see if any work but don't file bugs against them.[/center]\n<br />[size=5]HOW TO USE:\n<br />[/size]\n<br />(also see the images for help)\n<br />\n<br />While [b]not[/b] on the global map and [b]not[/b] in Drezen/camp, or anywhere where you have your full party:\n<br />\n<br />Go to the Spellbook tab.\n<br />Click \"Buff Setup\" at the lower right\n<br />Select spells or abilities (Items and Consumables are [b]not[/b] implemented yet).\n<br />Select the spell/ability you want to cast\n<br />Click on each party member at the bottom to toggle casting on them:\n<br />  * gray: do not cast\n<br />  * green: cast (available casters)\n<br />  * yellow: cast (no available casters)\n<br />  * red: invalid target (e.g. personal spells, or animal-growth on a human, etc).\n<br />You can customise caster behaviour with the little \"up\" arrow above the caster's portrait (not the target portrait).\n<br />\n<br />Close the spellbook\n<br />Click the \"buff\" button on the lower left of the screen.\n<br />\n<br />optional: Check the results in the combat log\n<br />\n<br />[size=5]Files:\n<br />[/size]\n<br />[size=2]Settings are stored in the UserSettings folder under the mod, in a file called bubblebuff-GAME_ID.json where GAME_ID is the guid of your playthrough. Feel free to look through and edit it but expect things to crash if you do wonky stuff like to turn on Powerful Change on for a druid, or try to get someone to cast a spell they don't have.\n<br />[/size]\n<br />[size=5]For Skidmarcanists:[/size]\n<br />\n<br />If you are an arcanist and casting an appropriate spell you can toggle \"Allow Share Transmutation\" and \"Use Powerful Change\". The mod [b]will[/b] spend the points from your arcane resevoir but does not (currently) predict them like it does spell slots.\n<br />\n<br />If you are using Share Transmutation and there are no points, the spell will be skipped.\n<br />If you are using Powerful Change and there are no points, the spell will be cast without it.\n<br />\n<br />[b]NOTE: The combat log will say these casts are successful, it is a known thing and will get fixed eventually.[/b]\n<br />\n<br />Thanks to DeadMor0z for the contributions!\n<br />\n<br />\n<br />如何使用：在任何能完整操控整个小队的地方，点开法术书右下角进入设置面板，先选择法术，然后在中间选择施法者，中间的右边选择这个施法所在的施法序列，最后在最下方选择施法目标。\n<br />设置好后，在游戏中任何时候点击左下角的三个按钮即可瞬间释放相应序列中所有设置好的法术。\n<br />此mod由1onepower翻译，你可以在 [url=https://space.bilibili.com/383719917?spm_id_from=333.1007.0.0]B站[/url] 关注我,并且欢迎加入最大的中文CRPG社区之一：[url=https://tieba.baidu.com/f?kw=%E6%8B%A5%E7%8E%8B%E8%80%85&amp;fr=index]拥王者吧[/url]",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",
     "Tags": [
@@ -220,7 +220,7 @@
         "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/177?tab=files&file_id=1702",
         "Changelog": ""
       },
-      "LastUpdated": "2022-09-30T18:48:40.4710228+00:00",
+      "LastUpdated": "2022-09-10T18:48:40.4710228+00:00",
       "VersionHistory": [
         {
           "Version": "1.15.0",
@@ -304,7 +304,7 @@
         "Url": "https://github.com/Bobster1246/BugFixes/releases/download/1.1.0/BugFixes.zip",
         "Changelog": ""
       },
-      "LastUpdated": "2022-09-30T18:48:40.4710241+00:00",
+      "LastUpdated": "2022-09-24T18:48:40.4710241+00:00",
       "VersionHistory": [
         {
           "Version": "1.1.0",
@@ -363,7 +363,7 @@
         "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.3/CharacterOptionsPlus.0.3.3.zip",
         "Changelog": ""
       },
-      "LastUpdated": "2022-09-30T18:48:40.4710247+00:00",
+      "LastUpdated": "2022-09-29T18:48:40.4710247+00:00",
       "VersionHistory": [
         {
           "Version": "0.3.3",
@@ -437,7 +437,7 @@
         "Url": "https://github.com/alterasc/CombatRelief/releases/download/1.3.1/CombatRelief-1.3.1.zip",
         "Changelog": ""
       },
-      "LastUpdated": "2022-09-30T18:48:40.4710252+00:00",
+      "LastUpdated": "2022-08-30T18:48:40.4710252+00:00",
       "VersionHistory": [
         {
           "Version": "1.3.1",
