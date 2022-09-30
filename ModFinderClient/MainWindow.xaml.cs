@@ -88,19 +88,15 @@ namespace ModFinder
         dropTarget.Drop += DropTarget_Drop;
         dropTarget.DragOver += DropTarget_DragOver;
 
-
         ModDB.InitSort();
       }
       catch (Exception e)
       {
-        ShowError("Failed to start.");
         Logger.Log.Error($"Failed to initialize main window.", e);
         Close();
       }
 
-
       DetailsPanel.SizeChanged += DetailsPanel_SizeChanged;
-
     }
 
     private void DetailsPanel_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -113,7 +109,6 @@ namespace ModFinder
       g.PushTransform(new ScaleTransform(1, -1));
       g.DrawImage(bg.Source, new(0, -e.NewSize.Height, e.NewSize.Width, bg.Source.Height));
       g.Pop();
-
     }
 
     public static void RefreshAllManifests()
@@ -260,7 +255,7 @@ namespace ModFinder
     {
       _ = MessageBox.Show(
         Window,
-        $"{message} Check the log at {Logger.LogFile} for more details.",
+        $"{message}\n\nCheck the log at {Logger.LogFile} for more details.",
         "Error",
         MessageBoxButton.OK,
         MessageBoxImage.Error);
@@ -373,7 +368,6 @@ namespace ModFinder
       }
       catch (Exception e)
       {
-        ShowError("Installation failed.");
         Logger.Log.Error("Install/update failed.", e);
       }
     }
@@ -430,7 +424,6 @@ namespace ModFinder
       }
       catch (Exception ex)
       {
-        ShowError("Uninstall failed.");
         Logger.Log.Error("Uninstall failed.", ex);
       }
     }
@@ -493,7 +486,6 @@ namespace ModFinder
             }
             catch (Exception e)
             {
-              ShowError("Changelog rendering failed.");
               Logger.Log.Error("Changelog rendering failed.", e);
             }
             break;
@@ -523,7 +515,6 @@ namespace ModFinder
       }
       catch (Exception ex)
       {
-        ShowError("Rollback failed.");
         Logger.Log.Error("Rollback failed.", ex);
       }
     }

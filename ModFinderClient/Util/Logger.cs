@@ -44,6 +44,7 @@ namespace ModFinder.Util
       {
         LogQueue.Add($"[E] {e}");
       }
+      MainWindow.ShowError(log);
     }
 
     public void Verbose(string log)

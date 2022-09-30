@@ -143,7 +143,7 @@ namespace ModFinder
             }
             catch (Exception e)
             {
-              Logger.Log.Error("Unable to find Wrath installation path, Prompting manual input.");
+              Logger.Log.Error("Unable to find Wrath installation path, Prompting manual input.", e);
               GetWrathPathManual();
             }
           }
