@@ -25,9 +25,12 @@ var tasks = new List<Task<ModManifest>>();
 var updatedManifest = new List<ModManifest>();
 foreach (var manifest in internalManifest)
 {
-  var now = DateTime.Now;
+  var lastChecked = DateTime.Now;
   tasks.Add(Task.Run(async () =>
   {
+    var oldManifest =
+      generatedManifest.FirstOrDefault(
+        a => string.Equals(a.Id.Id, manifest.Id.Id, StringComparison.InvariantCultureIgnoreCase));
     try
     {
       if (manifest.Service.IsGitHub())
@@ -62,9 +65,14 @@ foreach (var manifest in internalManifest)
         }
         releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
 
+        var lastUpdated =
+          latestRelease.Version > oldManifest.Version.Latest.Version ? lastChecked : oldManifest.Version.LastUpdated;
         var newManifest =
           new ModManifest(
-            manifest, new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()), now, repo.Description);
+            manifest,
+            new VersionInfo(latestRelease, lastUpdated, releaseHistory.Take(10).ToList()),
+            lastChecked,
+            repo.Description);
         updatedManifest.Add(newManifest);
         return newManifest;
       }
@@ -94,11 +102,14 @@ foreach (var manifest in internalManifest)
         }
 
         var latestRelease = new Release(latestVersion, downloadUrl);
+
+        var lastUpdated =
+          latestVersion > oldManifest.Version.Latest.Version ? lastChecked : oldManifest.Version.LastUpdated;
         var newManifest =
           new ModManifest(
             manifest,
-            new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()),
-            now,
+            new VersionInfo(latestRelease, lastUpdated, releaseHistory.Take(10).ToList()),
+            lastChecked,
             nexusMod.Description);
         updatedManifest.Add(newManifest);
         return newManifest;
@@ -108,10 +119,6 @@ foreach (var manifest in internalManifest)
     {
       Log(e.ToString());
       Log($"Failed to update {manifest.Id}, Using old data.");
-      Log(e.ToString());
-      var oldManifest =
-        generatedManifest.FirstOrDefault(
-          a => string.Equals(a.Id.Id, manifest.Id.Id, StringComparison.InvariantCultureIgnoreCase));
       if (oldManifest != null)
       {
         updatedManifest.Add(oldManifest);
