@@ -1,9 +1,11 @@
 ﻿using ModFinder.Mod;
 using ModFinder.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -15,7 +17,7 @@ namespace ModFinder.UI
   /// <summary>
   /// View model tracking the current mod state.
   /// </summary>
-  public class ModViewModel : INotifyPropertyChanged
+  public class ModViewModel : DependencyObject, INotifyPropertyChanged
   {
     private static readonly Regex stripHtml = new(@"<.*?>");
 
@@ -25,6 +27,9 @@ namespace ModFinder.UI
     public ModManifest Manifest;
     public Release Latest => Manifest.Version.Latest;
     public string HomepageUrl => Manifest.HomepageUrl;
+
+    public string LastUpdated => GetLastUpdated();
+    public string LastChecked => GetLastChecked();
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -45,26 +50,41 @@ namespace ModFinder.UI
 
     public string Name => Manifest.Name;
     public string Author => Manifest.Author;
+    public string About => Manifest.About;
     public string Description => Manifest.Description ?? "-";
+    public string EnabledText => Enabled ? "On" : "Off";
 
-    public string Service => GetSourceText();
+    public bool Enabled
+    {
+      get => (bool)GetValue(EnabledProperty);
+      set
+      {
+        if (Enabled == value) return;
+        SetValue(EnabledProperty, value);
+      }
+    }
     public bool IsInstalled => Status.Installed();
-    public bool CanInstallOrDownload => InstallOrDownloadAvailable();
+    public bool IsCached => ModCache.IsCached(ModId);
+
     public bool CanInstall =>
       (IsCached && !IsInstalled)
         || (Manifest.Service.IsGitHub()
           && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
           && !string.IsNullOrEmpty(Latest.Url));
-    public bool CanUninstall => IsInstalled && ModDir != null;
     public bool CanDownload =>
       Manifest.Service.IsNexus()
       && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
       && !string.IsNullOrEmpty(Latest.Url);
-    public bool IsCached => ModCache.IsCached(ModId);
+    public bool CanInstallOrDownload => InstallOrDownloadAvailable();
+    public bool CanUninstall => IsInstalled && ModDir != null;
 
-    public Visibility UninstallVisibility => GetUninstallVisibility();
-    public Visibility HomepageVisibility => GetHomepageVisibility();
-    public Visibility RollbackVisibility => GetRollbackVisibility();
+    public Visibility UninstallVisibility => CanUninstall ? Visibility.Visible : Visibility.Collapsed;
+
+    public bool HasHomepage => !string.IsNullOrEmpty(HomepageUrl);
+    public Visibility HomepageVisibility => HasHomepage ? Visibility.Visible : Visibility.Collapsed;
+
+    public bool CanRollback => IsCached && IsInstalled;
+    public Visibility RollbackVisibility => CanRollback ? Visibility.Visible : Visibility.Collapsed;
 
     public string StatusText => GetStatusText();
     public string ButtonText => GetButtonText();
@@ -91,6 +111,24 @@ namespace ModFinder.UI
     public ModId ModId => Manifest.Id;
     public ModType Type => ModId.Type;
     public string DescriptionAsText => stripHtml.Replace(Description, "");
+
+    private static DependencyProperty MakeProp<T>(string name, Action<ModViewModel, T> onChange)
+    {
+      return DependencyProperty.Register(name, typeof(T), typeof(ModViewModel),
+        new((sender, args) =>
+        {
+          if (sender is not ModViewModel self) return;
+          onChange(self, (T)args.NewValue);
+        })
+      );
+    }
+
+    public static readonly DependencyProperty EnabledProperty = MakeProp<bool>("Enabled", (self, enabled) =>
+    {
+      MainWindow.SetModEnabled(self.ModId, enabled);
+      self.Changed(nameof(EnabledText));
+    });
+
 
     public ModVersion InstalledVersion
     {
@@ -216,6 +254,20 @@ namespace ModFinder.UI
       return installAvailable || nextMod.CanInstall || nextMod.CanDownload;
     }
 
+    public string GetLastChecked()
+    {
+      if (Manifest.LastChecked == default)
+        return "-";
+      return Manifest.LastChecked.ToString("MMM dd H:mm");
+    }
+
+    public string GetLastUpdated()
+    {
+      if (Manifest.Version.LastUpdated == default)
+        return "-";
+      return Manifest.Version.LastUpdated.ToString("MMM dd H:mm");
+    }
+
     private string GetStatusText()
     {
       if (InstallState == InstallState.Installing)
@@ -263,15 +315,6 @@ namespace ModFinder.UI
       return StatusIcon.None;
     }
 
-    private string GetSourceText()
-    {
-      if (Manifest.Service.IsGitHub())
-        return "GitHub";
-      if (Manifest.Service.IsNexus())
-        return "Nexus";
-      return "Local";
-    }
-
     private string GetButtonText()
     {
       if (Status.State == InstallState.Installing)
@@ -308,34 +351,14 @@ namespace ModFinder.UI
       return "Up to date";
     }
 
-    private Visibility GetHomepageVisibility()
-    {
-      if (!string.IsNullOrEmpty(HomepageUrl))
-        return Visibility.Visible;
-      return Visibility.Collapsed;
-    }
-
-    private Visibility GetUninstallVisibility()
-    {
-      if (CanUninstall)
-        return Visibility.Visible;
-      return Visibility.Collapsed;
-    }
-
-    private Visibility GetRollbackVisibility()
-    {
-      if (IsCached && IsInstalled)
-        return Visibility.Visible;
-      return Visibility.Collapsed;
-    }
-
+    #region Notify
     private void NotifyAll()
     {
       Changed(
         nameof(Name),
         nameof(Author),
+        nameof(About),
         nameof(Description),
-        nameof(Service),
         nameof(HomepageVisibility));
       NotifyStatus();
     }
@@ -345,14 +368,22 @@ namespace ModFinder.UI
       Changed(
         nameof(StatusText),
         nameof(ButtonText),
+        nameof(EnabledText),
+        nameof(Enabled),
         nameof(IsInstalled),
         nameof(CanInstall),
         nameof(CanUninstall),
         nameof(CanDownload),
+        nameof(CanRollback),
         nameof(CanInstallOrDownload),
+        nameof(HasHomepage),
         nameof(UninstallVisibility),
         nameof(RollbackVisibility),
-        nameof(StatusIcon));
+        nameof(StatusIcon),
+        nameof(Latest),
+        nameof(LastChecked),
+        nameof(LastUpdated),
+        nameof(InstalledVersion));
     }
 
     private void Changed(params string[] props)
@@ -360,6 +391,7 @@ namespace ModFinder.UI
       foreach (var prop in props)
         PropertyChanged?.Invoke(this, new(prop));
     }
+    #endregion
   }
 
   // StatusIcon value is used as priority for sorting

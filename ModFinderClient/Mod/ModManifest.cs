@@ -58,6 +58,12 @@ namespace ModFinder.Mod
     public string Author { get; }
 
     /// <summary>
+    /// Required. A brief description of what your mod does.
+    /// </summary>
+    [JsonProperty]
+    public string About { get; }
+
+    /// <summary>
     /// Required. Unique identifier for your mod.
     /// </summary>
     [JsonProperty]
@@ -78,6 +84,16 @@ namespace ModFinder.Mod
     /// </remarks>
     [JsonProperty]
     public VersionInfo Version { get; }
+
+    /// <summary>
+    /// Required. Records the last time this mod was checked for an update successfully.
+    /// </summary>
+    /// 
+    /// <remarks>
+    /// Automatic: All
+    /// </remarks>
+    [JsonProperty]
+    public DateTime LastChecked { get; }
 
     /// <summary>
     /// Description displayed when users requests more info on your mod. Supports BBCode.
@@ -105,27 +121,32 @@ namespace ModFinder.Mod
     public ModManifest(
       string name,
       string author,
+      string about,
       ModId id,
       HostService service,
       VersionInfo version,
+      DateTime lastChecked = default,
       string description = default,
       string homepageUrl = default,
       List<Tag> tags = default)
     {
       Name = name;
       Author = author;
+      About = about;
       Id = id;
       Service = service;
       Version = version;
+      LastChecked = lastChecked;
       Description = description;
       HomepageUrl = homepageUrl;
       Tags = tags ?? new();
     }
 
-    public ModManifest(ModManifest manifest, VersionInfo version, string description)
+    public ModManifest(ModManifest manifest, VersionInfo version, DateTime lastChecked, string description)
     {
       Name = manifest.Name;
       Author = manifest.Author;
+      About = manifest.About;
       Id = manifest.Id;
       Service = manifest.Service;
       HomepageUrl = manifest.HomepageUrl;
@@ -133,6 +154,7 @@ namespace ModFinder.Mod
 
       // Updated automatically
       Version = version;
+      LastChecked = lastChecked;
       Description = description;
     }
 
@@ -141,8 +163,9 @@ namespace ModFinder.Mod
       return new(
         info.DisplayName,
         info.Author,
+        string.Empty,
         new(info.Id, ModType.UMM),
-        service: default, 
+        service: default,
         version: default,
         homepageUrl: string.IsNullOrEmpty(info.HomePage) ? default : info.HomePage);
     }
@@ -282,15 +305,22 @@ namespace ModFinder.Mod
     public Release Latest { get; }
 
     /// <summary>
+    /// Required. Records when the update was detected.
+    /// </summary>
+    [JsonProperty]
+    public DateTime LastUpdated { get; }
+
+    /// <summary>
     /// Version history used to generate changelog.
     /// </summary>
     [JsonProperty]
     public List<Release> VersionHistory { get; }
 
     [JsonConstructor]
-    public VersionInfo(Release latest, List<Release> versionHistory)
+    public VersionInfo(Release latest, DateTime lastUpdated, List<Release> versionHistory)
     {
       Latest = latest;
+      LastUpdated = lastUpdated;
       VersionHistory = versionHistory ?? new();
     }
   }

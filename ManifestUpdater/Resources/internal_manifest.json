@@ -1,6 +1,5 @@
 [
   // Please keep sorted by Name.
-  
   {
     "Name": "Allow Modded Achievements",
     "Author": "Xenofell",
@@ -13,10 +12,11 @@
         "ModID": "119"
       }
     },
+    "About": "Enables achievements when mods are enabled.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119",
     "Tags": [ "Miscellaneous", "Utilities" ]
   },
-  
+
   {
     "Name": "Auto Mount",
     "Author": "zepheon",
@@ -30,10 +30,11 @@
         "RepoName": "AutoMount"
       }
     },
+    "About": "Mount all your animal companions automatically with a customizable keybind.",
     "HomepageUrl": "https://github.com/zephe0n/AutoMount",
     "Tags": [ "UserInterface" ]
   },
-  
+
   {
     "Name": "BOAT BOAT BOAT",
     "Author": "Balkoth",
@@ -47,10 +48,11 @@
         "RepoName": "WOTR_BOAT_BOAT_BOAT"
       }
     },
+    "About": "BOAT BOAT BOAT",
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Bubble Buffs",
     "Author": "Bubbles",
@@ -63,6 +65,7 @@
         "ModID": "195"
       }
     },
+    "About": "Like auto/buff/bot but simpler and easier to use. Imagine if setting up an auto buffing mod was easy enough you don't need a PhD, and integrated enough you don't need to open a UMM gui to configure it?",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",
     "Tags": [ "Gameplay", "UserInterface" ]
   },
@@ -79,6 +82,7 @@
         "ModID": "177"
       }
     },
+    "About": "Non-gameplay tweaks and enhancements to improve quality of life features. Fits into the base game without looking like a mod.",
     "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
     "Tags": [ "Gameplay", "UserInterface" ]
   },
@@ -96,6 +100,7 @@
         "RepoName": "BugFixes"
       }
     },
+    "About": "BugFixes is a simple mod dedicated to fixing small bugs in Pathfinder: Wrath of the Righteous. ",
     "HomepageUrl": "https://github.com/Bobster1246/BugFixes",
     "Tags": [ "Gameplay", "Miscellaneous" ]
   },
@@ -113,6 +118,7 @@
         "RepoName": "CharacterOptionsPlus"
       }
     },
+    "About": "Adds character build options from the tabletop ruleset.",
     "HomepageUrl": "https://github.com/WittleWolfie/CharacterOptionsPlus",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -130,6 +136,7 @@
         "RepoName": "CombatRelief"
       }
     },
+    "About": "This mod suppresses random encounters and automatically wins crusade battles. Either can be disabled in the UMM menu.",
     "HomepageUrl": "https://github.com/alterasc/CombatRelief",
     "Tags": [ "Gameplay" ]
   },
@@ -147,6 +154,7 @@
         "RepoName": "WOTRDamageBreakdown"
       }
     },
+    "About": "Adds a breakdown for damage bonuses to Pathfinder: Wrath of the Righteous.",
     "HomepageUrl": "https://github.com/abias1122/WOTRDamageBreakdown",
     "Tags": [ "UserInterface" ]
   },
@@ -164,6 +172,7 @@
         "RepoName": "DarkCodex"
       }
     },
+    "About": "New feats and abilities for various classes with a focus on Kineticist and Mythic abilities.",
     "HomepageUrl": "https://github.com/Truinto/DarkCodex",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -181,6 +190,7 @@
         "RepoName": "WOTR_EnhancedInventory"
       }
     },
+    "About": "Enhances the inventory with features such as: a search bar for inventory, stores, and the spellbook; more filtering and sorting options, customizable filter and sort lists; highlighting important loot. Does not affect gameplay. Configurable through the UMM mod options screen.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/137",
     "Tags": [ "UserInterface" ]
   },
@@ -198,6 +208,7 @@
         "RepoName": "ExpandedContent"
       }
     },
+    "About": "This mod seeks to expand and add upon the content in the game. New classes, Religions, mechanics, backgrounds, traits and more. All features are toggleable in UMM UI",
     "HomepageUrl": "https://github.com/ka-dyn/ExpandedContent",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -215,6 +226,7 @@
         "RepoName": "FinneanTweaks"
       }
     },
+    "About": "Tweaks finnean's progression so that he scales according to chapter instead of quests. Allows you to choose enchants, a lower tier one from the start of chapter 2 & a higher tier one at the start of Chapter 4.",
     "HomepageUrl": "https://github.com/BarleyFlour/FinneanTweaks",
     "Tags": [ "Gameplay" ]
   },
@@ -232,6 +244,7 @@
         "RepoName": "KineticistExpandedElements"
       }
     },
+    "About": "Adds expanded element choices for the Kineticist class as well as blast types, infusions, wild talents, and more.",
     "HomepageUrl": "https://github.com/SpencerMycek/KineticistExpandedElements",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -249,6 +262,7 @@
         "RepoName": "LevelableAivu"
       }
     },
+    "About": "A mod to make Aivu's levelups controllable.",
     "HomepageUrl": "https://github.com/pheonix99/LevelableAivu",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -267,6 +281,7 @@
         "ReleaseFilter": "MewsiferConsole\\.[\\d+]"
       }
     },
+    "About": "A tool for debugging problems with WotR, especially when playing with mods.",
     "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
     "Tags": [ "Utilities" ]
   },
@@ -285,6 +300,7 @@
         "ReleaseFilter": "MewsiferConsole\\.Menu"
       }
     },
+    "About": "Adds a mod menu entry for Mewsifer Console with a cute illustration and a button you can use to generate a bug report to share with mod creators when reporting issues.",
     "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
     "Tags": [ "Utilities" ]
   },
@@ -302,6 +318,7 @@
         "RepoName": "MicroscopicContentExpansion"
       }
     },
+    "About": "Add microscopic amount of new features. May or may not grow further in scope. The latter is more likely.",
     "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -319,6 +336,7 @@
         "RepoName": "ModMenu"
       }
     },
+    "About": "Adds a new page to the game options for mods. This allows mods to easily use the native settings UI, no more UMM window!",
     "HomepageUrl": "https://github.com/WittleWolfie/ModMenu",
     "Tags": [ "UserInterface", "Utilities" ]
   },
@@ -335,6 +353,7 @@
         "ModID": 163
       }
     },
+    "About": "Enables more items to be sold in bulk. Now you can sell all those Longsword 1's and Leather Armor +2's with the click of a button.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/163",
     "Tags": [ "UserInterface" ]
   },
@@ -351,6 +370,7 @@
         "ModID": 200
       }
     },
+    "About": "A simple mod to show all possible items from the very first relic project card. No more wasting time on relic projects hoping you will get some useful item in the end! Also has an option to disable automatic pop-ups of completed projects in kingdom management (the option is disabled by default).",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/200",
     "Tags": [ "UserInterface" ]
   },
@@ -368,6 +388,7 @@
         "RepoName": "MorvarchsPlaystyleExpansions"
       }
     },
+    "About": "A mod focused on adding new ways to build characters.",
     "HomepageUrl": "https://github.com/MorvarchPrincess/MorvarchsPlaystyleExpansions",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -385,6 +406,7 @@
         "RepoName": "WrathMods-MultipleArchetypes"
       }
     },
+    "About": "Allows archetype stacking using tabletop's standard rules.",
     "HomepageUrl": "https://github.com/Vek17/WrathMods-MultipleArchetypes",
     "Tags": [ "Gameplay" ]
   },
@@ -402,6 +424,7 @@
         "RepoName": "MythicArcanist"
       }
     },
+    "About": "This mod adds an new homebrew mythic ability and several 3rd Part Publisher spells. Once a game is saved with this mod is enabled it will require this mod to be present to load so do not remove or disable the mod once enabled. You can however disable any feature of the mod at will without breaking saves.",
     "HomepageUrl": "https://github.com/Llisandur/MythicArcanist",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -419,6 +442,7 @@
         "RepoName": "WrathMods-MythicSpellbookTweaks"
       }
     },
+    "About": "Mythic Class spell books currently scale on mythic rank. This mod adds the ability to change that scaling in a variety of ways.",
     "HomepageUrl": "https://github.com/Vek17/WrathMods-MythicSpellbookTweaks",
     "Tags": [ "Gameplay" ]
   },
@@ -436,6 +460,7 @@
         "RepoName": "NoFilmGrainWrath"
       }
     },
+    "About": "Improves the sharpness in game by removing the post processing film grain effect.",
     "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
     "Tags": [ "Visuals" ]
   },
@@ -453,6 +478,7 @@
         "RepoName": "WOTR_PATH_OF_BLING"
       }
     },
+    "About": "This mod is for Pathfinder: Wrath of the Righteous, it contains a number of changes for the Gold Dragon mythic path. This includes bug fixes and enhancements. Any change may be toggled on or off as the user wills.",
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_BLING",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -470,6 +496,7 @@
         "RepoName": "WOTR_PATH_OF_RAGE"
       }
     },
+    "About": "Contains changes for the Demon mythic path to make it feel better while keeping it within the vision of the game. It contains a number of bug-fixes, new abilities, and a different way of handling the Demon's main mechanic: Rage.",
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -487,6 +514,7 @@
         "RepoName": "PuzzleSkip"
       }
     },
+    "About": "Allows skipping puzzles.",
     "HomepageUrl": "https://github.com/ArkiveDev/PuzzleSkip",
     "Tags": [ "UserInterface", "Visuals" ]
   },
@@ -504,6 +532,7 @@
         "RepoName": "RandomEnemies"
       }
     },
+    "About": "When a monster spawns it is replaced with new one of similar power level. Every zone has a theme with a pool of monsters to select from. If no themed monster is found, then any monster can spawn.",
     "HomepageUrl": "https://github.com/Snarkki/RandomEnemies",
     "Tags": [ "Gameplay" ]
   },
@@ -521,6 +550,7 @@
         "RepoName": "RespecMod"
       }
     },
+    "About": "Respect mod which enables complete respec for companions, all the way to level 1.",
     "HomepageUrl": "https://github.com/BarleyFlour/RespecMod",
     "Tags": [ "Utilities" ]
   },
@@ -538,6 +568,7 @@
         "RepoName": "SpellbookMerge"
       }
     },
+    "About": "Adds more spellbook merging options. Currently this reverts the changes Owlcat made to spellbook merging in Patch 1.3.",
     "HomepageUrl": "https://github.com/vikigenius/SpellbookMerge",
     "Tags": [ "Gameplay" ]
   },
@@ -555,6 +586,7 @@
         "RepoName": "TabletopTweaks-Base"
       }
     },
+    "About": "Adds tabletop based fixes and new content. Once a game is saved with this mod enabled it requires this mod to load, so do not uninstall it. You can disable any feature of the mod without breaking saves.",
     "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Base",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -572,6 +604,7 @@
         "RepoName": "TabletopTweaks-Core"
       }
     },
+    "About": "Provides a shared core system for all TabletopTweaks mods, and and any third party mods wishing to use TabletopTweaks systems and utilities.",
     "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Core",
     "Tags": [ "Gameplay", "Utilities" ]
   },
@@ -589,6 +622,7 @@
         "RepoName": "TabletopTweaks-Reworks"
       }
     },
+    "About": "Provides non tabletop based tweaks to Owlcat's mythic content including changes to mythic classes and abilities. Once a game is saved with this mod enabled it requires this mod to load, so do not uninstall it. You can disable any feature of the mod without breaking saves.",
     "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Reworks",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -606,6 +640,7 @@
         "RepoName": "ToggleableThrowingWeapons"
       }
     },
+    "About": "You can now use a toggle to turn daggers and starknives into ranged weapons.",
     "HomepageUrl": "https://github.com/pheonix99/ToggleableThrowingWeapons",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -623,6 +658,7 @@
         "RepoName": "TomeOfTheFirebird"
       }
     },
+    "About": "Adds spells, feats, other abilities and some fixes. Adds random stuff I made when I got annoyed at the game. All homebrew content or divergences from TT will be called out.",
     "HomepageUrl": "https://github.com/pheonix99/TomeOfTheFirebird",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -639,6 +675,7 @@
         "ModID": "8"
       }
     },
+    "About": "Toy Box is a cute and playful mod with 400+ cheats, tweaks and quality of life improvements. It was created in the spirit of Bag of Tricks & Cheat Menu but with a little different focus.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/8",
     "Tags": [ "Gameplay", "Utilities" ]
   },
@@ -656,6 +693,7 @@
         "RepoName": "WrathMods-TurnbasedCombatDelay"
       }
     },
+    "About": "Allows you to alter the pause before turn based combat starts",
     "HomepageUrl": "https://github.com/Vek17/WrathMods-TurnbasedCombatDelay",
     "Tags": [ "Gameplay", "Miscellaneous" ]
   },
@@ -673,6 +711,7 @@
         "RepoName": "VisualAdjustments2"
       }
     },
+    "About": "Successor to Visual Adjustments which allows adjusting character appearance. Built with an exclusively native UI, no more UMM!",
     "HomepageUrl": "https://github.com/BarleyFlour/VisualAdjustments2",
     "Tags": [ "UserInterface", "Visuals" ]
   },
@@ -690,6 +729,7 @@
         "RepoName": "WrathMods-WeaponFocusPlus"
       }
     },
+    "About": "Weapon Focus Plus allows you to use fighter weapon group based weapon focus instead of picking a single weapon.",
     "HomepageUrl": "https://github.com/Vek17/WrathMods-WeaponFocusPlus",
     "Tags": [ "Gameplay" ]
   },
@@ -707,6 +747,7 @@
         "RepoName": "WIT"
       }
     },
+    "About": "This is the alpha release of Quick Cast (formally Inventory Tweaks). Installing and uninstalling does not break saves. This is an alpha, expect there to be bugs.",
     "HomepageUrl": "https://github.com/thehambeard/WIT",
     "Tags": [ "UserInterface" ]
   },
@@ -724,6 +765,7 @@
         "RepoName": "WotRResourceUnification"
       }
     },
+    "About": "It's a tool to merge different (game engine) instances of the same (tabletop rules) pool from different classes and make them behave correctly.",
     "HomepageUrl": "https://github.com/pheonix99/WotRResourceUnification",
     "Tags": [ "Gameplay" ]
   }

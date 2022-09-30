@@ -2,6 +2,7 @@
   {
     "Name": "Mewsifer Console",
     "Author": "WittleWolfie and Bubbles",
+    "About": "Tool to simplify reading logs and debugging problems.",
     "Id": {
       "Id": "MewsiferConsole.Mod",
       "Type": "UMM"
@@ -18,8 +19,10 @@
         "Version": "1.1.1",
         "Url": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole/releases/download/v1.1.1/MewsiferConsole.1.1.1.zip",
         "Changelog": "- Fixed stack trace logging for UMM Logger exceptions"
-      }
+      },
+      "LastUpdated": "2017-09-06T19:04:14.480Z"
     },
+    "LastChecked": "2017-09-08T19:04:14.480Z",
     "Description": "An improved remote console for reading logs in Pathfinder: Wrath of the Righteous.",
     "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
     "Tags": [ "Utilities" ]
@@ -27,6 +30,7 @@
   {
     "Name": "Bubble Buffs",
     "Author": "bubbles",
+    "About": "Buff management tool with a sexy UI. This is the only mod you'll ever need, except maybe BubbleTweaks. Other mods are basically cheating so you should not use them or you will be sad.",
     "Id": {
       "Id": "BubbleBuffs",
       "Type": "UMM"
@@ -42,6 +46,7 @@
         "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1534",
         "Changelog": ""
       },
+      "LastUpdated": "2018-09-07T19:04:14.480Z",
       "VersionHistory": [
         {
           "Version": "3.9.3",
@@ -50,6 +55,7 @@
         }
       ]
     },
+    "LastChecked": "2018-09-08T19:04:14.480Z",
     "Description": "Like auto/buff/bot but simpler and easier to use.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",
     "Tags": [ "UserInterface", "Utilities" ]
