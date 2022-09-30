@@ -125,10 +125,12 @@ namespace ModFinder.UI
 
     public static readonly DependencyProperty EnabledProperty = MakeProp<bool>("Enabled", (self, enabled) =>
     {
-      MainWindow.SetModEnabled(self.ModId, enabled);
+      if (self.IsInstalled)
+      {
+        MainWindow.SetModEnabled(self.ModId, enabled);
+      }
       self.Changed(nameof(EnabledText));
     });
-
 
     public ModVersion InstalledVersion
     {
@@ -229,6 +231,7 @@ namespace ModFinder.UI
     {
       InstalledVersion = default;
       InstallState = InstallState.None;
+      Enabled = false;
     }
 
     public ModViewModel GetNextAvailableRequirement()

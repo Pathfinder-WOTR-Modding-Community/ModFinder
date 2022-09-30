@@ -255,25 +255,22 @@ namespace ModFinder
       try
       {
         XElement ummParams = XElement.Load(Main.UMMParamsPath);
-        var mods =
+        IEnumerable<(string id, bool enabled)> mods =
           ummParams.Descendants("Mod")
             .Select(x => (x.Attribute("Id").Value, bool.Parse(x.Attribute("Enabled").Value)));
 
-        foreach (var (modId, enabled) in mods)
+        foreach (var mod in ModDatabase.Instance.Installed)
         {
-          if (!ModDatabase.Instance.TryGet(new(modId, ModType.UMM), out var mod))
-          {
-            Logger.Log.Error($"Found mod in UMM config that is not recognized: {modId}");
-            continue;
-          }
-
-          mod.Enabled = enabled;
+          var modConfig = mods.Where(m => mod.ModId.Id == m.id).FirstOrDefault();
+          if (modConfig == default)
+            mod.Enabled = true;
+          else
+            mod.Enabled = modConfig.enabled;
         }
       }
       catch (Exception e)
       {
-        ShowError("Failed to confirm UMM state. Make sure UMM is installed.");
-        Logger.Log.Error("Failed to check UMM state.", e);
+        Logger.Log.Error("Failed to check UMM state. Make sure UMM is installed and launch WotR once.", e);
       }
     }
 
@@ -328,14 +325,21 @@ namespace ModFinder
       try
       {
         XDocument ummParams = XDocument.Load(Main.UMMParamsPath);
-        var mod = ummParams.Descendants("Mod").Where(x => id.Id.Equals(x.Attribute("Id").Value)).First();
-        mod.SetAttributeValue("Enabled", enabled);
+        var mod = ummParams.Descendants("Mod").Where(x => id.Id.Equals(x.Attribute("Id").Value)).FirstOrDefault();
+
+        if (mod is null)
+        {
+          ummParams.Descendants("ModParams").First().Add(XElement.Parse($"<Mod Id=\"{id.Id}\" Enabled=\"{enabled}\" />"));
+        }
+        else
+        {
+          mod.SetAttributeValue("Enabled", enabled);
+        }
         ummParams.Save(Main.UMMParamsPath);
       }
       catch (Exception e)
       {
-        ShowError("Failed to confirm UMM state. Make sure UMM is installed.");
-        Logger.Log.Error("Failed to check UMM state.", e);
+        Logger.Log.Error("Failed to update UMM state. Make sure UMM is installed and launch WotR once.", e);
       }
     }
 
@@ -624,10 +628,10 @@ namespace ModFinder
       {
         RefreshAllManifests();
         RefreshInstalledMods();
+        CheckUMMState();
       }
       catch (Exception ex)
       {
-        ShowError("Failed to scan local mods.");
         Logger.Log.Error("Failed to scan local mods.", ex);
       }
     }
@@ -649,26 +653,7 @@ namespace ModFinder
       }
       catch (Exception ex)
       {
-        ShowError("Unable to open folder.");
         Logger.Log.Error("Unable to open folder.", ex);
-      }
-    }
-
-    private void EnabledToggle_Click(object sender, RoutedEventArgs e)
-    {
-      try
-      {
-        //if (sender is not SlideToggle button) return;
-        //if (!button.IsEnabled) return;
-
-        //if (button.DataContext is not ModViewModel mod) return;
-        //mod.Enabled = button?.IsChecked ?? false;
-        //SetModEnabled(mod.ModId, mod.Enabled);
-      }
-      catch (Exception ex)
-      {
-        ShowError("Failed to update enabled state in UMM.");
-        Logger.Log.Error("Failed to update enabled state in UMM.", ex);
       }
     }
   }

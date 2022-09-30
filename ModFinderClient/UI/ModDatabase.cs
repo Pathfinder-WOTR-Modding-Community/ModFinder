@@ -10,7 +10,7 @@ namespace ModFinder.UI
   public class ModDatabase : INotifyPropertyChanged
   {
     private readonly ObservableCollection<ModViewModel> All = new();
-    private readonly ObservableCollection<ModViewModel> Installed = new();
+    internal readonly ObservableCollection<ModViewModel> Installed = new();
     private readonly ObservableCollection<ModViewModel> Filtered = new();
     private readonly Dictionary<ModId, ModViewModel> Mods = new();
     private bool _ShowInstalled;
