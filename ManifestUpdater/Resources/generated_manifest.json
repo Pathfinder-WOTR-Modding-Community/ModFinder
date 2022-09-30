@@ -290,11 +290,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.2",
-        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.2/CharacterOptionsPlus.0.3.2.zip",
+        "Version": "0.3.3",
+        "Url": "https://github.com/WittleWolfie/CharacterOptionsPlus/releases/download/v0.3.3/CharacterOptionsPlus.0.3.3.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.3.3",
+          "Url": null,
+          "Changelog": "- Fixed compatibility w/ EE\n- Improved stability so one blueprint failing to configure should not impact the rest"
+        },
         {
           "Version": "0.3.2",
           "Url": null,
@@ -314,11 +319,6 @@
           "Version": "0.2.0",
           "Url": null,
           "Changelog": "**IMPORTANT:** Delete this file: `<WrathInstallDir>\\Mods\\CharacterOptionsPlus\\LocalizedStrings.json`\n\n- Added Arrowsong Minstrel\n    - Spell-strike implementation matches Eldritch Archer instead of directly implementing TT rules\n    - No I cannot make the bonus spell selection show the spell information"
-        },
-        {
-          "Version": "0.1.2",
-          "Url": null,
-          "Changelog": "- Fix a bug causing Furious Focus bonus to show but not apply"
         }
       ]
     },
@@ -532,11 +532,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.3.82",
-        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.3.82/ExpandedContent.zip",
+        "Version": "0.4.0",
+        "Url": "https://github.com/ka-dyn/ExpandedContent/releases/download/v0.4.0/ExpandedContent.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.4.0",
+          "Url": null,
+          "Changelog": "**Expanded Content** V0.4.0\n\nUpdated for EE update.\n\nFixed localization problems (thanks Wolfie)\n\nAdded Subdomain\n-Revolution\n"
+        },
         {
           "Version": "0.3.82",
           "Url": null,
@@ -556,11 +561,6 @@
           "Version": "0.3.74",
           "Url": null,
           "Changelog": "**Expanded Content** V0.3.74\n\nAdded Spells\n-Stunning Finale\n-Purging Finale\n\nAdded Drake Variants\n-Bronze\n-Copper\n\nAdded art to all drake variants"
-        },
-        {
-          "Version": "0.3.73",
-          "Url": null,
-          "Changelog": "**Expanded Content** V0.3.73\nBugfix for Oceans Echo Archetype"
         }
       ]
     },
@@ -1255,15 +1255,15 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.7",
-        "Url": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE/releases/download/1.0.7/WOTR_PATH_OF_RAGE.zip",
+        "Version": "1.0.8",
+        "Url": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE/releases/download/1.0.8/WOTR_PATH_OF_RAGE.zip",
         "Changelog": ""
       },
       "VersionHistory": [
         {
-          "Version": "1.0.7",
+          "Version": "1.0.8",
           "Url": null,
-          "Changelog": "How to Install\n\nDownload and install Unity Mod Manager, make sure it is at least version 0.23.0\nRun Unity Mod Manger and set it up to find Wrath of the Righteous\nDownload the WOTR_PATH_OF_RAGE mod\nInstall the mod by dragging the zip file from step 3 into the Unity Mod Manager window under the Mods tab\n\nChanges in this version:\n* Carnage Incarnate's vulnerability removed\n* Carnage Incarnate's debuff will now deal 1d6 damage whenever attacked with a weapon.\n* Carnage Incarnate's explosion radius increased from 5 feet to 10 feet.\n* DEMONIC SMASH's radius increased from 5 feet to 10 feet."
+          "Changelog": "How to Install\n\nDownload and install Unity Mod Manager, make sure it is at least version 0.23.0\nRun Unity Mod Manger and set it up to find Wrath of the Righteous\nDownload the WOTR_PATH_OF_RAGE mod\nInstall the mod by dragging the zip file from step 3 into the Unity Mod Manager window under the Mods tab\n\nChanges in this version:\n* Updated to work with EE"
         }
       ]
     },
@@ -1337,11 +1337,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.0.1",
-        "Url": "https://github.com/Snarkki/RandomEnemies/releases/download/V1.0.1/RandomEnemies.zip",
+        "Version": "1.0.2",
+        "Url": "https://github.com/Snarkki/RandomEnemies/releases/download/V1.0.2/RandomEnemies.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.0.2",
+          "Url": null,
+          "Changelog": "Updated to EE & some bug fixes"
+        },
         {
           "Version": "1.0.1",
           "Url": null,
@@ -1361,11 +1366,6 @@
           "Version": "0.0.4",
           "Url": null,
           "Changelog": "Changed inventory handling, now doesnt copy inventory but adds guaranteed loot on harder enemies."
-        },
-        {
-          "Version": "0.0.3",
-          "Url": null,
-          "Changelog": "Reworked the logic because of some save game issue raising at act2... "
         }
       ]
     },
@@ -1502,11 +1502,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "2.3.2",
-        "Url": "https://github.com/Vek17/TabletopTweaks-Base/releases/download/v2.3.2/TabletopTweaks-Base.zip",
+        "Version": "2.4.0",
+        "Url": "https://github.com/Vek17/TabletopTweaks-Base/releases/download/v2.4.0/TabletopTweaks-Base.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "2.4.0",
+          "Url": null,
+          "Changelog": "## Version 2.4.0\n* Release for 2.0.0\n* Fixes\n    * Fixed broken charge mechanics\n    * Sohei\n        * Sohei should now work correctly with weapon training changes if enabled\n    * Winter Witch\n        * Unearly Cold's direct damage should now properly respect metamagic and added bonus damage\n* Added Metamagic\n\t* Elemental Spell Metamagic\n\t\t* Choose one energy type: acid, cold, electricity, or fire. You may replace a spell’s normal damage with that energy type \"or split the spell’s damage, so that half is of that energy type and half is of its normal type.\n"
+        },
         {
           "Version": "2.3.2",
           "Url": null,
@@ -1526,11 +1531,6 @@
           "Version": "2.2.3",
           "Url": null,
           "Changelog": "## Version 2.2.3\n* Fixes\n    * Fixed issue where Bloodline Ascendance was not selectable when it should have been."
-        },
-        {
-          "Version": "2.2.2",
-          "Url": null,
-          "Changelog": "## Version 2.2.1\n* Fixes\n    * Fixed broken config options for some metamagic.\n    * Improved mod compatibility with metamagics.\n    * Fixed mod compatibility issue with world crawl."
         }
       ]
     },
@@ -1558,11 +1558,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "0.4.5",
-        "Url": "https://github.com/Vek17/TabletopTweaks-Core/releases/download/v0.4.5/TabletopTweaks-Core.zip",
+        "Version": "0.5.0",
+        "Url": "https://github.com/Vek17/TabletopTweaks-Core/releases/download/v0.5.0/TabletopTweaks-Core.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "0.5.0",
+          "Url": null,
+          "Changelog": "## Version 0.5.0\n* Release for 2.0.0\n* Increased compatability with other mods that add ModifierDescriptors\n* Updated logic for AddOutgoingWeaponDamageBonus\n* Fixed issue with ApendToArray's null handling"
+        },
         {
           "Version": "0.4.5",
           "Url": null,
@@ -1582,11 +1587,6 @@
           "Version": "0.3.1",
           "Url": null,
           "Changelog": "## Verson 0.3.1\n* New localization extensions for BlueprintAbiltiies\n* Fixed issue with spell kenning unit part not handling multiple lists being added by the same feature correctly"
-        },
-        {
-          "Version": "0.3.0",
-          "Url": null,
-          "Changelog": "## Verson 0.3.0\n* New Components\n\t* SavingThrowBonusAgainstFavoredEnemy\n\t\t* Adds a saving throw bonus to all saves based on owners favored enemy rank.\n* Deprecated Methods\n\t* Helpers.CreateBuff has been deprecated. Use Helpers.CreateBlueprint<BlueprintBuff>"
         }
       ]
     },
@@ -1614,11 +1614,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.1.2",
-        "Url": "https://github.com/Vek17/TabletopTweaks-Reworks/releases/download/v1.1.2/TabletopTweaks-Reworks.zip",
+        "Version": "1.2.0",
+        "Url": "https://github.com/Vek17/TabletopTweaks-Reworks/releases/download/v1.2.0/TabletopTweaks-Reworks.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.2.0",
+          "Url": null,
+          "Changelog": "## Version 1.2.0\n* Release for 2.0.0\n* Mythic Feats\n\t* School Mastery\n\t\t* Now increases CL by 2 instead of 1 for selected school.\n* Azata\n\t* Azata songs are now move actions instead of standard actions.\n* Aeon\n\t* Aeon Gazes are now a swift action but function like judgement allowing multiple gazes to be activated with the same action.\n\t* Aeon Bane is now a free action."
+        },
         {
           "Version": "1.1.2",
           "Url": null,
@@ -1638,11 +1643,6 @@
           "Version": "1.1.0",
           "Url": null,
           "Changelog": "## Version 1.1.0\n* Mythic Abilities\n\t* Abundant Casting\n\t\t* Now grants two bonus casts instead of 4.\n\t* Greater Enduring Spells\n\t\t* Now extends spells that last 10+ minutes instead of 5+ minutes.\n* Trickster Rework\n\t* Trickster Progression\n\t\t* An improved trick is now learned at mythic rank 5.\n\t\t* The mythic rank 9 improved trick and the mythic rank 10 greater trick have been swapped.\n\t* Knowledge Arcana Tricks\n\t\t* Arcana 2\n\t\t\t* Enchantment list updated. This should be a buff.\n\t\t* Arcana 3\n\t\t\t* Enchantment list updated. This should be a buff.\n\t* Lore Nature Tricks\n\t\t* Upadted loot table. This should be a buff.\n\t* Lore Religion Tricks\n\t\t* Now work with domain zealot and qualifies for domain zealot.\n\t\t* Effective Cleric level is equal to character level and effective wisdom is  equal to mythic rank for the purposes of these domains and powers.\n\t\t* Now grants a domain spellbook with 1 slot per level for domain spells instead of spell like abilities. These now interact in all ways like spells.\n\t* Mobility Tricks\n\t\t* Mobility 3\n\t\t\t* Now works on all types of attacks including spell attacks.\n\t* Perception Tricks\n\t\t* Perception 1\n\t\t\t* You are under a constant effect of the see invisibility spell, auto detect stealthing creatures, and reroll all concealment rolls.\n\t\t* Perception 2\n\t\t\t* You ignore critical and sneak attack immunity, reroll all fortification checks and your critical hit range is increased by 2 with all weapons.\n\t\t* Perception 3\n\t\t\t* All allies within 60 feet of you gain the benefits of your perception tricks.\n\t* Persuasion Tricks\n\t\t* Persuasion 2\n\t\t\t* Enemies affected by your demoralize ability must succeed at a Will saving throw with a DC of 15 + your ranks in Persuasion, or become staggered for one round. Additionally, when you successfully demoralize an enemy they take an additional penalty to their attack and damage rolls equal to 1 + half your mythic rank.\n\t\t* Persuasion 3\n\t\t\t* Enemies affected by your demoralize have a 50% chance to attack the nearest target instead of acting normally. Additionally, when you successfully demoralize an enemy they take an additional penalty to their AC and saving equal to 1 + half your mythic rank.\n\t* Stealth Tricks\n\t\t* Stealth 1\n\t\t\t* This \"invisibility\" cannot be seen through by divination magic such as true seeing, see invisibility, or thoughtsense.\n\t\t* Stealth 2\n\t\t\t* This \"invisibility\" cannot be seen through by divination magic such as true seeing, see invisibility, or thoughtsense.\n\t* Trickery Tricks\n\t\t* Trickery 3\n\t\t\t* Your previous Trickery abilities can now be used as a swift action and at close range instead of touch range. This is in addition to gaining the save or die.\n\t* Use Magic Device Tricks\n\t\t* Use Magic Device 2\n\t\t\t* Now grants completely normal magic in addition to endless wands.\n\t* Bound of Possibility\n\t\t* This cloak allows Trickster to roll any skill check twice and take the best result."
-        },
-        {
-          "Version": "1.0.0",
-          "Url": null,
-          "Changelog": "## Version 1.0.0a\nFixed issue with settings not saving\n\n## Version 1.0.0\nThis has been split and now depends on [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core/releases).\n\n* Initial Release of the module"
         }
       ]
     },
@@ -1928,11 +1928,16 @@
     },
     "Version": {
       "Latest": {
-        "Version": "1.2.1",
-        "Url": "https://github.com/Vek17/WrathMods-WeaponFocusPlus/releases/download/v1.2.1/WeaponFocusPlus.zip",
+        "Version": "1.2.2",
+        "Url": "https://github.com/Vek17/WrathMods-WeaponFocusPlus/releases/download/v1.2.2/WeaponFocusPlus.zip",
         "Changelog": ""
       },
       "VersionHistory": [
+        {
+          "Version": "1.2.2",
+          "Url": null,
+          "Changelog": "Updated to support new groups"
+        },
         {
           "Version": "1.2.1",
           "Url": null,
