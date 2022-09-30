@@ -103,6 +103,7 @@ foreach (var manifest in internalManifest)
     }
     catch (Exception e)
     {
+      Log(e.ToString());
       Log($"Failed to update {manifest.Id}, Using old data.");
       var oldManifest = generatedManifest.FirstOrDefault(a => String.Equals(a.Id.Id, manifest.Id.Id,StringComparison.InvariantCultureIgnoreCase));
       if (oldManifest != null)
