@@ -86,7 +86,23 @@
     "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
     "Tags": [ "Gameplay", "UserInterface" ]
   },
-
+  {
+    "Name": "Buffbot",
+    "Author": "Balkoth",
+    "Id": {
+      "Id": "WrathBuffBot",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Balkoth-dev",
+        "RepoName": "BuffBot-Wrath"
+      }
+    },
+    "About": "Auto buffing solution that uses the UMM menu instead of an in-game UI.",
+    "HomepageUrl": "https://github.com/Balkoth-dev/BuffBot-Wrath",
+    "Tags": [ "Gameplay", "Miscellaneous" ]
+  },
   {
     "Name": "BugFixes",
     "Author": "Bobster1246",
