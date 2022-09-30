@@ -82,9 +82,6 @@ namespace ModFinder.UI
           return true;
       }
 
-      if (!RawFilters.Any())
-        return false;
-
       // Need to match all raw searches
       foreach (var raw in RawFilters)
       {
@@ -92,6 +89,13 @@ namespace ModFinder.UI
           return false;
       }
 
+      // If there are any include filters then nothing up until now has matched, this should not be included. Otherwise
+      // there are no filters (or only exclude filters) so it matches.
+      if (!RawFilters.Any()
+        && (IncludeAuthors.Any() || IncludeNames.Any() || IncludeTags.Any()))
+      {
+        return false;
+      }
       return true;
     }
 
