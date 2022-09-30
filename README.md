@@ -12,8 +12,10 @@ A tool for browsing and managing Pathfinder: Wrath of the Righteous mods and the
 * Browse mods hosted on Nexus and GitHub
 * Detects out of date mods
 * Automatically installs mods hosted on GitHub
+* Enable / disable mods
 * Detects missing dependencies, enabling one-click install (mods on GitHub) or download link (mods on Nexus)
 * Uninstall mods
+* Rollback mod updates
 * And more
 
 ## For Users
