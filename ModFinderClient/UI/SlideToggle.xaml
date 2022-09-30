@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="ModFinder.UI.SlideToggle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModFinder.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Template>
+        <ControlTemplate TargetType="local:SlideToggle">
+            <Grid Height="34" MouseUp="Grid_MouseUp">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="pack://application:,,,/icons/UI_Toggler_BG.png" Grid.Column="1"></Image>
+                <Image x:Name="knob" Source="pack://application:,,,/icons/UI_RoundButton_Default.png" Grid.Column="1" Width="25" HorizontalAlignment="Left" Margin="3,0,3,0"></Image>
+                <Rectangle x:Name="tint" Opacity="0.2" Height="24" Grid.Column="1" Visibility="Hidden">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="MediumPurple"></SolidColorBrush>
+                    </Rectangle.Fill>
+                    <Rectangle.OpacityMask>
+                        <ImageBrush ImageSource="pack://application:,,,/icons/UI_Toggler_BG.png"></ImageBrush>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+                <Rectangle x:Name="disabled_tint" Opacity="0.2" Height="24" Grid.Column="1" Visibility="Hidden">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="Black"></SolidColorBrush>
+                    </Rectangle.Fill>
+                    <Rectangle.OpacityMask>
+                        <ImageBrush ImageSource="pack://application:,,,/icons/UI_Toggler_BG.png"></ImageBrush>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+                <TextBlock FontFamily="Constantia" FontWeight="Bold" TextAlignment="Right" VerticalAlignment="Center" Padding="0,0,8,0" Text="{Binding Path=LeftText, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="tint" Property="Visibility" Value="Visible"></Setter>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="disabled_tint" Property="Visibility" Value="Visible"></Setter>
+                    <Setter TargetName="knob" Property="Visibility" Value="Hidden"></Setter>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
+                                    <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="3,0,3,0"/>
+                                    <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="22,0,3,0"/>
+                                </ThicknessAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="knob" Storyboard.TargetProperty="Margin">
+                                    <SplineThicknessKeyFrame  KeyTime="0:0:0" Value="22,0,3,0"/>
+                                    <SplineThicknessKeyFrame  KeyTime="0:0:0.1" Value="3,0,3,0"/>
+                                </ThicknessAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

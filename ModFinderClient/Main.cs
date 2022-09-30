@@ -156,6 +156,9 @@ namespace ModFinder
       }
     }
 
+    public static readonly string UMMParamsPath =
+      Path.Combine(Main.WrathPath.FullName, @"Wrath_Data\Managed\UnityModManager\Params.xml");
+
     public static readonly string UMMInstallPath = Path.Combine(WrathPath.FullName, "Mods");
 
     private static DirectoryInfo _WrathPath; 

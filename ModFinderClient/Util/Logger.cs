@@ -67,7 +67,11 @@ namespace ModFinder.Util
           var oldLogFile = Path.Combine(Main.AppFolder, "Log_old.txt");
           Trace.WriteLine($"Moving old log to {oldLogFile}");
           File.Copy(LogFile, oldLogFile, overwrite: true);
-          File.Delete(LogFile);
+          using (var stream = File.Open(LogFile, FileMode.Open, FileAccess.ReadWrite))
+          {
+            stream.SetLength(0);
+            stream.Close();
+          }
         }
 
         using (var stream = new FileStream(LogFile, FileMode.OpenOrCreate, FileAccess.ReadWrite))
@@ -77,7 +81,7 @@ namespace ModFinder.Util
           {
             if (LogQueue.TryTake(out string log, 5 * 1000, cancellationToken))
             {
-              writer.WriteLine($"[{DateTime.Now.ToString("M/d hh:mm:ss")}]{log}");
+              writer.WriteLine($"[{DateTime.Now:M/d hh:mm:ss}]{log}");
               writer.Flush();
             }
           }

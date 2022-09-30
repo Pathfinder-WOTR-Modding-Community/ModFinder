@@ -15,6 +15,8 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
 using System.Windows.Media;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace ModFinder
 {
@@ -41,7 +43,7 @@ namespace ModFinder
         showInstalledToggle.DataContext = ModDB;
         showInstalledToggle.Click += ShowInstalledToggle_Click;
 
-#if TESTDEBUG
+#if DEBUGTEST
         Logger.Log.Verbose("Reading test manifest.");
         using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_master.json"))
         {
@@ -53,12 +55,6 @@ namespace ModFinder
         var json = HttpHelper.GetResponseContent("https://raw.githubusercontent.com/Pathfinder-WOTR-Modding-Community/ModFinder/main/ManifestUpdater/Resources/master_manifest.json");
         Manifest = IOTool.FromString<MasterManifest>(json);
 #endif
-
-        //installedMods.SelectedCellsChanged += (sender, e) =>
-        //{
-        //  if (e.AddedCells.Count > 0)
-        //    installedMods.SelectedItem = null;
-        //};
 
         RefreshAllManifests();
         RefreshInstalledMods();
@@ -88,8 +84,9 @@ namespace ModFinder
         dropTarget.Drop += DropTarget_Drop;
         dropTarget.DragOver += DropTarget_DragOver;
 
-
         ModDB.InitSort();
+        
+        installedMods.SelectedIndex = 0;
       }
       catch (Exception e)
       {
@@ -98,24 +95,10 @@ namespace ModFinder
         Close();
       }
 
-
       DetailsPanel.SizeChanged += DetailsPanel_SizeChanged;
-
     }
 
-    private void DetailsPanel_SizeChanged(object sender, SizeChangedEventArgs e)
-    {
-      using var g = DetailsPanelBackground.Open();
-      var bg = Resources["details-bg-border"] as Image;
-      g.PushOpacity(0.8);
-      g.DrawImage(bg.Source, new(0, 0, e.NewSize.Width, bg.Source.Height));
-
-      g.PushTransform(new ScaleTransform(1, -1));
-      g.DrawImage(bg.Source, new(0, -e.NewSize.Height, e.NewSize.Width, bg.Source.Height));
-      g.Pop();
-
-    }
-
+    #region Manifest / Local Mod Scanning
     public static void RefreshAllManifests()
     {
       try
@@ -137,7 +120,7 @@ namespace ModFinder
     private static void RefreshGeneratedManifest()
     {
       string rawstring;
-#if TESTDEBUG
+#if DEBUGTEST
       using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ModFinder.test_generated.json"))
       {
         using var reader = new StreamReader(stream);
@@ -163,7 +146,8 @@ namespace ModFinder
 
     public static void RefreshInstalledMods()
     {
-      IOTool.Safe(() => CheckInstalledModsInternal());
+      IOTool.Safe(CheckInstalledModsInternal);
+      IOTool.Safe(CheckUMMState);
     }
 
     private static void CheckInstalledModsInternal()
@@ -212,6 +196,33 @@ namespace ModFinder
       }
     }
 
+    private static void CheckUMMState()
+    {
+      try
+      {
+        XElement ummParams = XElement.Load(Main.UMMParamsPath);
+        var mods =
+          ummParams.Descendants("Mod")
+            .Select(x => (x.Attribute("Id").Value, bool.Parse(x.Attribute("Enabled").Value)));
+
+        foreach (var (modId, enabled) in mods)
+        {
+          if (!ModDatabase.Instance.TryGet(new(modId, ModType.UMM), out var mod))
+          {
+            Logger.Log.Error($"Found mod in UMM config that is not recognized: {modId}");
+            continue;
+          }
+
+          mod.Enabled = enabled;
+        }
+      }
+      catch (Exception e)
+      {
+        ShowError("Failed to confirm UMM state. Make sure UMM is installed.");
+        Logger.Log.Error("Failed to check UMM state.", e);
+      }
+    }
+
     private static ModViewModel ProcessModDirectory(DirectoryInfo modDir, bool updateStatus = true)
     {
       var infoFile =
@@ -255,56 +266,23 @@ namespace ModFinder
             a.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase)
             || a.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
     }
+    #endregion
 
-    public static void ShowError(string message)
+    #region Install / Rollback / Uninstall / Enable / Disable
+    public static void SetModEnabled(ModId id, bool enabled)
     {
-      _ = MessageBox.Show(
-        Window,
-        $"{message} Check the log at {Logger.LogFile} for more details.",
-        "Error",
-        MessageBoxButton.OK,
-        MessageBoxImage.Error);
-    }
-
-    private void ClosePopup_Click(object sender, RoutedEventArgs e)
-    {
-      DescriptionPopup.IsOpen = false;
-    }
-
-    private void DataGridRow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-    {
-      DescriptionPopup.IsOpen = false;
-
-      if (sender is not DataGridRow row)
+      try
       {
-        return;
+        XDocument ummParams = XDocument.Load(Main.UMMParamsPath);
+        var mod = ummParams.Descendants("Mod").Where(x => id.Id.Equals(x.Attribute("Id").Value)).First();
+        mod.SetAttributeValue("Enabled", enabled);
+        ummParams.Save(Main.UMMParamsPath);
       }
-
-      installedMods.SelectedIndex = row.GetIndex();
-    }
-
-    private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-    {
-      DescriptionPopup.IsOpen = false;
-    }
-    private void DataGridCell_Clicked(object sender, MouseButtonEventArgs e)
-    {
-      Debug.WriteLine("Hello");
-      //DescriptionPopup.IsOpen = false;
-    }
-
-    private void DropTarget_DragOver(object sender, DragEventArgs e)
-    {
-      e.Effects = DragDropEffects.None;
-      if (e.Data.GetFormats().Any(f => f == DataFormats.FileDrop))
+      catch (Exception e)
       {
-        string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-        if (files.All(f => CheckIsMod(f)))
-        {
-          e.Effects = DragDropEffects.Copy;
-        }
+        ShowError("Failed to confirm UMM state. Make sure UMM is installed.");
+        Logger.Log.Error("Failed to check UMM state.", e);
       }
-      e.Handled = true;
     }
 
     private void ProcessIntallResult(InstallResult result)
@@ -319,22 +297,6 @@ namespace ModFinder
       {
         RefreshInstalledMods();
       }
-    }
-
-    private async void DropTarget_Drop(object sender, DragEventArgs e)
-    {
-      var files = (string[])e.Data.GetData(DataFormats.FileDrop);
-      foreach (var f in files)
-      {
-        var result = await ModInstaller.InstallFromZip(f);
-        ProcessIntallResult(result);
-      }
-    }
-
-    private void InstallOrUpdateMod(object sender, RoutedEventArgs e)
-    {
-      var mod = (sender as Button).Tag as ModViewModel;
-      InstallOrUpdateMod(mod);
     }
 
     private async void InstallOrUpdateMod(ModViewModel mod)
@@ -378,36 +340,33 @@ namespace ModFinder
       }
     }
 
-    private void ShowInstalledToggle_Click(object sender, RoutedEventArgs e)
+    private static void Rollback(ModViewModel mod)
     {
-      var togglebutton = sender as ToggleButton;
-      ModDB.ShowInstalled = togglebutton.IsChecked ?? false;
-    }
+      if (!ModCache.IsCached(mod.ModId))
+        throw new InvalidOperationException("Cannot rollback mod without a cached copy");
 
-    private void MoreOptions_Click(object sender, RoutedEventArgs e)
-    {
-      var button = sender as Button;
-      button.ContextMenu.DataContext = button.Tag;
-      button.ContextMenu.StaysOpen = true;
-      button.ContextMenu.IsOpen = true;
-    }
-
-    private void LookButton_Click(object sender, RoutedEventArgs e)
-    {
-      RefreshAllManifests();
+      ModCache.Uninstall(mod, cache: false); // Don't cache, just delete it!
+      ModCache.TryRestoreMod(mod.ModId);
       RefreshInstalledMods();
     }
 
-    private void ShowModDescription(object sender, RoutedEventArgs e)
+    private static void Uninstall(ModViewModel mod)
     {
-      var mod = (sender as MenuItem).DataContext as ModViewModel;
-      ShowPopup(mod, "description");
+      ModCache.Uninstall(mod);
+      mod.OnUninstalled();
+      RefreshInstalledMods();
     }
+    #endregion
 
-    private void ShowModChangelog(object sender, RoutedEventArgs e)
+    #region Show Dialogs & Open Web Pages
+    public static void ShowError(string message)
     {
-      var mod = (sender as MenuItem).DataContext as ModViewModel;
-      ShowPopup(mod, "changelog");
+      _ = MessageBox.Show(
+        Window,
+        $"{message} Check the log at {Logger.LogFile} for more details.",
+        "Error",
+        MessageBoxButton.OK,
+        MessageBoxImage.Error);
     }
 
     private void ShowPopup(ModViewModel mod, string contentType)
@@ -419,33 +378,6 @@ namespace ModFinder
       DescriptionPopup.IsOpen = true;
     }
 
-    private void UninstallMod(object sender, RoutedEventArgs e)
-    {
-      try
-      {
-        var mod = (sender as MenuItem).DataContext as ModViewModel;
-        ModCache.Uninstall(mod);
-        mod.OnUninstalled();
-        RefreshInstalledMods();
-      }
-      catch (Exception ex)
-      {
-        ShowError("Uninstall failed.");
-        Logger.Log.Error("Uninstall failed.", ex);
-      }
-    }
-
-    private void Filter_TextChanged(object sender, TextChangedEventArgs e)
-    {
-      ModDB.ApplyFilter((sender as TextBox).Text);
-    }
-
-    private void OpenHomepage(object sender, RoutedEventArgs e)
-    {
-      var mod = (sender as MenuItem).DataContext as ModViewModel;
-      OpenUrl(mod.HomepageUrl);
-    }
-
     private static void OpenUrl(string url)
     {
       Process.Start(
@@ -455,6 +387,7 @@ namespace ModFinder
           UseShellExecute = true
         });
     }
+    #endregion
 
     public class DescriptionProxy
     {
@@ -508,18 +441,34 @@ namespace ModFinder
       }
     }
 
+    #region UI Event Handlers
+
+    private void InstallOrUpdateMod(object sender, RoutedEventArgs e)
+    {
+      var mod = (sender as Button).Tag as ModViewModel;
+      InstallOrUpdateMod(mod);
+    }
+
+    private void UninstallMod(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+        Uninstall(mod);
+      }
+      catch (Exception ex)
+      {
+        ShowError("Uninstall failed.");
+        Logger.Log.Error("Uninstall failed.", ex);
+      }
+    }
+
     private void Rollback(object sender, RoutedEventArgs e)
     {
       try
       {
-        var mod = (sender as MenuItem).DataContext as ModViewModel;
-
-        if (!ModCache.IsCached(mod.ModId))
-          throw new InvalidOperationException("Cannot rollback mod without a cached copy");
-
-        ModCache.Uninstall(mod, cache: false); // Don't cache, just delete it!
-        ModCache.TryRestoreMod(mod.ModId);
-        RefreshInstalledMods();
+        var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+        Rollback(mod);
       }
       catch (Exception ex)
       {
@@ -528,9 +477,149 @@ namespace ModFinder
       }
     }
 
-    private void installedMods_MouseDown(object sender, MouseButtonEventArgs e)
+    private void OpenHomepage(object sender, RoutedEventArgs e)
     {
+      var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+      OpenUrl(mod.HomepageUrl);
+    }
 
+    private void ShowModDescription(object sender, RoutedEventArgs e)
+    {
+      var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+      ShowPopup(mod, "description");
+    }
+
+    private void ShowModChangelog(object sender, RoutedEventArgs e)
+    {
+      var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+      ShowPopup(mod, "changelog");
+    }
+
+    private void DetailsPanel_SizeChanged(object sender, SizeChangedEventArgs e)
+    {
+      using var g = DetailsPanelBackground.Open();
+      var bg = Resources["details-bg-border"] as Image;
+      g.PushOpacity(0.8);
+      g.DrawImage(bg.Source, new(0, 0, e.NewSize.Width, bg.Source.Height));
+
+      g.PushTransform(new ScaleTransform(1, -1));
+      g.DrawImage(bg.Source, new(0, -e.NewSize.Height, e.NewSize.Width, bg.Source.Height));
+      g.Pop();
+    }
+
+    private void ClosePopup_Click(object sender, RoutedEventArgs e)
+    {
+      DescriptionPopup.IsOpen = false;
+    }
+
+    private void DataGridRow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+      DescriptionPopup.IsOpen = false;
+
+      if (sender is not DataGridRow row)
+      {
+        return;
+      }
+
+      installedMods.SelectedIndex = row.GetIndex();
+    }
+
+    private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+    {
+      DescriptionPopup.IsOpen = false;
+    }
+
+    private void DropTarget_DragOver(object sender, DragEventArgs e)
+    {
+      e.Effects = DragDropEffects.None;
+      if (e.Data.GetFormats().Any(f => f == DataFormats.FileDrop))
+      {
+        string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+        if (files.All(f => CheckIsMod(f)))
+        {
+          e.Effects = DragDropEffects.Copy;
+        }
+      }
+      e.Handled = true;
+    }
+
+    private async void DropTarget_Drop(object sender, DragEventArgs e)
+    {
+      var files = (string[])e.Data.GetData(DataFormats.FileDrop);
+      foreach (var f in files)
+      {
+        var result = await ModInstaller.InstallFromZip(f);
+        ProcessIntallResult(result);
+      }
+    }
+
+    private void ShowInstalledToggle_Click(object sender, RoutedEventArgs e)
+    {
+      var togglebutton = sender as ToggleButton;
+      ModDB.ShowInstalled = togglebutton.IsChecked ?? false;
+    }
+
+    private void MoreOptions_Click(object sender, RoutedEventArgs e)
+    {
+      var button = sender as Button;
+      button.ContextMenu.DataContext = button.Tag;
+      button.ContextMenu.StaysOpen = true;
+      button.ContextMenu.IsOpen = true;
+    }
+
+    private void LookButton_Click(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        RefreshAllManifests();
+        RefreshInstalledMods();
+      }
+      catch (Exception ex)
+      {
+        ShowError("Failed to scan local mods.");
+        Logger.Log.Error("Failed to scan local mods.", ex);
+      }
+    }
+
+    private void Filter_TextChanged(object sender, TextChangedEventArgs e)
+    {
+      ModDB.ApplyFilter((sender as TextBox).Text);
+    }
+
+    private void OpenFolder(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        var mod = (sender as FrameworkElement).DataContext as ModViewModel;
+        var folder = $"\"{Path.Combine(Main.UMMInstallPath, mod.ModDir.Name)}\\\"";
+        Logger.Log.Info($"Opening folder: {folder}");
+        // If you don't point to explorer process you get access denied error
+        Process.Start(Environment.GetEnvironmentVariable("WINDIR") + @"\explorer.exe", folder);
+      }
+      catch (Exception ex)
+      {
+        ShowError("Unable to open folder.");
+        Logger.Log.Error("Unable to open folder.", ex);
+      }
+    }
+
+    private void EnabledToggle_Click(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        //if (sender is not SlideToggle button) return;
+        //if (!button.IsEnabled) return;
+
+        //if (button.DataContext is not ModViewModel mod) return;
+        //mod.Enabled = button?.IsChecked ?? false;
+        //SetModEnabled(mod.ModId, mod.Enabled);
+      }
+      catch (Exception ex)
+      {
+        ShowError("Failed to update enabled state in UMM.");
+        Logger.Log.Error("Failed to update enabled state in UMM.", ex);
+      }
     }
   }
+  #endregion
 }

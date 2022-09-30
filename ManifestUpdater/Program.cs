@@ -25,6 +25,7 @@ var tasks = new List<Task<ModManifest>>();
 var updatedManifest = new List<ModManifest>();
 foreach (var manifest in internalManifest)
 {
+  var now = DateTime.Now;
   tasks.Add(Task.Run(async () =>
   {
     try
@@ -56,18 +57,19 @@ foreach (var manifest in internalManifest)
         var releaseHistory = new List<Release>();
         foreach (var release in releases)
         {
-          releaseHistory.Add(new Release(ModVersion.Parse(release.TagName), url: null,
-            release.Body.Replace("\r\n", "\n")));
+          releaseHistory.Add(
+            new Release(ModVersion.Parse(release.TagName), url: null, release.Body.Replace("\r\n", "\n")));
         }
-
         releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
 
         var newManifest =
-          new ModManifest(manifest, new VersionInfo(latestRelease, releaseHistory.Take(5).ToList()), repo.Description);
+          new ModManifest(
+            manifest, new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()), now, repo.Description);
         updatedManifest.Add(newManifest);
         return newManifest;
       }
-      else if (manifest.Service.IsNexus())
+      
+      if (manifest.Service.IsNexus())
       {
         var modID = manifest.Service.Nexus.ModID;
         var nexusFactory = NexusModsFactory.New(nexus);
@@ -78,8 +80,7 @@ foreach (var manifest in internalManifest)
 
         var latestVersion = ModVersion.Parse(nexusMod.Version);
         var downloadUrl =
-          @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" +
-          mod.ModFiles.Last().FileId;
+          @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" + mod.ModFiles.Last().FileId;
 
         var releaseHistory = new List<Release>();
         if (changelog != null)
@@ -93,10 +94,12 @@ foreach (var manifest in internalManifest)
         }
 
         var latestRelease = new Release(latestVersion, downloadUrl);
-
         var newManifest =
           new ModManifest(
-            manifest, new VersionInfo(latestRelease, releaseHistory.Take(5).ToList()), nexusMod.Description);
+            manifest,
+            new VersionInfo(latestRelease, now, releaseHistory.Take(10).ToList()),
+            now,
+            nexusMod.Description);
         updatedManifest.Add(newManifest);
         return newManifest;
       }
@@ -105,14 +108,15 @@ foreach (var manifest in internalManifest)
     {
       Log(e.ToString());
       Log($"Failed to update {manifest.Id}, Using old data.");
-      var oldManifest = generatedManifest.FirstOrDefault(a => String.Equals(a.Id.Id, manifest.Id.Id,StringComparison.InvariantCultureIgnoreCase));
+      Log(e.ToString());
+      var oldManifest =
+        generatedManifest.FirstOrDefault(
+          a => string.Equals(a.Id.Id, manifest.Id.Id, StringComparison.InvariantCultureIgnoreCase));
       if (oldManifest != null)
       {
         updatedManifest.Add(oldManifest);
         return oldManifest;
       }
-
-      return null;
     }
 
     return null;
