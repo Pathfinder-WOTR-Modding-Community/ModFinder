@@ -152,18 +152,6 @@ namespace ModFinder
       return int.Parse(c[0]) * 65536 + int.Parse(c[1]) * 256 + int.Parse(c[2]);
     }
 
-    private void DetailsPanel_SizeChanged(object sender, SizeChangedEventArgs e)
-    {
-      using var g = DetailsPanelBackground.Open();
-      var bg = Resources["details-bg-border"] as Image;
-      g.PushOpacity(0.8);
-      g.DrawImage(bg.Source, new(0, 0, e.NewSize.Width, bg.Source.Height));
-
-      g.PushTransform(new ScaleTransform(1, -1));
-      g.DrawImage(bg.Source, new(0, -e.NewSize.Height, e.NewSize.Width, bg.Source.Height));
-      g.Pop();
-    }
-
     #region Manifest / Local Mod Scanning
     public static void RefreshAllManifests()
     {
