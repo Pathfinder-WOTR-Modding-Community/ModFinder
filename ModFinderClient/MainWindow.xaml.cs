@@ -15,6 +15,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
 using System.Windows.Media;
+using System.Threading.Tasks;
+using System.Net;
+using System.Text.Json;
 
 namespace ModFinder
 {
@@ -36,6 +39,8 @@ namespace ModFinder
         InitializeComponent();
 
         Window = this;
+
+        CheckForUpdate();
 
         installedMods.DataContext = ModDB;
         showInstalledToggle.DataContext = ModDB;
@@ -97,6 +102,56 @@ namespace ModFinder
       }
 
       DetailsPanel.SizeChanged += DetailsPanel_SizeChanged;
+    }
+
+    private static void CheckForUpdate()
+    {
+      Task.Run(
+          async () =>
+          {
+            using WebClient client = new();
+            client.Headers.Add("User-Agent", "ModFinder");
+            var raw =
+              await client.DownloadStringTaskAsync(
+                "https://api.github.com/repos/Pathfinder-WOTR-Modding-Community/ModFinder/releases/latest");
+            return JsonSerializer.Deserialize<JsonElement>(raw);
+          })
+        .ContinueWith(
+          t =>
+          {
+            try
+            {
+              var json = t.Result;
+              if (json.TryGetProperty("tag_name", out var tag))
+              {
+                long latest = ParseVersion(tag.GetString()[1..]);
+                if (latest > ParseVersion(Assembly.GetExecutingAssembly().GetName().Version.ToString()))
+                {
+                  if (MessageBox.Show(
+                    Window,
+                    $"A newer version is available: ({tag}). Wouuld you like to download it now?",
+                    "Update Available",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Information) == MessageBoxResult.Yes)
+                  {
+                    Process.Start(
+                      "explorer", json.GetProperty("assets")[0].GetProperty("browser_download_url").GetString());
+                  }
+                }
+              }
+            }
+            catch (Exception ex)
+            {
+              Logger.Log.Error("Failed to check for updates.", ex);
+            }
+          },
+          TaskScheduler.FromCurrentSynchronizationContext());
+    }
+
+    private static long ParseVersion(string v)
+    {
+      var c = v.Split('.');
+      return int.Parse(c[0]) * 65536 + int.Parse(c[1]) * 256 + int.Parse(c[2]);
     }
 
     private void DetailsPanel_SizeChanged(object sender, SizeChangedEventArgs e)
