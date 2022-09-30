@@ -97,7 +97,6 @@ namespace ModFinder
       }
       else
       {
-        MainWindow.ShowError("Unable to find Wrath installation path.");
         Logger.Log.Error("Unable to find Wrath installation path.");
       }
     }
