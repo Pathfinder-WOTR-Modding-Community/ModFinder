@@ -9,7 +9,8 @@
     },
     "Service": {
       "Nexus": {
-        "ModID": "119"
+        "ModID": "119",        
+        "DownloadMirror": "https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror"
       }
     },
     "About": "Enables achievements when mods are enabled.",
