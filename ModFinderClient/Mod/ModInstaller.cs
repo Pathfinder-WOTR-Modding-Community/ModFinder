@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace ModFinder.Mod
 {
@@ -223,6 +224,16 @@ namespace ModFinder.Mod
         destination = modType == ModType.Portrait ? destination : Path.Combine(destination, info.ModId);
       }
 
+      static void WriteToDirectory(ZipArchiveEntry entry, string destDirectory, int stripLeading)
+      {
+        string destFileName = Path.GetFullPath(Path.Combine(destDirectory, entry.FullName[stripLeading..]));
+        string fullDestDirPath = Path.GetFullPath(destDirectory + Path.DirectorySeparatorChar);
+        if (!destFileName.StartsWith(fullDestDirPath))
+        {
+          throw new System.InvalidOperationException("Entry is outside the target dir: " + destFileName);
+        }
+        entry.ExtractToFile(destFileName, true);
+      }
 
       //Non-portrait mods just extract to the destination directory
       if (modType != ModType.Portrait)
@@ -238,7 +249,7 @@ namespace ModFinder.Mod
               if (entry.FullName.EndsWith("/"))
                 Directory.CreateDirectory(entryDest);
               else
-                entry.ExtractToFile(entryDest, true);
+                WriteToDirectory(entry, destination, rootInZip.Length);
             }
           }
           else
