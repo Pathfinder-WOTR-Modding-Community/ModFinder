@@ -61,6 +61,8 @@ namespace ModFinder
         Manifest = IOTool.FromString<MasterManifest>(json);
 #endif
 
+
+
         RefreshAllManifests();
         RefreshInstalledMods();
 

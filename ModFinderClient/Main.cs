@@ -100,6 +100,47 @@ namespace ModFinder
         Logger.Log.Error("Unable to find Wrath installation path.");
       }
     }
+    private static Regex extractGameVersion = new(".*?Found game version string: '(.*)'.*");
+    public static ModVersion GameVersion;
+
+    private static ModVersion GameVersionRaw
+    {
+      get
+      {
+        if (WrathPath == null) { return new(); }
+
+        var log = Path.Combine(WrathDataDir, "Player.log");
+        if (!File.Exists(log))
+        {
+          return new();
+        }
+
+        try
+        {
+          using var sr = new StreamReader(File.OpenRead(log));
+
+          for (int i = 0; i < 200; i++)
+          {
+            var line = sr.ReadLine();
+            if (line is null) return new();
+
+            var match = extractGameVersion.Match(line);
+            if (match.Success)
+            {
+              Logger.Log.Info($"Found game version: {match.Groups[1].Value}");
+              return ModVersion.Parse(match.Groups[1].Value);
+            }
+
+          }
+        }
+        catch (Exception e)
+        {
+          Logger.Log.Error("Unable to find Wrath game version", e);
+        }
+
+        return new();
+      }
+    }
 
     /// <summary>
     /// Path to the installed wrath folder
@@ -151,6 +192,7 @@ namespace ModFinder
           Settings.Save();
         }
 
+        GameVersion = GameVersionRaw;
         return _WrathPath;
       }
     }

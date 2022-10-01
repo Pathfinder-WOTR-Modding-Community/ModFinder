@@ -324,17 +324,24 @@ namespace ModFinder.Mod
     public DateTime LastUpdated { get; }
 
     /// <summary>
+    /// Optional. The game version when this mod was marked as deprecated, or never.
+    /// </summary>
+    [JsonProperty]
+    public ModVersion DeprecatedInGameVersion { get; }
+
+    /// <summary>
     /// Version history used to generate changelog.
     /// </summary>
     [JsonProperty]
     public List<Release> VersionHistory { get; }
 
     [JsonConstructor]
-    public VersionInfo(Release latest, DateTime lastUpdated, List<Release> versionHistory)
+    public VersionInfo(Release latest, DateTime lastUpdated, List<Release> versionHistory, ModVersion deprecatedInGameVersion = default)
     {
       Latest = latest;
       LastUpdated = lastUpdated;
       VersionHistory = versionHistory ?? new();
+      DeprecatedInGameVersion = deprecatedInGameVersion;
     }
   }
 
