@@ -188,6 +188,7 @@ namespace ModFinder.Mod
     /// </summary>
     [JsonProperty]
     public Nexus Nexus { get; }
+    public string Name => IsNexus() ? "Nexus" : "Github";
 
     [JsonConstructor]
     public HostService(GitHub gitHub, Nexus nexus)

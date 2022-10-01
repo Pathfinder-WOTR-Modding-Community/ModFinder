@@ -134,7 +134,7 @@ namespace ModFinder
                 {
                   if (MessageBox.Show(
                     Window,
-                    $"A newer version is available: ({tag}). Wouuld you like to download it now?",
+                    $"A newer version is available: ({tag}). Would you like to download it now?",
                     "Update Available",
                     MessageBoxButton.YesNo,
                     MessageBoxImage.Information) == MessageBoxResult.Yes)

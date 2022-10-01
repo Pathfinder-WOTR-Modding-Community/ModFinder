@@ -53,6 +53,7 @@ namespace ModFinder.UI
     public string About => Manifest.About;
     public string Description => Manifest.Description ?? "-";
     public string EnabledText => Enabled ? "On" : "Off";
+    public string Source => Manifest.Service.Name;
 
     public bool Enabled
     {

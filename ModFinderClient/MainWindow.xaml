@@ -505,6 +505,12 @@
                     <ColumnDefinition>
                       <ColumnDefinition.Width>100</ColumnDefinition.Width>
                     </ColumnDefinition>
+                    <ColumnDefinition>
+                      <ColumnDefinition.Width>80</ColumnDefinition.Width>
+                    </ColumnDefinition>
+                    <ColumnDefinition>
+                      <ColumnDefinition.Width>200</ColumnDefinition.Width>
+                    </ColumnDefinition>
                   </Grid.ColumnDefinitions>
                   <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -515,6 +521,12 @@
                   
                   <TextBlock FontSize="16" Text="Last Updated:" Grid.Column="2"></TextBlock>
                   <TextBlock FontSize="16" Text="{Binding LastUpdated, Mode=OneWay}" Grid.Column="3"></TextBlock>
+
+                  <TextBlock FontSize="16" Text="Source:" Grid.Column="4" TextAlignment="Right" Margin="0 0 8 0"></TextBlock>
+                  <TextBlock FontSize="16" Text="{Binding Source, Mode=OneWay}" Grid.Column="5"></TextBlock>
+
+                  <TextBlock FontSize="16" Grid.Row="1" Text="ID:" Grid.Column="4" TextAlignment="Right" Margin="0 0 8 0"></TextBlock>
+                  <TextBlock FontSize="16" Grid.Row="1" Text="{Binding ModId.Id, Mode=OneWay}" Grid.Column="5"></TextBlock>
 
                   <TextBlock FontSize="16" Text="Installed:" Width="130" Grid.Row="1"></TextBlock>
                   <TextBlock FontSize="16" Text="{Binding InstalledVersion, Mode=OneWay}" Grid.Row="1" Grid.Column="1"></TextBlock>
