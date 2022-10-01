@@ -70,7 +70,10 @@ namespace ModFinder.UI
       (IsCached && !IsInstalled)
         || (Manifest.Service.IsGitHub()
           && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
-          && !string.IsNullOrEmpty(Latest.Url));
+          && !string.IsNullOrEmpty(Latest.Url))
+        || (Manifest.Service.IsNexus()
+          && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
+          && Manifest.Service.Nexus.DownloadMirror != null);
     public bool CanDownload =>
       Manifest.Service.IsNexus()
       && (!IsInstalled || Status.IsVersionBehind(Latest.Version))

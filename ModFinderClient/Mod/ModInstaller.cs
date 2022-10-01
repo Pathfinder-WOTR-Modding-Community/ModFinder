@@ -35,10 +35,24 @@ namespace ModFinder.Mod
 
     private static async Task<InstallResult> InstallFromRemoteZip(ModViewModel viewModel, bool isUpdate)
     {
-      Logger.Log.Info($"Fetching zip from {viewModel.Latest.Url}");
 
       var file = Path.GetTempFileName();
-      await HttpHelper.DownloadFileAsync(viewModel.Latest.Url, file);
+
+      string url;
+
+      if (viewModel.Manifest.Service.IsNexus())
+      {
+        var expectedZipName = $"{viewModel.Manifest.Id.Id}-{viewModel.Latest.Version}.zip";
+        //example: https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror/releases/download/BubbleBuffs%2F5.0.0/BubbleBuffs-5.0.0.zip
+        url = $"{viewModel.Manifest.Service.Nexus.DownloadMirror}/releases/download/{viewModel.Manifest.Id.Id}%2F{viewModel.Latest.Version}/{expectedZipName}";
+      }
+      else
+      {
+        url = viewModel.Latest.Url;
+      }
+      Logger.Log.Info($"Fetching zip from {url}");
+
+      await HttpHelper.DownloadFileAsync(url, file);
 
       return await InstallFromZip(file, viewModel, isUpdate);
     }
