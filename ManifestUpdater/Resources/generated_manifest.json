@@ -30,7 +30,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7743914+00:00",
+    "LastChecked": "2022-10-01T15:52:01.779485+00:00",
     "Description": "[b]Allow Modded Achievements[/b]\n<br />\n<br />By default, modded games may not get achievements and their saved games are flagged as being modded. This mod disables the mod tracking functionality so you can gain achievements again.\n<br />\n<br />There are many quality of life mods that do not impact balance which should not block achievements. Please do not use this mod to cheat.\n<br />\n<br />[b]How to install[/b]\n<br />\n<br />0. Download the latest published zip file.\n<br />1. Install[url=https://www.nexusmods.com/site/mods/21] UnityModManager[/url]\n<br />2. Install the zip with UnityModManager.\n<br />\n<br />[b]Links[/b]\n<br />\n<br />Source code: [url=https://github.com/cstamford/WOTR_AllowModdedAchievements]https://github.com/cstamford/WOTR_AllowModdedAchievements[/url]",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119",
     "Tags": [
@@ -75,7 +75,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7769192+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7819374+00:00",
     "Description": "Pathfinder: WOTR -  Auto Mount mod",
     "HomepageUrl": "https://github.com/zephe0n/AutoMount",
     "Tags": [
@@ -114,7 +114,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.777032+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820344+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT",
     "Tags": [
@@ -198,7 +198,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770342+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820367+00:00",
     "Description": "[b]Imagine if setting up an auto buffing mod was easy enough you don't need a PhD, and integrated enough you don't need to open a UMM gui to configure it?\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />WANT TO LAUGH AT CODE?????\n<br />\n<br />[url=https://github.com/factubsio/BubbleBuffs]factubsio/BubbleBuffs: Bubbles Ultimate Buff Bot Lite Extra Simple (BUBBLES) (github.com)[/url][/b]\n<br />\n<br />\n<br />\n<br />\n<br />Items/Consumables are [b]not[/b] implemented yet.\n<br />\n<br />\n<br />\n<br />[center][size=6][b][font=Comic Sans MS]GAME VERSION 1.1 =&gt; MOD VERSION 2.X.X\n<br />GAME VERSION 1.2 =&gt; MOD VERSION 3.X.X\n<br />\n<br />[/font][/b][/size]I am not currently supporting older game versions, go look through the archived files and see if any work but don't file bugs against them.[/center]\n<br />[size=5]HOW TO USE:\n<br />[/size]\n<br />(also see the images for help)\n<br />\n<br />While [b]not[/b] on the global map and [b]not[/b] in Drezen/camp, or anywhere where you have your full party:\n<br />\n<br />Go to the Spellbook tab.\n<br />Click \"Buff Setup\" at the lower right\n<br />Select spells or abilities (Items and Consumables are [b]not[/b] implemented yet).\n<br />Select the spell/ability you want to cast\n<br />Click on each party member at the bottom to toggle casting on them:\n<br />  * gray: do not cast\n<br />  * green: cast (available casters)\n<br />  * yellow: cast (no available casters)\n<br />  * red: invalid target (e.g. personal spells, or animal-growth on a human, etc).\n<br />You can customise caster behaviour with the little \"up\" arrow above the caster's portrait (not the target portrait).\n<br />\n<br />Close the spellbook\n<br />Click the \"buff\" button on the lower left of the screen.\n<br />\n<br />optional: Check the results in the combat log\n<br />\n<br />[size=5]Files:\n<br />[/size]\n<br />[size=2]Settings are stored in the UserSettings folder under the mod, in a file called bubblebuff-GAME_ID.json where GAME_ID is the guid of your playthrough. Feel free to look through and edit it but expect things to crash if you do wonky stuff like to turn on Powerful Change on for a druid, or try to get someone to cast a spell they don't have.\n<br />[/size]\n<br />[size=5]For Skidmarcanists:[/size]\n<br />\n<br />If you are an arcanist and casting an appropriate spell you can toggle \"Allow Share Transmutation\" and \"Use Powerful Change\". The mod [b]will[/b] spend the points from your arcane resevoir but does not (currently) predict them like it does spell slots.\n<br />\n<br />If you are using Share Transmutation and there are no points, the spell will be skipped.\n<br />If you are using Powerful Change and there are no points, the spell will be cast without it.\n<br />\n<br />[b]NOTE: The combat log will say these casts are successful, it is a known thing and will get fixed eventually.[/b]\n<br />\n<br />Thanks to DeadMor0z for the contributions!\n<br />\n<br />\n<br />如何使用：在任何能完整操控整个小队的地方，点开法术书右下角进入设置面板，先选择法术，然后在中间选择施法者，中间的右边选择这个施法所在的施法序列，最后在最下方选择施法目标。\n<br />设置好后，在游戏中任何时候点击左下角的三个按钮即可瞬间释放相应序列中所有设置好的法术。\n<br />此mod由1onepower翻译，你可以在 [url=https://space.bilibili.com/383719917?spm_id_from=333.1007.0.0]B站[/url] 关注我,并且欢迎加入最大的中文CRPG社区之一：[url=https://tieba.baidu.com/f?kw=%E6%8B%A5%E7%8E%8B%E8%80%85&amp;fr=index]拥王者吧[/url]",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",
     "Tags": [
@@ -282,7 +282,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770346+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820372+00:00",
     "Description": "This mod does not aim to introduce any changes to the game balance or mecahnics.\n<br />It is purely quality of life features.\n<br />The mod should aim to fit into the base game without looking like a mod.\n<br />\n<br />[center][font=Comic Sans MS][size=6]ALL SETTINGS ARE IN THE OWLCAT SETTINGS WINDOW, [b]NOT [/b]UMM\n<br />[b]\n<br />[/b][/size][/font][b][font=Comic Sans MS][size=6]game version 1.2+ (release branch) =&gt; use mod version 1.14+[/size]\n<br />\n<br />[size=4]Dig through old versions if you are on an older game version[/size][/font][/b][/center]\n<br />The settings for this mod are under the Game tab in the normal owlcat settings window, not in unity mod manager. \n<br />\n<br />[b][size=4]FEATURES:\n<br />[/size][/b]\n<br />[list]\n<br />[*]Separate speed controls (NOT CHEATING) for:﻿   ﻿﻿\n<br />[list]\n<br />[*]Global map\n<br />[*]Combat\n<br />[*]Out of combat\n<br />[*]Tactical Combat (homm-minigame)\n<br />[/list][*]Army Disband button\n<br />[*]Jump to Siege button\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Adjustable \"fade\" strength for pause screen\n<br />[*]Marks area effects with a more visible circle and will indicate (in TBM) if a character will path over each area or not.\n<br />[/list][list]\n<br />[*]Map Info Panel - In GlobalMap mode, adds an expandable menu on the right hand side (under the mini-map), click on an entry to pan the map there:\n<br />[list]\n<br />[*]Shows all your villages\n<br />[*]Shows all invading armies\n<br />[*]Shows all locations with quests\n<br />[/list][*]Cursor Enhancements\n<br />[list]\n<br />[*]Customisable cursor scale for combat/non-combat cursors\n<br />[*]Customisable(ish) color for attack count text (white is sometimes real hard to see)\n<br />[/list][*]Character Statistics\n<br />[list]\n<br />[*]Each character will have a new tab 'statistics' in their character sheet\n<br />[*]It can only track stats while it's installed so sadly it won't retroactively find them\n<br />[/list][*]Enhanced Party View (Eight Characters)\n<br />[list]\n<br />[*]Enable in the Game Settings window (right at the bottom of the list)\n<br />[*]Restart the game (the application, not your save) after changing the setting for it to take effect\n<br />[*]You can't reorder pets by (owlcat's) design - it's possible to enable this but I need to confirm nothing else will break\n<br /> [/list][/list]\n<br />[b]Uninstall FastTravel before using this.[/b]\n<br />[list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list]",
     "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
     "Tags": [
@@ -322,7 +322,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770359+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820387+00:00",
     "Description": "Buffbot for Wrath of the Righteous",
     "HomepageUrl": "https://github.com/Balkoth-dev/BuffBot-Wrath",
     "Tags": [
@@ -382,7 +382,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770365+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820393+00:00",
     "Description": "A small mod for fixing bugs in WOTR",
     "HomepageUrl": "https://github.com/Bobster1246/BugFixes",
     "Tags": [
@@ -457,7 +457,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770369+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820397+00:00",
     "Description": "Expanded character options for Pathfinder: Wrath of the Righteous",
     "HomepageUrl": "https://github.com/WittleWolfie/CharacterOptionsPlus",
     "Tags": [
@@ -502,7 +502,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770374+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820401+00:00",
     "Description": "Fork of popular Combat Relief mod, updated to work with 1.4.0",
     "HomepageUrl": "https://github.com/alterasc/CombatRelief",
     "Tags": [
@@ -541,7 +541,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.777038+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820407+00:00",
     "Description": "Mod for Pathfinder: Wrath of the Righteous that breaks down damage bonuses",
     "HomepageUrl": "https://github.com/abias1122/WOTRDamageBreakdown",
     "Tags": [
@@ -625,7 +625,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770385+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820411+00:00",
     "Description": "Mod for Pathfinder: Wrath of the Righteous",
     "HomepageUrl": "https://github.com/Truinto/DarkCodex",
     "Tags": [
@@ -710,7 +710,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770389+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820415+00:00",
     "Description": "Enhances the inventory experience. Adds features such as: a search bar to all inventory screens, additional filtering and sorting options, customizable filter and sort lists, highlight important loot in the loot window. Options are highly configurable through the UMM mod options screen.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/137",
     "Tags": [
@@ -794,7 +794,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770394+00:00",
+    "LastChecked": "2022-10-01T15:52:01.782042+00:00",
     "Description": "Seeking to expand and add to content in Pathfinder: Wrath of the Righteous",
     "HomepageUrl": "https://github.com/ka-dyn/ExpandedContent",
     "Tags": [
@@ -839,7 +839,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770398+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820425+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/BarleyFlour/FinneanTweaks",
     "Tags": [
@@ -923,7 +923,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770403+00:00",
+    "LastChecked": "2022-10-01T15:52:01.782043+00:00",
     "Description": "Mod for Pathfinder: WoTR by OwlCat Games -- Expands the choices of Kineticist Element Choices",
     "HomepageUrl": "https://github.com/SpencerMycek/KineticistExpandedElements",
     "Tags": [
@@ -1008,7 +1008,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770408+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820434+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/pheonix99/LevelableAivu",
     "Tags": [
@@ -1073,7 +1073,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770413+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820438+00:00",
     "Description": "An improved remote console for reading logs in Pathfinder: Wrath of the Righteous. ",
     "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
     "Tags": [
@@ -1137,7 +1137,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770419+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820444+00:00",
     "Description": "An improved remote console for reading logs in Pathfinder: Wrath of the Righteous. ",
     "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
     "Tags": [
@@ -1221,7 +1221,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770423+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820448+00:00",
     "Description": "Microscopic Content Expansion mod for PF:WotR",
     "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
     "Tags": [
@@ -1291,7 +1291,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770428+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820453+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/WittleWolfie/ModMenu",
     "Tags": [
@@ -1365,7 +1365,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770432+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820458+00:00",
     "Description": "[b]Summary[/b]\n<br />\n<br />You can now choose more items to be sold when you click the \"Bulk Sell\" button during a trade.\n<br />\n<br />The item choices are done through the mod options (default ctrl+F10, and click on the mod). The item choices are not shown in the regular bulk sell item selection menu (as I do not really know how to add the options there in a good way).\n<br />\n<br />Example: If you select \"+3\" for weapons, all [i][b]common[/b][/i] weapons with an enchantment level of +3 and lower will be moved to be sold. Items marked as \"notable\" are never moved. Items that have a unique name are also not moved, unless you pick the option in the mod menu. Even with this option, items marked \"notable\" by the game are never moved to be sold. You can also toggle enchantment types such as Shock, Cold Iron etc. for weapons, planning to add similar options to other items.\n<br />\n<br />[b]Important: [/b]Make sure to always double check the items that are about to be sold!\n<br />\n<br />[b]Full changelog[/b][b] can be found under the [/b][url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/163?tab=logs]logs[/url][b]﻿ tab.[/b]\n<br />\n<br />[b]Update 0.4.4: [/b]Compatibility update for game version 1.3.0k.\n<br />[b]Update 0.4.3:[/b] \n<br />[list]\n<br />[*]Fixed some unique accessories being moved for bulk selling.\n<br />[*]More accessories can now be sold: amulets of mighty fists, amulets of agile firsts, bracers of lesser archery. These all use the same enchantment level for their accessory type item (e.g., setting necklaces to +2 will sell both amulets of natural armor +2, and amulet of mighty fists +2). \n<br />[/list]\n<br />\n<br />Feedback and bug reports are welcome!\n<br />[b]\n<br />[/b]\n<br />\n<br />[b]Installation\n<br />\n<br />[/b][list=1]\n<br />[*]Install the latest version of [url=https://www.nexusmods.com/site/mods/21/]Unity Mod Manager[/url] (UMM), and set it up for Pathfinder: WotR[b].[/b]\n<br />[*]Manually download the mod archive (.zip), and install it through UMM. You can simply drag &amp; drop the archive to the box in UMM.\n<br />[/list]\n<br />You are set! The game should show the installed mods at the main menu.\n<br />\n<br />Note that using mods disables Steam achievements. You can re-enable them with [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119]this mod[/url]﻿ (at least at the time of writing this).\n<br />\n<br />[b]\n<br />Other Information[/b]\n<br />\n<br />The mod does not change any game files and does a very minor patch, so it should be compatible with almost any other mod. That being said, use it at your own risk.\n<br />\n<br />[b]\n<br />Known issues[/b]\n<br />\n<br />See bug reports for known issues and other known bugs. You are welcome to submit bug reports as well if it doesn't already exist!\n<br />\n<br />[b]\n<br />Credit\n<br />\n<br />[/b]Some of the mods and tools I use during development, and which I am thankful for:\n<br />[list]\n<br />[*][b][url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/9]﻿Data Viewer[/url]﻿﻿[/b] and [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/8]Toy Box [/url]﻿by [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/users/2570756]Cabarius[/url], which are immensely helpful in understanding the internals of items, blueprints and enchantments, as well as adding items for testing!\n<br />[*][url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/137]Enhanced Inventory[/url] by [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/users/114484113]Xenofell[/url]﻿, not only for its usefulness in game, but also some inspirations from its great source code for a new modder!\n<br />[/list]",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/163",
     "Tags": [
@@ -1408,7 +1408,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770437+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820462+00:00",
     "Description": "[b]Summary[/b]\n<br />\n<br />A simple mod to show possible items from the very first relic project card. No more wasting time on relic projects hoping you will get some useful item in the end, now you can see all options from the very beginning! \n<br />\n<br />Also has an option to disable automatic pop-ups of completed projects in kingdom management (disabled by default, can be enabled from the UMM mod menu,  default ctrl+F10). This was added to address a bug in 1.1 beta, which prevented the game from progressing.\n<br />\n<br />[b]Important notice: [/b]This mod sometimes disables relic card texts after a game patch, and it needs to be built against the new binaries each time. If you already have the Toy Box mod, this mod was integrated into it some time ago, and that mod is probably getting more regular updates than I can provide; so I recommend enabling relic information from there if you are already using it. Still, I will try to post updates to this mod when I can.\n<br />\n<br />[b]Updates[/b]\n<br />[b]0.2.2[/b]\n<br />- Patch compatibility with 1.3.0k.\n<br />[b] 0.2.1[/b]\n<br />- Patch compatibility with 1.1.0k - relic cards were missing their text when opened.\n<br />\n<br />[b]Installation[/b]\n<br />\n<br />[list=1]\n<br />[*]Install the latest version of [url=https://www.nexusmods.com/site/mods/21/]Unity Mod Manager[/url] (UMM), and set it up for Pathfinder: WotR[b].[/b]\n<br />[*]Manually download the mod archive (.zip), and install it through UMM. You can simply drag &amp; drop the archive to the box in UMM.\n<br />[/list]\n<br />You are set! The game should show the installed mods at the main menu.\n<br />\n<br />Note that using mods disables Steam achievements. You can re-enable them with [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119]this mod[/url]﻿ (at least at the time of writing this).\n<br />\n<br />[b]\n<br />Other Information[/b]\n<br />\n<br />The mod does not change any files, so it should be compatible with most other mods and should not mess with your save games. That being said, use it at your own risk.\n<br />\n<br />Although I try my best to avoid bugs, and the changes are quite simple, they might still exist... All bug reports and constructive feedback are welcome!\n<br />\n<br />Source files are in the files section.\n<br />\n<br />[b]Kudos[/b]\n<br />- [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/users/943197]TheLich[/url] for providing an updated version of the mod while I was away.\n<br />- [url=https://www.nexusmods.com/pathfinderwrathoftherighteous/users/37868990]SirMadjesty[/url] for checking compatibility with one of the patches.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/200",
     "Tags": [
@@ -1452,7 +1452,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770447+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820471+00:00",
     "Description": "Small mod that enables multiple compatable archetypes to be applied at the same time.",
     "HomepageUrl": "https://github.com/Vek17/WrathMods-MultipleArchetypes",
     "Tags": [
@@ -1496,7 +1496,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770451+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820475+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/Llisandur/MythicArcanist",
     "Tags": [
@@ -1551,7 +1551,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770455+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820548+00:00",
     "Description": "Tweaks to the Mythic Path spellbooks",
     "HomepageUrl": "https://github.com/Vek17/WrathMods-MythicSpellbookTweaks",
     "Tags": [
@@ -1590,7 +1590,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.777046+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820556+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
     "Tags": [
@@ -1629,7 +1629,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770531+00:00",
+    "LastChecked": "2022-10-01T15:52:01.782056+00:00",
     "Description": "Fix for WotR 2.0.0 issue, that breaks owlcat mod template mods",
     "HomepageUrl": "https://github.com/alterasc/OwlcatModTemplateLoadFix",
     "Tags": [
@@ -1668,7 +1668,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770538+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820564+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_BLING",
     "Tags": [
@@ -1708,7 +1708,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770542+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820568+00:00",
     "Description": "A mod of Owlcat's Pathfinder: Wrath of the Righteous",
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE",
     "Tags": [
@@ -1758,7 +1758,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770546+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820573+00:00",
     "Description": "Mod for Pathfinder: Wrath of the Righteous. Allows skipping puzzles.",
     "HomepageUrl": "https://github.com/ArkiveDev/PuzzleSkip",
     "Tags": [
@@ -1823,7 +1823,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.777055+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820577+00:00",
     "Description": "PF: WOTR - Randomize enemies and loot",
     "HomepageUrl": "https://github.com/Snarkki/RandomEnemies",
     "Tags": [
@@ -1907,7 +1907,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770554+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820581+00:00",
     "Description": "A respec mod for Pathfinder: Wrath of the Righteous",
     "HomepageUrl": "https://github.com/BarleyFlour/RespecMod",
     "Tags": [
@@ -1991,7 +1991,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.777056+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7820587+00:00",
     "Description": "SpellbookMerge is a mod for Pathfinder Wrath of the righteous that allows additional spellbook merging options",
     "HomepageUrl": "https://github.com/vikigenius/SpellbookMerge",
     "Tags": [
@@ -2075,7 +2075,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770682+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821606+00:00",
     "Description": "Tabletop Tweaks is a mod that seeks to adjust the cRPG rules to more closely follow the tabletop ruleset. Additionally it adds content missing from the base game. ",
     "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Base",
     "Tags": [
@@ -2160,7 +2160,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770688+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821665+00:00",
     "Description": "This module provides a shared core system for all TabletopTweaks mods, and and any third party mods wishing to use TabletopTweaks systems and utilities.",
     "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Core",
     "Tags": [
@@ -2225,7 +2225,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770692+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821671+00:00",
     "Description": "This module provides non tabletop based tweaks to Owlcat's original mythic content including changes to some mythic classes and some mythic abilities.",
     "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Reworks",
     "Tags": [
@@ -2280,7 +2280,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770696+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821675+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/pheonix99/ToggleableThrowingWeapons",
     "Tags": [
@@ -2365,7 +2365,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770701+00:00",
+    "LastChecked": "2022-10-01T15:52:01.782168+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/pheonix99/TomeOfTheFirebird",
     "Tags": [
@@ -2449,7 +2449,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770705+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821684+00:00",
     "Description": "[b]Now with 400+ Cheats, Tweaks and Quality of Life Improvements including ability for any gender to romance any love interest\n<br />\n<br />[/b][list]\n<br />[*]Bag of Tricks: 113 (or 144 depending on how you count)\n<br />[*]Level Up &amp; Multiclass: 57\n<br />[*]Party Editor: 67\n<br />[*]Loot Coloring &amp; Checklist: 4\n<br />[*]Enchantment: 20 ways to view add, remove enchantments from your favorite items\n<br />[*]Search 'n Pick: 75 ways to view, add, remove blueprints plus a fun global teleportation feature\n<br />[*]Crusade: 36\n<br />[*]Armies: 4\n<br />[*]Etudes: 6225 x 3 (start, unstart, complete)\n<br />[*]Quest Resolution: 1\n<br />[/list]\n<br />\n<br />[b]Please backup early and backup often.[/b]\n<br />\n<br />[b]Important: Make sure you are on the latest version of the game 1.09c or 1.1.0[/b]\n<br />\n<br />[b]Install &amp; Setup[/b]\n<br />[list=1]\n<br />[*]Install the [url=https://www.nexusmods.com/site/mods/21/?tab=files]Unity Mod Manager﻿[/url]﻿.\n<br />[*]Install the mod using the Unity Mod Manager﻿ or extract the archive to your game's mod folder (e.g. '&#92;Steam&#92;steamapps&#92;common&#92;Pathfinder Second Adventure&#92;Mods').\n<br />[*]Start the game and load a save or start a new save (the mod's functions can't accessed from the main menu).\n<br />[*]Open the Unity Mod Manager﻿ by pressing CTRL + F10.\n<br />[*]Adjust the settings in the mod's menu\n<br />[*][b]Important[/b] this mod is designed to be run at 1920x1080 or higher.\n<br />[*]Please set your resolution to at least 1920x1080\n<br />[*]Go to Settings tab on Unity Mod Manager to set your screen width to at least 1920 wide\n<br />[/list]\n<br />[b]Usage\n<br />\n<br />[/b]The mod provides the following tabs and here is a brief description of each of them:\n<br />\n<br />[list]\n<br />[*][b]Bag of Tricks[/b]: this is a collection of quality of life, quick cheats, settings, multipliers, etc from the awesome Kingmaker mod of the same name plus a bag or two of new tricks ^_^\n<br />[*][b]Level Up &amp; Multiclass[/b]: a variety of character creation, level up, unlock mythic paths plus support for multiple classes per level up and gestalt gameplay\n<br />[*][b]Party Editor[/b]: lets you edit almost any aspect of your character. Make sure you explore all the different disclosure toggles.  You can edit classes, stats, facts (feats and more), buffs, abilities, spells and spellbooks as well as the composition of your party\n<br />[*][b]Loot Coloring &amp; Checklist[/b]: this lets you enable a loot grading and coloring system similar to Borderlands or Diablo.  It also gives you a screen where view all the items in an area that you have not looted yet.\n<br />[*][b]Enchantment[/b]: allows you to add or remove enchantments from the items in your inventory\n<br />[*][b]Search 'n Pick[/b]: this lets you search through all the available resources (items, feats, abilities, spells and many more) and manipulate your game state in an almost limitless set of ways.  You can add/remove items, feats, abilities, etc.  You can spawn any unit. You can start/unstart/complete etudes, quests, etc.  You can teleport to any area in the game.  It is almost unimaginable how much you can do in here so keep digging!\n<br />[*][b]Crusade[/b]: this allows you to edit various aspects of your crusade state.\n<br />[*][b]Armies[/b]: this allows you to edit the composition and stats of your armies\n<br />[*][b]Etudes[/b]: this is a new and exciting feature that allows you to see for the first time the structure and some basic relationships of [b][i]Etudes [/i][/b]and other [b][i]Elements[/i][/b] that control the progression of your game story. [b]Etudes [/b]are hierarchical in structure and additionally contain a set of [b]Elements [/b]that can both conditions to check and actions to execute when the etude is started. As you browe you will notice there is a disclosure triangle next to the name which will show the children of the Etude.  Etudes that have [b]Elements[/b] will offer a second disclosure triangle next to the status that will show them to you.\n<br />[b]WARNING[/b]: this tool can both miraculously fix your broken progression or it can break it even further. Save and back up your save before using. Remember that[i] \"with great power comes great responsibility\"[/i][*][b]Quest Resolution[/b]: this allows you to view your active quests and advance them as needed to work around bugs or skip quests you don't want to do.  Be warned this may break your game progression if used carelessly.\n<br />[/list]\n<br />[b]Guide to building a second class (and beyond) equal to your current and then multiclassing\n<br />[/b]Let's say your char is level 6 cleric and you want to make them also level 6 fighter.[list=1]\n<br />1 - turn off all multiclass selections2 - give yourself 1 levelup\n<br />3 - choose fighter and gain just that 1 level\n<br />4 - Party Editor &gt; Char &gt; Classes\n<br />5 - check gestalt on the cleric class (original class)\n<br />6 - you will automatically get a new level up marker\n<br />7 - level up Fighter until you can't anymore (second class)\n<br />8 - Now you have a 6 Cleric/6 fighter\n<br />9 - Choose which you want to be your main class\n<br />10 - mark the other one as gestalt in party editor\n<br />11 - on the multiclass config screen check that class as your multiclass option\n<br />12 - repeat this for as many extra classes as you want (until you lag the game)\n<br />13 - when done adjust your stats as desired to fit your playstyle in Party &gt; Char &gt; Stats (edited)\n<br />[/list][b]To gestalt Mythics[/b]. (Best time is right before you pick your path in Drezen\n<br />[list=1]\n<br />1 - Give yourself a mythic level in Toybox (To 3)\n<br />2 -Take one of the mythic paths you want to gestalt\n<br />3 - Go into the Toybox party tab, and set the path as Gestalt\n<br />4 - Repeat steps 2 &amp; 3 for all but the last Mythic path you want (So if you want to be 2 paths, i.e. Angel/Azata, Lich/Demon, etc, skip this step)\n<br />5 - Lower your mythic level to 2 and then press the Set button on the mythic experience (Should set your Mythic Experience to 2)\n<br />6 - Pick your path like normal during the Drezen siege at the flag\n<br />7 - Only after completely every other step, go to the multiclass config, and set the multiclass config flags for the paths you set the Gestalt flags on in step 3\n<br />8 -  (optional) In Toybox's party tab, under your characters spell tab, use the Merge button on the mythic spells books\n<br />[/list]Please feel free to make other enhancement requests [url=https://github.com/cabarius/ToyBox/issues]here[/url]﻿. \n<br />Please tap new issue and mark it as an `enhancement`.\n<br />Please also file any bugs you find [url=https://github.com/cabarius/ToyBox/issues]here[/url]﻿. \n<br />\n<br />[b]Recent Release Notes[/b]\n<br />[b]Ver 1.4.17 (DLC 3 release 1.4.2a)[/b][list]\n<br />[*]Support for Beta 1.4.2a\n<br />[/list][b]Ver 1.4.16 (DLC 2 release 1.3.0k)[/b][list]\n<br />[*]DLC 2 Compatibility[list]\n<br />[*]([i]Vermie[/i]) Added button to reveal DLC portal loot\n<br />[/list]\n<br />[/list][b]Ver 1.4.15 (DLC release 1.2.0.aa)[/b][list]\n<br />[*]DLC Compatibility fixes[list]\n<br />[*]Fixed crash in achivement blocker disable that probably borked a lot of things\n<br />[/list]\n<br />[/list][b]Ver 1.4.14 (for Beta 1.2.h only)[/b][list]\n<br />[*]Beta Compatibility now works with Beta 1.2.0h\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]Added ability to show, clear and disable corruption\n<br />[*]([i]KnightOfSeiros[/i]) Added a deraknis-begone option to replace all derakni models, so as deskari-begone\n<br />[*]Dialog[list]\n<br />[*]Fixed issue that caused you to be unable to finish dialog with Nenio in chapter 2 and 5\n<br />[/list]\n<br />[/list]\n<br />[*][b]LevelUp[/b][list]\n<br />[*]Split Class and Feat Prequisite Ignore (Nihilistzsche)[list]\n<br />[*]Split the class and feat prerequisite ignore into two separate settings.\n<br />[/list]\n<br />[/list]\n<br />[*][b]Armies Editor[/b][list]\n<br />[*][b]([/b][i]KnightOfSeiros[/i][b]) [/b]Add squads in Army Editor\n<br />[/list]\n<br />[/list]\n<br />[b]Ver 1.4.13 (latest for non beta)[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Quality of Life[/b][list]\n<br />[*][b]Game Over -[/b] Added toggle to block Game Over when certain companions die in combat, so if [i]Leerooooy (Greybor) Jenkins[/i] runs in and your leader runs in to save him and dies the game does not end unless the whole party wipes[b].[/b]\n<br />[/list]\n<br />[*][b]Dialog[/b][list]\n<br />[*]Toy to make previously chosen dialog answers show up in smaller dimmer text\n<br />[*][b]Expand Answers For Conditional Responses[/b][list]\n<br />[*]Dialog dependent on previous dialog checks now works correctly with the feature enabled\n<br />[*]Fixed issue that generated bogus extra answers for non conditional response by ensuring that the feature only gets activated by a set of continuation cues that all have conditions\n<br />[/list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*][b]([/b][i]Ronin[/i][b]) [/b]Convinced Daeran to stop repeating himself in the Grey Garrison\n<br />[/list]\n<br />[/list]\n<br />[*][b]Camera[/b][list]\n<br />[*]Mouse3 Camera + forward/back keys now lets you fly freely when pitch is enabled\n<br />[*]Additional setting for completely free camera\n<br />[*]Added Toy to let you adjust camera height with Ctrl+Mouse3 Camera Drag ([b][i]very experimental[/i][/b])\n<br />[*]Added Toy to let you adjust the clip plane with Alt+MouseWheel\n<br />[/list]\n<br />[*]Preview Relic Info ([i]thanks to rathtr[/i])\n<br />[/list]\n<br />[*][b]Level Up &amp; Multiclass[/b][list]\n<br />[*][b]ToyBox now supports multiple archetypes when you select a new class following tabletop rules[/b][list]\n<br />[*]Thank you [b]Vek [/b]for making this and sharing it with ToyBox users [b](please check out the excellent Table Top Tweaks mod as well. [/b][url=https://github.com/Vek17/WrathMods-TabletopTweaks]https://github.com/Vek17/WrathMods-TabletopTweaks[/url][b])[/b]\n<br />[/list]\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]Option to show display name (localized name) for things that have it\n<br />[*]Search now looks at both display name (localized name) and internal name. Previously it only looked at internal name\n<br />[/list]\n<br />[*][b]Quest Editor[/b][list]\n<br />[*]Added descriptions and improved UI in quest editor\n<br />[*]Quest steps now number properly\n<br />[*]Steps with missing titles show blueprint name\n<br />[*]quest steps are now colored based on whether completed, current or not seen yet.\n<br />[*]Failure steps are colored red \n<br />[/list]\n<br />[/list][list]\n<br />[*][b]Loot[/b][list]\n<br />[*]([i]Hambeard[/i])[b] [/b]Added hotkey bindable button to allow for area exit loot window to be opened mid dungeon.\n<br />[*]([i]Hambeard[/i][b]) [/b]Added button to show all ground loot on the map.\n<br />[*]([i]Hambeard[/i]) Added perception dc's to loot check list to indicate chest is hidden\n<br />[*]([i]Hambeard[/i]) Added trickery dc's to loot check list to indicate chest is locked\n<br />[*]([i]Hambeard[/i]) Added button to include hidden chest when revealing them to the map\n<br />[/list]\n<br />[/list]\n<br />[b]Ver 1.4.12[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]Cheat to let you enable Unlimited Stacking of Modifiers (Stat/AC/Hit/Damage/Etc)\n<br />[*]Fixed backwards default X rotation when camera mods are enabled\n<br />[*]Options to Invert Mouse X and Y Axis in camera settings\n<br />[*]Moved dialog options into their own section in Bag of Tricks\n<br />[*]Mythic Dialog Restrictions are beginning to apply to crusade events.\n<br />[*][b]Expand Answers For Conditional Responses[/b] - Some responses such as comments about your mythic powers will always choose the first one by default. This will show a copy of the answer and the condition for each possible response that an NPC might make to you based on.[list]\n<br />[*]Option to see unavailable answers so you can see the conditions you are not meeting\n<br />[/list]\n<br />[*][b]Friendship is Magic[/b][list]\n<br />[*]([i]Ronin[/i]) Now for goodie-two-shoes as well!\n<br />[*]([i]Ronin[/i]) Added support for Ciar and the Hand\n<br />[/list]\n<br />[*][b]Alignment Unrestrcted[/b][list]\n<br />[*]([i]Ronin[/i]) Included support for dialogs from NPC, not just dialog from the MC\n<br />[*]([i]Ronin[/i]) Fixes for Lann/Wendu's questline\n<br />[/list]\n<br />[/list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*]([i]Ronin[/i]) Fixed errors with Wendu and Lann not properly counting as \"former\" companions\n<br />[*]([i]Ronin[/i]) Fixed errors with Nenio's final quest\n<br />[/list]\n<br />[*][b]Loot[/b][list]\n<br />[*]Added a friendly unit filter toggle to the loot checklist\n<br />[/list]\n<br />[*][b]Crusade Editor[/b][list]\n<br />[*]Now shows conditions and preview for crusade event solutions\n<br />[*]Option to ignore crusade event solution restrictions\n<br />[*]Cleaned up UI layout and description coloring to match the rest of the mod\n<br />[*]([i]KnightOfSeiros[/i]) Toggle to choose no decree costs\n<br />[*]([i]KnightOfSeiros[/i]) Now shows preview for decree and event results\n<br />[/list]\n<br />[*][b]Army Editor[/b][list]\n<br />[*]Moved army cheats to armies editor\n<br />[/list]\n<br />[/list][b]Ver 1.4.11[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Friendship is Magic[/b][list]\n<br />[*][b]([/b][i]Ronin[/i][b]) [/b]Allow friendships to survive after commiting the most vile actions\n<br />[/list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*][b]([/b][i]Ronin[/i][b]) [/b]Companions no longer mute during Act 5 companion quests, Bad Blood, or Underground Army\n<br />[/list]\n<br />[*]Toggle to let a rider mount pets without size restriction\n<br />[*]Toggle to let a rider mount anything (experimental)\n<br />[*]Tweak to clear the action bar of the selected char\n<br />[*][b]Camera[/b][list]\n<br />[*]Fixed bug where FOV multilier stopped working when using enhanced camera settings\n<br />[*]Made camera zoom smoother on the mouse wheel, especially at higher FOV settings\n<br />[/list]\n<br />[/list]\n<br />[*][b]Level Up[/b][list]\n<br />[*]Toggle to let pets take mythic classes\n<br />[*]Fixed mythic level up to show the correct mythic level on the top left of the level up screen. Note: the progression UI still puts stuff in the wrong place but at least the calculations should be better\n<br />[*]Toggle for ignoring racial feature prerequisites works once again\n<br />[/list]\n<br />[*][b]Party Editor[/b][list]\n<br />[*]Improved UI for mythic spellbook merging. You can also merge more than one mythic spellbook into the same normal spellbook. Note: only the first merge increasess the mythic level (caster level) of the spellbook but you do get the extra spells.\n<br />[*]Added Mythic display of Mythic Experience and a button to set mythic experience so you can delevel your mythic level like you can for normal character level\n<br />[*]You can no longer select all mythic classes as gestalt\n<br />[*]Feature Tree view now shows levels for features acquired during level up\n<br />[/list]\n<br />[*][b]Crusade Editor[/b][list]\n<br />[*]Added Settlement Editor\n<br />[*]([i]KnightOfSeiros[/i]) Added immediately build buildings\n<br />[*]([i]KnightOfSeiros[/i]) Toggle to ignore all building restrictions\n<br />[*]([i]KnightOfSeiros[/i]) Added immediately finish decrees\n<br />[*][b]([/b][i]KnightOfSeiros[/i][b]) [/b]Toggle to ignore start decree restrictions\n<br />[/list]\n<br />[/list][b]Ver 1.4.10[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*]added infrastructure for handling situations with ex companions where an Etude may expect them to not be on the team. We have resolved the cases in [i]A Strike from the Sky[/i]. Please report other situations where you see odd behavior and we will resolve it ASAP.\n<br />[*]([i]Ronin[/i]) Secret companions no longer appear early to spoil the surprise\n<br />[*]([i]Ronin + Narria[/i]) Companions no longer mute during [i]A Strike From The Sky[/i]\n<br />[/list]\n<br />[*]Improved camera zoom behavior when camera tilt/zoom all scenes is active\n<br />[*]Fixed some crashers in dialog preview and control summons\n<br />[*]([i]Flat[/i]) Add Rest Selected Unit\n<br />[*]([i]Flat[/i]) Add toggle to disable Attack of Opportunities\n<br />[*]([i]DeadMoroz[/i]) Fixed crasher that led to broken character switch when Loot Coloring is enabled and magical item was rewarded after tactical battle\n<br />[*]([i]DeadMoroz[/i]) Enable action bar for controllable summons. Prefill action bar with spell abilities and charge.\n<br />[*]([i]Pheonix99[/i]) Added Headers to Add Enchant search table, clairified Search Limit\n<br />[/list]\n<br />[/list][b]Ver 1.4.9.1[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Remote Companion Dialog[/b][list]\n<br />[*]Fixed issue with Ex Companion dialog that would break some scenes involving Lann and Wenduag like at the end of the Prologue Labyrinth\n<br />[*]Cleaned up layout of checkboxes for remote dialog\n<br />[/list]\n<br />[*][b]Love is Free[/b][list]\n<br />[*]([i]Ronin[/i]) Vellexia romance opened to all paths\n<br />[/list]\n<br />[/list]\n<br />[/list][b]Ver 1.4.9[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Quality of Life[/b][list]\n<br />[*]Remote Companion Dialog - Allow remote companions (even former party members) to make comments on dialog you are having[list]\n<br />[*]Include Former Companions - Let's you also listen to remarks from your former companions.\n<br />[/list]\n<br />[*]This is experimental so it may break dialogs. If you find an issue please come find me (Narria) on the WoTR discord[b] ([/b][url=https://discord.gg/CRsCZNw8Rf]https://discord.gg/CRsCZNw8Rf[/url][b]) [/b]and give me a copy of the save.\n<br />[/list]\n<br />[*][b]Camera[/b][list]\n<br />[*]Massive improvements\n<br />[*]Camera settings moved to new section\n<br />[*]Toggles to allow zooming and rotation on any map or cutscene (May need to use Mouse3 Drag to rotate in some situations)\n<br />[*]Toggle to allow changing the camera tilt to get an almost 3rd person view. (experimental preview)\n<br />[/list]\n<br />[*][b]Love is Free[/b][list]\n<br />[*]([i]Ronin[/i])Lich path no longer blocks romance\n<br />[/list]\n<br />[/list]\n<br />[*][b]Level Up[/b][list]\n<br />[*]([i]Truinto[/i]) Unlock Party Level Cap (continuous or exponential)\n<br />[/list]\n<br />[*][b]Enchantment[/b][list]\n<br />[*]Added collation for enchament types\n<br />[*]Show enchament rating\n<br />[*]Improved sorting of enchaments\n<br />[*]Show character name equiping an item if is equiped\n<br />[*]Fixed crash on null comment/prefix/suffix in BlueprintItemEnchantment (pheonix99)\n<br />[/list]\n<br />[*][b]Loot[/b][list]\n<br />[*]Item rarity takes into account enchantment rarity\n<br />[/list]\n<br />[*][b]Armies Editor[/b][list]\n<br />[*]Added the ability to spawn an army as either friendly or hostile.\n<br />[*]Add buttons for destroying an army and for restoring movement points\n<br />[/list]\n<br />[*][b]Misc[/b][list]\n<br />[*]Fixed crasher that led to interference with World Crawl and possibly other mods\n<br />[*]Fixed a crasher that impacted some text fields\n<br />[*]Reworked code around scroll coloring to improve stability\n<br />[/list]\n<br />[/list]﻿[b]Ver 1.4.8.1 [/b]\n<br />[list]\n<br />[*]Fixed some edge cases for Jealousy Begone!\n<br />[/list][b]Ver 1.4.8[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*][b]Love is Free[/b][list]\n<br />[*]Mythic path no longer blocks romance with the queen\n<br />[/list]\n<br />[*][b]Toggle to allow spells/abilities/items toolbar pop-ups grow wider[/b]\n<br />[*][b]Group Picker[/b][list]\n<br />[*]Changing party in a map does not break characters anymore\n<br />[*]No longer brings up the mod when activating it via hot key\n<br />[*]Now works on the global map too\n<br />[/list]\n<br />[/list]\n<br />[*][b]Enchantment[/b][list]\n<br />[*][b]([/b][i]Pheonix99[/i][b]) [/b]Fix for stack merging eating enchants - EX: If you add mighty fists to an amulet of natural armor, then stick it in inventory where you have another natural armor amulet of the same type, they're merged into a stack and the mighty fists enchant vanishes\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]Fixed issue where if you select items and then weapons that the subcategories would not appear\n<br />[*]Fixed some misc crashes caused by bad blueprints\n<br />[/list]\n<br />[*][b]Crusade Editor[/b][list]\n<br />[*]Fixed issue where Build Time slider wouldn't slide\n<br />[/list]\n<br />[*][b]Misc[/b][list]\n<br />[*]Fixed some crashers in inventory UI\n<br />[/list]\n<br />[/list][b]Ver 1.4.7[/b][list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]♥♥ Love is Free ♥♥ - Allow any gender for any romance\n<br />[*][b]Jelousy Begone! - [/b]Allow multiple romances at the same time[list]\n<br />[*]Big thanks to [b][i]Paladingineer[/i] [/b]and [b][i]Ronin[/i] [/b]for their contributions to making this possible\n<br />[/list]\n<br />[/list]\n<br />[*][b]Party Editor[/b][list]\n<br />[*]([i]Truinto[/i]) added clear buttons for opposition schools\n<br />[*]([i]Truinto[/i]) allow CompletelyNormal Metamagic to work while using free metamagic cheat\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]([i]BarleyFlour[/i]) Added the ability to spawn an army as either friendly or hostile\n<br />[/list]\n<br />[*][b]Armies Editor[/b][list]\n<br />[*]can edit leader stats\n<br />[*]can edit leader skills\n<br />[/list]\n<br />[*][b]Etude Editor[/b][list]\n<br />[*]Ability to show GUID and comments\n<br />[/list]\n<br />[/list][b]Ver 1.4.6 (mainline 1.1.0i)[/b][list]\n<br />[*][b]Updated to work with WoTR 1.1.0i[/b]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]UI improvements for use and transfer\n<br />[*][i](Flat)[/i] click modifiers for use and transfer are now configurable\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]Improved Performance of parameterized feature and feature selection filters\n<br />[/list]\n<br />[*][b]Etude Editor[/b]\n<br />[list]\n<br />[*]Expanding children of etudes inside elements now works\n<br />[*]Now shows conflicting Etudes for AnotherEtudeOfGroupIsPlaying\n<br />[*]Fixed nasty crash when you opened elements on some of Camellia's romance items like the one with the necklace\n<br />[*]Made things even wider so stuff formats well\n<br />[*][i](Flat)[/i] Editor will not crash if localization files are not found\n<br />[/list][/list][list]\n<br />[*][b]Settings[/b][list]\n<br />[*][i](Flat)[/i] Fixed a typo for developer console\n<br />[/list]\n<br />[*][b]Post-Build[/b] (Developer QoL)[list]\n<br />[*][i](Flat)[/i] Post-Build script now copies over all packaged files to WrathPath\n<br />[/list]\n<br />[/list][b]Ver 1.4.5 (Universal - works on both main and beta versions)[/b][list]\n<br />[*][b]General[/b][list]\n<br />[*]1.4.5 is now cross compatible between beta and mainline\n<br />[/list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]Teleport keys now work on the local map\n<br />[/list]\n<br />[*][b]Level Up &amp; Multiclass[/b][list]\n<br />[*]If multiclass or ignore class and feat restrictions is set you can see a full range of class choices for pets[list]\n<br />[*][b][i]Warning [/i][/b][i]this is experimental so save early and often[/i]\n<br />[/list]\n<br />[*][i](Aephiex)[/i] Added new toggle 'Ignore Required Class Levels'\n<br />[/list]\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]You can now add feature selections such as Deity.[list]\n<br />[*][b][i]Warning [/i][/b][i]this is experimental so save early and often[/i]\n<br />[/list]\n<br />[/list]\n<br />[*][b]Etude Editor[/b][list]\n<br />[*]You now have actions inside the Etude Elements which may be useful for quite a few things\n<br />[*]Shows the state of conditional elements\n<br />[/list]\n<br />[*][b]Quest Editor[/b][list]\n<br />[*]you can now teleport to stages of quest progression when available\n<br />[/list]\n<br />[*][b]Teleportation[/b][list]\n<br />[*]Teleporting to global map points now work across the global map and kenabres map\n<br />[/list]\n<br />[/list][b]Ver 1.4.4 (for beta 1.1)[/b][list]\n<br />[*]Ported to Beta (Game Version 1.1.0d)\n<br />[*][b]Bag of Tricks [/b]made spell acronyms default to off as intended (sorry about that)\n<br />[/list][b]Ver 1.4.3.1 (use this for current non beta until 1.1.x releases)[/b][list]\n<br />[*]Autoload of saves on launch can be disabled by holding down shift\n<br />[/list][b]Ver 1.4.3[/b][list]\n<br />[*][b]Level Up &amp; Multiclass[/b][list]\n<br />[*][i]Fixed Major Bugs in Multiclass[/i]\n<br />[*]Fixed bug where class powers, curses, etc were not being applied in some cases\n<br />[*]Fixed bugs where multiclass classes were being applied more than once on companions\n<br />[*]In Game Multiclass UI[list]\n<br />[*]Now works during character creation\n<br />[*]Various stability improvements\n<br />[/list]\n<br />[*]You can now unlock Lich Mythic path (was accidently removed)\n<br />[/list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]Spell/Ability Pickers option to show acronyms in the spell slots in order to be able to identify and choose them faster\n<br />[*]([i]Aephiex[/i]) Added new Quality of Life toggle 'Respec Refund Scrolls'\n<br />[/list]\n<br />[*]Party Editor Fixed bug where Recruitment was not using the new code path\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]Items now display flavor text if it is available and it can be searched whenever you search descriptions\n<br />[*]Fixed crasher when viewing Unlockable Flags\n<br />[/list]\n<br />[*][b]Etude Editor[/b][list]\n<br />[*]Etude Elements are now more obvious that you can explore them\n<br />[*]The editor can now expand width as wide as needed which should improve layout. This means you will need to use the horizontal scroll bars for deep exploration\n<br />[/list]\n<br />[/list][b]Ver 1.4.2.2[/b][list]\n<br />[*][b]Level Up &amp; Multiclass [/b]fixed crasher in save due to interaction with in game level up UI\n<br />[/list][b]Ver 1.4.2.1[/b][list]\n<br />[*][b]Level Up &amp; Multiclass[/b] fixed crasher in the main menu when viewing level up options\n<br />[/list][b]Ver 1.4.2[/b][list]\n<br />[*][b]Level Up &amp; Multiclass[/b][list]\n<br />[*]You can now [b]configure multiclass[/b] options directly in the [b]level up screen![/b]\n<br />[*]You are now prevented from making choices that break level up like selecting all of your existing classes as multiclass. Instead choose your desired new class as a multiclass and level up one of your existing\n<br />[*]Fixed issue where char gen class choices would get applied to companions during some level ups. Please give feedback if you see issues respecing your companions\n<br />[*]removed unimplemented flags in the multi-class config to avoid confusion. Please file feature requests if there are any that you really wanted.\n<br />[/list]\n<br />[*][b]Bag of Tricks[/b][list]\n<br />[*]moved teleport keys to go with teleport party to me and gave it its own section with explainer text\n<br />[*]Added common cheat to reset interaction point skill checks in an area\n<br />[*]([i]Aephiex[/i]) Renamed 'Disable Arcane Spell Failure' into 'Disable Armor &amp; Shield Arcane Spell Failure' to make it more clear\n<br />[*]([i]Aephiex[/i]) Fixed issue where 'Disable Armor Max Dexterity' permanently changes armor max dexterity into 99 even after disabling this option\n<br />[*]([i]Aephiex[/i]) Added new option 'Disable Armor Speed Reduction' which disables the -10 speed while wearing medium and heavy armor\n<br />[*]([i]Aephiex[/i]) Added new option 'Disable Armor &amp; Shield Checks Penalty' which disables the checks penalty applied while wearing armor and holding shield\n<br />[*]([i]Aephiex[/i]) Added new multiplier slider 'Increase Carry Capacity (Party Only)' which multiplies party carry capacity without changing the carry capacity of individual characters; the original multiplier still affects both\n<br />[/list]\n<br />[*]Party Editor renamed 'Facts' to the more correct name 'Features'\n<br />[*][b]Search 'n Pick[/b][list]\n<br />[*]made categories for 'Features' much more useful. Choose Search 'n Pick &gt; Features and see all the interesting categories to explore ^_^\n<br />[*]you can now hover over the type field for a blueprint to get a button that lets you show other items in the same category\n<br />[/list]\n<br />[*][b]Enchantment[/b]\n<br />[list]\n<br />[*][b]Sandal[/b] has discovered the mythic path of [b]Trickster [/b]and can reveal hidden secrets in your items. Look for some fun new buttons at the bottom of the target info on the enchantment tab.\n<br />[/list][*][b]Quest Editor[/b] shows some area and location info in anticipating of adding teleport to quest locations soon\n<br />[/list][b]Ver 1.4.1[/b][list]\n<br />[*][b]Important[/b][list]\n<br />[*]This release changes where settings for [i]gestalt, multiclass, allow level past 20[/i] state is saved from ToyBox settings to your game save. This will RESET all these settings to their DEFAULT state. We provide a way to migrate your settings from legacy ToyBox settings to your current save file. Look for it under Level Up in the multiclass config area. Note you will need to do this the first time you load any save that you wish to continue using these features.\n<br />[/list]\n<br />[*][b]Multiclasss &amp; Gestalt[/b][list]\n<br />[*]Moved save state from settings into Owlcats save file extensions for save files so now your gestalt state will live in your save and never get out of sync due to toybox settings changes\n<br />[*]Added migration buttons if ToyBox detects that you have old save state in your settings and nothing in the current save. Please use these with care.[list]\n<br />[*]You also have the option to remove the migration data\n<br />[/list]\n<br />[*]Added descriptive string for gestalt flag in Level Up and Party Editor\n<br />[*]Improved new multiclass selection UI to allow you to select other archetypes for a class that you have an existing archetype. This will only apply during respect.[list]\n<br />[*]Added orange warning message to inform user of this behavior\n<br />[/list]\n<br />[*][i]Note[/i] this should make ToyBox Multiclass and Gestalt play better with respecing\n<br />[/list]\n<br />[/list][b]Ver 1.4.0 [/b]\n<br />[list]\n<br />[*]Massive new update including a new Etude Editor.  Please check [url=https://github.com/cabarius/ToyBox/blob/master/ToyBox/ReadMe.md]here[/url]﻿﻿ for to see full release notes and a preview of the next release..\n<br />[/list][list]\n<br />[*]New Etude Editor is a powerful way to view and edit Etude progression[list]\n<br />[*]Tree view[list]\n<br />[*]etudes and their childern\n<br />[*]can expand immediate children or go all the way down\n<br />[*]can reveal the various conditions involved with the etude which is very powerful for understanding their mechanics. This will be improved to let you manipulate the conditions as much as spossible\n<br />[/list]\n<br />[*]Actions to start, unstart and complete etudes are available\n<br />[*]Much more coming which I will talk about soon\n<br />[/list]\n<br />[*]Bag of tricks[list]\n<br />[*]([i]ShadowRanger[/i]) Added a fix that should resolve the zoomed out camera bug if you had both ToyBox and Free Camera installed. You may need to reset Toybox's fovMultiplier to 1 for it to take effect.\n<br />[*]([i]ShadowRanger[/i]) Added a new sub-menu for all 'begone' versions called [i]Icky Stuff Begone!!![/i] and added green explainer text\n<br />[*]([i]ShadowRanger[/i]) Added retrievers begone\n<br />[*]([i]Mafemergency[/i]) Tweak to reset interaction skill checks\n<br />[/list]\n<br />[*]Multiclass &amp; Gestalt[list]\n<br />[*]Multiclass config list marks the classes you have in orange and shows the state of the gestalt flag\n<br />[*]Note these remain separate for now but I hope showing them in a unified UI will make this more clear\n<br />[/list]\n<br />[*]Party Editor[list]\n<br />[*]fixed crasher when you lowered caster level multiple times\n<br />[*][i]Add All[/i] spells no longer adds extra copies of spells you already learned\n<br />[*]Fixed layout issue that would push [i]Add All[/i] to the right side of the screen\n<br />[*][i]Select From All Spellbooks[/i] now shows the spells from all spellbooks\n<br />[/list]\n<br />[*]Loot Checklist[list]\n<br />[*]Checklist is now searchable\n<br />[*]now shows the private name of the area you are in so you can find it in Search 'n Pick\n<br />[*]Items within a container or unit sort by rarity\n<br />[/list]\n<br />[*]Search 'n Pick cleaned up some layout behavior that would make the character picker get wider than necessary\n<br />[*]Kingdom Editor now has a bunch of new adjustments including:[list]\n<br />[*]Current Day\n<br />[*]Current Turn\n<br />[*]Claim Cost Modifier\n<br />[*]Claim Time Modifier\n<br />[*]Rankup Time Modifer\n<br />[*]Build Time Modifier\n<br />[*]Random Encounter Chance Modifier (Unclaimed, Claimed, Upgraded)\n<br />[*]Confidence (Royal Court)\n<br />[*]Confidence (Nobles)\n<br />[*]Victories This Week\n<br />[*]Unrest\n<br />[*]Kingdom Alignment\n<br />[/list]\n<br />[*]Misc[list]\n<br />[*]Fixed crasher when editing slider values via keyboard\n<br />[/list]\n<br />[/list][b]\n<br />Older Versions[/b]\n<br />[list]\n<br />[*]Please check [url=https://github.com/cabarius/ToyBox/blob/master/ToyBox/ReadMe.md]here[/url]﻿﻿ for latest release notes \n<br />[/list]\n<br />[b]Acknowledgments[/b]:  [list]\n<br />[*][b]ArcaneTrixter[/b] for many awesome improvements and bug fixes\n<br />[*][b]fire[/b] &amp; [b]m0nster[/b] for lots of awesome code from bag of tricks\n<br />[*][b][url=https://github.com/cabarius/ToyBox/issues?q=is%3Apr+author%3ATruinto]Truinto[/url], Delth, Aphelion, fire [/b]for great contributions to the ToyBox project\n<br />[/list]   [b]Owlcat Games[/b] - for making fun and amazing games   [b]Paizo[/b] - for carrying the D20 3.5 torch   Pathfinder Wrath of The Righteous Discord channel members[b]\n<br />[/b][list][*][b]@Spacehamster[/b] - awesome tutorials and taking time to teach me modding WoTR, and letting me port stuff from Kingdom Resolution Mod\n<br />[*][b]@m0nster[/b] - for giving me permission to port stuff from Back of Tricks\n<br />[*][b]@Vek17, @Bubbles, @Balkoth, @swizzlewizzle[/b] and the rest of our great Discord modding community - help, moral support and just general awesomeness\n<br />[*][b]@m0nster, @Hsinyu, @fireundubh[/b] for Bag of Tricks which inspired me to get into modding WoTR because I missed this mod so much\n<br />[*]PS: Learn to mod Kingmaker Games here: [url=https://github.com/TylerGoeringer/OwlcatModdingWiki/wiki]OwlcatModdingWiki[/url]﻿\n<br />[*]Come visit the authors Narria et al on the [url=https://discord.gg/wotr]WoTR Discord[/url]﻿\n<br />[/list]\n<br />[b]Source Code[/b]: [url=https://github.com/cabarius/ToyBox]https://github.com/cabarius/ToyBox[/url]\n<br />[b]License[/b]: MIT",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/8",
     "Tags": [
@@ -2494,7 +2494,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770709+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821688+00:00",
     "Description": "Allows you to shorten the turn based combat delay",
     "HomepageUrl": "https://github.com/Vek17/WrathMods-TurnbasedCombatDelay",
     "Tags": [
@@ -2579,7 +2579,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770713+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821692+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/BarleyFlour/VisualAdjustments2",
     "Tags": [
@@ -2624,7 +2624,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770717+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821697+00:00",
     "Description": "Allows you to use fighter weapon group based weapon focus instead of picking a single weapon.",
     "HomepageUrl": "https://github.com/Vek17/WrathMods-WeaponFocusPlus",
     "Tags": [
@@ -2708,7 +2708,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770722+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821701+00:00",
     "Description": "Pathfinder: WotR Inventory Tweak",
     "HomepageUrl": "https://github.com/thehambeard/WIT",
     "Tags": [
@@ -2762,7 +2762,7 @@
         }
       ]
     },
-    "LastChecked": "2022-10-01T15:38:46.7770726+00:00",
+    "LastChecked": "2022-10-01T15:52:01.7821705+00:00",
     "Description": null,
     "HomepageUrl": "https://github.com/pheonix99/WotRResourceUnification",
     "Tags": [
