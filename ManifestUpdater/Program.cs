@@ -65,11 +65,7 @@ foreach (var manifest in internalManifest)
         }
         releaseHistory.Sort((a, b) => b.Version.CompareTo(a.Version));
 
-        var lastUpdated = lastChecked;
-        if (oldManifest != null)
-        {
-          lastUpdated = latestRelease.Version > oldManifest.Version.Latest.Version ? lastChecked : oldManifest.Version.LastUpdated;
-        }
+        var lastUpdated = releaseAsset.UpdatedAt.DateTime;
         var newManifest =
           new ModManifest(
             manifest,
@@ -106,11 +102,7 @@ foreach (var manifest in internalManifest)
 
         var latestRelease = new Release(latestVersion, downloadUrl);
 
-        var lastUpdated = lastChecked;
-        if (oldManifest != null)
-        {
-          lastUpdated = latestVersion > oldManifest.Version.Latest.Version ? lastChecked : oldManifest.Version.LastUpdated;
-        }
+        var lastUpdated = nexusMod.UpdatedTime.DateTime;
         var newManifest =
           new ModManifest(
             manifest,
