@@ -63,7 +63,7 @@ jobs:
         run: |
           $appversion = "${{ github.ref_name }}".substring(1)
           echo $appversion
-          dotnet build --configuration Release --no-restore /p:Version=$appversion
+          dotnet build --configuration Release --no-restore /p:AssemblyVersion=$appversion,VersionSuffix=rel,VersionPrefix=$appversion
       - name: list
         run: ls -r
       - name: Zip Release

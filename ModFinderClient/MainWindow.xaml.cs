@@ -123,7 +123,14 @@ namespace ModFinder
               if (json.TryGetProperty("tag_name", out var tag))
               {
                 long latest = ParseVersion(tag.GetString()[1..]);
-                if (latest > ParseVersion(Assembly.GetExecutingAssembly().GetName().Version.ToString()))
+                var fileVersion = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location);
+                var productVersion = fileVersion.ProductVersion;
+                if (productVersion.EndsWith("-dev"))
+                {
+                  return;
+                }
+
+                if (latest > ParseVersion(productVersion))
                 {
                   if (MessageBox.Show(
                     Window,
@@ -148,6 +155,7 @@ namespace ModFinder
 
     private static long ParseVersion(string v)
     {
+      v = v.Replace("-rel", "");
       var c = v.Split('.');
       return int.Parse(c[0]) * 65536 + int.Parse(c[1]) * 256 + int.Parse(c[2]);
     }

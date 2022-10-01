@@ -5,10 +5,10 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Wrath-1.ico</ApplicationIcon>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <RollForward>Major</RollForward>
-    
     <Configurations>Debug;Release;DebugTest</Configurations>
+	  <VersionSuffix>dev</VersionSuffix>
   </PropertyGroup>
 
   <ItemGroup>
