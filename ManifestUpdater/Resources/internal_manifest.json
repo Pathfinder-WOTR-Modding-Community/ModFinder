@@ -62,7 +62,8 @@
     },
     "Service": {
       "Nexus": {
-        "ModID": "195"
+        "ModID": "195",
+        "DownloadMirror": "https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror"
       }
     },
     "About": "Like auto/buff/bot but simpler and easier to use. Imagine if setting up an auto buffing mod was easy enough you don't need a PhD, and integrated enough you don't need to open a UMM gui to configure it?",

@@ -282,10 +282,22 @@ namespace ModFinder.Mod
     [JsonProperty]
     public long ModID { get; }
 
+    /// <summary>
+    /// Optional. A mirror where releases can be downloaded from.
+    /// </summary>
+    /// 
+    /// <remarks>
+    /// E.g. "https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror", releases **must** be in the form Id.Id/Version with the filename Id.Id-Version.zip, resulting in:
+    /// E.g. https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror/releases/download/BubbleBuffs%2F5.0.0/BubbleBuffs-5.0.0.zip
+    /// </remarks>
+    [JsonProperty]
+    public string DownloadMirror { get; }
+
     [JsonConstructor]
-    public Nexus(long modID)
+    public Nexus(long modID, string downloadMirror = "")
     {
       ModID = modID;
+      DownloadMirror = downloadMirror;
     }
   }
 
