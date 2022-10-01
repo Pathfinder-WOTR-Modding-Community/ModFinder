@@ -319,13 +319,14 @@ namespace ModFinder
 
       if (Path.GetExtension(path) != ".zip")
         return false;
-
-      using var opened = ZipFile.OpenRead(path);
-      return
-        opened.Entries.Any(
-          a =>
-            a.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase)
-            || a.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
+      return true;
+      //Cant have anything below this point if we want portraits
+      /* using var opened = ZipFile.OpenRead(path);
+       return
+         opened.Entries.Any(
+           a =>
+             a.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase)
+             || a.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));*/
     }
     #endregion
 

@@ -98,14 +98,31 @@ namespace ModFinder.Mod
 
     public static void Uninstall(ModViewModel mod, bool cache = true)
     {
-      if (mod.Type != ModType.UMM)
-        throw new InvalidOperationException($"{mod.Type} is not supported");
 
       if (cache)
         Cache(mod);
 
       Logger.Log.Info($"Uninstalling {mod.Name}");
-      Directory.Delete(mod.ModDir.FullName, true);
+      if (mod.ModId.Type == ModType.Portrait)
+      {
+        foreach (var folder in Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits")))
+        {
+          var earmarkPath = Path.Combine(folder, "Earmark.json");
+          if (File.Exists(earmarkPath))
+          {
+            var earmark = IOTool.Read<PortraitEarmark>(earmarkPath);
+            if (earmark.ModID == mod.ModId.Id)
+            {
+              Directory.Delete(folder,true);
+            }
+          }
+        }
+      }
+      else
+      {
+        Directory.Delete(mod.ModDir.FullName, true); 
+      }
+      
     }
 
     public static void Cache(ModViewModel mod)
