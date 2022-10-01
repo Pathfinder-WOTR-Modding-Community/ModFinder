@@ -20,7 +20,7 @@ namespace ModFinder.Mod
       switch (viewModel.ModId.Type)
       {
         case ModType.UMM:
-          if (!isUpdate && ModCache.TryRestoreMod(viewModel.ModId))
+          if (!isUpdate && await ModCache.TryRestoreMod(viewModel.ModId))
           {
             return new(InstallState.Installed);
           }
@@ -32,11 +32,10 @@ namespace ModFinder.Mod
 
           break;
         case ModType.Owlcat:
-          //cache system needs to be adapted to Owl/Portrait but i dont have knowledge of that code, better if Bubbles or Wolfie does it.
-          /*if (!isUpdate && ModCache.TryRestoreMod(viewModel.ModId))
+          if (!isUpdate && await ModCache.TryRestoreMod(viewModel.ModId))
           {
             return new(InstallState.Installed);
-          }*/
+          }
 
           if (viewModel.CanInstall)
           {
@@ -64,7 +63,7 @@ namespace ModFinder.Mod
       }
 
 
-      if (!isUpdate && ModCache.TryRestoreMod(viewModel.ModId))
+      if (!isUpdate && await ModCache.TryRestoreMod(viewModel.ModId))
       {
         return new(InstallState.Installed);
       }
@@ -101,7 +100,7 @@ namespace ModFinder.Mod
       return await InstallFromZip(file, viewModel, isUpdate);
     }
 
-    public static string GetModpath(ModType type)
+    public static string GetModPath(ModType type)
     {
       switch (type)
       {
@@ -131,12 +130,17 @@ namespace ModFinder.Mod
       using var zip = ZipFile.OpenRead(path);
       InstallModManifest info;
       ModType modType = viewModel == null ? GetModTypeFromZIP(zip) : viewModel.ModId.Type;
+
+      // If the mod is not in the first level folder in the zip we need to reach in and grab it
+      string rootInZip = null;
+
       switch (modType)
       {
         case ModType.UMM:
           {
             var manifestEntry =
               zip.Entries.FirstOrDefault(e => e.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
+
 
             if (manifestEntry is null)
             {
@@ -160,6 +164,12 @@ namespace ModFinder.Mod
             var manifestEntry =
               zip.Entries.FirstOrDefault(e =>
                 e.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
+
+            if (manifestEntry.FullName != manifestEntry.Name)
+            {
+              int root = manifestEntry.FullName.Length - manifestEntry.Name.Length;
+              rootInZip = manifestEntry.FullName[..root];
+            }
 
             if (manifestEntry is null)
             {
@@ -201,11 +211,11 @@ namespace ModFinder.Mod
       // Cache the current version
       if (isUpdate)
       {
-        ModCache.Cache(viewModel);
+        await ModCache.Cache(viewModel);
       }
 
 
-      var destination = GetModpath(modType);
+      var destination = GetModPath(modType);
       //  if (manifestEntry.FullName == manifestEntry.Name) ZIP can have different name from mod ID
       {
         Logger.Log.Verbose($"Creating mod directory. \"{destination}\"");
@@ -217,7 +227,25 @@ namespace ModFinder.Mod
       //Non-portrait mods just extract to the destination directory
       if (modType != ModType.Portrait)
       {
-        await Task.Run(() => zip.ExtractToDirectory(destination, true));
+        await Task.Run(() =>
+        {
+          if (rootInZip != null)
+          {
+            Directory.CreateDirectory(destination);
+            foreach (var entry in zip.Entries.Where(e => e.FullName.Length > rootInZip.Length && e.FullName.StartsWith(rootInZip)))
+            {
+              string entryDest = destination + "\\" + entry.FullName[rootInZip.Length..];
+              if (entry.FullName.EndsWith("/"))
+                Directory.CreateDirectory(entryDest);
+              else
+                entry.ExtractToFile(entryDest, true);
+            }
+          }
+          else
+          {
+            zip.ExtractToDirectory(destination, true);
+          }
+        });
       }
       else
       {

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ModFinder.Mod
 {
@@ -37,7 +38,7 @@ namespace ModFinder.Mod
 
       if (File.Exists(ManifestFile))
       {
-        IOTool.Safe(
+        IOTool.SafeRun(
           () =>
           {
             var manifest = IOTool.Read<CacheManifest>(ManifestFile);
@@ -63,9 +64,11 @@ namespace ModFinder.Mod
     /// Attempts to restore a mod from the local cache.
     /// </summary>
     /// <returns>Install dir if installation succeeded, an empty string otherwise</returns>
-    public static bool TryRestoreMod(ModId id)
+    public static async Task<bool> TryRestoreMod(ModId id)
     {
-      if (id.Type != ModType.UMM)
+      var baseInstall = ModInstaller.GetModPath(id.Type);
+
+      if (id.Type is not ModType.UMM and not ModType.Owlcat)
       {
         throw new NotSupportedException($"Currently {id.Type} mods are not supported.");
       }
@@ -77,7 +80,7 @@ namespace ModFinder.Mod
 
       Logger.Log.Info($"Restoring {id.Id} from local cache.");
       var cachePath = CachedMods[id].Dir;
-      var installPath = Path.Combine(Main.UMMInstallPath, new DirectoryInfo(cachePath).Name);
+      var installPath = Path.Combine(baseInstall, new DirectoryInfo(cachePath).Name);
 
       if (Directory.Exists(installPath))
       {
@@ -85,7 +88,7 @@ namespace ModFinder.Mod
         Directory.Delete(installPath, true);
       }
 
-      FileSystem.CopyDirectory(cachePath, installPath);
+      await Task.Run(() => FileSystem.CopyDirectory(cachePath, installPath));
       Evict(id);
       return true;
     }
@@ -96,36 +99,39 @@ namespace ModFinder.Mod
       return CachedMods.ContainsKey(id);
     }
 
-    public static void Uninstall(ModViewModel mod, bool cache = true)
+    public static async Task Uninstall(ModViewModel mod, bool cache = true)
     {
-
+      mod.InstallState = InstallState.Uninstalling;
       if (cache)
-        Cache(mod);
+        await Cache(mod);
 
       Logger.Log.Info($"Uninstalling {mod.Name}");
-      if (mod.ModId.Type == ModType.Portrait)
+      await Task.Run(() =>
       {
-        foreach (var folder in Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits")))
+        if (mod.ModId.Type == ModType.Portrait)
         {
-          var earmarkPath = Path.Combine(folder, "Earmark.json");
-          if (File.Exists(earmarkPath))
+          foreach (var folder in Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits")))
           {
-            var earmark = IOTool.Read<PortraitEarmark>(earmarkPath);
-            if (earmark.ModID == mod.ModId.Id)
+            var earmarkPath = Path.Combine(folder, "Earmark.json");
+            if (File.Exists(earmarkPath))
             {
-              Directory.Delete(folder,true);
+              var earmark = IOTool.Read<PortraitEarmark>(earmarkPath);
+              if (earmark.ModID == mod.ModId.Id)
+              {
+                Directory.Delete(folder, true);
+              }
             }
           }
         }
-      }
-      else
-      {
-        Directory.Delete(mod.ModDir.FullName, true); 
-      }
-      
+        else
+        {
+          Directory.Delete(mod.ModDir.FullName, true);
+        }
+      });
+
     }
 
-    public static void Cache(ModViewModel mod)
+    public static async Task Cache(ModViewModel mod)
     {
       var cachePath = Path.Combine(CacheDir, mod.ModDir.Name);
       if (Directory.Exists(cachePath))
@@ -133,15 +139,19 @@ namespace ModFinder.Mod
         Logger.Log.Warning($"Cache already exists for {mod.Name} at {cachePath}, deleting it");
         Directory.Delete(cachePath, true);
       }
+
       if (CachedMods.ContainsKey(mod.ModId))
         CachedMods.Remove(mod.ModId);
 
-      Logger.Log.Info($"Caching {mod.Name} at {cachePath}");
-      FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);
+      await Task.Run(() =>
+      {
+        Logger.Log.Info($"Caching {mod.Name} at {cachePath}");
+        FileSystem.CopyDirectory(mod.ModDir.FullName, cachePath);
+      });
 
       var cachedMod = new CachedMod(mod.ModId, cachePath, DateTime.Now.Ticks);
       CachedMods.Add(mod.ModId, cachedMod);
-      IOTool.Safe(UpdateManifest);
+      IOTool.SafeRun(UpdateManifest);
     }
 
     private static void Evict(ModId id, string cacheDir = null)

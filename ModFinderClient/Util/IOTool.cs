@@ -106,7 +106,7 @@ namespace ModFinder.Util
     /// Seralize p on all other Safe work, use for deleting and creating files in sensitive places
     /// </summary>
     /// <param name="p">action to safely execute</param>
-    internal static void Safe(Action p)
+    internal static void SafeRun(Action p)
     {
       try
       {
@@ -119,6 +119,18 @@ namespace ModFinder.Util
       {
         throw;
       }
+    }
+
+    /// <summary>
+    /// Seralize p on all other Safe work, use for deleting and creating files in sensitive places
+    /// </summary>
+    /// <param name="p">function to safely execute</param>
+    /// <returns>the value that p returns</returns>
+    internal static T SafeGet<T>(Func<T> p)
+    {
+      T value = default;
+      SafeRun(() => value = p());
+      return value;
     }
   }
 }

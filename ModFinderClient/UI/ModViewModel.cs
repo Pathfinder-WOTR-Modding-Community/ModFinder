@@ -60,7 +60,7 @@ namespace ModFinder.UI
       get => (bool)GetValue(EnabledProperty);
       set
       {
-        if (Enabled == value) return;
+        //if (Enabled == value) return;
         SetValue(EnabledProperty, value);
       }
     }
@@ -131,7 +131,7 @@ namespace ModFinder.UI
     {
       if (self.IsInstalled)
       {
-        MainWindow.SetModEnabled(self.ModId, enabled);
+        MainWindow.SetModEnabled(self, enabled);
       }
       self.Changed(nameof(EnabledText));
     });
@@ -254,6 +254,11 @@ namespace ModFinder.UI
 
     private bool InstallOrDownloadAvailable()
     {
+      if (InstallState == InstallState.Installing || InstallState == InstallState.Uninstalling)
+      {
+        return false;
+      }
+
       var installAvailable = CanInstall || CanDownload;
       var nextMod = GetNextAvailableRequirement();
       if (nextMod is null)
@@ -284,7 +289,10 @@ namespace ModFinder.UI
 
       if (!IsInstalled)
       {
-        return "Not installed";
+        if (IsCached)
+          return "Not installed (in cache)";
+        else
+          return "Not installed";
       }
 
       if (InstalledVersion < Latest.Version)
@@ -326,6 +334,8 @@ namespace ModFinder.UI
     {
       if (Status.State == InstallState.Installing)
         return "Installing...";
+      if (Status.State == InstallState.Uninstalling)
+        return "Uninstalling...";
       if (IsInstalled && InstalledVersion < Latest.Version)
         return "Update";
       if (CanInstall)

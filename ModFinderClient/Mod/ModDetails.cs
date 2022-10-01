@@ -26,7 +26,8 @@ namespace ModFinder.Mod
   {
     None,
     Installing,
-    Installed
+    Installed,
+    Uninstalling
   }
 
   public struct ChangelogEntry

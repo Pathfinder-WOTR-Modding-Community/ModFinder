@@ -15,7 +15,7 @@ namespace ModFinder.Mod
   {
     public void Remove(string uniqueid)
     {
-      IOTool.Safe(() =>
+      IOTool.SafeRun(() =>
       {
         if (OwlcatSettings.EnabledModifications.Remove(uniqueid))
           Save();
@@ -23,7 +23,7 @@ namespace ModFinder.Mod
     }
     public void Add(string uniqueid)
     {
-      IOTool.Safe(() =>
+      IOTool.SafeRun(() =>
       {
         if (!OwlcatSettings.EnabledModifications.Contains(uniqueid))
         {
@@ -31,6 +31,11 @@ namespace ModFinder.Mod
           Save();
         }
       });
+    }
+
+    public bool Has(string uniqueId)
+    {
+      return IOTool.SafeGet(() => OwlcatSettings.EnabledModifications.Contains(uniqueId));
     }
 
     private void Save()

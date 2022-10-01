@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks.Dataflow;
 
 namespace ModFinder.Mod
 {
@@ -14,7 +16,7 @@ namespace ModFinder.Mod
   public struct ModVersion : IComparable<ModVersion>, IEquatable<ModVersion>
   {
     public int Major, Minor, Patch;
-    public char Suffix;
+    public string Suffix;
 
     public bool Valid => !(Major == 0 && Minor == 0 && Patch == 0);
 
@@ -40,24 +42,76 @@ namespace ModFinder.Mod
 
     public static ModVersion Parse(string raw)
     {
-      if (raw == null) return new ModVersion();
-      Regex extractVersion = new(@"[^\d]*(\d+)[^\d]*(\d+)[^\d]*(\d*)(.*)");
-      var match = extractVersion.Match(raw);
-      ModVersion version = new();
-      if (!match.Success)
-        return version;
-      if (!int.TryParse(match.Groups[1].Value, out version.Major))
-        return version;
-      if (!int.TryParse(match.Groups[2].Value, out version.Minor))
-        return version;
-      if (match.Groups[3].Success && match.Groups[3].Length > 0)
-        if (!int.TryParse(match.Groups[3].Value, out version.Patch))
-          return version;
+      if (raw == null) return new();
 
-      if (match.Groups[4].Success && match.Groups[4].Length == 1)
-        version.Suffix = match.Groups[4].Value[0];
+      Regex extractVersion0 = new(@"[^\d]*(\d*)(.*)");
+      Regex extractVersion1 = new(@"[^\d]*(\d+)[^\d]*(\d*)(.*)");
+      Regex extractVersion2 = new(@"[^\d]*(\d+)[^\d]*(\d+)[^\d]*(\d*)(.*)");
+
+      int dots = raw.Count(ch => ch == '.');
+
+      ModVersion version = new();
+
+      switch (dots)
+      {
+        case 0:
+          {
+            var match = extractVersion0.Match(raw);
+            if (!match.Success) return new();
+
+            if (!int.TryParse(match.Groups[1].Value, out version.Major))
+              return version;
+
+            SetSuffix(match.Groups[2], out version.Suffix);
+            break;
+          }
+        case 1:
+          {
+            var match = extractVersion1.Match(raw);
+            if (!int.TryParse(match.Groups[1].Value, out version.Major))
+              return version;
+            if (!int.TryParse(match.Groups[2].Value, out version.Minor))
+              return version;
+
+            SetSuffix(match.Groups[3], out version.Suffix);
+
+            break;
+          }
+        case 2:
+          {
+            var match = extractVersion2.Match(raw);
+            if (!int.TryParse(match.Groups[1].Value, out version.Major))
+              return version;
+            if (!int.TryParse(match.Groups[2].Value, out version.Minor))
+              return version;
+            if (!int.TryParse(match.Groups[3].Value, out version.Patch))
+              return version;
+
+            SetSuffix(match.Groups[4], out version.Suffix);
+
+            break;
+          }
+        default:
+          return new();
+      }
+
 
       return version;
+    }
+
+    private static void SetSuffix(Group group, out string suffix)
+    {
+      suffix = null;
+
+      if (!group.Success)
+      {
+        return;
+      }
+
+      if (!group.Value.Contains("-") && !group.Value.Contains("alpha"))
+      {
+        suffix = group.Value;
+      }
     }
 
     public int CompareTo(ModVersion other)
@@ -72,6 +126,14 @@ namespace ModFinder.Mod
 
       c = Patch.CompareTo(other.Patch);
       if (c != 0) return c;
+
+      if (Suffix is null && other.Suffix is null)
+        return 0;
+
+      if (Suffix is null && other.Suffix is not null)
+        return 1;
+      if (Suffix is not null && other.Suffix is null)
+        return -1;
 
       c = Suffix.CompareTo(other.Suffix);
       return c;

@@ -20,6 +20,7 @@ using System.Net;
 using System.Text.Json;
 using System.Xml;
 using System.Xml.Linq;
+using System.Runtime.CompilerServices;
 
 namespace ModFinder
 {
@@ -210,8 +211,8 @@ namespace ModFinder
 
     public static void RefreshInstalledMods()
     {
-      IOTool.Safe(CheckInstalledModsInternal);
-      IOTool.Safe(CheckUMMState);
+      IOTool.SafeRun(CheckInstalledModsInternal);
+      IOTool.SafeRun(CheckUMMState);
     }
 
     private static void CheckInstalledModsInternal()
@@ -236,6 +237,16 @@ namespace ModFinder
             if (mod is not null)
               installedMods.Add(mod.ModId, mod.InstalledVersion);
           }
+        }
+
+        var owlcatBase = ModInstaller.GetModPath(ModType.Owlcat);
+        var owlDir = Directory.GetDirectories(owlcatBase);
+        foreach (var dir in owlDir)
+        {
+          Logger.Log.Info($"Found installed mod: {dir}");
+          var mod = ProcessOwlModDirectory(new(dir));
+          if (mod is not null)
+            installedMods.Add(mod.ModId, mod.InstalledVersion);
         }
 
         // Update DB to allow installing cached local mods and support rollback
@@ -282,6 +293,34 @@ namespace ModFinder
       {
         Logger.Log.Error("Failed to check UMM state. Make sure UMM is installed and launch WotR once.", e);
       }
+    }
+    private static ModViewModel ProcessOwlModDirectory(DirectoryInfo modDir, bool updateStatus = true)
+    {
+      var infoFile = 
+        modDir.GetFiles().FirstOrDefault(f => f.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
+      if (infoFile != null)
+      {
+        var info = IOTool.Read<OwlcatModInfo>(infoFile.FullName);
+
+        var manifest = ModManifest.ForLocal(info);
+        if (!ModDatabase.Instance.TryGet(manifest.Id, out var mod))
+        {
+          mod = new(manifest);
+          ModDatabase.Instance.Add(mod);
+        }
+
+        if (updateStatus)
+        {
+          mod.ModDir = modDir;
+          mod.InstallState = InstallState.Installed;
+          mod.InstalledVersion = ModVersion.Parse(info.Version);
+
+          mod.Enabled = Main.OwlcatMods.Has(info.UniqueName);
+
+        }
+        return mod;
+      }
+      return null;
     }
 
     private static ModViewModel ProcessModDirectory(DirectoryInfo modDir, bool updateStatus = true)
@@ -331,22 +370,33 @@ namespace ModFinder
     #endregion
 
     #region Install / Rollback / Uninstall / Enable / Disable
-    public static void SetModEnabled(ModId id, bool enabled)
+    public static void SetModEnabled(ModViewModel modVM, bool enabled)
     {
       try
       {
-        XDocument ummParams = XDocument.Load(Main.UMMParamsPath);
-        var mod = ummParams.Descendants("Mod").Where(x => id.Id.Equals(x.Attribute("Id").Value)).FirstOrDefault();
+        var id = modVM.ModId;
+        if (modVM.Type == ModType.UMM)
+        {
+          XDocument ummParams = XDocument.Load(Main.UMMParamsPath);
+          var mod = ummParams.Descendants("Mod").FirstOrDefault(x => id.Id.Equals(x.Attribute("Id").Value));
 
-        if (mod is null)
-        {
-          ummParams.Descendants("ModParams").First().Add(XElement.Parse($"<Mod Id=\"{id.Id}\" Enabled=\"{enabled}\" />"));
+          if (mod is null)
+          {
+            ummParams.Descendants("ModParams").First().Add(XElement.Parse($"<Mod Id=\"{id.Id}\" Enabled=\"{enabled}\" />"));
+          }
+          else
+          {
+            mod.SetAttributeValue("Enabled", enabled);
+          }
+          ummParams.Save(Main.UMMParamsPath);
         }
-        else
+        else if (modVM.Type == ModType.Owlcat)
         {
-          mod.SetAttributeValue("Enabled", enabled);
+          if (enabled)
+            Main.OwlcatMods.Add(id.Id);
+          else
+            Main.OwlcatMods.Remove(id.Id);
         }
-        ummParams.Save(Main.UMMParamsPath);
       }
       catch (Exception e)
       {
@@ -408,19 +458,19 @@ namespace ModFinder
       }
     }
 
-    private static void Rollback(ModViewModel mod)
+    private async static Task Rollback(ModViewModel mod)
     {
       if (!ModCache.IsCached(mod.ModId))
         throw new InvalidOperationException("Cannot rollback mod without a cached copy");
 
-      ModCache.Uninstall(mod, cache: false); // Don't cache, just delete it!
-      ModCache.TryRestoreMod(mod.ModId);
+      await ModCache.Uninstall(mod, cache: false); // Don't cache, just delete it!
+      await ModCache.TryRestoreMod(mod.ModId);
       RefreshInstalledMods();
     }
 
-    private static void Uninstall(ModViewModel mod)
+    private static async Task Uninstall(ModViewModel mod)
     {
-      ModCache.Uninstall(mod);
+      await ModCache.Uninstall(mod);
       mod.OnUninstalled();
       RefreshInstalledMods();
     }
@@ -516,12 +566,12 @@ namespace ModFinder
       InstallOrUpdateMod(mod);
     }
 
-    private void UninstallMod(object sender, RoutedEventArgs e)
+    private async void UninstallMod(object sender, RoutedEventArgs e)
     {
       try
       {
         var mod = (sender as FrameworkElement).DataContext as ModViewModel;
-        Uninstall(mod);
+        await Uninstall(mod);
       }
       catch (Exception ex)
       {
@@ -530,12 +580,12 @@ namespace ModFinder
       }
     }
 
-    private void Rollback(object sender, RoutedEventArgs e)
+    private async void Rollback(object sender, RoutedEventArgs e)
     {
       try
       {
         var mod = (sender as FrameworkElement).DataContext as ModViewModel;
-        Rollback(mod);
+        await Rollback(mod);
       }
       catch (Exception ex)
       {
@@ -657,7 +707,15 @@ namespace ModFinder
       try
       {
         var mod = (sender as FrameworkElement).DataContext as ModViewModel;
-        var folder = $"\"{Path.Combine(Main.UMMInstallPath, mod.ModDir.Name)}\\\"";
+        string folder;
+        if (mod.Type == ModType.Portrait)
+        {
+          folder = "";
+        }
+        else
+        {
+          folder = $"\"{Path.Combine(ModInstaller.GetModPath(mod.Type), mod.ModDir.Name)}\\\"";
+        }
         Logger.Log.Info($"Opening folder: {folder}");
         // If you don't point to explorer process you get access denied error
         Process.Start(Environment.GetEnvironmentVariable("WINDIR") + @"\explorer.exe", folder);
@@ -667,6 +725,11 @@ namespace ModFinder
         Logger.Log.Error("Unable to open folder.", ex);
       }
     }
+
+    //private async Task UninstallMod(object sender, RoutedEventArgs e)
+    //{
+    //  return;
+    //}
   }
   #endregion
 }

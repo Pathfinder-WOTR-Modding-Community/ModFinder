@@ -59,5 +59,33 @@
     "Description": "Like auto/buff/bot but simpler and easier to use.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",
     "Tags": [ "UserInterface", "Utilities" ]
+  },
+  {
+    "Name": "Homebrew Archetypes",
+    "Author": "Sigurd",
+    "About": "This mod adds archetypes/classes/feats from the Table Top. If an archetype doesn't align with it's TT version some homebrew modifications were made to either help it in this game, didn't fit in, or is simply just not possible for me to add.",
+    "Id": {
+      "Id": "HomebrewArchetypes",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "279"
+      }
+    },
+    "Version": {
+      "Latest": {
+        "Version": "1.1Ztf",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/279?tab=files&file_id=1741",
+        "Changelog": ""
+      },
+      "LastUpdated": "2018-09-07T19:04:14.480Z",
+      "VersionHistory": [
+      ]
+    },
+    "LastChecked": "2018-09-08T19:04:14.480Z",
+    "Description": "magic stuff",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/279",
+    "Tags": [ "Content" ]
   }
 ]

@@ -176,10 +176,10 @@ namespace ModFinder.Mod
     public static ModManifest ForLocal(UMMModInfo info)
     {
       return new(
-        info.DisplayName,
-        info.Author,
-        string.Empty,
-        new(info.Id, ModType.UMM),
+        name: info.DisplayName,
+        author: info.Author,
+        about: string.Empty,
+        id: new(info.Id, ModType.UMM),
         service: default,
         version: default,
         homepageUrl: string.IsNullOrEmpty(info.HomePage) ? default : info.HomePage);
@@ -187,9 +187,10 @@ namespace ModFinder.Mod
     public static ModManifest ForLocal(OwlcatModInfo info)
     {
       return new(
-        info.DisplayName,
-        info.Author,
-        new(info.UniqueName, ModType.UMM),
+        name: info.DisplayName,
+        author: info.Author,
+        about: string.Empty,
+        id: new(info.UniqueName, ModType.Owlcat),
         service: default, 
         version: default,
         homepageUrl: string.IsNullOrEmpty(info.HomePage) ? default : info.HomePage);
