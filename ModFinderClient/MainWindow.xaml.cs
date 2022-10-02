@@ -529,10 +529,14 @@ namespace ModFinder
           case "description":
             try
             {
-              BBCodeRenderer.Render(doc, Mod.DescriptionAsText);
+              if (Mod.Manifest.Service.IsNexus())
+                BBCodeRenderer.Render(doc, Mod.DescriptionAsText);
+              else
+                MarkdownRenderer.Render(doc, Mod.Description);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+              Logger.Log.Error("rendering description", ex);
               doc.Blocks.Add(new Paragraph(new Run(Mod.DescriptionAsText)));
             }
             break;
@@ -724,6 +728,23 @@ namespace ModFinder
       {
         Logger.Log.Error("Unable to open folder.", ex);
       }
+    }
+
+    private void DetailsPanel_MouseDown(object sender, MouseButtonEventArgs e)
+    {
+      DescriptionPopup.IsOpen = false;
+
+    }
+
+    private void OpenHyperlink(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+    {
+      Process.Start("explorer.exe", e.Parameter.ToString());
+    }
+
+
+    private void ClickOnImage(object sender, ExecutedRoutedEventArgs e)
+    {
+
     }
 
     //private async Task UninstallMod(object sender, RoutedEventArgs e)

@@ -148,6 +148,12 @@ namespace ModFinder.Mod
               return new("Unable to find manifest.");
             }
 
+            if (manifestEntry.FullName != manifestEntry.Name)
+            {
+              int root = manifestEntry.FullName.Length - manifestEntry.Name.Length;
+              rootInZip = manifestEntry.FullName[..root];
+            }
+
             var UMMManifest = IOTool.Read<UMMModInfo>(manifestEntry.Open());
             info = new InstallModManifest(UMMManifest.Id, UMMManifest.Version);
 

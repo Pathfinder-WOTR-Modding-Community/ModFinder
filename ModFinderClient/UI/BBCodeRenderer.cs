@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace ModFinder.UI
 {
-  class BBCodeRenderer
+  static class BBCodeRenderer
   {
     public class State
     {
@@ -23,7 +23,6 @@ namespace ModFinder.UI
       };
       public Stack<int> size = new();
       public Stack<string> font = new();
-      public Stack<List> lists = new();
     }
 
     private static readonly Regex sizePattern = new(@"size=(\d+)");

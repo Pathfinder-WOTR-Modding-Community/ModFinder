@@ -5,11 +5,19 @@ using NexusModsNET;
 using Octokit;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ProductHeaderValue = Octokit.ProductHeaderValue;
 using Release = ModFinder.Mod.Release;
+
+bool doUpload = true;
+
+#if DEBUGTEST
+doUpload = false;
+#endif
+
 
 var github = new GitHubClient(new ProductHeaderValue("ModFinder"));
 var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
@@ -38,9 +46,31 @@ foreach (var manifest in internalManifest)
         var repoInfo = manifest.Service.GitHub;
         var repo = await github.Repository.Get(repoInfo.Owner, repoInfo.RepoName);
         var releases = await github.Repository.Release.GetAll(repoInfo.Owner, repoInfo.RepoName);
-        var latest = await github.Repository.Release.GetLatest(repoInfo.Owner, repoInfo.RepoName);
-        if (latest.Assets.Count == 0)
+        Octokit.Release latest = null;
+        try
+        {
+          latest = await github.Repository.Release.GetLatest(repoInfo.Owner, repoInfo.RepoName);
+        }
+        catch (NotFoundException)
+        {
+          latest = releases.OrderBy(x => ModVersion.Parse(x.TagName)).LastOrDefault();
+        }
+
+        if (latest?.Assets?.Count == 0)
+        {
+          Console.WriteLine($"No assets for mod: {manifest.Name}");
           return null;
+        }
+
+        Readme readme = null;
+        try
+        {
+          readme = await github.Repository.Content.GetReadme(repoInfo.Owner, repoInfo.RepoName);
+        }
+        catch (NotFoundException)
+        {
+          //fall back to description later if readme is null
+        }
 
         var releaseAsset = latest.Assets[0];
         if (!string.IsNullOrEmpty(repoInfo.ReleaseFilter))
@@ -71,7 +101,7 @@ foreach (var manifest in internalManifest)
             manifest,
             new VersionInfo(latestRelease, lastUpdated, releaseHistory.Take(10).ToList()),
             lastChecked,
-            repo.Description);
+            readme?.Content ?? repo.Description);
         updatedManifest.Add(newManifest);
         return newManifest;
       }
@@ -144,21 +174,30 @@ var targetRepo = "ModFinder";
 var targetFile = "ManifestUpdater/Resources/generated_manifest.json";
 
 updatedManifest.Sort((a, b) => a.Name.CompareTo(b.Name));
+
 var serializedManifest = IOTool.Write(updatedManifest);
-var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser, targetRepo, targetFile, "main");
-var updateFile =
-  new UpdateFileRequest("Update the mod manifest (bot)", serializedManifest, currentFile[0].Sha, "main", true);
-var newblob = new NewBlob();
-newblob.Content = serializedManifest;
-var blob = await github.Git.Blob.Create("Pathfinder-WOTR-Modding-Community", "ModFinder", newblob);
-if (blob.Sha != updateFile.Sha)
+
+if (doUpload)
 {
-  var result = await github.Repository.Content.UpdateFile(targetUser, targetRepo, targetFile, updateFile);
-  LogObj("Updated: ", result.Commit.Sha);
+  var currentFile = await github.Repository.Content.GetAllContentsByRef(targetUser, targetRepo, targetFile, "main");
+  var updateFile =
+    new UpdateFileRequest("Update the mod manifest (bot)", serializedManifest, currentFile[0].Sha, "main", true);
+  var newblob = new NewBlob();
+  newblob.Content = serializedManifest;
+  var blob = await github.Git.Blob.Create("Pathfinder-WOTR-Modding-Community", "ModFinder", newblob);
+  if (blob.Sha != updateFile.Sha)
+  {
+    var result = await github.Repository.Content.UpdateFile(targetUser, targetRepo, targetFile, updateFile);
+    LogObj("Updated: ", result.Commit.Sha);
+  }
+  else
+  {
+    LogObj("No Update: ", "Matching SHA's");
+  }
 }
 else
 {
-  LogObj("No Update: ", "Matching SHA's");
+  File.WriteAllText(@"C:\Users\worce\source\repos\ModFinder_Shared\ModFinderClient\test_generated.json", serializedManifest);
 }
 
 void Log(string str)

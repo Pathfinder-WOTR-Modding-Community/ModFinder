@@ -10,6 +10,10 @@
         WindowStyle="None"
         Background="Transparent" 
         >
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MarkdownRenderer.Hyperlink}" Executed="OpenHyperlink" />
+        <CommandBinding Command="{x:Static local:MarkdownRenderer.Image}" Executed="ClickOnImage" />
+    </Window.CommandBindings>
   <Window.Resources>
     <!--
                         -->
@@ -479,7 +483,7 @@
           </Grid>
         </DockPanel>
         <DockPanel>
-          <DockPanel x:Name="DetailsPanel" DockPanel.Dock="Bottom" Height="250" DataContext="{Binding ElementName=installedMods, Path=SelectedItem}" d:DataContext="{d:DesignInstance Type=local:ModViewModel}">
+          <DockPanel x:Name="DetailsPanel" DockPanel.Dock="Bottom" Height="250" DataContext="{Binding ElementName=installedMods, Path=SelectedItem}" d:DataContext="{d:DesignInstance Type=local:ModViewModel}" MouseDown="DetailsPanel_MouseDown">
             <Border BorderThickness="50">
               <StackPanel>
                 <DockPanel LastChildFill="False">
@@ -680,7 +684,7 @@
     </DockPanel>
     <local:NonTopPopup
             x:Name="DescriptionPopup"
-            MinWidth="900" MinHeight="600" MaxWidth="900" MaxHeight="600"
+            MinWidth="900" MinHeight="600" MaxWidth="900" MaxHeight="900"
             PlacementTarget="{Binding ElementName=root}" Placement="Center"
             AllowsTransparency="True" PopupAnimation="Fade">
       <DockPanel>

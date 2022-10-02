@@ -9,6 +9,9 @@ namespace ModFinder.UI
   {
     public static void Render(FlowDocument doc, ModViewModel mod)
     {
+      if (mod.Manifest.Version.VersionHistory is null)
+        return;
+
       foreach (var release in mod.Manifest.Version.VersionHistory)
       {
         RenderSection(doc, release, mod.InstalledVersion);
