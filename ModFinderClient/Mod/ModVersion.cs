@@ -43,6 +43,7 @@ namespace ModFinder.Mod
     public static ModVersion Parse(string raw)
     {
       if (raw == null) return new();
+      if (raw.StartsWith("v")) raw = raw[1..];
 
       Regex extractVersion0 = new(@"[^\d]*(\d*)(.*)");
       Regex extractVersion1 = new(@"[^\d]*(\d+)[^\d]*(\d*)(.*)");
