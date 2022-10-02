@@ -476,8 +476,6 @@
             <Button.ContextMenu>
               <ContextMenu Style="{StaticResource OwlContextMenu}">
                 <MenuItem Header="Clear Cache" Click="ClearCache"></MenuItem>
-                <MenuItem Header="Show Hidden" Click="ShowHidden"></MenuItem>
-                <MenuItem Header="Hide Installed" Click="HideInstalled"></MenuItem>
               </ContextMenu>
             </Button.ContextMenu>
           </Button>
