@@ -154,6 +154,15 @@ namespace ModFinder.Mod
       IOTool.SafeRun(UpdateManifest);
     }
 
+    public static void Clear()
+    {
+      Logger.Log.Info("Clearing cache.");
+      CachedMods.Clear();
+      var cache = new DirectoryInfo(CacheDir);
+      foreach (var dir in cache.EnumerateDirectories())
+        dir.Delete(recursive: true);
+    }
+
     private static void Evict(ModId id, string cacheDir = null)
     {
       if (cacheDir is null && !CachedMods.ContainsKey(id))

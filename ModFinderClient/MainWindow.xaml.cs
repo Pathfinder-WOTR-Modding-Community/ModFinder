@@ -776,6 +776,37 @@ namespace ModFinder
           goto case -1;
       }
     }
+
+    private void Settings_Click(object sender, RoutedEventArgs e)
+    {
+      var button = sender as Button;
+      button.ContextMenu.DataContext = button.Tag;
+      button.ContextMenu.StaysOpen = true;
+      button.ContextMenu.IsOpen = true;
+    }
+
+    private void ClearCache(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        ModCache.Clear();
+        RefreshInstalledMods();
+      }
+      catch (Exception ex)
+      {
+        Logger.Log.Error("Failed to clear cache.", ex);
+      }
+    }
+
+    private void ShowHidden(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void HideInstalled(object sender, RoutedEventArgs e)
+    {
+
+    }
   }
   #endregion
 }
