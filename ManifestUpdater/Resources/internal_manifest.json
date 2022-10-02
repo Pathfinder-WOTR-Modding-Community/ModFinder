@@ -284,6 +284,24 @@
     "HomepageUrl": "https://github.com/pheonix99/LevelableAivu",
     "Tags": [ "Content", "Gameplay" ]
   },
+  
+    {
+    "Name": "Madison's Metagaming",
+    "Author": "ultramaddie",
+    "Id": {
+      "Id": "MadisonsMetagaming",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "madisoncfallin",
+        "RepoName": "MadisonsMetagaming"
+      }
+    },
+    "About": "Small content mod for WOTR.",
+    "HomepageUrl": "https://github.com/madisoncfallin/MadisonsMetagaming",
+    "Tags": [ "Content", "Gameplay" ]
+  },
 
   {
     "Name": "Mewsifer Console",
