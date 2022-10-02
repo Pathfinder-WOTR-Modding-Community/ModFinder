@@ -97,7 +97,7 @@ namespace ModFinder.UI
 
     /** End Properties referenced by views requiring notification. */
 
-    private readonly List<(ModId id, ModVersion version)> MissingRequirements = new();
+    internal readonly List<(ModId id, ModVersion version)> MissingRequirements = new();
 
     private DirectoryInfo _modDir;
     public DirectoryInfo ModDir

@@ -21,6 +21,8 @@ using System.Text.Json;
 using System.Xml;
 using System.Xml.Linq;
 using System.Runtime.CompilerServices;
+using System.Windows.Data;
+using System.Collections;
 
 namespace ModFinder
 {
@@ -736,24 +738,44 @@ namespace ModFinder
     private void DetailsPanel_MouseDown(object sender, MouseButtonEventArgs e)
     {
       DescriptionPopup.IsOpen = false;
-
     }
 
-    private void OpenHyperlink(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+    private void OpenHyperlink(object sender, ExecutedRoutedEventArgs e)
     {
       Process.Start("explorer.exe", e.Parameter.ToString());
     }
-
 
     private void ClickOnImage(object sender, ExecutedRoutedEventArgs e)
     {
 
     }
 
-    //private async Task UninstallMod(object sender, RoutedEventArgs e)
-    //{
-    //  return;
-    //}
+    // When OnSort is called the direction isn't indicated so this tracks it.
+    private static readonly Dictionary<SortColumn, bool> InvertSort =
+      new()
+      {
+        { SortColumn.Author, false },
+        { SortColumn.Status, false },
+      };
+    private void OnSort(object sender, DataGridSortingEventArgs e)
+    {
+      var dataGrid = sender as DataGrid;
+      var collectionView = (ListCollectionView)CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);
+      switch (e.Column.DisplayIndex)
+      {
+        case -1: // Fake for goto
+          e.Handled = true;
+          break;
+        case 2: // Author
+          collectionView.CustomSort = new ModSort(SortColumn.Author, InvertSort[SortColumn.Author]);
+          InvertSort[SortColumn.Author] = !InvertSort[SortColumn.Author];
+          goto case -1;
+        case 3: // Status
+          collectionView.CustomSort = new ModSort(SortColumn.Status, InvertSort[SortColumn.Status]);
+          InvertSort[SortColumn.Status] = !InvertSort[SortColumn.Status];
+          goto case -1;
+      }
+    }
   }
   #endregion
 }
