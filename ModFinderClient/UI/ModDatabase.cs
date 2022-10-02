@@ -54,13 +54,14 @@ namespace ModFinder.UI
 
     public void InitSort()
     {
+      var sort = new ModSort(SortColumn.Status, invert: false);
       List<ModViewModel> allMods = new(All);
-      allMods.Sort((a, b) => (int)b.StatusIcon - (int)a.StatusIcon);
+      allMods.Sort(sort);
       All.Clear();
       allMods.ForEach(m => All.Add(m));
 
       List<ModViewModel> installedMods = new(Installed);
-      installedMods.Sort((a, b) => (int)b.StatusIcon - (int)a.StatusIcon);
+      installedMods.Sort(sort);
       Installed.Clear();
       installedMods.ForEach(m => Installed.Add(m));
 

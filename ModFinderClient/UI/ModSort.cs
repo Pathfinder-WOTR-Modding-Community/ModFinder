@@ -1,6 +1,7 @@
 ﻿using ModFinder.Mod;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ModFinder.UI
@@ -12,7 +13,7 @@ namespace ModFinder.UI
     Status
   }
 
-  internal class ModSort : IComparer
+  internal class ModSort : IComparer, IComparer<ModViewModel>
   {
     private readonly SortColumn Column;
     private readonly bool Invert;
@@ -30,10 +31,15 @@ namespace ModFinder.UI
       if (x is null || y is null)
         throw new ArgumentException("Can only sort ModViewModel.");
 
+      return Compare(modelX, modelY);
+    }
+
+    public int Compare(ModViewModel x, ModViewModel y)
+    {
       return Column switch
       {
-        SortColumn.Author => Invert ? CompareAuthor(modelY, modelX) : CompareAuthor(modelX, modelY),
-        SortColumn.Status => Invert ? CompareStatus(modelY, modelX) : CompareStatus(modelX, modelY),
+        SortColumn.Author => Invert ? CompareAuthor(y, x) : CompareAuthor(x, y),
+        SortColumn.Status => Invert ? CompareStatus(y, x) : CompareStatus(x, y),
         _ => throw new ArgumentException($"Unsupported column for sorting: {Column}"),
       };
     }

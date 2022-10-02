@@ -755,7 +755,7 @@ namespace ModFinder
       new()
       {
         { SortColumn.Author, false },
-        { SortColumn.Status, false },
+        { SortColumn.Status, true }, // On init status is the default sort so the next click should invert
       };
     private void OnSort(object sender, DataGridSortingEventArgs e)
     {
