@@ -479,12 +479,15 @@ namespace ModFinder
     #region Show Dialogs & Open Web Pages
     public static void ShowError(string message)
     {
-      _ = MessageBox.Show(
-        Window,
-        $"{message} Check the log at {Logger.LogFile} for more details.",
-        "Error",
-        MessageBoxButton.OK,
-        MessageBoxImage.Error);
+      if (Window is not null)
+      {
+        _ = MessageBox.Show(
+          Window,
+          $"{message} Check the log at {Logger.LogFile} for more details.",
+          "Error",
+          MessageBoxButton.OK,
+          MessageBoxImage.Error);
+      }
     }
 
     private void ShowPopup(ModViewModel mod, string contentType)
