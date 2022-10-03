@@ -187,7 +187,7 @@ namespace ModFinder.Mod
     public static ModManifest ForLocal(OwlcatModInfo info)
     {
       return new(
-        name: info.DisplayName,
+        name: string.IsNullOrEmpty(info.DisplayName) ? info.UniqueName : info.DisplayName,
         author: info.Author,
         about: string.Empty,
         id: new(info.UniqueName, ModType.Owlcat),
