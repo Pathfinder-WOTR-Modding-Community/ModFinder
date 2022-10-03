@@ -81,85 +81,85 @@
     ]
   },
   {
-    "Name": "Bubble Buffs",
+    "Name": "Bubble Tweaks",
     "Author": "Bubbles",
-    "About": "Like auto/buff/bot but simpler and easier to use. Imagine if setting up an auto buffing mod was easy enough you don't need a PhD, and integrated enough you don't need to open a UMM gui to configure it?",
+    "About": "Non-gameplay tweaks and enhancements to improve quality of life features. Fits into the base game without looking like a mod.",
     "Id": {
-      "Id": "BubbleBuffs",
+      "Id": "BubbleTweaks",
       "Type": "UMM"
     },
     "Service": {
       "GitHub": null,
       "Nexus": {
-        "ModID": 195,
-        "DownloadMirror": "https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror"
+        "ModID": 177,
+        "DownloadMirror": null
       },
       "Name": "Nexus"
     },
     "Version": {
       "Latest": {
-        "Version": "5.0.0",
-        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195?tab=files&file_id=1748",
+        "Version": "1.16.2",
+        "Url": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/177?tab=files&file_id=1702",
         "Changelog": ""
       },
-      "LastUpdated": "2022-10-01T03:10:52",
+      "LastUpdated": "2022-09-10T13:09:40",
       "DeprecatedInGameVersion": "-",
       "VersionHistory": [
         {
-          "Version": "5.0.0",
-          "Url": null,
-          "Changelog": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-        },
-        {
-          "Version": "4.1.4",
-          "Url": null,
-          "Changelog": "Don't show dlc3 button when not in a dlc3 campaign"
-        },
-        {
-          "Version": "4.1.3",
-          "Url": null,
-          "Changelog": "Fixes skidmark nonsense with instantaneous casting\nFixes variant casting for fully animated"
-        },
-        {
-          "Version": "4.1.2",
-          "Url": null,
-          "Changelog": "Arcane pool is tracked better now, thank you very much to Bobster1246\nFull animation option\nPrepared variants should be fixed now"
-        },
-        {
-          "Version": "4.0.4",
-          "Url": null,
-          "Changelog": "Fixed caster detail popup thingie"
-        },
-        {
-          "Version": "4.0.2",
-          "Url": null,
-          "Changelog": "Move DLC3 icons around to not overlap the buff buttons"
-        },
-        {
-          "Version": "4.0.1",
-          "Url": null,
-          "Changelog": "Update for 1.4"
-        },
-        {
-          "Version": "3.8.1",
-          "Url": null,
-          "Changelog": "Fix for Brown Fur nonsense, many thanks to: https://github.com/data-abort"
-        },
-        {
-          "Version": "3.8.0",
+          "Version": "1.15.0",
           "Url": null,
           "Changelog": "Update to 1.3"
         },
         {
-          "Version": "3.7.0",
+          "Version": "1.14.3",
           "Url": null,
-          "Changelog": "Hopefully fix enduring and other weirdness with touch-spells\nAdd a \"sort by name\" option"
+          "Changelog": "fix army disband (and army info icon)"
+        },
+        {
+          "Version": "1.14.0",
+          "Url": null,
+          "Changelog": "Update to release 1.2"
+        },
+        {
+          "Version": "1.13.0",
+          "Url": null,
+          "Changelog": "Add circles"
+        },
+        {
+          "Version": "1.12.0",
+          "Url": null,
+          "Changelog": "Adds a \"Pause Fade Strength\" slider to the options menu - adjusts how strong the background fade effect is while paused."
+        },
+        {
+          "Version": "1.11.0",
+          "Url": null,
+          "Changelog": "Update to game version 1.2\nFixes level up buttons on the last two slots\nStops exception spam to the console from statistics"
+        },
+        {
+          "Version": "0.9.4",
+          "Url": null,
+          "Changelog": "settings should be less shy"
+        },
+        {
+          "Version": "0.9.3",
+          "Url": null,
+          "Changelog": "Fixes buff overflow in enhanced party view\nDon't count skill checks on the global map for statistics"
+        },
+        {
+          "Version": "0.9.1",
+          "Url": null,
+          "Changelog": "Statistics view works on global map\nENHANCED PARTY VIEW: - Enable in settings, requires a game restart when you change, view eight characters at once\nRejigged buff view"
+        },
+        {
+          "Version": "0.8.4",
+          "Url": null,
+          "Changelog": "Fix CRITICAL bug where the load routine would keep a handle to the save, so subsequents saves to the same file would fail with \"Saving is Impossible\", sorry.\nAdd 'all saves'\nAdd save pass% and fail%"
         }
       ]
     },
-    "LastChecked": "2022-10-02T13:13:41.8967174+01:00",
-    "Description": "[b]Imagine if setting up an auto buffing mod was easy enough you don't need a PhD, and integrated enough you don't need to open a UMM gui to configure it?\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />WANT TO LAUGH AT CODE?????\n<br />\n<br />[url=https://github.com/factubsio/BubbleBuffs]factubsio/BubbleBuffs: Bubbles Ultimate Buff Bot Lite Extra Simple (BUBBLES) (github.com)[/url][/b]\n<br />\n<br />\n<br />\n<br />\n<br />Items/Consumables are [b]not[/b] implemented yet.\n<br />\n<br />\n<br />\n<br />[center][size=6][b][font=Comic Sans MS]GAME VERSION 1.1 =&gt; MOD VERSION 2.X.X\n<br />GAME VERSION 1.2 =&gt; MOD VERSION 3.X.X\n<br />\n<br />[/font][/b][/size]I am not currently supporting older game versions, go look through the archived files and see if any work but don't file bugs against them.[/center]\n<br />[size=5]HOW TO USE:\n<br />[/size]\n<br />(also see the images for help)\n<br />\n<br />While [b]not[/b] on the global map and [b]not[/b] in Drezen/camp, or anywhere where you have your full party:\n<br />\n<br />Go to the Spellbook tab.\n<br />Click \"Buff Setup\" at the lower right\n<br />Select spells or abilities (Items and Consumables are [b]not[/b] implemented yet).\n<br />Select the spell/ability you want to cast\n<br />Click on each party member at the bottom to toggle casting on them:\n<br />  * gray: do not cast\n<br />  * green: cast (available casters)\n<br />  * yellow: cast (no available casters)\n<br />  * red: invalid target (e.g. personal spells, or animal-growth on a human, etc).\n<br />You can customise caster behaviour with the little \"up\" arrow above the caster's portrait (not the target portrait).\n<br />\n<br />Close the spellbook\n<br />Click the \"buff\" button on the lower left of the screen.\n<br />\n<br />optional: Check the results in the combat log\n<br />\n<br />[size=5]Files:\n<br />[/size]\n<br />[size=2]Settings are stored in the UserSettings folder under the mod, in a file called bubblebuff-GAME_ID.json where GAME_ID is the guid of your playthrough. Feel free to look through and edit it but expect things to crash if you do wonky stuff like to turn on Powerful Change on for a druid, or try to get someone to cast a spell they don't have.\n<br />[/size]\n<br />[size=5]For Skidmarcanists:[/size]\n<br />\n<br />If you are an arcanist and casting an appropriate spell you can toggle \"Allow Share Transmutation\" and \"Use Powerful Change\". The mod [b]will[/b] spend the points from your arcane resevoir but does not (currently) predict them like it does spell slots.\n<br />\n<br />If you are using Share Transmutation and there are no points, the spell will be skipped.\n<br />If you are using Powerful Change and there are no points, the spell will be cast without it.\n<br />\n<br />[b]NOTE: The combat log will say these casts are successful, it is a known thing and will get fixed eventually.[/b]\n<br />\n<br />Thanks to DeadMor0z for the contributions!\n<br />\n<br />\n<br />如何使用：在任何能完整操控整个小队的地方，点开法术书右下角进入设置面板，先选择法术，然后在中间选择施法者，中间的右边选择这个施法所在的施法序列，最后在最下方选择施法目标。\n<br />设置好后，在游戏中任何时候点击左下角的三个按钮即可瞬间释放相应序列中所有设置好的法术。\n<br />此mod由1onepower翻译，你可以在 [url=https://space.bilibili.com/383719917?spm_id_from=333.1007.0.0]B站[/url] 关注我,并且欢迎加入最大的中文CRPG社区之一：[url=https://tieba.baidu.com/f?kw=%E6%8B%A5%E7%8E%8B%E8%80%85&amp;fr=index]拥王者吧[/url]",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",
+    "LastChecked": "2022-10-03T15:35:01.04174+00:00",
+    "Description": "This mod does not aim to introduce any changes to the game balance or mecahnics.\n<br />It is purely quality of life features.\n<br />The mod should aim to fit into the base game without looking like a mod.\n<br />\n<br />[center][font=Comic Sans MS][size=6]ALL SETTINGS ARE IN THE OWLCAT SETTINGS WINDOW, [b]NOT [/b]UMM\n<br />[b]\n<br />[/b][/size][/font][b][font=Comic Sans MS][size=6]game version 1.2+ (release branch) =&gt; use mod version 1.14+[/size]\n<br />\n<br />[size=4]Dig through old versions if you are on an older game version[/size][/font][/b][/center]\n<br />The settings for this mod are under the Game tab in the normal owlcat settings window, not in unity mod manager. \n<br />\n<br />[b][size=4]FEATURES:\n<br />[/size][/b]\n<br />[list]\n<br />[*]Separate speed controls (NOT CHEATING) for:﻿   ﻿﻿\n<br />[list]\n<br />[*]Global map\n<br />[*]Combat\n<br />[*]Out of combat\n<br />[*]Tactical Combat (homm-minigame)\n<br />[/list][*]Army Disband button\n<br />[*]Jump to Siege button\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Adjustable \"fade\" strength for pause screen\n<br />[*]Marks area effects with a more visible circle and will indicate (in TBM) if a character will path over each area or not.\n<br />[/list][list]\n<br />[*]Map Info Panel - In GlobalMap mode, adds an expandable menu on the right hand side (under the mini-map), click on an entry to pan the map there:\n<br />[list]\n<br />[*]Shows all your villages\n<br />[*]Shows all invading armies\n<br />[*]Shows all locations with quests\n<br />[/list][*]Cursor Enhancements\n<br />[list]\n<br />[*]Customisable cursor scale for combat/non-combat cursors\n<br />[*]Customisable(ish) color for attack count text (white is sometimes real hard to see)\n<br />[/list][*]Character Statistics\n<br />[list]\n<br />[*]Each character will have a new tab 'statistics' in their character sheet\n<br />[*]It can only track stats while it's installed so sadly it won't retroactively find them\n<br />[/list][*]Enhanced Party View (Eight Characters)\n<br />[list]\n<br />[*]Enable in the Game Settings window (right at the bottom of the list)\n<br />[*]Restart the game (the application, not your save) after changing the setting for it to take effect\n<br />[*]You can't reorder pets by (owlcat's) design - it's possible to enable this but I need to confirm nothing else will break\n<br /> [/list][/list]\n<br />[b]Uninstall FastTravel before using this.[/b]\n<br />[list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list][list]\n<br />[*]Colours loot icons on Local Map based on source\n<br />[/list]",
+    "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
     "Tags": [
       "Gameplay",
       "UserInterface"
