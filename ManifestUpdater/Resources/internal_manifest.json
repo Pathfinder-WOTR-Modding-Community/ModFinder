@@ -528,6 +528,29 @@
     "HomepageUrl": "https://github.com/Vek17/WrathMods-MythicSpellbookTweaks",
     "Tags": [ "Gameplay" ]
   },
+  
+  {
+    "Name": "Ninja Class",
+    "Author": "Sigurd",
+    "About": "Adds the Ninja(Unchained) class to the game.",
+    "Id": {
+      "Id": "HomebrewArchetypes",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "GitHub": null,
+      "Nexus": {
+        "ModID": 233,
+        "DownloadMirror": null
+      },
+      "Name": "Nexus"
+    },
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/233",
+    "Tags": [
+      "Content",
+      "Gameplay"
+    ]
+  },
 
   {
     "Name": "No Film Grain",
