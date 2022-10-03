@@ -47,11 +47,17 @@ namespace ModFinder.Mod
     {
       if (File.Exists(SettingsPath))
         return IOTool.Read<SettingsData>(SettingsPath);
+      else if (File.Exists(OldSettingsPath))
+      {
+        File.Move(OldSettingsPath, SettingsPath, overwrite: true);
+        return IOTool.Read<SettingsData>(SettingsPath);
+      }
       else
         return new();
     }
 
-    private static string SettingsPath => Path.Combine(Main.WrathDataDir, "OwlcatModificationManangerSettings.json");
+    private static string SettingsPath => Path.Combine(Main.WrathDataDir, "OwlcatModificationManagerSettings.json");
+    private static string OldSettingsPath => Path.Combine(Main.WrathDataDir, "OwlcatModificationManangerSettings.json");
 
     private SettingsData _Data;
     private SettingsData OwlcatSettings => _Data ??= Load();
