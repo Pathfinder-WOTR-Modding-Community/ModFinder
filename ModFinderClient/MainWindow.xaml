@@ -470,9 +470,9 @@
               </ControlTemplate>
             </ToggleButton.Template>
           </ToggleButton>
-          <Button x:Name="closeButton" Grid.Column="4" Style="{StaticResource CloseButtonSquare}" Width="32" Height="32" />
+          <Button x:Name="closeButton" Grid.Column="5" Style="{StaticResource CloseButtonSquare}" Width="32" Height="32" />
           <Button x:Name="lookButton" Grid.Column="3" Style="{StaticResource LookButtonSquare}" Width="32" Height="32" ToolTip="Re-scan installed mods" Click="LookButton_Click"/>
-          <Button x:Name="settingsButton" Grid.Column="5" Style="{StaticResource SettingsButtonSquare}" Width="32" Height="32" Click="Settings_Click">
+          <Button x:Name="settingsButton" Grid.Column="4" Style="{StaticResource SettingsButtonSquare}" Width="32" Height="32" Click="Settings_Click">
             <Button.ContextMenu>
               <ContextMenu Style="{StaticResource OwlContextMenu}">
                 <MenuItem Header="Clear Cache" Click="ClearCache"></MenuItem>
