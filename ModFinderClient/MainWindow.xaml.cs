@@ -229,20 +229,18 @@ namespace ModFinder
         }
 
         var installedMods = new Dictionary<ModId, ModVersion>();
-        var modDir = Main.WrathPath.GetDirectories("Mods");
-        if (modDir.Length > 0)
+        var ummBase = ModInstaller.GetModPath(ModType.UMM);
+        var ummDir = Directory.Exists(ummBase) ? Directory.GetDirectories(ummBase) : Array.Empty<string>();
+        foreach (var dir in ummDir)
         {
-          foreach (var dir in modDir[0].GetDirectories())
-          {
-            Logger.Log.Info($"Found installed mod: {dir.Name}");
-            var mod = ProcessModDirectory(dir);
-            if (mod is not null)
-              installedMods.Add(mod.ModId, mod.InstalledVersion);
-          }
+          Logger.Log.Info($"Found installed mod: {dir}");
+          var mod = ProcessUmmModDir(new(dir));
+          if (mod is not null)
+            installedMods.Add(mod.ModId, mod.InstalledVersion);
         }
 
         var owlcatBase = ModInstaller.GetModPath(ModType.Owlcat);
-        var owlDir = Directory.GetDirectories(owlcatBase);
+        var owlDir = Directory.Exists(owlcatBase) ? Directory.GetDirectories(owlcatBase) : Array.Empty<string>();
         foreach (var dir in owlDir)
         {
           Logger.Log.Info($"Found installed mod: {dir}");
@@ -257,7 +255,7 @@ namespace ModFinder
           foreach (var dir in Directory.GetDirectories(ModCache.CacheDir))
           {
             Logger.Log.Info($"Found cached mod: {dir}");
-            ProcessModDirectory(new(dir), updateStatus: false);
+            ProcessUmmModDir(new(dir), updateStatus: false);
           }
         }
 
@@ -296,6 +294,7 @@ namespace ModFinder
         Logger.Log.Error("Failed to check UMM state. Make sure UMM is installed and launch WotR once.", e);
       }
     }
+
     private static ModViewModel ProcessOwlModDirectory(DirectoryInfo modDir, bool updateStatus = true)
     {
       var infoFile = 
@@ -325,7 +324,7 @@ namespace ModFinder
       return null;
     }
 
-    private static ModViewModel ProcessModDirectory(DirectoryInfo modDir, bool updateStatus = true)
+    private static ModViewModel ProcessUmmModDir(DirectoryInfo modDir, bool updateStatus = true)
     {
       var infoFile =
         modDir.GetFiles().FirstOrDefault(f => f.Name.Equals("info.json", StringComparison.OrdinalIgnoreCase));
