@@ -494,6 +494,24 @@
   },
 
   {
+    "Name": "Mystical Mayhem",
+    "Author": "kreaddy",
+    "Id": {
+      "Id": "MysticalMayhem",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "kreaddy",
+        "RepoName": "MysticalMayhem"
+      }
+    },
+    "About": "Content mod for WOTR primarily geared towards casters.",
+    "HomepageUrl": "https://github.com/kreaddy/MysticalMayhem",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+  
+  {
     "Name": "Mythic Arcanist",
     "Author": "Llisandur",
     "Id": {
