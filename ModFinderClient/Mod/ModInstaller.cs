@@ -118,8 +118,10 @@ namespace ModFinder.Mod
 
     private static ModType GetModTypeFromZIP(ZipArchive zip)
     {
-      if (zip.Entries.Any(e => e.Name.Equals("Info.json"))) return ModType.UMM;
-      if (zip.Entries.Any(e => e.Name.Equals("OwlcatModificationManifest.json"))) return ModType.Owlcat;
+      if (zip.Entries.Any(e => e.Name.Equals("Info.json", StringComparison.CurrentCultureIgnoreCase)))
+        return ModType.UMM;
+      if (zip.Entries.Any(e => e.Name.Equals("OwlcatModificationManifest.json", StringComparison.CurrentCultureIgnoreCase)))
+        return ModType.Owlcat;
       else return ModType.Portrait;
     }
 
