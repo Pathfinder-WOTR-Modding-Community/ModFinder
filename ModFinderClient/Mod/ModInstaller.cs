@@ -238,6 +238,8 @@ namespace ModFinder.Mod
         {
           throw new System.InvalidOperationException("Entry is outside the target dir: " + destFileName);
         }
+
+        Directory.CreateDirectory(Path.GetDirectoryName(destFileName));
         entry.ExtractToFile(destFileName, true);
       }
 
