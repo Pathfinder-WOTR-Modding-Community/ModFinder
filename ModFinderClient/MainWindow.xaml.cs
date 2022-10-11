@@ -383,7 +383,9 @@ namespace ModFinder
 
           if (mod is null)
           {
-            ummParams.Descendants("ModParams").First().Add(XElement.Parse($"<Mod Id=\"{id.Id}\" Enabled=\"{enabled}\" />"));
+            var enabledString = enabled ? "true" : "false";
+            ummParams.Descendants("ModParams").First().Add(
+              XElement.Parse($"<Mod Id=\"{id.Id}\" Enabled=\"{enabledString}\" />"));
           }
           else
           {
