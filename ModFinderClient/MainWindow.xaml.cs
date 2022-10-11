@@ -282,7 +282,7 @@ namespace ModFinder
 
         foreach (var mod in ModDatabase.Instance.Installed)
         {
-          var modConfig = mods.Where(m => mod.ModId.Id == m.id).FirstOrDefault();
+          var modConfig = mods.FirstOrDefault(m => mod.ModId.Id == m.id);
           if (modConfig == default)
             mod.Enabled = true;
           else
@@ -381,15 +381,15 @@ namespace ModFinder
           XDocument ummParams = XDocument.Load(Main.UMMParamsPath);
           var mod = ummParams.Descendants("Mod").FirstOrDefault(x => id.Id.Equals(x.Attribute("Id").Value));
 
+          var enabledString = enabled ? "true" : "false";
           if (mod is null)
           {
-            var enabledString = enabled ? "true" : "false";
             ummParams.Descendants("ModParams").First().Add(
               XElement.Parse($"<Mod Id=\"{id.Id}\" Enabled=\"{enabledString}\" />"));
           }
           else
           {
-            mod.SetAttributeValue("Enabled", enabled);
+            mod.SetAttributeValue("Enabled", enabledString);
           }
           ummParams.Save(Main.UMMParamsPath);
         }
