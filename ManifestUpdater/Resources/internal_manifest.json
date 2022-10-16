@@ -330,7 +330,25 @@
     "HomepageUrl": "https://github.com/pheonix99/LevelableAivu",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
+  {
+    "Name": "LevelUp Plan Customizer",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "LevelUpPlanCustomizer",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "LevelUpPlanCustomizer"
+      }
+    },
+    "About": "Allows you to export and import character builds as pregens or companion presets and autolevel them on any difficulty",
+    "HomepageUrl": "https://github.com/alterasc/LevelUpPlanCustomizer",
+    "Tags": [ "Miscellaneous" ]
+  },
+
     {
     "Name": "Madison's Metagaming",
     "Author": "ultramaddie",
@@ -547,6 +565,24 @@
     "Tags": [ "Gameplay" ]
   },
   
+  {
+    "Name": "Mythic Path Power Swapper",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "MythicPathPowerSwapper",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "MythicPathPowerSwapper"
+      }
+    },
+    "About": "Allows changing mythic powers to powers from another path, or playing without mythic powers at all.",
+    "HomepageUrl": "https://github.com/alterasc/MythicPathPowerSwapper",
+    "Tags": [ "Content" ]
+  },
+
   {
     "Name": "Ninja Class",
     "Author": "Sigurd",
