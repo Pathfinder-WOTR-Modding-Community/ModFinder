@@ -751,6 +751,24 @@
   },
 
   {
+    "Name": "Spell Pouch",
+    "Author": "Truinto",
+    "Id": {
+      "Id": "SpellPouch",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Truinto",
+        "RepoName": "SpellPouch"
+      }
+    },
+    "About": "Adds customizable bundles of abilities and activatables for use in a single foldable actionbar slot.",
+    "HomepageUrl": "https://github.com/Truinto/SpellPouch",
+    "Tags": [ "Gameplay", "UserInterface" ]
+  },
+
+  {
     "Name": "Tabletop Tweaks Base",
     "Author": "Vek17",
     "Id": {
