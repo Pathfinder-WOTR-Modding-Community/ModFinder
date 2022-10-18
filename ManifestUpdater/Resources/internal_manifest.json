@@ -88,6 +88,7 @@
     "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
     "Tags": [ "Gameplay", "UserInterface" ]
   },
+  
   {
     "Name": "Buffbot",
     "Author": "Balkoth",
@@ -927,6 +928,23 @@
     "About": "Weapon Focus Plus allows you to use fighter weapon group based weapon focus instead of picking a single weapon.",
     "HomepageUrl": "https://github.com/Vek17/WrathMods-WeaponFocusPlus",
     "Tags": [ "Gameplay" ]
+  },
+  
+  {
+    "Name": "Woljif Romance Mod",
+    "Author": "Paladingineer",
+    "Id": {
+      "Id": "WOTR_WoljifRomanceMod",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "287"
+      }
+    },
+    "About": "Adds a full romance path for Woljif Jefto, available for both male and female characters beginning in Act 3. Content continues through the rest of the game including the epilogue.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/287",
+    "Tags": [ "Content" ]
   },
 
   {
