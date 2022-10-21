@@ -1,6 +1,23 @@
 [
   // Please keep sorted by Name.
   {
+    "Name": "Additional Hotkeys",
+    "Author": "apocc",
+    "Id": {
+      "Id": "ApoccHotkeys",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "68"
+      }
+    },
+    "About": "Adds the option to assign hotkeys for each Weapon Set, Stealth, Quick Slot items, and more.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/68",
+    "Tags": [ "UserInterface", "Utilities" ]
+  },
+  
+  {
     "Name": "Allow Modded Achievements",
     "Author": "Xenofell",
     "Id": {
