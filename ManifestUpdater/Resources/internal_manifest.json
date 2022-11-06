@@ -140,6 +140,24 @@
     "HomepageUrl": "https://github.com/Bobster1246/BugFixes",
     "Tags": [ "Gameplay", "Miscellaneous" ]
   },
+  
+  {
+	"Name": "Champion Feats Anew",
+	"Author": "lynnpye",
+	"Id": {
+	  "Id": "ChampionFeatsAnew",
+	  "Type": "UMM"
+	},
+	"Service": {
+      "Nexus": {
+        "ModID": "384",
+        "DownloadMirror": "https://github.com/lynnpye/Champion-Feats"
+      }
+	},
+	"About": "Adds power boosting feats for that fantasy power trip feel.",
+	"HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/384",
+	"Tags": [ "Gameplay", "Content" ]
+  },
 
   {
     "Name": "Character Options+",
