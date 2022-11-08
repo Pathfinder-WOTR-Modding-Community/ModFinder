@@ -149,9 +149,9 @@
 	  "Type": "UMM"
 	},
 	"Service": {
-      "Nexus": {
-        "ModID": "384",
-        "DownloadMirror": "https://github.com/lynnpye/Champion-Feats"
+      "GitHub": {
+        "Owner": "lynnpye",
+        "RepoName": "Champion-Feats"
       }
 	},
 	"About": "Adds power boosting feats for that fantasy power trip feel.",
