@@ -697,6 +697,24 @@
   },
 
   {
+    "Name": "PATH OF HELL",
+    "Author": "Balkoth",
+    "Id": {
+      "Id": "WOTR_PATH_OF_HELL",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Balkoth-dev",
+        "RepoName": "WOTR_PATH_OF_HELL"
+      }
+    },
+    "About": "Contains changes to the Devil Mythic Class as requested by the community.",
+    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_HELL",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+	
+  {
     "Name": "PATH OF RAGE",
     "Author": "Balkoth",
     "Id": {
