@@ -232,24 +232,6 @@
   },
 
   {
-    "Name": "Enhanced Inventory",
-    "Author": "Xenofell",
-    "Id": {
-      "Id": "EnhancedInventory",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "cstamford",
-        "RepoName": "WOTR_EnhancedInventory"
-      }
-    },
-    "About": "Enhances the inventory with features such as: a search bar for inventory, stores, and the spellbook; more filtering and sorting options, customizable filter and sort lists; highlighting important loot. Does not affect gameplay. Configurable through the UMM mod options screen.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/137",
-    "Tags": [ "UserInterface" ]
-  },
-
-  {
     "Name": "Expanded Content",
     "Author": "Kadyn & Bittercranberry",
     "Id": {
