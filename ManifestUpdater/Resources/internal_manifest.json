@@ -1,6 +1,24 @@
 [
   // Please keep sorted by Name.
   {
+    "Name": "AddedFeats",
+    "Author": "Telyl",
+    "Id": {
+      "Id": "AddedFeats",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Telyl",
+        "RepoName": "AddedFeats"
+      }
+    },
+    "About": "Adds additional features for animal companions and PCs.",
+    "HomepageUrl": "https://github.com/Telyl/AddedFeats",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "Additional Hotkeys",
     "Author": "apocc",
     "Id": {
