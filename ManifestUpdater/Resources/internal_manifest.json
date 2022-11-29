@@ -404,6 +404,24 @@
   },
 
   {
+    "Name": "Martial Excellence",
+    "Author": "Envibel",
+    "Id": {
+      "Id": "MartialExcellence",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Envibel",
+        "RepoName": "MartialExcellence"
+      }
+    },
+    "About": "New feats and abilities with a focus on martial characters.",
+    "HomepageUrl": "https://github.com/Envibel/MartialExcellence",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "Mewsifer Console",
     "Author": "WittleWolfie & Bubbles",
     "Id": {
