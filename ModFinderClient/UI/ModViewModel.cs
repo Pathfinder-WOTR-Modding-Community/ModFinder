@@ -270,14 +270,14 @@ namespace ModFinder.UI
     {
       if (Manifest.LastChecked == default)
         return "-";
-      return Manifest.LastChecked.ToString("MMM dd H:mm");
+      return Manifest.LastChecked.ToString("MMM dd yyyy");
     }
 
     public string GetLastUpdated()
     {
       if (Manifest.Version.LastUpdated == default)
         return "-";
-      return Manifest.Version.LastUpdated.ToString("MMM dd H:mm");
+      return Manifest.Version.LastUpdated.ToString("MMM dd yyyy");
     }
 
     private string GetStatusText()
