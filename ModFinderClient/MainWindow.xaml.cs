@@ -304,6 +304,12 @@ namespace ModFinder
         var info = IOTool.Read<OwlcatModInfo>(infoFile.FullName);
 
         var manifest = ModManifest.ForLocal(info);
+        if (manifest is null)
+        {
+          Logger.Log.Warning($"Invalid manifest: {infoFile}");
+          return null;
+        }
+
         if (!ModDatabase.Instance.TryGet(manifest.Id, out var mod))
         {
           mod = new(manifest);
@@ -333,6 +339,12 @@ namespace ModFinder
         var info = IOTool.Read<UMMModInfo>(infoFile.FullName);
 
         var manifest = ModManifest.ForLocal(info);
+        if (manifest is null)
+        {
+          Logger.Log.Warning($"Invalid manifest: {infoFile}");
+          return null;
+        }
+
         if (!ModDatabase.Instance.TryGet(manifest.Id, out var mod))
         {
           mod = new(manifest);

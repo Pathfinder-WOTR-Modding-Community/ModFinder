@@ -175,6 +175,9 @@ namespace ModFinder.Mod
 
     public static ModManifest ForLocal(UMMModInfo info)
     {
+      if (!info.IsValid())
+        return null;
+
       return new(
         name: info.DisplayName,
         author: info.Author,
@@ -184,8 +187,12 @@ namespace ModFinder.Mod
         version: default,
         homepageUrl: string.IsNullOrEmpty(info.HomePage) ? default : info.HomePage);
     }
+
     public static ModManifest ForLocal(OwlcatModInfo info)
     {
+      if (!info.IsValid())
+        return null;
+
       return new(
         name: string.IsNullOrEmpty(info.DisplayName) ? info.UniqueName : info.DisplayName,
         author: info.Author,

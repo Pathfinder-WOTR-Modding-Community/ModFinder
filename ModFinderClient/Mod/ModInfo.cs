@@ -15,6 +15,11 @@ namespace ModFinder.Mod
     public string HomePage { get; set; }
 
     public List<string> Requirements { get; set; }
+
+    public bool IsValid()
+    {
+      return !string.IsNullOrEmpty(Id) && !string.IsNullOrEmpty(Version);
+    }
   }
 
   /// <summary>
@@ -30,5 +35,10 @@ namespace ModFinder.Mod
     public string HomePage { get; set; }
 
     public string Description { get; set; }
+
+    public bool IsValid()
+    {
+      return !string.IsNullOrEmpty(UniqueName) && !string.IsNullOrEmpty(Version);
+    }
   }
 }
