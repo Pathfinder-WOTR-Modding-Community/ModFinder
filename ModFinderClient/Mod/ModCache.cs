@@ -123,6 +123,11 @@ namespace ModFinder.Mod
             }
           }
         }
+        else if (mod.ModId.Type == ModType.Owlcat)
+        {
+          Main.OwlcatMods.Remove(mod.ModId.Id);
+          Directory.Delete(mod.ModDir.FullName, true);
+        }
         else
         {
           Directory.Delete(mod.ModDir.FullName, true);
