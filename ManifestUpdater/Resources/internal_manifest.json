@@ -679,24 +679,6 @@
   },
 
   {
-    "Name": "Owlcat Mod Template Load Fix",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "OwlcatModTemplateLoadFix",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "OwlcatModTemplateLoadFix"
-      }
-    },
-    "About": "Temporary fix to enable loading of Owlcat Mod Template based mods on 2.0.0 game version",
-    "HomepageUrl": "https://github.com/alterasc/OwlcatModTemplateLoadFix",
-    "Tags": [ "Miscellaneous" ]
-  },
-
-  {
     "Name": "PATH OF BLING",
     "Author": "Balkoth",
     "Id": {
