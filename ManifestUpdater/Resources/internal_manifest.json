@@ -748,7 +748,23 @@
     "HomepageUrl": "https://github.com/pheonix99/PhoenixsCantrips",
     "Tags": [ "Content", "Gameplay" ]
   },
-
+	{
+    "Name": "Phoenix's Cantrips - More Cantrips",
+    "Author": "phoenix99",
+    "Id": {
+      "Id": "MoreCantrips",
+      "Type": "UMM"
+    },
+   "Service": {
+      "GitHub": {
+        "Owner": "pheonix99",
+        "RepoName": "MoreCantrips"
+      }
+    },
+    "About": "Adds additional cantrips.",
+    "HomepageUrl": "https://github.com/pheonix99/MoreCantrips",
+    "Tags": [ "Content", "Gameplay" ]
+  },
   {
     "Name": "Puzzle Skip",
     "Author": "Arkive",
