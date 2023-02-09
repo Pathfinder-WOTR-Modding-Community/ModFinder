@@ -22,6 +22,6 @@ jobs:
     - name: .NET Setup
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '5.0.0'
+        dotnet-version: '5.0.x'
     - name: Run Updater
       run: dotnet run --project ./ManifestUpdater 
