@@ -18,6 +18,10 @@ jobs:
     steps:
 
     - name: Checkout GitHub actions
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+    - name: .NET Setup
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '5.0.x'
     - name: Run Updater
       run: dotnet run --project ./ManifestUpdater 
