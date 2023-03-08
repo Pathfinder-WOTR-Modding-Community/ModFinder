@@ -21,6 +21,7 @@ namespace ModFinder.Mod
           Save();
       });
     }
+
     public void Add(string uniqueid)
     {
       IOTool.SafeRun(() =>

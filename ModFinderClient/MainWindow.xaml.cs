@@ -64,8 +64,6 @@ namespace ModFinder
         Manifest = IOTool.FromString<MasterManifest>(json);
 #endif
 
-
-
         RefreshAllManifests();
         RefreshInstalledMods();
 
@@ -282,6 +280,9 @@ namespace ModFinder
 
         foreach (var mod in ModDatabase.Instance.Installed)
         {
+          if (mod.Type != ModType.UMM)
+            continue;
+
           var modConfig = mods.FirstOrDefault(m => mod.ModId.Id == m.id);
           if (modConfig == default)
             mod.Enabled = true;
@@ -323,7 +324,6 @@ namespace ModFinder
           mod.InstalledVersion = ModVersion.Parse(info.Version);
 
           mod.Enabled = Main.OwlcatMods.Has(info.UniqueName);
-
         }
         return mod;
       }
