@@ -774,12 +774,12 @@
     },
     "Service": {
       "GitHub": {
-        "Owner": "ArkiveDev",
+        "Owner": "Balkoth-dev",
         "RepoName": "PuzzleSkip"
       }
     },
     "About": "Allows skipping puzzles.",
-    "HomepageUrl": "https://github.com/ArkiveDev/PuzzleSkip",
+    "HomepageUrl": "https://github.com/Balkoth-dev/PuzzleSkip",
     "Tags": [ "UserInterface", "Visuals" ]
   },
 
