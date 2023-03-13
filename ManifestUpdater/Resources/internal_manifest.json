@@ -52,7 +52,25 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119",
     "Tags": [ "Miscellaneous", "Utilities" ]
   },
-
+  
+  {
+    "Name": "Alternate Human Traits",
+    "Author": "Microsoftenator",
+    "Id": {
+      "Id": "AlternateHumanTraits",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Microsoftenator2022",
+        "RepoName": "AlternateHumanTraits",
+      }
+    },
+    "About": "Some  alternate racial features for Humans",
+    "HomepageUrl": "https://github.com/microsoftenator2022/AlternateHumanTraits",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+  
   {
     "Name": "Auto Mount",
     "Author": "zepheon",
