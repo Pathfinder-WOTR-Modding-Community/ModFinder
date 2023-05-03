@@ -512,7 +512,23 @@
     "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
     "Tags": [ "Content", "Gameplay" ]
   },
-
+  {
+    "Name": "Misc Tweaks and Fixes",
+    "Author": "Microsoftenator",
+    "Id": {
+      "Id": "MiscTweaksAndFixes",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "microsoftenator2022",
+        "RepoName": "MiscTweaksAndFixes2",
+      }
+    },
+    "About": "Small(ish) tweaks and fixes for things that bothered me.",
+    "HomepageUrl": "https://github.com/microsoftenator2022/MiscTweaksAndFixes2",
+    "Tags": [ "Miscellaneous", "Gameplay" ]
+  },
   {
     "Name": "Mod Menu",
     "Author": "WittleWolfie",
