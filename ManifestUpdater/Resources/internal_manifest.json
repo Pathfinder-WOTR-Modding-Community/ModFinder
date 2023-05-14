@@ -908,6 +908,24 @@
   },
 
   {
+    "Name": "Swashbuckler Class",
+    "Author": "Zedel",
+    "Id": {
+      "Id": "SwashbucklerWOTR",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "novumvita",
+        "RepoName": "SwashbucklerWOTR"
+      }
+    },
+    "About": "Adds the swashbuckler class.",
+    "HomepageUrl": "https://github.com/novumvita/SwashbucklerWOTR",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "Tabletop Tweaks Base",
     "Author": "Vek17",
     "Id": {
