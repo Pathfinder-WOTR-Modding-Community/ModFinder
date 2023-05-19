@@ -268,6 +268,24 @@
   },
 
   {
+    "Name": "Enduring Reworks",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "EnduringRework",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "EnduringRework"
+      }
+    },
+    "About": "Changes Enduring spells and Greater Enduring Spells mythic abilities",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/497",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
     "Name": "Expanded Content",
     "Author": "Kadyn & Bittercranberry",
     "Id": {
@@ -869,6 +887,24 @@
     "About": "Respect mod which enables complete respec for companions, all the way to level 1.",
     "HomepageUrl": "https://github.com/BarleyFlour/RespecMod",
     "Tags": [ "Utilities" ]
+  },
+
+  {
+    "Name": "Snap Shot Approach",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "SnapshotApproach",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "SnapshotApproach"
+      }
+    },
+    "About": "Allows automatic approch into Snap Shot range for ranged characters",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/498",
+    "Tags": [ "Miscellaneous" ]
   },
 
   {
