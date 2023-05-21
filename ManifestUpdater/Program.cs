@@ -2,6 +2,7 @@
 using ModFinder.Mod;
 using ModFinder.Util;
 using NexusModsNET;
+using NexusModsNET.DataModels;
 using Octokit;
 using System;
 using System.Collections.Generic;
@@ -105,7 +106,7 @@ foreach (var manifest in internalManifest)
         updatedManifest.Add(newManifest);
         return newManifest;
       }
-      
+
       if (manifest.Service.IsNexus())
       {
         var modID = manifest.Service.Nexus.ModID;
@@ -116,8 +117,9 @@ foreach (var manifest in internalManifest)
         var mod = await nexusFactory.CreateModFilesInquirer().GetModFilesAsync("pathfinderwrathoftherighteous", modID);
 
         var latestVersion = ModVersion.Parse(nexusMod.Version);
+        var latestFileID = mod.ModFiles.Where(f => f.Category == NexusModFileCategory.Main).Last().FileId;
         var downloadUrl =
-          @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" + mod.ModFiles.Last().FileId;
+          @"https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/" + modID + @"?tab=files&file_id=" + latestFileID;
 
         var releaseHistory = new List<Release>();
         if (changelog != null)
