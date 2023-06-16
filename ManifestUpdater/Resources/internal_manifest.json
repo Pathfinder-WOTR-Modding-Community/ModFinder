@@ -908,6 +908,24 @@
   },
 
   {
+    "Name": "Soulknife - Psionics",
+    "Author": "TehFlaminTaco",
+    "Id": {
+      "Id": "Psionics",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "tehflamintaco",
+        "RepoName": "Psionics"
+      }
+    },
+    "About": "An Implementation of Dreamscarred Press's Psionics. Currently, provides the Soulknife Class.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/513",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+	
+  {
     "Name": "Spellbook Merge",
     "Author": "vikigenius",
     "Id": {
