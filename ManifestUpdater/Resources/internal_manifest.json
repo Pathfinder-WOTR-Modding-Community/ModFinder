@@ -386,6 +386,24 @@
   },
 
   {
+    "Name": "Kinetic Archetypes",
+    "Author": "NosVladimir",
+    "Id": {
+      "Id": "KineticArchetypes",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "NosVladimir",
+        "RepoName": "KineticArchetypes"
+      }
+    },
+    "About": "A mod for Pathfinder: Wrath of the Righteous, focused on making more kineticist archetypes and other class archetypes that use kinetic blasts.",
+    "HomepageUrl": "https://github.com/NosVladimir/KineticArchetypes",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "Kineticist Elements Expanded",
     "Author": "SpenceZilla",
     "Id": {
