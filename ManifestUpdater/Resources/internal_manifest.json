@@ -320,7 +320,24 @@
     "HomepageUrl": "https://github.com/BarleyFlour/FinneanTweaks",
     "Tags": [ "Gameplay" ]
   },
-  
+
+  {
+    "Name": "Full Bore Bismuth",
+    "Author": "Badger",
+    "Id": {
+      "Id": "FullBoreBismuth",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": 536
+      }
+    },
+    "About": "Makes Bismuth a tad more useful by rearranging what feats he learns and making him not take the -4 level penalty.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/536",
+    "Tags": [ "Gameplay" ]
+  },
+	
   {
     "Name": "Great Radiance",
     "Author": "BurlyWurly",
