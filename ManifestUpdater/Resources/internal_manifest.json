@@ -337,6 +337,26 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/536",
     "Tags": [ "Gameplay" ]
   },
+
+  {
+    "Name": "Gracious Friendships",
+    "Author": "Gvenewour & Ameistris",
+    "Id": {
+      "Id": "GraciousFriendships",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": 430
+      }
+    },
+    "About": "'Gracious Friendships' is a lore-friendly narrative mod that adds new dialogue options for companions and NPCs. It expands character interactions throughout the game and fixes some issues with romance flags.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/430",
+    "Tags": [
+	    "Content", 
+	    "Gameplay"
+    ]
+  },
 	
   {
     "Name": "Great Radiance",
