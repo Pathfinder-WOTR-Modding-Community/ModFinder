@@ -304,6 +304,26 @@
   },
 
   {
+    "Name": "Expanded Epilogue",
+    "Author": "Ranadiel",
+    "Id": {
+      "Id": "RanEpilogue",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": 545
+      }
+    },
+    "About": "A mod that expands the epilogue to provide endings to new topics and to increase the reactivity to some existing topics.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/545",
+    "Tags": [
+	    "Content", 
+	    "Gameplay"
+    ]
+  },
+
+  {
     "Name": "Finnean Tweaks",
     "Author": "Barley",
     "Id": {
