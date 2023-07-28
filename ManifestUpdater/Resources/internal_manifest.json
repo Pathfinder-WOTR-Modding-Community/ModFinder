@@ -232,6 +232,27 @@
   },
 
   {
+    "Name": "CraftMaster (Test Version)",
+    "Author": "skyswordkill",
+    "Id": {
+      "Id": "CraftMaster",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "magicskysword",
+        "RepoName": "CraftMaster"
+      }
+    },
+    "About": "This Mod adds the function of crafting wonders for Pathfinder: Wrath of the Righteous. The Mod is currently in development and may have frequent bugs. If you encounter any problems, please feel free to submit an Issue to give feedback.",
+    "HomepageUrl": "https://github.com/magicskysword/CraftMaster",
+    "Tags": [
+	    "Content", 
+	    "Gameplay"
+    ]
+  },
+
+  {
     "Name": "Damage Breakdown",
     "Author": "abias1122",
     "Id": {
