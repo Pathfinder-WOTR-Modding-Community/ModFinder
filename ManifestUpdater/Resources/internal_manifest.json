@@ -931,6 +931,23 @@
     "HomepageUrl": "https://github.com/pheonix99/MoreCantrips",
     "Tags": [ "Content", "Gameplay" ]
   },
+	{
+    "Name": "PrestigePlus",
+    "Author": "string",
+    "Id": {
+      "Id": "PrestigePlus",
+      "Type": "UMM"
+    },
+   "Service": {
+      "GitHub": {
+        "Owner": "YLMstring",
+        "RepoName": "PrestigePlus"
+      }
+    },
+    "About": "Add Shadowdancer prestige class, and Rogue Talent Defensive Roll",
+    "HomepageUrl": "https://github.com/YLMstring/PrestigePlus",
+    "Tags": [ "Content", "Gameplay" ]
+  },
   {
     "Name": "Puzzle Skip",
     "Author": "Arkive",
