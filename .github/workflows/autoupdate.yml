@@ -4,9 +4,9 @@ on:
   push:
     paths:
       - 'ManifestUpdater/Resources/internal_manifest.json'
-  # Every 30 minutes. This should be safe, GitHub limit is 1000 / hour and Nexus is 500 / hour.
+  # Every 45 minutes. This should be safe, GitHub limit is 1000 / hour and Nexus is 500 / hour.
   schedule:
-  - cron: "0/30 * * * *"
+  - cron: "0/45 * * * *"
       
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
