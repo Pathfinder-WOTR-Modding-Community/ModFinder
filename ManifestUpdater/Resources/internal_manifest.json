@@ -1183,6 +1183,24 @@
   },
 
   {
+    "Name": "Transfigured Caster Archetypes",
+    "Author": "Asteras",
+    "Id": {
+      "Id": "TransfiguredCasterArchetypes",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "AdamMeloy",
+        "RepoName": "TransfiguredCasterArchetypes"
+      }
+    },
+    "About": "Adds some of the more whacky caster archetypes, with minimal changes from tabletop rules.",
+    "HomepageUrl": "https://github.com/AdamMeloy/TransfiguredCasterArchetypes",
+    "Tags": [ "Content", "Gameplay", "Homebrew" ]
+  },
+
+  {
     "Name": "Turnbased Combat Delay",
     "Author": "Vek17",
     "Id": {
