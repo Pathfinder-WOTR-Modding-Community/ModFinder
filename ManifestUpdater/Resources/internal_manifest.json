@@ -932,7 +932,7 @@
     "Tags": [ "Content", "Gameplay" ]
   },
 	{
-    "Name": "PrestigePlus",
+    "Name": "Prestige Plus",
     "Author": "string",
     "Id": {
       "Id": "PrestigePlus",
@@ -944,7 +944,7 @@
         "RepoName": "PrestigePlus"
       }
     },
-    "About": "Add Shadowdancer prestige class, and Rogue Talent Defensive Roll",
+    "About": "Add a bunch of prestige classes, and related stuff",
     "HomepageUrl": "https://github.com/YLMstring/PrestigePlus",
     "Tags": [ "Content", "Gameplay" ]
   },
