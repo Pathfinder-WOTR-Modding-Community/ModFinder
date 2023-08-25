@@ -70,6 +70,24 @@
     "HomepageUrl": "https://github.com/microsoftenator2022/AlternateHumanTraits",
     "Tags": [ "Content", "Gameplay" ]
   },
+	
+  {
+    "Name": "Automatic Bonus Progression",
+    "Author": "WittleWolfie",
+    "Id": {
+      "Id": "AutomaticBonusProgression",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "WittleWolfie",
+        "RepoName": "AutomaticBonusProgression"
+      }
+    },
+    "About": "An item rebalance mod based on Pathfinder's Automatic Bonus Progression ruleset.",
+    "HomepageUrl": "https://github.com/WittleWolfie/AutomaticBonusProgression",
+    "Tags": [ "Content", "Gameplay" ]
+  },
   
   {
     "Name": "Auto Mount",
