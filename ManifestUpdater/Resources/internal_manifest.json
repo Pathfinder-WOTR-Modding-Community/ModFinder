@@ -34,7 +34,7 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/68",
     "Tags": [ "UserInterface", "Utilities" ]
   },
-  
+
   {
     "Name": "Allow Modded Achievements",
     "Author": "Xenofell",
@@ -44,7 +44,7 @@
     },
     "Service": {
       "Nexus": {
-        "ModID": "119",        
+        "ModID": "119",
         "DownloadMirror": "https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror"
       }
     },
@@ -52,7 +52,7 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119",
     "Tags": [ "Miscellaneous", "Utilities" ]
   },
-  
+
   {
     "Name": "Alternate Human Traits",
     "Author": "Microsoftenator",
@@ -70,7 +70,25 @@
     "HomepageUrl": "https://github.com/microsoftenator2022/AlternateHumanTraits",
     "Tags": [ "Content", "Gameplay" ]
   },
-	
+
+  {
+    "Name": "Arcane Additions",
+    "Author": "Nykal145",
+    "Id": {
+      "Id": "ArcaneAdditons",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Nykal145",
+        "RepoName": "ArcaneAdditions"
+      }
+    },
+    "About": "Adds school savant arcanist archetype, optional mythic ASI, optional level based spell ranges and optional tabletop based spell ranges ",
+    "HomepageUrl": "https://github.com/Nykal145/ArcaneAdditions",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
   {
     "Name": "Automatic Bonus Progression",
     "Author": "WittleWolfie",
@@ -88,7 +106,7 @@
     "HomepageUrl": "https://github.com/WittleWolfie/AutomaticBonusProgression",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Auto Mount",
     "Author": "zepheon",
@@ -159,7 +177,7 @@
     "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
     "Tags": [ "Gameplay", "UserInterface" ]
   },
-  
+
   {
     "Name": "Buffbot",
     "Author": "Balkoth",
@@ -194,23 +212,23 @@
     "HomepageUrl": "https://github.com/Bobster1246/BugFixes",
     "Tags": [ "Gameplay", "Miscellaneous" ]
   },
-  
+
   {
-	"Name": "Champion Feats Anew",
-	"Author": "lynnpye",
-	"Id": {
-	  "Id": "ChampionFeatsAnew",
-	  "Type": "UMM"
-	},
-	"Service": {
+    "Name": "Champion Feats Anew",
+    "Author": "lynnpye",
+    "Id": {
+      "Id": "ChampionFeatsAnew",
+      "Type": "UMM"
+    },
+    "Service": {
       "GitHub": {
         "Owner": "lynnpye",
         "RepoName": "Champion-Feats"
       }
-	},
-	"About": "Adds power boosting feats for that fantasy power trip feel.",
-	"HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/384",
-	"Tags": [ "Gameplay", "Content" ]
+    },
+    "About": "Adds power boosting feats for that fantasy power trip feel.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/384",
+    "Tags": [ "Gameplay", "Content" ]
   },
 
   {
@@ -265,8 +283,8 @@
     "About": "This Mod adds the function of crafting wonders for Pathfinder: Wrath of the Righteous. The Mod is currently in development and may have frequent bugs. If you encounter any problems, please feel free to submit an Issue to give feedback.",
     "HomepageUrl": "https://github.com/magicskysword/CraftMaster",
     "Tags": [
-	    "Content", 
-	    "Gameplay"
+      "Content",
+      "Gameplay"
     ]
   },
 
@@ -357,8 +375,8 @@
     "About": "A mod that expands the epilogue to provide endings to new topics and to increase the reactivity to some existing topics.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/545",
     "Tags": [
-	    "Content", 
-	    "Gameplay"
+      "Content",
+      "Gameplay"
     ]
   },
 
@@ -412,11 +430,11 @@
     "About": "'Gracious Friendships' is a lore-friendly narrative mod that adds new dialogue options for companions and NPCs. It expands character interactions throughout the game and fixes some issues with romance flags.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/430",
     "Tags": [
-	    "Content", 
-	    "Gameplay"
+      "Content",
+      "Gameplay"
     ]
   },
-	
+
   {
     "Name": "Great Radiance",
     "Author": "BurlyWurly",
@@ -439,7 +457,7 @@
       "Gameplay"
     ]
   },
-  
+
   {
     "Name": "Homebrew Archetypes",
     "Author": "Sigurd",
@@ -553,7 +571,7 @@
     "Tags": [ "Miscellaneous" ]
   },
 
-    {
+  {
     "Name": "Madison's Metagaming",
     "Author": "ultramaddie",
     "Id": {
@@ -766,7 +784,7 @@
     "HomepageUrl": "https://github.com/kreaddy/MysticalMayhem",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Mythic Arcanist",
     "Author": "Llisandur",
@@ -802,7 +820,7 @@
     "HomepageUrl": "https://github.com/Vek17/WrathMods-MythicSpellbookTweaks",
     "Tags": [ "Gameplay" ]
   },
-  
+
   {
     "Name": "Mythic Path Power Swapper",
     "Author": "AlterAsc",
@@ -897,7 +915,7 @@
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_HELL",
     "Tags": [ "Content", "Gameplay" ]
   },
-	
+
   {
     "Name": "PATH OF RAGE",
     "Author": "Balkoth",
@@ -915,14 +933,14 @@
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE",
     "Tags": [ "Content", "Gameplay" ]
   },
-	{
+  {
     "Name": "Phoenix's Cantrips",
     "Author": "phoenix99",
     "Id": {
       "Id": "PhoenixsCantrips",
       "Type": "UMM"
     },
-   "Service": {
+    "Service": {
       "GitHub": {
         "Owner": "pheonix99",
         "RepoName": "PhoenixsCantrips"
@@ -932,14 +950,14 @@
     "HomepageUrl": "https://github.com/pheonix99/PhoenixsCantrips",
     "Tags": [ "Content", "Gameplay" ]
   },
-	{
+  {
     "Name": "Phoenix's Cantrips - More Cantrips",
     "Author": "phoenix99",
     "Id": {
       "Id": "MoreCantrips",
       "Type": "UMM"
     },
-   "Service": {
+    "Service": {
       "GitHub": {
         "Owner": "pheonix99",
         "RepoName": "MoreCantrips"
@@ -949,14 +967,14 @@
     "HomepageUrl": "https://github.com/pheonix99/MoreCantrips",
     "Tags": [ "Content", "Gameplay" ]
   },
-	{
+  {
     "Name": "Prestige Plus",
     "Author": "string",
     "Id": {
       "Id": "PrestigePlus",
       "Type": "UMM"
     },
-   "Service": {
+    "Service": {
       "GitHub": {
         "Owner": "YLMstring",
         "RepoName": "PrestigePlus"
@@ -1055,7 +1073,7 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/513",
     "Tags": [ "Content", "Gameplay" ]
   },
-	
+
   {
     "Name": "Spellbook Merge",
     "Author": "vikigenius",
@@ -1288,7 +1306,7 @@
     "HomepageUrl": "https://github.com/Vek17/WrathMods-WeaponFocusPlus",
     "Tags": [ "Gameplay" ]
   },
-  
+
   {
     "Name": "Woljif Romance Mod",
     "Author": "Paladingineer",
