@@ -63,7 +63,7 @@
     "Service": {
       "GitHub": {
         "Owner": "microsoftenator2022",
-        "RepoName": "AlternateHumanTraits",
+        "RepoName": "AlternateHumanTraits"
       }
     },
     "About": "Some  alternate racial features for Humans",
@@ -672,7 +672,7 @@
     "Service": {
       "GitHub": {
         "Owner": "microsoftenator2022",
-        "RepoName": "MiscTweaksAndFixes2",
+        "RepoName": "MiscTweaksAndFixes2"
       }
     },
     "About": "Small(ish) tweaks and fixes for things that bothered me.",
@@ -1017,6 +1017,24 @@
     },
     "About": "When a monster spawns it is replaced with new one of similar power level. Every zone has a theme with a pool of monsters to select from. If no themed monster is found, then any monster can spawn.",
     "HomepageUrl": "https://github.com/Snarkki/RandomEnemies",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
+    "Name": "Random Equipment",
+    "Author": "Hambeard",
+    "Id": {
+      "Id": "RandomEquipment",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "thehambeard",
+        "RepoName": "RandomEquipment"
+      }
+    },
+    "About": "Will add random game loot to any container the player interacts with based on a percentage chance. The loot already inside the container is untouched by the mod and will only add to it. The loot possible is based on your level and shouldn't give anything inappropriately OP.",
+    "HomepageUrl": "https://github.com/thehambeard/RandomEquipment",
     "Tags": [ "Gameplay" ]
   },
 
