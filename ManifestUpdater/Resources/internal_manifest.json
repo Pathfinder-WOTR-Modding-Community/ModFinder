@@ -125,6 +125,23 @@
     "Tags": [ "UserInterface" ]
   },
 
+ {
+    "Name": "Battle Scion Extra Rage Powers",
+    "Author": "DanScallion",
+    "Id": {
+      "Id": "WOTR_BattleScionExtraRagePowers",
+      "Type": "UMM"
+    },
+    "Service": {
+       "Nexus": {
+        "ModID": "574"
+      }
+    },
+    "About": "For some reason Battle Scion cannot take Extra Rage Powers feat, which he should as he does have rage powers. This mod enables you to take it if you have battle prowess which is battle scions rage power ability.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/574/",
+    "Tags": [ "Bugfix" ]
+  },
+  
   {
     "Name": "BOAT BOAT BOAT",
     "Author": "Balkoth",
