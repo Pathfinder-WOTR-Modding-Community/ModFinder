@@ -126,11 +126,11 @@
   },
 
  {
-    "Name": "Battle Scion Extra Rage Powers",
+    "Name": "Battle Scion Extra Rage Powers Fix",
     "Author": "DanScallion",
     "Id": {
       "Id": "WOTR_BattleScionExtraRagePowers",
-      "Type": "UMM"
+      "Type": "Owlcat"
     },
     "Service": {
        "Nexus": {
