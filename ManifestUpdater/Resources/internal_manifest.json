@@ -1393,7 +1393,7 @@
     "About": "It's a tool to merge different (game engine) instances of the same (tabletop rules) pool from different classes and make them behave correctly.",
     "HomepageUrl": "https://github.com/pheonix99/WotRResourceUnification",
     "Tags": [ "Gameplay" ]
-  }
+  },
 
   {
     "Name": "Wrath Patches",
@@ -1411,5 +1411,5 @@
     "About": "A collection of small patches for Pathfinder: Wrath of the Righteous. Mostly aimed at cleaning up the game's log files, but fixed some minor bugs along the way.",
     "HomepageUrl": "https://github.com/microsoftenator2022/WrathPatches",
     "Tags": [ "Gameplay" ]
-  },
+  }
 ]
