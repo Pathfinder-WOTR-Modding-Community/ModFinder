@@ -1394,4 +1394,22 @@
     "HomepageUrl": "https://github.com/pheonix99/WotRResourceUnification",
     "Tags": [ "Gameplay" ]
   }
+
+  {
+    "Name": "Wrath Patches",
+    "Author": "Microsoftenator",
+    "Id": {
+      "Id": "WrathPatches",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "microsoftenator2022",
+        "RepoName": "WrathPatches"
+      }
+    },
+    "About": "A collection of small patches for Pathfinder: Wrath of the Righteous. Mostly aimed at cleaning up the game's log files, but fixed some minor bugs along the way.",
+    "HomepageUrl": "https://github.com/microsoftenator2022/WrathPatches",
+    "Tags": [ "Gameplay" ]
+  },
 ]
