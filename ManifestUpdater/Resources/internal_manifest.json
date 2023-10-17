@@ -552,6 +552,24 @@
     "HomepageUrl": "https://github.com/madisoncfallin/MadisonsMetagaming",
     "Tags": [ "Content", "Gameplay" ]
   },
+  
+  {
+    "Name": "Making Friends (Summoner Mod)",
+    "Author": "Balkoth",
+    "Id": {
+      "Id": "WOTR_MAKING_FRIENDS",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Balkoth-dev",
+        "RepoName": "WOTR_MAKING_FRIENDS"
+      }
+    },
+    "About": "Adds the Summoner class from Pathfinder to the game",
+    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_MAKING_FRIENDS",
+    "Tags": [ "Content", "Gameplay" ]
+  },
 
   {
     "Name": "Martial Excellence",
