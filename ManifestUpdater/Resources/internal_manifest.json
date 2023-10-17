@@ -212,41 +212,6 @@
     "HomepageUrl": "https://github.com/Balkoth-dev/BuffBot-Wrath",
     "Tags": [ "Gameplay", "Miscellaneous" ]
   },
-  {
-    "Name": "BugFixes",
-    "Author": "Bobster1246",
-    "Id": {
-      "Id": "BugFixes",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Bobster1246",
-        "RepoName": "BugFixes"
-      }
-    },
-    "About": "BugFixes is a simple mod dedicated to fixing small bugs in Pathfinder: Wrath of the Righteous. ",
-    "HomepageUrl": "https://github.com/Bobster1246/BugFixes",
-    "Tags": [ "Gameplay", "Miscellaneous" ]
-  },
-
-  {
-    "Name": "Champion Feats Anew",
-    "Author": "lynnpye",
-    "Id": {
-      "Id": "ChampionFeatsAnew",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "lynnpye",
-        "RepoName": "Champion-Feats"
-      }
-    },
-    "About": "Adds power boosting feats for that fantasy power trip feel.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/384",
-    "Tags": [ "Gameplay", "Content" ]
-  },
 
   {
     "Name": "Character Options+",
@@ -303,24 +268,6 @@
       "Content",
       "Gameplay"
     ]
-  },
-
-  {
-    "Name": "Damage Breakdown",
-    "Author": "abias1122",
-    "Id": {
-      "Id": "DamageBreakdown",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "abias1122",
-        "RepoName": "WOTRDamageBreakdown"
-      }
-    },
-    "About": "Adds a breakdown for damage bonuses to Pathfinder: Wrath of the Righteous.",
-    "HomepageUrl": "https://github.com/abias1122/WOTRDamageBreakdown",
-    "Tags": [ "UserInterface" ]
   },
 
   {
@@ -715,40 +662,6 @@
   },
 
   {
-    "Name": "More Bulk Sell",
-    "Author": "zesen",
-    "Id": {
-      "Id": "MoreBulkSell",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": 163
-      }
-    },
-    "About": "Enables more items to be sold in bulk. Now you can sell all those Longsword 1's and Leather Armor +2's with the click of a button.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/163",
-    "Tags": [ "UserInterface" ]
-  },
-
-  {
-    "Name": "More Relic Info",
-    "Author": "zesen",
-    "Id": {
-      "Id": "More Relic Info",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": 200
-      }
-    },
-    "About": "A simple mod to show all possible items from the very first relic project card. No more wasting time on relic projects hoping you will get some useful item in the end! Also has an option to disable automatic pop-ups of completed projects in kingdom management (the option is disabled by default).",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/200",
-    "Tags": [ "UserInterface" ]
-  },
-
-  {
     "Name": "Morvarch's Playstyle Expansions",
     "Author": "Morvarch Princess",
     "Id": {
@@ -1002,24 +915,6 @@
   },
 
   {
-    "Name": "RandomEnemies",
-    "Author": "Snarkki",
-    "Id": {
-      "Id": "RandomEnemies",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Snarkki",
-        "RepoName": "RandomEnemies"
-      }
-    },
-    "About": "When a monster spawns it is replaced with new one of similar power level. Every zone has a theme with a pool of monsters to select from. If no themed monster is found, then any monster can spawn.",
-    "HomepageUrl": "https://github.com/Snarkki/RandomEnemies",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
     "Name": "Random Equipment",
     "Author": "Hambeard",
     "Id": {
@@ -1081,10 +976,12 @@
       "Type": "UMM"
     },
     "Service": {
-      "GitHub": {
-        "Owner": "tehflamintaco",
-        "RepoName": "Psionics"
-      }
+      "GitHub": null,
+      "Nexus": {
+        "ModID": 513,
+        "DownloadMirror": null
+      },
+      "Name": "Nexus"
     },
     "About": "An Implementation of Dreamscarred Press's Psionics. Currently, provides the Soulknife Class.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/513",
