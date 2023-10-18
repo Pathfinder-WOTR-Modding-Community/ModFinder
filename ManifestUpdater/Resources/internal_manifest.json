@@ -1096,6 +1096,24 @@
     "Tags": [ "Gameplay", "Utilities" ]
   },
 
+{
+    "Name": "Tabletop Tweaks Flanking",
+    "Author": "Vek17",
+    "Id": {
+      "Id": "TabletopTweaks-Flanking",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Vek17",
+        "RepoName": "TabletopTweaks-Flanking"
+      }
+    },
+    "About": "This module replaces Owlcat's homebrew flanking mechanics with mechanics more accurate to pathfinder. The exact parameters used are configurable to make flanking more or less difficult as desired.",
+    "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Flanking",
+    "Tags": [ "Gameplay", "Utilities" ]
+  },
+  
   {
     "Name": "Tabletop Tweaks Mythic Rework",
     "Author": "Vek17",
