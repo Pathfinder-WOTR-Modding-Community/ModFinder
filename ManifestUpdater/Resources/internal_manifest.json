@@ -809,7 +809,25 @@
     "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
     "Tags": [ "Visuals" ]
   },
-
+  
+ {
+    "Name": "Onmi's Mod",
+    "Author": "Onmi",
+    "Id": {
+      "Id": "BoonOfIomedaeWrath",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Onmi",
+        "RepoName": "OnmiMod"
+      }
+    },
+    "About": "Adds the Boon of Iomedae for Rejecting Nocticula's Profane Ascension",
+    "HomepageUrl": "https://github.com/OnmiKhaos/OnmiMod",
+    "Tags": [ "Gameplay" ]
+  },
+  
   {
     "Name": "PATH OF BLING",
     "Author": "Balkoth",
