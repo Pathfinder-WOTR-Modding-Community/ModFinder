@@ -54,20 +54,20 @@
   },
 
   {
-    "Name": "Alternate Human Traits",
+    "Name": "Alternate Racial Traits",
     "Author": "Microsoftenator",
     "Id": {
-      "Id": "AlternateHumanTraits",
+      "Id": "AlternateRacialTraits",
       "Type": "UMM"
     },
     "Service": {
       "GitHub": {
         "Owner": "microsoftenator2022",
-        "RepoName": "AlternateHumanTraits"
+        "RepoName": "AlternateRacialTraits"
       }
     },
-    "About": "Some  alternate racial features for Humans",
-    "HomepageUrl": "https://github.com/microsoftenator2022/AlternateHumanTraits",
+    "About": "Some  alternate racial features for Humans and some other races",
+    "HomepageUrl": "https://github.com/microsoftenator2022/AlternateRacialTraits",
     "Tags": [ "Content", "Gameplay" ]
   },
 
