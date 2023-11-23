@@ -1195,7 +1195,8 @@
     },
     "Service": {
       "Nexus": {
-        "ModID": "8"
+        "ModID": "8",
+        "DownloadMirror": "https://github.com/xADDBx/ToyBox/"
       }
     },
     "About": "Toy Box is a cute and playful mod with 400+ cheats, tweaks and quality of life improvements. It was created in the spirit of Bag of Tricks & Cheat Menu but with a little different focus.",
