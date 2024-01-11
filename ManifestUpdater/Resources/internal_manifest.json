@@ -680,6 +680,24 @@
   },
 
   {
+    "Name": "More Font Sizes",
+    "Author": "cookEsandcream",
+    "Id": {
+      "Id": "MoreFontSizes",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "cookEsandcream",
+        "RepoName": "MoreFontSizes"
+      }
+    },
+    "About": "Adjusts the font size slider to allow a much wider range of values for fun or accessibility.",
+    "HomepageUrl": "https://github.com/cookEsandcream/MoreFontSizes/",
+    "Tags": [ "UserInterface", "Utilities" ]
+  },
+  
+  {
     "Name": "Morvarch's Playstyle Expansions",
     "Author": "Morvarch Princess",
     "Id": {
