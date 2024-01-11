@@ -125,7 +125,7 @@
     "Tags": [ "UserInterface" ]
   },
 
- {
+  {
     "Name": "Battle Scion Extra Rage Powers Fix",
     "Author": "DanScallion",
     "Id": {
@@ -133,7 +133,7 @@
       "Type": "Owlcat"
     },
     "Service": {
-       "Nexus": {
+      "Nexus": {
         "ModID": "574"
       }
     },
@@ -141,7 +141,7 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/574/",
     "Tags": [ "Bugfix" ]
   },
-  
+
   {
     "Name": "BOAT BOAT BOAT",
     "Author": "Balkoth",
@@ -552,7 +552,7 @@
     "HomepageUrl": "https://github.com/madisoncfallin/MadisonsMetagaming",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Making Friends (Summoner Mod)",
     "Author": "Balkoth",
@@ -676,6 +676,24 @@
     },
     "About": "Adds a new page to the game options for mods. This allows mods to easily use the native settings UI, no more UMM window!",
     "HomepageUrl": "https://github.com/WittleWolfie/ModMenu",
+    "Tags": [ "UserInterface", "Utilities" ]
+  },
+
+  {
+    "Name": "More Font Sizes",
+    "Author": "cookEsandcream",
+    "Id": {
+      "Id": "MoreFontSizes",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "cookEsandcream",
+        "RepoName": "MoreFontSizes"
+      }
+    },
+    "About": "Adjusts the font size slider to allow a much wider range of values for fun or accessibility.",
+    "HomepageUrl": "https://github.com/cookEsandcream/MoreFontSizes/",
     "Tags": [ "UserInterface", "Utilities" ]
   },
 
@@ -809,8 +827,8 @@
     "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
     "Tags": [ "Visuals" ]
   },
-  
- {
+
+  {
     "Name": "Onmi's Mod",
     "Author": "Onmi",
     "Id": {
@@ -827,7 +845,7 @@
     "HomepageUrl": "https://github.com/OnmiKhaos/OnmiMod",
     "Tags": [ "Gameplay" ]
   },
-  
+
   {
     "Name": "PATH OF BLING",
     "Author": "Balkoth",
@@ -1131,7 +1149,7 @@
     "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Flanking",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Tabletop Tweaks Mythic Rework",
     "Author": "Vek17",
