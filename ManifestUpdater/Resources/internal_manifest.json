@@ -534,7 +534,25 @@
     "HomepageUrl": "https://github.com/alterasc/LevelUpPlanCustomizer",
     "Tags": [ "Miscellaneous" ]
   },
-
+  
+  {
+      "Name": "Lich Decree Reductions",
+      "Author": "Sly",
+      "Id": {
+        "Id": "LichDecreeReductions",
+        "Type": "OMM"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "SlyDevil",
+          "RepoName": "LichDecreeReductions"
+        }
+      },
+      "About": "Owlmod patches to reduce Act 3 Lich decree times.",
+      "HomepageUrl": "https://github.com/SlyDevil/LichDecreeReductions",
+      "Tags": [ "Gameplay" ]
+    },
+  
   {
     "Name": "Madison's Metagaming",
     "Author": "ultramaddie",
