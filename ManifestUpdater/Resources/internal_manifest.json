@@ -540,7 +540,7 @@
       "Author": "Sly",
       "Id": {
         "Id": "LichDecreeReductions",
-        "Type": "OMM"
+        "Type": "Owlcat"
       },
       "Service": {
         "GitHub": {
