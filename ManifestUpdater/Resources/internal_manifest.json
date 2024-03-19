@@ -770,6 +770,24 @@
   },
 
   {
+    "Name": "Mythic Magic Mayhem",
+    "Author": "string, Bakaryu",
+    "Id": {
+      "Id": "MythicMagicMayhem",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "YLMstring",
+        "RepoName": "Mythic-Magic-Mayhem"
+      }
+    },
+    "About": "Introduce a better mythic magic system, along with other tweaks.",
+    "HomepageUrl": "https://github.com/YLMstring/Mythic-Magic-Mayhem",
+    "Tags": [ "Gameplay" ]
+  },
+  
+  {
     "Name": "Mythic Spellbook Tweaks",
     "Author": "Vek17",
     "Id": {
