@@ -824,6 +824,24 @@
   },
 
   {
+    "Name": "Mythic Spell Flexibility",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "MythicSpellFlexibility",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "MythicSpellFlexibility"
+      }
+    },
+    "About": "Allows casting special mythic spells from your normal spellbooks.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/601",
+    "Tags": [ "Content" ]
+  },  
+
+  {
     "Name": "Ninja Class",
     "Author": "Sigurd",
     "About": "Adds the Ninja(Unchained) class to the game.",
