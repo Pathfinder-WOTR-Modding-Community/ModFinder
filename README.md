@@ -37,9 +37,9 @@ Tips:
     * `t:game` to include tags with "game" in their name, or `-n:game` to exclude them
 * Version updates are checked every 30 minutes, but you need to restart the app to get the latest version data
     * If the latest version is for a more recent game version (e.g beta) it will install it even if it doesn't work with your local version
-* When you open it mods missing pre-requisites are shown first, followed by mods with an update available
+* When you open it, mods missing pre-requisites are shown first, followed by mods with an update available
 * The overflow menu has more functionality like viewing the changelog, description, and homepage
-* When you update a mod using ModFinder you can revert to the previous version, open the overflow menu and select "Rollback"
+* When you update a mod using ModFinder, you can revert to the previous version, open the overflow menu and select "Rollback"
     
 ### Missing a mod?
 
