@@ -212,7 +212,25 @@
     "HomepageUrl": "https://github.com/Balkoth-dev/BuffBot-Wrath",
     "Tags": [ "Gameplay", "Miscellaneous" ]
   },
-
+  
+  {
+      "Name": "Corrupting Centipede",
+      "Author": "Sly",
+      "Id": {
+        "Id": "Centipede-Corruptor",
+        "Type": "Owlcat"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "SlyDevil",
+          "RepoName": "Centipede-Corruptor"
+        }
+      },
+      "About": "Owlmod patch to give Centipede animal companions Mythic Corruptor",
+      "HomepageUrl": "https://github.com/SlyDevil/Centipede-Corruptor",
+      "Tags": [ "Gameplay", "Homebrew" ]
+    },
+  
   {
     "Name": "Character Options+",
     "Author": "WittleWolfie",
@@ -264,10 +282,7 @@
     },
     "About": "This Mod adds the function of crafting wonders for Pathfinder: Wrath of the Righteous. The Mod is currently in development and may have frequent bugs. If you encounter any problems, please feel free to submit an Issue to give feedback.",
     "HomepageUrl": "https://github.com/magicskysword/CraftMaster",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
+    "Tags": [ "Content", "Gameplay" ]
   },
 
   {
@@ -1004,6 +1019,25 @@
     "HomepageUrl": "https://github.com/YLMstring/PrestigePlus",
     "Tags": [ "Content", "Gameplay" ]
   },
+    
+  {
+      "Name": "Prophet of Pestilence activation change",
+      "Author": "Sly",
+      "Id": {
+        "Id": "Prophet-of-Pestilence-greater-spirit-change",
+        "Type": "Owlcat"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "SlyDevil",
+          "RepoName": "Prophet-of-Pestilence-greater-spirit-change"
+        }
+      },
+      "About": "Owlmod patch to have the Prophet's greater spirit activate on all incoming attacks",
+      "HomepageUrl": "https://github.com/SlyDevil/Prophet-of-Pestilence-greater-spirit-change",
+      "Tags": [ "Gameplay", "Homebrew", "Bugfix" ]
+    },
+  
   {
     "Name": "Puzzle Skip",
     "Author": "Arkive",
@@ -1310,7 +1344,25 @@
     "HomepageUrl": "https://github.com/Vek17/WrathMods-TurnbasedCombatDelay",
     "Tags": [ "Gameplay", "Miscellaneous" ]
   },
-
+  
+  {
+      "Name": "Vampiric blade without Fx",
+      "Author": "Sly",
+      "Id": {
+        "Id": "VampBlade_noFx",
+        "Type": "Owlcat"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "SlyDevil",
+          "RepoName": "Vampiric-Blade-without-Fx"
+        }
+      },
+      "About": "Owlmod patch to remove vampiric blade Fx",
+      "HomepageUrl": "https://github.com/SlyDevil/Vampiric-Blade-without-Fx",
+      "Tags": [ "Audio", "Visuals" ]
+    },
+  
   {
     "Name": "Visual Adjustments 2",
     "Author": "Barley/Spacehamster",
@@ -1380,24 +1432,6 @@
     "About": "This is the alpha release of Quick Cast (formally Inventory Tweaks). Installing and uninstalling does not break saves. This is an alpha, expect there to be bugs.",
     "HomepageUrl": "https://github.com/thehambeard/WIT",
     "Tags": [ "UserInterface" ]
-  },
-
-  {
-    "Name": "WotR Resource Unification",
-    "Author": "pheonix99",
-    "Id": {
-      "Id": "ResourceUnification",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "pheonix99",
-        "RepoName": "WotRResourceUnification"
-      }
-    },
-    "About": "It's a tool to merge different (game engine) instances of the same (tabletop rules) pool from different classes and make them behave correctly.",
-    "HomepageUrl": "https://github.com/pheonix99/WotRResourceUnification",
-    "Tags": [ "Gameplay" ]
   },
 
   {
