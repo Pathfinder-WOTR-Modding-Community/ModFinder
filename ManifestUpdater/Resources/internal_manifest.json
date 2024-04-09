@@ -214,10 +214,10 @@
   },
   
   {
-      "Name": "Corrupting Centipede",
+      "Name": "Centipede Companions Corrupt",
       "Author": "Sly",
       "Id": {
-        "Id": "Centipede-Corruptor",
+        "Id": "CentipedeCorruptor",
         "Type": "Owlcat"
       },
       "Service": {
@@ -1024,7 +1024,7 @@
       "Name": "Prophet of Pestilence activation change",
       "Author": "Sly",
       "Id": {
-        "Id": "Prophet-of-Pestilence-greater-spirit-change",
+        "Id": "ProphetofPestilence_all melee attacks",
         "Type": "Owlcat"
       },
       "Service": {
@@ -1346,10 +1346,10 @@
   },
   
   {
-      "Name": "Vampiric blade without Fx",
+      "Name": "Vampiric blade without effects",
       "Author": "Sly",
       "Id": {
-        "Id": "VampBlade_noFx",
+        "Id": "VampBladeEnch_noFx",
         "Type": "Owlcat"
       },
       "Service": {
@@ -1358,7 +1358,7 @@
           "RepoName": "Vampiric-Blade-without-Fx"
         }
       },
-      "About": "Owlmod patch to remove vampiric blade Fx",
+      "About": "Owlmod patch to remove some vampiric blade effects",
       "HomepageUrl": "https://github.com/SlyDevil/Vampiric-Blade-without-Fx",
       "Tags": [ "Audio", "Visuals" ]
     },
