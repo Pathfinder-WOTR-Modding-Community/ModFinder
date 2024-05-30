@@ -879,6 +879,24 @@
     "Tags": [ "Visuals" ]
   },
   
+  {
+    "Name": "The One Pearl",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "OnePearl",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "OnePearl"
+      }
+    },
+    "About": "Adds The One Pearl, which combines powers of all pearls of power player currently has in their inventory.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/613",
+    "Tags": [ "Miscellaneous" ]
+  }, 
+  
  {
     "Name": "Onmi's Mod",
     "Author": "Onmi",
@@ -1148,6 +1166,24 @@
     "Tags": [ "Gameplay", "UserInterface" ]
   },
 
+  {
+    "Name": "Spell Slot Freedom",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "SpellSlotFreedom",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "SpellSlotFreedom"
+      }
+    },
+    "About": "Allows casting spells using higher level spell slots without applying metamagic.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/603",
+    "Tags": [ "Gameplay" ]
+  },
+  
   {
     "Name": "Swashbuckler Class",
     "Author": "Zedel",
