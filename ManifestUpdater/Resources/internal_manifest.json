@@ -479,24 +479,6 @@
   },
 
   {
-    "Name": "Kineticist Elements Expanded",
-    "Author": "SpenceZilla",
-    "Id": {
-      "Id": "KineticistElementsExpanded",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SpencerMycek",
-        "RepoName": "KineticistExpandedElements"
-      }
-    },
-    "About": "Adds expanded element choices for the Kineticist class as well as blast types, infusions, wild talents, and more.",
-    "HomepageUrl": "https://github.com/SpencerMycek/KineticistExpandedElements",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
     "Name": "Levelable Aivu",
     "Author": "pheonix99",
     "Id": {
