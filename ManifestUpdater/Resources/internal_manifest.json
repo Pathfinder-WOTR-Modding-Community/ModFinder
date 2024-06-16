@@ -286,6 +286,24 @@
   },
 
   {
+    "Name": "Deceiver Buff",
+    "Author": "CascadingDragon",
+    "Id": {
+      "Id": "deceiverbuff",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "CasDragon",
+        "RepoName": "deceiverbuff"
+      }
+    },
+    "About": "Extends spellbook progression for Deceiver, allows spellbook merging with Deceiver, and adds new spells to Deceiver's spell list",
+    "HomepageUrl": "https://github.com/CasDragon/deceiverbuff",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "Enduring Reworks",
     "Author": "AlterAsc",
     "Id": {
