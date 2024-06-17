@@ -19,7 +19,14 @@ namespace ModFinder.Mod
     public int[] VersionNumbers; // Ordered by importance, i.e. Major first then Minor, Patch, etc.
     public string Suffix;
 
-    public bool Valid => VersionNumbers.Any(i => i != 0);
+    public bool Valid
+    {
+      get
+      {
+        if (VersionNumbers == null) return false; // VersionNumbers can be false, and that causes a NullReferenceException in the manifest updater.
+        return VersionNumbers.Any(i => i != 0);
+      }
+    }
 
     public static bool operator <(ModVersion left, ModVersion right)
     {
