@@ -214,21 +214,21 @@
   },
   
   {
-      "Name": "Centipede Companions Corrupt",
-      "Author": "Sly",
-      "Id": {
-        "Id": "CentipedeCorruptor",
-        "Type": "Owlcat"
-      },
-      "Service": {
-        "GitHub": {
-          "Owner": "SlyDevil",
-          "RepoName": "Centipede-Corruptor"
-        }
-      },
-      "About": "Owlmod patch to give Centipede animal companions Mythic Corruptor",
-      "HomepageUrl": "https://github.com/SlyDevil/Centipede-Corruptor",
-      "Tags": [ "Gameplay", "Homebrew" ]
+    "Name": "Centipede Companions Corrupt",
+    "Author": "Sly",
+    "Id": {
+      "Id": "CentipedeCorruptor",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "SlyDevil",
+        "RepoName": "Centipede-Corruptor"
+      }
+    },
+    "About": "Owlmod patch to give Centipede animal companions Mythic Corruptor",
+    "HomepageUrl": "https://github.com/SlyDevil/Centipede-Corruptor",
+    "Tags": [ "Gameplay", "Homebrew" ]
     },
   
   {
@@ -268,24 +268,6 @@
   },
 
   {
-    "Name": "CraftMaster (Test Version)",
-    "Author": "skyswordkill",
-    "Id": {
-      "Id": "CraftMaster",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "magicskysword",
-        "RepoName": "CraftMaster"
-      }
-    },
-    "About": "This Mod adds the function of crafting wonders for Pathfinder: Wrath of the Righteous. The Mod is currently in development and may have frequent bugs. If you encounter any problems, please feel free to submit an Issue to give feedback.",
-    "HomepageUrl": "https://github.com/magicskysword/CraftMaster",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
     "Name": "DarkCodex",
     "Author": "Fumihiko",
     "Id": {
@@ -318,6 +300,23 @@
     },
     "About": "Extends spellbook progression for Deceiver, allows spellbook merging with Deceiver, and adds new spells to Deceiver's spell list",
     "HomepageUrl": "https://github.com/CasDragon/deceiverbuff",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Demonology",
+    "Author": "Big Daddy Shmee",
+    "Id": {
+      "Id": "Demonology",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "637"
+      }
+    },
+    "About": "Allows you to take feats from level 1 that gives you the ability to summon demons, that grows in power as you level, giving you access quickly to very powerful summons for your level.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/637",
     "Tags": [ "Content", "Gameplay" ]
   },
 
@@ -366,15 +365,30 @@
     },
     "Service": {
       "Nexus": {
-        "ModID": 545
+        "ModID": "545"
       }
     },
     "About": "A mod that expands the epilogue to provide endings to new topics and to increase the reactivity to some existing topics.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/545",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
+    "Tags": [ "Content", "Gameplay"]
+  },
+
+  {
+    "Name": "Finessable Sabers",
+    "Author": "Stoyan",
+    "Id": {
+      "Id": "FinessableSabers",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "StoyanKucarov",
+        "RepoName": "FinessableSabers"
+      }
+    },
+    "About": "Sabers are classed as both light and finesse weapons, not strictly tabletop as they should be light only for TWF purposes but eh i choose to consider it an owlcat oversight, adds finesse training for sabers to rogues",
+    "HomepageUrl": "https://github.com/StoyanKucarov/FinessableSabers",
+    "Tags": [ "Gameplay" ]
   },
 
   {
@@ -404,7 +418,7 @@
     },
     "Service": {
       "Nexus": {
-        "ModID": 536
+        "ModID": "536"
       }
     },
     "About": "Makes Bismuth a tad more useful by rearranging what feats he learns and making him not take the -4 level penalty.",
@@ -421,15 +435,12 @@
     },
     "Service": {
       "Nexus": {
-        "ModID": 430
+        "ModID": "430"
       }
     },
     "About": "'Gracious Friendships' is a lore-friendly narrative mod that adds new dialogue options for companions and NPCs. It expands character interactions throughout the game and fixes some issues with romance flags.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/430",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
+    "Tags": [ "Content", "Gameplay"]
   },
 
   {
@@ -441,18 +452,12 @@
       "Type": "Owlcat"
     },
     "Service": {
-      "GitHub": null,
       "Nexus": {
-        "ModID": 143,
-        "DownloadMirror": null
-      },
-      "Name": "Nexus"
+        "ModID": "143"
+      }
     },
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/143",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
+    "Tags": [ "Content", "Gameplay"]
   },
 
   {
@@ -464,18 +469,12 @@
       "Type": "Owlcat"
     },
     "Service": {
-      "GitHub": null,
       "Nexus": {
-        "ModID": 279,
-        "DownloadMirror": null
-      },
-      "Name": "Nexus"
+        "ModID": 279
+      }
     },
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/279",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
+    "Tags": [ "Content", "Gameplay"]
   },
 
   {
@@ -569,22 +568,22 @@
   },
   
   {
-      "Name": "Lich Decree Reductions",
-      "Author": "Sly",
-      "Id": {
-        "Id": "LichDecreeReductions",
-        "Type": "Owlcat"
-      },
-      "Service": {
-        "GitHub": {
-          "Owner": "SlyDevil",
-          "RepoName": "LichDecreeReductions"
-        }
-      },
-      "About": "Owlmod patches to reduce Act 3 Lich decree times.",
-      "HomepageUrl": "https://github.com/SlyDevil/LichDecreeReductions",
-      "Tags": [ "Gameplay" ]
+    "Name": "Lich Decree Reductions",
+    "Author": "Sly",
+    "Id": {
+      "Id": "LichDecreeReductions",
+      "Type": "Owlcat"
     },
+    "Service": {
+      "GitHub": {
+        "Owner": "SlyDevil",
+        "RepoName": "LichDecreeReductions"
+      }
+    },
+    "About": "Owlmod patches to reduce Act 3 Lich decree times.",
+    "HomepageUrl": "https://github.com/SlyDevil/LichDecreeReductions",
+    "Tags": [ "Gameplay" ]
+  },
   
   {
     "Name": "Madison's Metagaming",
@@ -619,24 +618,6 @@
     },
     "About": "Adds the Summoner class from Pathfinder to the game",
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_MAKING_FRIENDS",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Martial Excellence",
-    "Author": "Envibel",
-    "Id": {
-      "Id": "MartialExcellence",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Envibel",
-        "RepoName": "MartialExcellence"
-      }
-    },
-    "About": "New feats and abilities with a focus on martial characters.",
-    "HomepageUrl": "https://github.com/Envibel/MartialExcellence",
     "Tags": [ "Content", "Gameplay" ]
   },
 
@@ -695,6 +676,7 @@
     "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
     "Tags": [ "Content", "Gameplay" ]
   },
+  
   {
     "Name": "Misc Tweaks and Fixes",
     "Author": "Microsoftenator",
@@ -712,6 +694,7 @@
     "HomepageUrl": "https://github.com/microsoftenator2022/MiscTweaksAndFixes2",
     "Tags": [ "Miscellaneous", "Gameplay" ]
   },
+  
   {
     "Name": "Mod Menu",
     "Author": "WittleWolfie",
@@ -883,18 +866,12 @@
       "Type": "Owlcat"
     },
     "Service": {
-      "GitHub": null,
       "Nexus": {
-        "ModID": 233,
-        "DownloadMirror": null
-      },
-      "Name": "Nexus"
+        "ModID": "233"
+      }
     },
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/233",
-    "Tags": [
-      "Content",
-      "Gameplay"
-    ]
+    "Tags": [ "Content", "Gameplay"]
   },
 
   {
@@ -933,7 +910,7 @@
     "Tags": [ "Miscellaneous" ]
   }, 
   
- {
+  {
     "Name": "Onmi's Mod",
     "Author": "Onmi",
     "Id": {
@@ -1057,22 +1034,22 @@
   },
     
   {
-      "Name": "Prophet of Pestilence activation change",
-      "Author": "Sly",
-      "Id": {
-        "Id": "ProphetofPestilence_all melee attacks",
-        "Type": "Owlcat"
-      },
-      "Service": {
-        "GitHub": {
-          "Owner": "SlyDevil",
-          "RepoName": "Prophet-of-Pestilence-greater-spirit-change"
-        }
-      },
-      "About": "Owlmod patch to have the Prophet's greater spirit activate on all incoming attacks",
-      "HomepageUrl": "https://github.com/SlyDevil/Prophet-of-Pestilence-greater-spirit-change",
-      "Tags": [ "Gameplay", "Homebrew", "Bugfix" ]
+    "Name": "Prophet of Pestilence activation change",
+    "Author": "Sly",
+    "Id": {
+      "Id": "ProphetofPestilence_all melee attacks",
+      "Type": "Owlcat"
     },
+    "Service": {
+      "GitHub": {
+        "Owner": "SlyDevil",
+        "RepoName": "Prophet-of-Pestilence-greater-spirit-change"
+      }
+    },
+    "About": "Owlmod patch to have the Prophet's greater spirit activate on all incoming attacks",
+    "HomepageUrl": "https://github.com/SlyDevil/Prophet-of-Pestilence-greater-spirit-change",
+    "Tags": [ "Gameplay", "Homebrew", "Bugfix" ]
+  },
   
   {
     "Name": "Puzzle Skip",
@@ -1154,12 +1131,9 @@
       "Type": "UMM"
     },
     "Service": {
-      "GitHub": null,
       "Nexus": {
-        "ModID": 513,
-        "DownloadMirror": null
-      },
-      "Name": "Nexus"
+        "ModID": "513"
+      }
     },
     "About": "An Implementation of Dreamscarred Press's Psionics. Currently, provides the Soulknife Class.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/513",
@@ -1401,22 +1375,22 @@
   },
   
   {
-      "Name": "Vampiric blade without effects",
-      "Author": "Sly",
-      "Id": {
-        "Id": "VampBladeEnch_noFx",
-        "Type": "Owlcat"
-      },
-      "Service": {
-        "GitHub": {
-          "Owner": "SlyDevil",
-          "RepoName": "Vampiric-Blade-without-Fx"
-        }
-      },
-      "About": "Owlmod patch to remove some vampiric blade effects",
-      "HomepageUrl": "https://github.com/SlyDevil/Vampiric-Blade-without-Fx",
-      "Tags": [ "Audio", "Visuals" ]
+    "Name": "Vampiric blade without effects",
+    "Author": "Sly",
+    "Id": {
+      "Id": "VampBladeEnch_noFx",
+      "Type": "Owlcat"
     },
+    "Service": {
+      "GitHub": {
+        "Owner": "SlyDevil",
+        "RepoName": "Vampiric-Blade-without-Fx"
+      }
+    },
+    "About": "Owlmod patch to remove some vampiric blade effects",
+    "HomepageUrl": "https://github.com/SlyDevil/Vampiric-Blade-without-Fx",
+    "Tags": [ "Audio", "Visuals" ]
+  },
   
   {
     "Name": "Visual Adjustments 2",
