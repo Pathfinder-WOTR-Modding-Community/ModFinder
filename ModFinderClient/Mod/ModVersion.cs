@@ -101,6 +101,14 @@ namespace ModFinder.Mod
 
     public int CompareTo(ModVersion other)
     {
+      if (this.VersionNumbers is null && other.VersionNumbers is null)
+        return 0;
+      
+      if (this.VersionNumbers is not null && other.VersionNumbers is null)
+        return 1;
+      if (this.VersionNumbers is null && other.VersionNumbers is not null)
+        return -1;
+
       var longestLength = this.VersionNumbers.Length > other.VersionNumbers.Length
         ? this.VersionNumbers.Length
         : other.VersionNumbers.Length;
@@ -154,7 +162,11 @@ namespace ModFinder.Mod
 
     public bool Equals(ModVersion other)
     {
-      return (other.VersionNumbers.SequenceEqual(other.VersionNumbers) && other.Suffix == this.Suffix);
+      if (this.VersionNumbers == null && other.VersionNumbers == null)
+        return false;
+      if (this.VersionNumbers == null || other.VersionNumbers == null)
+        return false;
+      return this.VersionNumbers.SequenceEqual(other.VersionNumbers) && this.Suffix == other.Suffix;
     }
 
     public override int GetHashCode()
