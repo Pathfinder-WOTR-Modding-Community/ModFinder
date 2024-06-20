@@ -23,6 +23,7 @@ using System.Xml.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Data;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace ModFinder
 {
@@ -128,7 +129,7 @@ namespace ModFinder
                 long latest = ParseVersion(tag.GetString()[1..]);
                 var fileVersion = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location);
                 var productVersion = fileVersion.ProductVersion;
-                if (productVersion.EndsWith("-dev"))
+                if (productVersion.Contains("-dev"))
                 {
                   return;
                 }
@@ -158,7 +159,7 @@ namespace ModFinder
 
     private static long ParseVersion(string v)
     {
-      v = v.Replace("-rel", "");
+      v = Regex.Replace(v, "-rel.*","");
       var c = v.Split('.');
       return int.Parse(c[0]) * 65536 + int.Parse(c[1]) * 256 + int.Parse(c[2]);
     }

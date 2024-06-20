@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks.Dataflow;
 
@@ -10,15 +11,22 @@ namespace ModFinder.Mod
   /// </summary>
   /// 
   /// <remarks>
-  /// Format is <c>A.B.Cd</c> where <c>A, B, and C</c> are integers representing the Major, Minor, and Patch versions.
+  /// Format is any amount of integers separated by dots '.' with an optional char suffix e.x. X.Y.Zd Where <c>X, Y, Z</c> are integers.
   /// <c>d</c> is a single character used to further indicate a patch version.
   /// </remarks>
   public struct ModVersion : IComparable<ModVersion>, IEquatable<ModVersion>
   {
-    public int Major, Minor, Patch;
+    public int[] VersionNumbers; // Ordered by importance, i.e. Major first then Minor, Patch, etc.
     public string Suffix;
 
-    public bool Valid => !(Major == 0 && Minor == 0 && Patch == 0);
+    public bool Valid
+    {
+      get
+      {
+        if (VersionNumbers == null) return false; // VersionNumbers can be false, and that causes a NullReferenceException in the manifest updater.
+        return VersionNumbers.Any(i => i != 0);
+      }
+    }
 
     public static bool operator <(ModVersion left, ModVersion right)
     {
@@ -42,61 +50,37 @@ namespace ModFinder.Mod
 
     public static ModVersion Parse(string raw)
     {
-      if (raw == null) return new();
-      if (raw.StartsWith("v")) raw = raw[1..];
-
-      Regex extractVersion0 = new(@"[^\d]*(\d*)(.*)");
-      Regex extractVersion1 = new(@"[^\d]*(\d+)[^\d]*(\d*)(.*)");
-      Regex extractVersion2 = new(@"[^\d]*(\d+)[^\d]*(\d+)[^\d]*(\d*)(.*)");
-
-      int dots = raw.Count(ch => ch == '.');
-
-      ModVersion version = new();
-
-      switch (dots)
+      if (raw == null)
       {
-        case 0:
-          {
-            var match = extractVersion0.Match(raw);
-            if (!match.Success) return new();
-
-            if (!int.TryParse(match.Groups[1].Value, out version.Major))
-              return version;
-
-            SetSuffix(match.Groups[2], out version.Suffix);
-            break;
-          }
-        case 1:
-          {
-            var match = extractVersion1.Match(raw);
-            if (!int.TryParse(match.Groups[1].Value, out version.Major))
-              return version;
-            if (!int.TryParse(match.Groups[2].Value, out version.Minor))
-              return version;
-
-            SetSuffix(match.Groups[3], out version.Suffix);
-
-            break;
-          }
-        case 2:
-          {
-            var match = extractVersion2.Match(raw);
-            if (!int.TryParse(match.Groups[1].Value, out version.Major))
-              return version;
-            if (!int.TryParse(match.Groups[2].Value, out version.Minor))
-              return version;
-            if (!int.TryParse(match.Groups[3].Value, out version.Patch))
-              return version;
-
-            SetSuffix(match.Groups[4], out version.Suffix);
-
-            break;
-          }
-        default:
-          return new();
+        var emptyVersion = new ModVersion();
+        emptyVersion.VersionNumbers = new int[] { };
+        return emptyVersion;
       }
 
+      if (raw.StartsWith("v")) raw = raw[1..];
 
+      Regex suffixRegex = new(@"(\d+)*(\D+)");
+
+      ModVersion version = new();
+      var rawStrings = raw.Split('.');
+      version.VersionNumbers = new int[rawStrings.Length];
+
+      for (int i = 0; i < rawStrings.Length; i++)
+      {
+        if (int.TryParse(rawStrings[i], out int versionNum))
+          version.VersionNumbers[i] = versionNum;
+
+        else if (i == rawStrings.Length - 1)
+        {
+          var
+            match = suffixRegex.Match(
+              rawStrings[i]); // we have 3 groups, first is full string, second is digits, third is letters. (i'm not very good at regex)
+          if (int.TryParse(match.Groups[1].Value, out int versionNum2))
+            version.VersionNumbers[i] = versionNum2;
+          SetSuffix(match.Groups[2], out version.Suffix);
+        }
+      }
+      
       return version;
     }
 
@@ -117,16 +101,27 @@ namespace ModFinder.Mod
 
     public int CompareTo(ModVersion other)
     {
+      if (this.VersionNumbers is null && other.VersionNumbers is null)
+        return 0;
+      
+      if (this.VersionNumbers is not null && other.VersionNumbers is null)
+        return 1;
+      if (this.VersionNumbers is null && other.VersionNumbers is not null)
+        return -1;
+
+      var longestLength = this.VersionNumbers.Length > other.VersionNumbers.Length
+        ? this.VersionNumbers.Length
+        : other.VersionNumbers.Length;
+
       int c;
 
-      c = Major.CompareTo(other.Major);
-      if (c != 0) return c;
-
-      c = Minor.CompareTo(other.Minor);
-      if (c != 0) return c;
-
-      c = Patch.CompareTo(other.Patch);
-      if (c != 0) return c;
+      for (int i = 0; i < longestLength; i++)
+      {
+        var thisVersion = this.VersionNumbers.Length < i + 1 ? 0 : this.VersionNumbers[i];
+        var otherVersion = other.VersionNumbers.Length < i + 1 ? 0 : other.VersionNumbers[i];
+        c = thisVersion.CompareTo(otherVersion);
+        if (c != 0) return c;
+      }
 
       if (Suffix is null && other.Suffix is null)
         return 0;
@@ -144,10 +139,18 @@ namespace ModFinder.Mod
     {
       if (!Valid)
         return "-";
-      var normal = $"{Major}.{Minor}.{Patch}";
+      var stringBuilder = new StringBuilder(VersionNumbers.Length + (Suffix == "" ? 0 : 1));
+      int noDotNumber = VersionNumbers.Length - 1; // so we dont do the same computation each iteration.
+      for (int i = 0; i < VersionNumbers.Length; i++)
+      {
+        stringBuilder.Append(VersionNumbers[i]);
+        if (i != noDotNumber)
+          stringBuilder.Append('.');
+      }
+
       if (Suffix != default)
-        normal += Suffix;
-      return normal;
+        stringBuilder.Append(Suffix);
+      return stringBuilder.ToString();
     }
 
     public override bool Equals(object obj)
@@ -159,15 +162,22 @@ namespace ModFinder.Mod
 
     public bool Equals(ModVersion other)
     {
-      return Major == other.Major &&
-             Minor == other.Minor &&
-             Patch == other.Patch &&
-             Suffix == other.Suffix;
+      if (this.VersionNumbers == null && other.VersionNumbers == null)
+        return false;
+      if (this.VersionNumbers == null || other.VersionNumbers == null)
+        return false;
+      return this.VersionNumbers.SequenceEqual(other.VersionNumbers) && this.Suffix == other.Suffix;
     }
 
     public override int GetHashCode()
     {
-      return HashCode.Combine(Major, Minor, Patch, Suffix);
+      var stringBuilder = new StringBuilder(capacity: VersionNumbers.Length);
+      foreach (int i in VersionNumbers)
+      {
+        stringBuilder.Append(i);
+      }
+
+      return HashCode.Combine(stringBuilder.ToString(), Suffix); // Would just using VersionNumbers here be sufficient?
     }
 
     public static bool operator ==(ModVersion left, ModVersion right)
@@ -181,4 +191,3 @@ namespace ModFinder.Mod
     }
   }
 }
-
