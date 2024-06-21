@@ -175,15 +175,12 @@ namespace ModFinder.UI
       {
         ModVersion requiredVersion = default;
         var idStr = id;
-        var separatorIndex = id.LastIndexOf('-');
-        if (separatorIndex > 0)
+        var iDVersionpattern = @"(.*)-(\d+.*)";
+        var match = Regex.Match(idStr, iDVersionpattern);
+        if (match.Success)
         {
-          // There's a version requirement
-          requiredVersion = ModVersion.Parse(id[separatorIndex..]);
-
-          // The mod ID might have a '-' :( *cough*TTT*cough*
-          if (requiredVersion != default)
-            idStr = id[..separatorIndex];
+          requiredVersion = ModVersion.Parse(match.Groups[2].Value);
+          idStr = match.Groups[1].Value;
         }
 
         Logger.Log.Info($"{Name} requires {idStr} at version {requiredVersion}");

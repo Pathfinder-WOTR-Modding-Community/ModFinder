@@ -104,10 +104,11 @@ namespace ModFinder.Mod
       if (this.VersionNumbers is null && other.VersionNumbers is null)
         return 0;
       
-      if (this.VersionNumbers is not null && other.VersionNumbers is null)
-        return 1;
       if (this.VersionNumbers is null && other.VersionNumbers is not null)
         return -1;
+      if (this.VersionNumbers is not null && other.VersionNumbers is null)
+        return 1;
+      
 
       var longestLength = this.VersionNumbers.Length > other.VersionNumbers.Length
         ? this.VersionNumbers.Length
@@ -127,9 +128,9 @@ namespace ModFinder.Mod
         return 0;
 
       if (Suffix is null && other.Suffix is not null)
-        return 1;
-      if (Suffix is not null && other.Suffix is null)
         return -1;
+      if (Suffix is not null && other.Suffix is null)
+        return 1;
 
       c = Suffix.CompareTo(other.Suffix);
       return c;
