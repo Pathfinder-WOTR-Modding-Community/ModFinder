@@ -125,6 +125,24 @@
     "Tags": [ "UserInterface" ]
   },
 
+  {
+    "Name": "Baphomet Rides Deskari",
+    "Author": "Nenio",
+    "Id": {
+      "Id": "NenioMod",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "YLMstring",
+        "RepoName": "NenioMod"
+      }
+    },
+    "About": "They take Nenio's advice.",
+    "HomepageUrl": "https://github.com/YLMstring/NenioMod",
+    "Tags": [ "Gameplay" ]
+  },
+  
  {
     "Name": "Battle Scion Extra Rage Powers Fix",
     "Author": "DanScallion",
