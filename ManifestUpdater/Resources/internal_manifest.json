@@ -550,6 +550,25 @@
   },
 
   {
+    "Name": "Level 1 Companions",
+    "Author": "CascadingDragon",
+    "Id": {
+      "Id": "lvl1companions",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "CasDragon",
+        "RepoName": "lvl1companions"
+      }
+    },
+    "About": "Sets all companions recruit levels to 1 (if they weren't already). This should allow for better compatibility with Barley's Respec mod, and also Toybox gestalt.",
+    "HomepageUrl": "https://github.com/CasDragon/lvl1companions",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+
+  {
     "Name": "Levelable Aivu",
     "Author": "pheonix99",
     "Id": {
