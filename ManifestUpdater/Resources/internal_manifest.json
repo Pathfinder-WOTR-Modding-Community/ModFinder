@@ -1052,6 +1052,25 @@
     "HomepageUrl": "https://github.com/pheonix99/MoreCantrips",
     "Tags": [ "Content", "Gameplay" ]
   },
+
+  {
+    "Name": "Prestige Minus",
+    "Author": "string",
+    "Id": {
+      "Id": "PrestigeMinus",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "YLMstring",
+        "RepoName": "Prestige-Minus"
+      }
+    },
+    "About": "Play WotR with a smaller party",
+    "HomepageUrl": "https://github.com/YLMstring/Prestige-Minus",
+    "Tags": [ "Utilities", "Gameplay" ]
+  },
+  
   {
     "Name": "Prestige Plus",
     "Author": "string",
