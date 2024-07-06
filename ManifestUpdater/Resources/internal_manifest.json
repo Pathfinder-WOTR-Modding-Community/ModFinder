@@ -496,24 +496,6 @@
   },
 
   {
-    "Name": "Isekai Mod",
-    "Author": "JohN100x1",
-    "Id": {
-      "Id": "IsekaiMod",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "JohN100x1",
-        "RepoName": "WOTR_IsekaiMod"
-      }
-    },
-    "About": "This mod adds the overpowered Isekai Protagonist class.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/398",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
     "Name": "Kinetic Archetypes",
     "Author": "NosVladimir",
     "Id": {
