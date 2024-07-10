@@ -339,6 +339,24 @@
   },
 
   {
+    "Name": "Dextrous Carnage",
+    "Author": "Madlampy",
+    "Id": {
+      "Id": "DexCarn",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Evilvonbek",
+        "RepoName": "DexCarn"
+      }
+    },
+    "About": "Simple Rework of Deadly Carnage to allow Dex based Characters to have access to the mechanic, with altered name and description for Flavour.",
+    "HomepageUrl": "https://github.com/Evilvonbek/DexCarn",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "Enduring Reworks",
     "Author": "AlterAsc",
     "Id": {
