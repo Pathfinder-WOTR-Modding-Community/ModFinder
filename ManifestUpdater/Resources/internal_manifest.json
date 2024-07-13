@@ -749,6 +749,24 @@
     "HomepageUrl": "https://github.com/cookEsandcream/MoreFontSizes/",
     "Tags": [ "UserInterface", "Utilities" ]
   },
+
+  {
+    "Name": "MorePartyViewSlots",
+    "Author": "Bubbles and ADDB",
+    "Id": {
+      "Id": "MorePartyViewSlots",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "xADDBx",
+        "RepoName": "MorePartyViewSlots"
+      }
+    },
+    "About": "Increases the number of Party View Slots from 6 to 8.",
+    "HomepageUrl": "https://github.com/xADDBx/MorePartyViewSlots/",
+    "Tags": [ "UserInterface", "Utilities" ]
+  },
   
   {
     "Name": "Morvarch's Playstyle Expansions",
