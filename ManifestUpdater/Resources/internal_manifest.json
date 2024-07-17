@@ -250,6 +250,24 @@
     },
   
   {
+    "Name": "Champion Feats Anew",
+    "Author": "lynnpye",
+    "Id": {
+      "Id": "ChampionFeatsAnew",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "384",
+        "DownloadMirror": "https://github.com/lynnpye/Champion-Feats"
+      }
+    },
+    "About": "Adds a number of configurable, scaling powerful feats to build your perfect commander.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/384",
+    "Tags": [ "Gameplay" ]
+  },
+  
+  {
     "Name": "Character Options+",
     "Author": "WittleWolfie",
     "Id": {
