@@ -257,9 +257,9 @@
       "Type": "UMM"
     },
     "Service": {
-      "Nexus": {
-        "ModID": "384",
-        "DownloadMirror": "https://github.com/lynnpye/Champion-Feats"
+      "GitHub": {
+        "Owner": "lynnpye",
+        "RepoName": "Champion-Feats"
       }
     },
     "About": "Adds a number of configurable, scaling powerful feats to build your perfect commander.",
@@ -765,6 +765,24 @@
     },
     "About": "Adjusts the font size slider to allow a much wider range of values for fun or accessibility.",
     "HomepageUrl": "https://github.com/cookEsandcream/MoreFontSizes/",
+    "Tags": [ "UserInterface", "Utilities" ]
+  },
+
+  {
+    "Name": "More Party Slots",
+    "Author": "ADDB",
+    "Id": {
+      "Id": "MorePartySlots",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "xADDBx",
+        "RepoName": "MorePartySlots"
+      }
+    },
+    "About": "Increase the amount of party slots (this does not affect visual slots; it will only allow adding more members to the party).",
+    "HomepageUrl": "https://github.com/xADDBx/MorePartySlots/",
     "Tags": [ "UserInterface", "Utilities" ]
   },
 
