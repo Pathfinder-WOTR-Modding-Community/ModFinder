@@ -286,7 +286,7 @@
   },
 
   {
-    "Name": "Combat Relief (Updated)",
+    "Name": "Combat Relief 2024",
     "Author": "AlterAsc",
     "Id": {
       "Id": "AlterAsc.CombatRelief",
@@ -619,6 +619,24 @@
     },
     "About": "Owlmod patches to reduce Act 3 Lich decree times.",
     "HomepageUrl": "https://github.com/SlyDevil/LichDecreeReductions",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
+    "Name": "Literate Companions",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "LiterateCompanions",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "LiterateCompanions"
+      }
+    },
+    "About": "Converts books that grant permanent bonuses to main character into single use usable items that can be used by any member of the party.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/699",
     "Tags": [ "Gameplay" ]
   },
   
