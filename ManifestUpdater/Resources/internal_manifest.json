@@ -126,24 +126,6 @@
   },
 
   {
-    "Name": "AutoMount (DarthParametric's Version)",
-    "Author": "DarthParametric",
-    "Id": {
-      "Id": "AutoMount",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "DarthParametric",
-        "RepoName": "AutoMount_for_TabletopTweaks"
-      }
-    },
-    "About": "Mount all your animal companions automatically with a customizable keybind. Adapted for compatibility with TabletopTweaks and its Undersized Mount feat, which allows a rider to mount a pet of the same size class.",
-    "HomepageUrl": "https://github.com/DarthParametric/AutoMount_for_TabletopTweaks",
-    "Tags": [ "UserInterface" ]
-  },
-
-  {
     "Name": "Baphomet Rides Deskari",
     "Author": "Nenio",
     "Id": {
