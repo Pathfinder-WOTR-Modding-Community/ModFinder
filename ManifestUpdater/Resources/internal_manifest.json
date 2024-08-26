@@ -517,7 +517,7 @@
   {
     "Name": "Homebrew Archetypes",
     "Author": "Sigurd",
-    "About": "Adds archetypes/classes/feats from the Table Top. If an archetype doesn't align with it's TT version some homebrew modifications are made to help it fit in the game.",
+    "About": "Adds archetypes/classes/feats from the Table Top. If an archetype doesn't align with it's TT version some homebrew modifications are made to help it fit in the game. Now includes the Ninja mod",
     "Id": {
       "Id": "HomebrewArchetypes",
       "Type": "Owlcat"
@@ -947,23 +947,6 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/601",
     "Tags": [ "Content" ]
   },  
-
-  {
-    "Name": "Ninja Class",
-    "Author": "Sigurd",
-    "About": "Adds the Ninja(Unchained) class to the game.",
-    "Id": {
-      "Id": "The Swarm Files",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "233"
-      }
-    },
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/233",
-    "Tags": [ "Content", "Gameplay"]
-  },
 
   {
     "Name": "No Film Grain",
