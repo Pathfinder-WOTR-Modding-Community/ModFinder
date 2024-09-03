@@ -72,24 +72,6 @@
   },
 
   {
-    "Name": "Arcane Additions",
-    "Author": "Nykal145",
-    "Id": {
-      "Id": "ArcaneAdditions",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Nykal145",
-        "RepoName": "ArcaneAdditions"
-      }
-    },
-    "About": "Adds school savant arcanist archetype, optional mythic ASI, optional level based spell ranges and optional tabletop based spell ranges ",
-    "HomepageUrl": "https://github.com/Nykal145/ArcaneAdditions",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
     "Name": "Automatic Bonus Progression",
     "Author": "WittleWolfie",
     "Id": {
