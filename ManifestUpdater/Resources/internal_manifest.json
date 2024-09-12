@@ -1037,40 +1037,6 @@
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE",
     "Tags": [ "Content", "Gameplay" ]
   },
-  {
-    "Name": "Phoenix's Cantrips",
-    "Author": "phoenix99",
-    "Id": {
-      "Id": "PhoenixsCantrips",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "pheonix99",
-        "RepoName": "PhoenixsCantrips"
-      }
-    },
-    "About": "Adds scaling cantrips.",
-    "HomepageUrl": "https://github.com/pheonix99/PhoenixsCantrips",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-  {
-    "Name": "Phoenix's Cantrips - More Cantrips",
-    "Author": "phoenix99",
-    "Id": {
-      "Id": "MoreCantrips",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "pheonix99",
-        "RepoName": "MoreCantrips"
-      }
-    },
-    "About": "Adds additional cantrips.",
-    "HomepageUrl": "https://github.com/pheonix99/MoreCantrips",
-    "Tags": [ "Content", "Gameplay" ]
-  },
 
   {
     "Name": "Prestige Minus",
