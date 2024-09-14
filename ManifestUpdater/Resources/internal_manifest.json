@@ -931,6 +931,24 @@
   },  
 
   {
+    "Name": "Nine Swords",
+    "Author": "V0idhead",
+    "Id": {
+      "Id": "VoidHeadWOTRNineSwords",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "V0idhead",
+        "RepoName": "WOTRNineSwords"
+      }
+    },
+    "About": "An implementation of the classes found in Tome of Battle: The Book of Nine Swords.",
+    "HomepageUrl": "https://github.com/V0idhead/WOTRNineSwords",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
     "Name": "No Film Grain",
     "Author": "Hambeard",
     "Id": {
