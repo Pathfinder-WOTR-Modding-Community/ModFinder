@@ -641,24 +641,6 @@
   },
   
   {
-    "Name": "Magic Armory",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "MagicArmory",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "MagicArmory"
-      }
-    },
-    "About": "Adds some wondrous items from tabletop",
-    "HomepageUrl": "https://github.com/alterasc/MagicArmory",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-  
-  {
     "Name": "Making Friends (Summoner Mod)",
     "Author": "Balkoth",
     "Id": {
