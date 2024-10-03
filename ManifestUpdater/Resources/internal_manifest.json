@@ -1182,6 +1182,24 @@
   },
 
   {
+    "Name": "Spars Sorcerous Sundries",
+    "Author": "Sparhawk87",
+    "Id": {
+      "Id": "SparsSorcerousSundries",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "TheSparhawk",
+        "RepoName": "SparsSorcerousSundries"
+      }
+    },
+    "About": "Adds new items to vendors",
+    "HomepageUrl": "https://github.com/TheSparhawk/SparsSorcerousSundries",
+    "Tags": [ "Gameplay" ]
+  },
+
+  {
     "Name": "Spellbook Merge",
     "Author": "vikigenius",
     "Id": {
