@@ -734,19 +734,19 @@
   
   {
     "Name": "Mod Menu",
-    "Author": "WittleWolfie",
+    "Author": "WittleWolfie/Kurufire",
     "Id": {
       "Id": "ModMenu",
       "Type": "UMM"
     },
     "Service": {
       "GitHub": {
-        "Owner": "WittleWolfie",
+        "Owner": "CasDragon",
         "RepoName": "ModMenu"
       }
     },
     "About": "Adds a new page to the game options for mods. This allows mods to easily use the native settings UI, no more UMM window!",
-    "HomepageUrl": "https://github.com/WittleWolfie/ModMenu",
+    "HomepageUrl": "https://github.com/CasDragon/ModMenu",
     "Tags": [ "UserInterface", "Utilities" ]
   },
 
