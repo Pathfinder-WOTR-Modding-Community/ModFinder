@@ -1,13 +1,17 @@
 ﻿using ModFinder.UI;
 using ModFinder.Util;
 using System;
+using System.Formats.Tar;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Documents;
+using SharpCompress;
+using SharpCompress.Archives;
+using SharpCompress.Common;
 
 namespace ModFinder.Mod
 {
@@ -16,6 +20,7 @@ namespace ModFinder.Mod
   /// </summary>
   public static class ModInstaller
   {
+    private static MainWindow Window;
     public static async Task<InstallResult> Install(ModViewModel viewModel, bool isUpdate)
     {
       switch (viewModel.ModId.Type)
@@ -130,8 +135,16 @@ namespace ModFinder.Mod
     public static async Task<InstallResult> InstallFromZip(
       string path, ModViewModel viewModel = null, bool isUpdate = false)
     {
-      using var zip = ZipFile.OpenRead(path);
+      /*
+      var c = Path.GetExtension(path);
+      if (c != ".zip")
+      {
+        MessageBox.Show(Window, "Provided file is not a file format we currently support (" + c + ")", "Unsupported File", MessageBoxButton.OK);
+        return new(InstallState.None);
+      }*/
+
       InstallModManifest info;
+      using var zip = ZipFile.OpenRead(path);
       ModType modType = viewModel == null ? GetModTypeFromZIP(zip) : viewModel.ModId.Type;
 
       // If the mod is not in the first level folder in the zip we need to reach in and grab it
@@ -230,43 +243,117 @@ namespace ModFinder.Mod
         Logger.Log.Verbose($"Creating mod directory. \"{destination}\"");
         // Handle mods without a folder in the zip
         destination = modType == ModType.Portrait ? destination : Path.Combine(destination, info.ModId);
+        Logger.Log.Verbose($"Finished creating mod directory. \"{destination}\"");
       }
 
-      static void WriteToDirectory(ZipArchiveEntry entry, string destDirectory, int stripLeading)
+      static void ExtractInParts(string path, string destination)
       {
-        string destFileName = Path.GetFullPath(Path.Combine(destDirectory, entry.FullName[stripLeading..]));
-        string fullDestDirPath = Path.GetFullPath(destDirectory + Path.DirectorySeparatorChar);
-        if (!destFileName.StartsWith(fullDestDirPath))
+        Logger.Log.Verbose("Starting to extract in parts");
+        using (var archive = SharpCompress.Archives.Zip.ZipArchive.Open(path))
         {
-          throw new System.InvalidOperationException("Entry is outside the target dir: " + destFileName);
+          foreach (var part in archive.Entries)
+          {
+            if (part.ToString() != "")
+            {
+              var extPath = Path.Combine(destination, part.ToString());
+              try
+              {
+                part.WriteToFile(extPath, new ExtractionOptions()
+                {
+                  ExtractFullPath = true,
+                  Overwrite = true
+                });
+              }
+              catch (DirectoryNotFoundException ex)
+              {
+                var tempPath = extPath.Replace(part.ToString(), "");
+                Directory.CreateDirectory(tempPath);
+              }
+              catch (Exception ex)
+              {
+                Logger.Log.Verbose("[Line 275] Destination is - " + destination.ToString());
+                Logger.Log.Verbose("[Line 276] File is - " + part.ToString());
+                Logger.Log.Verbose("[Line 277] Full path is - " + extPath.ToString());
+                Logger.Log.Verbose(ex.ToString());
+              }
+            }
+          }
+          return;
         }
-
-        Directory.CreateDirectory(Path.GetDirectoryName(destFileName));
-        entry.ExtractToFile(destFileName, true);
       }
 
       //Non-portrait mods just extract to the destination directory
       if (modType != ModType.Portrait)
       {
-        await Task.Run(() =>
+        try
         {
-          if (rootInZip != null)
+          await Task.Run(() =>
           {
-            Directory.CreateDirectory(destination);
-            foreach (var entry in zip.Entries.Where(e => e.FullName.Length > rootInZip.Length && e.FullName.StartsWith(rootInZip)))
+            using (var archive = SharpCompress.Archives.Zip.ZipArchive.Open(path))
             {
-              string entryDest = destination + "\\" + entry.FullName[rootInZip.Length..];
-              if (entry.FullName.EndsWith("/"))
-                Directory.CreateDirectory(entryDest);
+              if (rootInZip != null)
+              {
+                Logger.Log.Verbose("Extracting the archive with root folder in pieces");
+                Directory.CreateDirectory(destination);
+                foreach (var entry in archive.Entries)
+                {
+                  string relativepath = Path.GetRelativePath(rootInZip, entry.ToString());
+                  if (relativepath.Contains(".."))
+                    continue;
+                  string entryDest = Path.Combine(destination, relativepath);
+                  if (entry.IsDirectory)
+                  {
+                    Directory.CreateDirectory(entryDest);
+                  }
+                  else
+                  {
+                    try
+                    {
+                      entry.WriteToFile(entryDest, new ExtractionOptions()
+                      {
+                        ExtractFullPath = true,
+                        Overwrite = true
+                      });
+                    }
+                    catch (DirectoryNotFoundException)
+                    {
+                      Directory.CreateDirectory(Path.GetDirectoryName(entryDest));
+                      entry.WriteToFile(entryDest, new ExtractionOptions()
+                      {
+                        ExtractFullPath = true,
+                        Overwrite = true
+                      });
+                    }
+                    catch (Exception ex)
+                    {
+                      Logger.Log.Verbose(ex.ToString());
+                    }
+                  }
+                }
+              }
               else
-                WriteToDirectory(entry, destination, rootInZip.Length);
+              {
+                Logger.Log.Verbose(destination);
+                Directory.CreateDirectory(destination);
+                archive.WriteToDirectory(destination, new ExtractionOptions()
+                {
+                  ExtractFullPath = true,
+                  Overwrite = true
+                });
+              }
             }
-          }
-          else
-          {
-            zip.ExtractToDirectory(destination, true);
-          }
-        });
+          });
+        }
+        catch (IOException ex)
+        {
+          Logger.Log.Verbose("[Line 311] Destination is - " + destination.ToString());
+          Logger.Log.Verbose(ex.ToString());
+          ExtractInParts(path, destination);
+        }
+        catch (Exception ex)
+        {
+          Logger.Log.Error(ex.ToString());
+        }
       }
       else
       {
