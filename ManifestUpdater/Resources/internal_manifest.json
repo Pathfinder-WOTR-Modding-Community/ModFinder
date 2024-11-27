@@ -659,6 +659,24 @@
   },
 
   {
+    "Name": "Max Squads and Master of Maneuver Adjustments",
+    "Author": "Sly",
+    "Id": {
+      "Id": "MaxSquadsAdjustment",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "SlyDevil",
+        "RepoName": "MaxSquadsAdjustment"
+      }
+    },
+    "About": "Owlmod patch to allow the player to reach army sizes of 14 squads and field all of them",
+    "HomepageUrl": "https://github.com/SlyDevil/MaxSquadsAdjustment",
+    "Tags": [ "Gameplay", "Homebrew" ]
+    },
+  
+  {
     "Name": "Mewsifer Console",
     "Author": "WittleWolfie & Bubbles",
     "Id": {
@@ -965,6 +983,24 @@
     "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
     "Tags": [ "Visuals" ]
   },
+
+  {
+    "Name": "Non-Stop Crusade Events",
+    "Author": "Sly",
+    "Id": {
+      "Id": "NonStopEvents",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "SlyDevil",
+        "RepoName": "NonStopEvents"
+      }
+    },
+    "About": "Owlmod patch to give the player a crusade event every day",
+    "HomepageUrl": "https://github.com/SlyDevil/NonStopEvents",
+    "Tags": [ "Gameplay", "Homebrew" ]
+  },
   
   {
     "Name": "The One Pearl",
@@ -1000,6 +1036,42 @@
     "About": "Adds the Boon of Iomedae for Rejecting Nocticula's Profane Ascension",
     "HomepageUrl": "https://github.com/OnmiKhaos/OnmiMod",
     "Tags": [ "Gameplay" ]
+  },
+
+  {
+    "Name": "Oopsie your horse died and I brought it back. Hope that's fine :)",
+    "Author": "Sly",
+    "Id": {
+      "Id": "UndeadHorseBodytest",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "SlyDevil",
+        "RepoName": "UndeadHorseBodytest"
+      }
+    },
+    "About": "Owlmod patch to change the horse animal companion body to that of the plague horse used by Grave Knights",
+    "HomepageUrl": "https://github.com/SlyDevil/UndeadHorseBodytest",
+    "Tags": [ "Visuals" ]
+  },  
+
+  {
+    "Name": "Paladin Weapon Bond lasts for hours unlike...",
+    "Author": "Sly",
+    "Id": {
+      "Id": "PaladinWeaponBond_lastshours",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "SlyDevil",
+        "RepoName": "PaladinWeaponBond_lastshours"
+      }
+    },
+    "About": "Owlmod patch to change the scaling on Weapon Bond to hour/lvl",
+    "HomepageUrl": "https://github.com/SlyDevil/PaladinWeaponBond_lastshours",
+    "Tags": [ "Gameplay", "Homebrew" ]
   },
   
   {
