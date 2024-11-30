@@ -337,7 +337,7 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/637",
     "Tags": [ "Content", "Gameplay" ]
   },
-
+  
   {
     "Name": "Dextrous Carnage",
     "Author": "Madlampy",
@@ -353,6 +353,24 @@
     },
     "About": "Simple Rework of Deadly Carnage to allow Dex based Characters to have access to the mechanic, with altered name and description for Flavour.",
     "HomepageUrl": "https://github.com/Evilvonbek/DexCarn",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+  
+  {    
+    "Name": "DragonFixes",
+    "Author": "CascadingDragon",
+    "Id": {
+      "Id": "DragonFixes",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "CasDragon",
+        "RepoName": "DragonFixes"
+      }
+    },
+    "About": "DragonFixes is a mod for Pathfinder: Wrath of the Righteous that fixes several bugs",
+    "HomepageUrl": "https://github.com/CasDragon/DragonFixes",
     "Tags": [ "Content", "Gameplay" ]
   },
 
