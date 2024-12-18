@@ -373,7 +373,25 @@
     "HomepageUrl": "https://github.com/CasDragon/DragonFixes",
     "Tags": [ "Content", "Gameplay" ]
   },
-
+  
+  {    
+    "Name": "Earlier Mythic level ups",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "EarlierMythicLevelUps",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "AlterAsc",
+        "RepoName": "EarlierMythicLevelUps"
+      }
+    },
+    "About": "Gives some mythic level ups earlier than normal",
+    "HomepageUrl": "https://github.com/alterasc/EarlierMythicLevelUps",
+    "Tags": [ "Gameplay" ]
+  },
+  
   {
     "Name": "Enduring Reworks",
     "Author": "AlterAsc",
