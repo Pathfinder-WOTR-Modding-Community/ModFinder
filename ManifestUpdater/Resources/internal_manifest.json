@@ -1109,6 +1109,24 @@
     "HomepageUrl": "https://github.com/SlyDevil/PaladinWeaponBond_lastshours",
     "Tags": [ "Gameplay", "Homebrew" ]
   },
+
+  {
+    "Name": "Partial Highlight Toggle",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "PartialHighlightToggle",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "alterasc",
+        "RepoName": "PartialHighlightToggle"
+      }
+    },
+    "About": "Allows toggling of partial highlight mode that highlights only loot and interactable map objects, without highlighting everything else.",
+    "HomepageUrl": "https://github.com/alterasc/PartialHighlightToggle",
+    "Tags": [ "UserInterface" ]
+  },
   
   {
     "Name": "PATH OF BLING",
