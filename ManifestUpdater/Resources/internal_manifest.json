@@ -357,6 +357,24 @@
   },
   
   {    
+    "Name": "DragonChanges",
+    "Author": "CascadingDragon",
+    "Id": {
+      "Id": "DragonChanges",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "CasDragon",
+        "RepoName": "DragonChanges"
+      }
+    },
+    "About": "DragonChanges is a mod for all the changes that aren't bug fixes that I could include in DragonFixes.",
+    "HomepageUrl": "https://github.com/CasDragon/DragonChanges",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+  
+  {    
     "Name": "DragonFixes",
     "Author": "CascadingDragon",
     "Id": {
