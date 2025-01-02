@@ -1201,6 +1201,44 @@
   },
 
   {
+    "Name": "PC Female Viconia DeVir Soundset",
+    "Author": "DarthParametric",
+    "Id": {
+      "Id": "PC_Female_BG_Viconia",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "DarthParametric",
+        "RepoName": "WOTR_Custom_Soundset_Viconia_DeVir",
+        "ReleaseFilter": "PC_Female_BG_Viconia_v"
+      }
+    },
+    "About": "Adds a custom, standalone soundset for female PCs and mercenaries. Does not overwrite or replace any of the vanilla soundsets.",
+    "HomepageUrl": "https://github.com/DarthParametric/WOTR_Custom_Soundset_Viconia_DeVir",
+    "Tags": [ "Audio" ]
+  },
+
+  {
+    "Name": "PC Male Balthasar Gelt Soundset",
+    "Author": "DarthParametric",
+    "Id": {
+      "Id": "PC_TWWH_Balthasar_Gelt",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "DarthParametric",
+        "RepoName": "WOTR_Custom_Soundset_Balthasar_Gelt",
+        "ReleaseFilter": "PC_TWWH_Balthasar_Gelt_v"
+      }
+    },
+    "About": "Adds a custom, standalone soundset for male PCs and mercenaries, including custom casting lines that replace the vanilla chanting. Does not overwrite or replace any of the vanilla soundsets.",
+    "HomepageUrl": "https://github.com/DarthParametric/WOTR_Custom_Soundset_Balthasar_Gelt",
+    "Tags": [ "Audio" ]
+  },
+  
+  {
     "Name": "Prestige Minus",
     "Author": "string",
     "Id": {
