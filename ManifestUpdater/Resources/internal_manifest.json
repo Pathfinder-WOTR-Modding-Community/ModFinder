@@ -411,6 +411,24 @@
   },
   
   {
+    "Name": "Ebons Content Mod",
+    "Author": "ebonfowl",
+    "Id": {
+      "Id": "EbonsContentMod",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "EdgarEbonfowl",
+        "RepoName": "EbonsContentMod"
+      }
+    },
+    "About": "This mod was created to add new content from tabletop to Wrath of the Righteous that wasn't represented in the other major content mods. Includes new races/subraces, in addition to other content",
+    "HomepageUrl": "https://github.com/EdgarEbonfowl/EbonsContentMod",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+  
+  {
     "Name": "Enduring Reworks",
     "Author": "AlterAsc",
     "Id": {
