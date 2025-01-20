@@ -357,7 +357,7 @@
   },
   
   {    
-    "Name": "DragonChanges",
+    "Name": "DragonChanges&Additions",
     "Author": "CascadingDragon",
     "Id": {
       "Id": "DragonChanges",
@@ -369,7 +369,7 @@
         "RepoName": "DragonChanges"
       }
     },
-    "About": "DragonChanges is a mod for all the changes that aren't bug fixes that I could include in DragonFixes.",
+    "About": "DragonChanges is a mod for all the changes that aren't bug fixes that I could include in DragonFixes. Now includes extra content",
     "HomepageUrl": "https://github.com/CasDragon/DragonChanges",
     "Tags": [ "Content", "Gameplay" ]
   },
@@ -746,46 +746,8 @@
     "About": "Owlmod patch to allow the player to reach army sizes of 14 squads and field all of them",
     "HomepageUrl": "https://github.com/SlyDevil/MaxSquadsAdjustment",
     "Tags": [ "Gameplay", "Homebrew" ]
-    },
+  },
   
-  {
-    "Name": "Mewsifer Console",
-    "Author": "WittleWolfie & Bubbles",
-    "Id": {
-      "Id": "MewsiferConsole.Mod",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Pathfinder-WOTR-Modding-Community",
-        "RepoName": "MewsiferConsole",
-        "ReleaseFilter": "MewsiferConsole\\.Mod"
-      }
-    },
-    "About": "A tool for debugging problems with WotR, especially when playing with mods.",
-    "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
-    "Tags": [ "Utilities" ]
-  },
-
-  {
-    "Name": "Mewsifer Console Menu",
-    "Author": "WittleWolfie",
-    "Id": {
-      "Id": "MewsiferConsole.Menu",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Pathfinder-WOTR-Modding-Community",
-        "RepoName": "MewsiferConsole",
-        "ReleaseFilter": "MewsiferConsole\\.Menu"
-      }
-    },
-    "About": "Adds a mod menu entry for Mewsifer Console with a cute illustration and a button you can use to generate a bug report to share with mod creators when reporting issues.",
-    "HomepageUrl": "https://github.com/Pathfinder-WOTR-Modding-Community/MewsiferConsole",
-    "Tags": [ "Utilities" ]
-  },
-
   {
     "Name": "Microscopic Content Expansion",
     "Author": "AlterAsc",
@@ -1380,23 +1342,6 @@
     "About": "Allows automatic approch into Snap Shot range for ranged characters",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/498",
     "Tags": [ "Miscellaneous" ]
-  },
-
-  {
-    "Name": "Soulknife - Psionics",
-    "Author": "TehFlaminTaco",
-    "Id": {
-      "Id": "Psionics",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "513"
-      }
-    },
-    "About": "An Implementation of Dreamscarred Press's Psionics. Currently, provides the Soulknife Class.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/513",
-    "Tags": [ "Content", "Gameplay" ]
   },
 
   {
