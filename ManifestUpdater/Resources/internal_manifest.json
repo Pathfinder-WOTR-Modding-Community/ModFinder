@@ -1327,6 +1327,23 @@
   },
 
   {
+    "Name": "Relations and Romances",
+    "Author": "Randiel",
+    "Id": {
+      "Id": "RanRomance",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "776"
+      }
+    },
+    "About": "Adds interactions with six NPCs in the game including potential romances. Also adds portraits to three of those NPCs (Targona, Terendelev, and Aranka).",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/776",
+    "Tags": [ "Romance", "Story" ]
+  },
+
+  {
     "Name": "Respec Mod",
     "Author": "Barley",
     "Id": {
