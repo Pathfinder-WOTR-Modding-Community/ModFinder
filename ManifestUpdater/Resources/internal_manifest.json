@@ -1360,6 +1360,24 @@
     "HomepageUrl": "https://github.com/BarleyFlour/RespecMod",
     "Tags": [ "Utilities" ]
   },
+  
+  {
+    "Name": "ScalingItemDCs",
+    "Author": "Hambeard",
+    "Id": {
+      "Id": "WrathScalingItemDCs",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "thehambeard",
+        "RepoName": "WrathScalingItemDCs"
+      }
+    },
+    "About": "Increases DCs for Weapons and Armors by various means.",
+    "HomepageUrl": "https://github.com/thehambeard/WrathScalingItemDCs",
+    "Tags": [ "Gameplay" ]
+  },
 
   {
     "Name": "Snap Shot Approach",
