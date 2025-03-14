@@ -1,15 +1,10 @@
 ﻿using ModFinder.UI;
 using ModFinder.Util;
 using System;
-using System.Formats.Tar;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows;
-using SharpCompress;
 using SharpCompress.Archives;
 using SharpCompress.Common;
 
@@ -21,6 +16,7 @@ namespace ModFinder.Mod
   public static class ModInstaller
   {
     private static MainWindow Window;
+
     public static async Task<InstallResult> Install(ModViewModel viewModel, bool isUpdate)
     {
       switch (viewModel.ModId.Type)
@@ -121,11 +117,11 @@ namespace ModFinder.Mod
       }
     }
 
-    private static ModType GetModTypeFromZIP(ZipArchive zip)
+    private static ModType GetModTypeFromArchive(IArchive archive)
     {
-      if (zip.Entries.Any(e => e.Name.Equals("Info.json", StringComparison.CurrentCultureIgnoreCase)))
+      if (archive.Entries.Any(e => e.Key.Equals("Info.json", StringComparison.CurrentCultureIgnoreCase)))
         return ModType.UMM;
-      if (zip.Entries.Any(e => e.Name.Equals("OwlcatModificationManifest.json", StringComparison.CurrentCultureIgnoreCase)))
+      if (archive.Entries.Any(e => e.Key.Equals("OwlcatModificationManifest.json", StringComparison.CurrentCultureIgnoreCase)))
         return ModType.Owlcat;
       else return ModType.Portrait;
     }
@@ -144,8 +140,10 @@ namespace ModFinder.Mod
       }*/
 
       InstallModManifest info;
-      using var zip = ZipFile.OpenRead(path);
-      ModType modType = viewModel == null ? GetModTypeFromZIP(zip) : viewModel.ModId.Type;
+
+      using var stream = File.OpenRead(path);
+      using var archive = SharpCompress.Archives.ArchiveFactory.AutoFactory.Open(stream);
+      ModType modType = viewModel == null ? GetModTypeFromArchive(archive) : viewModel.ModId.Type;
 
       // If the mod is not in the first level folder in the zip we need to reach in and grab it
       string rootInZip = null;
@@ -155,21 +153,23 @@ namespace ModFinder.Mod
         case ModType.UMM:
           {
             var manifestEntry =
-              zip.Entries.FirstOrDefault(e => e.Name.Equals("Info.json", StringComparison.OrdinalIgnoreCase));
-
+              archive.Entries.FirstOrDefault(e => Path.GetFileName(e.Key).Equals("Info.json", StringComparison.OrdinalIgnoreCase));
 
             if (manifestEntry is null)
             {
               return new("Unable to find manifest.");
             }
 
-            if (manifestEntry.FullName != manifestEntry.Name)
+            var fullName = manifestEntry.Key;
+            var fileName = Path.GetFileName(fullName);
+
+            if (fullName != fileName)
             {
-              int root = manifestEntry.FullName.Length - manifestEntry.Name.Length;
-              rootInZip = manifestEntry.FullName[..root];
+              int root = fullName.Length - fileName.Length;
+              rootInZip = fullName[..root];
             }
 
-            var UMMManifest = IOTool.Read<UMMModInfo>(manifestEntry.Open());
+            var UMMManifest = IOTool.Read<UMMModInfo>(manifestEntry.OpenEntryStream());
             info = new InstallModManifest(UMMManifest.Id, UMMManifest.Version);
 
             var manifest = viewModel?.Manifest ?? ModManifest.ForLocal(UMMManifest);
@@ -184,13 +184,16 @@ namespace ModFinder.Mod
         case ModType.Owlcat:
           {
             var manifestEntry =
-              zip.Entries.FirstOrDefault(e =>
-                e.Name.Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
+              archive.Entries.FirstOrDefault(e =>
+                Path.GetFileName(e.Key).Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase));
 
-            if (manifestEntry.FullName != manifestEntry.Name)
+            var fullName = manifestEntry.Key;
+            var fileName = Path.GetFileName(fullName);
+
+            if (fullName != fileName)
             {
-              int root = manifestEntry.FullName.Length - manifestEntry.Name.Length;
-              rootInZip = manifestEntry.FullName[..root];
+              int root = fullName.Length - fileName.Length;
+              rootInZip = fullName[..root];
             }
 
             if (manifestEntry is null)
@@ -198,7 +201,7 @@ namespace ModFinder.Mod
               return new("Unable to find manifest.");
             }
 
-            var OwlcatManifest = IOTool.Read<OwlcatModInfo>(manifestEntry.Open());
+            var OwlcatManifest = IOTool.Read<OwlcatModInfo>(manifestEntry.OpenEntryStream());
             info = new InstallModManifest(OwlcatManifest.UniqueName, OwlcatManifest.Version);
 
             var manifest = viewModel?.Manifest ?? ModManifest.ForLocal(OwlcatManifest);
@@ -249,36 +252,36 @@ namespace ModFinder.Mod
       static void ExtractInParts(string path, string destination)
       {
         Logger.Log.Verbose("Starting to extract in parts");
-        using (var archive = SharpCompress.Archives.Zip.ZipArchive.Open(path))
+
+        using var stream = File.OpenRead(path);
+        using var archive = ArchiveFactory.AutoFactory.Open(stream);
+
+        foreach (var part in archive.Entries)
         {
-          foreach (var part in archive.Entries)
+          if (part.ToString() != "")
           {
-            if (part.ToString() != "")
+            var extPath = Path.Combine(destination, part.ToString());
+            try
             {
-              var extPath = Path.Combine(destination, part.ToString());
-              try
+              part.WriteToFile(extPath, new ExtractionOptions()
               {
-                part.WriteToFile(extPath, new ExtractionOptions()
-                {
-                  ExtractFullPath = true,
-                  Overwrite = true
-                });
-              }
-              catch (DirectoryNotFoundException ex)
-              {
-                var tempPath = extPath.Replace(part.ToString(), "");
-                Directory.CreateDirectory(tempPath);
-              }
-              catch (Exception ex)
-              {
-                Logger.Log.Verbose("[Line 275] Destination is - " + destination.ToString());
-                Logger.Log.Verbose("[Line 276] File is - " + part.ToString());
-                Logger.Log.Verbose("[Line 277] Full path is - " + extPath.ToString());
-                Logger.Log.Verbose(ex.ToString());
-              }
+                ExtractFullPath = true,
+                Overwrite = true
+              });
+            }
+            catch (DirectoryNotFoundException)
+            {
+              var tempPath = extPath.Replace(part.ToString(), "");
+              Directory.CreateDirectory(tempPath);
+            }
+            catch (Exception ex)
+            {
+              Logger.Log.Verbose("[Line 275] Destination is - " + destination.ToString());
+              Logger.Log.Verbose("[Line 276] File is - " + part.ToString());
+              Logger.Log.Verbose("[Line 277] Full path is - " + extPath.ToString());
+              Logger.Log.Verbose(ex.ToString());
             }
           }
-          return;
         }
       }
 
@@ -289,59 +292,60 @@ namespace ModFinder.Mod
         {
           await Task.Run(() =>
           {
-            using (var archive = SharpCompress.Archives.Zip.ZipArchive.Open(path))
+            using var stream = File.OpenRead(path);
+            using var archive = ArchiveFactory.AutoFactory.Open(stream);
+
+            if (rootInZip != null)
             {
-              if (rootInZip != null)
+              Logger.Log.Verbose("Extracting the archive with root folder in pieces");
+              Directory.CreateDirectory(destination);
+              foreach (var entry in archive.Entries)
               {
-                Logger.Log.Verbose("Extracting the archive with root folder in pieces");
-                Directory.CreateDirectory(destination);
-                foreach (var entry in archive.Entries)
+                string relativepath = Path.GetRelativePath(rootInZip, entry.ToString());
+                if (relativepath.Contains(".."))
+                  continue;
+                string entryDest = Path.Combine(destination, relativepath);
+                if (entry.IsDirectory)
                 {
-                  string relativepath = Path.GetRelativePath(rootInZip, entry.ToString());
-                  if (relativepath.Contains(".."))
-                    continue;
-                  string entryDest = Path.Combine(destination, relativepath);
-                  if (entry.IsDirectory)
+                  Directory.CreateDirectory(entryDest);
+                }
+                else
+                {
+                  try
                   {
-                    Directory.CreateDirectory(entryDest);
+                    entry.WriteToFile(entryDest, new ExtractionOptions()
+                    {
+                      ExtractFullPath = true,
+                      Overwrite = true
+                    });
                   }
-                  else
+                  catch (DirectoryNotFoundException)
                   {
-                    try
+                    Directory.CreateDirectory(Path.GetDirectoryName(entryDest));
+                    entry.WriteToFile(entryDest, new ExtractionOptions()
                     {
-                      entry.WriteToFile(entryDest, new ExtractionOptions()
-                      {
-                        ExtractFullPath = true,
-                        Overwrite = true
-                      });
-                    }
-                    catch (DirectoryNotFoundException)
-                    {
-                      Directory.CreateDirectory(Path.GetDirectoryName(entryDest));
-                      entry.WriteToFile(entryDest, new ExtractionOptions()
-                      {
-                        ExtractFullPath = true,
-                        Overwrite = true
-                      });
-                    }
-                    catch (Exception ex)
-                    {
-                      Logger.Log.Verbose(ex.ToString());
-                    }
+                      ExtractFullPath = true,
+                      Overwrite = true
+                    });
+                  }
+                  catch (Exception ex)
+                  {
+                    Logger.Log.Verbose(ex.ToString());
                   }
                 }
               }
-              else
-              {
-                Logger.Log.Verbose(destination);
-                Directory.CreateDirectory(destination);
-                archive.WriteToDirectory(destination, new ExtractionOptions()
-                {
-                  ExtractFullPath = true,
-                  Overwrite = true
-                });
-              }
             }
+            else
+            {
+              Logger.Log.Verbose(destination);
+              Directory.CreateDirectory(destination);
+              archive.WriteToDirectory(destination, new ExtractionOptions()
+              {
+                ExtractFullPath = true,
+                Overwrite = true
+              });
+            }
+
           });
         }
         catch (IOException ex)
@@ -360,7 +364,7 @@ namespace ModFinder.Mod
         var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits"));
         var PortraitFolder = Path.Combine(Main.WrathDataDir, "Portraits");
         var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
-        zip.ExtractToDirectory(tmpFolder);
+        archive.ExtractToDirectory(tmpFolder);
         if (Directory.EnumerateDirectories(tmpFolder).Count() <= 1)
         {
           tmpFolder = Path.Combine(tmpFolder, "Portraits");

@@ -370,8 +370,8 @@ namespace ModFinder
       if (!File.Exists(path))
         return false;
 
-      if (Path.GetExtension(path) != ".zip")
-        return false;
+      //if (Path.GetExtension(path) != ".zip")
+      //  return false;
       return true;
       //Cant have anything below this point if we want portraits
       /* using var opened = ZipFile.OpenRead(path);
