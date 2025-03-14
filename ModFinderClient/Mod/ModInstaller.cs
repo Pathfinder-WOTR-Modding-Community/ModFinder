@@ -119,9 +119,11 @@ namespace ModFinder.Mod
 
     private static ModType GetModTypeFromArchive(IArchive archive)
     {
-      if (archive.Entries.Any(e => e.Key.Equals("Info.json", StringComparison.CurrentCultureIgnoreCase)))
-        return ModType.UMM;
-      if (archive.Entries.Any(e => e.Key.Equals("OwlcatModificationManifest.json", StringComparison.CurrentCultureIgnoreCase)))
+      //if (archive.Entries.Any(e => e.Key.ToString().Equals("Info.json", StringComparison.CurrentCultureIgnoreCase)))
+      if (archive.Entries.FirstOrDefault(e => Path.GetFileName(e.Key).Equals("Info.json", StringComparison.OrdinalIgnoreCase)) != null)
+      return ModType.UMM;
+      //if (archive.Entries.Any(e => e.Key.ToString().Equals("OwlcatModificationManifest.json", StringComparison.CurrentCultureIgnoreCase)))
+      if (archive.Entries.FirstOrDefault(e => Path.GetFileName(e.Key).Equals("OwlcatModificationManifest.json", StringComparison.OrdinalIgnoreCase)) != null)
         return ModType.Owlcat;
       else return ModType.Portrait;
     }
@@ -142,7 +144,7 @@ namespace ModFinder.Mod
       InstallModManifest info;
 
       using var stream = File.OpenRead(path);
-      using var archive = SharpCompress.Archives.ArchiveFactory.AutoFactory.Open(stream);
+      using var archive = ArchiveFactory.AutoFactory.Open(stream);
       ModType modType = viewModel == null ? GetModTypeFromArchive(archive) : viewModel.ModId.Type;
 
       // If the mod is not in the first level folder in the zip we need to reach in and grab it
@@ -364,7 +366,14 @@ namespace ModFinder.Mod
         var enumeratedFolders = Directory.EnumerateDirectories(Path.Combine(Main.WrathDataDir, "Portraits"));
         var PortraitFolder = Path.Combine(Main.WrathDataDir, "Portraits");
         var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
-        archive.ExtractToDirectory(tmpFolder);
+        try
+        {
+          archive.ExtractToDirectory(tmpFolder);
+        }
+        catch
+        {
+          ExtractInParts(path, tmpFolder);
+        }
         if (Directory.EnumerateDirectories(tmpFolder).Count() <= 1)
         {
           tmpFolder = Path.Combine(tmpFolder, "Portraits");
