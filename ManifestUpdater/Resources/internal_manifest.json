@@ -1307,6 +1307,24 @@
     "HomepageUrl": "https://github.com/Balkoth-dev/PuzzleSkip",
     "Tags": [ "UserInterface", "Visuals" ]
   },
+  
+  {
+    "Name": "NWN2 QuickCast",
+    "Author": "Hambeard",
+    "Id": {
+      "Id": "NWN2QuickCast",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "thehambeard",
+        "RepoName": "NWN2QuickCast"
+      }
+    },
+    "About": "Gives you a moveable UI for casting spells on the fly",
+    "HomepageUrl": "https://github.com/thehambeard/NWN2QuickCast",
+    "Tags": [ "UserInterface", "Gameplay"]
+  },
 
   {
     "Name": "Random Equipment",
