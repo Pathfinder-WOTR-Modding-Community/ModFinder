@@ -325,6 +325,9 @@ namespace ModFinder
           mod.InstalledVersion = ModVersion.Parse(info.Version);
 
           mod.Enabled = Main.OwlcatMods.Has(info.UniqueName);
+          
+          // set WrathPatches for a requirement for Owlmods
+          mod.SetRequirements(["WrathPatches"]);
         }
         return mod;
       }
