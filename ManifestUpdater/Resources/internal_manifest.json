@@ -765,6 +765,24 @@
     "HomepageUrl": "https://github.com/SlyDevil/MaxSquadsAdjustment",
     "Tags": [ "Gameplay", "Homebrew" ]
   },
+
+  {
+    "Name": "Mesmerist",
+    "Author": "Telyl",
+    "Id": {
+      "Id": "Mesmerist",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "Telyl",
+        "RepoName": "WOTRMesmerist"
+      }
+    },
+    "About": "Adds the Mesmerist class to the game",
+    "HomepageUrl": "https://github.com/Telyl/WOTRMesmerist",
+    "Tags": [ "Content", "Gameplay" ]
+  },
   
   {
     "Name": "Microscopic Content Expansion",
