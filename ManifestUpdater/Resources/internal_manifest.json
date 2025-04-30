@@ -17,7 +17,7 @@
     "HomepageUrl": "https://github.com/Telyl/AddedFeats",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Additional Hotkeys",
     "Author": "apocc",
@@ -124,8 +124,8 @@
     "HomepageUrl": "https://github.com/YLMstring/NenioMod",
     "Tags": [ "Gameplay" ]
   },
-  
- {
+
+  {
     "Name": "Battle Scion Extra Rage Powers Fix",
     "Author": "DanScallion",
     "Id": {
@@ -133,7 +133,7 @@
       "Type": "Owlcat"
     },
     "Service": {
-       "Nexus": {
+      "Nexus": {
         "ModID": "574"
       }
     },
@@ -141,7 +141,24 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/574/",
     "Tags": [ "Bugfix" ]
   },
-  
+
+  {
+    "Name": "Better Backgrounds",
+    "Author": "BurlyWurly",
+    "Id": {
+      "Id": "BetterBackgrounds",
+      "Type": "Owlcat"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "205"
+      }
+    },
+    "About": "Revises and improves many of the default Background choices while also introducing several brand new Background options.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/205",
+    "Tags": [ "Gameplay", "Homebrew" ]
+  },
+
   {
     "Name": "BOAT BOAT BOAT",
     "Author": "Balkoth",
@@ -212,7 +229,7 @@
     "HomepageUrl": "https://github.com/Balkoth-dev/BuffBot-Wrath",
     "Tags": [ "Gameplay", "Miscellaneous" ]
   },
-  
+
   {
     "Name": "Centipede Companions Corrupt",
     "Author": "Sly",
@@ -229,8 +246,8 @@
     "About": "Owlmod patch to give Centipede animal companions Mythic Corruptor",
     "HomepageUrl": "https://github.com/SlyDevil/Centipede-Corruptor",
     "Tags": [ "Gameplay", "Homebrew" ]
-    },
-  
+  },
+
   {
     "Name": "Champion Feats Anew",
     "Author": "lynnpye",
@@ -248,7 +265,7 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/384",
     "Tags": [ "Gameplay" ]
   },
-  
+
   {
     "Name": "Character Options+",
     "Author": "WittleWolfie",
@@ -337,7 +354,7 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/637",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Dextrous Carnage",
     "Author": "Madlampy",
@@ -355,8 +372,8 @@
     "HomepageUrl": "https://github.com/Evilvonbek/DexCarn",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
-  {    
+
+  {
     "Name": "DragonChanges&Additions",
     "Author": "CascadingDragon",
     "Id": {
@@ -373,8 +390,8 @@
     "HomepageUrl": "https://github.com/CasDragon/DragonChanges",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
-  {    
+
+  {
     "Name": "DragonFixes",
     "Author": "CascadingDragon",
     "Id": {
@@ -391,8 +408,8 @@
     "HomepageUrl": "https://github.com/CasDragon/DragonFixes",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
-  {    
+
+  {
     "Name": "Earlier Mythic level ups",
     "Author": "AlterAsc",
     "Id": {
@@ -409,7 +426,7 @@
     "HomepageUrl": "https://github.com/alterasc/EarlierMythicLevelUps",
     "Tags": [ "Gameplay" ]
   },
-  
+
   {
     "Name": "Ebons Content Mod",
     "Author": "ebonfowl",
@@ -427,7 +444,25 @@
     "HomepageUrl": "https://github.com/EdgarEbonfowl/EbonsContentMod",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
+  {
+    "Name": "Ebons Unfixer Mod",
+    "Author": "ebonfowl",
+    "Id": {
+      "Id": "EbonsUnfixerMod",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "EdgarEbonfowl",
+        "RepoName": "EbonsUnfixerMod"
+      }
+    },
+    "About": "The intent of this mod is merely to revert/unfix some of the fixes that Owlcat implemented since launch which haven't been reverted elsewhere.",
+    "HomepageUrl": "https://github.com/EdgarEbonfowl/EbonsUnfixerMod",
+    "Tags": [ "Gameplay" ]
+  },
+
   {
     "Name": "Enduring Reworks",
     "Author": "AlterAsc",
@@ -478,7 +513,7 @@
     },
     "About": "A mod that expands the epilogue to provide endings to new topics and to increase the reactivity to some existing topics.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/545",
-    "Tags": [ "Content", "Gameplay"]
+    "Tags": [ "Content", "Gameplay" ]
   },
 
   {
@@ -548,7 +583,7 @@
     },
     "About": "'Gracious Friendships' is a lore-friendly narrative mod that adds new dialogue options for companions and NPCs. It expands character interactions throughout the game and fixes some issues with romance flags.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/430",
-    "Tags": [ "Content", "Gameplay"]
+    "Tags": [ "Content", "Gameplay" ]
   },
 
   {
@@ -565,7 +600,7 @@
       }
     },
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/143",
-    "Tags": [ "Content", "Gameplay"]
+    "Tags": [ "Content", "Gameplay" ]
   },
 
   {
@@ -583,7 +618,7 @@
       }
     },
     "HomepageUrl": "https://github.com/testlum/GreaterAngelicHalo",
-    "Tags": [ "Content", "Gameplay"]
+    "Tags": [ "Content", "Gameplay" ]
   },
 
   {
@@ -600,7 +635,25 @@
       }
     },
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/279",
-    "Tags": [ "Content", "Gameplay"]
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Isekai Mod",
+    "Author": "Gekko Lionheart/John100x1",
+    "Id": {
+      "Id": "IsekaiMod",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "bkeath",
+        "RepoName": "PathfinderWOTR-IsekaiMod"
+      }
+    },
+    "About": "This mod adds the overpowered Isekai Protagonist class into the game. It also adds some backgrounds, heritages, and deities designed for this class.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/734",
+    "Tags": [ "Content", "Gameplay" ]
   },
 
   {
@@ -657,7 +710,6 @@
     "Tags": [ "Content", "Gameplay" ]
   },
 
-
   {
     "Name": "Levelable Aivu",
     "Author": "pheonix99",
@@ -711,7 +763,7 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/699",
     "Tags": [ "Gameplay" ]
   },
-  
+
   {
     "Name": "Madison's Metagaming",
     "Author": "ultramaddie",
@@ -729,7 +781,7 @@
     "HomepageUrl": "https://github.com/madisoncfallin/MadisonsMetagaming",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Magic Armory",
     "Author": "AlterAsc",
@@ -747,7 +799,7 @@
     "HomepageUrl": "https://github.com/alterasc/MagicArmory",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Making Friends (Summoner Mod)",
     "Author": "Balkoth",
@@ -763,6 +815,23 @@
     },
     "About": "Adds the Summoner class from Pathfinder to the game",
     "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_MAKING_FRIENDS",
+    "Tags": [ "Content", "Gameplay" ]
+  },
+
+  {
+    "Name": "Many Mods Load Performance Fix",
+    "Author": "ADDB",
+    "Id": {
+      "Id": "!ManyModsPerformanceFix",
+      "Type": "UMM"
+    },
+    "Service": {
+      "Nexus": {
+        "ModID": "797"
+      }
+    },
+    "About": "This mod can decrease game start time by anywhere from 2s to 100s (or maybe more) depending on your PC and how many mods you have installed.",
+    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/797",
     "Tags": [ "Content", "Gameplay" ]
   },
 
@@ -801,7 +870,7 @@
     "HomepageUrl": "https://github.com/Telyl/WOTRMesmerist",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Microscopic Content Expansion",
     "Author": "AlterAsc",
@@ -819,7 +888,7 @@
     "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Misc Tweaks and Fixes",
     "Author": "Microsoftenator",
@@ -837,7 +906,7 @@
     "HomepageUrl": "https://github.com/microsoftenator2022/MiscTweaksAndFixes2",
     "Tags": [ "Miscellaneous", "Gameplay" ]
   },
-  
+
   {
     "Name": "Mod Menu",
     "Author": "WittleWolfie/Kurufinve",
@@ -854,6 +923,24 @@
     "About": "Adds a new page to the game options for mods. This allows mods to easily use the native settings UI, no more UMM window!",
     "HomepageUrl": "https://github.com/CasDragon/ModMenu",
     "Tags": [ "UserInterface", "Utilities" ]
+  },
+
+  {
+    "Name": "More Backgrounds",
+    "Author": "pedrogdm",
+    "Id": {
+      "Id": "MoreBackgrounds",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "pedrogdm",
+        "RepoName": "MoreBackgrounds"
+      }
+    },
+    "About": "Adds unique homebrew backgrounds to the game.",
+    "HomepageUrl": "https://github.com/pedrogdm/MoreBackgrounds/",
+    "Tags": [ "Content" ]
   },
 
   {
@@ -909,7 +996,7 @@
     "HomepageUrl": "https://github.com/xADDBx/MorePartyViewSlots/",
     "Tags": [ "UserInterface", "Utilities" ]
   },
-  
+
   {
     "Name": "Morvarch's Playstyle Expansions",
     "Author": "Morvarch Princess",
@@ -981,7 +1068,7 @@
     "HomepageUrl": "https://github.com/YLMstring/Mythic-Magic-Mayhem",
     "Tags": [ "Gameplay" ]
   },
-  
+
   {
     "Name": "Mythic Spellbook Tweaks",
     "Author": "Vek17",
@@ -1034,7 +1121,7 @@
     "About": "Allows casting special mythic spells from your normal spellbooks.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/601",
     "Tags": [ "Content" ]
-  },  
+  },
 
   {
     "Name": "Nine Swords",
@@ -1089,7 +1176,7 @@
     "HomepageUrl": "https://github.com/SlyDevil/NonStopEvents",
     "Tags": [ "Gameplay", "Homebrew" ]
   },
-  
+
   {
     "Name": "The One Pearl",
     "Author": "AlterAsc",
@@ -1106,8 +1193,8 @@
     "About": "Adds The One Pearl, which combines powers of all pearls of power player currently has in their inventory.",
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/613",
     "Tags": [ "Miscellaneous" ]
-  }, 
-  
+  },
+
   {
     "Name": "Onmi's Mod",
     "Author": "Onmi",
@@ -1142,7 +1229,7 @@
     "About": "Owlmod patch to change the horse animal companion body to that of the plague horse used by Grave Knights",
     "HomepageUrl": "https://github.com/SlyDevil/UndeadHorseBodytest",
     "Tags": [ "Visuals" ]
-  },  
+  },
 
   {
     "Name": "Paladin Weapon Bond lasts for hours unlike...",
@@ -1179,7 +1266,7 @@
     "HomepageUrl": "https://github.com/alterasc/PartialHighlightToggle",
     "Tags": [ "UserInterface" ]
   },
-  
+
   {
     "Name": "PATH OF BLING",
     "Author": "Balkoth",
@@ -1271,7 +1358,7 @@
     "HomepageUrl": "https://github.com/DarthParametric/WOTR_Custom_Soundset_Balthasar_Gelt",
     "Tags": [ "Audio" ]
   },
-  
+
   {
     "Name": "Prestige Minus",
     "Author": "string",
@@ -1289,7 +1376,7 @@
     "HomepageUrl": "https://github.com/YLMstring/Prestige-Minus",
     "Tags": [ "Utilities", "Gameplay" ]
   },
-  
+
   {
     "Name": "Prestige Plus",
     "Author": "string",
@@ -1307,7 +1394,7 @@
     "HomepageUrl": "https://github.com/YLMstring/PrestigePlus",
     "Tags": [ "Content", "Gameplay" ]
   },
-    
+
   {
     "Name": "Prophet of Pestilence activation change",
     "Author": "Sly",
@@ -1325,7 +1412,7 @@
     "HomepageUrl": "https://github.com/SlyDevil/Prophet-of-Pestilence-greater-spirit-change",
     "Tags": [ "Gameplay", "Homebrew", "Bugfix" ]
   },
-  
+
   {
     "Name": "Puzzle Skip",
     "Author": "Arkive",
@@ -1343,7 +1430,7 @@
     "HomepageUrl": "https://github.com/Balkoth-dev/PuzzleSkip",
     "Tags": [ "UserInterface", "Visuals" ]
   },
-  
+
   {
     "Name": "NWN2 QuickCast",
     "Author": "Hambeard",
@@ -1359,7 +1446,7 @@
     },
     "About": "Gives you a moveable UI for casting spells on the fly",
     "HomepageUrl": "https://github.com/thehambeard/NWN2QuickCast",
-    "Tags": [ "UserInterface", "Gameplay"]
+    "Tags": [ "UserInterface", "Gameplay" ]
   },
 
   {
@@ -1414,7 +1501,7 @@
     "HomepageUrl": "https://github.com/BarleyFlour/RespecMod",
     "Tags": [ "Utilities" ]
   },
-  
+
   {
     "Name": "ScalingItemDCs",
     "Author": "Hambeard",
@@ -1522,7 +1609,7 @@
     "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/603",
     "Tags": [ "Gameplay" ]
   },
-  
+
   {
     "Name": "Swashbuckler Class",
     "Author": "Zedel",
@@ -1594,7 +1681,7 @@
     "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Flanking",
     "Tags": [ "Content", "Gameplay" ]
   },
-  
+
   {
     "Name": "Tabletop Tweaks Mythic Rework",
     "Author": "Vek17",
@@ -1684,7 +1771,7 @@
     "HomepageUrl": "https://github.com/Vek17/WrathMods-TurnbasedCombatDelay",
     "Tags": [ "Gameplay", "Miscellaneous" ]
   },
-  
+
   {
     "Name": "Vampiric blade without effects",
     "Author": "Sly",
@@ -1702,7 +1789,7 @@
     "HomepageUrl": "https://github.com/SlyDevil/Vampiric-Blade-without-Fx",
     "Tags": [ "Audio", "Visuals" ]
   },
-  
+
   {
     "Name": "Visual Adjustments 2",
     "Author": "Barley/Spacehamster",
