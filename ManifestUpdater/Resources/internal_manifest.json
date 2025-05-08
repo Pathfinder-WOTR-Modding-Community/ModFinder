@@ -926,6 +926,24 @@
   },
 
   {
+    "Name": "ModTagEx",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "ModMenu",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "AlterAsc",
+        "RepoName": "ModTagEx"
+      }
+    },
+    "About": "Displays information about which mod object is from.",
+    "HomepageUrl": "https://github.com/alterasc/ModTagEx",
+    "Tags": [ "UserInterface", "Utilities" ]
+  },  
+
+  {
     "Name": "More Backgrounds",
     "Author": "pedrogdm",
     "Id": {
