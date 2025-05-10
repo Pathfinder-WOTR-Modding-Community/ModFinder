@@ -929,7 +929,7 @@
     "Name": "ModTagEx",
     "Author": "AlterAsc",
     "Id": {
-      "Id": "ModMenu",
+      "Id": "ModTagEx",
       "Type": "UMM"
     },
     "Service": {
