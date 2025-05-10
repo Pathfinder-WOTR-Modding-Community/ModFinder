@@ -962,6 +962,24 @@
   },
 
   {
+    "Name": "More Informative Save Names",
+    "Author": "AlterAsc",
+    "Id": {
+      "Id": "MoreInformativeSaveNames",
+      "Type": "UMM"
+    },
+    "Service": {
+      "GitHub": {
+        "Owner": "AlterAsc",
+        "RepoName": "MoreInformativeSaveNames"
+      }
+    },
+    "About": "Updates saving process to show more information about save",
+    "HomepageUrl": "https://github.com/alterasc/MoreInformativeSaveNames",
+    "Tags": [ "UserInterface" ]
+  },  
+
+  {
     "Name": "More Font Sizes",
     "Author": "cookEsandcream",
     "Id": {
