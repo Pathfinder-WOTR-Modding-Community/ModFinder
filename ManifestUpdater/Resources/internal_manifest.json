@@ -1,1917 +1,1935 @@
 [
-  // Please keep sorted by Name.
-  {
-    "Name": "AddedFeats",
-    "Author": "Telyl",
-    "Id": {
-      "Id": "AddedFeats",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Telyl",
-        "RepoName": "AddedFeats"
-      }
-    },
-    "About": "Adds additional features for animal companions and PCs.",
-    "HomepageUrl": "https://github.com/Telyl/AddedFeats",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Additional Hotkeys",
-    "Author": "apocc",
-    "Id": {
-      "Id": "ApoccHotkeys",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "68"
-      }
-    },
-    "About": "Adds the option to assign hotkeys for each Weapon Set, Stealth, Quick Slot items, and more.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/68",
-    "Tags": [ "UserInterface", "Utilities" ]
-  },
-
-  {
-    "Name": "Allow Modded Achievements",
-    "Author": "Xenofell",
-    "Id": {
-      "Id": "AllowModdedAchievements",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "119",
-        "DownloadMirror": "https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror"
-      }
-    },
-    "About": "Enables achievements when mods are enabled.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119",
-    "Tags": [ "Miscellaneous", "Utilities" ]
-  },
-
-  {
-    "Name": "Alternate Racial Traits",
-    "Author": "Microsoftenator",
-    "Id": {
-      "Id": "AlternateRacialTraits",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "microsoftenator2022",
-        "RepoName": "AlternateRacialTraits"
-      }
-    },
-    "About": "Some  alternate racial features for Humans and some other races",
-    "HomepageUrl": "https://github.com/microsoftenator2022/AlternateRacialTraits",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Automatic Bonus Progression",
-    "Author": "WittleWolfie",
-    "Id": {
-      "Id": "AutomaticBonusProgression",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "WittleWolfie",
-        "RepoName": "AutomaticBonusProgression"
-      }
-    },
-    "About": "An item rebalance mod based on Pathfinder's Automatic Bonus Progression ruleset.",
-    "HomepageUrl": "https://github.com/WittleWolfie/AutomaticBonusProgression",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Auto Mount",
-    "Author": "zepheon",
-    "Id": {
-      "Id": "AutoMount",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "zephe0n",
-        "RepoName": "AutoMount"
-      }
-    },
-    "About": "Mount all your animal companions automatically with a customizable keybind.",
-    "HomepageUrl": "https://github.com/zephe0n/AutoMount",
-    "Tags": [ "UserInterface" ]
-  },
-
-  {
-    "Name": "Baphomet Rides Deskari",
-    "Author": "Nenio",
-    "Id": {
-      "Id": "NenioMod",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "YLMstring",
-        "RepoName": "NenioMod"
-      }
-    },
-    "About": "They take Nenio's advice.",
-    "HomepageUrl": "https://github.com/YLMstring/NenioMod",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Battle Scion Extra Rage Powers Fix",
-    "Author": "DanScallion",
-    "Id": {
-      "Id": "WOTR_BattleScionExtraRagePowers",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "574"
-      }
-    },
-    "About": "For some reason Battle Scion cannot take Extra Rage Powers feat, which he should as he does have rage powers. This mod enables you to take it if you have battle prowess which is battle scions rage power ability.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/574/",
-    "Tags": [ "Bugfix" ]
-  },
-
-  {
-    "Name": "Better Backgrounds",
-    "Author": "BurlyWurly",
-    "Id": {
-      "Id": "BetterBackgrounds",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "205"
-      }
-    },
-    "About": "Revises and improves many of the default Background choices while also introducing several brand new Background options.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/205",
-    "Tags": [ "Gameplay", "Homebrew" ]
-  },
-
-  {
-    "Name": "BOAT BOAT BOAT",
-    "Author": "Balkoth",
-    "Id": {
-      "Id": "WOTR_BOAT_BOAT_BOAT",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Balkoth-dev",
-        "RepoName": "WOTR_BOAT_BOAT_BOAT"
-      }
-    },
-    "About": "BOAT BOAT BOAT",
-    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Bubble Buffs",
-    "Author": "Bubbles",
-    "Id": {
-      "Id": "BubbleBuffs",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "195",
-        "DownloadMirror": "https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror"
-      }
-    },
-    "About": "Like auto/buff/bot but simpler and easier to use. Imagine if setting up an auto buffing mod was easy enough you don't need a PhD, and integrated enough you don't need to open a UMM gui to configure it?",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",
-    "Tags": [ "Gameplay", "UserInterface" ]
-  },
-
-  {
-    "Name": "Bubble Tweaks",
-    "Author": "Bubbles",
-    "Id": {
-      "Id": "BubbleTweaks",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "177"
-      }
-    },
-    "About": "Non-gameplay tweaks and enhancements to improve quality of life features. Fits into the base game without looking like a mod.",
-    "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
-    "Tags": [ "Gameplay", "UserInterface" ]
-  },
-
-  {
-    "Name": "Buffbot",
-    "Author": "Balkoth",
-    "Id": {
-      "Id": "WrathBuffBot",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Balkoth-dev",
-        "RepoName": "BuffBot-Wrath"
-      }
-    },
-    "About": "Auto buffing solution that uses the UMM menu instead of an in-game UI.",
-    "HomepageUrl": "https://github.com/Balkoth-dev/BuffBot-Wrath",
-    "Tags": [ "Gameplay", "Miscellaneous" ]
-  },
-
-  {
-    "Name": "Centipede Companions Corrupt",
-    "Author": "Sly",
-    "Id": {
-      "Id": "CentipedeCorruptor",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SlyDevil",
-        "RepoName": "Centipede-Corruptor"
-      }
-    },
-    "About": "Owlmod patch to give Centipede animal companions Mythic Corruptor",
-    "HomepageUrl": "https://github.com/SlyDevil/Centipede-Corruptor",
-    "Tags": [ "Gameplay", "Homebrew" ]
-  },
-
-  {
-    "Name": "Champion Feats Anew",
-    "Author": "lynnpye",
-    "Id": {
-      "Id": "ChampionFeatsAnew",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "lynnpye",
-        "RepoName": "Champion-Feats"
-      }
-    },
-    "About": "Adds a number of configurable, scaling powerful feats to build your perfect commander.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/384",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Character Options+",
-    "Author": "WittleWolfie",
-    "Id": {
-      "Id": "CharacterOptionsPlus",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "WittleWolfie",
-        "RepoName": "CharacterOptionsPlus"
-      }
-    },
-    "About": "Adds character build options from the tabletop ruleset.",
-    "HomepageUrl": "https://github.com/WittleWolfie/CharacterOptionsPlus",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Combat Relief 2024",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "AlterAsc.CombatRelief",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "CombatRelief"
-      }
-    },
-    "About": "This mod suppresses random encounters and automatically wins crusade battles. Either can be disabled in the UMM menu.",
-    "HomepageUrl": "https://github.com/alterasc/CombatRelief",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "DarkCodex",
-    "Author": "Fumihiko",
-    "Id": {
-      "Id": "DarkCodex",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Truinto",
-        "RepoName": "DarkCodex"
-      }
-    },
-    "About": "New feats and abilities for various classes with a focus on Kineticist and Mythic abilities.",
-    "HomepageUrl": "https://github.com/Truinto/DarkCodex",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Deceiver Buff",
-    "Author": "CascadingDragon",
-    "Id": {
-      "Id": "deceiverbuff",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "CasDragon",
-        "RepoName": "deceiverbuff"
-      }
-    },
-    "About": "Extends spellbook progression for Deceiver, allows spellbook merging with Deceiver, and adds new spells to Deceiver's spell list",
-    "HomepageUrl": "https://github.com/CasDragon/deceiverbuff",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Demonology",
-    "Author": "Big Daddy Shmee",
-    "Id": {
-      "Id": "Demonology",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "637"
-      }
-    },
-    "About": "Allows you to take feats from level 1 that gives you the ability to summon demons, that grows in power as you level, giving you access quickly to very powerful summons for your level.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/637",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Dextrous Carnage",
-    "Author": "Madlampy",
-    "Id": {
-      "Id": "DexCarn",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Evilvonbek",
-        "RepoName": "DexCarn"
-      }
-    },
-    "About": "Simple Rework of Deadly Carnage to allow Dex based Characters to have access to the mechanic, with altered name and description for Flavour.",
-    "HomepageUrl": "https://github.com/Evilvonbek/DexCarn",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "DragonChanges&Additions",
-    "Author": "CascadingDragon",
-    "Id": {
-      "Id": "DragonChanges",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "CasDragon",
-        "RepoName": "DragonChanges"
-      }
-    },
-    "About": "DragonChanges is a mod for all the changes that aren't bug fixes that I could include in DragonFixes. Now includes extra content",
-    "HomepageUrl": "https://github.com/CasDragon/DragonChanges",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "DragonFixes",
-    "Author": "CascadingDragon",
-    "Id": {
-      "Id": "DragonFixes",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "CasDragon",
-        "RepoName": "DragonFixes"
-      }
-    },
-    "About": "DragonFixes is a mod for Pathfinder: Wrath of the Righteous that fixes several bugs",
-    "HomepageUrl": "https://github.com/CasDragon/DragonFixes",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Earlier Mythic level ups",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "EarlierMythicLevelUps",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "AlterAsc",
-        "RepoName": "EarlierMythicLevelUps"
-      }
-    },
-    "About": "Gives some mythic level ups earlier than normal",
-    "HomepageUrl": "https://github.com/alterasc/EarlierMythicLevelUps",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Ebons Content Mod",
-    "Author": "ebonfowl",
-    "Id": {
-      "Id": "EbonsContentMod",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "EdgarEbonfowl",
-        "RepoName": "EbonsContentMod"
-      }
-    },
-    "About": "This mod was created to add new content from tabletop to Wrath of the Righteous that wasn't represented in the other major content mods. Includes new races/subraces, in addition to other content",
-    "HomepageUrl": "https://github.com/EdgarEbonfowl/EbonsContentMod",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Ebons Unfixer Mod",
-    "Author": "ebonfowl",
-    "Id": {
-      "Id": "EbonsUnfixerMod",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "EdgarEbonfowl",
-        "RepoName": "EbonsUnfixerMod"
-      }
-    },
-    "About": "The intent of this mod is merely to revert/unfix some of the fixes that Owlcat implemented since launch which haven't been reverted elsewhere.",
-    "HomepageUrl": "https://github.com/EdgarEbonfowl/EbonsUnfixerMod",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Enduring Reworks",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "EnduringRework",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "EnduringRework"
-      }
-    },
-    "About": "Changes Enduring spells and Greater Enduring Spells mythic abilities",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/497",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Expanded Content",
-    "Author": "Kadyn & Bittercranberry",
-    "Id": {
-      "Id": "ExpandedContent",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "ka-dyn",
-        "RepoName": "ExpandedContent"
-      }
-    },
-    "About": "This mod seeks to expand and add upon the content in the game. New classes, Religions, mechanics, backgrounds, traits and more. All features are toggleable in UMM UI",
-    "HomepageUrl": "https://github.com/ka-dyn/ExpandedContent",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Expanded Epilogue",
-    "Author": "Ranadiel",
-    "Id": {
-      "Id": "RanEpilogue",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "545"
-      }
-    },
-    "About": "A mod that expands the epilogue to provide endings to new topics and to increase the reactivity to some existing topics.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/545",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Finessable Sabers",
-    "Author": "Stoyan",
-    "Id": {
-      "Id": "FinessableSabers",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "StoyanKucarov",
-        "RepoName": "FinessableSabers"
-      }
-    },
-    "About": "Sabers are classed as both light and finesse weapons, not strictly tabletop as they should be light only for TWF purposes but eh i choose to consider it an owlcat oversight, adds finesse training for sabers to rogues",
-    "HomepageUrl": "https://github.com/StoyanKucarov/FinessableSabers",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Finnean Tweaks",
-    "Author": "Barley",
-    "Id": {
-      "Id": "FinneanTweaks",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "BarleyFlour",
-        "RepoName": "FinneanTweaks"
-      }
-    },
-    "About": "Tweaks finnean's progression so that he scales according to chapter instead of quests. Allows you to choose enchants, a lower tier one from the start of chapter 2 & a higher tier one at the start of Chapter 4.",
-    "HomepageUrl": "https://github.com/BarleyFlour/FinneanTweaks",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Full Bore Bismuth",
-    "Author": "Badger",
-    "Id": {
-      "Id": "FullBoreBismuth",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "536"
-      }
-    },
-    "About": "Makes Bismuth a tad more useful by rearranging what feats he learns and making him not take the -4 level penalty.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/536",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Gracious Friendships",
-    "Author": "Gvenewour & Ameistris",
-    "Id": {
-      "Id": "GraciousFriendships",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "430"
-      }
-    },
-    "About": "'Gracious Friendships' is a lore-friendly narrative mod that adds new dialogue options for companions and NPCs. It expands character interactions throughout the game and fixes some issues with romance flags.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/430",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Great Radiance",
-    "Author": "BurlyWurly",
-    "About": "Changes Radiance from a Longsword into a Greatsword. There are nearly thirty alternate versions including Starknife, Bastard Sword, Falcata, Longspear, and Dueling Sword. Don't see your MC's preferred weapon? Just ask.",
-    "Id": {
-      "Id": "GreatRadiance",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "143"
-      }
-    },
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/143",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Greater Angelic Halo",
-    "Author": "testlum",
-    "About": "Improves Improved Angelic Halo",
-    "Id": {
-      "Id": "GreaterAngelicHalo",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "testlum",
-        "RepoName": "GreaterAngelicHalo"
-      }
-    },
-    "HomepageUrl": "https://github.com/testlum/GreaterAngelicHalo",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Homebrew Archetypes",
-    "Author": "Sigurd",
-    "About": "Adds archetypes/classes/feats from the Table Top. If an archetype doesn't align with it's TT version some homebrew modifications are made to help it fit in the game. Now includes the Ninja mod",
-    "Id": {
-      "Id": "HomebrewArchetypes",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": 279
-      }
-    },
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/279",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Isekai Mod",
-    "Author": "Gekko Lionheart/John100x1",
-    "Id": {
-      "Id": "IsekaiMod",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "bkeath",
-        "RepoName": "PathfinderWOTR-IsekaiMod"
-      }
-    },
-    "About": "This mod adds the overpowered Isekai Protagonist class into the game. It also adds some backgrounds, heritages, and deities designed for this class.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/734",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Kinetic Archetypes",
-    "Author": "NosVladimir",
-    "Id": {
-      "Id": "KineticArchetypes",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "NosVladimir",
-        "RepoName": "KineticArchetypes"
-      }
-    },
-    "About": "A mod for Pathfinder: Wrath of the Righteous, focused on making more kineticist archetypes and other class archetypes that use kinetic blasts.",
-    "HomepageUrl": "https://github.com/NosVladimir/KineticArchetypes",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Kineticist Elements Expanded",
-    "Author": "SpenceZilla",
-    "Id": {
-      "Id": "KineticistElementsExpanded",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SpencerMycek",
-        "RepoName": "KineticistExpandedElements"
-      }
-    },
-    "About": "Adds expanded element choices for the Kineticist class as well as blast types, infusions, wild talents, and more.",
-    "HomepageUrl": "https://github.com/SpencerMycek/KineticistExpandedElements",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Level 1 Companions",
-    "Author": "CascadingDragon",
-    "Id": {
-      "Id": "lvl1companions",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "CasDragon",
-        "RepoName": "lvl1companions"
-      }
-    },
-    "About": "Sets all companions recruit levels to 1 (if they weren't already). This should allow for better compatibility with Barley's Respec mod, and also Toybox gestalt.",
-    "HomepageUrl": "https://github.com/CasDragon/lvl1companions",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Levelable Aivu",
-    "Author": "pheonix99",
-    "Id": {
-      "Id": "LevelableAivu",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "pheonix99",
-        "RepoName": "LevelableAivu"
-      }
-    },
-    "About": "A mod to make Aivu's levelups controllable.",
-    "HomepageUrl": "https://github.com/pheonix99/LevelableAivu",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Lich Decree Reductions",
-    "Author": "Sly",
-    "Id": {
-      "Id": "LichDecreeReductions",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SlyDevil",
-        "RepoName": "LichDecreeReductions"
-      }
-    },
-    "About": "Owlmod patches to reduce Act 3 Lich decree times.",
-    "HomepageUrl": "https://github.com/SlyDevil/LichDecreeReductions",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Literate Companions",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "LiterateCompanions",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "LiterateCompanions"
-      }
-    },
-    "About": "Converts books that grant permanent bonuses to main character into single use usable items that can be used by any member of the party.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/699",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Madison's Metagaming",
-    "Author": "ultramaddie",
-    "Id": {
-      "Id": "MadisonsMetagaming",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "madisoncfallin",
-        "RepoName": "MadisonsMetagaming"
-      }
-    },
-    "About": "Small content mod for WOTR.",
-    "HomepageUrl": "https://github.com/madisoncfallin/MadisonsMetagaming",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Magic Armory",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "MagicArmory",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "MagicArmory"
-      }
-    },
-    "About": "Adds some magic items.",
-    "HomepageUrl": "https://github.com/alterasc/MagicArmory",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Making Friends (Summoner Mod)",
-    "Author": "Balkoth",
-    "Id": {
-      "Id": "WOTR_MAKING_FRIENDS",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Balkoth-dev",
-        "RepoName": "WOTR_MAKING_FRIENDS"
-      }
-    },
-    "About": "Adds the Summoner class from Pathfinder to the game",
-    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_MAKING_FRIENDS",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Many Mods Load Performance Fix",
-    "Author": "ADDB",
-    "Id": {
-      "Id": "!ManyModsPerformanceFix",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "797"
-      }
-    },
-    "About": "This mod can decrease game start time by anywhere from 2s to 100s (or maybe more) depending on your PC and how many mods you have installed.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/797",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Max Squads and Master of Maneuver Adjustments",
-    "Author": "Sly",
-    "Id": {
-      "Id": "MaxSquadsAdjustment",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SlyDevil",
-        "RepoName": "MaxSquadsAdjustment"
-      }
-    },
-    "About": "Owlmod patch to allow the player to reach army sizes of 14 squads and field all of them",
-    "HomepageUrl": "https://github.com/SlyDevil/MaxSquadsAdjustment",
-    "Tags": [ "Gameplay", "Homebrew" ]
-  },
-
-  {
-    "Name": "Mesmerist",
-    "Author": "Telyl",
-    "Id": {
-      "Id": "Mesmerist",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Telyl",
-        "RepoName": "WOTRMesmerist"
-      }
-    },
-    "About": "Adds the Mesmerist class to the game",
-    "HomepageUrl": "https://github.com/Telyl/WOTRMesmerist",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Microscopic Content Expansion",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "MicroscopicContentExpansion",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "MicroscopicContentExpansion"
-      }
-    },
-    "About": "Adds Antipaladin class, some feats and spells. And some optional homebrew changes.",
-    "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Misc Tweaks and Fixes",
-    "Author": "Microsoftenator",
-    "Id": {
-      "Id": "MiscTweaksAndFixes",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "microsoftenator2022",
-        "RepoName": "MiscTweaksAndFixes2"
-      }
-    },
-    "About": "Small(ish) tweaks and fixes for things that bothered me.",
-    "HomepageUrl": "https://github.com/microsoftenator2022/MiscTweaksAndFixes2",
-    "Tags": [ "Miscellaneous", "Gameplay" ]
-  },
-
-  {
-    "Name": "Mod Menu",
-    "Author": "WittleWolfie/Kurufinve",
-    "Id": {
-      "Id": "ModMenu",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "CasDragon",
-        "RepoName": "ModMenu"
-      }
-    },
-    "About": "Adds a new page to the game options for mods. This allows mods to easily use the native settings UI, no more UMM window!",
-    "HomepageUrl": "https://github.com/CasDragon/ModMenu",
-    "Tags": [ "UserInterface", "Utilities" ]
-  },
-
-  {
-    "Name": "ModTagEx",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "ModTagEx",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "AlterAsc",
-        "RepoName": "ModTagEx"
-      }
-    },
-    "About": "Displays information about which mod object is from.",
-    "HomepageUrl": "https://github.com/alterasc/ModTagEx",
-    "Tags": [ "UserInterface", "Utilities" ]
-  },  
-
-  {
-    "Name": "More Backgrounds",
-    "Author": "pedrogdm",
-    "Id": {
-      "Id": "MoreBackgrounds",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "pedrogdm",
-        "RepoName": "MoreBackgrounds"
-      }
-    },
-    "About": "Adds unique homebrew backgrounds to the game.",
-    "HomepageUrl": "https://github.com/pedrogdm/MoreBackgrounds/",
-    "Tags": [ "Content" ]
-  },
-
-  {
-    "Name": "More Informative Save Names",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "MoreInformativeSaveNames",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "AlterAsc",
-        "RepoName": "MoreInformativeSaveNames"
-      }
-    },
-    "About": "Updates saving process to show more information about save",
-    "HomepageUrl": "https://github.com/alterasc/MoreInformativeSaveNames",
-    "Tags": [ "UserInterface" ]
-  },  
-
-  {
-    "Name": "More Font Sizes",
-    "Author": "cookEsandcream",
-    "Id": {
-      "Id": "MoreFontSizes",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "cookEsandcream",
-        "RepoName": "MoreFontSizes"
-      }
-    },
-    "About": "Adjusts the font size slider to allow a much wider range of values for fun or accessibility.",
-    "HomepageUrl": "https://github.com/cookEsandcream/MoreFontSizes/",
-    "Tags": [ "UserInterface", "Utilities" ]
-  },
-
-  {
-    "Name": "More Party Slots",
-    "Author": "ADDB",
-    "Id": {
-      "Id": "MorePartySlots",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "xADDBx",
-        "RepoName": "MorePartySlots"
-      }
-    },
-    "About": "Increase the amount of party slots (this does not affect visual slots; it will only allow adding more members to the party).",
-    "HomepageUrl": "https://github.com/xADDBx/MorePartySlots/",
-    "Tags": [ "UserInterface", "Utilities" ]
-  },
-
-  {
-    "Name": "MorePartyViewSlots",
-    "Author": "Bubbles and ADDB",
-    "Id": {
-      "Id": "MorePartyViewSlots",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "xADDBx",
-        "RepoName": "MorePartyViewSlots"
-      }
-    },
-    "About": "Increases the number of Party View Slots from 6 to 8.",
-    "HomepageUrl": "https://github.com/xADDBx/MorePartyViewSlots/",
-    "Tags": [ "UserInterface", "Utilities" ]
-  },
-
-  {
-    "Name": "Morvarch's Playstyle Expansions",
-    "Author": "Morvarch Princess",
-    "Id": {
-      "Id": "MorvarchsPlaystyleExpansions",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "MorvarchPrincess",
-        "RepoName": "MorvarchsPlaystyleExpansions"
-      }
-    },
-    "About": "A mod focused on adding new ways to build characters.",
-    "HomepageUrl": "https://github.com/MorvarchPrincess/MorvarchsPlaystyleExpansions",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Multiple Archetypes",
-    "Author": "Vek17",
-    "Id": {
-      "Id": "MultipleArchetypes",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Vek17",
-        "RepoName": "WrathMods-MultipleArchetypes"
-      }
-    },
-    "About": "Allows archetype stacking using tabletop's standard rules.",
-    "HomepageUrl": "https://github.com/Vek17/WrathMods-MultipleArchetypes",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Mythic Arcanist",
-    "Author": "Llisandur",
-    "Id": {
-      "Id": "MythicArcanist",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Llisandur",
-        "RepoName": "MythicArcanist"
-      }
-    },
-    "About": "This mod adds an new homebrew mythic ability and several 3rd Part Publisher spells. Once a game is saved with this mod is enabled it will require this mod to be present to load so do not remove or disable the mod once enabled. You can however disable any feature of the mod at will without breaking saves.",
-    "HomepageUrl": "https://github.com/Llisandur/MythicArcanist",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Mythic Magic Mayhem",
-    "Author": "string, Bakaryu",
-    "Id": {
-      "Id": "MythicMagicMayhem",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "YLMstring",
-        "RepoName": "Mythic-Magic-Mayhem"
-      }
-    },
-    "About": "Introduce a better mythic magic system, along with other tweaks.",
-    "HomepageUrl": "https://github.com/YLMstring/Mythic-Magic-Mayhem",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Mythic Spellbook Tweaks",
-    "Author": "Vek17",
-    "Id": {
-      "Id": "MythicSpellbookTweaks",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Vek17",
-        "RepoName": "WrathMods-MythicSpellbookTweaks"
-      }
-    },
-    "About": "Mythic Class spell books currently scale on mythic rank. This mod adds the ability to change that scaling in a variety of ways.",
-    "HomepageUrl": "https://github.com/Vek17/WrathMods-MythicSpellbookTweaks",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Mythic Path Power Swapper",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "MythicPathPowerSwapper",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "MythicPathPowerSwapper"
-      }
-    },
-    "About": "Allows changing mythic powers to powers from another path, or playing without mythic powers at all.",
-    "HomepageUrl": "https://github.com/alterasc/MythicPathPowerSwapper",
-    "Tags": [ "Content" ]
-  },
-
-  {
-    "Name": "Mythic Spell Flexibility",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "MythicSpellFlexibility",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "MythicSpellFlexibility"
-      }
-    },
-    "About": "Allows casting special mythic spells from your normal spellbooks.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/601",
-    "Tags": [ "Content" ]
-  },
-
-  {
-    "Name": "Nine Swords",
-    "Author": "V0idhead",
-    "Id": {
-      "Id": "VoidHeadWOTRNineSwords",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "V0idhead",
-        "RepoName": "WOTRNineSwords"
-      }
-    },
-    "About": "An implementation of the classes found in Tome of Battle: The Book of Nine Swords.",
-    "HomepageUrl": "https://github.com/V0idhead/WOTRNineSwords",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "No Film Grain",
-    "Author": "Hambeard",
-    "Id": {
-      "Id": "NoFilmGrainWrath",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "thehambeard",
-        "RepoName": "NoFilmGrainWrath"
-      }
-    },
-    "About": "Improves the sharpness in game by removing the post processing film grain effect.",
-    "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
-    "Tags": [ "Visuals" ]
-  },
-
-  {
-    "Name": "Non-Stop Crusade Events",
-    "Author": "Sly",
-    "Id": {
-      "Id": "NonStopEvents",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SlyDevil",
-        "RepoName": "NonStopEvents"
-      }
-    },
-    "About": "Owlmod patch to give the player a crusade event every day",
-    "HomepageUrl": "https://github.com/SlyDevil/NonStopEvents",
-    "Tags": [ "Gameplay", "Homebrew" ]
-  },
-
-  {
-    "Name": "The One Pearl",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "OnePearl",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "OnePearl"
-      }
-    },
-    "About": "Adds The One Pearl, which combines powers of all pearls of power player currently has in their inventory.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/613",
-    "Tags": [ "Miscellaneous" ]
-  },
-
-  {
-    "Name": "Onmi's Mod",
-    "Author": "Onmi",
-    "Id": {
-      "Id": "BoonOfIomedaeWrath",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Onmi",
-        "RepoName": "OnmiMod"
-      }
-    },
-    "About": "Adds the Boon of Iomedae for Rejecting Nocticula's Profane Ascension",
-    "HomepageUrl": "https://github.com/OnmiKhaos/OnmiMod",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Oopsie your horse died and I brought it back. Hope that's fine :)",
-    "Author": "Sly",
-    "Id": {
-      "Id": "UndeadHorseBodytest",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SlyDevil",
-        "RepoName": "UndeadHorseBodytest"
-      }
-    },
-    "About": "Owlmod patch to change the horse animal companion body to that of the plague horse used by Grave Knights",
-    "HomepageUrl": "https://github.com/SlyDevil/UndeadHorseBodytest",
-    "Tags": [ "Visuals" ]
-  },
-
-  {
-    "Name": "Paladin Weapon Bond lasts for hours unlike...",
-    "Author": "Sly",
-    "Id": {
-      "Id": "PaladinWeaponBond_lastshours",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SlyDevil",
-        "RepoName": "PaladinWeaponBond_lastshours"
-      }
-    },
-    "About": "Owlmod patch to change the scaling on Weapon Bond to hour/lvl",
-    "HomepageUrl": "https://github.com/SlyDevil/PaladinWeaponBond_lastshours",
-    "Tags": [ "Gameplay", "Homebrew" ]
-  },
-
-  {
-    "Name": "Partial Highlight Toggle",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "PartialHighlightToggle",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "PartialHighlightToggle"
-      }
-    },
-    "About": "Allows toggling of partial highlight mode that highlights only loot and interactable map objects, without highlighting everything else.",
-    "HomepageUrl": "https://github.com/alterasc/PartialHighlightToggle",
-    "Tags": [ "UserInterface" ]
-  },
-
-  {
-    "Name": "PATH OF BLING",
-    "Author": "Balkoth",
-    "Id": {
-      "Id": "WOTR_PATH_OF_BLING",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Balkoth-dev",
-        "RepoName": "WOTR_PATH_OF_BLING"
-      }
-    },
-    "About": "This mod is for Pathfinder: Wrath of the Righteous, it contains a number of changes for the Gold Dragon mythic path. This includes bug fixes and enhancements. Any change may be toggled on or off as the user wills.",
-    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_BLING",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "PATH OF HELL",
-    "Author": "Balkoth",
-    "Id": {
-      "Id": "WOTR_PATH_OF_HELL",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Balkoth-dev",
-        "RepoName": "WOTR_PATH_OF_HELL"
-      }
-    },
-    "About": "Contains changes to the Devil Mythic Class as requested by the community.",
-    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_HELL",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "PATH OF RAGE",
-    "Author": "Balkoth",
-    "Id": {
-      "Id": "WOTR_PATH_OF_RAGE",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Balkoth-dev",
-        "RepoName": "WOTR_PATH_OF_RAGE"
-      }
-    },
-    "About": "Contains changes for the Demon mythic path to make it feel better while keeping it within the vision of the game. It contains a number of bug-fixes, new abilities, and a different way of handling the Demon's main mechanic: Rage.",
-    "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "PC Female Viconia DeVir Soundset",
-    "Author": "DarthParametric",
-    "Id": {
-      "Id": "PC_Female_BG_Viconia",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "DarthParametric",
-        "RepoName": "WOTR_Custom_Soundset_Viconia_DeVir",
-        "ReleaseFilter": "PC_Female_BG_Viconia_v"
-      }
-    },
-    "About": "Adds a custom, standalone soundset for female PCs and mercenaries. Does not overwrite or replace any of the vanilla soundsets.",
-    "HomepageUrl": "https://github.com/DarthParametric/WOTR_Custom_Soundset_Viconia_DeVir",
-    "Tags": [ "Audio" ]
-  },
-
-  {
-    "Name": "PC Male Balthasar Gelt Soundset",
-    "Author": "DarthParametric",
-    "Id": {
-      "Id": "PC_TWWH_Balthasar_Gelt",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "DarthParametric",
-        "RepoName": "WOTR_Custom_Soundset_Balthasar_Gelt",
-        "ReleaseFilter": "PC_TWWH_Balthasar_Gelt_v"
-      }
-    },
-    "About": "Adds a custom, standalone soundset for male PCs and mercenaries, including custom casting lines that replace the vanilla chanting. Does not overwrite or replace any of the vanilla soundsets.",
-    "HomepageUrl": "https://github.com/DarthParametric/WOTR_Custom_Soundset_Balthasar_Gelt",
-    "Tags": [ "Audio" ]
-  },
-
-  {
-    "Name": "Prestige Minus",
-    "Author": "string",
-    "Id": {
-      "Id": "PrestigeMinus",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "YLMstring",
-        "RepoName": "Prestige-Minus"
-      }
-    },
-    "About": "Play WotR with a smaller party",
-    "HomepageUrl": "https://github.com/YLMstring/Prestige-Minus",
-    "Tags": [ "Utilities", "Gameplay" ]
-  },
-
-  {
-    "Name": "Prestige Plus",
-    "Author": "string",
-    "Id": {
-      "Id": "PrestigePlus",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "YLMstring",
-        "RepoName": "PrestigePlus"
-      }
-    },
-    "About": "This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes! All features are toggleable.",
-    "HomepageUrl": "https://github.com/YLMstring/PrestigePlus",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Prophet of Pestilence activation change",
-    "Author": "Sly",
-    "Id": {
-      "Id": "ProphetofPestilence_all melee attacks",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SlyDevil",
-        "RepoName": "Prophet-of-Pestilence-greater-spirit-change"
-      }
-    },
-    "About": "Owlmod patch to have the Prophet's greater spirit activate on all incoming attacks",
-    "HomepageUrl": "https://github.com/SlyDevil/Prophet-of-Pestilence-greater-spirit-change",
-    "Tags": [ "Gameplay", "Homebrew", "Bugfix" ]
-  },
-
-  {
-    "Name": "Puzzle Skip",
-    "Author": "Arkive",
-    "Id": {
-      "Id": "PuzzleSkip",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Balkoth-dev",
-        "RepoName": "PuzzleSkip"
-      }
-    },
-    "About": "Allows skipping puzzles.",
-    "HomepageUrl": "https://github.com/Balkoth-dev/PuzzleSkip",
-    "Tags": [ "UserInterface", "Visuals" ]
-  },
-
-  {
-    "Name": "NWN2 QuickCast",
-    "Author": "Hambeard",
-    "Id": {
-      "Id": "NWN2QuickCast",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "thehambeard",
-        "RepoName": "NWN2QuickCast"
-      }
-    },
-    "About": "Gives you a moveable UI for casting spells on the fly",
-    "HomepageUrl": "https://github.com/thehambeard/NWN2QuickCast",
-    "Tags": [ "UserInterface", "Gameplay" ]
-  },
-
-  {
-    "Name": "Random Equipment",
-    "Author": "Hambeard",
-    "Id": {
-      "Id": "RandomEquipment",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "thehambeard",
-        "RepoName": "RandomEquipment"
-      }
-    },
-    "About": "Will add random game loot to any container the player interacts with based on a percentage chance. The loot already inside the container is untouched by the mod and will only add to it. The loot possible is based on your level and shouldn't give anything inappropriately OP.",
-    "HomepageUrl": "https://github.com/thehambeard/RandomEquipment",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Relations and Romances",
-    "Author": "Randiel",
-    "Id": {
-      "Id": "RanRomance",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "776"
-      }
-    },
-    "About": "Adds interactions with six NPCs in the game including potential romances. Also adds portraits to three of those NPCs (Targona, Terendelev, and Aranka).",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/776",
-    "Tags": [ "Romance", "Story" ]
-  },
-
-  {
-    "Name": "Respec Mod",
-    "Author": "Barley",
-    "Id": {
-      "Id": "RespecWrath",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "BarleyFlour",
-        "RepoName": "RespecMod"
-      }
-    },
-    "About": "Respect mod which enables complete respec for companions, all the way to level 1.",
-    "HomepageUrl": "https://github.com/BarleyFlour/RespecMod",
-    "Tags": [ "Utilities" ]
-  },
-
-  {
-    "Name": "ScalingItemDCs",
-    "Author": "Hambeard",
-    "Id": {
-      "Id": "WrathScalingItemDCs",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "thehambeard",
-        "RepoName": "WrathScalingItemDCs"
-      }
-    },
-    "About": "Increases DCs for Weapons and Armors by various means.",
-    "HomepageUrl": "https://github.com/thehambeard/WrathScalingItemDCs",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Snap Shot Approach",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "SnapshotApproach",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "SnapshotApproach"
-      }
-    },
-    "About": "Allows automatic approch into Snap Shot range for ranged characters",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/498",
-    "Tags": [ "Miscellaneous" ]
-  },
-
-  {
-    "Name": "Spars Sorcerous Sundries",
-    "Author": "Sparhawk87",
-    "Id": {
-      "Id": "SparsSorcerousSundries",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "TheSparhawk",
-        "RepoName": "SparsSorcerousSundries"
-      }
-    },
-    "About": "Adds new items to vendors",
-    "HomepageUrl": "https://github.com/TheSparhawk/SparsSorcerousSundries",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Spellbook Merge",
-    "Author": "vikigenius",
-    "Id": {
-      "Id": "SpellbookMerge",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "vikigenius",
-        "RepoName": "SpellbookMerge"
-      }
-    },
-    "About": "Adds more spellbook merging options. Currently this reverts the changes Owlcat made to spellbook merging in Patch 1.3.",
-    "HomepageUrl": "https://github.com/vikigenius/SpellbookMerge",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Spell Pouch",
-    "Author": "Truinto",
-    "Id": {
-      "Id": "SpellPouch",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Truinto",
-        "RepoName": "SpellPouch"
-      }
-    },
-    "About": "Adds customizable bundles of abilities and activatables for use in a single foldable actionbar slot.",
-    "HomepageUrl": "https://github.com/Truinto/SpellPouch",
-    "Tags": [ "Gameplay", "UserInterface" ]
-  },
-
-  {
-    "Name": "Spell Slot Freedom",
-    "Author": "AlterAsc",
-    "Id": {
-      "Id": "SpellSlotFreedom",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "alterasc",
-        "RepoName": "SpellSlotFreedom"
-      }
-    },
-    "About": "Allows casting spells using higher level spell slots without applying metamagic.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/603",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Swashbuckler Class",
-    "Author": "Zedel",
-    "Id": {
-      "Id": "Swashbuckler",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "novumvita",
-        "RepoName": "SwashbucklerWOTR"
-      }
-    },
-    "About": "Adds the swashbuckler class.",
-    "HomepageUrl": "https://github.com/novumvita/SwashbucklerWOTR",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Tabletop Tweaks Base",
-    "Author": "Vek17",
-    "Id": {
-      "Id": "TabletopTweaks-Base",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Vek17",
-        "RepoName": "TabletopTweaks-Base"
-      }
-    },
-    "About": "Adds tabletop based fixes and new content. Once a game is saved with this mod enabled it requires this mod to load, so do not uninstall it. You can disable any feature of the mod without breaking saves.",
-    "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Base",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Tabletop Tweaks Core",
-    "Author": "Vek17",
-    "Id": {
-      "Id": "TabletopTweaks-Core",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Vek17",
-        "RepoName": "TabletopTweaks-Core"
-      }
-    },
-    "About": "Provides a shared core system for all TabletopTweaks mods, and and any third party mods wishing to use TabletopTweaks systems and utilities.",
-    "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Core",
-    "Tags": [ "Gameplay", "Utilities" ]
-  },
-
-  {
-    "Name": "Tabletop Tweaks Flanking",
-    "Author": "Vek17",
-    "Id": {
-      "Id": "TabletopTweaks-Flanking",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Vek17",
-        "RepoName": "TabletopTweaks-Flanking"
-      }
-    },
-    "About": "This module replaces Owlcat's homebrew flanking mechanics with mechanics more accurate to pathfinder. The exact parameters used are configurable to make flanking more or less difficult as desired.",
-    "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Flanking",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Tabletop Tweaks Mythic Rework",
-    "Author": "Vek17",
-    "Id": {
-      "Id": "TabletopTweaks-Reworks",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Vek17",
-        "RepoName": "TabletopTweaks-Reworks"
-      }
-    },
-    "About": "Provides non tabletop based tweaks to Owlcat's mythic content including changes to mythic classes and abilities. Once a game is saved with this mod enabled it requires this mod to load, so do not uninstall it. You can disable any feature of the mod without breaking saves.",
-    "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Reworks",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Toggleable Throwing Weapons",
-    "Author": "phoenix99",
-    "Id": {
-      "Id": "ToggleableThrowingWeapons",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "pheonix99",
-        "RepoName": "ToggleableThrowingWeapons"
-      }
-    },
-    "About": "You can now use a toggle to turn daggers and starknives into ranged weapons.",
-    "HomepageUrl": "https://github.com/pheonix99/ToggleableThrowingWeapons",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "Tome of the Firebird",
-    "Author": "phoenix99",
-    "Id": {
-      "Id": "TomeOfTheFirebird",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "pheonix99",
-        "RepoName": "TomeOfTheFirebird"
-      }
-    },
-    "About": "Adds spells, feats, other abilities and some fixes. Adds random stuff I made when I got annoyed at the game. All homebrew content or divergences from TT will be called out.",
-    "HomepageUrl": "https://github.com/pheonix99/TomeOfTheFirebird",
-    "Tags": [ "Content", "Gameplay" ]
-  },
-
-  {
-    "Name": "ToyBox (a bag of tricks)",
-    "Author": "Narria",
-    "Id": {
-      "Id": "0ToyBox0",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "xADDBx",
-        "RepoName": "ToyBox-Wrath"
-      }
-    },
-    "About": "Toy Box is a cute and playful mod with 400+ cheats, tweaks and quality of life improvements. It was created in the spirit of Bag of Tricks & Cheat Menu but with a little different focus.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/8",
-    "Tags": [ "Gameplay", "Utilities" ]
-  },
-
-  {
-    "Name": "Turnbased Combat Delay",
-    "Author": "Vek17",
-    "Id": {
-      "Id": "TurnbasedCombatDelay",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Vek17",
-        "RepoName": "WrathMods-TurnbasedCombatDelay"
-      }
-    },
-    "About": "Allows you to alter the pause before turn based combat starts",
-    "HomepageUrl": "https://github.com/Vek17/WrathMods-TurnbasedCombatDelay",
-    "Tags": [ "Gameplay", "Miscellaneous" ]
-  },
-
-  {
-    "Name": "Vampiric blade without effects",
-    "Author": "Sly",
-    "Id": {
-      "Id": "VampBladeEnch_noFx",
-      "Type": "Owlcat"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "SlyDevil",
-        "RepoName": "Vampiric-Blade-without-Fx"
-      }
-    },
-    "About": "Owlmod patch to remove some vampiric blade effects",
-    "HomepageUrl": "https://github.com/SlyDevil/Vampiric-Blade-without-Fx",
-    "Tags": [ "Audio", "Visuals" ]
-  },
-
-  {
-    "Name": "Visual Adjustments 2",
-    "Author": "Barley/Spacehamster",
-    "Id": {
-      "Id": "VisualAdjustments2",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "BarleyFlour",
-        "RepoName": "VisualAdjustments2"
-      }
-    },
-    "About": "Successor to Visual Adjustments which allows adjusting character appearance. Built with an exclusively native UI, no more UMM!",
-    "HomepageUrl": "https://github.com/BarleyFlour/VisualAdjustments2",
-    "Tags": [ "UserInterface", "Visuals" ]
-  },
-
-  {
-    "Name": "Weapon Focus Plus",
-    "Author": "Vek17 & xoff",
-    "Id": {
-      "Id": "WeaponFocusPlus",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "Vek17",
-        "RepoName": "WrathMods-WeaponFocusPlus"
-      }
-    },
-    "About": "Weapon Focus Plus allows you to use fighter weapon group based weapon focus instead of picking a single weapon.",
-    "HomepageUrl": "https://github.com/Vek17/WrathMods-WeaponFocusPlus",
-    "Tags": [ "Gameplay" ]
-  },
-
-  {
-    "Name": "Woljif Romance Mod",
-    "Author": "Paladingineer",
-    "Id": {
-      "Id": "WOTR_WoljifRomanceMod",
-      "Type": "UMM"
-    },
-    "Service": {
-      "Nexus": {
-        "ModID": "287"
-      }
-    },
-    "About": "Adds a full romance path for Woljif Jefto, available for both male and female characters beginning in Act 3. Content continues through the rest of the game including the epilogue.",
-    "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/287",
-    "Tags": [ "Content" ]
-  },
-
-  {
-    "Name": "WotR Inventory Tweak (Quick Cast)",
-    "Author": "Hambeard",
-    "Id": {
-      "Id": "QuickCast",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "thehambeard",
-        "RepoName": "WIT"
-      }
-    },
-    "About": "This is the alpha release of Quick Cast (formally Inventory Tweaks). Installing and uninstalling does not break saves. This is an alpha, expect there to be bugs.",
-    "HomepageUrl": "https://github.com/thehambeard/WIT",
-    "Tags": [ "UserInterface" ]
-  },
-
-  {
-    "Name": "Wrath Patches",
-    "Author": "Microsoftenator",
-    "Id": {
-      "Id": "WrathPatches",
-      "Type": "UMM"
-    },
-    "Service": {
-      "GitHub": {
-        "Owner": "microsoftenator2022",
-        "RepoName": "WrathPatches"
-      }
-    },
-    "About": "A collection of small patches for Pathfinder: Wrath of the Righteous. Mostly aimed at cleaning up the game's log files, but fixed some minor bugs along the way.",
-    "HomepageUrl": "https://github.com/microsoftenator2022/WrathPatches",
-    "Tags": [ "Gameplay" ]
-  }
+    // Please keep sorted by Name.
+    {
+        "Name": "AddedFeats",
+        "Author": "Telyl",
+        "Id": {
+            "Id": "AddedFeats",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Telyl",
+                "RepoName": "AddedFeats"
+            }
+        },
+        "About": "Adds additional features for animal companions and PCs.",
+        "HomepageUrl": "https://github.com/Telyl/AddedFeats",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Additional Hotkeys",
+        "Author": "apocc",
+        "Id": {
+            "Id": "ApoccHotkeys",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "68"
+            }
+        },
+        "About": "Adds the option to assign hotkeys for each Weapon Set, Stealth, Quick Slot items, and more.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/68",
+        "Tags": [ "UserInterface", "Utilities" ]
+    },
+
+    {
+        "Name": "Allow Modded Achievements",
+        "Author": "Xenofell",
+        "Id": {
+            "Id": "AllowModdedAchievements",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "119",
+                "DownloadMirror": "https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror"
+            }
+        },
+        "About": "Enables achievements when mods are enabled.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/119",
+        "Tags": [ "Miscellaneous", "Utilities" ]
+    },
+
+    {
+        "Name": "Alternate Racial Traits",
+        "Author": "Microsoftenator",
+        "Id": {
+            "Id": "AlternateRacialTraits",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "microsoftenator2022",
+                "RepoName": "AlternateRacialTraits"
+            }
+        },
+        "About": "Some  alternate racial features for Humans and some other races",
+        "HomepageUrl": "https://github.com/microsoftenator2022/AlternateRacialTraits",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Automatic Bonus Progression",
+        "Author": "WittleWolfie",
+        "Id": {
+            "Id": "AutomaticBonusProgression",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "WittleWolfie",
+                "RepoName": "AutomaticBonusProgression"
+            }
+        },
+        "About": "An item rebalance mod based on Pathfinder's Automatic Bonus Progression ruleset.",
+        "HomepageUrl": "https://github.com/WittleWolfie/AutomaticBonusProgression",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Auto Mount",
+        "Author": "zepheon",
+        "Id": {
+            "Id": "AutoMount",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "zephe0n",
+                "RepoName": "AutoMount"
+            }
+        },
+        "About": "Mount all your animal companions automatically with a customizable keybind.",
+        "HomepageUrl": "https://github.com/zephe0n/AutoMount",
+        "Tags": [ "UserInterface" ]
+    },
+
+    {
+        "Name": "Baphomet Rides Deskari",
+        "Author": "Nenio",
+        "Id": {
+            "Id": "NenioMod",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "YLMstring",
+                "RepoName": "NenioMod"
+            }
+        },
+        "About": "They take Nenio's advice.",
+        "HomepageUrl": "https://github.com/YLMstring/NenioMod",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Battle Scion Extra Rage Powers Fix",
+        "Author": "DanScallion",
+        "Id": {
+            "Id": "WOTR_BattleScionExtraRagePowers",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "574"
+            }
+        },
+        "About": "For some reason Battle Scion cannot take Extra Rage Powers feat, which he should as he does have rage powers. This mod enables you to take it if you have battle prowess which is battle scions rage power ability.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/574/",
+        "Tags": [ "Bugfix" ]
+    },
+
+    {
+        "Name": "Better Backgrounds",
+        "Author": "BurlyWurly",
+        "Id": {
+            "Id": "BetterBackgrounds",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "205"
+            }
+        },
+        "About": "Revises and improves many of the default Background choices while also introducing several brand new Background options.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/205",
+        "Tags": [ "Gameplay", "Homebrew" ]
+    },
+
+    {
+        "Name": "BOAT BOAT BOAT",
+        "Author": "Balkoth",
+        "Id": {
+            "Id": "WOTR_BOAT_BOAT_BOAT",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Balkoth-dev",
+                "RepoName": "WOTR_BOAT_BOAT_BOAT"
+            }
+        },
+        "About": "BOAT BOAT BOAT",
+        "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_BOAT_BOAT_BOAT",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Bubble Buffs",
+        "Author": "Bubbles",
+        "Id": {
+            "Id": "BubbleBuffs",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "195",
+                "DownloadMirror": "https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror"
+            }
+        },
+        "About": "Like auto/buff/bot but simpler and easier to use. Imagine if setting up an auto buffing mod was easy enough you don't need a PhD, and integrated enough you don't need to open a UMM gui to configure it?",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/195",
+        "Tags": [ "Gameplay", "UserInterface" ]
+    },
+
+    {
+        "Name": "Bubble Tweaks",
+        "Author": "Bubbles",
+        "Id": {
+            "Id": "BubbleTweaks",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "177"
+            }
+        },
+        "About": "Non-gameplay tweaks and enhancements to improve quality of life features. Fits into the base game without looking like a mod.",
+        "HomepageUrl": "https://github.com/factubsio/BubbleTweaks",
+        "Tags": [ "Gameplay", "UserInterface" ]
+    },
+
+    {
+        "Name": "Buffbot",
+        "Author": "Balkoth",
+        "Id": {
+            "Id": "WrathBuffBot",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Balkoth-dev",
+                "RepoName": "BuffBot-Wrath"
+            }
+        },
+        "About": "Auto buffing solution that uses the UMM menu instead of an in-game UI.",
+        "HomepageUrl": "https://github.com/Balkoth-dev/BuffBot-Wrath",
+        "Tags": [ "Gameplay", "Miscellaneous" ]
+    },
+
+    {
+        "Name": "Centipede Companions Corrupt",
+        "Author": "Sly",
+        "Id": {
+            "Id": "CentipedeCorruptor",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "SlyDevil",
+                "RepoName": "Centipede-Corruptor"
+            }
+        },
+        "About": "Owlmod patch to give Centipede animal companions Mythic Corruptor",
+        "HomepageUrl": "https://github.com/SlyDevil/Centipede-Corruptor",
+        "Tags": [ "Gameplay", "Homebrew" ]
+    },
+
+    {
+        "Name": "Champion Feats Anew",
+        "Author": "lynnpye",
+        "Id": {
+            "Id": "ChampionFeatsAnew",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "lynnpye",
+                "RepoName": "Champion-Feats"
+            }
+        },
+        "About": "Adds a number of configurable, scaling powerful feats to build your perfect commander.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/384",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Character Options+",
+        "Author": "WittleWolfie",
+        "Id": {
+            "Id": "CharacterOptionsPlus",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "WittleWolfie",
+                "RepoName": "CharacterOptionsPlus"
+            }
+        },
+        "About": "Adds character build options from the tabletop ruleset.",
+        "HomepageUrl": "https://github.com/WittleWolfie/CharacterOptionsPlus",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Combat Relief 2024",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "AlterAsc.CombatRelief",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "CombatRelief"
+            }
+        },
+        "About": "This mod suppresses random encounters and automatically wins crusade battles. Either can be disabled in the UMM menu.",
+        "HomepageUrl": "https://github.com/alterasc/CombatRelief",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "DarkCodex",
+        "Author": "Fumihiko",
+        "Id": {
+            "Id": "DarkCodex",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Truinto",
+                "RepoName": "DarkCodex"
+            }
+        },
+        "About": "New feats and abilities for various classes with a focus on Kineticist and Mythic abilities.",
+        "HomepageUrl": "https://github.com/Truinto/DarkCodex",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Deceiver Buff",
+        "Author": "CascadingDragon",
+        "Id": {
+            "Id": "deceiverbuff",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "CasDragon",
+                "RepoName": "deceiverbuff"
+            }
+        },
+        "About": "Extends spellbook progression for Deceiver, allows spellbook merging with Deceiver, and adds new spells to Deceiver's spell list",
+        "HomepageUrl": "https://github.com/CasDragon/deceiverbuff",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Demonology",
+        "Author": "Big Daddy Shmee",
+        "Id": {
+            "Id": "Demonology",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "637"
+            }
+        },
+        "About": "Allows you to take feats from level 1 that gives you the ability to summon demons, that grows in power as you level, giving you access quickly to very powerful summons for your level.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/637",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Dextrous Carnage",
+        "Author": "Madlampy",
+        "Id": {
+            "Id": "DexCarn",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Evilvonbek",
+                "RepoName": "DexCarn"
+            }
+        },
+        "About": "Simple Rework of Deadly Carnage to allow Dex based Characters to have access to the mechanic, with altered name and description for Flavour.",
+        "HomepageUrl": "https://github.com/Evilvonbek/DexCarn",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "DragonChanges&Additions",
+        "Author": "CascadingDragon",
+        "Id": {
+            "Id": "DragonChanges",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "CasDragon",
+                "RepoName": "DragonChanges"
+            }
+        },
+        "About": "DragonChanges is a mod for all the changes that aren't bug fixes that I could include in DragonFixes. Now includes extra content",
+        "HomepageUrl": "https://github.com/CasDragon/DragonChanges",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "DragonFixes",
+        "Author": "CascadingDragon",
+        "Id": {
+            "Id": "DragonFixes",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "CasDragon",
+                "RepoName": "DragonFixes"
+            }
+        },
+        "About": "DragonFixes is a mod for Pathfinder: Wrath of the Righteous that fixes several bugs",
+        "HomepageUrl": "https://github.com/CasDragon/DragonFixes",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Earlier Mythic level ups",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "EarlierMythicLevelUps",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "AlterAsc",
+                "RepoName": "EarlierMythicLevelUps"
+            }
+        },
+        "About": "Gives some mythic level ups earlier than normal",
+        "HomepageUrl": "https://github.com/alterasc/EarlierMythicLevelUps",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Ebons Content Mod",
+        "Author": "ebonfowl",
+        "Id": {
+            "Id": "EbonsContentMod",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "EdgarEbonfowl",
+                "RepoName": "EbonsContentMod"
+            }
+        },
+        "About": "This mod was created to add new content from tabletop to Wrath of the Righteous that wasn't represented in the other major content mods. Includes new races/subraces, in addition to other content",
+        "HomepageUrl": "https://github.com/EdgarEbonfowl/EbonsContentMod",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Ebons Unfixer Mod",
+        "Author": "ebonfowl",
+        "Id": {
+            "Id": "EbonsUnfixerMod",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "EdgarEbonfowl",
+                "RepoName": "EbonsUnfixerMod"
+            }
+        },
+        "About": "The intent of this mod is merely to revert/unfix some of the fixes that Owlcat implemented since launch which haven't been reverted elsewhere.",
+        "HomepageUrl": "https://github.com/EdgarEbonfowl/EbonsUnfixerMod",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Enduring Reworks",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "EnduringRework",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "EnduringRework"
+            }
+        },
+        "About": "Changes Enduring spells and Greater Enduring Spells mythic abilities",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/497",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Expanded Content",
+        "Author": "Kadyn & Bittercranberry",
+        "Id": {
+            "Id": "ExpandedContent",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "ka-dyn",
+                "RepoName": "ExpandedContent"
+            }
+        },
+        "About": "This mod seeks to expand and add upon the content in the game. New classes, Religions, mechanics, backgrounds, traits and more. All features are toggleable in UMM UI",
+        "HomepageUrl": "https://github.com/ka-dyn/ExpandedContent",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Expanded Epilogue",
+        "Author": "Ranadiel",
+        "Id": {
+            "Id": "RanEpilogue",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "545"
+            }
+        },
+        "About": "A mod that expands the epilogue to provide endings to new topics and to increase the reactivity to some existing topics.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/545",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Finessable Sabers",
+        "Author": "Stoyan",
+        "Id": {
+            "Id": "FinessableSabers",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "StoyanKucarov",
+                "RepoName": "FinessableSabers"
+            }
+        },
+        "About": "Sabers are classed as both light and finesse weapons, not strictly tabletop as they should be light only for TWF purposes but eh i choose to consider it an owlcat oversight, adds finesse training for sabers to rogues",
+        "HomepageUrl": "https://github.com/StoyanKucarov/FinessableSabers",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Finnean Tweaks",
+        "Author": "Barley",
+        "Id": {
+            "Id": "FinneanTweaks",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "BarleyFlour",
+                "RepoName": "FinneanTweaks"
+            }
+        },
+        "About": "Tweaks finnean's progression so that he scales according to chapter instead of quests. Allows you to choose enchants, a lower tier one from the start of chapter 2 & a higher tier one at the start of Chapter 4.",
+        "HomepageUrl": "https://github.com/BarleyFlour/FinneanTweaks",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Full Bore Bismuth",
+        "Author": "Badger",
+        "Id": {
+            "Id": "FullBoreBismuth",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "536"
+            }
+        },
+        "About": "Makes Bismuth a tad more useful by rearranging what feats he learns and making him not take the -4 level penalty.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/536",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Gracious Friendships",
+        "Author": "Gvenewour & Ameistris",
+        "Id": {
+            "Id": "GraciousFriendships",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "430"
+            }
+        },
+        "About": "'Gracious Friendships' is a lore-friendly narrative mod that adds new dialogue options for companions and NPCs. It expands character interactions throughout the game and fixes some issues with romance flags.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/430",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Great Radiance",
+        "Author": "BurlyWurly",
+        "About": "Changes Radiance from a Longsword into a Greatsword. There are nearly thirty alternate versions including Starknife, Bastard Sword, Falcata, Longspear, and Dueling Sword. Don't see your MC's preferred weapon? Just ask.",
+        "Id": {
+            "Id": "GreatRadiance",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "143"
+            }
+        },
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/143",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Greater Angelic Halo",
+        "Author": "testlum",
+        "About": "Improves Improved Angelic Halo",
+        "Id": {
+            "Id": "GreaterAngelicHalo",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "testlum",
+                "RepoName": "GreaterAngelicHalo"
+            }
+        },
+        "HomepageUrl": "https://github.com/testlum/GreaterAngelicHalo",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Hellknight Signifer Order of the Nail Fix",
+        "Author": "HeroOfCows",
+        "About": "Favored Enemy now progresses with HKS level and HK favored enemy feature qualifies for Favored Enemy Spellcasting feat",
+        "Id": {
+            "Id": "Signifer_Order_of_the_Nail_Progression",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "HeroOfCows",
+                "RepoName": "HKS_OrderOfTheNail_fix"
+            }
+        },
+        "HomepageUrl": "https://github.com/HeroOfCows/HKS_OrderOfTheNail_fix/",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Homebrew Archetypes",
+        "Author": "Sigurd",
+        "About": "Adds archetypes/classes/feats from the Table Top. If an archetype doesn't align with it's TT version some homebrew modifications are made to help it fit in the game. Now includes the Ninja mod",
+        "Id": {
+            "Id": "HomebrewArchetypes",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": 279
+            }
+        },
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/279",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Isekai Mod",
+        "Author": "Gekko Lionheart/John100x1",
+        "Id": {
+            "Id": "IsekaiMod",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "bkeath",
+                "RepoName": "PathfinderWOTR-IsekaiMod"
+            }
+        },
+        "About": "This mod adds the overpowered Isekai Protagonist class into the game. It also adds some backgrounds, heritages, and deities designed for this class.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/734",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Kinetic Archetypes",
+        "Author": "NosVladimir",
+        "Id": {
+            "Id": "KineticArchetypes",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "NosVladimir",
+                "RepoName": "KineticArchetypes"
+            }
+        },
+        "About": "A mod for Pathfinder: Wrath of the Righteous, focused on making more kineticist archetypes and other class archetypes that use kinetic blasts.",
+        "HomepageUrl": "https://github.com/NosVladimir/KineticArchetypes",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Kineticist Elements Expanded",
+        "Author": "SpenceZilla",
+        "Id": {
+            "Id": "KineticistElementsExpanded",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "SpencerMycek",
+                "RepoName": "KineticistExpandedElements"
+            }
+        },
+        "About": "Adds expanded element choices for the Kineticist class as well as blast types, infusions, wild talents, and more.",
+        "HomepageUrl": "https://github.com/SpencerMycek/KineticistExpandedElements",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Level 1 Companions",
+        "Author": "CascadingDragon",
+        "Id": {
+            "Id": "lvl1companions",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "CasDragon",
+                "RepoName": "lvl1companions"
+            }
+        },
+        "About": "Sets all companions recruit levels to 1 (if they weren't already). This should allow for better compatibility with Barley's Respec mod, and also Toybox gestalt.",
+        "HomepageUrl": "https://github.com/CasDragon/lvl1companions",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Levelable Aivu",
+        "Author": "pheonix99",
+        "Id": {
+            "Id": "LevelableAivu",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "pheonix99",
+                "RepoName": "LevelableAivu"
+            }
+        },
+        "About": "A mod to make Aivu's levelups controllable.",
+        "HomepageUrl": "https://github.com/pheonix99/LevelableAivu",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Lich Decree Reductions",
+        "Author": "Sly",
+        "Id": {
+            "Id": "LichDecreeReductions",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "SlyDevil",
+                "RepoName": "LichDecreeReductions"
+            }
+        },
+        "About": "Owlmod patches to reduce Act 3 Lich decree times.",
+        "HomepageUrl": "https://github.com/SlyDevil/LichDecreeReductions",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Literate Companions",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "LiterateCompanions",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "LiterateCompanions"
+            }
+        },
+        "About": "Converts books that grant permanent bonuses to main character into single use usable items that can be used by any member of the party.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/699",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Madison's Metagaming",
+        "Author": "ultramaddie",
+        "Id": {
+            "Id": "MadisonsMetagaming",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "madisoncfallin",
+                "RepoName": "MadisonsMetagaming"
+            }
+        },
+        "About": "Small content mod for WOTR.",
+        "HomepageUrl": "https://github.com/madisoncfallin/MadisonsMetagaming",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Magic Armory",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "MagicArmory",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "MagicArmory"
+            }
+        },
+        "About": "Adds some magic items.",
+        "HomepageUrl": "https://github.com/alterasc/MagicArmory",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Making Friends (Summoner Mod)",
+        "Author": "Balkoth",
+        "Id": {
+            "Id": "WOTR_MAKING_FRIENDS",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Balkoth-dev",
+                "RepoName": "WOTR_MAKING_FRIENDS"
+            }
+        },
+        "About": "Adds the Summoner class from Pathfinder to the game",
+        "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_MAKING_FRIENDS",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Many Mods Load Performance Fix",
+        "Author": "ADDB",
+        "Id": {
+            "Id": "!ManyModsPerformanceFix",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "797"
+            }
+        },
+        "About": "This mod can decrease game start time by anywhere from 2s to 100s (or maybe more) depending on your PC and how many mods you have installed.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/797",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Max Squads and Master of Maneuver Adjustments",
+        "Author": "Sly",
+        "Id": {
+            "Id": "MaxSquadsAdjustment",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "SlyDevil",
+                "RepoName": "MaxSquadsAdjustment"
+            }
+        },
+        "About": "Owlmod patch to allow the player to reach army sizes of 14 squads and field all of them",
+        "HomepageUrl": "https://github.com/SlyDevil/MaxSquadsAdjustment",
+        "Tags": [ "Gameplay", "Homebrew" ]
+    },
+
+    {
+        "Name": "Mesmerist",
+        "Author": "Telyl",
+        "Id": {
+            "Id": "Mesmerist",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Telyl",
+                "RepoName": "WOTRMesmerist"
+            }
+        },
+        "About": "Adds the Mesmerist class to the game",
+        "HomepageUrl": "https://github.com/Telyl/WOTRMesmerist",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Microscopic Content Expansion",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "MicroscopicContentExpansion",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "MicroscopicContentExpansion"
+            }
+        },
+        "About": "Adds Antipaladin class, some feats and spells. And some optional homebrew changes.",
+        "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Misc Tweaks and Fixes",
+        "Author": "Microsoftenator",
+        "Id": {
+            "Id": "MiscTweaksAndFixes",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "microsoftenator2022",
+                "RepoName": "MiscTweaksAndFixes2"
+            }
+        },
+        "About": "Small(ish) tweaks and fixes for things that bothered me.",
+        "HomepageUrl": "https://github.com/microsoftenator2022/MiscTweaksAndFixes2",
+        "Tags": [ "Miscellaneous", "Gameplay" ]
+    },
+
+    {
+        "Name": "Mod Menu",
+        "Author": "WittleWolfie/Kurufinve",
+        "Id": {
+            "Id": "ModMenu",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "CasDragon",
+                "RepoName": "ModMenu"
+            }
+        },
+        "About": "Adds a new page to the game options for mods. This allows mods to easily use the native settings UI, no more UMM window!",
+        "HomepageUrl": "https://github.com/CasDragon/ModMenu",
+        "Tags": [ "UserInterface", "Utilities" ]
+    },
+
+    {
+        "Name": "ModTagEx",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "ModTagEx",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "AlterAsc",
+                "RepoName": "ModTagEx"
+            }
+        },
+        "About": "Displays information about which mod object is from.",
+        "HomepageUrl": "https://github.com/alterasc/ModTagEx",
+        "Tags": [ "UserInterface", "Utilities" ]
+    },
+
+    {
+        "Name": "More Backgrounds",
+        "Author": "pedrogdm",
+        "Id": {
+            "Id": "MoreBackgrounds",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "pedrogdm",
+                "RepoName": "MoreBackgrounds"
+            }
+        },
+        "About": "Adds unique homebrew backgrounds to the game.",
+        "HomepageUrl": "https://github.com/pedrogdm/MoreBackgrounds/",
+        "Tags": [ "Content" ]
+    },
+
+    {
+        "Name": "More Informative Save Names",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "MoreInformativeSaveNames",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "AlterAsc",
+                "RepoName": "MoreInformativeSaveNames"
+            }
+        },
+        "About": "Updates saving process to show more information about save",
+        "HomepageUrl": "https://github.com/alterasc/MoreInformativeSaveNames",
+        "Tags": [ "UserInterface" ]
+    },
+
+    {
+        "Name": "More Font Sizes",
+        "Author": "cookEsandcream",
+        "Id": {
+            "Id": "MoreFontSizes",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "cookEsandcream",
+                "RepoName": "MoreFontSizes"
+            }
+        },
+        "About": "Adjusts the font size slider to allow a much wider range of values for fun or accessibility.",
+        "HomepageUrl": "https://github.com/cookEsandcream/MoreFontSizes/",
+        "Tags": [ "UserInterface", "Utilities" ]
+    },
+
+    {
+        "Name": "More Party Slots",
+        "Author": "ADDB",
+        "Id": {
+            "Id": "MorePartySlots",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "xADDBx",
+                "RepoName": "MorePartySlots"
+            }
+        },
+        "About": "Increase the amount of party slots (this does not affect visual slots; it will only allow adding more members to the party).",
+        "HomepageUrl": "https://github.com/xADDBx/MorePartySlots/",
+        "Tags": [ "UserInterface", "Utilities" ]
+    },
+
+    {
+        "Name": "MorePartyViewSlots",
+        "Author": "Bubbles and ADDB",
+        "Id": {
+            "Id": "MorePartyViewSlots",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "xADDBx",
+                "RepoName": "MorePartyViewSlots"
+            }
+        },
+        "About": "Increases the number of Party View Slots from 6 to 8.",
+        "HomepageUrl": "https://github.com/xADDBx/MorePartyViewSlots/",
+        "Tags": [ "UserInterface", "Utilities" ]
+    },
+
+    {
+        "Name": "Morvarch's Playstyle Expansions",
+        "Author": "Morvarch Princess",
+        "Id": {
+            "Id": "MorvarchsPlaystyleExpansions",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "MorvarchPrincess",
+                "RepoName": "MorvarchsPlaystyleExpansions"
+            }
+        },
+        "About": "A mod focused on adding new ways to build characters.",
+        "HomepageUrl": "https://github.com/MorvarchPrincess/MorvarchsPlaystyleExpansions",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Multiple Archetypes",
+        "Author": "Vek17",
+        "Id": {
+            "Id": "MultipleArchetypes",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Vek17",
+                "RepoName": "WrathMods-MultipleArchetypes"
+            }
+        },
+        "About": "Allows archetype stacking using tabletop's standard rules.",
+        "HomepageUrl": "https://github.com/Vek17/WrathMods-MultipleArchetypes",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Mythic Arcanist",
+        "Author": "Llisandur",
+        "Id": {
+            "Id": "MythicArcanist",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Llisandur",
+                "RepoName": "MythicArcanist"
+            }
+        },
+        "About": "This mod adds an new homebrew mythic ability and several 3rd Part Publisher spells. Once a game is saved with this mod is enabled it will require this mod to be present to load so do not remove or disable the mod once enabled. You can however disable any feature of the mod at will without breaking saves.",
+        "HomepageUrl": "https://github.com/Llisandur/MythicArcanist",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Mythic Magic Mayhem",
+        "Author": "string, Bakaryu",
+        "Id": {
+            "Id": "MythicMagicMayhem",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "YLMstring",
+                "RepoName": "Mythic-Magic-Mayhem"
+            }
+        },
+        "About": "Introduce a better mythic magic system, along with other tweaks.",
+        "HomepageUrl": "https://github.com/YLMstring/Mythic-Magic-Mayhem",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Mythic Spellbook Tweaks",
+        "Author": "Vek17",
+        "Id": {
+            "Id": "MythicSpellbookTweaks",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Vek17",
+                "RepoName": "WrathMods-MythicSpellbookTweaks"
+            }
+        },
+        "About": "Mythic Class spell books currently scale on mythic rank. This mod adds the ability to change that scaling in a variety of ways.",
+        "HomepageUrl": "https://github.com/Vek17/WrathMods-MythicSpellbookTweaks",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Mythic Path Power Swapper",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "MythicPathPowerSwapper",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "MythicPathPowerSwapper"
+            }
+        },
+        "About": "Allows changing mythic powers to powers from another path, or playing without mythic powers at all.",
+        "HomepageUrl": "https://github.com/alterasc/MythicPathPowerSwapper",
+        "Tags": [ "Content" ]
+    },
+
+    {
+        "Name": "Mythic Spell Flexibility",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "MythicSpellFlexibility",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "MythicSpellFlexibility"
+            }
+        },
+        "About": "Allows casting special mythic spells from your normal spellbooks.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/601",
+        "Tags": [ "Content" ]
+    },
+
+    {
+        "Name": "Nine Swords",
+        "Author": "V0idhead",
+        "Id": {
+            "Id": "VoidHeadWOTRNineSwords",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "V0idhead",
+                "RepoName": "WOTRNineSwords"
+            }
+        },
+        "About": "An implementation of the classes found in Tome of Battle: The Book of Nine Swords.",
+        "HomepageUrl": "https://github.com/V0idhead/WOTRNineSwords",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "No Film Grain",
+        "Author": "Hambeard",
+        "Id": {
+            "Id": "NoFilmGrainWrath",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "thehambeard",
+                "RepoName": "NoFilmGrainWrath"
+            }
+        },
+        "About": "Improves the sharpness in game by removing the post processing film grain effect.",
+        "HomepageUrl": "https://github.com/thehambeard/NoFilmGrainWrath",
+        "Tags": [ "Visuals" ]
+    },
+
+    {
+        "Name": "Non-Stop Crusade Events",
+        "Author": "Sly",
+        "Id": {
+            "Id": "NonStopEvents",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "SlyDevil",
+                "RepoName": "NonStopEvents"
+            }
+        },
+        "About": "Owlmod patch to give the player a crusade event every day",
+        "HomepageUrl": "https://github.com/SlyDevil/NonStopEvents",
+        "Tags": [ "Gameplay", "Homebrew" ]
+    },
+
+    {
+        "Name": "The One Pearl",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "OnePearl",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "OnePearl"
+            }
+        },
+        "About": "Adds The One Pearl, which combines powers of all pearls of power player currently has in their inventory.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/613",
+        "Tags": [ "Miscellaneous" ]
+    },
+
+    {
+        "Name": "Onmi's Mod",
+        "Author": "Onmi",
+        "Id": {
+            "Id": "BoonOfIomedaeWrath",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Onmi",
+                "RepoName": "OnmiMod"
+            }
+        },
+        "About": "Adds the Boon of Iomedae for Rejecting Nocticula's Profane Ascension",
+        "HomepageUrl": "https://github.com/OnmiKhaos/OnmiMod",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Oopsie your horse died and I brought it back. Hope that's fine :)",
+        "Author": "Sly",
+        "Id": {
+            "Id": "UndeadHorseBodytest",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "SlyDevil",
+                "RepoName": "UndeadHorseBodytest"
+            }
+        },
+        "About": "Owlmod patch to change the horse animal companion body to that of the plague horse used by Grave Knights",
+        "HomepageUrl": "https://github.com/SlyDevil/UndeadHorseBodytest",
+        "Tags": [ "Visuals" ]
+    },
+
+    {
+        "Name": "Paladin Weapon Bond lasts for hours unlike...",
+        "Author": "Sly",
+        "Id": {
+            "Id": "PaladinWeaponBond_lastshours",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "SlyDevil",
+                "RepoName": "PaladinWeaponBond_lastshours"
+            }
+        },
+        "About": "Owlmod patch to change the scaling on Weapon Bond to hour/lvl",
+        "HomepageUrl": "https://github.com/SlyDevil/PaladinWeaponBond_lastshours",
+        "Tags": [ "Gameplay", "Homebrew" ]
+    },
+
+    {
+        "Name": "Partial Highlight Toggle",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "PartialHighlightToggle",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "PartialHighlightToggle"
+            }
+        },
+        "About": "Allows toggling of partial highlight mode that highlights only loot and interactable map objects, without highlighting everything else.",
+        "HomepageUrl": "https://github.com/alterasc/PartialHighlightToggle",
+        "Tags": [ "UserInterface" ]
+    },
+
+    {
+        "Name": "PATH OF BLING",
+        "Author": "Balkoth",
+        "Id": {
+            "Id": "WOTR_PATH_OF_BLING",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Balkoth-dev",
+                "RepoName": "WOTR_PATH_OF_BLING"
+            }
+        },
+        "About": "This mod is for Pathfinder: Wrath of the Righteous, it contains a number of changes for the Gold Dragon mythic path. This includes bug fixes and enhancements. Any change may be toggled on or off as the user wills.",
+        "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_BLING",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "PATH OF HELL",
+        "Author": "Balkoth",
+        "Id": {
+            "Id": "WOTR_PATH_OF_HELL",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Balkoth-dev",
+                "RepoName": "WOTR_PATH_OF_HELL"
+            }
+        },
+        "About": "Contains changes to the Devil Mythic Class as requested by the community.",
+        "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_HELL",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "PATH OF RAGE",
+        "Author": "Balkoth",
+        "Id": {
+            "Id": "WOTR_PATH_OF_RAGE",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Balkoth-dev",
+                "RepoName": "WOTR_PATH_OF_RAGE"
+            }
+        },
+        "About": "Contains changes for the Demon mythic path to make it feel better while keeping it within the vision of the game. It contains a number of bug-fixes, new abilities, and a different way of handling the Demon's main mechanic: Rage.",
+        "HomepageUrl": "https://github.com/Balkoth-dev/WOTR_PATH_OF_RAGE",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "PC Female Viconia DeVir Soundset",
+        "Author": "DarthParametric",
+        "Id": {
+            "Id": "PC_Female_BG_Viconia",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "DarthParametric",
+                "RepoName": "WOTR_Custom_Soundset_Viconia_DeVir",
+                "ReleaseFilter": "PC_Female_BG_Viconia_v"
+            }
+        },
+        "About": "Adds a custom, standalone soundset for female PCs and mercenaries. Does not overwrite or replace any of the vanilla soundsets.",
+        "HomepageUrl": "https://github.com/DarthParametric/WOTR_Custom_Soundset_Viconia_DeVir",
+        "Tags": [ "Audio" ]
+    },
+
+    {
+        "Name": "PC Male Balthasar Gelt Soundset",
+        "Author": "DarthParametric",
+        "Id": {
+            "Id": "PC_TWWH_Balthasar_Gelt",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "DarthParametric",
+                "RepoName": "WOTR_Custom_Soundset_Balthasar_Gelt",
+                "ReleaseFilter": "PC_TWWH_Balthasar_Gelt_v"
+            }
+        },
+        "About": "Adds a custom, standalone soundset for male PCs and mercenaries, including custom casting lines that replace the vanilla chanting. Does not overwrite or replace any of the vanilla soundsets.",
+        "HomepageUrl": "https://github.com/DarthParametric/WOTR_Custom_Soundset_Balthasar_Gelt",
+        "Tags": [ "Audio" ]
+    },
+
+    {
+        "Name": "Prestige Minus",
+        "Author": "string",
+        "Id": {
+            "Id": "PrestigeMinus",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "YLMstring",
+                "RepoName": "Prestige-Minus"
+            }
+        },
+        "About": "Play WotR with a smaller party",
+        "HomepageUrl": "https://github.com/YLMstring/Prestige-Minus",
+        "Tags": [ "Utilities", "Gameplay" ]
+    },
+
+    {
+        "Name": "Prestige Plus",
+        "Author": "string",
+        "Id": {
+            "Id": "PrestigePlus",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "YLMstring",
+                "RepoName": "PrestigePlus"
+            }
+        },
+        "About": "This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes! All features are toggleable.",
+        "HomepageUrl": "https://github.com/YLMstring/PrestigePlus",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Prophet of Pestilence activation change",
+        "Author": "Sly",
+        "Id": {
+            "Id": "ProphetofPestilence_all melee attacks",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "SlyDevil",
+                "RepoName": "Prophet-of-Pestilence-greater-spirit-change"
+            }
+        },
+        "About": "Owlmod patch to have the Prophet's greater spirit activate on all incoming attacks",
+        "HomepageUrl": "https://github.com/SlyDevil/Prophet-of-Pestilence-greater-spirit-change",
+        "Tags": [ "Gameplay", "Homebrew", "Bugfix" ]
+    },
+
+    {
+        "Name": "Puzzle Skip",
+        "Author": "Arkive",
+        "Id": {
+            "Id": "PuzzleSkip",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Balkoth-dev",
+                "RepoName": "PuzzleSkip"
+            }
+        },
+        "About": "Allows skipping puzzles.",
+        "HomepageUrl": "https://github.com/Balkoth-dev/PuzzleSkip",
+        "Tags": [ "UserInterface", "Visuals" ]
+    },
+
+    {
+        "Name": "NWN2 QuickCast",
+        "Author": "Hambeard",
+        "Id": {
+            "Id": "NWN2QuickCast",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "thehambeard",
+                "RepoName": "NWN2QuickCast"
+            }
+        },
+        "About": "Gives you a moveable UI for casting spells on the fly",
+        "HomepageUrl": "https://github.com/thehambeard/NWN2QuickCast",
+        "Tags": [ "UserInterface", "Gameplay" ]
+    },
+
+    {
+        "Name": "Random Equipment",
+        "Author": "Hambeard",
+        "Id": {
+            "Id": "RandomEquipment",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "thehambeard",
+                "RepoName": "RandomEquipment"
+            }
+        },
+        "About": "Will add random game loot to any container the player interacts with based on a percentage chance. The loot already inside the container is untouched by the mod and will only add to it. The loot possible is based on your level and shouldn't give anything inappropriately OP.",
+        "HomepageUrl": "https://github.com/thehambeard/RandomEquipment",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Relations and Romances",
+        "Author": "Randiel",
+        "Id": {
+            "Id": "RanRomance",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "776"
+            }
+        },
+        "About": "Adds interactions with six NPCs in the game including potential romances. Also adds portraits to three of those NPCs (Targona, Terendelev, and Aranka).",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/776",
+        "Tags": [ "Romance", "Story" ]
+    },
+
+    {
+        "Name": "Respec Mod",
+        "Author": "Barley",
+        "Id": {
+            "Id": "RespecWrath",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "BarleyFlour",
+                "RepoName": "RespecMod"
+            }
+        },
+        "About": "Respect mod which enables complete respec for companions, all the way to level 1.",
+        "HomepageUrl": "https://github.com/BarleyFlour/RespecMod",
+        "Tags": [ "Utilities" ]
+    },
+
+    {
+        "Name": "ScalingItemDCs",
+        "Author": "Hambeard",
+        "Id": {
+            "Id": "WrathScalingItemDCs",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "thehambeard",
+                "RepoName": "WrathScalingItemDCs"
+            }
+        },
+        "About": "Increases DCs for Weapons and Armors by various means.",
+        "HomepageUrl": "https://github.com/thehambeard/WrathScalingItemDCs",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Snap Shot Approach",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "SnapshotApproach",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "SnapshotApproach"
+            }
+        },
+        "About": "Allows automatic approch into Snap Shot range for ranged characters",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/498",
+        "Tags": [ "Miscellaneous" ]
+    },
+
+    {
+        "Name": "Spars Sorcerous Sundries",
+        "Author": "Sparhawk87",
+        "Id": {
+            "Id": "SparsSorcerousSundries",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "TheSparhawk",
+                "RepoName": "SparsSorcerousSundries"
+            }
+        },
+        "About": "Adds new items to vendors",
+        "HomepageUrl": "https://github.com/TheSparhawk/SparsSorcerousSundries",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Spellbook Merge",
+        "Author": "vikigenius",
+        "Id": {
+            "Id": "SpellbookMerge",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "vikigenius",
+                "RepoName": "SpellbookMerge"
+            }
+        },
+        "About": "Adds more spellbook merging options. Currently this reverts the changes Owlcat made to spellbook merging in Patch 1.3.",
+        "HomepageUrl": "https://github.com/vikigenius/SpellbookMerge",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Spell Pouch",
+        "Author": "Truinto",
+        "Id": {
+            "Id": "SpellPouch",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Truinto",
+                "RepoName": "SpellPouch"
+            }
+        },
+        "About": "Adds customizable bundles of abilities and activatables for use in a single foldable actionbar slot.",
+        "HomepageUrl": "https://github.com/Truinto/SpellPouch",
+        "Tags": [ "Gameplay", "UserInterface" ]
+    },
+
+    {
+        "Name": "Spell Slot Freedom",
+        "Author": "AlterAsc",
+        "Id": {
+            "Id": "SpellSlotFreedom",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "alterasc",
+                "RepoName": "SpellSlotFreedom"
+            }
+        },
+        "About": "Allows casting spells using higher level spell slots without applying metamagic.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/603",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Swashbuckler Class",
+        "Author": "Zedel",
+        "Id": {
+            "Id": "Swashbuckler",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "novumvita",
+                "RepoName": "SwashbucklerWOTR"
+            }
+        },
+        "About": "Adds the swashbuckler class.",
+        "HomepageUrl": "https://github.com/novumvita/SwashbucklerWOTR",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Tabletop Tweaks Base",
+        "Author": "Vek17",
+        "Id": {
+            "Id": "TabletopTweaks-Base",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Vek17",
+                "RepoName": "TabletopTweaks-Base"
+            }
+        },
+        "About": "Adds tabletop based fixes and new content. Once a game is saved with this mod enabled it requires this mod to load, so do not uninstall it. You can disable any feature of the mod without breaking saves.",
+        "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Base",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Tabletop Tweaks Core",
+        "Author": "Vek17",
+        "Id": {
+            "Id": "TabletopTweaks-Core",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Vek17",
+                "RepoName": "TabletopTweaks-Core"
+            }
+        },
+        "About": "Provides a shared core system for all TabletopTweaks mods, and and any third party mods wishing to use TabletopTweaks systems and utilities.",
+        "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Core",
+        "Tags": [ "Gameplay", "Utilities" ]
+    },
+
+    {
+        "Name": "Tabletop Tweaks Flanking",
+        "Author": "Vek17",
+        "Id": {
+            "Id": "TabletopTweaks-Flanking",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Vek17",
+                "RepoName": "TabletopTweaks-Flanking"
+            }
+        },
+        "About": "This module replaces Owlcat's homebrew flanking mechanics with mechanics more accurate to pathfinder. The exact parameters used are configurable to make flanking more or less difficult as desired.",
+        "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Flanking",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Tabletop Tweaks Mythic Rework",
+        "Author": "Vek17",
+        "Id": {
+            "Id": "TabletopTweaks-Reworks",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Vek17",
+                "RepoName": "TabletopTweaks-Reworks"
+            }
+        },
+        "About": "Provides non tabletop based tweaks to Owlcat's mythic content including changes to mythic classes and abilities. Once a game is saved with this mod enabled it requires this mod to load, so do not uninstall it. You can disable any feature of the mod without breaking saves.",
+        "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Reworks",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Toggleable Throwing Weapons",
+        "Author": "phoenix99",
+        "Id": {
+            "Id": "ToggleableThrowingWeapons",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "pheonix99",
+                "RepoName": "ToggleableThrowingWeapons"
+            }
+        },
+        "About": "You can now use a toggle to turn daggers and starknives into ranged weapons.",
+        "HomepageUrl": "https://github.com/pheonix99/ToggleableThrowingWeapons",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "Tome of the Firebird",
+        "Author": "phoenix99",
+        "Id": {
+            "Id": "TomeOfTheFirebird",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "pheonix99",
+                "RepoName": "TomeOfTheFirebird"
+            }
+        },
+        "About": "Adds spells, feats, other abilities and some fixes. Adds random stuff I made when I got annoyed at the game. All homebrew content or divergences from TT will be called out.",
+        "HomepageUrl": "https://github.com/pheonix99/TomeOfTheFirebird",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
+        "Name": "ToyBox (a bag of tricks)",
+        "Author": "Narria",
+        "Id": {
+            "Id": "0ToyBox0",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "xADDBx",
+                "RepoName": "ToyBox-Wrath"
+            }
+        },
+        "About": "Toy Box is a cute and playful mod with 400+ cheats, tweaks and quality of life improvements. It was created in the spirit of Bag of Tricks & Cheat Menu but with a little different focus.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/8",
+        "Tags": [ "Gameplay", "Utilities" ]
+    },
+
+    {
+        "Name": "Turnbased Combat Delay",
+        "Author": "Vek17",
+        "Id": {
+            "Id": "TurnbasedCombatDelay",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Vek17",
+                "RepoName": "WrathMods-TurnbasedCombatDelay"
+            }
+        },
+        "About": "Allows you to alter the pause before turn based combat starts",
+        "HomepageUrl": "https://github.com/Vek17/WrathMods-TurnbasedCombatDelay",
+        "Tags": [ "Gameplay", "Miscellaneous" ]
+    },
+
+    {
+        "Name": "Vampiric blade without effects",
+        "Author": "Sly",
+        "Id": {
+            "Id": "VampBladeEnch_noFx",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "SlyDevil",
+                "RepoName": "Vampiric-Blade-without-Fx"
+            }
+        },
+        "About": "Owlmod patch to remove some vampiric blade effects",
+        "HomepageUrl": "https://github.com/SlyDevil/Vampiric-Blade-without-Fx",
+        "Tags": [ "Audio", "Visuals" ]
+    },
+
+    {
+        "Name": "Visual Adjustments 2",
+        "Author": "Barley/Spacehamster",
+        "Id": {
+            "Id": "VisualAdjustments2",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "BarleyFlour",
+                "RepoName": "VisualAdjustments2"
+            }
+        },
+        "About": "Successor to Visual Adjustments which allows adjusting character appearance. Built with an exclusively native UI, no more UMM!",
+        "HomepageUrl": "https://github.com/BarleyFlour/VisualAdjustments2",
+        "Tags": [ "UserInterface", "Visuals" ]
+    },
+
+    {
+        "Name": "Weapon Focus Plus",
+        "Author": "Vek17 & xoff",
+        "Id": {
+            "Id": "WeaponFocusPlus",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Vek17",
+                "RepoName": "WrathMods-WeaponFocusPlus"
+            }
+        },
+        "About": "Weapon Focus Plus allows you to use fighter weapon group based weapon focus instead of picking a single weapon.",
+        "HomepageUrl": "https://github.com/Vek17/WrathMods-WeaponFocusPlus",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Woljif Romance Mod",
+        "Author": "Paladingineer",
+        "Id": {
+            "Id": "WOTR_WoljifRomanceMod",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "287"
+            }
+        },
+        "About": "Adds a full romance path for Woljif Jefto, available for both male and female characters beginning in Act 3. Content continues through the rest of the game including the epilogue.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/287",
+        "Tags": [ "Content" ]
+    },
+
+    {
+        "Name": "WotR Inventory Tweak (Quick Cast)",
+        "Author": "Hambeard",
+        "Id": {
+            "Id": "QuickCast",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "thehambeard",
+                "RepoName": "WIT"
+            }
+        },
+        "About": "This is the alpha release of Quick Cast (formally Inventory Tweaks). Installing and uninstalling does not break saves. This is an alpha, expect there to be bugs.",
+        "HomepageUrl": "https://github.com/thehambeard/WIT",
+        "Tags": [ "UserInterface" ]
+    },
+
+    {
+        "Name": "Wrath Patches",
+        "Author": "Microsoftenator",
+        "Id": {
+            "Id": "WrathPatches",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "microsoftenator2022",
+                "RepoName": "WrathPatches"
+            }
+        },
+        "About": "A collection of small patches for Pathfinder: Wrath of the Righteous. Mostly aimed at cleaning up the game's log files, but fixed some minor bugs along the way.",
+        "HomepageUrl": "https://github.com/microsoftenator2022/WrathPatches",
+        "Tags": [ "Gameplay" ]
+    }
 ]
