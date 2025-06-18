@@ -301,6 +301,13 @@ namespace ModFinder.Mod
             {
               Logger.Log.Verbose("Extracting the archive with root folder in pieces");
               Directory.CreateDirectory(destination);
+              if (modType == ModType.Owlcat)
+              {
+                Directory.CreateDirectory(Path.Combine(destination, "Assemblies"));
+                Directory.CreateDirectory(Path.Combine(destination, "Blueprints"));
+                Directory.CreateDirectory(Path.Combine(destination, "Bundles"));
+                Directory.CreateDirectory(Path.Combine(destination, "Localization"));
+              }
               foreach (var entry in archive.Entries)
               {
                 string relativepath = Path.GetRelativePath(rootInZip, entry.ToString());
