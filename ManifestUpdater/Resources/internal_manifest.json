@@ -553,6 +553,24 @@
     },
 
     {
+        "Name": "Formation Fixer for More Party Slots",
+        "Author": "DarthParametric",
+        "Id": {
+            "Id": "FormationFixer",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "DarthParametric",
+                "RepoName": "WOTR_Formation_Fixer"
+            }
+        },
+        "About": "Adjusts the formation templates and UI to allow for larger parties, intended for use in conjunction with ADDB's More Party Slots mod. Supports up to 24 party members, including pets (double the provision of vanilla).",
+        "HomepageUrl": "https://github.com/DarthParametric/WOTR_Formation_Fixer",
+        "Tags": [ "Miscellaneous, UserInterface" ]
+    },
+
+    {
         "Name": "Full Bore Bismuth",
         "Author": "Badger",
         "Id": {
