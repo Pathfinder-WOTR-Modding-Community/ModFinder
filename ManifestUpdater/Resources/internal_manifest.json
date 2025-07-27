@@ -1540,6 +1540,24 @@
     },
 
     {
+        "Name": "Random Reinforcements per Encounter",
+        "Author": "Flenky",
+        "Id": {
+            "Id": "RandomReinforcements",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Flenky85",
+                "RepoName": "RandomReinforcementsPerEncounter"
+            }
+        },
+        "About": "Adds random enemy reinforcements at the start of turn-based combat, scaling with party level.",
+        "HomepageUrl": "https://github.com/Flenky85/RandomReinforcementsPerEncounter",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
         "Name": "Relations and Romances",
         "Author": "Randiel",
         "Id": {
