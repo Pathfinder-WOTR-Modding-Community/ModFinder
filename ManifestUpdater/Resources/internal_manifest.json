@@ -1543,7 +1543,7 @@
         "Name": "Random Reinforcements per Encounter",
         "Author": "Flenky",
         "Id": {
-            "Id": "RandomReinforcements",
+            "Id": "RandomReinforcementsPerEncounter",
             "Type": "UMM"
         },
         "Service": {
