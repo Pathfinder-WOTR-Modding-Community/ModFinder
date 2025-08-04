@@ -74,7 +74,7 @@ namespace ModFinder.UI
           && !string.IsNullOrEmpty(Latest.Url))
         || (Manifest.Service.IsNexus()
           && (!IsInstalled || Status.IsVersionBehind(Latest.Version))
-          && (Manifest.Service.Nexus.DownloadMirror != null || !string.IsNullOrWhiteSpace(Main.Settings.Slug)));
+          && (Manifest.Service.Nexus.DownloadMirror != null || !string.IsNullOrWhiteSpace(Main.Settings.NexusApiKey)));
     public bool CanDownload =>
       Manifest.Service.IsNexus()
       && (!IsInstalled || Status.IsVersionBehind(Latest.Version))

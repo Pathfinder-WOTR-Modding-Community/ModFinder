@@ -88,7 +88,7 @@ namespace ModFinder.Mod
       string url;
       if (viewModel.Manifest.Service.IsNexus())
       {
-        var key = Main.Settings.Slug;
+        var key = Main.Settings.NexusApiKey;
         if (string.IsNullOrWhiteSpace(key))
         {
           var expectedZipName = $"{viewModel.Manifest.Id.Id}-{viewModel.Latest.Version}.zip";
