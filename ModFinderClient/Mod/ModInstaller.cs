@@ -1,12 +1,14 @@
 ﻿using ModFinder.UI;
 using ModFinder.Util;
+using NexusModsNET;
+using NexusModsNET.DataModels;
+using SharpCompress.Archives;
+using SharpCompress.Common;
 using System;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
-using SharpCompress.Archives;
-using SharpCompress.Common;
 
 namespace ModFinder.Mod
 {
@@ -84,12 +86,26 @@ namespace ModFinder.Mod
       var file = Path.GetTempFileName();
 
       string url;
-
       if (viewModel.Manifest.Service.IsNexus())
       {
-        var expectedZipName = $"{viewModel.Manifest.Id.Id}-{viewModel.Latest.Version}.zip";
-        //example: https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror/releases/download/BubbleBuffs%2F5.0.0/BubbleBuffs-5.0.0.zip
-        url = $"{viewModel.Manifest.Service.Nexus.DownloadMirror}/releases/download/{viewModel.Manifest.Id.Id}%2F{viewModel.Latest.Version}/{expectedZipName}";
+        var key = Main.Settings.Slug;
+        if (string.IsNullOrWhiteSpace(key))
+        {
+          var expectedZipName = $"{viewModel.Manifest.Id.Id}-{viewModel.Latest.Version}.zip";
+          //example: https://github.com/Pathfinder-WOTR-Modding-Community/WrathModsMirror/releases/download/BubbleBuffs%2F5.0.0/BubbleBuffs-5.0.0.zip
+          url = $"{viewModel.Manifest.Service.Nexus.DownloadMirror}/releases/download/{viewModel.Manifest.Id.Id}%2F{viewModel.Latest.Version}/{expectedZipName}";
+        }
+        else
+        {
+          var game = "pathfinderwrathoftherighteous";
+          var client = NexusModsFactory.New(key);
+          var modInquirer = client.CreateModsInquirer();
+          var filesInquirer = client.CreateModFilesInquirer();
+          var files = await filesInquirer.GetModFilesAsync(game, viewModel.Manifest.Service.Nexus.ModID);
+          var mostRecent = files.ModFiles.Where(f => f.Category == NexusModFileCategory.Main).Last();
+          var links = await filesInquirer.GetModFileDownloadLinksAsync(game, viewModel.Manifest.Service.Nexus.ModID, mostRecent.FileId);
+          url = links.First().Uri.ToString();
+        }
       }
       else
       {

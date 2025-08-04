@@ -90,6 +90,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Markdig" Version="0.30.4" />
     <PackageReference Include="SharpCompress" Version="0.38.0" />
+    <PackageReference Include="NexusModsNET" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>

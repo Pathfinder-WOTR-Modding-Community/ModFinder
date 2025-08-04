@@ -4,6 +4,7 @@
   {
     public string AutoWrathPath { get; set; }
     public string WrathPath { get; set; }
+    public string Slug { get; set; }
 
     private static Settings _Instance;
     public static Settings Load()
