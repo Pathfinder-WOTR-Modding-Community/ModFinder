@@ -98,7 +98,7 @@ namespace ModFinder.Mod
         else
         {
           var game = "pathfinderwrathoftherighteous";
-          var client = NexusModsFactory.New(key);
+          var client = NexusModsFactory.New(key, "Modfinder", Main.ProductVersion);
           var modInquirer = client.CreateModsInquirer();
           var filesInquirer = client.CreateModFilesInquirer();
           var files = await filesInquirer.GetModFilesAsync(game, viewModel.Manifest.Service.Nexus.ModID);

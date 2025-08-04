@@ -134,15 +134,13 @@ namespace ModFinder
               if (json.TryGetProperty("tag_name", out var tag))
               {
                 long latest = ParseVersion(tag.GetString()[1..]);
-                var fileVersion = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location);
-                var productVersion = fileVersion.ProductVersion;
-                SetVersionInHeader(productVersion);
-                if (productVersion.Contains("-dev"))
+                SetVersionInHeader(Main.ProductVersion);
+                if (Main.ProductVersion.Contains("-dev"))
                 {
                   return;
                 }
 
-                if (latest > ParseVersion(productVersion))
+                if (latest > ParseVersion(Main.ProductVersion))
                 {
                   if (MessageBox.Show(
                     Window,

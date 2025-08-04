@@ -2,13 +2,19 @@
 using ModFinder.Mod;
 using ModFinder.Util;
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace ModFinder
 {
   public static class Main
   {
+    /// <summary>
+    /// Modfinder version
+    /// </summary>
+    public static string ProductVersion = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).ProductVersion;
     /// <summary>
     /// Modfinder settings
     /// </summary>
