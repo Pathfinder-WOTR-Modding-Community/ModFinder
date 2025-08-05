@@ -99,7 +99,6 @@ namespace ModFinder.Mod
         {
           var game = "pathfinderwrathoftherighteous";
           var client = NexusModsFactory.New(key, "Modfinder", Main.ProductVersion);
-          var modInquirer = client.CreateModsInquirer();
           var filesInquirer = client.CreateModFilesInquirer();
           var files = await filesInquirer.GetModFilesAsync(game, viewModel.Manifest.Service.Nexus.ModID);
           var mostRecent = files.ModFiles.Where(f => f.Category == NexusModFileCategory.Main).Last();
