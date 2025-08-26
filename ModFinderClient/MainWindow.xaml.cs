@@ -1,6 +1,7 @@
 ﻿using ModFinder.Mod;
 using ModFinder.UI;
 using ModFinder.Util;
+using NexusModsNET;
 using System;
 using System.Buffers;
 using System.Collections;
@@ -872,9 +873,19 @@ namespace ModFinder
           */
           try
           {
-            var bytes = Encoding.UTF8.GetBytes(sb.ToString());
-            Main.Settings.NexusApiKeyBytes = ProtectedData.Protect(bytes, null, DataProtectionScope.CurrentUser);
-            Main.Settings.Save();
+            var key = sb.ToString();
+            var client = NexusModsFactory.New(key, "Modfinder", Main.ProductVersion);
+            var user = await client.CreateUserInquirer().GetUserAsync();
+            if (user.IsPremium)
+            {
+              var bytes = Encoding.UTF8.GetBytes(key);
+              Main.Settings.NexusApiKeyBytes = ProtectedData.Protect(bytes, null, DataProtectionScope.CurrentUser);
+              Main.Settings.Save();
+            }
+            else
+            {
+              Logger.Log.Warning("Tried to link Non-Premium Nexus Account. Only Premium Accounts support direct download!");
+            }
             break;
           }
           catch (Exception ex)
