@@ -2,28 +2,33 @@
 using ModFinder.UI;
 using ModFinder.Util;
 using System;
+using System.Buffers;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.WebSockets;
+using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Reflection; // DO NOT REMOVE OR I WILL HURT YOU
 using System.Windows.Media;
-using System.Threading.Tasks;
-using System.Net;
-using System.Text.Json;
 using System.Xml;
 using System.Xml.Linq;
-using System.Runtime.CompilerServices;
-using System.Windows.Data;
-using System.Collections;
-using System.Text.RegularExpressions;
 
 namespace ModFinder
 {
@@ -134,15 +139,13 @@ namespace ModFinder
               if (json.TryGetProperty("tag_name", out var tag))
               {
                 long latest = ParseVersion(tag.GetString()[1..]);
-                var fileVersion = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location);
-                var productVersion = fileVersion.ProductVersion;
-                SetVersionInHeader(productVersion);
-                if (productVersion.Contains("-dev"))
+                SetVersionInHeader(Main.ProductVersion);
+                if (Main.ProductVersion.Contains("-dev"))
                 {
                   return;
                 }
 
-                if (latest > ParseVersion(productVersion))
+                if (latest > ParseVersion(Main.ProductVersion))
                 {
                   if (MessageBox.Show(
                     Window,
@@ -809,7 +812,101 @@ namespace ModFinder
       button.ContextMenu.StaysOpen = true;
       button.ContextMenu.IsOpen = true;
     }
+    private async void TryAquireNexusAPIKeyAsync()
+    {
 
+      using var ws = new ClientWebSocket();
+      using var cts = new CancellationTokenSource();
+      await ws.ConnectAsync(new Uri("wss://sso.nexusmods.com"), cts.Token);
+
+      var uuid = Guid.NewGuid().ToString();
+      string token = null;
+      var payload = JsonSerializer.Serialize(new { id = uuid, token, protcol = 2 });
+      await ws.SendAsync(Encoding.UTF8.GetBytes(payload), WebSocketMessageType.Text, true, cts.Token);
+
+
+      var authUrl = $"https://www.nexusmods.com/sso?id={Uri.EscapeDataString(uuid)}&application={Uri.EscapeDataString(Main.NexusSlug)}";
+
+      Process.Start(new ProcessStartInfo { FileName = authUrl, UseShellExecute = true });
+      var buffer = ArrayPool<byte>.Shared.Rent(32 * 1024);
+      try
+      {
+        while (ws.State == WebSocketState.Open && !cts.IsCancellationRequested)
+        {
+          var seg = new ArraySegment<byte>(buffer);
+          WebSocketReceiveResult result;
+          var sb = new StringBuilder();
+          do
+          {
+            result = await ws.ReceiveAsync(seg, cts.Token);
+            if (result.MessageType == WebSocketMessageType.Close)
+            {
+              await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "closing", cts.Token);
+              break;
+            }
+
+            sb.Append(Encoding.UTF8.GetString(buffer, 0, result.Count));
+          } while (!result.EndOfMessage);
+          if (sb.Length == 0)
+          {
+            continue;
+          }
+
+          /* Nexus API docs say I should get a response. Reality says I get the API key directly
+          var t = new { success = true, data = new { api_key = "" }, error = "" };
+          var msg = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(sb.ToString(), t);
+          if (msg.success)
+          {
+            if (msg.data?.api_key is string key)
+            {
+              var bytes = Encoding.UTF8.GetBytes(key);
+              Main.Settings.NexusApiKeyBytes = ProtectedData.Protect(bytes, null, DataProtectionScope.CurrentUser);
+              break;
+            }
+          }
+          else
+          {
+            var err = msg.error ?? "Unknown SSO error";
+            throw new Exception($"SSO error: {err}");
+          }
+          */
+          try
+          {
+            var bytes = Encoding.UTF8.GetBytes(sb.ToString());
+            Main.Settings.NexusApiKeyBytes = ProtectedData.Protect(bytes, null, DataProtectionScope.CurrentUser);
+            Main.Settings.Save();
+            break;
+          }
+          catch (Exception ex)
+          {
+            throw new Exception($"Error trying to process SSO result:\n{ex}");
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Logger.Log.Error("Failed to link Nexus Premium Account.", ex);
+      }
+      finally
+      {
+        ArrayPool<byte>.Shared.Return(buffer);
+        if (ws.State == WebSocketState.Open)
+        {
+          await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "done", CancellationToken.None);
+        }
+      }
+    }
+    private void LinkNexusPremium(object sender, RoutedEventArgs e)
+    {
+      try
+      {
+        TryAquireNexusAPIKeyAsync();
+      }
+      catch (Exception ex)
+      {
+        Logger.Log.Error("Failed to link Nexus Premium Account.", ex);
+      }
+    }
     private void ClearCache(object sender, RoutedEventArgs e)
     {
       try
