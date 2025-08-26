@@ -476,6 +476,7 @@
             <Button.ContextMenu>
               <ContextMenu Style="{StaticResource OwlContextMenu}">
                 <MenuItem Header="Clear Cache" Click="ClearCache"></MenuItem>
+                <MenuItem Header="Link Nexus Premium Account" Click="LinkNexusPremium"></MenuItem>
               </ContextMenu>
             </Button.ContextMenu>
           </Button>

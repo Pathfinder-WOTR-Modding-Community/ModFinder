@@ -12,6 +12,10 @@ namespace ModFinder
   public static class Main
   {
     /// <summary>
+    /// NexusMods slug
+    /// </summary>
+    public const string NexusSlug = "modfinder";
+    /// <summary>
     /// Modfinder version
     /// </summary>
     public static string ProductVersion = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).ProductVersion;
