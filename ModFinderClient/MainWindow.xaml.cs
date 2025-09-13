@@ -52,6 +52,9 @@ namespace ModFinder
 
         Window = this;
 
+        // Force Init; Start Verification Request
+        _ = Main.Settings;
+
         CheckForUpdate();
 
         installedMods.DataContext = ModDB;
@@ -880,6 +883,7 @@ namespace ModFinder
             {
               var bytes = Encoding.UTF8.GetBytes(key);
               Main.Settings.NexusApiKeyBytes = ProtectedData.Protect(bytes, null, DataProtectionScope.CurrentUser);
+              Main.Settings.IsKeyActuallyPremium = true;
               Main.Settings.Save();
             }
             else
