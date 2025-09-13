@@ -40,12 +40,13 @@ namespace ModFinder.Util
         if (Main.TryReadFile("Settings.json", out var settingsRaw))
         {
           _Instance = IOTool.FromString<Settings>(settingsRaw);
+          Task.Run(_Instance.VerifyNexusPremium);
         }
         else
         {
           _Instance = new();
+          _Instance.Save();
         }
-        Task.Run(_Instance.VerifyNexusPremium);
       }
 
       return _Instance;
