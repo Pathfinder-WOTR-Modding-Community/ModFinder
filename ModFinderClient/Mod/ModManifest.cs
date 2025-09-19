@@ -179,7 +179,7 @@ namespace ModFinder.Mod
         return null;
 
       return new(
-        name: info.DisplayName,
+        name: string.IsNullOrEmpty(info.DisplayName) ? info.Id : info.DisplayName,
         author: info.Author,
         about: string.Empty,
         id: new(info.Id, ModType.UMM),
