@@ -1611,6 +1611,24 @@
     },
 
     {
+        "Name": "Scaling Cantrips",
+        "Author": "RealityMachina",
+        "Id": {
+            "Id": "ScalingCantrips",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "RealityMachina",
+                "RepoName": "Scaling-Cantrips"
+            }
+        },
+        "About": "Allows cantrips to scale for ever 2 caster level your character has.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/64",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
         "Name": "Snap Shot Approach",
         "Author": "AlterAsc",
         "Id": {
