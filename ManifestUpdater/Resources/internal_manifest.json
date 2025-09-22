@@ -406,7 +406,25 @@
         },
         "About": "DragonFixes is a mod for Pathfinder: Wrath of the Righteous that fixes several bugs",
         "HomepageUrl": "https://github.com/CasDragon/DragonFixes",
-        "Tags": [ "Content", "Gameplay" ]
+        "Tags": [ "Bugfix", "Gameplay" ]
+    },
+    
+    {
+        "Name": "DragonLibrary",
+        "Author": "CascadingDragon",
+        "Id": {
+            "Id": "DragonLibrary",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "CasDragon",
+                "RepoName": "DragonLibrary"
+            }
+        },
+        "About": "DragonLibrary is a utility library mod for all my mods. ",
+        "HomepageUrl": "https://github.com/CasDragon/DragonLibrary",
+        "Tags": [ "Utilities" ]
     },
 
     {
