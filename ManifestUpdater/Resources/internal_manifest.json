@@ -1540,6 +1540,24 @@
     },
 
     {
+        "Name": "NWN2 QuickItems",
+        "Author": "Hambeard",
+        "Id": {
+            "Id": "NWN2QuickItems",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "thehambeard",
+                "RepoName": "NWN2QuickItems"
+            }
+        },
+        "About": "Gives you a moveable UI for using items on the fly",
+        "HomepageUrl": "https://github.com/thehambeard/NWN2QuickItems",
+        "Tags": [ "UserInterface", "Gameplay" ]
+    },
+
+    {
         "Name": "Random Equipment",
         "Author": "Hambeard",
         "Id": {
@@ -1968,25 +1986,7 @@
         "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/287",
         "Tags": [ "Content" ]
     },
-
-    {
-        "Name": "WotR Inventory Tweak (Quick Cast)",
-        "Author": "Hambeard",
-        "Id": {
-            "Id": "QuickCast",
-            "Type": "UMM"
-        },
-        "Service": {
-            "GitHub": {
-                "Owner": "thehambeard",
-                "RepoName": "WIT"
-            }
-        },
-        "About": "This is the alpha release of Quick Cast (formally Inventory Tweaks). Installing and uninstalling does not break saves. This is an alpha, expect there to be bugs.",
-        "HomepageUrl": "https://github.com/thehambeard/WIT",
-        "Tags": [ "UserInterface" ]
-    },
-
+    
     {
         "Name": "Wrath Patches",
         "Author": "Microsoftenator",
