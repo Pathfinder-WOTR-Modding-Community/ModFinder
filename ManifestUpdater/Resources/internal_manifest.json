@@ -1719,6 +1719,23 @@
     },
 
     {
+        "Name": "Spellbook Sync",
+        "Author": "Seinra",
+        "Id": {
+            "Id": "SpellbookSync",
+            "Type": "UMM"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "905"
+            }
+        },
+        "About": "Spellbook Sync ensures that "all spellbooks added by other mods" are "properly recognized by prestige classes" that feature spellcasting progression. ",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/905",
+        "Tags": [ "Gameplay" ]
+    },
+
+    {
         "Name": "Spell Pouch",
         "Author": "Truinto",
         "Id": {
