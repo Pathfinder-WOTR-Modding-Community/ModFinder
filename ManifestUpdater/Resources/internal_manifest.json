@@ -535,6 +535,24 @@
     },
 
     {
+        "Name": "Feat Organizer",
+        "Author": "Flenky",
+        "Id": {
+            "Id": "FeatOrganizer",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Flenky85",
+                "RepoName": "FeatOrganizer"
+            }
+        },
+        "About": "Organizes feats into clear categories and folders to make browsing easier and more intuitive.",
+        "HomepageUrl": "https://github.com/Flenky85/FeatOrganizer",
+        "Tags": [ "Interface" ]
+    },
+
+    {
         "Name": "Finessable Sabers",
         "Author": "Stoyan",
         "Id": {
