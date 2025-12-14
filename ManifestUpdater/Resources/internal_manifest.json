@@ -34,6 +34,24 @@
         "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/68",
         "Tags": [ "UserInterface", "Utilities" ]
     },
+    
+    {
+        "Name": "Advanced Horse",
+        "Author": "testlum",
+        "Id": {
+            "Id": "AdvancedHorse",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "testlum",
+                "RepoName": "AdvancedHorse"
+            }
+        },
+        "About": "Not just your basic horse.",
+        "HomepageUrl": "https://github.com/testlum/AdvancedHorse",
+        "Tags": [ "Content", "Gameplay" ]
+    },
 
     {
         "Name": "Allow Modded Achievements",
