@@ -747,6 +747,24 @@
     },
 
     {
+        "Name": "Kab's Many Bugfixes 2",
+        "Author": "Kab",
+        "Id": {
+            "Id": "KMBF2",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "kaboissonneault",
+                "RepoName": "KMBF2"
+            }
+        },
+        "About": "Another bugfix mod for Pathfinder: Wrath of the Righteous, but maintained by Kab, author of KMBF (Kingmaker Bugfixes). Read Github page for details.",
+        "HomepageUrl": "https://github.com/kaboissonneault/kmbf2",
+        "Tags": [ "Bugfix" ]
+    },
+    
+    {
         "Name": "Kinetic Archetypes",
         "Author": "NosVladimir",
         "Id": {
