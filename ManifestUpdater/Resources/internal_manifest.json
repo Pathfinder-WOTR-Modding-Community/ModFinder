@@ -88,7 +88,23 @@
         "HomepageUrl": "https://github.com/microsoftenator2022/AlternateRacialTraits",
         "Tags": [ "Content", "Gameplay" ]
     },
-
+    {
+        "Name": "Attribute Feats",
+        "Author": "Acture",
+        "Id": {
+            "Id": "AttributeFeats",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Acture",
+                "RepoName": "attribute-feats"
+            }
+        },
+        "About": "A small mod that adds scaling bonuses with respect to attributes.",
+        "HomepageUrl": "https://github.com/Acture/attribute-feats",
+        "Tags": ["Content", "Gameplay"]
+    },
     {
         "Name": "Automatic Bonus Progression",
         "Author": "WittleWolfie",
