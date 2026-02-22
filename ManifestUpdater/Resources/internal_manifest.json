@@ -1771,6 +1771,24 @@
     },
 
     {
+        "Name": "Speech Mod",
+        "Author": "Osmodium",
+        "Id": {
+            "Id": "SpeechMod",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Osmodium",
+                "RepoName": "PathfinderTextToSpeechMod"
+            }
+        },
+        "About": "This mod is made for Pathfinder: Wrath of the Righteous and introduces TTS (TextToSpeech) in most places.",
+        "HomepageUrl": "https://github.com/Osmodium/PathfinderTextToSpeechMod/",
+        "Tags": [ "Content", "Gameplay" ]
+    },
+
+    {
         "Name": "Spellbook Merge",
         "Author": "vikigenius",
         "Id": {
