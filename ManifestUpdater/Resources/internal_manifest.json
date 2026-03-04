@@ -1320,6 +1320,24 @@
     },
 
     {
+        "Name": "No Realtime Combat",
+        "Author": "saghm",
+        "Id": {
+            "Id": "NoRealtimeCombat",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "saghm",
+                "RepoName": "NoRealtimeCombat-WotR"
+            }
+        },
+        "About": "Disables the keyboard/gamepad shortcuts for swapping between turn-based and realtime combat",
+        "HomepageUrl": "https://github.com/saghm/NoRealtimeCombat-WotR",
+        "Tags": [ "UserInterface", "Utilities" ]
+    },
+
+    {
         "Name": "Non-Stop Crusade Events",
         "Author": "Sly",
         "Id": {
