@@ -124,20 +124,20 @@
     },
 
     {
-        "Name": "Auto Mount",
-        "Author": "zepheon",
+        "Name": "Auto Mount for TabletopTweaks",
+        "Author": "Zepheon, DarthParametric",
         "Id": {
             "Id": "AutoMount",
             "Type": "UMM"
         },
         "Service": {
             "GitHub": {
-                "Owner": "zephe0n",
+                "Owner": "DarthParametric",
                 "RepoName": "AutoMount"
             }
         },
-        "About": "Mount all your animal companions automatically with a customizable keybind.",
-        "HomepageUrl": "https://github.com/zephe0n/AutoMount",
+        "About": "Mount all your animal companions automatically with a customizable keybind. Tabletop Tweaks supported but not required.",
+        "HomepageUrl": "https://github.com/DarthParametric/AutoMount_for_TabletopTweaks",
         "Tags": [ "UserInterface" ]
     },
 
