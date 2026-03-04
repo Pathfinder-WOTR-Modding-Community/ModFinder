@@ -133,7 +133,7 @@
         "Service": {
             "GitHub": {
                 "Owner": "DarthParametric",
-                "RepoName": "AutoMount"
+                "RepoName": "AutoMount_for_TabletopTweaks"
             }
         },
         "About": "Mount all your animal companions automatically with a customizable keybind. Tabletop Tweaks supported but not required.",
@@ -1382,7 +1382,7 @@
         },
         "Service": {
             "GitHub": {
-                "Owner": "Onmi",
+                "Owner": "OnmiKhaos",
                 "RepoName": "OnmiMod"
             }
         },
