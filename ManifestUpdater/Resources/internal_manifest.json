@@ -1012,6 +1012,25 @@
         "HomepageUrl": "https://github.com/alterasc/MicroscopicContentExpansion",
         "Tags": [ "Content", "Gameplay" ]
     },
+    
+    {
+        "Name": "MiniMods",
+        "Author": "Grooki",
+        "Id": {
+            "Id": "Grooki-MiniMods",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "grooki",
+                "RepoName": "wrath-modding",
+                "ReleaseFilter": "MiniMods",
+            }
+        },
+        "About": "A collection of small tweaks and QoL features to make your experience better.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/783",
+        "Tags": [ "Bugfixes", "Gameplay" ]
+    },
 
     {
         "Name": "Misc Tweaks and Fixes",
