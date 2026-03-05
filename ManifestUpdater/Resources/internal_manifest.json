@@ -1017,7 +1017,7 @@
         "Name": "MiniMods",
         "Author": "Grooki",
         "Id": {
-            "Id": "Grooki-MiniMods",
+            "Id": "MiniMods",
             "Type": "UMM"
         },
         "Service": {
