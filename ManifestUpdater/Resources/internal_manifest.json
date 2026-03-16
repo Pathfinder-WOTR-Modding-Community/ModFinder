@@ -943,6 +943,24 @@
     },
 
     {
+        "Name": "Manual Controller Switch",
+        "Author": "saghm",
+        "Id": {
+            "Id": "Manual Controller Switch",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "saghm",
+                "RepoName": "ManualControllerSwitch-WotR"
+            }
+        },
+        "About": "Overrides automatic switching between keyboard/mouse and controller inputs in favor of manual shortcuts",
+        "HomepageUrl": "https://github.com/saghm/ManualControllerSwitch-WotR",
+        "Tags": [ "UserInterface", "Utilities" ]
+    },
+
+    {
         "Name": "Many Mods Load Performance Fix",
         "Author": "ADDB",
         "Id": {
