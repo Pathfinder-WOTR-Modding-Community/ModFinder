@@ -247,6 +247,24 @@
     },
 
     {
+        "Name": "Buff It 2 The Limit",
+        "Author": "Gh05d",
+        "Id": {
+            "Id": "BuffIt2TheLimit",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Gh05d",
+                "RepoName": "wrath-epic-buffing"
+            }
+        },
+        "About": "Fork of BubbleBuffs with extended features: mass spell logic, extend rod support, wand/scroll/potion management, and automated buff casting routines.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/948",
+        "Tags": [ "Gameplay", "UserInterface" ]
+    },
+
+    {
         "Name": "Buffbot",
         "Author": "Balkoth",
         "Id": {
@@ -620,6 +638,24 @@
         "About": "Tweaks finnean's progression so that he scales according to chapter instead of quests. Allows you to choose enchants, a lower tier one from the start of chapter 2 & a higher tier one at the start of Chapter 4.",
         "HomepageUrl": "https://github.com/BarleyFlour/FinneanTweaks",
         "Tags": [ "Gameplay" ]
+    },
+
+    {
+        "Name": "Fix Subsonic Bullshit",
+        "Author": "Gh05d",
+        "Id": {
+            "Id": "FixSubsonicBullshit",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "Gh05d",
+                "RepoName": "fix-subsonic-bullshit"
+            }
+        },
+        "About": "Fixes the inflated DC on Carnivorous Crystal's Subsonic Hum ability by capping Constitution and recalculating with the tabletop formula.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/949",
+        "Tags": [ "Bugfix", "Gameplay" ]
     },
 
     {
