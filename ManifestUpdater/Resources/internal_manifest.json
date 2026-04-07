@@ -259,9 +259,9 @@
                 "RepoName": "wrath-epic-buffing"
             }
         },
-        "About": "Fork of BubbleBuffs with extended features: mass spell logic, extend rod support, wand/scroll/potion management, and automated buff casting routines.",
+        "About": "(AI Assisted) Fork of BubbleBuffs with extended features: mass spell logic, extend rod support, wand/scroll/potion management, and automated buff casting routines.",
         "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/948",
-        "Tags": [ "Gameplay", "UserInterface" ]
+      "Tags": [ "Gameplay", "UserInterface", "AI_Coded" ]
     },
 
     {
@@ -2149,6 +2149,42 @@
     },
 
     {
+      "Name": "Voice-Port - Abelard",
+      "Author": "Paradux",
+      "Id": {
+        "Id": "VoicePortAbelard",
+        "Type": "UMM"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "MrParadux",
+          "RepoName": "WotR_Voice-Port_Abelard"
+        }
+      },
+      "About": "Abelard from Rogue Trader voice barks ported to Wrath of the Righteous. No vanilla voices will be replaced, the new one will be added to the list of existing ones.",
+      "HomepageUrl": "https://github.com/MrParadux/WotR_Voice-Port_Abelard",
+      "Tags": [ "Audio" ]
+    },
+
+    {
+      "Name": "Voice-Ports - Kingmaker-Companions",
+      "Author": "Paradux",
+      "Id": {
+        "Id": "VoicePortsKingmaker",
+        "Type": "UMM"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "MrParadux",
+          "RepoName": "WotR_Voice-Ports_Kingmaker-Companions"
+        }
+      },
+      "About": "Kingmaker companion voice barks ported to Wrath of the Righteous. No vanilla voices will be replaced, the new ones will be added to the list of existing ones.",
+      "HomepageUrl": "https://github.com/MrParadux/WotR_Voice-Ports_Kingmaker-Companions",
+      "Tags": [ "Audio" ]
+    },
+
+    {
         "Name": "Weapon Focus Plus",
         "Author": "Vek17 & xoff",
         "Id": {
@@ -2182,22 +2218,40 @@
         "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/287",
         "Tags": [ "Content" ]
     },
-    
+
     {
-        "Name": "Wrath Patches",
-        "Author": "Microsoftenator",
-        "Id": {
-            "Id": "WrathPatches",
-            "Type": "UMM"
-        },
-        "Service": {
-            "GitHub": {
-                "Owner": "microsoftenator2022",
-                "RepoName": "WrathPatches"
-            }
-        },
-        "About": "A collection of small patches for Pathfinder: Wrath of the Righteous. Mostly aimed at cleaning up the game's log files, but fixed some minor bugs along the way.",
-        "HomepageUrl": "https://github.com/microsoftenator2022/WrathPatches",
-        "Tags": [ "Gameplay" ]
+      "Name": "Wrath Patches",
+      "Author": "Microsoftenator",
+      "Id": {
+        "Id": "WrathPatches",
+        "Type": "UMM"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "microsoftenator2022",
+          "RepoName": "WrathPatches"
+        }
+      },
+      "About": "A collection of small patches for Pathfinder: Wrath of the Righteous. Mostly aimed at cleaning up the game's log files, but fixed some minor bugs along the way.",
+      "HomepageUrl": "https://github.com/microsoftenator2022/WrathPatches",
+      "Tags": [ "Gameplay" ]
+    },
+
+    {
+      "Name": "Wrath Regen Mod",
+      "Author": "Curtwagner1984",
+      "Id": {
+        "Id": "Wrath.Regen.Mod",
+        "Type": "UMM"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "curtwagner1984",
+          "RepoName": "Wrath.Regen.Mod"
+        }
+      },
+      "About": "(AI coded) Adds configurable regeneration over time for health, spontaneous spell slots, prepared spell slots, generic ability resources, and Kineticist burn.",
+      "HomepageUrl": "https://github.com/curtwagner1984/Wrath.Regen.Mod",
+      "Tags": [ "Gameplay", "AI_Coded" ]
     }
 ]
