@@ -2271,5 +2271,23 @@
       "About": "(AI coded) Adds configurable regeneration over time for health, spontaneous spell slots, prepared spell slots, generic ability resources, and Kineticist burn.",
       "HomepageUrl": "https://github.com/curtwagner1984/Wrath.Regen.Mod",
       "Tags": [ "Gameplay", "AI_Coded" ]
+    },
+
+    {
+      "Name": "Wrath Tactics",
+      "Author": "Gh05d",
+      "Id": {
+        "Id": "WrathTactics",
+        "Type": "UMM"
+      },
+      "Service": {
+        "Nexus": {
+          "ModID": "1005",
+          "DownloadMirror": "https://github.com/Gh05d/wrath-tactics"
+        }
+      },
+      "About": "Dragon Age Origins-style companion tactics — priority-ordered rules that auto-cast spells, use items, and pick targets in real-time combat.",
+      "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/1005",
+      "Tags": [ "Gameplay", "UserInterface" ]
     }
 ]
