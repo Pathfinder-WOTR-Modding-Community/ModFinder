@@ -230,6 +230,24 @@
     },
 
     {
+        "Name": "Bubble Buffs - Multiplayer",
+        "Author": "fl01",
+        "Id": {
+            "Id": "BubbleBuffs.Multiplayer",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "fl01",
+                "RepoName": "pathfinder-wotr-multiplayer-bubblebuffs"
+            }
+        },
+        "About": "Multiplayer compatibility mod for BubbleBuffs",
+        "HomepageUrl": "https://github.com/fl01/pathfinder-wotr-multiplayer-bubblebuffs",
+        "Tags": [ "Gameplay"]
+    },
+
+    {
         "Name": "Bubble Tweaks",
         "Author": "Bubbles",
         "Id": {
@@ -1266,6 +1284,24 @@
         "Tags": [ "Content", "Gameplay" ]
     },
 
+    {
+        "Name": "Multiplayer",
+        "Author": "fl01",
+        "Id": {
+            "Id": "WOTRMultiplayer",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "fl01",
+                "RepoName": "pathfinder-wotr-multiplayer"
+            }
+        },
+        "About": "Makes the game playable in online multiplayer",
+        "HomepageUrl": "https://github.com/fl01/pathfinder-wotr-multiplayer",
+        "Tags": [ "Gameplay"]
+    },
+    
     {
         "Name": "Multiple Archetypes",
         "Author": "Vek17",
