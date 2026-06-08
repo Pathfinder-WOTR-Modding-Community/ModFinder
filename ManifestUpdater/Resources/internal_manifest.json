@@ -1773,6 +1773,24 @@
     },
 
     {
+        "Name": "Phoenix's Scaling Cantrips",
+        "Author": "phoenix99",
+        "Id": {
+            "Id": "PhoenixScalingCantrips",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "phoenixwings99",
+                "RepoName": "PhoenixScalingCantrips"
+            }
+        },
+        "About": "Scales damaging cantrips and Virtue with caster level. Adds touch and sonic damage cantrips",
+        "HomepageUrl": "https://github.com/phoenixwings99/PhoenixScalingCantrips",
+        "Tags": [ "Miscellaneous" ]
+    },
+
+    {
         "Name": "Random Equipment",
         "Author": "Hambeard",
         "Id": {
