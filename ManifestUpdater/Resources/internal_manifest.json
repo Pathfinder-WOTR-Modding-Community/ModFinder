@@ -355,6 +355,27 @@
     },
 
     {
+        "Name": "Combat Metrics & Accolades",
+        "Author": "LilithSeven",
+        "Id": {
+            "Id": "Combat Metrics & Accolades",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "LilithSeven",
+                "RepoName": "Combat-Metrics-and-Accolades-WotR_CombatMVP"
+            },
+            "Nexus": {
+                "ModID": "1026"
+            }
+        },
+        "About": "An immersive post-combat scoreboard, detailed telemetry tracker, and narrative battle log.",
+        "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/1026",
+        "Tags": [ "UserInterface", "Utilities" ]
+    },
+
+    {
       "Name": "Combat Relief 2024",
       "Author": "AlterAsc",
       "Id": {
