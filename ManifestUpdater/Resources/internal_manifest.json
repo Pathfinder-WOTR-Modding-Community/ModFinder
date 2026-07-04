@@ -1411,6 +1411,23 @@
     },
 
     {
+        "Name": "Names Locale Switcher",
+        "Author": "maximoffby",
+        "Id": {
+            "Id": "NamesLocaleSwitcher",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "494"
+            }
+        },
+        "About": "Adds a second language dropdown to Options that controls only item and talent names, independent of your main game language. No Unity Mod Manager or Toybox required.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/494",
+        "Tags": [ "Gameplay", "Utilities for Players", "Quality of Life", "Translation", "Quality of Life" ]
+    },      
+
+    {
         "Name": "Nine Swords",
         "Author": "V0idhead",
         "Id": {
@@ -2111,6 +2128,23 @@
         "HomepageUrl": "https://github.com/Vek17/TabletopTweaks-Reworks",
         "Tags": [ "Content", "Gameplay" ]
     },
+
+    {
+        "Name": "Talent Search",
+        "Author": "maximoffby",
+        "Id": {
+            "Id": "TalentSearch",
+            "Type": "Owlcat"
+        },
+        "Service": {
+            "Nexus": {
+                "ModID": "497"
+            }
+        },
+        "About": "Live text search/filter box on the level-up talent & skill selection screen. Matches talent names across all locales.",
+        "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/497",
+        "Tags": [ "Gameplay", "User Interface", "Quality of Life" ]
+    },    
 
     {
         "Name": "Toggleable Throwing Weapons",
