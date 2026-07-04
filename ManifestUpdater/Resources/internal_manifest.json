@@ -1424,7 +1424,7 @@
         },
         "About": "Adds a second language dropdown to Options that controls only item and talent names, independent of your main game language. No Unity Mod Manager or Toybox required.",
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/494",
-        "Tags": [ "Gameplay", "Utilities for Players", "Quality of Life", "Translation", "Quality of Life" ]
+        "Tags": [ "Gameplay", "UserInterface" ]
     },      
 
     {
@@ -2143,7 +2143,7 @@
         },
         "About": "Live text search/filter box on the level-up talent & skill selection screen. Matches talent names across all locales.",
         "HomepageUrl": "https://www.nexusmods.com/warhammer40kroguetrader/mods/497",
-        "Tags": [ "Gameplay", "User Interface", "Quality of Life" ]
+        "Tags": [ "Gameplay", "UserInterface" ]
     },    
 
     {
