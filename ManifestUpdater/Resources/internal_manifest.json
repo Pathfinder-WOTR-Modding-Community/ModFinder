@@ -389,23 +389,7 @@
       "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/1111",
       "Tags": [ "Gameplay", "Content" ]
     },
-    {
-      "Name": "Cowboys and Demons Assets",
-      "Author": "SumoToad987",
-      "Id": {
-        "Id": "GunAssets",
-        "Type": "Owlcat"
-      },
-      "Service": {
-        "GitHub": {
-          "Owner": "Sumotoad987",
-          "RepoName": "Cowboys-and-Demons-Assets"
-        }
-      },
-      "About": "Contains the 3d models and textures for firearms.",
-      "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/1111",
-      "Tags": [ "Gameplay", "Content" ]
-    },
+    
     {
       "Name": "Crafting System",
       "Author": "Tyraen1er",
