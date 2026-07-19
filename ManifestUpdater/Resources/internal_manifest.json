@@ -371,24 +371,6 @@
       "HomepageUrl": "https://github.com/alterasc/CombatRelief",
       "Tags": [ "Gameplay" ]
     },
-
-    {
-      "Name": "Cowboys and Demons",
-      "Author": "SumoToad987",
-      "Id": {
-        "Id": "gun",
-        "Type": "UMM"
-      },
-      "Service": {
-        "GitHub": {
-          "Owner": "Sumotoad987",
-          "RepoName": "Cowboys-and-Demons"
-        }
-      },
-      "About": "Adds the Gunslinger class and firearms to the game.",
-      "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/1111",
-      "Tags": [ "Gameplay", "Content" ]
-    },
     
     {
       "Name": "Crafting System",
