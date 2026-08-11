@@ -379,12 +379,11 @@
         "Id": "gun",
         "Type": "UMM"
       },
-      "Service": {
-        "GitHub": {
-          "Owner": "Sumotoad987",
-          "RepoName": "Cowboys-and-Demons"
-        }
-      },
+        "Service": {
+            "Nexus": {
+                "ModID": "1111"
+            }
+        },
       "About": "Adds the Gunslinger class and firearms to the game.",
       "HomepageUrl": "https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/1111",
       "Tags": [ "Gameplay", "Content" ]
