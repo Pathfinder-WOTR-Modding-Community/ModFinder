@@ -2342,5 +2342,23 @@
       "About": "(AI coded) Adds configurable regeneration over time for health, spontaneous spell slots, prepared spell slots, generic ability resources, and Kineticist burn.",
       "HomepageUrl": "https://github.com/curtwagner1984/Wrath.Regen.Mod",
       "Tags": [ "Gameplay", "AI_Coded" ]
+    },
+
+    {
+      "Name": "YogurtFixes",
+      "Author": "Nieroo (uorypm)",
+      "Id": {
+        "Id": "YogurtFixes",
+        "Type": "Owlcat"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "Nieroo",
+          "RepoName": "WotRYogurtFixes"
+        }
+      },
+      "About": "YogurtFixes is a mod for Pathfinder: Wrath of the Righteous that fixes several bugs and improves the game UI.",
+      "HomepageUrl": "https://github.com/Nieroo/WotRYogurtFixes",
+      "Tags": [ "Bugfix", "Gameplay", "Miscellaneous", "UserInterface" ]
     }
 ]
