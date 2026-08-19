@@ -906,6 +906,28 @@
     },
 
     {
+        "Name": "Kitsune Portrait Switcher",
+        "Author": "DeCopiDoge1966",
+        "Id": {
+            "Id": "KitsunePortraitSwitcher",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "NikitaLozinsky",
+                "RepoName": "KitsunePortrait"
+            }
+        },
+        "About": "Dynamically switches your character portrait depending on the active Kitsune form (human or fox).",
+        "HomepageUrl": "https://github.com/NikitaLozinsky/KitsunePortrait",
+        "Tags": [
+            "UI",
+            "Portraits",
+            "Cosmetic"
+        ]
+    },
+
+    {
         "Name": "Level 1 Companions",
         "Author": "CascadingDragon",
         "Id": {
