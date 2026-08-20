@@ -911,20 +911,21 @@
         "Id": {
             "Id": "KitsunePortraitSwitcher",
             "Type": "UMM"
-        },
+              },
         "Service": {
             "GitHub": {
                 "Owner": "NikitaLozinsky",
                 "RepoName": "KitsunePortrait"
-            }
+                }
         },
-        "About": "Dynamically switches your character portrait depending on the active Kitsune form (human or fox).",
-        "HomepageUrl": "https://github.com/NikitaLozinsky/KitsunePortrait",
-        "Tags": [
-            "UI",
-            "Portraits",
-            "Cosmetic"
-        ]
+              "About": "(AI assisted) Dynamically switches your character portrait depending on the active Kitsune form (human or fox).",
+              "HomepageUrl": "https://github.com/NikitaLozinsky/KitsunePortrait",
+              "Tags": [
+                    "UserInterface",
+                    "Portraits",
+                    "Visuals",
+                    "AI_Coded"
+                    ]
     },
 
     {
