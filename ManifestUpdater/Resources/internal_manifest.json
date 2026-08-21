@@ -2397,8 +2397,8 @@
           "RepoName": "WotRYogurtFixes"
         }
       },
-      "About": "YogurtFixes is a mod for Pathfinder: Wrath of the Righteous that fixes several bugs and improves the game UI.",
+      "About": "YogurtFixes is a Owlcat-mod for Pathfinder: Wrath of the Righteous that fixes several bugs and improves the game UI.",
       "HomepageUrl": "https://github.com/Nieroo/WotRYogurtFixes",
-      "Tags": [ "Bugfix", "Gameplay", "Miscellaneous", "UserInterface" ]
+      "Tags": [ "Bugfix", "Gameplay", "Homebrew", "Miscellaneous", "UserInterface" ]
     }
 ]
