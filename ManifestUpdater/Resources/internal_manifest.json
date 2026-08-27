@@ -355,6 +355,24 @@
     },
 
     {
+      "Name": "Combat log DC breakdown",
+      "Author": "AlterAsc",
+      "Id": {
+        "Id": "CombatLogDCBreakdown",
+        "Type": "UMM"
+      },
+      "Service": {
+        "GitHub": {
+          "Owner": "alterasc",
+          "RepoName": "CombatLogDCBreakdown"
+        }
+      },
+      "About": "This mod provides breakdown of Difficulty Class (DC) in combat logs detailing saving throw checks.",
+      "HomepageUrl": "https://github.com/alterasc/CombatLogDCBreakdown",
+      "Tags": [ "UserInterface" ]
+    },    
+
+    {
       "Name": "Combat Relief 2024",
       "Author": "AlterAsc",
       "Id": {
