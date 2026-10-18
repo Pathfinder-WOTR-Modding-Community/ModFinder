@@ -53,6 +53,25 @@
         "Tags": [ "Content", "Gameplay" ]
     },
 
+```json
+    {
+        "Name": "AI Control - Fully Autonomous Combat Companions",
+        "Author": "MonsieurAndroid",
+        "Id": {
+            "Id": "CompanionAI_Pathfinder",
+            "Type": "UMM"
+        },
+        "Service": {
+            "GitHub": {
+                "Owner": "recovribox-svg",
+                "RepoName": "AIControll-FACC"
+            }
+        },
+        "About": "(AI coded) Replaces companion combat AI with a tactical engine, built for turn-based combat and also working in real time: weapon attacks, spells, heals, buffs, control and positioning chosen by expected value using the game's own rules.",
+        "HomepageUrl": "https://github.com/recovribox-svg/AIControll-FACC",
+        "Tags": [ "Gameplay", "AI_Coded" ]
+    },
+    
     {
         "Name": "Allow Modded Achievements",
         "Author": "Xenofell",
