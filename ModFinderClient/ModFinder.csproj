@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -89,8 +89,8 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Markdig" Version="0.30.4" />
-    <PackageReference Include="SharpCompress" Version="0.38.0" />
-    <PackageReference Include="NexusModsNET" Version="1.0.4" />
+    <PackageReference Include="SharpCompress" Version="0.50.7" />
+    <PackageReference Include="NexusModsNET" Version="1.0.5" />
   </ItemGroup>
 
   <ItemGroup>
