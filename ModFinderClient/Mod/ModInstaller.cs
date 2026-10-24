@@ -159,7 +159,7 @@ namespace ModFinder.Mod
       InstallModManifest info;
 
       using var stream = File.OpenRead(path);
-      using var archive = ArchiveFactory.AutoFactory.Open(stream);
+      using var archive = ArchiveFactory.OpenArchive(stream);
       ModType modType = viewModel == null ? GetModTypeFromArchive(archive) : viewModel.ModId.Type;
 
       // If the mod is not in the first level folder in the zip we need to reach in and grab it
@@ -271,7 +271,7 @@ namespace ModFinder.Mod
         Logger.Log.Verbose("Starting to extract in parts");
 
         using var stream = File.OpenRead(path);
-        using var archive = ArchiveFactory.AutoFactory.Open(stream);
+        using var archive = ArchiveFactory.OpenArchive(stream);
 
         foreach (var part in archive.Entries)
         {
@@ -310,7 +310,7 @@ namespace ModFinder.Mod
           await Task.Run(() =>
           {
             using var stream = File.OpenRead(path);
-            using var archive = ArchiveFactory.AutoFactory.Open(stream);
+            using var archive = ArchiveFactory.OpenArchive(stream);
 
             if (rootInZip != null)
             {
@@ -397,7 +397,7 @@ namespace ModFinder.Mod
         var tmpFolder = Path.Combine(Environment.GetEnvironmentVariable("TMP"), Guid.NewGuid().ToString());
         try
         {
-          archive.ExtractToDirectory(tmpFolder);
+          archive.WriteToDirectory(tmpFolder);
         }
         catch
         {
