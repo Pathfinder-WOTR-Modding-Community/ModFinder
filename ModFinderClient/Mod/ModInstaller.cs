@@ -1,4 +1,4 @@
-﻿using ModFinder.UI;
+using ModFinder.UI;
 using ModFinder.Util;
 using NexusModsNET;
 using NexusModsNET.DataModels;
@@ -363,6 +363,13 @@ namespace ModFinder.Mod
             {
               Logger.Log.Verbose(destination);
               Directory.CreateDirectory(destination);
+              if (modType == ModType.Owlcat)
+              {
+                Directory.CreateDirectory(Path.Combine(destination, "Assemblies"));
+                Directory.CreateDirectory(Path.Combine(destination, "Blueprints"));
+                Directory.CreateDirectory(Path.Combine(destination, "Bundles"));
+                Directory.CreateDirectory(Path.Combine(destination, "Localization"));
+              }
               archive.WriteToDirectory(destination, new ExtractionOptions()
               {
                 ExtractFullPath = true,
